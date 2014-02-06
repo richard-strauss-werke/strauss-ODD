@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+	xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron">
+	<head>Datatypes</head>
+	<specGrp xml:id="edits.datatypes.shared">
+
+		<macroSpec ident="data.supplPersNameType">
+			<content>
+				<rng:choice>
+					<rng:value>unknown</rng:value>
+					<a:documentation>unbekannte Art</a:documentation>
+					<rng:value>full</rng:value>
+					<a:documentation>voller Name</a:documentation>
+					<rng:value>former</rng:value>
+					<a:documentation>früherer Name</a:documentation>
+					<rng:value>later</rng:value>
+					<a:documentation>späterer Name</a:documentation>
+					<rng:value>birth</rng:value>
+					<a:documentation>Geburtsname</a:documentation>
+					<rng:value>real</rng:value>
+					<a:documentation>wirklicher Name</a:documentation>
+					<rng:value>pseud</rng:value>
+					<a:documentation>Pseudonym</a:documentation>
+					<rng:value>nickname</rng:value>
+					<a:documentation>Kosename</a:documentation>
+					<rng:value>variant</rng:value>
+					<a:documentation>Variante</a:documentation>
+					<rng:value>other</rng:value>
+					<a:documentation>sonstige Art</a:documentation>
+				</rng:choice>
+			</content>
+		</macroSpec>
+
+		<!-- based on WeGA_common.odd.xml -->
+		<macroSpec ident="data.msDescRend">
+			<content>
+				<rng:choice>
+					<rng:value>unknown</rng:value>
+					<a:documentation>unbekannt</a:documentation>
+					<rng:value>original</rng:value>
+					<a:documentation>Originalschreiben</a:documentation>
+					<rng:value>draft</rng:value>
+					<a:documentation>Entwurf</a:documentation>
+					<rng:value>autograph-copy</rng:value>
+					<a:documentation>autographe Kopie</a:documentation>
+					<rng:value>foreign-copy</rng:value>
+					<a:documentation>Kopie v.f.H.</a:documentation>
+					<rng:value>xerocopy</rng:value>
+					<a:documentation>Xerokopie</a:documentation>
+					<rng:value>microfilm</rng:value>
+					<a:documentation>Mikroform</a:documentation>
+					<rng:value>other</rng:value>
+					<a:documentation>andere Kategorie</a:documentation>
+				</rng:choice>
+			</content>
+		</macroSpec>
+
+		<!-- based on WeGA_common.odd.xml -->
+		<macroSpec ident="data.encoding-staff">
+			<content>
+				<rng:choice>
+					<rng:value>slm</rng:value>
+					<a:documentation>Salome Reiser</a:documentation>
+					<rng:value>alx</rng:value>
+					<a:documentation>Alexander Erhard</a:documentation>
+					<rng:value>sts</rng:value>
+					<a:documentation>Stefan Schenk</a:documentation>
+					<rng:value>aap</rng:value>
+					<a:documentation>Andreas Pernpeintner</a:documentation>
+					<rng:value>mmm</rng:value>
+					<a:documentation>Martina Mengele</a:documentation>
+					<rng:value>flr</rng:value>
+					<a:documentation>Florence Eller</a:documentation>
+					<rng:value>sbb</rng:value>
+					<a:documentation>Sebastian Bolz</a:documentation>
+					<rng:value>wwb</rng:value>
+					<a:documentation>Walter Werbeck</a:documentation>
+					<rng:value>clh</rng:value>
+					<a:documentation>Claudia Heine</a:documentation>
+				</rng:choice>
+			</content>
+		</macroSpec>
+
+	</specGrp>
+</div>

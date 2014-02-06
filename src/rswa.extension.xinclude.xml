@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+	xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron">
+	<head>XInclude extension</head>
+	<byline>XInclude support adopted from the TEI-C's 
+		<ref
+		target="http://www.tei-c.org/release/xml/tei/custom/odd/tei_xinclude.odd"
+		>XInclude ODD</ref></byline>
+	<specGrp xml:id="extension.xinclude">
+		
+		<elementSpec ident="conRef" mode="add"
+			ns="http://richard-strauss-ausgabe.de/ns/1.0">
+			<classes>
+				<memberOf key="model.common"/>
+				<memberOf key="model.headerPart"/>
+			</classes>
+			<content>
+				<rng:zeroOrMore>
+					<rng:choice>
+						<rng:ref name="body"/>
+						<rng:ref name="model.segLike"/>
+						<rng:ref name="include"/>
+					</rng:choice>
+				</rng:zeroOrMore>
+			</content>
+			<attList org="group">
+				<attDef mode="add" ident="key">
+					<datatype>
+						<rng:data type="string"/>
+					</datatype>
+				</attDef>
+			</attList>
+		</elementSpec>
+		
+		<elementSpec ident="include" xmlns:rng="http://relaxng.org/ns/structure/1.0"
+			ns="http://www.w3.org/2001/XInclude" mode="add">
+			<desc versionDate="2014-02-04" xml:lang="en">The W3C XInclude element</desc>
+			<classes>
+				<memberOf key="model.common"/>
+				<memberOf key="model.headerPart"/>
+			</classes>
+			<content>
+				<rng:optional>
+					<rng:ref name="fallback"/>
+				</rng:optional>
+			</content>
+			<attList>
+				<attDef ident="href">
+					<desc versionDate="2014-02-04" xml:lang="en">pointer to the resource being included</desc>
+					<datatype>
+						<rng:ref name="data.pointer"/>
+					</datatype>
+				</attDef>
+				<attDef ident="parse" usage="opt">
+					<defaultVal>xml</defaultVal>
+					<valList type="closed">
+						<valItem ident="xml"/>
+						<valItem ident="text"/>
+					</valList>
+				</attDef>
+				<attDef ident="xpointer" usage="opt">
+					<datatype>
+						<rng:text/>
+					</datatype>
+				</attDef>
+				<attDef ident="encoding" usage="opt">
+					<datatype>
+						<rng:text/>
+					</datatype>
+				</attDef>
+				<attDef ident="accept" usage="opt">
+					<datatype>
+						<rng:text/>
+					</datatype>
+				</attDef>
+				<attDef ident="accept-charset" usage="opt">
+					<datatype>
+						<rng:text/>
+					</datatype>
+				</attDef>
+				<attDef ident="accept-language" usage="opt">
+					<datatype>
+						<rng:text/>
+					</datatype>
+				</attDef>
+			</attList>
+		</elementSpec>
+		
+		<elementSpec ident="fallback" xmlns:rng="http://relaxng.org/ns/structure/1.0"
+			ns="http://www.w3.org/2001/XInclude" mode="add">
+			<desc versionDate="2014-02-04" xml:lang="en">Wrapper for fallback elements if an XInclude fails</desc>
+			<content>
+				<oneOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+					<choice>
+						<text/>
+						<ref name="macro.anyThing"/>
+					</choice>
+				</oneOrMore>
+			</content>
+		</elementSpec>
+		
+		<macroSpec ident="macro.anyThing" mode="add">
+			<content>
+				<?NameList?> 
+			</content>
+		</macroSpec>
+		
+	</specGrp>
+</div>

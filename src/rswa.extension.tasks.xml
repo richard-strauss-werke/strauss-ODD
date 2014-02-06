@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+	xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron">
+	<head>taskDescr extension</head>
+	<specGrp xml:id="extension.tasks">
+		
+		<!-- the non-TEI task description element is always removed from the public version, assuming that documents will only be published when there are no more open tasks. -->
+		<elementSpec ident="taskDesc" mode="add"
+			ns="http://richard-strauss-ausgabe.de/ns/1.0">
+			<equiv filter="rswa.xsl" mimeType="text/xsl" name="warnIfHasChildOrRemove"/>
+			<content>
+				<rng:zeroOrMore>
+					<rng:ref name="task"/>
+				</rng:zeroOrMore>
+			</content>
+		</elementSpec>
+		
+		<!-- only occurs in taskDesc; which will be removed for publication -->
+		<elementSpec ident="task" mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0">
+			<content>
+				<rng:oneOrMore>
+					<rng:ref name="p"/>
+				</rng:oneOrMore>
+			</content>
+			<attList org="group">
+				<attDef mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0" ident="pwho">
+					<datatype>
+						<rng:data type="string"/>
+					</datatype>
+				</attDef>
+				<attDef mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0" ident="pwhen">
+					<datatype>
+						<rng:data type="string"/>
+					</datatype>
+				</attDef>
+				<attDef mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0"
+					ident="priority">
+					<datatype>
+						<rng:data type="string"/>
+					</datatype>
+				</attDef>
+				<attDef ident="when" mode="add">
+					<datatype>
+						<rng:data type="string"/>
+					</datatype>
+				</attDef>
+				<attDef ident="who" mode="add">
+					<datatype>
+						<rng:data type="string"/>
+					</datatype>
+				</attDef>
+			</attList>
+		</elementSpec>
+	</specGrp>
+</div>
