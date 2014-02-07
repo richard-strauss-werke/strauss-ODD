@@ -35,7 +35,9 @@
 						<rng:attribute name="type">
 							<rng:value>GND</rng:value>
 						</rng:attribute>
-						<rng:text/>
+						<rng:optional>
+							<rng:ref name="data.gndIdno"/>
+						</rng:optional>
 					</rng:element>
 				</rng:oneOrMore>
 			</content>
@@ -61,7 +63,9 @@
 						<rng:attribute name="type">
 							<rng:value>RSQV</rng:value>
 						</rng:attribute>
-						<rng:text/>
+						<rng:optional>
+							<rng:ref name="data.rsqvIdno"/>
+						</rng:optional>
 					</rng:element>
 				</rng:oneOrMore>
 			</content>
@@ -78,16 +82,18 @@
 			<gloss versionDate="2014-01-26" xml:lang="en">ISBN idno</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">ISBN-idno</gloss>
 			<desc versionDate="2014-01-26" xml:lang="en"
-				>Macro for a <gi>idno</gi> element in which a <att>type</att> attribute with the value <val>ISBN</val> must be present.</desc>
+				>Macro for a <gi>idno</gi> element in which a <att>type</att> attribute with the value <val>isbn</val> must be present.</desc>
 			<desc versionDate="2014-01-26" xml:lang="de"
-				>Makro für ein <gi>idno</gi>-Element, in dem ein <att>type</att>-Attribut mit dem Wert <val>ISBN</val> vorhanden sein muss.</desc>
+				>Makro für ein <gi>idno</gi>-Element, in dem ein <att>type</att>-Attribut mit dem Wert <val>isbn</val> vorhanden sein muss.</desc>
 			<content>
 				<rng:oneOrMore>
 					<rng:element name="idno">
 						<rng:attribute name="type">
-							<rng:value>ISBN</rng:value>
+							<rng:value>isbn</rng:value>
 						</rng:attribute>
-						<rng:text/>
+						<rng:optional>
+							<rng:ref name="data.word"/>
+						</rng:optional>
 					</rng:element>
 				</rng:oneOrMore>
 			</content>
@@ -101,7 +107,7 @@
 
 		<macroSpec ident="macro.form.uagIdno">
 			<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
-			<gloss versionDate="2014-01-26" xml:lang="en">UAG opac idno</gloss>
+			<gloss versionDate="2014-01-26" xml:lang="en">UAG idno</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">UAG-idno</gloss>
 			<desc versionDate="2014-01-26" xml:lang="en"
 				>Macro for a <gi>idno</gi> element in which a <att>type</att> attribute with the value <val>UAG</val> must be present.</desc>
@@ -114,7 +120,9 @@
 						<rng:attribute name="type">
 							<rng:value>UAG</rng:value>
 						</rng:attribute>
-						<rng:text/>
+						<rng:optional>
+							<rng:ref name="data.word"/>
+						</rng:optional>
 					</rng:element>
 				</rng:zeroOrMore>
 			</content>
@@ -380,7 +388,9 @@
 										<rng:value>creator</rng:value>
 									</rng:attribute>
 									<rng:optional>
-										<rng:attribute name="cert"/>
+										<rng:attribute name="cert">
+											<rng:ref name="data.certainty"/>
+										</rng:attribute>
 									</rng:optional>
 									<rng:optional>
 										<rng:attribute name="key"/>
@@ -397,7 +407,9 @@
 										<rng:value>creator</rng:value>
 									</rng:attribute>
 									<rng:optional>
-										<rng:attribute name="cert"/>
+										<rng:attribute name="cert">
+											<rng:ref name="data.certainty"/>
+										</rng:attribute>
 									</rng:optional>
 									<rng:optional>
 										<rng:attribute name="key"/>
@@ -414,7 +426,9 @@
 										<rng:value>addressee</rng:value>
 									</rng:attribute>
 									<rng:optional>
-										<rng:attribute name="cert"/>
+										<rng:attribute name="cert">
+											<rng:ref name="data.certainty"/>
+										</rng:attribute>
 									</rng:optional>
 									<rng:optional>
 										<rng:attribute name="key"/>
@@ -431,7 +445,9 @@
 										<rng:value>addressee</rng:value>
 									</rng:attribute>
 									<rng:optional>
-										<rng:attribute name="cert"/>
+										<rng:attribute name="cert">
+											<rng:ref name="data.certainty"/>
+										</rng:attribute>
 									</rng:optional>
 									<rng:optional>
 										<rng:attribute name="key"/>
@@ -500,6 +516,7 @@
 		</macroSpec>
 
 		<macroSpec ident="macro.form.authors">
+			<desc versionDate="2014-02-06" xml:lang="en">A macro providing all <gi>author</gi> elements in a bibliographic entry.</desc>
 			<content>
 				<rng:zeroOrMore>
 					<rng:element name="author">
@@ -565,6 +582,8 @@
 		</macroSpec>
 
 		<macroSpec ident="macro.form.titles.full">
+			<desc versionDate="2014-02-06" xml:lang="en"
+				>Macro for three required <gi>title</gi> elements: short, main and sub. Used in all <gi>analytic</gi> elements and in all <gi>monogr</gi> elements not preceded by <gi>analytic</gi>.</desc>
 			<content>
 				<rng:element name="title">
 					<rng:attribute name="type">
@@ -589,7 +608,7 @@
 
 		<macroSpec ident="macro.form.titles.short">
 			<desc versionDate="2014-01-26" xml:lang="en"
-				>Main and subtitle required, no short title. Used in <gi>monogr</gi> when there's also a sibling <gi>analytic</gi>. In this case, only the <gi>analytic</gi> will contain a short title element.</desc>
+				>Main and sub title required, no short title. Used in <gi>monogr</gi> when there's also a sibling <gi>analytic</gi>. In this case, only the <gi>analytic</gi> will contain a short title element.</desc>
 			<content>
 				<rng:element name="title">
 					<rng:attribute name="type">

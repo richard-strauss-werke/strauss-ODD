@@ -16,7 +16,7 @@
 			</content>
 		</elementSpec>
 		
-		<!-- only occurs in taskDesc; which will be removed for publication -->
+		<!-- only occurs in taskDesc and gets removed for publication as well -->
 		<elementSpec ident="task" mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0">
 			<content>
 				<rng:oneOrMore>

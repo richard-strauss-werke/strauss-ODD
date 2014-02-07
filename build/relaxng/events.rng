@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2014-02-06T10:44:28Z. 
+Schema generated from ODD source 2014-02-07T11:16:27Z. 
 Edition: Version 2.6.0. Last updated on
 	20th January 2014, revision 12802
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
@@ -112,13 +112,20 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
    <define name="rswa_data.enumerated">
       <ref name="rswa_data.name"/>
    </define>
+   <define name="rswa_data.rsqvIdno">
+      <data type="string">
+         <param name="pattern">[a-z]\d{4,5}</param>
+      </data>
+   </define>
    <define name="rswa_macro.form.rsqvIdno">
       <oneOrMore>
          <element name="idno">
             <attribute name="type">
                <value>RSQV</value>
             </attribute>
-            <text/>
+            <optional>
+               <ref name="rswa_data.rsqvIdno"/>
+            </optional>
          </element>
       </oneOrMore>
    </define>
@@ -1561,6 +1568,44 @@ Empfohlene Werte sind: 1] label; 2] data</a:documentation>
    <define name="rswa_att.personal.attributes">
       <ref name="rswa_att.naming.attributes"/>
    </define>
+   <define name="rswa_att.milestoneUnit.attributes">
+      <ref name="rswa_att.milestoneUnit.attribute.unit"/>
+   </define>
+   <define name="rswa_att.milestoneUnit.attribute.unit">
+      <attribute name="unit">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+Empfohlene Werte sind: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] canto; 7] speaker; 8] stanza; 9] act; 10] scene; 11] section; 12] absent; 13] unnumbered</a:documentation>
+         <choice>
+            <value>page</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>column</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>line</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>book</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>poem</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>canto</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>speaker</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>stanza</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>act</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>scene</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>section</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>absent</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>unnumbered</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <data type="Name"/>
+         </choice>
+      </attribute>
+   </define>
    <define name="rswa_p">
       <element name="p">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"> [3.1.  7.2.5. ]</a:documentation>
@@ -1783,7 +1828,7 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
          </optional>
          <optional>
             <attribute name="hand">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">zeigt das Ende eines Bereichs auf, dass vom Element, welches dieses Attribut trägt, eingeleitet wird.</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gibt die Hand der Person an, die den Eingriff vorgenommen hat.</a:documentation>
                <ref name="rswa_data.pointer"/>
             </attribute>
          </optional>
@@ -1836,7 +1881,7 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
    </define>
    <define name="rswa_rs">
       <element name="rs">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"> [13.2.1.  3.5.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(verweisende Zeichenfolge) Mehrzweckelement; enthält eine Zeichenfolge, die etwas benennt oder auf etwas verweist. [13.2.1.  3.5.1. ]</a:documentation>
          <ref name="rswa_macro.phraseSeq"/>
          <ref name="rswa_att.global.attributes"/>
          <ref name="rswa_att.naming.attributes"/>
@@ -1844,19 +1889,19 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
          <optional>
             <attribute name="pdf" ns="http://richard-strauss-ausgabe.de/ns/1.0">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <data type="string"/>
+               <ref name="rswa_data.pointer"/>
             </attribute>
          </optional>
          <optional>
             <attribute name="seite" ns="http://richard-strauss-ausgabe.de/ns/1.0">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <data type="string"/>
+               <ref name="rswa_data.text"/>
             </attribute>
          </optional>
          <optional>
             <attribute name="seitepdf" ns="http://richard-strauss-ausgabe.de/ns/1.0">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <data type="string"/>
+               <ref name="rswa_data.count"/>
             </attribute>
          </optional>
          <optional>
@@ -2083,6 +2128,7 @@ Empfohlene Werte sind: 1] ordered; 2] bulleted; 3] simple; 4] gloss</a:documenta
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"> [3.10.3. ]</a:documentation>
          <empty/>
          <ref name="rswa_att.global.attributes"/>
+         <ref name="rswa_att.milestoneUnit.attributes"/>
          <ref name="rswa_att.typed.attributes"/>
          <empty/>
       </element>
@@ -2649,64 +2695,6 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
          <empty/>
       </element>
    </define>
-   <define name="rswa_teiHeader">
-      <element name="teiHeader">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-         <group>
-            <ref name="rswa_fileDesc"/>
-            <ref name="rswa_profileDesc"/>
-         </group>
-      </element>
-   </define>
-   <define name="rswa_fileDesc">
-      <element name="fileDesc">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Dateibeschreibung) enthält die detaillierte bibliografische Beschreibung einer elektronischen Datei. [2.2.  2.1.1. ]</a:documentation>
-         <ref name="rswa_titleStmt"/>
-         <ref name="rswa_publicationStmt"/>
-         <ref name="rswa_sourceDesc"/>
-      </element>
-   </define>
-   <define name="rswa_titleStmt">
-      <element name="titleStmt">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">( Titelinformation) umfasst Angaben zum Titel eines Werks und zu den für seinen Inhalt Verantwortlichen [2.2.1.  2.2. ]</a:documentation>
-         <group>
-            <oneOrMore>
-               <ref name="rswa_title"/>
-            </oneOrMore>
-            <zeroOrMore>
-               <ref name="rswa_model.respLike"/>
-            </zeroOrMore>
-         </group>
-         <ref name="rswa_att.global.attributes"/>
-         <empty/>
-      </element>
-   </define>
-   <define name="rswa_publicationStmt">
-      <element name="publicationStmt">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-         <ref name="rswa_macro.form.publicationStmt_event"/>
-      </element>
-   </define>
-   <define name="rswa_sourceDesc">
-      <element name="sourceDesc">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-         <ref name="rswa_macro.form.sourceDesc_event"/>
-      </element>
-   </define>
-   <define name="rswa_profileDesc">
-      <element name="profileDesc">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-         <group>
-            <ref name="rswa_creation"/>
-         </group>
-      </element>
-   </define>
-   <define name="rswa_creation">
-      <element name="creation">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-         <ref name="rswa_macro.form.creation_event"/>
-      </element>
-   </define>
    <define name="rswa_TEI">
       <element name="TEI">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(TEI-Dokument) enthält ein einzelnes TEI-konformes Dokument, das aus TEI-Header (Dateikopf) und Text besteht, entweder als eigenständige Datei oder als Teil eines Elements teiCorpus. [4.  15.1. ]</a:documentation>
@@ -2924,6 +2912,64 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
          </group>
          <ref name="rswa_att.global.attributes"/>
          <ref name="rswa_att.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="rswa_creation">
+      <element name="creation">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <ref name="rswa_macro.form.creation_event"/>
+      </element>
+   </define>
+   <define name="rswa_fileDesc">
+      <element name="fileDesc">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Dateibeschreibung) enthält die detaillierte bibliografische Beschreibung einer elektronischen Datei. [2.2.  2.1.1. ]</a:documentation>
+         <ref name="rswa_titleStmt"/>
+         <ref name="rswa_publicationStmt"/>
+         <ref name="rswa_sourceDesc"/>
+      </element>
+   </define>
+   <define name="rswa_profileDesc">
+      <element name="profileDesc">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <group>
+            <ref name="rswa_creation"/>
+         </group>
+      </element>
+   </define>
+   <define name="rswa_publicationStmt">
+      <element name="publicationStmt">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <ref name="rswa_macro.form.publicationStmt_event"/>
+      </element>
+   </define>
+   <define name="rswa_sourceDesc">
+      <element name="sourceDesc">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <ref name="rswa_macro.form.sourceDesc_event"/>
+      </element>
+   </define>
+   <define name="rswa_teiHeader">
+      <element name="teiHeader">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <group>
+            <ref name="rswa_fileDesc"/>
+            <ref name="rswa_profileDesc"/>
+         </group>
+      </element>
+   </define>
+   <define name="rswa_titleStmt">
+      <element name="titleStmt">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">( Titelinformation) umfasst Angaben zum Titel eines Werks und zu den für seinen Inhalt Verantwortlichen [2.2.1.  2.2. ]</a:documentation>
+         <group>
+            <oneOrMore>
+               <ref name="rswa_title"/>
+            </oneOrMore>
+            <zeroOrMore>
+               <ref name="rswa_model.respLike"/>
+            </zeroOrMore>
+         </group>
+         <ref name="rswa_att.global.attributes"/>
          <empty/>
       </element>
    </define>

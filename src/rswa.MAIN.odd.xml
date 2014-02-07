@@ -39,150 +39,126 @@
 	</teiHeader>
 	<text>
 		<body>
+			<div xml:id="introduction">
+				<head>Introduction</head>
+				<p>...</p>
+			</div>
 			<div xml:id="schemata">
-				<head>Schema specifications</head>
-				<div>
-					<head>Global</head>
+				<head>Schema</head>
+				<schemaSpec ident="schema.global" xml:lang="en" start="TEI person org performance bibl"
+					prefix="rswa_">
 					<desc>Comprehensive schema encompassing all the other schemata scopes.</desc>
-					<schemaSpec ident="schema.global" xml:lang="en"
-						start="TEI person org performance bibl" prefix="rswa_">
-						<specGrpRef target="#scope.shared"/>
-						<specGrpRef target="#scope.teistructure"/>
-						<specGrpRef target="#scope.transcr"/>
-						<specGrpRef target="#scope.transcr.ms"/>
-						<specGrpRef target="#scope.transcr.bibl"/>
-						<specGrpRef target="#scope.state_listEvent"/>
-						<specGrpRef target="#scope.person"/>
-						<specGrpRef target="#scope.org"/>
-						<specGrpRef target="#scope.performance"/>
-						<specGrpRef target="#extension.MEI"/>
-						<specGrpRef target="#extension.xinclude"/>
-						<specGrpRef target="#extension.tasks"/>
-						<specGrpRef target="#edits.classes.att.shared"/>
-						<specGrpRef target="#edits.datatypes.shared"/>
-						<specGrpRef target="#edits.elements.shared"/>
-						<specGrpRef target="#edits.macros.shared"/>
-						<specGrpRef target="#edits.elements.global"/>
-					</schemaSpec>
-				</div>
-				<div>
-					<head>Compilations</head>
-					<desc>Editorial compilations of text snippets from other documents</desc>
-					<schemaSpec ident="schema.compilations" xml:lang="en" start="TEI" prefix="rswa_">
-						<specGrpRef target="#scope.shared"/>
-						<specGrpRef target="#scope.teistructure"/>
-						<specGrpRef target="#scope.transcr"/>
-						<specGrpRef target="#scope.transcr.ms"/>
-						<specGrpRef target="#scope.transcr.bibl"/>
-						<specGrpRef target="#scope.state_listEvent"/>
-						<specGrpRef target="#scope.person"/>
-						<specGrpRef target="#scope.org"/>
-						<specGrpRef target="#scope.performance"/>
-						<specGrpRef target="#extension.MEI"/>
-						<specGrpRef target="#extension.xinclude"/>
-						<specGrpRef target="#extension.tasks"/>
-						<specGrpRef target="#edits.classes.att.shared"/>
-						<specGrpRef target="#edits.datatypes.shared"/>
-						<specGrpRef target="#edits.elements.shared"/>
-						<specGrpRef target="#edits.macros.shared"/>
-					</schemaSpec>
-				</div>
-				<div>
-					<head>Transcriptions of manuscript sources</head>
-					<desc>Correspondence, notes, etc.</desc>
-					<schemaSpec ident="schema.correspondence" xml:lang="en" start="TEI" prefix="rswa_">
-						<specGrpRef target="#scope.shared"/>
-						<specGrpRef target="#scope.teistructure"/>
-						<specGrpRef target="#scope.transcr"/>
-						<specGrpRef target="#scope.transcr.ms"/>
-						<specGrpRef target="#extension.MEI"/>
-						<specGrpRef target="#extension.tasks"/>
-						<specGrpRef target="#edits.classes.att.shared"/>
-						<specGrpRef target="#edits.datatypes.shared"/>
-						<specGrpRef target="#edits.elements.shared"/>
-						<specGrpRef target="#edits.macros.shared"/>
-						<specGrpRef target="#edits.elements.ms"/>
-					</schemaSpec>
-				</div>
-				<div>
-					<head>Transcriptions of printed sources</head>
-					<desc>Articles, reviews, books, etc.</desc>
-					<schemaSpec ident="schema.literature" xml:lang="en" start="TEI" prefix="rswa_">
-						<specGrpRef target="#scope.shared"/>
-						<specGrpRef target="#scope.teistructure"/>
-						<specGrpRef target="#scope.transcr"/>
-						<specGrpRef target="#scope.transcr.bibl"/>
-						<specGrpRef target="#extension.tasks"/>
-						<specGrpRef target="#edits.classes.att.shared"/>
-						<specGrpRef target="#edits.datatypes.shared"/>
-						<specGrpRef target="#edits.elements.shared"/>
-						<specGrpRef target="#edits.macros.shared"/>
-						<specGrpRef target="#edits.elements.print"/>
-					</schemaSpec>
-				</div>
-				<div xml:id="persons">
-					<head>Persons</head>
-					<desc>Individuals</desc>
-					<schemaSpec ident="schema.persons" xml:lang="en" start="person" prefix="rswa_">
-						<specGrpRef target="#scope.shared"/>
-						<specGrpRef target="#scope.state_listEvent"/>
-						<specGrpRef target="#scope.person"/>
-						<specGrpRef target="#edits.classes.att.shared"/>
-						<specGrpRef target="#edits.datatypes.shared"/>
-						<specGrpRef target="#edits.elements.shared"/>
-						<specGrpRef target="#edits.macros.shared"/>
-					</schemaSpec>
-				</div>
-				<div>
-					<head>Organizations</head>
-					<desc>Orchestras, publishing houses, families, etc.</desc>
-					<schemaSpec ident="schema.org" xml:lang="en" start="org" prefix="rswa_">
-						<specGrpRef target="#scope.shared"/>
-						<specGrpRef target="#scope.state_listEvent"/>
-						<specGrpRef target="#scope.org"/>
-						<specGrpRef target="#edits.classes.att.shared"/>
-						<specGrpRef target="#edits.datatypes.shared"/>
-						<specGrpRef target="#edits.elements.shared"/>
-						<specGrpRef target="#edits.macros.shared"/>
-					</schemaSpec>
-				</div>
-				<div>
-					<head>Events</head>
+					<specGrpRef target="#scope.shared"/>
+					<specGrpRef target="#scope.teistructure"/>
+					<specGrpRef target="#scope.transcr"/>
+					<specGrpRef target="#scope.transcr.ms"/>
+					<specGrpRef target="#scope.transcr.bibl"/>
+					<specGrpRef target="#scope.state_listEvent"/>
+					<specGrpRef target="#scope.person"/>
+					<specGrpRef target="#scope.org"/>
+					<specGrpRef target="#scope.performance"/>
+					<specGrpRef target="#extension.MEI"/>
+					<specGrpRef target="#extension.xinclude"/>
+					<specGrpRef target="#extension.tasks"/>
+					<specGrpRef target="#edits.classes.att.shared"/>
+					<specGrpRef target="#edits.datatypes.shared"/>
+					<specGrpRef target="#edits.elements.shared"/>
+					<specGrpRef target="#edits.macros.shared"/>
+					<specGrpRef target="#edits.elements.global"/>
+				</schemaSpec>
+				<schemaSpec ident="schema.compilations" xml:lang="en" start="TEI" prefix="rswa_">
+					<desc>Compilations: Editorial compilations of text snippets from other documents</desc>
+					<specGrpRef target="#scope.shared"/>
+					<specGrpRef target="#scope.teistructure"/>
+					<specGrpRef target="#scope.transcr"/>
+					<specGrpRef target="#scope.transcr.ms"/>
+					<specGrpRef target="#scope.transcr.bibl"/>
+					<specGrpRef target="#scope.state_listEvent"/>
+					<specGrpRef target="#scope.person"/>
+					<specGrpRef target="#scope.org"/>
+					<specGrpRef target="#scope.performance"/>
+					<specGrpRef target="#extension.MEI"/>
+					<specGrpRef target="#extension.xinclude"/>
+					<specGrpRef target="#extension.tasks"/>
+					<specGrpRef target="#edits.classes.att.shared"/>
+					<specGrpRef target="#edits.datatypes.shared"/>
+					<specGrpRef target="#edits.elements.shared"/>
+					<specGrpRef target="#edits.macros.shared"/>
+				</schemaSpec>
+				<schemaSpec ident="schema.correspondence" xml:lang="en" start="TEI" prefix="rswa_">
+					<desc>Transcriptions of manuscript sources: Correspondence, notes, etc.</desc>
+					<specGrpRef target="#scope.shared"/>
+					<specGrpRef target="#scope.teistructure"/>
+					<specGrpRef target="#scope.transcr"/>
+					<specGrpRef target="#scope.transcr.ms"/>
+					<specGrpRef target="#extension.MEI"/>
+					<specGrpRef target="#extension.tasks"/>
+					<specGrpRef target="#edits.classes.att.shared"/>
+					<specGrpRef target="#edits.datatypes.shared"/>
+					<specGrpRef target="#edits.elements.shared"/>
+					<specGrpRef target="#edits.macros.shared"/>
+					<specGrpRef target="#edits.elements.ms"/>
+				</schemaSpec>
+				<schemaSpec ident="schema.literature" xml:lang="en" start="TEI" prefix="rswa_">
+					<desc>Transcriptions of printed sources: Articles, reviews, books, etc.</desc>
+					<specGrpRef target="#scope.shared"/>
+					<specGrpRef target="#scope.teistructure"/>
+					<specGrpRef target="#scope.transcr"/>
+					<specGrpRef target="#scope.transcr.bibl"/>
+					<specGrpRef target="#extension.tasks"/>
+					<specGrpRef target="#edits.classes.att.shared"/>
+					<specGrpRef target="#edits.datatypes.shared"/>
+					<specGrpRef target="#edits.elements.shared"/>
+					<specGrpRef target="#edits.macros.shared"/>
+					<specGrpRef target="#edits.elements.print"/>
+				</schemaSpec>
+				<schemaSpec ident="schema.persons" xml:lang="en" start="person" prefix="rswa_">
+					<desc>Persons</desc>
+					<specGrpRef target="#scope.shared"/>
+					<specGrpRef target="#scope.state_listEvent"/>
+					<specGrpRef target="#scope.person"/>
+					<specGrpRef target="#edits.classes.att.shared"/>
+					<specGrpRef target="#edits.datatypes.shared"/>
+					<specGrpRef target="#edits.elements.shared"/>
+					<specGrpRef target="#edits.macros.shared"/>
+				</schemaSpec>
+				<schemaSpec ident="schema.org" xml:lang="en" start="org" prefix="rswa_">
+					<desc>Organizations: orchestras, publishing houses, families, etc.</desc>
+					<specGrpRef target="#scope.shared"/>
+					<specGrpRef target="#scope.state_listEvent"/>
+					<specGrpRef target="#scope.org"/>
+					<specGrpRef target="#edits.classes.att.shared"/>
+					<specGrpRef target="#edits.datatypes.shared"/>
+					<specGrpRef target="#edits.elements.shared"/>
+					<specGrpRef target="#edits.macros.shared"/>
+				</schemaSpec>
+				<schemaSpec ident="schema.events" xml:lang="en" start="TEI" prefix="rswa_">
 					<desc>Events related to Strauss</desc>
-					<schemaSpec ident="schema.events" xml:lang="en" start="TEI" prefix="rswa_">
-						<specGrpRef target="#scope.shared"/>
-						<specGrpRef target="#scope.teistructure"/>
-						<specGrpRef target="#edits.classes.att.shared"/>
-						<specGrpRef target="#edits.datatypes.shared"/>
-						<specGrpRef target="#edits.elements.shared"/>
-						<specGrpRef target="#edits.macros.shared"/>
-						<specGrpRef target="#edits.elements.events"/>
-					</schemaSpec>
-				</div>
-				<div>
-					<head>Performances</head>
-					<desc>Currently, only performances of Strauss's works</desc>
-					<schemaSpec ident="schema.performance" xml:lang="en" start="performance"
-						prefix="rswa_">
-						<specGrpRef target="#scope.shared"/>
-						<specGrpRef target="#scope.performance"/>
-						<specGrpRef target="#edits.classes.att.shared"/>
-						<specGrpRef target="#edits.datatypes.shared"/>
-						<specGrpRef target="#edits.elements.shared"/>
-						<specGrpRef target="#edits.macros.shared"/>
-					</schemaSpec>
-				</div>
-				<div>
-					<head>Works</head>
-					<desc>Currently, only compositions by Strauss</desc>
-					<schemaSpec ident="schema.works" xml:lang="en" start="bibl" prefix="rswa_">
-						<specGrpRef target="#scope.shared"/>
-						<specGrpRef target="#edits.classes.att.shared"/>
-						<specGrpRef target="#edits.datatypes.shared"/>
-						<specGrpRef target="#edits.elements.shared"/>
-						<specGrpRef target="#edits.macros.shared"/>
-					</schemaSpec>
-				</div>
+					<specGrpRef target="#scope.shared"/>
+					<specGrpRef target="#scope.teistructure"/>
+					<specGrpRef target="#edits.classes.att.shared"/>
+					<specGrpRef target="#edits.datatypes.shared"/>
+					<specGrpRef target="#edits.elements.shared"/>
+					<specGrpRef target="#edits.macros.shared"/>
+					<specGrpRef target="#edits.elements.events"/>
+				</schemaSpec>
+				<schemaSpec ident="schema.performance" xml:lang="en" start="performance" prefix="rswa_">
+					<desc>Performances (currently only of Strauss's works)</desc>
+					<specGrpRef target="#scope.shared"/>
+					<specGrpRef target="#scope.performance"/>
+					<specGrpRef target="#edits.classes.att.shared"/>
+					<specGrpRef target="#edits.datatypes.shared"/>
+					<specGrpRef target="#edits.elements.shared"/>
+					<specGrpRef target="#edits.macros.shared"/>
+				</schemaSpec>
+				<schemaSpec ident="schema.works" xml:lang="en" start="bibl" prefix="rswa_">
+					<desc>Works: currently, only compositions by Strauss</desc>
+					<specGrpRef target="#scope.shared"/>
+					<specGrpRef target="#edits.classes.att.shared"/>
+					<specGrpRef target="#edits.datatypes.shared"/>
+					<specGrpRef target="#edits.elements.shared"/>
+					<specGrpRef target="#edits.macros.shared"/>
+				</schemaSpec>
 			</div>
 			<div xml:id="modules">
 				<head>Scopes</head>
@@ -206,75 +182,129 @@
 					<head>Header and basic text structure scope</head>
 					<desc>Common to all schemata containing a TEI header</desc>
 					<specGrp xml:id="scope.teistructure">
-						<moduleRef key="core" include="resp"/>
-						<moduleRef key="header"
-							include="availability change creation fileDesc profileDesc publicationStmt sourceDesc teiHeader titleStmt"/>
 						<moduleRef key="textstructure" include="TEI body div text"/>
+						<!-- core -->
+						<elementRef key="resp"/>
+						<!-- header -->
+						<elementRef key="availability"/>
+						<elementRef key="change"/>
+						<elementRef key="creation"/>
+						<elementRef key="fileDesc"/>
+						<elementRef key="profileDesc"/>
+						<elementRef key="publicationStmt"/>
+						<elementRef key="sourceDesc"/>
+						<elementRef key="teiHeader"/>
+						<elementRef key="titleStmt"/>
 					</specGrp>
 				</div>
-				<!-- TODO: handShift, mod and subst don't actually belong to scope.transcr, but to the 
-						more specific scope.transcr.ms, but that leads to an error in the rng, "double inclusion of attribute classes" (does this have to do with the "predeclared" attribute in att.global.change?) -->
 				<div>
 					<head>Transcr specific scope</head>
 					<desc>Used for documents with transcriptions of source texts</desc>
 					<specGrp xml:id="scope.transcr">
-						<moduleRef key="core" include="addrLine address"/>
-						<moduleRef key="header"
-							include="edition editionStmt encodingDesc notesStmt revisionDesc textClass"/>
-						<moduleRef key="textstructure"
-							include="byline closer dateline epigraph opener postscript salute signed"/>
-						<moduleRef key="transcr" include="space supplied surplus handShift mod subst"/>
-						<moduleRef key="analysis" include="pc"/>
+						<moduleRef key="transcr" include="space supplied surplus"/>
 						<moduleRef key="msdescription"
 							include="additional collection msDesc msIdentifier notesStmt repository"/>
+						<moduleRef key="analysis" include="pc"/>
+						<!-- core -->
+						<elementRef key="addrLine"/>
+						<elementRef key="address"/>
+						<!-- header -->
+						<elementRef key="edition"/>
+						<elementRef key="editionStmt"/>
+						<elementRef key="encodingDesc"/>
+						<elementRef key="notesStmt"/>
+						<elementRef key="revisionDesc"/>
+						<elementRef key="textClass"/>
+						<!-- textstructure -->
+						<elementRef key="byline"/>
+						<elementRef key="closer"/>
+						<elementRef key="dateline"/>
+						<elementRef key="epigraph"/>
+						<elementRef key="opener"/>
+						<elementRef key="postscript"/>
+						<elementRef key="salute"/>
+						<elementRef key="signed"/>
 					</specGrp>
 				</div>
 				<div>
 					<head>Transcr ms specific scope</head>
 					<desc>Additional to scope.transcr, for ms sources</desc>
 					<specGrp xml:id="scope.transcr.ms">
-						<moduleRef key="header" include="extent handNote"/>
-						<moduleRef key="msdescription"
-							include="accMat handDesc origDate origPlace physDesc"/>
+						<!-- header -->
+						<elementRef key="extent"/>
+						<elementRef key="handNote"/>
+						<!-- msdescription -->
+						<elementRef key="accMat"/>
+						<elementRef key="handDesc"/>
+						<elementRef key="origDate"/>
+						<elementRef key="origPlace"/>
+						<elementRef key="physDesc"/>
+						<!-- transcr -->
+						<elementRef key="handShift"/>
+						<elementRef key="mod"/>
+						<elementRef key="subst"/>
 					</specGrp>
 				</div>
 				<div>
 					<head>Transcr bibl specific scope</head>
 					<desc>Additional to scope.transcr, for printed sources</desc>
 					<specGrp xml:id="scope.transcr.bibl">
-						<moduleRef key="core"
-							include="analytic biblScope biblStruct editor imprint monogr pubPlace publisher relatedItem series"
-						/>
+						<!-- core -->
+						<elementRef key="analytic"/>
+						<elementRef key="biblScope"/>
+						<elementRef key="biblStruct"/>
+						<elementRef key="editor"/>
+						<elementRef key="imprint"/>
+						<elementRef key="monogr"/>
+						<elementRef key="pubPlace"/>
+						<elementRef key="publisher"/>
+						<elementRef key="relatedItem"/>
+						<elementRef key="series"/>
 					</specGrp>
 				</div>
 				<div>
 					<head>State and eventList scope</head>
 					<desc>Common to schemata providing a state and a listEvent element (i.e. the person and org schemata)</desc>
 					<specGrp xml:id="scope.state_listEvent">
-						<moduleRef key="namesdates" include="event listEvent state"/>
+						<!-- namesdates -->
+						<elementRef key="event"/>
+						<elementRef key="listEvent"/>
+						<elementRef key="state"/>
 					</specGrp>
 				</div>
 				<div>
 					<head>Person specific scope</head>
 					<desc>Adds elements uniquely used in the person schema</desc>
 					<specGrp xml:id="scope.person">
-						<moduleRef key="core" include="gloss"/>
-						<moduleRef key="namesdates"
-							include="affiliation birth death faith occupation person residence sex"/>
+						<!-- core -->
+						<elementRef key="gloss"/>
+						<!-- namesdates -->
+						<elementRef key="affiliation"/>
+						<elementRef key="birth"/>
+						<elementRef key="death"/>
+						<elementRef key="faith"/>
+						<elementRef key="occupation"/>
+						<elementRef key="person"/>
+						<elementRef key="residence"/>
+						<elementRef key="sex"/>
 					</specGrp>
 				</div>
 				<div>
 					<head>Organization specific scope</head>
 					<desc>Adds elements uniquely used in the org schema</desc>
 					<specGrp xml:id="scope.org">
-						<moduleRef key="namesdates" include="org"/>
+						<!-- namesdates -->
+						<elementRef key="org"/>
+<!--						<moduleRef key="namesdates" include="org"/>-->
 					</specGrp>
 				</div>
 				<div>
 					<head>Performance specific scope</head>
 					<desc>Adds elements uniquely used in the performance schema</desc>
 					<specGrp xml:id="scope.performance">
-						<moduleRef key="namesdates" include="country settlement"/>
+						<!-- namesdates -->
+						<elementRef key="country"/>
+						<elementRef key="settlement"/>
 					</specGrp>
 				</div>
 			</div>

@@ -5,8 +5,6 @@
 	<head>Attribute classes</head>
 	<specGrp xml:id="edits.classes.att.shared">
 
-		<classSpec type="atts" module="core" ident="att.milestoneUnit" mode="delete"/>
-
 		<classSpec type="atts" module="msdescription" ident="att.msExcerpt" mode="delete"/>
 
 		<classSpec type="atts" module="header" ident="att.patternReplacement" mode="delete"/>

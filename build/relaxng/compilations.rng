@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2014-02-06T10:44:09Z. 
+Schema generated from ODD source 2014-02-06T19:45:02Z. 
 Edition: Version 2.6.0. Last updated on
 	20th January 2014, revision 12802
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
@@ -1242,6 +1242,51 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Claudia Heine</a:documentation>
       </choice>
    </define>
+   <define name="rswa_data.gndIdno">
+      <data type="string">
+         <param name="pattern">[\d]{8,9}[\dX]</param>
+      </data>
+   </define>
+   <define name="rswa_data.correspKey">
+      <data type="string">
+         <param name="pattern">c\d{5}</param>
+      </data>
+   </define>
+   <define name="rswa_data.receptionKey">
+      <data type="string">
+         <param name="pattern">r\d{5}</param>
+      </data>
+   </define>
+   <define name="rswa_data.performanceKey">
+      <data type="string">
+         <param name="pattern">a\d{5}</param>
+      </data>
+   </define>
+   <define name="rswa_data.workKey">
+      <data type="string">
+         <param name="pattern">w\d{4}</param>
+      </data>
+   </define>
+   <define name="rswa_data.personKey">
+      <data type="string">
+         <param name="pattern">p\d{5}</param>
+      </data>
+   </define>
+   <define name="rswa_data.eventKey">
+      <data type="string">
+         <param name="pattern">e\d{6}</param>
+      </data>
+   </define>
+   <define name="rswa_data.graphicKey">
+      <data type="string">
+         <param name="pattern">e\d{5}</param>
+      </data>
+   </define>
+   <define name="rswa_data.compilationKey">
+      <data type="string">
+         <param name="pattern">m\d{5}</param>
+      </data>
+   </define>
    <define name="rswa_macro.form.date">
       <ref name="rswa_date"/>
    </define>
@@ -1251,7 +1296,9 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
             <attribute name="type">
                <value>GND</value>
             </attribute>
-            <text/>
+            <optional>
+               <ref name="rswa_data.gndIdno"/>
+            </optional>
          </element>
       </oneOrMore>
    </define>
@@ -1261,7 +1308,9 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
             <attribute name="type">
                <value>RSQV</value>
             </attribute>
-            <text/>
+            <optional>
+               <ref name="rswa_data.gndIdno"/>
+            </optional>
          </element>
       </oneOrMore>
    </define>
@@ -3422,7 +3471,7 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
          </optional>
          <optional>
             <attribute name="hand">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">zeigt das Ende eines Bereichs auf, dass vom Element, welches dieses Attribut trägt, eingeleitet wird.</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gibt die Hand der Person an, die den Eingriff vorgenommen hat.</a:documentation>
                <ref name="rswa_data.pointer"/>
             </attribute>
          </optional>
@@ -3475,35 +3524,105 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
    </define>
    <define name="rswa_rs">
       <element name="rs">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"> [13.2.1.  3.5.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(verweisende Zeichenfolge) Mehrzweckelement; enthält eine Zeichenfolge, die allgemein etwas benennt oder auf etwas verweist. [13.2.1.  3.5.1. ]</a:documentation>
          <ref name="rswa_macro.phraseSeq"/>
+         <optional>
+            <choice>
+               <group>
+                  <attribute name="type">
+                     <value>compilation</value>
+                  </attribute>
+                  <attribute name="key">
+                     <ref name="rswa_data.compilationKey"/>
+                  </attribute>
+               </group>
+               <group>
+                  <attribute name="type">
+                     <value>letter</value>
+                  </attribute>
+                  <attribute name="key">
+                     <ref name="rswa_data.correspKey"/>
+                  </attribute>
+               </group>
+               <group>
+                  <attribute name="type">
+                     <value>person</value>
+                  </attribute>
+                  <attribute name="key">
+                     <ref name="rswa_data.personKey"/>
+                  </attribute>
+               </group>
+               <empty/>
+               <group>
+                  <attribute name="type">
+                     <value>event</value>
+                  </attribute>
+                  <attribute name="key">
+                     <ref name="rswa_data.eventKey"/>
+                  </attribute>
+               </group>
+               <group>
+                  <choice>
+                     <empty/>
+                     <group>
+                        <attribute name="type">
+                           <value>rez</value>
+                        </attribute>
+                        <attribute name="key">
+                           <ref name="rswa_data.receptionKey"/>
+                        </attribute>
+                     </group>
+                  </choice>
+                  <optional>
+                     <attribute name="pdf" ns="http://richard-strauss-ausgabe.de/ns/1.0">
+                        <ref name="rswa_data.pointer"/>
+                     </attribute>
+                  </optional>
+                  <optional>
+                     <attribute name="seite" ns="http://richard-strauss-ausgabe.de/ns/1.0">
+                        <ref name="rswa_data.text"/>
+                     </attribute>
+                  </optional>
+                  <optional>
+                     <attribute name="seitepdf" ns="http://richard-strauss-ausgabe.de/ns/1.0">
+                        <ref name="rswa_data.count"/>
+                     </attribute>
+                  </optional>
+                  <optional>
+                     <attribute name="confidence" ns="http://richard-strauss-ausgabe.de/ns/1.0">
+                        <ref name="rswa_data.word"/>
+                     </attribute>
+                  </optional>
+               </group>
+               <group>
+                  <attribute name="type">
+                     <value>graphic</value>
+                  </attribute>
+                  <attribute name="key">
+                     <ref name="rswa_data.graphicKey"/>
+                  </attribute>
+               </group>
+               <group>
+                  <attribute name="type">
+                     <value>work</value>
+                  </attribute>
+                  <optional>
+                     <attribute name="key">
+                        <ref name="rswa_data.workKey"/>
+                     </attribute>
+                  </optional>
+               </group>
+               <group>
+                  <attribute name="type">
+                     <value>performance</value>
+                  </attribute>
+                  <attribute name="key">
+                     <ref name="rswa_data.performanceKey"/>
+                  </attribute>
+               </group>
+            </choice>
+         </optional>
          <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.naming.attributes"/>
-         <ref name="rswa_att.typed.attributes"/>
-         <optional>
-            <attribute name="pdf" ns="http://richard-strauss-ausgabe.de/ns/1.0">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <data type="string"/>
-            </attribute>
-         </optional>
-         <optional>
-            <attribute name="seite" ns="http://richard-strauss-ausgabe.de/ns/1.0">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <data type="string"/>
-            </attribute>
-         </optional>
-         <optional>
-            <attribute name="seitepdf" ns="http://richard-strauss-ausgabe.de/ns/1.0">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <data type="string"/>
-            </attribute>
-         </optional>
-         <optional>
-            <attribute name="confidence" ns="http://richard-strauss-ausgabe.de/ns/1.0">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <ref name="rswa_data.word"/>
-            </attribute>
-         </optional>
          <empty/>
       </element>
    </define>

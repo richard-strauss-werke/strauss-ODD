@@ -49,7 +49,7 @@
 					<a:documentation>Kopie v.f.H.</a:documentation>
 					<rng:value>xerocopy</rng:value>
 					<a:documentation>Xerokopie</a:documentation>
-					<rng:value>microfilm</rng:value>
+					<rng:value>microform</rng:value>
 					<a:documentation>Mikroform</a:documentation>
 					<rng:value>other</rng:value>
 					<a:documentation>andere Kategorie</a:documentation>
@@ -83,5 +83,104 @@
 			</content>
 		</macroSpec>
 
+		<macroSpec ident="data.gndIdno">
+			<content>
+				<rng:data type="string">
+					<rng:param name="pattern">\d{1,9}\-?[\dX]</rng:param>
+				</rng:data>
+			</content>
+		</macroSpec>
+
+		<macroSpec ident="data.rsqvIdno">
+			<content>
+				<rng:data type="string">
+					<rng:param name="pattern">[a-z]\d{4,5}</rng:param>
+				</rng:data>
+			</content>
+		</macroSpec>
+
 	</specGrp>
 </div>
+
+<!-- currently not in use -->
+<!--<macroSpec ident="data.compilationKey">
+			<content>
+				<rng:data type="string">
+					<rng:param name="pattern">m\d{5}</rng:param>
+				</rng:data>
+			</content>
+		</macroSpec>
+		
+		<macroSpec ident="data.correspKey">
+			<content>
+				<rng:data type="string">
+					<rng:param name="pattern">c\d{5}</rng:param>
+				</rng:data>
+			</content>
+		</macroSpec>
+		
+		<macroSpec ident="data.personKey">
+			<content>
+				<rng:data type="string">
+					<rng:param name="pattern">p\d{5}</rng:param>
+				</rng:data>
+			</content>
+		</macroSpec>
+		
+		<macroSpec ident="data.orgKey">
+			<content>
+				<rng:data type="string">
+					<!-\- sic: p... -\->
+					<rng:param name="pattern">p\d{5}</rng:param>
+				</rng:data>
+			</content>
+		</macroSpec>
+		
+		<macroSpec ident="data.eventKey">
+			<content>
+				<rng:data type="string">
+					<rng:param name="pattern">e0\d{5}</rng:param>
+				</rng:data>
+			</content>
+		</macroSpec>
+		
+		<macroSpec ident="data.literatureKey">
+			<content>
+				<rng:data type="string">
+					<rng:param name="pattern">b\d{5}</rng:param>
+				</rng:data>
+			</content>
+		</macroSpec>
+		
+		<macroSpec ident="data.receptionKey">
+			<content>
+				<rng:data type="string">
+					<rng:param name="pattern">r\d{5}</rng:param>
+				</rng:data>
+			</content>
+		</macroSpec>
+		
+		<macroSpec ident="data.graphicKey">
+			<content>
+				<rng:data type="string">
+					<rng:param name="pattern">g\d{5}</rng:param>
+				</rng:data>
+			</content>
+		</macroSpec>
+		
+		<macroSpec ident="data.workKey">
+			<content>
+				<rng:data type="string">
+					<rng:param name="pattern">w\d{4}</rng:param>
+				</rng:data>
+			</content>
+		</macroSpec>
+		
+		<macroSpec ident="data.performanceKey">
+			<content>
+				<rng:data type="string">
+					<rng:param name="pattern">a\d{5}</rng:param>
+				</rng:data>
+			</content>
+		</macroSpec>
+-->
