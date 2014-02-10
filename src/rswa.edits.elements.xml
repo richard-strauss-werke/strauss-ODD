@@ -65,7 +65,7 @@
 		</div>
 		<div>
 			<head>Printed sources</head>
-			<desc>Contains specifications for transcriptions of manuscript printed</desc>
+			<desc>Contains specifications for transcriptions of printed sources</desc>
 			<specGrp xml:id="edits.elements.print">
 				<elementSpec ident="publicationStmt" mode="replace" module="header">
 					<content>
