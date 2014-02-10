@@ -10,24 +10,24 @@ Files
 
 The ODD file (see below for build instructions with ant):
 
-- src/rswa.MAIN.odd.xml
+- `src/rswa.MAIN.odd.xml`
 
 Low-level edits of various TEI components:
 
-- src/rswa.edits.classes.att.xml
-- src/rswa.edits.datatypes.xml
-- src/rswa.edits.elements.xml
-- src/rswa.edits.macros.xml
+- `src/rswa.edits.classes.att.xml`
+- `src/rswa.edits.datatypes.xml`
+- `src/rswa.edits.elements.xml`
+- `src/rswa.edits.macros.xml`
 
 TEI extensions:
 
-- src/rswa.extension.tasks.xml
-- src/rswa.extension.MEI.xml
-- src/rswa.extension.xinclude.xml
+- `src/rswa.extension.tasks.xml`
+- `src/rswa.extension.MEI.xml`
+- `src/rswa.extension.xinclude.xml`
 
-A copy of Raffaele Viglianti's modified version of the MEI ODD:
+A copy of [Raffaele Viglianti's modified version of the MEI ODD](https://github.com/TEI-Music-SIG/tei-mei/):
 
-- src/mei-source.xml
+- `src/mei-source.xml`
 
 
 Build instructions
@@ -35,7 +35,9 @@ Build instructions
 
 Required to follow these instructions: 
 - 1. ANT, 
-- 2. an installation of the oXygen XML editor, which contains the TEI build scripts and the necessary JAR files (if you don't use oXygen, you can get the JARs and the TEI stylesheets elsewhere).
+- 2. an installation of the oXygen XML editor, which contains the TEI build scripts and the necessary JAR files (if you don't use oXygen, you can get the JARs and the TEI stylesheets separately).
+
+Note: To ensure that the TEI script `odd2odd.xsl` can find the file `src/mei-source.xml`, either replace the source attributes in the file src/rswa.extension.MEI.xml by absolute paths, or, alternatively, copy `mei-source.xml` to `odd2odd.xsl`'s folder (for example, `C:/Program Files/Oxygen XML Editor 15/frameworks/tei/xml/tei/stylesheet/odds`; don't delete the copy in your odd folder.
 
 ```
 ant -f %buildfile% 
@@ -50,17 +52,16 @@ ant -f %buildfile%
 ```
 
 Example values:
-- %buildfile% - "C:\Program Files\Oxygen XML Editor 15\frameworks\tei\xml\tei\stylesheet\relaxng\build-to.xml"
-- %lib% - "C:\Program Files\Oxygen XML Editor 15\lib"
-- %defaultSource% - "\Program Files\Oxygen XML Editor 15\frameworks\tei\xml\tei\odd\p5subset.xml"
-- %inputFile% - "C:\test\rswa.MAIN.odd.xml"
-- %lang% - de
-- %outputFile% - "C:\test\persons.rng"
-- %selectedSchema% - schema.persons (for a list of possible schemata, see the file `rswa.MAIN.odd.xml`.
+- %buildfile% - `"C:\Program Files\Oxygen XML Editor 15\frameworks\tei\xml\tei\stylesheet\relaxng\build-to.xml"`
+- %lib% -  "C:\Program Files\Oxygen XML Editor 15\lib"`
+- %defaultSource% - `"\Program Files\Oxygen XML Editor 15\frameworks\tei\xml\tei\odd\p5subset.xml"`
+- %inputFile% - `"C:\test\rswa.MAIN.odd.xml"`
+- %lang% - `de`
+- %outputFile% - `"C:\test\persons.rng"`
+- %selectedSchema% - `schema.persons` (for a list of possible schemata, see the file `rswa.MAIN.odd.xml`.
 
 It should also be possible to build a schema by applying a transformation scenario to the ODD in oXygen. In this case, add selectedSchema to the transformation settings.
 
-Note: When odd2odd.xsl throws an error in the build process, it might be necessary to 1) replace the source attributes in the file src/rswa.extension.MEI.xml by absolute paths, or 2) alternatively, copy src/mei-source.xml to odd2odd.xsl's folder (for example, C:/Program Files/Oxygen XML Editor 15/frameworks/tei/xml/tei/stylesheet/odds; don't delete the copy in your odd folder.
 
 Credits
 -------

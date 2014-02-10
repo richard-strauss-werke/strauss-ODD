@@ -56,8 +56,8 @@
 			<div xml:id="introduction">
 				<head>Introduction</head>
 				<p>...</p>
-				<p>Individual dokuments will be available at the URL <ref target="http://richard-strauss-ausgabe.de/data/" xml:id="dataUrl">http://richard-strauss-ausgabe.de/data/</ref>, followed by the ID of the document.</p>
-				<p>In each document, all contributers are mentioned in the <gi>teiHeader</gi> with their corresponding xml:id under the title <title xml:id="contributorsResp">Vorbereitung der digitalen Edition</title></p>
+				<p>The documents can be accessed at <ref target="http://richard-strauss-ausgabe.de/data/" xml:id="dataUrl">http://richard-strauss-ausgabe.de/xml/</ref>.</p>
+				<p>The contributors involved in the preparation of a document are listed with their corresponding <att>xml:id</att> in the section <title xml:id="contributorsResp">Vorbereitung der digitalen Edition</title>.</p>
 			</div>
 			<div xml:id="schemata">
 				<head>Schema</head>
