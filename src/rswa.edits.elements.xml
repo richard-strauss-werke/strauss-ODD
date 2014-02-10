@@ -110,7 +110,7 @@
 
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="listBibl" module="core" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAttOrTextSomewhere"/>
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAttSomewhereOrTextSomewhere"/>
 				<gloss versionDate="2014-01-26" xml:lang="en">citation list</gloss>
 				<gloss versionDate="2014-01-26" xml:lang="ko">Bibliographie</gloss>
 				<desc versionDate="2014-01-26" xml:lang="en"
@@ -165,6 +165,7 @@
 			</elementSpec>
 
 			<elementSpec ident="textClass" module="header" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="wrapTextClassContentOrRemove"/>
 				<gloss versionDate="2005-01-14" xml:lang="en">text classification</gloss>
 				<gloss versionDate="2006-10-18" xml:lang="de">Textklassifikation</gloss>
 				<classes>
@@ -182,9 +183,31 @@
 			</elementSpec>
 
 			<!-- filter can be applied universally; no xpath look-up is needed -->
-			<elementSpec ident="persName" module="namesdates" mode="change">
+			<elementSpec ident="repository" module="namesdates" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="transformOrRemoveRepository"/>
+			</elementSpec>
+
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="collection" module="namesdates" mode="change">
 				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
 			</elementSpec>
+			
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="idno" module="header" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
+			</elementSpec>
+
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="accMat" module="msdescription" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
+			</elementSpec>
+
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="additions" module="msdescription" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
+			</elementSpec>
+
+
 
 			<elementSpec ident="state" module="namesdates" mode="change">
 				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAttOrChildContent"/>
@@ -384,7 +407,7 @@
 			</elementSpec>
 
 			<elementSpec ident="listEvent" module="namesdates" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAttOrTextSomewhere"/>
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAttSomewhereOrTextSomewhere"/>
 				<gloss versionDate="2014-01-26" xml:lang="en">list of events</gloss>
 				<gloss versionDate="2014-01-26" xml:lang="de">Ereignisliste</gloss>
 				<desc versionDate="2014-01-26" xml:lang="en"
@@ -591,8 +614,18 @@
 			</elementSpec>
 
 			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="persName" module="namesdates" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="onlyWithContentAddCert"/>
+			</elementSpec>
+			
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="orgName" module="namesdates" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="onlyWithContentAddCert"/>
+			</elementSpec>
+			
+			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="placeName" module="namesdates" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="onlyWithContentAddCert"/>
 			</elementSpec>
 
 			<!-- filter can be applied universally; no xpath look-up is needed -->
@@ -600,6 +633,13 @@
 				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
 			</elementSpec>
 
+			<elementSpec ident="origDate" module="msdescription" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandOrRemoveDate"/>
+			</elementSpec>
+			
+			<elementSpec ident="origPlace" module="msdescription" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandOrRemoveOrigPlace"/>
+			</elementSpec>
 
 
 			<elementSpec ident="notesStmt" mode="replace" module="header">
@@ -757,6 +797,7 @@
 			</elementSpec>
 
 			<elementSpec ident="additional" module="msdescription" mode="replace">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAttSomewhereOrTextSomewhere"/>
 				<content>
 					<rng:group>
 						<rng:element name="surrogates">
@@ -1031,6 +1072,7 @@
 			</elementSpec>
 
 			<elementSpec ident="revisionDesc" mode="replace" module="header">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
 				<content>
 					<rng:zeroOrMore>
 						<rng:element name="change">
@@ -1095,23 +1137,23 @@
 				<desc versionDate="2014-02-06" xml:lang="de"
 					>Mehrzweckelement; enthält eine Zeichenfolge, die etwas benennt oder auf etwas verweist.</desc>
 				<attList org="group">
-					<attDef mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0" ident="pdf">
+					<attDef mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0" ident="pdf" usage="opt">
 						<datatype>
 							<rng:ref name="data.pointer"/>
 						</datatype>
 					</attDef>
-					<attDef mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0" ident="seite">
+					<attDef mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0" ident="seite" usage="opt">
 						<datatype>
 							<rng:ref name="data.text"/>
 						</datatype>
 					</attDef>
-					<attDef mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0" ident="seitepdf">
+					<attDef mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0" ident="seitepdf" usage="opt">
 						<datatype>
 							<rng:ref name="data.count"/>
 						</datatype>
 					</attDef>
-					<attDef ident="confidence" mode="add" usage="opt"
-						ns="http://richard-strauss-ausgabe.de/ns/1.0">
+					<attDef ident="confidence" mode="add"
+						ns="http://richard-strauss-ausgabe.de/ns/1.0" usage="opt">
 						<datatype>
 							<rng:ref name="data.word"/>
 						</datatype>

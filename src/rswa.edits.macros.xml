@@ -22,7 +22,6 @@
 		</macroSpec>
 
 		<macroSpec ident="macro.form.gndIdno">
-			<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">GND idno</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">GND-idno</gloss>
 			<desc versionDate="2014-01-26" xml:lang="en"
@@ -50,7 +49,6 @@
 		</macroSpec>
 
 		<macroSpec ident="macro.form.rsqvIdno">
-			<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">RSQV idno</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">RSQV-idno</gloss>
 			<desc versionDate="2014-01-26" xml:lang="en"
@@ -78,7 +76,6 @@
 		</macroSpec>
 
 		<macroSpec ident="macro.form.isbnIdno">
-			<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">ISBN idno</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">ISBN-idno</gloss>
 			<desc versionDate="2014-01-26" xml:lang="en"
@@ -106,7 +103,6 @@
 		</macroSpec>
 
 		<macroSpec ident="macro.form.uagIdno">
-			<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">UAG idno</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">UAG-idno</gloss>
 			<desc versionDate="2014-01-26" xml:lang="en"
@@ -183,6 +179,7 @@
 				</rng:element>
 			</content>
 		</macroSpec>
+		
 
 		<macroSpec ident="macro.form.commentaryNote">
 			<equiv filter="rswa.xsl" mimeType="text/xsl" name="tightenCommentary"/>
@@ -283,7 +280,7 @@
 
 		<macroSpec ident="macro.form.figuresNote">
 			<equiv filter="rswa.xsl" mimeType="text/xsl"
-				name="keepOnlyWithDescendantAttOrTextSomewhere"/>
+				name="keepOnlyWithChildAttOrTextSomewhere"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">Figures</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">Abbildungen</gloss>
 			<desc versionDate="2014-01-26" xml:lang="en"
@@ -372,100 +369,119 @@
 			<content>
 				<rng:element name="listChange">
 					<rng:oneOrMore>
-						<rng:element name="change">
+						<rng:ref name="macro.form.creation.change_ms"/>
+					</rng:oneOrMore>
+				</rng:element>
+			</content>
+		</macroSpec>
+		
+		<macroSpec ident="macro.form.creation.change_ms">
+		<equiv filter="rswa.xsl" mimeType="text/xsl" name="processCreationChangeMs"/>
+			<content>
+				<rng:element name="change">
+					<rng:optional>
+						<rng:attribute name="type"/>
+					</rng:optional>
+					<rng:optional>
+						<rng:attribute name="id" ns="http://www.w3.org/XML/1998/namespace">
+							<rng:data type="ID"/>
+						</rng:attribute>
+					</rng:optional>
+
+					<rng:zeroOrMore>
+						<rng:element name="persName">
+							<rng:attribute name="role">
+								<rng:value>creator</rng:value>
+							</rng:attribute>
 							<rng:optional>
-								<rng:attribute name="type"/>
-							</rng:optional>
-							<rng:optional>
-								<rng:attribute name="id" ns="http://www.w3.org/XML/1998/namespace">
-									<rng:data type="ID"/>
+								<rng:attribute name="cert">
+									<rng:ref name="data.certainty"/>
 								</rng:attribute>
 							</rng:optional>
+							<rng:optional>
+								<rng:attribute name="key"/>
+							</rng:optional>
+							<rng:optional>
+								<rng:text/>
+							</rng:optional>
+						</rng:element>
+					</rng:zeroOrMore>
 
-							<rng:zeroOrMore>
-								<rng:element name="persName">
-									<rng:attribute name="role">
-										<rng:value>creator</rng:value>
-									</rng:attribute>
-									<rng:optional>
-										<rng:attribute name="cert">
-											<rng:ref name="data.certainty"/>
-										</rng:attribute>
-									</rng:optional>
-									<rng:optional>
-										<rng:attribute name="key"/>
-									</rng:optional>
-									<rng:optional>
-										<rng:text/>
-									</rng:optional>
-								</rng:element>
-							</rng:zeroOrMore>
+					<rng:zeroOrMore>
+						<rng:element name="orgName">
+							<rng:attribute name="role">
+								<rng:value>creator</rng:value>
+							</rng:attribute>
+							<rng:optional>
+								<rng:attribute name="cert">
+									<rng:ref name="data.certainty"/>
+								</rng:attribute>
+							</rng:optional>
+							<rng:optional>
+								<rng:attribute name="key"/>
+							</rng:optional>
+							<rng:optional>
+								<rng:text/>
+							</rng:optional>
+						</rng:element>
+					</rng:zeroOrMore>
 
-							<rng:zeroOrMore>
-								<rng:element name="orgName">
-									<rng:attribute name="role">
-										<rng:value>creator</rng:value>
-									</rng:attribute>
-									<rng:optional>
-										<rng:attribute name="cert">
-											<rng:ref name="data.certainty"/>
-										</rng:attribute>
-									</rng:optional>
-									<rng:optional>
-										<rng:attribute name="key"/>
-									</rng:optional>
-									<rng:optional>
-										<rng:text/>
-									</rng:optional>
-								</rng:element>
-							</rng:zeroOrMore>
+					<rng:zeroOrMore>
+						<rng:element name="persName">
+							<rng:attribute name="role">
+								<rng:value>addressee</rng:value>
+							</rng:attribute>
+							<rng:optional>
+								<rng:attribute name="cert">
+									<rng:ref name="data.certainty"/>
+								</rng:attribute>
+							</rng:optional>
+							<rng:optional>
+								<rng:attribute name="key"/>
+							</rng:optional>
+							<rng:optional>
+								<rng:text/>
+							</rng:optional>
+						</rng:element>
+					</rng:zeroOrMore>
 
-							<rng:zeroOrMore>
-								<rng:element name="persName">
-									<rng:attribute name="role">
-										<rng:value>addressee</rng:value>
+					<rng:zeroOrMore>
+						<rng:element name="orgName">
+							<rng:attribute name="role">
+								<rng:value>addressee</rng:value>
+							</rng:attribute>
+							<rng:optional>
+								<rng:attribute name="cert">
+									<rng:ref name="data.certainty"/>
+								</rng:attribute>
+							</rng:optional>
+							<rng:optional>
+								<rng:attribute name="key"/>
+							</rng:optional>
+							<rng:optional>
+								<rng:text/>
+							</rng:optional>
+						</rng:element>
+					</rng:zeroOrMore>
+					<rng:oneOrMore>
+						<rng:ref name="origDate"/>
+					</rng:oneOrMore>
+					<rng:oneOrMore>
+						<rng:ref name="origPlace"/>
+					</rng:oneOrMore>
+					<rng:oneOrMore>
+						<rng:element name="placeName">
+							<rng:group>
+								<rng:attribute name="role">
+									<rng:value>destination</rng:value>
+								</rng:attribute>
+								<rng:optional>
+									<rng:attribute name="cert">
+										<rng:ref name="data.certainty"/>
 									</rng:attribute>
-									<rng:optional>
-										<rng:attribute name="cert">
-											<rng:ref name="data.certainty"/>
-										</rng:attribute>
-									</rng:optional>
-									<rng:optional>
-										<rng:attribute name="key"/>
-									</rng:optional>
-									<rng:optional>
-										<rng:text/>
-									</rng:optional>
-								</rng:element>
-							</rng:zeroOrMore>
-
-							<rng:zeroOrMore>
-								<rng:element name="orgName">
-									<rng:attribute name="role">
-										<rng:value>addressee</rng:value>
-									</rng:attribute>
-									<rng:optional>
-										<rng:attribute name="cert">
-											<rng:ref name="data.certainty"/>
-										</rng:attribute>
-									</rng:optional>
-									<rng:optional>
-										<rng:attribute name="key"/>
-									</rng:optional>
-									<rng:optional>
-										<rng:text/>
-									</rng:optional>
-								</rng:element>
-							</rng:zeroOrMore>
-							<rng:oneOrMore>
-								<rng:ref name="origDate"/>
-							</rng:oneOrMore>
-							<rng:oneOrMore>
-								<rng:ref name="origPlace"/>
-							</rng:oneOrMore>
-							<rng:oneOrMore>
-								<rng:ref name="placeName"/>
-							</rng:oneOrMore>
+								</rng:optional>
+								<rng:text/>
+							</rng:group>
 						</rng:element>
 					</rng:oneOrMore>
 				</rng:element>
@@ -626,6 +642,7 @@
 		</macroSpec>
 
 		<macroSpec ident="macro.form.noteParagraph">
+			<desc versionDate="2014-02-07" xml:lang="en">Defines the content allowed in a metadata form note.</desc>
 			<content>
 				<rng:zeroOrMore>
 					<rng:choice>

@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-
 <div xmlns="http://www.tei-c.org/ns/1.0">
 	<head>Attribute classes</head>
 	<specGrp xml:id="edits.classes.att.shared">
-
 		<classSpec type="atts" module="msdescription" ident="att.msExcerpt" mode="delete"/>
-
 		<classSpec type="atts" module="header" ident="att.patternReplacement" mode="delete"/>
-
 		<classSpec type="atts" module="tei" ident="att.breaking" mode="delete"/>
 		<classSpec type="atts" module="tei" ident="att.cReferencing" mode="delete"/>
 		<classSpec type="atts" module="tei" ident="att.damaged" mode="delete"/>
@@ -33,24 +29,29 @@
 		<classSpec type="atts" module="tei" ident="att.fragmentable" mode="delete"/>
 		<classSpec type="atts" module="tei" ident="att.global" mode="change">
 			<attList>
-				<attDef ident="lang" mode="delete"/>
+				<attDef ident="xml:lang" mode="delete"/>
 				<attDef ident="style" mode="delete"/>
 				<attDef ident="rendition" mode="delete"/>
-				<attDef ident="base" mode="delete"/>
-				<attDef ident="space" mode="delete"/>
+				<attDef ident="xml:base" mode="delete"/>
+				<attDef ident="xml:space" mode="delete"/>
 			</attList>
 		</classSpec>
 		<classSpec type="atts" module="tei" ident="att.global.analytic" mode="delete"/>
-		
+		<classSpec type="atts" module="tei" ident="att.global.linking" mode="change">
+			<attList>
+				<attDef ident="synch" mode="delete"/>
+				<attDef ident="next" mode="delete"/>
+				<attDef ident="prev" mode="delete"/>
+				<attDef ident="select" mode="delete"/>
+			</attList>
+		</classSpec>
 		<classSpec type="atts" module="tei" ident="att.internetMedia" mode="delete"/>
 		<classSpec type="atts" module="tei" ident="att.interpLike" mode="delete"/>
-		<classSpec type="atts" module="tei" ident="att.media" mode="delete"/>
 		<classSpec type="atts" module="tei" ident="att.naming" mode="change">
 			<attList>
 				<attDef ident="nymRef" mode="delete"/>
 			</attList>
 		</classSpec>
-		
 		<classSpec type="atts" module="tei" ident="att.personal" mode="change">
 			<attList>
 				<attDef ident="full" mode="delete"/>
@@ -94,9 +95,7 @@
 		<classSpec type="atts" module="tei" ident="att.styleDef" mode="delete"/>
 		<classSpec type="atts" module="tei" ident="att.timed" mode="delete"/>
 		<classSpec type="atts" module="tei" ident="att.translatable" mode="delete"/>
-		
 		<classSpec type="atts" module="transcr" ident="att.coordinated" mode="delete"/>
 		<classSpec type="atts" module="transcr" ident="att.global.facs" mode="delete"/>
-		
 	</specGrp>
 </div>

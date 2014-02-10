@@ -10,18 +10,31 @@
 				<title xml:lang="en">Encoding Guidelines</title>
 				<title xml:lang="de">Codierungsrichtlinien</title>
 				<author xml:id="aerhard">Alexander Erhard</author>
+				<!-- template for the final version of the TEI files:-->
 				<funder>
-					<ref target="http://www.badw.de"
-						>Bayerische Akademie der Wissenschaften, München</ref>
+					<name ref="http://www.badw.de">Bayerische Akademie der Wissenschaften</name>
+					<address>
+						<street>Alfons-Goppel-Straße 11</street>
+						<postCode>80539</postCode>
+						<placeName>
+							<country>D</country>
+							<settlement>München</settlement>
+						</placeName>
+					</address>
 				</funder>
 			</titleStmt>
+			<!-- template for the final version of the TEI files:-->
 			<publicationStmt>
-				<distributor>Kritische Ausgabe der Werke von Richard Strauss</distributor>
+				<distributor>Forschungsstelle zur Edition der Werke von Richard Strauss</distributor>
 				<availability status="restricted">
 					<p>This work is licensed under a <ref target="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</ref>.</p>
 				</availability>
 				<pubPlace>München</pubPlace>
 			</publicationStmt>
+			<!-- template for the the final version of the TEI files:-->
+			<seriesStmt>
+				<title>Digitale Dokumentensammlung zum Werk von Richard Strauss</title>
+			</seriesStmt>
 			<sourceDesc>
 				<p>based on the TEI P5 specifications at <ref target="http://www.tei-c.org/release/xml/tei/odd/p5subset.xml">http://www.tei-c.org/release/xml/tei/odd/p5subset.xml</ref>, this ODD integrates Raffaele Viglianti's prefixed version of the MEI's "mei-source.xml" (<ref target="https://github.com/TEI-Music-SIG/tei-mei/">tei-mei</ref>), the TEI-C's <ref target="http://www.tei-c.org/release/xml/tei/custom/odd/tei_xinclude.odd">XInclude ODD</ref>, and draws on specifications in Peter Stadler's <ref target="https://github.com/Edirom/WeGA-ODD">Carl-Maria-von-Weber-Gesamtausgabe ODDs</ref>.</p>
 			</sourceDesc>
@@ -39,15 +52,18 @@
 	</teiHeader>
 	<text>
 		<body>
+			<!-- ref and title used as templates for the final version of the TEI files:-->
 			<div xml:id="introduction">
 				<head>Introduction</head>
 				<p>...</p>
+				<p>Individual dokuments will be available at the URL <ref target="http://richard-strauss-ausgabe.de/data/" xml:id="dataUrl">http://richard-strauss-ausgabe.de/data/</ref>, followed by the ID of the document.</p>
+				<p>In each document, all contributers are mentioned in the <gi>teiHeader</gi> with their corresponding xml:id under the title <title xml:id="contributorsResp">Vorbereitung der digitalen Edition</title></p>
 			</div>
 			<div xml:id="schemata">
 				<head>Schema</head>
 				<schemaSpec ident="schema.global" xml:lang="en" start="TEI person org performance bibl"
 					prefix="rswa_">
-					<desc>Comprehensive schema encompassing all the other schemata scopes.</desc>
+					<desc>Comprehensive schema encompassing all the other schemata.</desc>
 					<specGrpRef target="#scope.shared"/>
 					<specGrpRef target="#scope.teistructure"/>
 					<specGrpRef target="#scope.transcr"/>
@@ -160,9 +176,9 @@
 					<specGrpRef target="#edits.macros.shared"/>
 				</schemaSpec>
 			</div>
-			<div xml:id="modules">
+			<div xml:id="scopes">
 				<head>Scopes</head>
-				<desc>The 'scopes' below mostly define thematically grouped collections of modules / elements. Combined, they add up to the full scope of a schema. In the whole 'scopes' section, each element may only be cited once.</desc>
+				<desc>The 'scopes' below mostly define thematically grouped collections of modules / elements. Combined, they add up to the full scope of a schema. In the whole 'scopes' section, each module and each element may only be cited once.</desc>
 
 				<div>
 					<head>Shared scope</head>
@@ -198,8 +214,8 @@
 					</specGrp>
 				</div>
 				<div>
-					<head>Transcr specific scope</head>
-					<desc>Used for documents with transcriptions of source texts</desc>
+					<head>Transcription specific scope</head>
+					<desc>Depends on scope.teistructure</desc>
 					<specGrp xml:id="scope.transcr">
 						<moduleRef key="transcr" include="space supplied surplus"/>
 						<moduleRef key="msdescription"
@@ -227,14 +243,15 @@
 					</specGrp>
 				</div>
 				<div>
-					<head>Transcr ms specific scope</head>
-					<desc>Additional to scope.transcr, for ms sources</desc>
+					<head>Manuscript specific scope</head>
+					<desc>Depends on scope.transcr</desc>
 					<specGrp xml:id="scope.transcr.ms">
 						<!-- header -->
 						<elementRef key="extent"/>
 						<elementRef key="handNote"/>
 						<!-- msdescription -->
 						<elementRef key="accMat"/>
+						<elementRef key="additions"/>
 						<elementRef key="handDesc"/>
 						<elementRef key="origDate"/>
 						<elementRef key="origPlace"/>
@@ -246,8 +263,8 @@
 					</specGrp>
 				</div>
 				<div>
-					<head>Transcr bibl specific scope</head>
-					<desc>Additional to scope.transcr, for printed sources</desc>
+					<head>Print specific scope</head>
+					<desc>Depends on scope.transcr</desc>
 					<specGrp xml:id="scope.transcr.bibl">
 						<!-- core -->
 						<elementRef key="analytic"/>
@@ -295,7 +312,6 @@
 					<specGrp xml:id="scope.org">
 						<!-- namesdates -->
 						<elementRef key="org"/>
-<!--						<moduleRef key="namesdates" include="org"/>-->
 					</specGrp>
 				</div>
 				<div>

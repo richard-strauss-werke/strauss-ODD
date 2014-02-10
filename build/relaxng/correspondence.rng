@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2014-02-07T11:16:19Z. 
+Schema generated from ODD source 2014-02-08T12:26:33Z. 
 Edition: Version 2.6.0. Last updated on
 	20th January 2014, revision 12802
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
@@ -109,6 +109,11 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <data type="language"/>
          <value/>
       </choice>
+   </define>
+   <define name="rswa_data.outputMeasurement">
+      <data type="token">
+         <param name="pattern">[\-+]?\d+(\.\d+)?(%|cm|mm|in|pt|pc|px|em|ex|gd|rem|vw|vh|vm)</param>
+      </data>
    </define>
    <define name="rswa_data.pointer">
       <data type="anyURI"/>
@@ -977,6 +982,21 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          </element>
       </zeroOrMore>
    </define>
+   <define name="rswa_macro.form.placeNameDestination">
+      <element name="placeName">
+         <group>
+            <attribute name="role">
+               <value>destination</value>
+            </attribute>
+            <optional>
+               <attribute name="cert">
+                  <ref name="rswa_data.certainty"/>
+               </attribute>
+            </optional>
+            <text/>
+         </group>
+      </element>
+   </define>
    <define name="rswa_macro.form.commentaryNote">
       <element name="note">
          <attribute name="type">
@@ -1034,97 +1054,100 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
    <define name="rswa_macro.form.creation_ms">
       <element name="listChange">
          <oneOrMore>
-            <element name="change">
+            <ref name="rswa_macro.form.creation.change_ms"/>
+         </oneOrMore>
+      </element>
+   </define>
+   <define name="rswa_macro.form.creation.change_ms">
+      <element name="change">
+         <optional>
+            <attribute name="type"/>
+         </optional>
+         <optional>
+            <attribute name="id" ns="http://www.w3.org/XML/1998/namespace">
+               <data type="ID"/>
+            </attribute>
+         </optional>
+         <zeroOrMore>
+            <element name="persName">
+               <attribute name="role">
+                  <value>creator</value>
+               </attribute>
                <optional>
-                  <attribute name="type"/>
-               </optional>
-               <optional>
-                  <attribute name="id" ns="http://www.w3.org/XML/1998/namespace">
-                     <data type="ID"/>
+                  <attribute name="cert">
+                     <ref name="rswa_data.certainty"/>
                   </attribute>
                </optional>
-               <zeroOrMore>
-                  <element name="persName">
-                     <attribute name="role">
-                        <value>creator</value>
-                     </attribute>
-                     <optional>
-                        <attribute name="cert">
-                           <ref name="rswa_data.certainty"/>
-                        </attribute>
-                     </optional>
-                     <optional>
-                        <attribute name="key"/>
-                     </optional>
-                     <optional>
-                        <text/>
-                     </optional>
-                  </element>
-               </zeroOrMore>
-               <zeroOrMore>
-                  <element name="orgName">
-                     <attribute name="role">
-                        <value>creator</value>
-                     </attribute>
-                     <optional>
-                        <attribute name="cert">
-                           <ref name="rswa_data.certainty"/>
-                        </attribute>
-                     </optional>
-                     <optional>
-                        <attribute name="key"/>
-                     </optional>
-                     <optional>
-                        <text/>
-                     </optional>
-                  </element>
-               </zeroOrMore>
-               <zeroOrMore>
-                  <element name="persName">
-                     <attribute name="role">
-                        <value>addressee</value>
-                     </attribute>
-                     <optional>
-                        <attribute name="cert">
-                           <ref name="rswa_data.certainty"/>
-                        </attribute>
-                     </optional>
-                     <optional>
-                        <attribute name="key"/>
-                     </optional>
-                     <optional>
-                        <text/>
-                     </optional>
-                  </element>
-               </zeroOrMore>
-               <zeroOrMore>
-                  <element name="orgName">
-                     <attribute name="role">
-                        <value>addressee</value>
-                     </attribute>
-                     <optional>
-                        <attribute name="cert">
-                           <ref name="rswa_data.certainty"/>
-                        </attribute>
-                     </optional>
-                     <optional>
-                        <attribute name="key"/>
-                     </optional>
-                     <optional>
-                        <text/>
-                     </optional>
-                  </element>
-               </zeroOrMore>
-               <oneOrMore>
-                  <ref name="rswa_origDate"/>
-               </oneOrMore>
-               <oneOrMore>
-                  <ref name="rswa_origPlace"/>
-               </oneOrMore>
-               <oneOrMore>
-                  <ref name="rswa_placeName"/>
-               </oneOrMore>
+               <optional>
+                  <attribute name="key"/>
+               </optional>
+               <optional>
+                  <text/>
+               </optional>
             </element>
+         </zeroOrMore>
+         <zeroOrMore>
+            <element name="orgName">
+               <attribute name="role">
+                  <value>creator</value>
+               </attribute>
+               <optional>
+                  <attribute name="cert">
+                     <ref name="rswa_data.certainty"/>
+                  </attribute>
+               </optional>
+               <optional>
+                  <attribute name="key"/>
+               </optional>
+               <optional>
+                  <text/>
+               </optional>
+            </element>
+         </zeroOrMore>
+         <zeroOrMore>
+            <element name="persName">
+               <attribute name="role">
+                  <value>addressee</value>
+               </attribute>
+               <optional>
+                  <attribute name="cert">
+                     <ref name="rswa_data.certainty"/>
+                  </attribute>
+               </optional>
+               <optional>
+                  <attribute name="key"/>
+               </optional>
+               <optional>
+                  <text/>
+               </optional>
+            </element>
+         </zeroOrMore>
+         <zeroOrMore>
+            <element name="orgName">
+               <attribute name="role">
+                  <value>addressee</value>
+               </attribute>
+               <optional>
+                  <attribute name="cert">
+                     <ref name="rswa_data.certainty"/>
+                  </attribute>
+               </optional>
+               <optional>
+                  <attribute name="key"/>
+               </optional>
+               <optional>
+                  <text/>
+               </optional>
+            </element>
+         </zeroOrMore>
+         <oneOrMore>
+            <ref name="rswa_origDate"/>
+         </oneOrMore>
+         <oneOrMore>
+            <ref name="rswa_origPlace"/>
+         </oneOrMore>
+         <oneOrMore>
+            <ref name="rswa_macro.form.placeNameDestination"/>
          </oneOrMore>
       </element>
    </define>
@@ -1368,39 +1391,9 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.global.attributes">
       <ref name="rswa_att.global.linking.attributes"/>
       <ref name="rswa_att.global.change.attributes"/>
-      <ref name="rswa_att.global.attribute.lang"/>
-      <ref name="rswa_att.global.attribute.base"/>
-      <ref name="rswa_att.global.attribute.space"/>
       <ref name="rswa_att.global.attribute.xmlid"/>
       <ref name="rswa_att.global.attribute.n"/>
-      <ref name="rswa_att.global.attribute.xmllang"/>
       <ref name="rswa_att.global.attribute.rend"/>
-      <ref name="rswa_att.global.attribute.xmlbase"/>
-      <ref name="rswa_att.global.attribute.xmlspace"/>
-   </define>
-   <define name="rswa_att.global.attribute.lang">
-      <optional>
-         <attribute name="lang">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <text/>
-         </attribute>
-      </optional>
-   </define>
-   <define name="rswa_att.global.attribute.base">
-      <optional>
-         <attribute name="base">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <text/>
-         </attribute>
-      </optional>
-   </define>
-   <define name="rswa_att.global.attribute.space">
-      <optional>
-         <attribute name="space">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <text/>
-         </attribute>
-      </optional>
    </define>
    <define name="rswa_att.global.attribute.xmlid">
       <optional>
@@ -1418,14 +1411,6 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.global.attribute.xmllang">
-      <optional>
-         <attribute name="xml:lang">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <ref name="rswa_data.language"/>
-         </attribute>
-      </optional>
-   </define>
    <define name="rswa_att.global.attribute.rend">
       <optional>
          <attribute name="rend">
@@ -1435,27 +1420,6 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
                   <ref name="rswa_data.word"/>
                </oneOrMore>
             </list>
-         </attribute>
-      </optional>
-   </define>
-   <define name="rswa_att.global.attribute.xmlbase">
-      <optional>
-         <attribute name="xml:base">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <ref name="rswa_data.pointer"/>
-         </attribute>
-      </optional>
-   </define>
-   <define name="rswa_att.global.attribute.xmlspace">
-      <optional>
-         <attribute name="xml:space">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <choice>
-               <value>default</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">signals that the application's default white-space processing modes are acceptable</a:documentation>
-               <value>preserve</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the intent that applications preserve all white space</a:documentation>
-            </choice>
          </attribute>
       </optional>
    </define>
@@ -1531,6 +1495,35 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
                <value>minor</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
             </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="rswa_att.media.attributes">
+      <ref name="rswa_att.media.attribute.width"/>
+      <ref name="rswa_att.media.attribute.height"/>
+      <ref name="rswa_att.media.attribute.scale"/>
+   </define>
+   <define name="rswa_att.media.attribute.width">
+      <optional>
+         <attribute name="width">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Where the media are displayed, indicates the display width</a:documentation>
+            <ref name="rswa_data.outputMeasurement"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="rswa_att.media.attribute.height">
+      <optional>
+         <attribute name="height">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Where the media are displayed, indicates the display height</a:documentation>
+            <ref name="rswa_data.outputMeasurement"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="rswa_att.media.attribute.scale">
+      <optional>
+         <attribute name="scale">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Where the media are displayed, indicates a scale factor to be applied when generating the desired display size</a:documentation>
+            <ref name="rswa_data.numeric"/>
          </attribute>
       </optional>
    </define>
@@ -2983,22 +2976,12 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
       <element name="del">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Löschung) enthält einen Buchstaben, ein Wort, oder eine Passage die gestrichen wurde, die als gelöscht markiert, oder auf andere Weise als überflüssig oder falsch in der Textkopie von einem Autor, Schreiber, Kommentator oder Korrektor angegeben wird [3.4.3. ]</a:documentation>
          <ref name="rswa_macro.paraContent"/>
-         <ref name="rswa_att.global.attribute.lang"/>
-         <ref name="rswa_att.global.attribute.base"/>
-         <ref name="rswa_att.global.attribute.space"/>
          <ref name="rswa_att.global.attribute.xmlid"/>
          <ref name="rswa_att.global.attribute.n"/>
-         <ref name="rswa_att.global.attribute.xmllang"/>
-         <ref name="rswa_att.global.attribute.xmlbase"/>
-         <ref name="rswa_att.global.attribute.xmlspace"/>
          <ref name="rswa_att.global.linking.attribute.corresp"/>
-         <ref name="rswa_att.global.linking.attribute.synch"/>
          <ref name="rswa_att.global.linking.attribute.sameAs"/>
          <ref name="rswa_att.global.linking.attribute.copyOf"/>
-         <ref name="rswa_att.global.linking.attribute.next"/>
-         <ref name="rswa_att.global.linking.attribute.prev"/>
          <ref name="rswa_att.global.linking.attribute.exclude"/>
-         <ref name="rswa_att.global.linking.attribute.select"/>
          <ref name="rswa_att.global.change.attribute.change"/>
          <optional>
             <attribute name="rend">
@@ -3303,6 +3286,7 @@ Empfohlene Werte sind: 1] ordered; 2] bulleted; 3] simple; 4] gloss</a:documenta
             <ref name="rswa_model.descLike"/>
          </zeroOrMore>
          <ref name="rswa_att.global.attributes"/>
+         <ref name="rswa_att.media.attributes"/>
          <ref name="rswa_att.resourced.attributes"/>
          <empty/>
       </element>
@@ -3626,29 +3610,13 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rswa_att.global.linking.attributes">
       <ref name="rswa_att.global.linking.attribute.corresp"/>
-      <ref name="rswa_att.global.linking.attribute.synch"/>
       <ref name="rswa_att.global.linking.attribute.sameAs"/>
       <ref name="rswa_att.global.linking.attribute.copyOf"/>
-      <ref name="rswa_att.global.linking.attribute.next"/>
-      <ref name="rswa_att.global.linking.attribute.prev"/>
       <ref name="rswa_att.global.linking.attribute.exclude"/>
-      <ref name="rswa_att.global.linking.attribute.select"/>
    </define>
    <define name="rswa_att.global.linking.attribute.corresp">
       <optional>
          <attribute name="corresp">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <list>
-               <oneOrMore>
-                  <ref name="rswa_data.pointer"/>
-               </oneOrMore>
-            </list>
-         </attribute>
-      </optional>
-   </define>
-   <define name="rswa_att.global.linking.attribute.synch">
-      <optional>
-         <attribute name="synch">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
             <list>
                <oneOrMore>
@@ -3674,37 +3642,9 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.global.linking.attribute.next">
-      <optional>
-         <attribute name="next">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <ref name="rswa_data.pointer"/>
-         </attribute>
-      </optional>
-   </define>
-   <define name="rswa_att.global.linking.attribute.prev">
-      <optional>
-         <attribute name="prev">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <ref name="rswa_data.pointer"/>
-         </attribute>
-      </optional>
-   </define>
    <define name="rswa_att.global.linking.attribute.exclude">
       <optional>
          <attribute name="exclude">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <list>
-               <oneOrMore>
-                  <ref name="rswa_data.pointer"/>
-               </oneOrMore>
-            </list>
-         </attribute>
-      </optional>
-   </define>
-   <define name="rswa_att.global.linking.attribute.select">
-      <optional>
-         <attribute name="select">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
             <list>
                <oneOrMore>

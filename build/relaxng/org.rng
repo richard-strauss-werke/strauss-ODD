@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2014-02-07T11:16:40Z. 
+Schema generated from ODD source 2014-02-07T13:32:58Z. 
 Edition: Version 2.6.0. Last updated on
 	20th January 2014, revision 12802
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
@@ -92,6 +92,11 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <data type="language"/>
          <value/>
       </choice>
+   </define>
+   <define name="rswa_data.outputMeasurement">
+      <data type="token">
+         <param name="pattern">[\-+]?\d+(\.\d+)?(%|cm|mm|in|pt|pc|px|em|ex|gd|rem|vw|vh|vm)</param>
+      </data>
    </define>
    <define name="rswa_data.pointer">
       <data type="anyURI"/>
@@ -520,6 +525,35 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
                <value>preserve</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the intent that applications preserve all white space</a:documentation>
             </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="rswa_att.media.attributes">
+      <ref name="rswa_att.media.attribute.width"/>
+      <ref name="rswa_att.media.attribute.height"/>
+      <ref name="rswa_att.media.attribute.scale"/>
+   </define>
+   <define name="rswa_att.media.attribute.width">
+      <optional>
+         <attribute name="width">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Where the media are displayed, indicates the display width</a:documentation>
+            <ref name="rswa_data.outputMeasurement"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="rswa_att.media.attribute.height">
+      <optional>
+         <attribute name="height">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Where the media are displayed, indicates the display height</a:documentation>
+            <ref name="rswa_data.outputMeasurement"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="rswa_att.media.attribute.scale">
+      <optional>
+         <attribute name="scale">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Where the media are displayed, indicates a scale factor to be applied when generating the desired display size</a:documentation>
+            <ref name="rswa_data.numeric"/>
          </attribute>
       </optional>
    </define>
@@ -2113,6 +2147,7 @@ Empfohlene Werte sind: 1] ordered; 2] bulleted; 3] simple; 4] gloss</a:documenta
             <ref name="rswa_model.descLike"/>
          </zeroOrMore>
          <ref name="rswa_att.global.attributes"/>
+         <ref name="rswa_att.media.attributes"/>
          <ref name="rswa_att.resourced.attributes"/>
          <empty/>
       </element>
