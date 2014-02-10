@@ -37,7 +37,7 @@ Required to follow these instructions:
 - 1. ANT, 
 - 2. an installation of the oXygen XML editor, which contains the TEI build scripts and the necessary JAR files (if you don't use oXygen, you can get the JARs and the TEI stylesheets separately).
 
-Note: To ensure that the TEI script `odd2odd.xsl` can find the file `src/mei-source.xml`, either replace the source attributes in the file `src/rswa.extension.MEI.xml` by absolute paths, or, alternatively, copy `mei-source.xml` to `odd2odd.xsl`'s folder (for example, `C:/Program Files/Oxygen XML Editor 15/frameworks/tei/xml/tei/stylesheet/odds`; don't delete the copy in your strauss-ODD folder.
+Note: To ensure that the TEI script `odd2odd.xsl` can find the file `mei-source.xml`, either replace the source attributes in the file `src/rswa.extension.MEI.xml` by absolute paths, or, alternatively, copy `mei-source.xml` to `odd2odd.xsl`'s folder (for example, `C:/Program Files/Oxygen XML Editor 15/frameworks/tei/xml/tei/stylesheet/odds`); keep the copy in your strauss-ODD folder.
 
 ```
 ant -f %buildfile% 
@@ -53,7 +53,7 @@ ant -f %buildfile%
 
 Example values:
 - %buildfile% - `"C:\Program Files\Oxygen XML Editor 15\frameworks\tei\xml\tei\stylesheet\relaxng\build-to.xml"`
-- %lib% -  "C:\Program Files\Oxygen XML Editor 15\lib"`
+- %lib% - `"C:\Program Files\Oxygen XML Editor 15\lib"`
 - %defaultSource% - `"\Program Files\Oxygen XML Editor 15\frameworks\tei\xml\tei\odd\p5subset.xml"`
 - %inputFile% - `"C:\test\rswa.MAIN.odd.xml"`
 - %lang% - `de`
