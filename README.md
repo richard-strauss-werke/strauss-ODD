@@ -37,7 +37,7 @@ Required to follow these instructions:
 - 1. ANT, 
 - 2. an installation of the oXygen XML editor, which contains the TEI build scripts and the necessary JAR files (if you don't use oXygen, you can get the JARs and the TEI stylesheets separately).
 
-Note: To ensure that the TEI script `odd2odd.xsl` can find the file `src/mei-source.xml`, either replace the source attributes in the file src/rswa.extension.MEI.xml by absolute paths, or, alternatively, copy `mei-source.xml` to `odd2odd.xsl`'s folder (for example, `C:/Program Files/Oxygen XML Editor 15/frameworks/tei/xml/tei/stylesheet/odds`; don't delete the copy in your odd folder.
+Note: To ensure that the TEI script `odd2odd.xsl` can find the file `src/mei-source.xml`, either replace the source attributes in the file `src/rswa.extension.MEI.xml` by absolute paths, or, alternatively, copy `mei-source.xml` to `odd2odd.xsl`'s folder (for example, `C:/Program Files/Oxygen XML Editor 15/frameworks/tei/xml/tei/stylesheet/odds`; don't delete the copy in your strauss-ODD folder.
 
 ```
 ant -f %buildfile% 
@@ -60,7 +60,7 @@ Example values:
 - %outputFile% - `"C:\test\persons.rng"`
 - %selectedSchema% - `schema.persons` (for a list of possible schemata, see the file `rswa.MAIN.odd.xml`.
 
-It should also be possible to build a schema by applying a transformation scenario to the ODD in oXygen. In this case, add selectedSchema to the transformation settings.
+It should also be possible to build a schema by applying a transformation scenario to the ODD in oXygen. In this case, add the selectedSchema parameter to the transformation settings.
 
 
 Credits
