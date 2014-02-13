@@ -280,7 +280,7 @@
 
 		<macroSpec ident="macro.form.figuresNote">
 			<equiv filter="rswa.xsl" mimeType="text/xsl"
-				name="keepOnlyWithChildAttOrTextSomewhere"/>
+				name="keepOnlyWithChildAttOrAnyText"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">Figures</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">Abbildungen</gloss>
 			<desc versionDate="2014-01-26" xml:lang="en"
@@ -509,6 +509,26 @@
 						</rng:element>
 					</rng:group>
 				</rng:element>
+			</content>
+		</macroSpec>
+
+		<macroSpec ident="macro.form.revisionDescChange">
+			<equiv filter="rswa.xsl" mimeType="text/xsl" name="processRevisionDescChange"/>
+			<content>
+				<rng:element name="change">
+					<rng:optional>
+						<rng:attribute name="when"/>
+						<rng:attribute name="who">
+							<rng:ref name="data.encoding-staff"/>
+						</rng:attribute>
+					</rng:optional>
+					<rng:optional>
+						<rng:attribute name="type"/>
+					</rng:optional>
+					<rng:oneOrMore>
+						<rng:ref name="p"/>
+					</rng:oneOrMore>
+				</rng:element>				
 			</content>
 		</macroSpec>
 

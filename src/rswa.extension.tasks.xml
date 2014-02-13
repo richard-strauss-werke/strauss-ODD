@@ -26,7 +26,7 @@
 			<attList org="group">
 				<attDef mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0" ident="pwho">
 					<datatype>
-						<rng:data type="string"/>
+						<rng:ref name="data.encoding-staff"/>
 					</datatype>
 				</attDef>
 				<attDef mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0" ident="pwhen">
@@ -47,7 +47,7 @@
 				</attDef>
 				<attDef ident="who" mode="add">
 					<datatype>
-						<rng:data type="string"/>
+						<rng:ref name="data.encoding-staff"/>
 					</datatype>
 				</attDef>
 			</attList>

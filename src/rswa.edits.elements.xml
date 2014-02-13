@@ -13,6 +13,7 @@
 			<desc>presents the specifications following as alternatives</desc>
 			<specGrp xml:id="edits.elements.global">
 			<elementSpec ident="publicationStmt" module="header" mode="replace">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandPublicationStmt"/>
 				<content>
 					<rng:choice>
 						<rng:ref name="macro.form.publicationStmt_ms"/>
@@ -47,6 +48,7 @@
 			<desc>Contains specifications for transcriptions of manuscript sources</desc>
 			<specGrp xml:id="edits.elements.ms">
 				<elementSpec ident="publicationStmt" module="header" mode="replace">
+					<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandPublicationStmt"/>
 					<content>
 						<rng:ref name="macro.form.publicationStmt_ms"/>
 					</content>
@@ -68,6 +70,7 @@
 			<desc>Contains specifications for transcriptions of printed sources</desc>
 			<specGrp xml:id="edits.elements.print">
 				<elementSpec ident="publicationStmt" mode="replace" module="header">
+					<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandPublicationStmt"/>
 					<content>
 						<rng:ref name="macro.form.publicationStmt_print"/>
 					</content>
@@ -85,6 +88,7 @@
 			<desc>Contains specifications for documents describing an event</desc>
 			<specGrp xml:id="edits.elements.events">
 				<elementSpec ident="publicationStmt" mode="replace" module="header">
+					<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandPublicationStmt"/>
 					<content>
 						<rng:ref name="macro.form.publicationStmt_event"/>
 					</content>
@@ -110,7 +114,7 @@
 
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="listBibl" module="core" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAttSomewhereOrTextSomewhere"/>
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyAttOrAnyText"/>
 				<gloss versionDate="2014-01-26" xml:lang="en">citation list</gloss>
 				<gloss versionDate="2014-01-26" xml:lang="ko">Bibliographie</gloss>
 				<desc versionDate="2014-01-26" xml:lang="en"
@@ -198,17 +202,25 @@
 			</elementSpec>
 
 			<!-- filter can be applied universally; no xpath look-up is needed -->
-			<elementSpec ident="accMat" module="msdescription" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
-			</elementSpec>
-
-			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="additions" module="msdescription" mode="change">
 				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
 			</elementSpec>
 
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="respStmt" module="core" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandRespStmt"/>
+			</elementSpec>
 
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="titleStmt" module="header" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandTitleStmt"/>
+			</elementSpec>
 
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="edition" module="header" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandEdition"/>
+			</elementSpec>
+			
 			<elementSpec ident="state" module="namesdates" mode="change">
 				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAttOrChildContent"/>
 				<gloss versionDate="2014-01-26" xml:lang="en">state</gloss>
@@ -407,7 +419,7 @@
 			</elementSpec>
 
 			<elementSpec ident="listEvent" module="namesdates" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAttSomewhereOrTextSomewhere"/>
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyAttOrAnyText"/>
 				<gloss versionDate="2014-01-26" xml:lang="en">list of events</gloss>
 				<gloss versionDate="2014-01-26" xml:lang="de">Ereignisliste</gloss>
 				<desc versionDate="2014-01-26" xml:lang="en"
@@ -633,6 +645,11 @@
 				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
 			</elementSpec>
 
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="objectDesc" module="msdescription" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
+			</elementSpec>
+
 			<elementSpec ident="origDate" module="msdescription" mode="change">
 				<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandOrRemoveDate"/>
 			</elementSpec>
@@ -728,11 +745,16 @@
 
 			<elementSpec ident="encodingDesc" mode="replace" module="core">
 				<content>
-					<rng:element name="editorialDecl">
-						<rng:oneOrMore>
-							<rng:ref name="p"/>
-						</rng:oneOrMore>
-					</rng:element>
+					<rng:ref name="editorialDecl"/>
+				</content>
+			</elementSpec>
+			
+			<elementSpec ident="editorialDecl" mode="replace" module="header">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandEditorialDecl"/>
+				<content>
+					<rng:oneOrMore>
+						<rng:ref name="p"/>
+					</rng:oneOrMore>
 				</content>
 			</elementSpec>
 
@@ -771,6 +793,7 @@
 			</elementSpec>
 
 			<elementSpec ident="physDesc" module="msdescription" mode="replace">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="processPhysDesc"/>
 				<content>
 					<rng:group>
 						<rng:oneOrMore>
@@ -797,7 +820,7 @@
 			</elementSpec>
 
 			<elementSpec ident="additional" module="msdescription" mode="replace">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAttSomewhereOrTextSomewhere"/>
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyAttOrAnyText"/>
 				<content>
 					<rng:group>
 						<rng:element name="surrogates">
@@ -861,7 +884,7 @@
 				<attList>
 					<attDef ident="hand" mode="add" usage="mwa">
 						<desc versionDate="2013-11-11" xml:lang="en">signifies the hand of the agent which made the intervention.</desc>
-						<desc versionDate="2013-11-11" xml:lang="de">gibt die Hand der Person an, die den Eingriff vorgenommen hat.</desc>
+						<desc versionDate="2013-11-11" xml:lang="de">bezeichnet die Schreiberhand, welche den Eingriff vorgenommen hat.</desc>
 						<datatype>
 							<rng:ref name="data.pointer"/>
 						</datatype>
@@ -957,7 +980,7 @@
 					</attDef>
 					<attDef ident="hand" mode="add" usage="mwa">
 						<desc versionDate="2013-11-11" xml:lang="en">signifies the hand of the agent which made the intervention.</desc>
-						<desc versionDate="2013-11-11" xml:lang="de">gibt die Hand der Person an, die den Eingriff vorgenommen hat.</desc>
+						<desc versionDate="2013-11-11" xml:lang="de">bezeichnet die Schreiberhand, welche den Eingriff vorgenommen hat.</desc>
 						<datatype>
 							<rng:ref name="data.pointer"/>
 						</datatype>
@@ -1075,18 +1098,7 @@
 				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
 				<content>
 					<rng:zeroOrMore>
-						<rng:element name="change">
-							<rng:optional>
-								<rng:attribute name="when"/>
-								<rng:attribute name="who"/>
-							</rng:optional>
-							<rng:optional>
-								<rng:attribute name="type"/>
-							</rng:optional>
-							<rng:oneOrMore>
-								<rng:ref name="p"/>
-							</rng:oneOrMore>
-						</rng:element>
+						<rng:ref name="macro.form.revisionDescChange"/>
 					</rng:zeroOrMore>
 				</content>
 			</elementSpec>
@@ -1131,6 +1143,7 @@
 
 			<!-- TODO change 'confidence' -->
 			<elementSpec ident="rs" module="core" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="processRs"/>
 				<gloss versionDate="2005-01-14" xml:lang="en">referencing string</gloss>
 				<gloss versionDate="2014-02-06" xml:lang="de">verweisende Zeichenfolge</gloss>
 				<desc versionDate="2014-02-06" xml:lang="en">general purpose element; contains a name or referring string.</desc>
@@ -1162,7 +1175,13 @@
 			</elementSpec>
 
 			<elementSpec ident="respons" module="certainty" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="transformRespons"/>
 				<attList org="group">
+					<attDef ident="who" mode="change">
+						<datatype>
+							<rng:ref name="data.encoding-staff"/>
+						</datatype>
+					</attDef>
 					<attDef ns="http://richard-strauss-ausgabe.de/ns/1.0" mode="add" ident="when">
 						<datatype>
 							<rng:data type="string"/>

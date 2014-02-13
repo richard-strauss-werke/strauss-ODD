@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2014-02-08T12:26:33Z. 
+Schema generated from ODD source 2014-02-11T08:33:13Z. 
 Edition: Version 2.6.0. Last updated on
 	20th January 2014, revision 12802
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
@@ -982,21 +982,6 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          </element>
       </zeroOrMore>
    </define>
-   <define name="rswa_macro.form.placeNameDestination">
-      <element name="placeName">
-         <group>
-            <attribute name="role">
-               <value>destination</value>
-            </attribute>
-            <optional>
-               <attribute name="cert">
-                  <ref name="rswa_data.certainty"/>
-               </attribute>
-            </optional>
-            <text/>
-         </group>
-      </element>
-   </define>
    <define name="rswa_macro.form.commentaryNote">
       <element name="note">
          <attribute name="type">
@@ -1147,7 +1132,19 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
             <ref name="rswa_origPlace"/>
          </oneOrMore>
          <oneOrMore>
-            <ref name="rswa_macro.form.placeNameDestination"/>
+            <element name="placeName">
+               <group>
+                  <attribute name="role">
+                     <value>destination</value>
+                  </attribute>
+                  <optional>
+                     <attribute name="cert">
+                        <ref name="rswa_data.certainty"/>
+                     </attribute>
+                  </optional>
+                  <text/>
+               </group>
+            </element>
          </oneOrMore>
       </element>
    </define>
@@ -13117,6 +13114,14 @@ Empfohlene Werte sind: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentation
          <ref name="rswa_macro.specialPara"/>
          <ref name="rswa_att.global.attributes"/>
          <ref name="rswa_att.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="rswa_additions">
+      <element name="additions">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"> [10.7.2. ]</a:documentation>
+         <ref name="rswa_macro.specialPara"/>
+         <ref name="rswa_att.global.attributes"/>
          <empty/>
       </element>
    </define>

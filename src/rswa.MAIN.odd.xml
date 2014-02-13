@@ -23,6 +23,9 @@
 					</address>
 				</funder>
 			</titleStmt>
+			<editionStmt>
+				<edition>Digitale Ausgabe</edition>
+			</editionStmt>
 			<!-- template for the final version of the TEI files:-->
 			<publicationStmt>
 				<distributor>Forschungsstelle zur Edition der Werke von Richard Strauss</distributor>
@@ -45,6 +48,7 @@
 			</abstract>
 		</profileDesc>
 		<revisionDesc>
+			<change who="#aerhard" when="2014-02-10">Adjustments to facilitate the final transformation</change>
 			<change who="#aerhard" when="2014-02-05">Globally refactored</change>
 			<change who="#aerhard" when="2014-01-18">Equiv elements added</change>
 			<change who="#aerhard" when="2013-06-08">First draft</change>
@@ -52,12 +56,17 @@
 	</teiHeader>
 	<text>
 		<body>
-			<!-- ref and title used as templates for the final version of the TEI files:-->
+			<!-- various text parts are used as templates for the final version of the TEI files:-->
 			<div xml:id="introduction">
 				<head>Introduction</head>
 				<p>...</p>
-				<p>The documents can be accessed at <ref target="http://richard-strauss-ausgabe.de/data/" xml:id="dataUrl">http://richard-strauss-ausgabe.de/xml/</ref>.</p>
+				<p>The documents can be accessed at <ref target="http://richard-strauss-ausgabe.de/documents/xml/" xml:id="xmlDocsUrl">http://richard-strauss-ausgabe.de/xml/</ref>, followed by the identification number.</p>
 				<p>The contributors involved in the preparation of a document are listed with their corresponding <att>xml:id</att> in the section <title xml:id="contributorsResp">Vorbereitung der digitalen Edition</title>.</p>
+				<p>All documents contain the following statements:</p>
+				<list>
+					<item xml:id="guidelinesTitleRef">Die vorliegende Ausgabe folgt den <ref target="http://richard-strauss-ausgabe.de/guidelines/xml">Editionsrichtlinien der Kritischen Ausgabe der Werke von Richard Strauss</ref>.</item>
+					<item xml:id="specificFeaturesTitle">Besonderheiten der Edition des vorliegenden Dokuments:</item>
+				</list>
 			</div>
 			<div xml:id="schemata">
 				<head>Schema</head>
@@ -115,6 +124,14 @@
 					<specGrpRef target="#edits.macros.shared"/>
 					<specGrpRef target="#edits.elements.ms"/>
 				</schemaSpec>
+				<schemaSpec ident="schema.correspondence.final" xml:lang="en" start="TEI" prefix="rswa_">
+					<desc>FINAL VERSION: Transcriptions of manuscript sources: Correspondence, notes, etc.</desc>
+					<specGrpRef target="#scope.shared"/>
+					<specGrpRef target="#scope.teistructure"/>
+					<specGrpRef target="#scope.transcr"/>
+					<specGrpRef target="#scope.transcr.ms"/>
+					<specGrpRef target="#extension.MEI"/>
+				</schemaSpec>
 				<schemaSpec ident="schema.literature" xml:lang="en" start="TEI" prefix="rswa_">
 					<desc>Transcriptions of printed sources: Articles, reviews, books, etc.</desc>
 					<specGrpRef target="#scope.shared"/>
@@ -137,6 +154,12 @@
 					<specGrpRef target="#edits.datatypes.shared"/>
 					<specGrpRef target="#edits.elements.shared"/>
 					<specGrpRef target="#edits.macros.shared"/>
+				</schemaSpec>
+				<schemaSpec ident="schema.persons.final" xml:lang="en" start="person" prefix="rswa_">
+					<desc>FINAL VERSION: Persons</desc>
+					<specGrpRef target="#scope.shared"/>
+					<specGrpRef target="#scope.state_listEvent"/>
+					<specGrpRef target="#scope.person"/>
 				</schemaSpec>
 				<schemaSpec ident="schema.org" xml:lang="en" start="org" prefix="rswa_">
 					<desc>Organizations: orchestras, publishing houses, families, etc.</desc>
@@ -201,6 +224,7 @@
 						<moduleRef key="textstructure" include="TEI body div text"/>
 						<!-- core -->
 						<elementRef key="resp"/>
+						<elementRef key="respStmt"/>
 						<!-- header -->
 						<elementRef key="availability"/>
 						<elementRef key="change"/>
@@ -227,6 +251,7 @@
 						<!-- header -->
 						<elementRef key="edition"/>
 						<elementRef key="editionStmt"/>
+						<elementRef key="editorialDecl"/>
 						<elementRef key="encodingDesc"/>
 						<elementRef key="notesStmt"/>
 						<elementRef key="revisionDesc"/>
@@ -253,6 +278,7 @@
 						<elementRef key="accMat"/>
 						<elementRef key="additions"/>
 						<elementRef key="handDesc"/>
+						<elementRef key="objectDesc"/>
 						<elementRef key="origDate"/>
 						<elementRef key="origPlace"/>
 						<elementRef key="physDesc"/>
