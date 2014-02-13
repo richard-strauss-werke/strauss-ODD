@@ -3,7 +3,7 @@ strauss-ODD
 
 ODD and ODD-related files for TEI / MEI encoding at the Kritische Ausgabe der Werke von Richard Strauss
 
-The schemata generated with this ODD target a form-based editing of TEI code in oXygen's Author Mode. In order to make these documents fully TEI conformant, they must be transformed by XSLT scripts created by the `make-acdc.xslt` script in the XSLT folder. 
+The schemata generated with this ODD target a form-based editing of TEI code in oXygen's Author Mode. In order to make documents created on basis of these schemata fully TEI conformant, they must be transformed by XSLT scripts created by the `make-acdc.xslt` script in the XSLT folder. 
  
 Files
 -----
