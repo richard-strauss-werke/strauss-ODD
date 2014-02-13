@@ -3,31 +3,38 @@ strauss-ODD
 
 ODD and ODD-related files for TEI / MEI encoding at the Kritische Ausgabe der Werke von Richard Strauss
 
-The schemata generated with this ODD target a form-based editing of TEI code in oXygen's Author Mode. In order to make these documents fully TEI conformant, they have to be transformed by an XSLT script. 
+The schemata generated with this ODD target a form-based editing of TEI code in oXygen's Author Mode. In order to make these documents fully TEI conformant, they must be transformed by XSLT scripts created by the `make-acdc.xslt` script in the XSLT folder. 
  
 Files
 -----
 
-The ODD file (see below for build instructions with ant):
+- `build` - the target folder for files created on basis of the ODD: expanded ODDs, schemata, etc.
 
-- `src/rswa.MAIN.odd.xml`
+- `src` - ODD source folder 
 
-Low-level edits of various TEI components:
+    - `rswa.MAIN.odd.xml` - the ODD file (see below for build instructions with ant)
 
-- `src/rswa.edits.classes.att.xml`
-- `src/rswa.edits.datatypes.xml`
-- `src/rswa.edits.elements.xml`
-- `src/rswa.edits.macros.xml`
+    Low-level edits of various TEI components (included in the ODD via xi:include):
 
-TEI extensions:
+    - `rswa.edits.classes.att.xml`
+    - `rswa.edits.datatypes.xml`
+    - `rswa.edits.elements.xml`
+    - `rswa.edits.macros.xml`
 
-- `src/rswa.extension.tasks.xml`
-- `src/rswa.extension.MEI.xml`
-- `src/rswa.extension.xinclude.xml`
+    TEI extensions:
 
-A copy of [Raffaele Viglianti's modified version of the MEI ODD](https://github.com/TEI-Music-SIG/tei-mei/):
+    - `rswa.extension.tasks.xml`
+    - `rswa.extension.MEI.xml`
+    - `rswa.extension.xinclude.xml`
 
-- `src/mei-source.xml`
+    A copy of [Raffaele Viglianti's modified version of the MEI ODD](https://github.com/TEI-Music-SIG/tei-mei/):
+
+    - `mei-source.xml`
+
+- `xslt` - the xslt directory contains scripts for the transformation of internal TEI files used for production to TEI conformant published versions
+ 
+    - `make-acdc.xslt` - a transformation script to be applied to an extended ODD; the resulting document will be a new transformation script which can be used to transform TEI documents from the internal formats to published versions
+    - `rswa.xsl` - contains named templates referenced by the `equiv` elements in the ODD and used in the transformation from the internal document formats to published versions
 
 
 Build instructions
