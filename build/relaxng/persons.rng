@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2014-02-07T13:33:06Z. 
+Schema generated from ODD source 2014-02-17T09:52:46Z. 
 Edition: Version 2.6.0. Last updated on
 	20th January 2014, revision 12802
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
@@ -149,6 +149,28 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <param name="pattern">[a-z]\d{4,5}</param>
       </data>
    </define>
+   <define name="rswa_data.biblType">
+      <choice>
+         <value>e</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Edition in ...</a:documentation>
+         <value>a</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Auszug in ...</a:documentation>
+         <value>f</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Faksimile in ...</a:documentation>
+         <value>n</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Bezugnahme in ...</a:documentation>
+         <value>o</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Folgeauflage = </a:documentation>
+         <value>w</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Wiederabdruck = </a:documentation>
+         <value>t</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Übersetzung =</a:documentation>
+         <value>u</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">unbekannt</a:documentation>
+         <value>s</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Sonstiges</a:documentation>
+      </choice>
+   </define>
    <define name="rswa_macro.form.date">
       <ref name="rswa_date"/>
    </define>
@@ -272,7 +294,9 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
    <define name="rswa_macro.form.bibl">
       <element name="bibl">
          <optional>
-            <attribute name="type"/>
+            <attribute name="type">
+               <ref name="rswa_data.biblType"/>
+            </attribute>
          </optional>
          <optional>
             <ref name="rswa_rs"/>
@@ -497,39 +521,9 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    </define>
    <define name="rswa_att.global.attributes">
       <ref name="rswa_att.global.linking.attributes"/>
-      <ref name="rswa_att.global.attribute.lang"/>
-      <ref name="rswa_att.global.attribute.base"/>
-      <ref name="rswa_att.global.attribute.space"/>
       <ref name="rswa_att.global.attribute.xmlid"/>
       <ref name="rswa_att.global.attribute.n"/>
-      <ref name="rswa_att.global.attribute.xmllang"/>
       <ref name="rswa_att.global.attribute.rend"/>
-      <ref name="rswa_att.global.attribute.xmlbase"/>
-      <ref name="rswa_att.global.attribute.xmlspace"/>
-   </define>
-   <define name="rswa_att.global.attribute.lang">
-      <optional>
-         <attribute name="lang">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <text/>
-         </attribute>
-      </optional>
-   </define>
-   <define name="rswa_att.global.attribute.base">
-      <optional>
-         <attribute name="base">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <text/>
-         </attribute>
-      </optional>
-   </define>
-   <define name="rswa_att.global.attribute.space">
-      <optional>
-         <attribute name="space">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <text/>
-         </attribute>
-      </optional>
    </define>
    <define name="rswa_att.global.attribute.xmlid">
       <optional>
@@ -547,14 +541,6 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.global.attribute.xmllang">
-      <optional>
-         <attribute name="xml:lang">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <ref name="rswa_data.language"/>
-         </attribute>
-      </optional>
-   </define>
    <define name="rswa_att.global.attribute.rend">
       <optional>
          <attribute name="rend">
@@ -564,27 +550,6 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
                   <ref name="rswa_data.word"/>
                </oneOrMore>
             </list>
-         </attribute>
-      </optional>
-   </define>
-   <define name="rswa_att.global.attribute.xmlbase">
-      <optional>
-         <attribute name="xml:base">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <ref name="rswa_data.pointer"/>
-         </attribute>
-      </optional>
-   </define>
-   <define name="rswa_att.global.attribute.xmlspace">
-      <optional>
-         <attribute name="xml:space">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <choice>
-               <value>default</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">signals that the application's default white-space processing modes are acceptable</a:documentation>
-               <value>preserve</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the intent that applications preserve all white space</a:documentation>
-            </choice>
          </attribute>
       </optional>
    </define>
@@ -1870,29 +1835,27 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
          <ref name="rswa_att.global.attributes"/>
          <optional>
             <attribute name="hand">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gibt die Hand der Person an, die den Eingriff vorgenommen hat.</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">bezeichnet die Schreiberhand, welche den Eingriff vorgenommen hat.</a:documentation>
                <ref name="rswa_data.pointer"/>
             </attribute>
          </optional>
-         <optional>
-            <attribute name="place">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">spezifiert wo das Element angebracht ist.</a:documentation>
-               <choice>
-                  <value>above</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung über der Zeile.</a:documentation>
-                  <value>below</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung unter der Zeile.</a:documentation>
-                  <value>inline</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung in der Zeile.</a:documentation>
-                  <value>margin</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung am Rand.</a:documentation>
-                  <value>mixed</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung an mehreren Orten</a:documentation>
-                  <value>unknown</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Der Ort der Einfügung ist unbekannt</a:documentation>
-               </choice>
-            </attribute>
-         </optional>
+         <attribute name="place">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">spezifiert wo das Element angebracht ist.</a:documentation>
+            <choice>
+               <value>above</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung über der Zeile.</a:documentation>
+               <value>below</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung unter der Zeile.</a:documentation>
+               <value>inline</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung in der Zeile.</a:documentation>
+               <value>margin</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung am Rand.</a:documentation>
+               <value>mixed</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung an mehreren Orten</a:documentation>
+               <value>unknown</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Der Ort der Einfügung ist unbekannt</a:documentation>
+            </choice>
+         </attribute>
          <empty/>
       </element>
    </define>
@@ -1900,35 +1863,23 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
       <element name="del">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Löschung) enthält einen Buchstaben, ein Wort, oder eine Passage die gestrichen wurde, die als gelöscht markiert, oder auf andere Weise als überflüssig oder falsch in der Textkopie von einem Autor, Schreiber, Kommentator oder Korrektor angegeben wird [3.4.3. ]</a:documentation>
          <ref name="rswa_macro.paraContent"/>
-         <ref name="rswa_att.global.attribute.lang"/>
-         <ref name="rswa_att.global.attribute.base"/>
-         <ref name="rswa_att.global.attribute.space"/>
          <ref name="rswa_att.global.attribute.xmlid"/>
          <ref name="rswa_att.global.attribute.n"/>
-         <ref name="rswa_att.global.attribute.xmllang"/>
-         <ref name="rswa_att.global.attribute.xmlbase"/>
-         <ref name="rswa_att.global.attribute.xmlspace"/>
          <ref name="rswa_att.global.linking.attribute.corresp"/>
-         <ref name="rswa_att.global.linking.attribute.synch"/>
          <ref name="rswa_att.global.linking.attribute.sameAs"/>
          <ref name="rswa_att.global.linking.attribute.copyOf"/>
-         <ref name="rswa_att.global.linking.attribute.next"/>
-         <ref name="rswa_att.global.linking.attribute.prev"/>
          <ref name="rswa_att.global.linking.attribute.exclude"/>
-         <ref name="rswa_att.global.linking.attribute.select"/>
-         <optional>
-            <attribute name="rend">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ausgabe) gibt an, wie das fragliche Element ausgegeben wurde oder im Quelltext präsentiert ist.</a:documentation>
-               <list>
-                  <oneOrMore>
-                     <ref name="rswa_data.word"/>
-                  </oneOrMore>
-               </list>
-            </attribute>
-         </optional>
+         <attribute name="rend">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ausgabe) gibt an, wie das fragliche Element ausgegeben wurde oder im Quelltext präsentiert ist.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <ref name="rswa_data.word"/>
+               </oneOrMore>
+            </list>
+         </attribute>
          <optional>
             <attribute name="hand">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gibt die Hand der Person an, die den Eingriff vorgenommen hat.</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">bezeichnet die Schreiberhand, welche den Eingriff vorgenommen hat.</a:documentation>
                <ref name="rswa_data.pointer"/>
             </attribute>
          </optional>
@@ -2005,9 +1956,9 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
             </attribute>
          </optional>
          <optional>
-            <attribute name="confidence" ns="http://richard-strauss-ausgabe.de/ns/1.0">
+            <attribute name="cert" ns="http://richard-strauss-ausgabe.de/ns/1.0">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <ref name="rswa_data.word"/>
+               <ref name="rswa_data.certainty"/>
             </attribute>
          </optional>
          <empty/>
@@ -2543,29 +2494,13 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rswa_att.global.linking.attributes">
       <ref name="rswa_att.global.linking.attribute.corresp"/>
-      <ref name="rswa_att.global.linking.attribute.synch"/>
       <ref name="rswa_att.global.linking.attribute.sameAs"/>
       <ref name="rswa_att.global.linking.attribute.copyOf"/>
-      <ref name="rswa_att.global.linking.attribute.next"/>
-      <ref name="rswa_att.global.linking.attribute.prev"/>
       <ref name="rswa_att.global.linking.attribute.exclude"/>
-      <ref name="rswa_att.global.linking.attribute.select"/>
    </define>
    <define name="rswa_att.global.linking.attribute.corresp">
       <optional>
          <attribute name="corresp">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <list>
-               <oneOrMore>
-                  <ref name="rswa_data.pointer"/>
-               </oneOrMore>
-            </list>
-         </attribute>
-      </optional>
-   </define>
-   <define name="rswa_att.global.linking.attribute.synch">
-      <optional>
-         <attribute name="synch">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
             <list>
                <oneOrMore>
@@ -2591,37 +2526,9 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.global.linking.attribute.next">
-      <optional>
-         <attribute name="next">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <ref name="rswa_data.pointer"/>
-         </attribute>
-      </optional>
-   </define>
-   <define name="rswa_att.global.linking.attribute.prev">
-      <optional>
-         <attribute name="prev">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <ref name="rswa_data.pointer"/>
-         </attribute>
-      </optional>
-   </define>
    <define name="rswa_att.global.linking.attribute.exclude">
       <optional>
          <attribute name="exclude">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <list>
-               <oneOrMore>
-                  <ref name="rswa_data.pointer"/>
-               </oneOrMore>
-            </list>
-         </attribute>
-      </optional>
-   </define>
-   <define name="rswa_att.global.linking.attribute.select">
-      <optional>
-         <attribute name="select">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
             <list>
                <oneOrMore>

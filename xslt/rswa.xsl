@@ -2,8 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0" xmlns="http://www.tei-c.org/ns/1.0"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tei="http://www.tei-c.org/ns/1.0"
-	xmlns:rsga="http://richard-strauss-ausgabe.de/ns/1.0"
-	exclude-result-prefixes="rsga xs tei">
+	xmlns:rsga="http://richard-strauss-ausgabe.de/ns/1.0" exclude-result-prefixes="rsga xs tei">
 
 	<!-- xslt version of the original xquery script, adjusted to tei-c usage; alpha -->
 
@@ -140,7 +139,7 @@
 	<xsl:template name="wrapTextClassContentOrRemove">
 		<xsl:if test="node()">
 			<xsl:copy>
-				<keywords>
+				<keywords scheme="http://xgnd.bsz-bw.de/">
 					<term>
 						<xsl:apply-templates select="@*|node()"/>
 					</term>
@@ -150,18 +149,22 @@
 	</xsl:template>
 
 
-	<!-- TODO: the matching of the items within the commentary and bibl elements is currently not part of the the odd, but only takes place here in the xslt -> change later. -->
 	<xsl:template name="tightenCommentary">
 		<xsl:if test="normalize-space()">
 			<xsl:copy>
+				<!-- note/@type="commentary" -->
 				<xsl:apply-templates select="@*"/>
 				<xsl:for-each select="node()">
 					<xsl:if test="normalize-space()">
 						<xsl:copy>
-							<xsl:apply-templates select="@*"/>
-							<xsl:for-each select="node()">
+							<!-- child notes -->
+							<xsl:for-each select="rs">
+								<xsl:call-template name="processRs"/>
+							</xsl:for-each>
+							<xsl:for-each select="p">
 								<xsl:if test="normalize-space()">
 									<xsl:copy>
+										<!-- rs or p -->
 										<xsl:apply-templates select="@*|node()"/>
 									</xsl:copy>
 								</xsl:if>
@@ -169,7 +172,6 @@
 						</xsl:copy>
 					</xsl:if>
 				</xsl:for-each>
-				<xsl:apply-templates select="node()" mode="commentaryBibl"/>
 			</xsl:copy>
 		</xsl:if>
 	</xsl:template>
@@ -189,7 +191,7 @@
 			<xsl:apply-templates select="@*|node()"/>
 		</xsl:copy>
 	</xsl:template>
-	
+
 	<xsl:template name="processRevisionDescChange">
 		<xsl:copy>
 			<xsl:apply-templates select="@*|node()[node()]"/>
@@ -266,15 +268,18 @@
 	</xsl:template>
 
 	<xsl:template name="expandRespStmt">
-		<xsl:copy>
-			<resp>
-				<xsl:value-of select="$contributorsResp"/>
-			</resp>
-			<xsl:for-each select="distinct-values(//@who|//@resp)">
-				<xsl:variable name="who" select="."/>
-				<xsl:copy-of select="$staff/id($who)"/>
-			</xsl:for-each>
-		</xsl:copy>
+		<xsl:variable name="whoResp" select="//@who|//@resp"/>
+		<xsl:if test="$whoResp">
+			<xsl:copy>
+				<resp>
+					<xsl:value-of select="$contributorsResp"/>
+				</resp>
+				<xsl:for-each select="distinct-values($whoResp)">
+					<xsl:variable name="who" select="."/>
+					<xsl:copy-of select="$staff/id($who)"/>
+				</xsl:for-each>
+			</xsl:copy>
+		</xsl:if>
 	</xsl:template>
 
 	<xsl:template name="transformRespons">
@@ -298,19 +303,17 @@
 	<xsl:template name="processRs">
 		<xsl:if test="normalize-space()">
 			<xsl:copy>
-				<xsl:choose>
-					<xsl:when test="@type=('lit','rez')">
-						<xsl:if test="@rsga:seite">
-							<xsl:attribute name="n">
-								<xsl:value-of select="@rsga:seite"/>
-							</xsl:attribute>
-						</xsl:if>
-						<xsl:apply-templates select="@*[not(starts-with(name(), 'rsga:'))]|node()"/>
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:apply-templates select="@*|node()"/>
-					</xsl:otherwise>
-				</xsl:choose>
+				<xsl:apply-templates select="@*[not(starts-with(name(), 'rsga:'))]"/>
+				<xsl:if test="@rsga:seite">
+					<xsl:attribute name="n">
+						<xsl:value-of select="@rsga:seite"/>
+					</xsl:attribute>
+				</xsl:if>
+				<xsl:if test="@rsga:cert">
+					<certainty match="../@ref|../text()" locus="value"
+						cert="{.}"/>
+				</xsl:if>
+				<xsl:apply-templates select="node()"/>
 			</xsl:copy>
 		</xsl:if>
 	</xsl:template>
@@ -319,16 +322,22 @@
 		<xsl:variable name="firstPart">
 			<xsl:for-each select="*[@role='creator']">
 				<xsl:if test="position() ne 1"> / </xsl:if>
-				<xsl:value-of select="rsga:reverseName(string())"/>
+				<xsl:copy>
+					<xsl:apply-templates select="@*[not(name()='role')]"/>
+					<xsl:value-of select="rsga:reverseName(string())"/>
+				</xsl:copy>
 			</xsl:for-each>
 			<xsl:for-each select="*[@role='addressee']">
 				<xsl:choose>
 					<xsl:when test="position()=1"> an </xsl:when>
 					<xsl:otherwise> / </xsl:otherwise>
 				</xsl:choose>
-				<xsl:value-of select="rsga:reverseName(string())"/>
+				<xsl:copy>
+					<xsl:apply-templates select="@*[not(name()='role')]"/>
+					<xsl:value-of select="rsga:reverseName(string())"/>
+				</xsl:copy>
 			</xsl:for-each>
-			<xsl:for-each select="placeName">
+			<xsl:for-each select="placeName[node()]">
 				<xsl:choose>
 					<xsl:when test="position()=1"> in </xsl:when>
 					<xsl:otherwise> / </xsl:otherwise>
@@ -338,20 +347,20 @@
 		</xsl:variable>
 		<xsl:variable name="secondPart">
 			<xsl:variable name="placesCreator">
-				<xsl:for-each select="origPlace">
+				<xsl:for-each select="origPlace[node()]">
 					<xsl:if test="position() ne 1"> / </xsl:if>
 					<xsl:call-template name="onlyWithContentAddCert"/>
 				</xsl:for-each>
 			</xsl:variable>
 			<xsl:variable name="dates">
-				<xsl:for-each select="origDate">
+				<xsl:for-each select="origDate[@*|text()]">
 					<xsl:if test="position() ne 1"> / </xsl:if>
 					<xsl:value-of select="rsga:formatDateNode(.)"/>
 				</xsl:for-each>
 			</xsl:variable>
-			<xsl:value-of select="normalize-space(string-join(($placesCreator, $dates), ', '))"/>
+			<xsl:value-of select="normalize-space(string-join(($placesCreator[normalize-space()], $dates[normalize-space()]), ', '))"/>
 		</xsl:variable>
-		<xsl:value-of select="$firstPart"/>
+		<xsl:copy-of select="$firstPart"/>
 		<xsl:if test="$secondPart">
 			<xsl:text> </xsl:text>
 			<lb/>
@@ -375,12 +384,12 @@
 		<xsl:variable name="when" select="rsga:dateLong($date/@when, ())"/>
 		<xsl:variable name="notBefore" select="rsga:dateLong($date/@notBefore, 'fr. ')"/>
 		<xsl:variable name="notAfter" select="rsga:dateLong($date/@notAfter, 'sp. ')"/>
-		<xsl:variable name="from" select="string-join(rsga:dateLong($date/@from, ()),'')"/>
-		<xsl:variable name="to" select="string-join(rsga:dateLong($date/@to, ()),'')"/>
+		<xsl:variable name="from" select="rsga:dateLong($date/@from, ())"/>
+		<xsl:variable name="to" select="rsga:dateLong($date/@to, ())"/>
 		<xsl:variable name="fromTo"
 			select="if ($from or $to) then concat($from, '&#x00A0;–', (if ($to) then ' ' else ()), $to) else ()"/>
 		<xsl:variable name="dates">
-			<xsl:value-of select="string-join(($when, $notBefore, $notAfter, $fromTo), '')"/>
+			<xsl:value-of select="string-join(($when, $notBefore, $notAfter, $fromTo), ', ')"/>
 		</xsl:variable>
 		<xsl:if test="$date/text()">
 			<xsl:value-of select="$date/text()"/>
@@ -389,26 +398,28 @@
 		<xsl:value-of select="concat(rsga:precisionString($date), $dates, rsga:certString($date))"/>
 	</xsl:function>
 
-	<xsl:function name="rsga:dateLong" as="xs:string*">
+	<xsl:function name="rsga:dateLong" as="xs:string?">
 		<xsl:param name="date" as="xs:string?"/>
 		<xsl:param name="prefix" as="xs:string?"/>
 		<xsl:if test="$date">
-			<xsl:value-of select="$prefix"/>
-			<xsl:choose>
-				<xsl:when test="matches($date, '[\d]{4}-[\d]{2}-[\d]{2}')">
-					<xsl:value-of
-						select="format-date(xs:date($date), '[FNn], [D]. [MNn] [Y]', 'de', (), ())"/>
-				</xsl:when>
-				<xsl:when test="matches($date, '[\d]{4}-[\d]{2}')">
-					<xsl:value-of
-						select="concat(('Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 
-						'August', 'September', 'Oktober', 'November', 'Dezember')[xs:integer(substring($date,6,2))], ' ', substring($date,1,4))"
-					/>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:value-of select="$date"/>
-				</xsl:otherwise>
-			</xsl:choose>
+			<xsl:variable name="dateOnly">
+				<xsl:choose>
+					<xsl:when test="matches($date, '[\d]{4}-[\d]{2}-[\d]{2}')">
+						<xsl:value-of
+							select="format-date(xs:date($date), '[FNn], [D]. [MNn] [Y]', 'de', (), ())"/>
+					</xsl:when>
+					<xsl:when test="matches($date, '[\d]{4}-[\d]{2}')">
+						<xsl:value-of
+							select="concat(('Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 
+							'August', 'September', 'Oktober', 'November', 'Dezember')[xs:integer(substring($date,6,2))], ' ', substring($date,1,4))"
+						/>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="$date"/>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:variable>
+			<xsl:value-of select="string-join(($prefix, $dateOnly), '')"/>
 		</xsl:if>
 	</xsl:function>
 

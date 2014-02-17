@@ -6,8 +6,6 @@
 	<head>Macros</head>
 	<specGrp xml:id="edits.macros.shared">
 
-		<!-- TODO: replace macros by prefixed elements whenever possible!? -->
-
 		<macroSpec ident="macro.form.date">
 			<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandOrRemoveDate"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">date (form)</gloss>
@@ -537,7 +535,9 @@
 			<content>
 				<rng:element name="bibl">
 					<rng:optional>
-						<rng:attribute name="type"/>
+						<rng:attribute name="type">
+							<rng:ref name="data.biblType"/>
+						</rng:attribute>
 					</rng:optional>
 					<rng:optional>
 						<rng:ref name="rs"/>

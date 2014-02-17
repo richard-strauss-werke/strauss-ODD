@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2014-02-11T08:33:13Z. 
+Schema generated from ODD source 2014-02-17T09:52:06Z. 
 Edition: Version 2.6.0. Last updated on
 	20th January 2014, revision 12802
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
@@ -951,12 +951,96 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Walter Werbeck</a:documentation>
          <value>clh</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Claudia Heine</a:documentation>
+         <value>afl</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Florian Amort</a:documentation>
+         <value>stk</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Steffi Kracht</a:documentation>
       </choice>
    </define>
    <define name="rswa_data.rsqvIdno">
       <data type="string">
          <param name="pattern">[a-z]\d{4,5}</param>
       </data>
+   </define>
+   <define name="rswa_data.keyword">
+      <optional>
+         <choice>
+            <value>Brief</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4008240-4</a:documentation>
+            <value>Postkarte</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4046902-5</a:documentation>
+            <value>Briefumschlag</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4146614-7</a:documentation>
+            <value>Telegramm</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4184647-3</a:documentation>
+            <value>schriftliche Mitteilung (allgemein)</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4180011-4</a:documentation>
+            <value>Visitenkarte</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4188409-7</a:documentation>
+            <value>Vertrag</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4063270-2</a:documentation>
+            <value>Notiz</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4206777-7</a:documentation>
+            <value>Notizbuch</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4225695-1</a:documentation>
+            <value>Musikhandschrift</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4040847-4</a:documentation>
+            <value>Schriftstück (allgemein)</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4180009-6</a:documentation>
+            <value>Rezension</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4049712-4</a:documentation>
+            <value>Zeitungsaufsatz</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4125430-2</a:documentation>
+            <value>Zeitschriftenaufsatz</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4125424-7</a:documentation>
+            <value>Aufsatz in Sammelwerk</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>Kapitel</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4290552-7</a:documentation>
+            <value>Sammelwerk</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4202533-3</a:documentation>
+            <value>Monographie</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4454906-4</a:documentation>
+            <value>Libretto</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4035588-3</a:documentation>
+            <value>Dissertation</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4012494-0</a:documentation>
+            <value>Magisterarbeit</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4168514-3</a:documentation>
+            <value>Musikdruck</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4075121-1</a:documentation>
+            <value>Druckwerk (allgemein)</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4013134-8</a:documentation>
+            <value>Online-Publikation</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4511937-5</a:documentation>
+            <value>Photographie</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4045895-7</a:documentation>
+            <value>Gemälde</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4122164-3</a:documentation>
+         </choice>
+      </optional>
+   </define>
+   <define name="rswa_data.biblType">
+      <choice>
+         <value>e</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Edition in ...</a:documentation>
+         <value>a</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Auszug in ...</a:documentation>
+         <value>f</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Faksimile in ...</a:documentation>
+         <value>n</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Bezugnahme in ...</a:documentation>
+         <value>o</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Folgeauflage = </a:documentation>
+         <value>w</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Wiederabdruck = </a:documentation>
+         <value>t</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Übersetzung =</a:documentation>
+         <value>u</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">unbekannt</a:documentation>
+         <value>s</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Sonstiges</a:documentation>
+      </choice>
    </define>
    <define name="rswa_macro.form.rsqvIdno">
       <oneOrMore>
@@ -1148,10 +1232,28 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          </oneOrMore>
       </element>
    </define>
+   <define name="rswa_macro.form.revisionDescChange">
+      <element name="change">
+         <optional>
+            <attribute name="when"/>
+            <attribute name="who">
+               <ref name="rswa_data.encoding-staff"/>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="type"/>
+         </optional>
+         <oneOrMore>
+            <ref name="rswa_p"/>
+         </oneOrMore>
+      </element>
+   </define>
    <define name="rswa_macro.form.bibl">
       <element name="bibl">
          <optional>
-            <attribute name="type"/>
+            <attribute name="type">
+               <ref name="rswa_data.biblType"/>
+            </attribute>
          </optional>
          <optional>
             <ref name="rswa_rs"/>
@@ -2108,6 +2210,7 @@ Beispielwerte sind etwa: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] 
    <define name="rswa_model.ptrLike">
       <choice>
          <ref name="rswa_ref"/>
+         <ref name="rswa_ptr"/>
       </choice>
    </define>
    <define name="rswa_model.global.meta">
@@ -2517,6 +2620,7 @@ Beispielwerte sind etwa: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] 
    <define name="rswa_model.respLike">
       <choice>
          <ref name="rswa_author"/>
+         <ref name="rswa_respStmt"/>
       </choice>
    </define>
    <define name="rswa_model.divWrapper">
@@ -2943,29 +3047,27 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
          <ref name="rswa_att.global.attributes"/>
          <optional>
             <attribute name="hand">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gibt die Hand der Person an, die den Eingriff vorgenommen hat.</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">bezeichnet die Schreiberhand, welche den Eingriff vorgenommen hat.</a:documentation>
                <ref name="rswa_data.pointer"/>
             </attribute>
          </optional>
-         <optional>
-            <attribute name="place">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">spezifiert wo das Element angebracht ist.</a:documentation>
-               <choice>
-                  <value>above</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung über der Zeile.</a:documentation>
-                  <value>below</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung unter der Zeile.</a:documentation>
-                  <value>inline</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung in der Zeile.</a:documentation>
-                  <value>margin</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung am Rand.</a:documentation>
-                  <value>mixed</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung an mehreren Orten</a:documentation>
-                  <value>unknown</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Der Ort der Einfügung ist unbekannt</a:documentation>
-               </choice>
-            </attribute>
-         </optional>
+         <attribute name="place">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">spezifiert wo das Element angebracht ist.</a:documentation>
+            <choice>
+               <value>above</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung über der Zeile.</a:documentation>
+               <value>below</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung unter der Zeile.</a:documentation>
+               <value>inline</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung in der Zeile.</a:documentation>
+               <value>margin</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung am Rand.</a:documentation>
+               <value>mixed</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung an mehreren Orten</a:documentation>
+               <value>unknown</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Der Ort der Einfügung ist unbekannt</a:documentation>
+            </choice>
+         </attribute>
          <empty/>
       </element>
    </define>
@@ -2980,19 +3082,17 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
          <ref name="rswa_att.global.linking.attribute.copyOf"/>
          <ref name="rswa_att.global.linking.attribute.exclude"/>
          <ref name="rswa_att.global.change.attribute.change"/>
-         <optional>
-            <attribute name="rend">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ausgabe) gibt an, wie das fragliche Element ausgegeben wurde oder im Quelltext präsentiert ist.</a:documentation>
-               <list>
-                  <oneOrMore>
-                     <ref name="rswa_data.word"/>
-                  </oneOrMore>
-               </list>
-            </attribute>
-         </optional>
+         <attribute name="rend">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ausgabe) gibt an, wie das fragliche Element ausgegeben wurde oder im Quelltext präsentiert ist.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <ref name="rswa_data.word"/>
+               </oneOrMore>
+            </list>
+         </attribute>
          <optional>
             <attribute name="hand">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gibt die Hand der Person an, die den Eingriff vorgenommen hat.</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">bezeichnet die Schreiberhand, welche den Eingriff vorgenommen hat.</a:documentation>
                <ref name="rswa_data.pointer"/>
             </attribute>
          </optional>
@@ -3069,9 +3169,9 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
             </attribute>
          </optional>
          <optional>
-            <attribute name="confidence" ns="http://richard-strauss-ausgabe.de/ns/1.0">
+            <attribute name="cert" ns="http://richard-strauss-ausgabe.de/ns/1.0">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <ref name="rswa_data.word"/>
+               <ref name="rswa_data.certainty"/>
             </attribute>
          </optional>
          <empty/>
@@ -4174,10 +4274,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
             <element name="surrogates">
                <group>
                   <zeroOrMore>
-                     <ref name="rswa_graphic"/>
-                  </zeroOrMore>
-                  <zeroOrMore>
-                     <ref name="rswa_pdf"/>
+                     <ref name="rswa_ptr"/>
                   </zeroOrMore>
                   <zeroOrMore>
                      <ref name="rswa_msDesc"/>
@@ -12774,6 +12871,32 @@ Empfohlene Werte sind: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentation
          <empty/>
       </element>
    </define>
+   <define name="rswa_respStmt">
+      <element name="respStmt">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"> [3.11.2.2.  2.2.1.  2.2.2.  2.2.5. ]</a:documentation>
+         <choice>
+            <group>
+               <oneOrMore>
+                  <ref name="rswa_resp"/>
+               </oneOrMore>
+               <oneOrMore>
+                  <ref name="rswa_model.nameLike.agent"/>
+               </oneOrMore>
+            </group>
+            <group>
+               <oneOrMore>
+                  <ref name="rswa_model.nameLike.agent"/>
+               </oneOrMore>
+               <oneOrMore>
+                  <ref name="rswa_resp"/>
+               </oneOrMore>
+            </group>
+         </choice>
+         <ref name="rswa_att.global.attributes"/>
+         <ref name="rswa_att.canonical.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <define name="rswa_availability">
       <element name="availability">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
@@ -12875,6 +12998,35 @@ Empfohlene Werte sind: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentation
          <empty/>
       </element>
    </define>
+   <define name="rswa_ptr">
+      <element name="ptr">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Hinweis) definiert einen Hinweis auf einen anderen Ort. [3.6.  16.1. ]</a:documentation>
+         <empty/>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="ptr-constraint-ptrAtts">
+            <rule context="tei:ptr">
+               <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                       xmlns:s="http://www.ascc.net/xml/schematron"
+                       xmlns:xi="http://www.w3.org/2001/XInclude"
+                       test="@target and @cRef">Only one of the
+attributes @target and @cRef may be supplied on <name/>.</report>
+            </rule>
+         </pattern>
+         <ref name="rswa_att.global.attributes"/>
+         <ref name="rswa_att.pointing.attributes"/>
+         <attribute name="type">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <choice>
+               <value>pdf</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>image</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            </choice>
+         </attribute>
+         <empty/>
+      </element>
+   </define>
    <define name="rswa_edition">
       <element name="edition">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Edition) beschreibt die Besonderheiten einer Edition eines Textes. [2.2.2. ]</a:documentation>
@@ -12901,14 +13053,18 @@ Empfohlene Werte sind: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentation
          </element>
       </element>
    </define>
+   <define name="rswa_editorialDecl">
+      <element name="editorialDecl">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <oneOrMore>
+            <ref name="rswa_p"/>
+         </oneOrMore>
+      </element>
+   </define>
    <define name="rswa_encodingDesc">
       <element name="encodingDesc">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-         <element name="editorialDecl">
-            <oneOrMore>
-               <ref name="rswa_p"/>
-            </oneOrMore>
-         </element>
+         <ref name="rswa_editorialDecl"/>
       </element>
    </define>
    <define name="rswa_notesStmt">
@@ -12926,18 +13082,7 @@ Empfohlene Werte sind: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentation
       <element name="revisionDesc">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
          <zeroOrMore>
-            <element name="change">
-               <optional>
-                  <attribute name="when"/>
-                  <attribute name="who"/>
-               </optional>
-               <optional>
-                  <attribute name="type"/>
-               </optional>
-               <oneOrMore>
-                  <ref name="rswa_p"/>
-               </oneOrMore>
-            </element>
+            <ref name="rswa_macro.form.revisionDescChange"/>
          </zeroOrMore>
       </element>
    </define>
@@ -12945,6 +13090,13 @@ Empfohlene Werte sind: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentation
       <element name="textClass">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Textklassifikation) umfasst Informationen über Art oder Thematik eines Texts unter Bezug auf ein Standard-Klassifikationsschema, einen Thesaurus, usw. [2.4.3. ]</a:documentation>
          <text/>
+         <optional>
+            <attribute name="ref">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <ref name="rswa_data.keyword"/>
+            </attribute>
+         </optional>
+         <empty/>
       </element>
    </define>
    <define name="rswa_byline">
@@ -13148,6 +13300,25 @@ Empfohlene Werte sind: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentation
          <empty/>
       </element>
    </define>
+   <define name="rswa_objectDesc">
+      <element name="objectDesc">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"> [10.7.1. ]</a:documentation>
+         <choice>
+            <oneOrMore>
+               <ref name="rswa_model.pLike"/>
+            </oneOrMore>
+            <empty/>
+         </choice>
+         <ref name="rswa_att.global.attributes"/>
+         <optional>
+            <attribute name="form">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <ref name="rswa_data.enumerated"/>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
    <define name="rswa_origDate">
       <element name="origDate">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"> [10.3.1. ]</a:documentation>
@@ -13309,7 +13480,7 @@ Empfohlene Werte sind: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentation
          <optional>
             <attribute name="pwho" ns="http://richard-strauss-ausgabe.de/ns/1.0">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <data type="string"/>
+               <ref name="rswa_data.encoding-staff"/>
             </attribute>
          </optional>
          <optional>
@@ -13333,20 +13504,7 @@ Empfohlene Werte sind: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentation
          <optional>
             <attribute name="who">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <data type="string"/>
-            </attribute>
-         </optional>
-         <empty/>
-      </element>
-   </define>
-   <define name="rswa_pdf">
-      <element name="pdf" ns="http://richard-strauss-ausgabe.de/ns/1.0">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-         <text/>
-         <optional>
-            <attribute name="seitepdf" ns="http://richard-strauss-ausgabe.de/ns/1.0">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <data type="string"/>
+               <ref name="rswa_data.encoding-staff"/>
             </attribute>
          </optional>
          <empty/>

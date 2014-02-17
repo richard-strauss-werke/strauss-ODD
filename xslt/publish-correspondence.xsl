@@ -5,7 +5,7 @@
                 version="2.0"
                 xpath-default-namespace="http://www.tei-c.org/ns/1.0">
    <xsl:import href="rswa.xsl"/>
-   <xsl:output method="xml" indent="yes" encoding="utf-8"/>
+   <xsl:output method="xml" indent="no" encoding="utf-8"/>
    <xsl:strip-space elements="additional additions address analytic app availability biblStruct body castList choice cit creation div editionStmt editorialDecl encodingDesc epigraph event facsimile figure fileDesc floatingText front graphic handDesc handNote imprint index lg listBibl listChange listEvent monogr msDesc msIdentifier notatedMusic notesStmt objectDesc org performance person physDesc postscript profileDesc projectDesc publicationStmt relatedItem respons respStmt revisionDesc row seriesStmt sourceDesc sp space state subst supportDesc table teiHeader text textClass titleStmt"/>
    <xsl:key name="who" match="//@who" use="."/>
    <xsl:variable name="docID" select="replace(base-uri(), '^(.*/)?(.*)\..*$','$2')"/>
@@ -35,6 +35,8 @@
       <name xml:id="sbb">Sebastian Bolz</name>
       <name xml:id="wwb">Walter Werbeck</name>
       <name xml:id="clh">Claudia Heine</name>
+      <name xml:id="afl">Florian Amort</name>
+      <name xml:id="stk">Steffi Kracht</name>
    </xsl:variable>
    <xsl:variable name="publicationStmt">
 				  <distributor>Forschungsstelle zur Edition der Werke von Richard Strauss</distributor>
@@ -164,7 +166,7 @@
       <xsl:call-template name="warnIfHasChildOrRemove"/>
    </xsl:template>
    <xsl:template match="@key">
-      <xsl:attribute name="ref">http://richard-strauss-ausgabe.de/documents/xml/<xsl:value-of select="."/>
+      <xsl:attribute name="ref">http://richard-strauss-ausgabe.de/documents/view/<xsl:value-of select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="change/text()|div/text()"/>
@@ -172,6 +174,7 @@
       <xsl:attribute name="{name()}">#<xsl:value-of select="."/>
       </xsl:attribute>
    </xsl:template>
+   <xsl:template match="rsga:cert"/>
    <xsl:template match="@change">
       <xsl:attribute name="change">#change-<xsl:value-of select="."/>
       </xsl:attribute>

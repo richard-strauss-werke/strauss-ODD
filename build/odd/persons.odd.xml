@@ -56,7 +56,7 @@
 			<div xml:id="introduction">
 				<head>Introduction</head>
 				<p>...</p>
-				<p>The documents can be accessed at <ref target="http://richard-strauss-ausgabe.de/documents/xml/" xml:id="xmlDocsUrl">http://richard-strauss-ausgabe.de/xml/</ref>, followed by the identification number.</p>
+				<p>The documents can be accessed at <ref target="http://richard-strauss-ausgabe.de/documents/view/" xml:id="xmlDocsUrl">http://richard-strauss-ausgabe.de/xml/</ref>, followed by the identification number.</p>
 				<p>The contributors involved in the preparation of a document are listed with their corresponding <att>xml:id</att> in the section <title xml:id="contributorsResp">Vorbereitung der digitalen Edition</title>.</p>
 				<p>All documents contain the following statements:</p>
 				<list>
@@ -4373,7 +4373,7 @@ resource, either within the current document or elsewhere.</desc>
 						<datatype>
 							<ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.pointer"/>
 						</datatype>
-					</attDef><attDef ident="place" usage="mwa">
+					</attDef><attDef ident="place" usage="req">
 						<desc versionDate="2013-11-11" xml:lang="en">specifies where this item is placed.</desc>
 						<desc versionDate="2013-11-11" xml:lang="de">spezifiert wo das Element angebracht ist.</desc>
 						<valList type="closed">
@@ -4443,7 +4443,7 @@ resource, either within the current document or elsewhere.</desc>
 						<datatype>
 							<ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.pointer"/>
 						</datatype>
-					</attDef><attDef ident="rend" mode="change" usage="opt">
+					</attDef><attDef ident="rend" mode="change" usage="req">
 						<gloss versionDate="2013-11-11" xml:lang="en">rendition</gloss>
 						<desc versionDate="2013-11-11" xml:lang="en">indicates how the element in question was rendered or presented in the source text.</desc>
 						<gloss versionDate="2013-11-11" xml:lang="de">Ausgabe</gloss>
@@ -4795,9 +4795,9 @@ concerned, as further discussed in section <ref target="http://www.tei-c.org/rel
 						<datatype>
 							<ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.count"/>
 						</datatype>
-					</attDef><attDef ident="confidence" ns="http://richard-strauss-ausgabe.de/ns/1.0" usage="opt">
+					</attDef><attDef ident="cert" ns="http://richard-strauss-ausgabe.de/ns/1.0" usage="opt">
 						<datatype>
-							<ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.word"/>
+							<ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.certainty"/>
 						</datatype>
 					</attDef></attList><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples"><q>My dear <rs type="person">Mr. Bennet</rs>, </q> said <rs type="person">his lady</rs>
@@ -9047,7 +9047,7 @@ purposes.</p>
   </remarks><remarks xml:lang="ja" versionDate="2008-04-05">
     <p rend="dataDesc"> 段落による散文の解説，またはクラス <ident type="class">model.personPart</ident>にある一連の人口統計要 素を含むかもしれない． </p>
   </remarks><listRef>
-
+					
 					<ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERSE">13.3.2. </ref>
 					
 				</listRef></elementSpec><elementSpec rend="change" module="namesdates" ident="residence"><equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/><gloss versionDate="2005-01-14" xml:lang="en">residence</gloss><gloss versionDate="2007-12-20" xml:lang="ko">거주</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">住所</gloss><gloss versionDate="2008-12-09" xml:lang="fr">résidence</gloss><gloss versionDate="2007-05-04" xml:lang="es">residencia</gloss><gloss versionDate="2007-01-21" xml:lang="it">residenza</gloss><desc versionDate="2005-01-14" xml:lang="en">describes a person's present or past places of residence.</desc><desc versionDate="2007-12-20" xml:lang="ko">개인의 현재 또는 과거의 거주지를 기술한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">描述個人過去或現在的住所。</desc><desc versionDate="2008-04-05" xml:lang="ja">人物の，現在または過去の住居を示す．</desc><desc versionDate="2009-03-19" xml:lang="fr">décrit les lieux de résidence présents ou passés d'une personne.</desc><desc versionDate="2007-05-04" xml:lang="es">describe el lugar de residencia presente o pasado de una persona.</desc><desc versionDate="2007-01-21" xml:lang="it">descrive il luogo di residenza presente o passato di una persona</desc><classes><memberOf key="att.global"/><memberOf key="model.persStateLike"/><memberOf key="att.datable"/><memberOf key="att.editLike"/><memberOf key="att.naming"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/></content><attList/><exemplum xml:lang="en">
@@ -9146,7 +9146,7 @@ purposes.</p>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="data.encoding-staff">
 			<content>
-				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>slm</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Salome Reiser</a:documentation><value>alx</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Alexander Erhard</a:documentation><value>sts</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Stefan Schenk</a:documentation><value>aap</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Andreas Pernpeintner</a:documentation><value>mmm</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Martina Mengele</a:documentation><value>flr</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Florence Eller</a:documentation><value>sbb</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Sebastian Bolz</a:documentation><value>wwb</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Walter Werbeck</a:documentation><value>clh</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Claudia Heine</a:documentation></choice>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>slm</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Salome Reiser</a:documentation><value>alx</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Alexander Erhard</a:documentation><value>sts</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Stefan Schenk</a:documentation><value>aap</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Andreas Pernpeintner</a:documentation><value>mmm</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Martina Mengele</a:documentation><value>flr</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Florence Eller</a:documentation><value>sbb</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Sebastian Bolz</a:documentation><value>wwb</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Walter Werbeck</a:documentation><value>clh</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Claudia Heine</a:documentation><value>afl</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Florian Amort</a:documentation><value>stk</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Steffi Kracht</a:documentation></choice>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="data.gndIdno">
 			<content>
@@ -9159,6 +9159,10 @@ purposes.</p>
 				<rng:data type="string">
 					<rng:param name="pattern">[a-z]\d{4,5}</rng:param>
 				</rng:data>
+			</content>
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="data.biblType">
+			<content>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>e</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Edition in ...</a:documentation><value>a</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Auszug in ...</a:documentation><value>f</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Faksimile in ...</a:documentation><value>n</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Bezugnahme in ...</a:documentation><value>o</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Folgeauflage = </a:documentation><value>w</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Wiederabdruck = </a:documentation><value>t</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Übersetzung =</a:documentation><value>u</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">unbekannt</a:documentation><value>s</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Sonstiges</a:documentation></choice>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="macro.form.date">
 			<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandOrRemoveDate"/>
@@ -9419,7 +9423,9 @@ purposes.</p>
 			<equiv filter="rswa.xsl" mimeType="text/xsl" name="transformOrRemoveBibl"/>
 			<content>
 				<rng:element name="bibl">
-					<optional xmlns="http://relaxng.org/ns/structure/1.0"><attribute name="type"/></optional>
+					<optional xmlns="http://relaxng.org/ns/structure/1.0"><attribute name="type">
+							<ref name="data.biblType"/>
+						</attribute></optional>
 					<optional xmlns="http://relaxng.org/ns/structure/1.0"><ref name="rs"/></optional>
 					<rng:element name="note">
 						<oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="p"/></oneOrMore>
@@ -9431,13 +9437,7 @@ purposes.</p>
 			<content>
 				<zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><choice><ref name="model.gLike"/><ref name="model.phrase"/><ref name="model.inter"/><ref name="model.divPart"/><ref name="model.global"/></choice></zeroOrMore>
 			</content>
-		</macroSpec><elementSpec rend="add" module="derived-module-schema.persons" ident="pdf" mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0"><content>
-					<rng:text/>
-				</content><attList><attDef mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0" ident="seitepdf">
-						<datatype>
-							<data xmlns="http://relaxng.org/ns/structure/1.0" type="string"/>
-						</datatype>
-					</attDef></attList></elementSpec><moduleSpec n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec n="CO" xml:id="DCO" ident="core"/><moduleSpec n="HD" xml:id="DHD" ident="header"/><moduleSpec n="ND" xml:id="DND" ident="namesdates"/><moduleSpec n="SA" xml:id="DSA" ident="linking"/><moduleSpec n="CE" xml:id="DCE" ident="certainty"/><moduleSpec n="FT" xml:id="DFTFF" ident="figures"/></schemaSpec>
+		</macroSpec><moduleSpec n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec n="CO" xml:id="DCO" ident="core"/><moduleSpec n="HD" xml:id="DHD" ident="header"/><moduleSpec n="ND" xml:id="DND" ident="namesdates"/><moduleSpec n="SA" xml:id="DSA" ident="linking"/><moduleSpec n="CE" xml:id="DCE" ident="certainty"/><moduleSpec n="FT" xml:id="DFTFF" ident="figures"/></schemaSpec>
 				
 				
 				
@@ -9447,7 +9447,6 @@ purposes.</p>
 			<div xml:id="scopes">
 				<head>Scopes</head>
 				<desc>The 'scopes' below mostly define thematically grouped collections of modules / elements. Combined, they add up to the full scope of a schema. In the whole 'scopes' section, each module and each element may only be cited once.</desc>
-
 				<div>
 					<head>Shared scope</head>
 					<desc>A scope common to all schemata</desc>
@@ -9472,7 +9471,7 @@ purposes.</p>
 					<table><row><cell>
 		Module transcr</cell><cell/></row><row><cell>
 		Module msdescription</cell><cell/></row><row><cell>
-		Module analysis</cell><cell/></row><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/></table>
+		Module analysis</cell><cell/></row><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/></table>
 				</div>
 				<div>
 					<head>Manuscript specific scope</head>
@@ -9590,7 +9589,9 @@ purposes.</p>
 		Macro <ident type="macro">data.msDescRend</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.encoding-staff</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.gndIdno</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">data.rsqvIdno</ident></cell><cell/></row></table>
+		Macro <ident type="macro">data.rsqvIdno</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.keyword</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.biblType</ident></cell><cell/></row></table>
 </div><!-- currently not in use --><!--<macroSpec ident="data.compilationKey">
 			<content>
 				<rng:data type="string">
@@ -9674,7 +9675,7 @@ purposes.</p>
 -->
 				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.edits.elements.xml" xml:lang="">
 	<head>Modifications of Elements</head>
-	
+
 	<div>
 		<head>Modifications specific to single schemata</head>
 		<desc>These specifications are not meant to be combined; no more than one can be chosen</desc>
@@ -9711,7 +9712,7 @@ purposes.</p>
 		Element <gi>creation</gi></cell><cell>replace</cell></row></table>
 		</div>
 	</div>
-	
+
 	<div>
 		<head>Modifications shared by all schemata</head>
 		<desc>These modifications change the way an element is specified for all schemata linking to this specGrp. Currently, this applies to every schema in use. If a specific element is not included in a schema, the corresponding specifications below will have no effect on that schema.</desc>
@@ -9768,11 +9769,11 @@ purposes.</p>
 		Element <gi>revisionDesc</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>teiHeader</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>profileDesc</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>pdf</gi></cell><cell>add</cell></row><row><cell>
+		Element <gi>ptr</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>rs</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>respons</gi></cell><cell>change</cell></row></table>
-</div>
-</div><!-- currently not in use --><!-- 
+	</div>
+</div><!-- not in use --><!-- 
 <elementSpec ident="rs" module="core" mode="change">
 	<gloss versionDate="2005-01-14" xml:lang="en">referencing string</gloss>
 	<gloss versionDate="2014-02-06" xml:lang="de">verweisende Zeichenfolge</gloss>
@@ -9857,9 +9858,9 @@ purposes.</p>
 						</rng:attribute>
 					</rng:optional>
 					<rng:optional>
-						<rng:attribute name="confidence"
+						<rng:attribute name="cert"
 							ns="http://richard-strauss-ausgabe.de/ns/1.0">
-							<rng:ref name="data.word"/>
+							<rng:ref name="data.certainty"/>
 						</rng:attribute>
 					</rng:optional>
 				</rng:group>

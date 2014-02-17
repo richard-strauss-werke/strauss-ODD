@@ -30,7 +30,7 @@
 				<XSL:import href="{.}"/>
 			</xsl:for-each>
 
-			<XSL:output method="xml" indent="yes" encoding="utf-8"/>
+			<XSL:output method="xml" indent="no" encoding="utf-8"/>
 
 			<XSL:strip-space
 				elements="{normalize-space('
@@ -52,7 +52,7 @@
 				seriesStmt sourceDesc sp space state subst supportDesc 
 				table teiHeader text textClass titleStmt
 				')}"/>
-
+			
 			<XSL:key name="who" match="//@who" use="."/>
 
 			<!-- get document ID from uri: -->
@@ -181,6 +181,9 @@
 				<XSL:attribute><xsl:attribute name="name">{name()}</xsl:attribute>#<XSL:value-of
 					select="."/></XSL:attribute>
 			</XSL:template>
+
+			<!-- removed here; transformed to element certainty when processing the rs element -->
+			<XSL:template match="rsga:cert"/>
 
 			<XSL:template match="@change">
 				<XSL:attribute name="change">#change-<XSL:value-of select="."/></XSL:attribute>

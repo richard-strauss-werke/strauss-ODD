@@ -79,6 +79,10 @@
 					<a:documentation>Walter Werbeck</a:documentation>
 					<rng:value>clh</rng:value>
 					<a:documentation>Claudia Heine</a:documentation>
+					<rng:value>afl</rng:value>
+					<a:documentation>Florian Amort</a:documentation>
+					<rng:value>stk</rng:value>
+					<a:documentation>Steffi Kracht</a:documentation>
 				</rng:choice>
 			</content>
 		</macroSpec>
@@ -99,6 +103,108 @@
 			</content>
 		</macroSpec>
 
+		<macroSpec ident="data.keyword">
+			<content>
+				<rng:optional>
+					<rng:choice>
+						<!-- ms sources -->
+						<rng:value>Brief</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4008240-4</a:documentation>
+						<rng:value>Postkarte</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4046902-5</a:documentation>
+						<rng:value>Briefumschlag</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4146614-7</a:documentation>
+						<rng:value>Telegramm</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4184647-3</a:documentation>
+						<rng:value>schriftliche Mitteilung (allgemein)</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4180011-4</a:documentation>
+						<rng:value>Visitenkarte</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4188409-7</a:documentation>
+						<rng:value>Vertrag</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4063270-2</a:documentation>
+						<rng:value>Notiz</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4206777-7</a:documentation>
+						<rng:value>Notizbuch</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4225695-1</a:documentation>
+						<rng:value>Musikhandschrift</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4040847-4</a:documentation>
+						<rng:value>Schriftstück (allgemein)</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4180009-6</a:documentation>
+
+						<rng:value>Rezension</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4049712-4</a:documentation>
+						<rng:value>Zeitungsaufsatz</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4125430-2</a:documentation>
+						<rng:value>Zeitschriftenaufsatz</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4125424-7</a:documentation>
+						<rng:value>Aufsatz in Sammelwerk</rng:value>
+						<a:documentation/><!-- deest -->
+						<rng:value>Kapitel</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4290552-7</a:documentation>
+						<rng:value>Sammelwerk</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4202533-3</a:documentation>
+						<!--<rng:value>Zeitung</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4067510-5</a:documentation>
+						<rng:value>Zeitschrift</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4067488-5</a:documentation>
+						-->
+						<rng:value>Monographie</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4454906-4</a:documentation>
+						<rng:value>Libretto</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4035588-3</a:documentation>
+						<rng:value>Dissertation</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4012494-0</a:documentation>
+						<rng:value>Magisterarbeit</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4168514-3</a:documentation>
+						<rng:value>Musikdruck</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4075121-1</a:documentation>
+						<rng:value>Druckwerk (allgemein)</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4013134-8</a:documentation>
+						<rng:value>Online-Publikation</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4511937-5</a:documentation>
+
+						<!--<rng:value>Theaterzettel</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4185060-9</a:documentation>-->
+						<rng:value>Photographie</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4045895-7</a:documentation>
+						<rng:value>Gemälde</rng:value>
+						<a:documentation>http://d-nb.info/gnd/4122164-3</a:documentation>
+						<!--<rng:value/>
+						<a:documentation/>
+						<rng:value/>
+						<a:documentation/>
+						<rng:value/>
+						<a:documentation/>-->
+					</rng:choice>
+				</rng:optional>
+			</content>
+		</macroSpec>
+
+		<!-- TODO: substitute initials by words -->
+		<macroSpec ident="data.biblType">
+			<content>
+				<rng:choice>
+					<rng:value>e</rng:value>
+					<a:documentation>Edition in ...</a:documentation>
+					<rng:value>a</rng:value>
+					<a:documentation>Auszug in ...</a:documentation>
+					<rng:value>f</rng:value>
+					<a:documentation>Faksimile in ...</a:documentation>
+					<rng:value>n</rng:value>
+					<a:documentation>Bezugnahme in ...</a:documentation>
+					<rng:value>o</rng:value>
+					<a:documentation>Folgeauflage = </a:documentation>
+					<rng:value>w</rng:value>
+					<a:documentation>Wiederabdruck = </a:documentation>
+					<rng:value>t</rng:value>
+					<a:documentation>Übersetzung =</a:documentation>
+					<rng:value>u</rng:value>
+					<a:documentation>unbekannt</a:documentation>
+					<rng:value>s</rng:value>
+					<a:documentation>Sonstiges</a:documentation>
+				</rng:choice>
+			</content>
+		</macroSpec>
 	</specGrp>
 </div>
 

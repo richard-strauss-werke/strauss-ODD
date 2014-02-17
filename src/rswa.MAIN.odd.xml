@@ -60,7 +60,7 @@
 			<div xml:id="introduction">
 				<head>Introduction</head>
 				<p>...</p>
-				<p>The documents can be accessed at <ref target="http://richard-strauss-ausgabe.de/documents/xml/" xml:id="xmlDocsUrl">http://richard-strauss-ausgabe.de/xml/</ref>, followed by the identification number.</p>
+				<p>The documents can be accessed at <ref target="http://richard-strauss-ausgabe.de/documents/view/" xml:id="xmlDocsUrl">http://richard-strauss-ausgabe.de/xml/</ref>, followed by the identification number.</p>
 				<p>The contributors involved in the preparation of a document are listed with their corresponding <att>xml:id</att> in the section <title xml:id="contributorsResp">Vorbereitung der digitalen Edition</title>.</p>
 				<p>All documents contain the following statements:</p>
 				<list>
@@ -202,7 +202,6 @@
 			<div xml:id="scopes">
 				<head>Scopes</head>
 				<desc>The 'scopes' below mostly define thematically grouped collections of modules / elements. Combined, they add up to the full scope of a schema. In the whole 'scopes' section, each module and each element may only be cited once.</desc>
-
 				<div>
 					<head>Shared scope</head>
 					<desc>A scope common to all schemata</desc>
@@ -248,6 +247,7 @@
 						<!-- core -->
 						<elementRef key="addrLine"/>
 						<elementRef key="address"/>
+						<elementRef key="ptr"/>
 						<!-- header -->
 						<elementRef key="edition"/>
 						<elementRef key="editionStmt"/>
