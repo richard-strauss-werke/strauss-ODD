@@ -37,7 +37,7 @@
 				<attDef mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0"
 					ident="priority">
 					<datatype>
-						<rng:data type="string"/>
+						<rng:ref name="data.digit"/>
 					</datatype>
 				</attDef>
 				<attDef ident="when" mode="add">

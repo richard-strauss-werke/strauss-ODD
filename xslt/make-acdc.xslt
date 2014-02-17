@@ -99,6 +99,21 @@
 				<!-- maintain a node datatype even if there are no matches: -->
 				<dummy/>
 			</XSL:variable>
+			<XSL:variable name="keywords">
+				<xsl:for-each select="//@ident[.=('data.keyword_ms', 'data.keyword_print')]/..//rng:value">
+					<term>
+						<xsl:if test="following-sibling::*[1]/text()">
+							<!-- only insert keywords with documentation -->
+							<xsl:attribute name="ref">
+								<xsl:value-of select="following-sibling::*[1]"/>
+							</xsl:attribute>
+							<xsl:value-of select="."/>
+						</xsl:if>
+					</term>
+				</xsl:for-each>
+				<!-- maintain a node datatype even if there are no matches: -->
+				<dummy/>
+			</XSL:variable>
 
 
 			<XSL:template match="@*|node()|comment()|processing-instruction()|text()" priority="-1">
@@ -182,7 +197,7 @@
 					select="."/></XSL:attribute>
 			</XSL:template>
 
-			<!-- removed here; transformed to element certainty when processing the rs element -->
+			<!-- removed here; transformed to a "certainty" element when processing the parent "rs" element -->
 			<XSL:template match="rsga:cert"/>
 
 			<XSL:template match="@change">

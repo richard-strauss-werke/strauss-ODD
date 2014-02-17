@@ -42,6 +42,17 @@
 						</rng:optional>
 					</content>
 				</elementSpec>
+				<elementSpec ident="term" module="core" mode="change">
+					<equiv filter="rswa.xsl" mimeType="text/xsl" name="addTermRef"/>
+					<content>
+						<rng:optional>
+							<rng:choice>
+								<rng:ref name="data.keyword_ms"/>
+								<rng:ref name="data.keyword_print"/>
+							</rng:choice>
+						</rng:optional>
+					</content>
+				</elementSpec>
 			</specGrp>
 		</div>
 		<div>
@@ -64,6 +75,14 @@
 						<rng:ref name="macro.form.creation_ms"/>
 					</content>
 				</elementSpec>
+				<elementSpec ident="term" module="core" mode="change">
+					<equiv filter="rswa.xsl" mimeType="text/xsl" name="addTermRef"/>
+					<content>
+						<rng:optional>
+							<rng:ref name="data.keyword_ms"/>
+						</rng:optional>
+					</content>
+				</elementSpec>
 			</specGrp>
 		</div>
 		<div>
@@ -82,6 +101,14 @@
 					</content>
 				</elementSpec>
 				<elementSpec ident="creation" module="header" mode="delete"/>
+				<elementSpec ident="term" module="core" mode="change">
+					<equiv filter="rswa.xsl" mimeType="text/xsl" name="addTermRef"/>
+					<content>
+						<rng:optional>
+							<rng:ref name="data.keyword_print"/>
+						</rng:optional>
+					</content>
+				</elementSpec>
 			</specGrp>
 		</div>
 		<div>
@@ -170,7 +197,7 @@
 			</elementSpec>
 
 			<elementSpec ident="textClass" module="header" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="wrapTextClassContentOrRemove"/>
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
 				<gloss versionDate="2005-01-14" xml:lang="en">text classification</gloss>
 				<gloss versionDate="2006-10-18" xml:lang="de">Textklassifikation</gloss>
 				<classes>
@@ -178,16 +205,12 @@
 					<memberOf key="model.profileDescPart"/>
 				</classes>
 				<content>
-					<rng:text/>
+					<rng:element name="keywords">
+						<rng:oneOrMore>
+							<rng:ref name="term"/>
+						</rng:oneOrMore>
+					</rng:element>
 				</content>
-				<attList>
-					<!-- TODO move to term -->
-					<attDef ident="ref">
-						<datatype>
-							<rng:ref name="data.keyword"/>
-						</datatype>
-					</attDef>
-				</attList>
 			</elementSpec>
 
 			<elementSpec ident="graphic" module="core" mode="change">

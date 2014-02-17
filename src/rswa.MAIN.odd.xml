@@ -245,9 +245,10 @@
 							include="additional collection msDesc msIdentifier notesStmt repository"/>
 						<moduleRef key="analysis" include="pc"/>
 						<!-- core -->
+						<elementRef key="ptr"/>
 						<elementRef key="addrLine"/>
 						<elementRef key="address"/>
-						<elementRef key="ptr"/>
+						<elementRef key="term"/>
 						<!-- header -->
 						<elementRef key="edition"/>
 						<elementRef key="editionStmt"/>

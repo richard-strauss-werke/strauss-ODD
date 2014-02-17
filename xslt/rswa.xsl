@@ -18,6 +18,7 @@
 	<xsl:variable name="guidelinesTitleRef" select="/null"/>
 	<xsl:variable name="specificFeaturesTitle" select="/null"/>
 	<xsl:variable name="sexes" select="/null"/>
+	<xsl:variable name="keywords" select="/null"/>
 
 
 	<!-- named templates -->
@@ -136,18 +137,12 @@
 		</xsl:if>
 	</xsl:template>
 
-	<xsl:template name="wrapTextClassContentOrRemove">
-		<xsl:if test="node()">
-			<xsl:copy>
-				<keywords scheme="http://xgnd.bsz-bw.de/">
-					<term>
-						<xsl:apply-templates select="@*|node()"/>
-					</term>
-				</keywords>
-			</xsl:copy>
-		</xsl:if>
+	<xsl:template name="addTermRef">
+		<xsl:copy>
+			<xsl:copy-of select="$keywords//text()[.=current()]/../@ref"/>
+			<xsl:value-of select="."/>
+		</xsl:copy>
 	</xsl:template>
-
 
 	<xsl:template name="tightenCommentary">
 		<xsl:if test="normalize-space()">

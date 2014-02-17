@@ -54,6 +54,27 @@
    <xsl:variable name="sexes">
       <dummy/>
    </xsl:variable>
+   <xsl:variable name="keywords">
+      <term ref="http://d-nb.info/gnd/4008240-4">Brief</term>
+      <term ref="http://d-nb.info/gnd/4046902-5">Postkarte</term>
+      <term/>
+      <term ref="http://d-nb.info/gnd/4146614-7">Briefumschlag</term>
+      <term ref="http://d-nb.info/gnd/4184647-3">Telegramm</term>
+      <term ref="http://d-nb.info/gnd/4180011-4">schriftliche Mitteilung</term>
+      <term ref="http://d-nb.info/gnd/4188409-7">Visitenkarte</term>
+      <term ref="http://d-nb.info/gnd/4063270-2">Vertrag</term>
+      <term ref="http://d-nb.info/gnd/4206777-7">Notiz</term>
+      <term ref="http://d-nb.info/gnd/4225695-1">Notizbuch</term>
+      <term ref="http://d-nb.info/gnd/4040847-4">Musikhandschrift</term>
+      <term ref="http://d-nb.info/gnd/4180009-6">Schriftstück</term>
+      <term ref="http://d-nb.info/gnd/4185060-9">Theaterzettel</term>
+      <term ref="http://d-nb.info/gnd/4127900-1">Zeichnung</term>
+      <term ref="http://d-nb.info/gnd/4152458-5">Entwurfszeichnung</term>
+      <term ref="http://d-nb.info/gnd/4113357-2">Druckgraphik</term>
+      <term ref="http://d-nb.info/gnd/4122164-3">Gemälde</term>
+      <term ref="http://d-nb.info/gnd/4045895-7">Photographie</term>
+      <dummy/>
+   </xsl:variable>
    <xsl:template match="@*|node()|comment()|processing-instruction()|text()"
                  priority="-1">
       <xsl:copy>
@@ -111,6 +132,9 @@
    <xsl:template match="titleStmt">
       <xsl:call-template name="expandTitleStmt"/>
    </xsl:template>
+   <xsl:template match="term">
+      <xsl:call-template name="addTermRef"/>
+   </xsl:template>
    <xsl:template match="edition">
       <xsl:call-template name="expandEdition"/>
    </xsl:template>
@@ -124,7 +148,7 @@
       <xsl:call-template name="keepOnlyWithContent"/>
    </xsl:template>
    <xsl:template match="textClass">
-      <xsl:call-template name="wrapTextClassContentOrRemove"/>
+      <xsl:call-template name="keepOnlyWithAnyText"/>
    </xsl:template>
    <xsl:template match="additions">
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>

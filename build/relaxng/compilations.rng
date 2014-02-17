@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2014-02-17T07:35:06Z. 
+Schema generated from ODD source 2014-02-17T16:14:21Z. 
 Edition: Version 2.6.0. Last updated on
 	20th January 2014, revision 12802
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
@@ -1171,6 +1171,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <ref name="rswa_taskDesc"/>
          <ref name="rswa_teiHeader"/>
          <ref name="rswa_tempo"/>
+         <ref name="rswa_term"/>
          <ref name="rswa_text"/>
          <ref name="rswa_textClass"/>
          <ref name="rswa_textLang"/>
@@ -1256,6 +1257,11 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Steffi Kracht</a:documentation>
       </choice>
    </define>
+   <define name="rswa_data.digit">
+      <data type="string">
+         <param name="pattern">\d</param>
+      </data>
+   </define>
    <define name="rswa_data.gndIdno">
       <data type="string">
          <param name="pattern">\d{1,9}\-?[\dX]</param>
@@ -1265,64 +1271,6 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
       <data type="string">
          <param name="pattern">[a-z]\d{4,5}</param>
       </data>
-   </define>
-   <define name="rswa_data.keyword">
-      <optional>
-         <choice>
-            <value>Brief</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4008240-4</a:documentation>
-            <value>Postkarte</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4046902-5</a:documentation>
-            <value>Briefumschlag</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4146614-7</a:documentation>
-            <value>Telegramm</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4184647-3</a:documentation>
-            <value>schriftliche Mitteilung (allgemein)</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4180011-4</a:documentation>
-            <value>Visitenkarte</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4188409-7</a:documentation>
-            <value>Vertrag</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4063270-2</a:documentation>
-            <value>Notiz</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4206777-7</a:documentation>
-            <value>Notizbuch</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4225695-1</a:documentation>
-            <value>Musikhandschrift</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4040847-4</a:documentation>
-            <value>Schriftstück (allgemein)</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4180009-6</a:documentation>
-            <value>Rezension</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4049712-4</a:documentation>
-            <value>Zeitungsaufsatz</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4125430-2</a:documentation>
-            <value>Zeitschriftenaufsatz</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4125424-7</a:documentation>
-            <value>Aufsatz in Sammelwerk</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <value>Kapitel</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4290552-7</a:documentation>
-            <value>Sammelwerk</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4202533-3</a:documentation>
-            <value>Monographie</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4454906-4</a:documentation>
-            <value>Libretto</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4035588-3</a:documentation>
-            <value>Dissertation</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4012494-0</a:documentation>
-            <value>Magisterarbeit</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4168514-3</a:documentation>
-            <value>Musikdruck</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4075121-1</a:documentation>
-            <value>Druckwerk (allgemein)</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4013134-8</a:documentation>
-            <value>Online-Publikation</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4511937-5</a:documentation>
-            <value>Photographie</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4045895-7</a:documentation>
-            <value>Gemälde</value>
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4122164-3</a:documentation>
-         </choice>
-      </optional>
    </define>
    <define name="rswa_data.biblType">
       <choice>
@@ -2289,22 +2237,28 @@ Empfohlene Werte sind: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] par
    <define name="rswa_model.emphLike">
       <choice>
          <ref name="rswa_title"/>
+         <ref name="rswa_term"/>
          <ref name="rswa_gloss"/>
       </choice>
    </define>
    <define name="rswa_model.emphLike_alternation">
       <choice>
          <ref name="rswa_title"/>
+         <ref name="rswa_term"/>
          <ref name="rswa_gloss"/>
       </choice>
    </define>
    <define name="rswa_model.emphLike_sequence">
       <ref name="rswa_title"/>
+      <ref name="rswa_term"/>
       <ref name="rswa_gloss"/>
    </define>
    <define name="rswa_model.emphLike_sequenceOptional">
       <optional>
          <ref name="rswa_title"/>
+      </optional>
+      <optional>
+         <ref name="rswa_term"/>
       </optional>
       <optional>
          <ref name="rswa_gloss"/>
@@ -2315,12 +2269,18 @@ Empfohlene Werte sind: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] par
          <ref name="rswa_title"/>
       </zeroOrMore>
       <zeroOrMore>
+         <ref name="rswa_term"/>
+      </zeroOrMore>
+      <zeroOrMore>
          <ref name="rswa_gloss"/>
       </zeroOrMore>
    </define>
    <define name="rswa_model.emphLike_sequenceRepeatable">
       <oneOrMore>
          <ref name="rswa_title"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="rswa_term"/>
       </oneOrMore>
       <oneOrMore>
          <ref name="rswa_gloss"/>
@@ -13450,6 +13410,35 @@ Empfohlene Werte sind: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentation
          <empty/>
       </element>
    </define>
+   <define name="rswa_ptr">
+      <element name="ptr">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Hinweis) definiert einen Hinweis auf einen anderen Ort. [3.6.  16.1. ]</a:documentation>
+         <empty/>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="ptr-constraint-ptrAtts">
+            <rule context="tei:ptr">
+               <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                       xmlns:s="http://www.ascc.net/xml/schematron"
+                       xmlns:xi="http://www.w3.org/2001/XInclude"
+                       test="@target and @cRef">Only one of the
+attributes @target and @cRef may be supplied on <name/>.</report>
+            </rule>
+         </pattern>
+         <ref name="rswa_att.global.attributes"/>
+         <ref name="rswa_att.pointing.attributes"/>
+         <attribute name="type">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <choice>
+               <value>pdf</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>image</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            </choice>
+         </attribute>
+         <empty/>
+      </element>
+   </define>
    <define name="rswa_addrLine">
       <element name="addrLine">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"> [3.5.2.  2.2.4.  3.11.2.4. ]</a:documentation>
@@ -13478,32 +13467,14 @@ Empfohlene Werte sind: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentation
          <empty/>
       </element>
    </define>
-   <define name="rswa_ptr">
-      <element name="ptr">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Hinweis)  [3.6.  16.1. ]</a:documentation>
-         <empty/>
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="ptr-constraint-ptrAtts">
-            <rule context="tei:ptr">
-               <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:s="http://www.ascc.net/xml/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
-                       test="@target and @cRef">Only one of the
-attributes @target and @cRef may be supplied on <name/>.</report>
-            </rule>
-         </pattern>
+   <define name="rswa_term">
+      <element name="term">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"> [3.3.4. ]</a:documentation>
+         <ref name="rswa_macro.phraseSeq"/>
          <ref name="rswa_att.global.attributes"/>
          <ref name="rswa_att.pointing.attributes"/>
-         <attribute name="type">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <choice>
-               <value>pdf</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <value>image</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            </choice>
-         </attribute>
+         <ref name="rswa_att.typed.attributes"/>
+         <ref name="rswa_att.canonical.attributes"/>
          <empty/>
       </element>
    </define>
@@ -13569,11 +13540,14 @@ attributes @target and @cRef may be supplied on <name/>.</report>
    <define name="rswa_textClass">
       <element name="textClass">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Textklassifikation) umfasst Informationen über Art oder Thematik eines Texts unter Bezug auf ein Standard-Klassifikationsschema, einen Thesaurus, usw. [2.4.3. ]</a:documentation>
-         <text/>
+         <element name="keywords">
+            <oneOrMore>
+               <ref name="rswa_term"/>
+            </oneOrMore>
+         </element>
          <optional>
             <attribute name="ref">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <ref name="rswa_data.keyword"/>
             </attribute>
          </optional>
          <empty/>
@@ -14457,7 +14431,7 @@ relatedItem element must be empty</sch:report>
          <optional>
             <attribute name="priority" ns="http://richard-strauss-ausgabe.de/ns/1.0">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <data type="string"/>
+               <ref name="rswa_data.digit"/>
             </attribute>
          </optional>
          <optional>

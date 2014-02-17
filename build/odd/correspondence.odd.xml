@@ -19690,6 +19690,25 @@ supplied to printer.</change>
   </exemplum><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD21">2.2.1. </ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD2">2.2. </ref>
+  </listRef></elementSpec><elementSpec rend="change" module="core" ident="ptr"><gloss versionDate="2007-07-04" xml:lang="en">pointer</gloss><gloss versionDate="2014-02-17" xml:lang="de">Hinweis</gloss><desc versionDate="2006-01-11" xml:lang="en">defines a pointer to another location.</desc><desc versionDate="2014-02-17" xml:lang="de">definiert einen Hinweis auf einen anderen Ort.</desc><classes><memberOf key="att.global"/><memberOf key="model.ptrLike"/><memberOf key="att.pointing"/></classes><content><empty xmlns="http://relaxng.org/ns/structure/1.0"/></content><constraintSpec scheme="isoschematron" ident="ptrAtts">
+    <constraint>
+      <report xmlns="http://purl.oclc.org/dsdl/schematron" test="@target and @cRef">Only one of the
+attributes @target and @cRef may be supplied on <name/>.</report>
+    </constraint>
+  </constraintSpec><attList><attDef ident="type" usage="req">
+						<valList type="closed">
+							<valItem ident="pdf"/>
+							<valItem ident="image"/>
+						</valList>
+					</attDef></attList><exemplum xml:lang="und">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <ptr target="#p143 #p144"/>
+      <ptr target="http://www.tei-c.org"/>
+      <ptr cRef="1.3.4"/>
+    </egXML>
+  </exemplum><listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COXR">3.6. </ref>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SAPT">16.1. </ref>
   </listRef></elementSpec><elementSpec module="core" ident="addrLine">
   <gloss versionDate="2007-07-04" xml:lang="en">address line</gloss>
   <gloss versionDate="2007-12-20" xml:lang="ko">주소 행</gloss>
@@ -19887,25 +19906,56 @@ TOURS</addrLine>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD24">2.2.4. </ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBICOI">3.11.2.4. </ref>
   </listRef>
-</elementSpec><elementSpec rend="change" module="core" ident="ptr"><gloss versionDate="2007-07-04" xml:lang="en">pointer</gloss><gloss versionDate="2014-02-17" xml:lang="de">Hinweis</gloss><desc versionDate="2006-01-11" xml:lang="en">defines a pointer to another location.</desc><desc versionDate="2014-02-17" xml:lang="de">definiert einen Hinweis auf einen anderen Ort.</desc><classes><memberOf key="att.global"/><memberOf key="model.ptrLike"/><memberOf key="att.pointing"/></classes><content><empty xmlns="http://relaxng.org/ns/structure/1.0"/></content><constraintSpec scheme="isoschematron" ident="ptrAtts">
-    <constraint>
-      <report xmlns="http://purl.oclc.org/dsdl/schematron" test="@target and @cRef">Only one of the
-attributes @target and @cRef may be supplied on <name/>.</report>
-    </constraint>
-  </constraintSpec><attList><attDef ident="type" usage="req">
-						<valList type="closed">
-							<valItem ident="pdf"/>
-							<valItem ident="image"/>
-						</valList>
-					</attDef></attList><exemplum xml:lang="und">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <ptr target="#p143 #p144"/>
-      <ptr target="http://www.tei-c.org"/>
-      <ptr cRef="1.3.4"/>
+</elementSpec><elementSpec rend="change" module="core" ident="term"><equiv filter="rswa.xsl" mimeType="text/xsl" name="addTermRef"/><gloss versionDate="2009-01-06" xml:lang="fr">terme</gloss><desc versionDate="2005-01-14" xml:lang="en">contains a single-word, multi-word, or symbolic designation which is regarded as a technical
+    term.</desc><desc versionDate="2007-12-20" xml:lang="ko">전문용어로 간주되는 단일어, 복합어, 기호적 명칭을 포함한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含作為專有名詞的一個單字、詞彙、或是表示符號。</desc><desc versionDate="2008-04-05" xml:lang="ja">技術用語とされる単一語，複数語，記号表示を示す．</desc><desc versionDate="2009-01-06" xml:lang="fr">contient un mot simple, un mot composé ou un symbole, qui est
+    considéré comme un terme technique.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene una palabra simple, multipalabra o designación
+    simbólica que se considera como un término técnico.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene una parola singola, un'unità formata da più
+    parole, o una designazione simbolica che è considerata come un termine tecnico</desc><classes><memberOf key="att.global"/><memberOf key="model.emphLike"/><memberOf key="att.pointing"/><memberOf key="att.typed"/><memberOf key="att.canonical"/></classes><content><optional xmlns="http://relaxng.org/ns/structure/1.0"><ref name="data.keyword_ms"/></optional></content><attList/><exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">A computational device that infers structure
+      from grammatical strings of words is known as a <term>parser</term>, and much of the history
+      of NLP over the last 20 years has been occupied with the design of parsers.</egXML>
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Moliere_Med">
+      <p>SGANARELLE.</p>
+      <p>Qui est causée par l'âcreté des <term>humeurs</term> engendrées dans la concavité du
+            <term>diaphragme</term>, il arrive que ces <term>vapeurs</term>... Ossabandus, nequeys,
+          nequer, potarinum, quipsa milus. Voilà justement ce qui fait que votre fille est
+        muette.</p>
     </egXML>
-  </exemplum><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COXR">3.6. </ref>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SAPT">16.1. </ref>
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Greimas_Courtes"> D'après la
+        théorie d'Austin, les<term> verbes performatifs</term> seraient ceux qui non seulement
+        décrivent l'action de celui qui les utilise, mais aussi, et en même temps, qui
+        impliqueraient cette action elle-même. </egXML>
+  </exemplum><exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples"> 蜀漢後主<index indexName="NAMES"><term sortKey="LIU_CHAN">劉禪</term></index> ，初名斗，字升之，後改名禪，字<index indexName="NAMES"><term sortKey="LIU_CHAN">公嗣</term></index>，蜀漢昭烈帝劉備之子，蜀漢末代皇帝，也是漢朝末代皇帝。</egXML>
+  </exemplum><exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples"> 在可攜式的裝置如數位相機、手持式電腦，及MP3播放機上，<term>快閃記憶體(Flash
+        Memory)</term>可以說是最普遍的儲存類型。</egXML>
+  </exemplum><exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">賣空的對稱，<term xml:id="zh-tw_TMK" rend="sc">買空</term>亦稱<gloss target="#zh-tw_TMK">多頭交易，是指交易者利用借入資金，在市場上買入期貨，以期將來價格上漲時，再高價拋出，從中獲利的投票活動。</gloss>
+      </egXML>
+  </exemplum><exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">We may define <term xml:id="TDPV" rend="sc">discoursal point of view</term> as <gloss target="#TDPV">the relationship, expressed
+        through discourse structure, between the implied author or some other addresser, and the
+        fiction.</gloss>
+      </egXML>
+  </exemplum><remarks versionDate="2009-01-23" xml:lang="en">
+    <p>This element is used to supply the form under which an index entry is to be made for the
+      location of a parent <gi>index</gi> element. </p>
+    <p>In formal terminological work, there is frequently discussion over whether terms must be
+      atomic or may include multi-word lexical items, symbolic designations, or phraseological
+      units. The <gi>term</gi> element may be used to mark any of these. No position is taken on the
+      philosophical issue of what a term can be; the looser definition simply allows the
+      <gi>term</gi> element to be used by practitioners of any persuasion.</p>
+    <p>As with other members of the <ident type="class">att.canonical</ident> class, instances of
+      this element occuring in a text may be associated with a canonical definition, either by means
+      of a URI (using the <att>ref</att> attribute), or by means of some system-specific code value
+      (using the <att>key</att> attribute). Because the mutually exclusive <att>target</att> and
+        <att>cRef</att> attributes overlap with the function of the <att>ref</att> attribute, they
+      are deprecated and may be removed at a subsequent release. </p>
+  </remarks><listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COHQU">3.3.4. </ref>
   </listRef></elementSpec><elementSpec rend="change" module="header" ident="edition"><equiv filter="rswa.xsl" mimeType="text/xsl" name="expandEdition"/><gloss versionDate="2007-07-04" xml:lang="en">edition</gloss><gloss versionDate="2009-01-05" xml:lang="fr">édition</gloss><gloss versionDate="2007-12-20" xml:lang="ko">편집, 판</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">版本</gloss><gloss versionDate="2006-10-18" xml:lang="de">Edition</gloss><gloss versionDate="2007-05-04" xml:lang="es">edición</gloss><gloss versionDate="2007-01-21" xml:lang="it">Edizione</gloss><desc versionDate="2005-01-14" xml:lang="en">describes the particularities of one edition of a text.</desc><desc versionDate="2009-01-05" xml:lang="fr">décrit les particularités de l’édition d’un texte.</desc><desc versionDate="2007-12-20" xml:lang="ko">텍스트의 한 판의 특성을 기술한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">描述文件某一版本的特質。</desc><desc versionDate="2008-04-05" xml:lang="ja">テキストの版の詳細を示す．</desc><desc versionDate="2006-10-18" xml:lang="de">beschreibt die
   Besonderheiten einer Edition eines Textes.</desc><desc versionDate="2007-05-04" xml:lang="es">describe las particularidades de la edición de un texto.</desc><desc versionDate="2007-01-21" xml:lang="it">descrive le peculiarità di una edizione del testo.</desc><classes><memberOf key="att.global"/><memberOf key="model.biblPart"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/></content><attList/><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -19943,18 +19993,16 @@ attributes @target and @cRef may be supplied on <name/>.</report>
 					<group xmlns="http://relaxng.org/ns/structure/1.0"><ref name="macro.form.summaryNote"/><ref name="macro.form.commentaryNote"/><ref name="macro.form.discussionNote"/><ref name="macro.form.uncategorizedNote"/></group>
 				</content><attList/></elementSpec><elementSpec ident="revisionDesc" mode="replace" module="header"><equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/><content>
 					<zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="macro.form.revisionDescChange"/></zeroOrMore>
-				</content><attList/></elementSpec><elementSpec rend="change" module="header" ident="textClass"><equiv filter="rswa.xsl" mimeType="text/xsl" name="wrapTextClassContentOrRemove"/><gloss versionDate="2005-01-14" xml:lang="en">text classification</gloss><gloss versionDate="2006-10-18" xml:lang="de">Textklassifikation</gloss><desc versionDate="2005-01-14" xml:lang="en">groups information which describes the nature or topic of a text in terms of a standard
+				</content><attList/></elementSpec><elementSpec rend="change" module="header" ident="textClass"><equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/><gloss versionDate="2005-01-14" xml:lang="en">text classification</gloss><gloss versionDate="2006-10-18" xml:lang="de">Textklassifikation</gloss><desc versionDate="2005-01-14" xml:lang="en">groups information which describes the nature or topic of a text in terms of a standard
     classification scheme, thesaurus, etc.</desc><desc versionDate="2009-01-05" xml:lang="fr">regroupe des informations décrivant la nature ou le sujet
     d’un texte selon des termes issus d’un système de classification standardisé, d’un thésaurus,
     etc.</desc><desc versionDate="2007-12-20" xml:lang="ko">표준 분류 스키마, 시소러스 등을 통해서 텍스트의 특성 또는 주제를 기술하는 정보를 모아 놓는다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">匯集以標準分類架構、索引典等來描述文件性質或主題的資訊。</desc><desc versionDate="2008-04-05" xml:lang="ja">標準的な分類スキーム，分類語彙などにより，テキストの性格や話題を示す 情報をまとめる．</desc><desc versionDate="2006-10-18" xml:lang="de">umfasst Informationen über Art oder Thematik eines Texts
     unter Bezug auf ein Standard-Klassifikationsschema, einen Thesaurus, usw.</desc><desc versionDate="2007-05-04" xml:lang="es">agrupa información que describe la naturaleza o la
     temática de un texto en términos de un esquema de clasificación estándard.</desc><desc versionDate="2007-01-21" xml:lang="it">raggruppa le informazioni che descrivono la natura o
     l'argomento di un testo secondo uno schema di classificazione standard, un dizionario i
-    sinonimi, ecc.</desc><classes><memberOf key="model.profileDescPart"/></classes><content><rng:text/></content><attList><attDef ident="ref">
-						<datatype>
-							<ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.keyword"/>
-						</datatype>
-					</attDef></attList><exemplum xml:lang="en">
+    sinonimi, ecc.</desc><classes><memberOf key="model.profileDescPart"/></classes><content><rng:element name="keywords">
+						<oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="term"/></oneOrMore>
+					</rng:element></content><attList/><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <taxonomy>
         <category xml:id="acprose">
@@ -21281,6 +21329,12 @@ autre), soit pour indiquer un changement dans la main, comme un changement d'éc
 			<content>
 				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>slm</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Salome Reiser</a:documentation><value>alx</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Alexander Erhard</a:documentation><value>sts</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Stefan Schenk</a:documentation><value>aap</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Andreas Pernpeintner</a:documentation><value>mmm</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Martina Mengele</a:documentation><value>flr</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Florence Eller</a:documentation><value>sbb</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Sebastian Bolz</a:documentation><value>wwb</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Walter Werbeck</a:documentation><value>clh</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Claudia Heine</a:documentation><value>afl</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Florian Amort</a:documentation><value>stk</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Steffi Kracht</a:documentation></choice>
 			</content>
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.correspondence" ident="data.digit">
+			<content>
+				<rng:data type="string">
+					<rng:param name="pattern">\d</rng:param>
+				</rng:data>
+			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.correspondence" ident="data.gndIdno">
 			<content>
 				<rng:data type="string">
@@ -21293,9 +21347,10 @@ autre), soit pour indiquer un changement dans la main, comme un changement d'éc
 					<rng:param name="pattern">[a-z]\d{4,5}</rng:param>
 				</rng:data>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.correspondence" ident="data.keyword">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.correspondence" ident="data.keyword_ms">
 			<content>
-				<optional xmlns="http://relaxng.org/ns/structure/1.0"><choice><value>Brief</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4008240-4</a:documentation><value>Postkarte</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4046902-5</a:documentation><value>Briefumschlag</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4146614-7</a:documentation><value>Telegramm</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4184647-3</a:documentation><value>schriftliche Mitteilung (allgemein)</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4180011-4</a:documentation><value>Visitenkarte</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4188409-7</a:documentation><value>Vertrag</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4063270-2</a:documentation><value>Notiz</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4206777-7</a:documentation><value>Notizbuch</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4225695-1</a:documentation><value>Musikhandschrift</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4040847-4</a:documentation><value>Schriftstück (allgemein)</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4180009-6</a:documentation><value>Rezension</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4049712-4</a:documentation><value>Zeitungsaufsatz</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4125430-2</a:documentation><value>Zeitschriftenaufsatz</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4125424-7</a:documentation><value>Aufsatz in Sammelwerk</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0"/><value>Kapitel</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4290552-7</a:documentation><value>Sammelwerk</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4202533-3</a:documentation><value>Monographie</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4454906-4</a:documentation><value>Libretto</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4035588-3</a:documentation><value>Dissertation</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4012494-0</a:documentation><value>Magisterarbeit</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4168514-3</a:documentation><value>Musikdruck</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4075121-1</a:documentation><value>Druckwerk (allgemein)</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4013134-8</a:documentation><value>Online-Publikation</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4511937-5</a:documentation><value>Photographie</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4045895-7</a:documentation><value>Gemälde</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4122164-3</a:documentation></choice></optional>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>Brief</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4008240-4</a:documentation><value>Postkarte</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4046902-5</a:documentation><value>Kartenbrief</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0"/><value>Briefumschlag</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4146614-7</a:documentation><value>Telegramm</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4184647-3</a:documentation><value>schriftliche Mitteilung</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4180011-4</a:documentation><value>Visitenkarte</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4188409-7</a:documentation><value>Vertrag</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4063270-2</a:documentation><value>Notiz</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4206777-7</a:documentation><value>Notizbuch</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4225695-1</a:documentation><value>Musikhandschrift</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4040847-4</a:documentation><value>Schriftstück</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4180009-6</a:documentation><value>Theaterzettel</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4185060-9</a:documentation><value>Zeichnung</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4127900-1</a:documentation><value>Entwurfszeichnung</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4152458-5</a:documentation><value>Druckgraphik</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4113357-2</a:documentation><value>Gemälde</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4122164-3</a:documentation><value>Photographie</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">http://d-nb.info/gnd/4045895-7</a:documentation></choice>
+
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.correspondence" ident="data.biblType">
 			<content>
@@ -21522,7 +21577,7 @@ autre), soit pour indiquer un changement dans la main, comme un changement d'éc
 					</datatype>
 				</attDef><attDef mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0" ident="priority">
 					<datatype>
-						<data xmlns="http://relaxng.org/ns/structure/1.0" type="string"/>
+						<ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.digit"/>
 					</datatype>
 				</attDef><attDef ident="when" mode="add">
 					<datatype>
@@ -21569,7 +21624,7 @@ autre), soit pour indiquer un changement dans la main, comme un changement d'éc
 					<table><row><cell>
 		Module transcr</cell><cell/></row><row><cell>
 		Module msdescription</cell><cell/></row><row><cell>
-		Module analysis</cell><cell/></row><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/></table>
+		Module analysis</cell><cell/></row><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/></table>
 				</div>
 				<div>
 					<head>Manuscript specific scope</head>
@@ -21686,9 +21741,11 @@ autre), soit pour indiquer un changement dans la main, comme un changement d'éc
 		Macro <ident type="macro">data.supplPersNameType</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.msDescRend</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.encoding-staff</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.digit</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.gndIdno</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.rsqvIdno</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">data.keyword</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.keyword_ms</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.keyword_print</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.biblType</ident></cell><cell/></row></table>
 </div><!-- currently not in use --><!--<macroSpec ident="data.compilationKey">
 			<content>
@@ -21783,7 +21840,8 @@ autre), soit pour indiquer un changement dans la main, comme un changement d'éc
 			<table><row><cell>
 		Element <gi>publicationStmt</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>sourceDesc</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>creation</gi></cell><cell>replace</cell></row></table>
+		Element <gi>creation</gi></cell><cell>replace</cell></row><row><cell>
+		Element <gi>term</gi></cell><cell>change</cell></row></table>
 		</div>
 		<div>
 			<head>Manuscript sources</head>
@@ -21791,7 +21849,8 @@ autre), soit pour indiquer un changement dans la main, comme un changement d'éc
 			<table><row><cell>
 		Element <gi>publicationStmt</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>sourceDesc</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>creation</gi></cell><cell>replace</cell></row></table>
+		Element <gi>creation</gi></cell><cell>replace</cell></row><row><cell>
+		Element <gi>term</gi></cell><cell>change</cell></row></table>
 		</div>
 		<div>
 			<head>Printed sources</head>
@@ -21799,7 +21858,8 @@ autre), soit pour indiquer un changement dans la main, comme un changement d'éc
 			<table><row><cell>
 		Element <gi>publicationStmt</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>sourceDesc</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>creation</gi></cell><cell>delete</cell></row></table>
+		Element <gi>creation</gi></cell><cell>delete</cell></row><row><cell>
+		Element <gi>term</gi></cell><cell>change</cell></row></table>
 		</div>
 		<div>
 			<head>Events</head>
