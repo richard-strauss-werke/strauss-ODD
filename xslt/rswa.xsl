@@ -228,7 +228,7 @@
 			<xsl:for-each select="//@role[.='creator'][ancestor::listChange]/..">
 				<author>
 					<xsl:apply-templates select="@key|node()"/>
-					<xsl:value-of select="rsga:certString(.)"/>
+					<xsl:value-of select="rsga:certString(./..)"/>
 				</author>
 			</xsl:for-each>
 			<xsl:copy-of select="$funder"/>
@@ -306,7 +306,7 @@
 				</xsl:if>
 				<xsl:if test="@rsga:cert">
 					<certainty match="../@ref|../text()" locus="value"
-						cert="{.}"/>
+						cert="{@rsga:cert}"/>
 				</xsl:if>
 				<xsl:apply-templates select="node()"/>
 			</xsl:copy>

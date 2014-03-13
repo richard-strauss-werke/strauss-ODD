@@ -9471,7 +9471,7 @@ purposes.</p>
 					<table><row><cell>
 		Module transcr</cell><cell/></row><row><cell>
 		Module msdescription</cell><cell/></row><row><cell>
-		Module analysis</cell><cell/></row><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/></table>
+		Module analysis</cell><cell/></row><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/></table>
 				</div>
 				<div>
 					<head>Manuscript specific scope</head>
@@ -9588,9 +9588,11 @@ purposes.</p>
 		Macro <ident type="macro">data.supplPersNameType</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.msDescRend</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.encoding-staff</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.digit</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.gndIdno</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.rsqvIdno</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">data.keyword</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.keyword_ms</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.keyword_print</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.biblType</ident></cell><cell/></row></table>
 </div><!-- currently not in use --><!--<macroSpec ident="data.compilationKey">
 			<content>
@@ -9685,7 +9687,8 @@ purposes.</p>
 			<table><row><cell>
 		Element <gi>publicationStmt</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>sourceDesc</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>creation</gi></cell><cell>replace</cell></row></table>
+		Element <gi>creation</gi></cell><cell>replace</cell></row><row><cell>
+		Element <gi>term</gi></cell><cell>change</cell></row></table>
 		</div>
 		<div>
 			<head>Manuscript sources</head>
@@ -9693,7 +9696,8 @@ purposes.</p>
 			<table><row><cell>
 		Element <gi>publicationStmt</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>sourceDesc</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>creation</gi></cell><cell>replace</cell></row></table>
+		Element <gi>creation</gi></cell><cell>replace</cell></row><row><cell>
+		Element <gi>term</gi></cell><cell>change</cell></row></table>
 		</div>
 		<div>
 			<head>Printed sources</head>
@@ -9701,7 +9705,8 @@ purposes.</p>
 			<table><row><cell>
 		Element <gi>publicationStmt</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>sourceDesc</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>creation</gi></cell><cell>delete</cell></row></table>
+		Element <gi>creation</gi></cell><cell>delete</cell></row><row><cell>
+		Element <gi>term</gi></cell><cell>change</cell></row></table>
 		</div>
 		<div>
 			<head>Events</head>
