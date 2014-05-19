@@ -191,7 +191,7 @@
 					<specGrpRef target="#edits.macros.shared"/>
 				</schemaSpec>
 				
-				<schemaSpec ident="schema.work" ns="http://www.music-encoding.org/ns/mei" xml:lang="en" start="mei source" prefix="rswa_">
+				<schemaSpec ident="schema.work" ns="http://www.music-encoding.org/ns/mei" xml:lang="en" start="mei source" prefix="mei_">
 					<desc>Works: currently, only compositions by Strauss</desc>
 					<specGrpRef target="#extension.MEI-head"/>
 					<!--<specGrpRef target="#scope.shared"/>
