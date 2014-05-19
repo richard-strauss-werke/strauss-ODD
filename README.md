@@ -30,9 +30,10 @@ Files
     - `rswa.extension.MEI-music.xml`
     - `rswa.extension.xinclude.xml`
 
-    A copy of [Raffaele Viglianti's modified version of the MEI ODD](https://github.com/TEI-Music-SIG/tei-mei/):
+	The MEI ODDs in two versions, one with prefixes to be used in conjunction with TEI, one without. In both files, the TEI namespace has been added to the root element:
 
-    - `mei-source.xml`
+    - `mei-source.2.1.0.xml`
+    - `mei-source.2.1.0-prefixes.xml`
 
 - `xslt` - the xslt directory contains scripts for the transformation of internal TEI files used for production to TEI conformant published versions
  

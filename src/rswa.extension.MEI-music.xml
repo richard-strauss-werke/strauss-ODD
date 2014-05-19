@@ -7,42 +7,42 @@
 	<byline>modelSpec and classSpec adopted from Raffaele Viglianti's <ref
 		target="https://github.com/TEI-Music-SIG/tei-mei/blob/master/tei-lite_mei-cmn.xml"
 		>tei-lite_mei-cmn.xml</ref></byline>
-	<desc>Includes the TEI notatedMusic element and the MEI modules. Note: The moduleRefs below don't refer to the official mei-source.xml, but to a prefixed version, see <ref
+	<desc>Includes the TEI notatedMusic element and the MEI modules. Note: The moduleRefs below don't refer to the official mei-source.2.1.0-prefixes.xml, but to a prefixed version, see <ref
 		target="https://github.com/TEI-Music-SIG/tei-mei/"
 		>https://github.com/TEI-Music-SIG/tei-mei/</ref></desc>
 	<specGrp xml:id="extension.MEI-music">
 			
-		<!-- note: when odd2odd.xsl throws an error in the build process, it might be necessary to 1) replace the source attributes below by absolute paths, or 2) alternatively, copy mei-source.xml to odd2odd.xsl's folder (for example, file:/C:/Program%20Files/Oxygen%20XML%20Editor%2015/frameworks/tei/xml/tei/stylesheet/odds; don't delete the copy in your odd folder). -->
+		<!-- note: when odd2odd.xsl throws an error in the build process, it might be necessary to 1) replace the source attributes below by absolute paths, or 2) alternatively, copy mei-source.2.1.0-prefixes.xml to odd2odd.xsl's folder (for example, file:/C:/Program%20Files/Oxygen%20XML%20Editor%2015/frameworks/tei/xml/tei/stylesheet/odds; don't delete the copy in your odd folder). -->
 			
 				<!-- figures modules -->
 				<elementRef key="notatedMusic"/>
 				
 				<moduleRef key="MEI"
-					source="mei-source.xml"/>
+					source="mei-source.2.1.0-prefixes.xml"/>
 				<moduleRef key="MEI.shared"
-					source="mei-source.xml"/>
-				<!--                    <moduleRef key="MEI.header" source="mei-source.xml"/>-->
+					source="mei-source.2.1.0-prefixes.xml"/>
+				<!--                    <moduleRef key="MEI.header" source="mei-source.2.1.0-prefixes.xml"/>-->
 				<moduleRef key="MEI.cmn"
-					source="mei-source.xml"/>
-				<!--                    <moduleRef key="MEI.analysis" source="mei-source.xml"/>-->
+					source="mei-source.2.1.0-prefixes.xml"/>
+				<!--                    <moduleRef key="MEI.analysis" source="mei-source.2.1.0-prefixes.xml"/>-->
 				<moduleRef key="MEI.cmnOrnaments"
-					source="mei-source.xml"/>
-				<!--                    <moduleRef key="MEI.corpus" source="mei-source.xml"/>-->
+					source="mei-source.2.1.0-prefixes.xml"/>
+				<!--                    <moduleRef key="MEI.corpus" source="mei-source.2.1.0-prefixes.xml"/>-->
 				<moduleRef key="MEI.critapp"
-					source="mei-source.xml"/>
+					source="mei-source.2.1.0-prefixes.xml"/>
 				<moduleRef key="MEI.edittrans"
-					source="mei-source.xml"/>
-				<!--                    <moduleRef key="MEI.facsimile" source="mei-source.xml"/>-->
-				<!--                    <moduleRef key="MEI.figtable" source="mei-source.xml"/>-->
-				<!--                    <moduleRef key="MEI.frbr" source="mei-source.xml"/>-->
-				<!--                    <moduleRef key="MEI.linkalign" source="mei-source.xml"/>-->
+					source="mei-source.2.1.0-prefixes.xml"/>
+				<!--                    <moduleRef key="MEI.facsimile" source="mei-source.2.1.0-prefixes.xml"/>-->
+				<!--                    <moduleRef key="MEI.figtable" source="mei-source.2.1.0-prefixes.xml"/>-->
+				<!--                    <moduleRef key="MEI.frbr" source="mei-source.2.1.0-prefixes.xml"/>-->
+				<!--                    <moduleRef key="MEI.linkalign" source="mei-source.2.1.0-prefixes.xml"/>-->
 				<moduleRef key="MEI.lyrics"
-					source="mei-source.xml"/>
-				<!--                    <moduleRef key="MEI.namesdates" source="mei-source.xml"/>-->
-				<!--                    <moduleRef key="MEI.ptrref" source="mei-source.xml"/>-->
-				<!--                    <moduleRef key="MEI.text" source="mei-source.xml"/>-->
+					source="mei-source.2.1.0-prefixes.xml"/>
+				<!--                    <moduleRef key="MEI.namesdates" source="mei-source.2.1.0-prefixes.xml"/>-->
+				<!--                    <moduleRef key="MEI.ptrref" source="mei-source.2.1.0-prefixes.xml"/>-->
+				<!--                    <moduleRef key="MEI.text" source="mei-source.2.1.0-prefixes.xml"/>-->
 				<moduleRef key="MEI.usersymbols"
-					source="mei-source.xml"/>
+					source="mei-source.2.1.0-prefixes.xml"/>
 				
 				<elementSpec xmlns="http://www.tei-c.org/ns/1.0" module="figures"
 					ident="notatedMusic" mode="change">
