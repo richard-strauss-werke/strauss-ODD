@@ -82,7 +82,7 @@
 					<specGrpRef target="#scope.person"/>
 					<specGrpRef target="#scope.org"/>
 					<specGrpRef target="#scope.performance"/>
-					<specGrpRef target="#extension.MEI"/>
+					<specGrpRef target="#extension.MEI-music"/>
 					<specGrpRef target="#extension.xinclude"/>
 					<specGrpRef target="#extension.tasks"/>
 					<specGrpRef target="#edits.classes.att.shared"/>
@@ -102,7 +102,7 @@
 					<specGrpRef target="#scope.person"/>
 					<specGrpRef target="#scope.org"/>
 					<specGrpRef target="#scope.performance"/>
-					<specGrpRef target="#extension.MEI"/>
+					<specGrpRef target="#extension.MEI-music"/>
 					<specGrpRef target="#extension.xinclude"/>
 					<specGrpRef target="#extension.tasks"/>
 					<specGrpRef target="#edits.classes.att.shared"/>
@@ -116,7 +116,7 @@
 					<specGrpRef target="#scope.teistructure"/>
 					<specGrpRef target="#scope.transcr"/>
 					<specGrpRef target="#scope.transcr.ms"/>
-					<specGrpRef target="#extension.MEI"/>
+					<specGrpRef target="#extension.MEI-music"/>
 					<specGrpRef target="#extension.tasks"/>
 					<specGrpRef target="#edits.classes.att.shared"/>
 					<specGrpRef target="#edits.datatypes.shared"/>
@@ -130,7 +130,7 @@
 					<specGrpRef target="#scope.teistructure"/>
 					<specGrpRef target="#scope.transcr"/>
 					<specGrpRef target="#scope.transcr.ms"/>
-					<specGrpRef target="#extension.MEI"/>
+					<specGrpRef target="#extension.MEI-music"/>
 				</schemaSpec>
 				<schemaSpec ident="schema.literature" xml:lang="en" start="TEI" prefix="rswa_">
 					<desc>Transcriptions of printed sources: Articles, reviews, books, etc.</desc>
@@ -190,14 +190,26 @@
 					<specGrpRef target="#edits.elements.shared"/>
 					<specGrpRef target="#edits.macros.shared"/>
 				</schemaSpec>
-				<schemaSpec ident="schema.works" xml:lang="en" start="bibl" prefix="rswa_">
+				
+				<schemaSpec ident="schema.work" ns="http://www.music-encoding.org/ns/mei" xml:lang="en" start="mei source"  prefix="rswa_">
+					<desc>Works: currently, only compositions by Strauss</desc>
+					<specGrpRef target="#extension.MEI-head"/>
+					<!--<specGrpRef target="#scope.shared"/>
+					<specGrpRef target="#edits.classes.att.shared"/>
+					<specGrpRef target="#edits.datatypes.shared"/>
+					<specGrpRef target="#edits.elements.shared"/>
+					<specGrpRef target="#edits.macros.shared"/>-->
+				</schemaSpec>
+				
+				<!--<schemaSpec ident="schema.work" xml:lang="en" start="bibl" prefix="rswa_">
 					<desc>Works: currently, only compositions by Strauss</desc>
 					<specGrpRef target="#scope.shared"/>
 					<specGrpRef target="#edits.classes.att.shared"/>
 					<specGrpRef target="#edits.datatypes.shared"/>
 					<specGrpRef target="#edits.elements.shared"/>
 					<specGrpRef target="#edits.macros.shared"/>
-				</schemaSpec>
+				</schemaSpec>-->
+				
 			</div>
 			<div xml:id="scopes">
 				<head>Scopes</head>
@@ -355,7 +367,8 @@
 				<head>TEI Extensions</head>
 				<xi:include href="rswa.extension.xinclude.xml"/>
 				<xi:include href="rswa.extension.tasks.xml"/>
-				<xi:include href="rswa.extension.MEI.xml"/>
+				<xi:include href="rswa.extension.MEI-head.xml"/>
+				<xi:include href="rswa.extension.MEI-music.xml"/>
 			</div>
 			<div>
 				<head>Edits</head>

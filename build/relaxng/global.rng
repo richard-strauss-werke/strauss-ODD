@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2014-05-11T06:37:51Z. 
+Schema generated from ODD source 2014-05-11T06:08:36Z. 
 Edition: Version 2.6.0. Last updated on
 	20th January 2014, revision 12802
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
@@ -976,6 +976,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <ref name="rswa_arpeg"/>
          <ref name="rswa_artic"/>
          <ref name="rswa_author"/>
+         <ref name="rswa_availability"/>
          <ref name="rswa_bTrem"/>
          <ref name="rswa_barLine"/>
          <ref name="rswa_beam"/>
@@ -984,6 +985,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <ref name="rswa_bend"/>
          <ref name="rswa_bibl"/>
          <ref name="rswa_biblScope"/>
+         <ref name="rswa_biblStruct"/>
          <ref name="rswa_birth"/>
          <ref name="rswa_body"/>
          <ref name="rswa_breath"/>
@@ -1066,6 +1068,9 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <ref name="rswa_mSpace"/>
          <ref name="rswa_macro.form.bibl"/>
          <ref name="rswa_macro.form.commentaryNote"/>
+         <ref name="rswa_macro.form.creation.change_ms"/>
+         <ref name="rswa_macro.form.creation_event"/>
+         <ref name="rswa_macro.form.creation_ms"/>
          <ref name="rswa_macro.form.datePlaceNameHead"/>
          <ref name="rswa_macro.form.detailsNote"/>
          <ref name="rswa_macro.form.discussionNote"/>
@@ -1272,6 +1277,78 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <param name="pattern">[a-z]\d{4,5}</param>
       </data>
    </define>
+   <define name="rswa_data.keyword_ms">
+      <choice>
+         <value>Brief</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4008240-4</a:documentation>
+         <value>Postkarte</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4046902-5</a:documentation>
+         <value>Kartenbrief</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <value>Briefumschlag</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4146614-7</a:documentation>
+         <value>Telegramm</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4184647-3</a:documentation>
+         <value>schriftliche Mitteilung</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4180011-4</a:documentation>
+         <value>Visitenkarte</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4188409-7</a:documentation>
+         <value>Vertrag</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4063270-2</a:documentation>
+         <value>Notiz</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4206777-7</a:documentation>
+         <value>Notizbuch</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4225695-1</a:documentation>
+         <value>Musikhandschrift</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4040847-4</a:documentation>
+         <value>Schriftstück</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4180009-6</a:documentation>
+         <value>Theaterzettel</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4185060-9</a:documentation>
+         <value>Zeichnung</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4127900-1</a:documentation>
+         <value>Entwurfszeichnung</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4152458-5</a:documentation>
+         <value>Druckgraphik</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4113357-2</a:documentation>
+         <value>Gemälde</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4122164-3</a:documentation>
+         <value>Photographie</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4045895-7</a:documentation>
+      </choice>
+   </define>
+   <define name="rswa_data.keyword_print">
+      <choice>
+         <value>Rezension</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4049712-4</a:documentation>
+         <value>Interview</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4027503-6</a:documentation>
+         <value>Zeitungsaufsatz</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4125430-2</a:documentation>
+         <value>Zeitschriftenaufsatz</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4125424-7</a:documentation>
+         <value>Aufsatz</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <value>Kapitel</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4290552-7</a:documentation>
+         <value>Sammelwerk</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4202533-3</a:documentation>
+         <value>Monographie</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4454906-4</a:documentation>
+         <value>Libretto</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4035588-3</a:documentation>
+         <value>Dissertation</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4012494-0</a:documentation>
+         <value>Magisterarbeit</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4168514-3</a:documentation>
+         <value>Musikdruck</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4075121-1</a:documentation>
+         <value>Druckwerk</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4013134-8</a:documentation>
+         <value>Online-Publikation</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">http://d-nb.info/gnd/4511937-5</a:documentation>
+      </choice>
+   </define>
    <define name="rswa_data.biblType">
       <choice>
          <value>e</value>
@@ -1320,6 +1397,30 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
             </optional>
          </element>
       </oneOrMore>
+   </define>
+   <define name="rswa_macro.form.isbnIdno">
+      <oneOrMore>
+         <element name="idno">
+            <attribute name="type">
+               <value>isbn</value>
+            </attribute>
+            <optional>
+               <ref name="rswa_data.word"/>
+            </optional>
+         </element>
+      </oneOrMore>
+   </define>
+   <define name="rswa_macro.form.uagIdno">
+      <zeroOrMore>
+         <element name="idno">
+            <attribute name="type">
+               <value>UAG</value>
+            </attribute>
+            <optional>
+               <ref name="rswa_data.word"/>
+            </optional>
+         </element>
+      </zeroOrMore>
    </define>
    <define name="rswa_macro.form.regularPersName">
       <element name="persName">
@@ -1412,6 +1513,179 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
                <ref name="rswa_desc"/>
             </element>
          </zeroOrMore>
+      </element>
+   </define>
+   <define name="rswa_macro.form.publicationStmt_ms">
+      <group>
+         <ref name="rswa_availability"/>
+         <ref name="rswa_macro.form.uagIdno"/>
+         <ref name="rswa_macro.form.rsqvIdno"/>
+      </group>
+   </define>
+   <define name="rswa_macro.form.publicationStmt_print">
+      <group>
+         <ref name="rswa_availability"/>
+         <ref name="rswa_macro.form.rsqvIdno"/>
+      </group>
+   </define>
+   <define name="rswa_macro.form.publicationStmt_event">
+      <group>
+         <ref name="rswa_macro.form.rsqvIdno"/>
+      </group>
+   </define>
+   <define name="rswa_macro.form.sourceDesc_ms">
+      <group>
+         <oneOrMore>
+            <ref name="rswa_msDesc"/>
+         </oneOrMore>
+         <ref name="rswa_listBibl"/>
+      </group>
+   </define>
+   <define name="rswa_macro.form.sourceDesc_print">
+      <group>
+         <oneOrMore>
+            <ref name="rswa_biblStruct"/>
+         </oneOrMore>
+         <zeroOrMore>
+            <ref name="rswa_msDesc"/>
+         </zeroOrMore>
+         <ref name="rswa_listBibl"/>
+      </group>
+   </define>
+   <define name="rswa_macro.form.sourceDesc_event">
+      <ref name="rswa_listBibl"/>
+   </define>
+   <define name="rswa_macro.form.creation_ms">
+      <element name="listChange">
+         <oneOrMore>
+            <ref name="rswa_macro.form.creation.change_ms"/>
+         </oneOrMore>
+      </element>
+   </define>
+   <define name="rswa_macro.form.creation.change_ms">
+      <element name="change">
+         <optional>
+            <attribute name="type"/>
+         </optional>
+         <optional>
+            <attribute name="id" ns="http://www.w3.org/XML/1998/namespace">
+               <data type="ID"/>
+            </attribute>
+         </optional>
+         <zeroOrMore>
+            <element name="persName">
+               <attribute name="role">
+                  <value>creator</value>
+               </attribute>
+               <optional>
+                  <attribute name="cert">
+                     <ref name="rswa_data.certainty"/>
+                  </attribute>
+               </optional>
+               <optional>
+                  <attribute name="key"/>
+               </optional>
+               <optional>
+                  <text/>
+               </optional>
+            </element>
+         </zeroOrMore>
+         <zeroOrMore>
+            <element name="orgName">
+               <attribute name="role">
+                  <value>creator</value>
+               </attribute>
+               <optional>
+                  <attribute name="cert">
+                     <ref name="rswa_data.certainty"/>
+                  </attribute>
+               </optional>
+               <optional>
+                  <attribute name="key"/>
+               </optional>
+               <optional>
+                  <text/>
+               </optional>
+            </element>
+         </zeroOrMore>
+         <zeroOrMore>
+            <element name="persName">
+               <attribute name="role">
+                  <value>addressee</value>
+               </attribute>
+               <optional>
+                  <attribute name="cert">
+                     <ref name="rswa_data.certainty"/>
+                  </attribute>
+               </optional>
+               <optional>
+                  <attribute name="key"/>
+               </optional>
+               <optional>
+                  <text/>
+               </optional>
+            </element>
+         </zeroOrMore>
+         <zeroOrMore>
+            <element name="orgName">
+               <attribute name="role">
+                  <value>addressee</value>
+               </attribute>
+               <optional>
+                  <attribute name="cert">
+                     <ref name="rswa_data.certainty"/>
+                  </attribute>
+               </optional>
+               <optional>
+                  <attribute name="key"/>
+               </optional>
+               <optional>
+                  <text/>
+               </optional>
+            </element>
+         </zeroOrMore>
+         <oneOrMore>
+            <ref name="rswa_origDate"/>
+         </oneOrMore>
+         <oneOrMore>
+            <ref name="rswa_origPlace"/>
+         </oneOrMore>
+         <oneOrMore>
+            <element name="placeName">
+               <group>
+                  <attribute name="role">
+                     <value>destination</value>
+                  </attribute>
+                  <optional>
+                     <attribute name="cert">
+                        <ref name="rswa_data.certainty"/>
+                     </attribute>
+                  </optional>
+                  <text/>
+               </group>
+            </element>
+         </oneOrMore>
+      </element>
+   </define>
+   <define name="rswa_macro.form.creation_event">
+      <element name="listChange">
+         <group>
+            <element name="change">
+               <optional>
+                  <attribute name="type"/>
+               </optional>
+               <ref name="rswa_macro.form.summaryNote"/>
+               <ref name="rswa_macro.form.commentaryNote"/>
+               <ref name="rswa_macro.form.discussionNote"/>
+               <ref name="rswa_macro.form.uncategorizedNote"/>
+               <oneOrMore>
+                  <ref name="rswa_date"/>
+               </oneOrMore>
+               <oneOrMore>
+                  <ref name="rswa_placeName"/>
+               </oneOrMore>
+            </element>
+         </group>
       </element>
    </define>
    <define name="rswa_macro.form.revisionDescChange">
@@ -2911,19 +3185,6 @@ Empfohlene Werte sind: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] par
          <ref name="rswa_state"/>
       </oneOrMore>
    </define>
-   <define name="rswa_model.publicationStmtPart.agency">
-      <choice>
-         <ref name="rswa_publisher"/>
-      </choice>
-   </define>
-   <define name="rswa_model.publicationStmtPart.detail">
-      <choice>
-         <ref name="rswa_date"/>
-         <ref name="rswa_idno"/>
-         <ref name="rswa_address"/>
-         <ref name="rswa_pubPlace"/>
-      </choice>
-   </define>
    <define name="rswa_model.certLike">
       <choice>
          <ref name="rswa_respons"/>
@@ -3246,9 +3507,6 @@ Empfohlene Werte sind: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] par
       <notAllowed/>
    </define>
    <define name="rswa_model.div1Like">
-      <notAllowed/>
-   </define>
-   <define name="rswa_model.sourceDescPart">
       <notAllowed/>
    </define>
    <define name="rswa_model.resourceLike">
@@ -13309,18 +13567,24 @@ Empfohlene Werte sind: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentation
          <empty/>
       </element>
    </define>
+   <define name="rswa_availability">
+      <element name="availability">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <attribute name="status"/>
+         <oneOrMore>
+            <ref name="rswa_p"/>
+         </oneOrMore>
+      </element>
+   </define>
    <define name="rswa_creation">
       <element name="creation">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Informationen über die Entstehungsbedingungen des Textes. [2.4.1.  2.4. ]</a:documentation>
-         <zeroOrMore>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <optional>
             <choice>
-               <text/>
-               <ref name="rswa_model.limitedPhrase"/>
+               <ref name="rswa_macro.form.creation_ms"/>
+               <ref name="rswa_macro.form.creation_event"/>
             </choice>
-         </zeroOrMore>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.datable.attributes"/>
-         <empty/>
+         </optional>
       </element>
    </define>
    <define name="rswa_fileDesc">
@@ -13344,43 +13608,22 @@ Empfohlene Werte sind: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentation
    </define>
    <define name="rswa_publicationStmt">
       <element name="publicationStmt">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Erklärung zum Status der Veröffentlichung ) umfasst Angaben zu Veröffentlichung oder Vertrieb eines elektronischen oder sonstigen Texts. [2.2.4.  2.2. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
          <choice>
-            <oneOrMore>
-               <group>
-                  <group>
-                     <ref name="rswa_model.publicationStmtPart.agency"/>
-                  </group>
-                  <zeroOrMore>
-                     <ref name="rswa_model.publicationStmtPart.detail"/>
-                  </zeroOrMore>
-               </group>
-            </oneOrMore>
-            <oneOrMore>
-               <ref name="rswa_model.pLike"/>
-            </oneOrMore>
+            <ref name="rswa_macro.form.publicationStmt_ms"/>
+            <ref name="rswa_macro.form.publicationStmt_print"/>
+            <ref name="rswa_macro.form.publicationStmt_event"/>
          </choice>
-         <ref name="rswa_att.global.attributes"/>
-         <empty/>
       </element>
    </define>
    <define name="rswa_sourceDesc">
       <element name="sourceDesc">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">beschreibt den (die) Quelltext(e), von dem (denen) der elektronische Text abstammt oder erzeugt wurde. [2.2.7. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
          <choice>
-            <oneOrMore>
-               <ref name="rswa_model.pLike"/>
-            </oneOrMore>
-            <oneOrMore>
-               <choice>
-                  <ref name="rswa_model.biblLike"/>
-                  <ref name="rswa_model.sourceDescPart"/>
-                  <ref name="rswa_model.listLike"/>
-               </choice>
-            </oneOrMore>
+            <ref name="rswa_macro.form.sourceDesc_ms"/>
+            <ref name="rswa_macro.form.sourceDesc_print"/>
+            <ref name="rswa_macro.form.sourceDesc_event"/>
          </choice>
-         <ref name="rswa_att.global.attributes"/>
-         <empty/>
       </element>
    </define>
    <define name="rswa_teiHeader">
@@ -13470,7 +13713,12 @@ attributes @target and @cRef may be supplied on <name/>.</report>
    <define name="rswa_term">
       <element name="term">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"> [3.3.4. ]</a:documentation>
-         <ref name="rswa_macro.phraseSeq"/>
+         <optional>
+            <choice>
+               <ref name="rswa_data.keyword_ms"/>
+               <ref name="rswa_data.keyword_print"/>
+            </choice>
+         </optional>
          <ref name="rswa_att.global.attributes"/>
          <ref name="rswa_att.pointing.attributes"/>
          <ref name="rswa_att.typed.attributes"/>
@@ -13924,6 +14172,45 @@ Empfohlene Werte sind: 1] vol; 2] issue; 3] pp; 4] ll; 5] chap; 6] part</a:docum
             </attribute>
          </optional>
          <empty/>
+      </element>
+   </define>
+   <define name="rswa_biblStruct">
+      <element name="biblStruct">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <choice>
+            <group>
+               <ref name="rswa_analytic"/>
+               <element name="monogr">
+                  <optional>
+                     <attribute name="sameAs"/>
+                  </optional>
+                  <ref name="rswa_macro.form.authors"/>
+                  <ref name="rswa_macro.form.titles.short"/>
+                  <ref name="rswa_edition"/>
+                  <ref name="rswa_macro.form.isbnIdno"/>
+                  <ref name="rswa_imprint"/>
+               </element>
+            </group>
+            <group>
+               <element name="monogr">
+                  <ref name="rswa_macro.form.authors"/>
+                  <ref name="rswa_macro.form.titles.full"/>
+                  <ref name="rswa_textLang"/>
+                  <ref name="rswa_edition"/>
+                  <ref name="rswa_macro.form.isbnIdno"/>
+                  <ref name="rswa_imprint"/>
+               </element>
+            </group>
+         </choice>
+         <oneOrMore>
+            <ref name="rswa_series"/>
+         </oneOrMore>
+         <element name="idno">
+            <attribute name="type">
+               <value>url</value>
+            </attribute>
+            <text/>
+         </element>
       </element>
    </define>
    <define name="rswa_editor">
@@ -14446,6 +14733,9 @@ relatedItem element must be empty</sch:report>
    <start>
       <choice>
          <ref name="rswa_TEI"/>
+         <ref name="rswa_person"/>
+         <ref name="rswa_org"/>
+         <ref name="rswa_bibl"/>
       </choice>
    </start>
 </grammar>

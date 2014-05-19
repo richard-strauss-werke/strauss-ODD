@@ -10,6 +10,8 @@ Files
 
 - `build` - the target folder for files created on basis of the ODD: expanded ODDs, schemata, etc.
 
+- `dependencies` - contains the WeGA ODDs, parts of which are referenced in the `src` files
+
 - `src` - ODD source folder 
 
     - `rswa.MAIN.odd.xml` - the ODD file (see below for build instructions with ant)
@@ -24,7 +26,8 @@ Files
     TEI extensions:
 
     - `rswa.extension.tasks.xml`
-    - `rswa.extension.MEI.xml`
+    - `rswa.extension.MEI-head.xml`
+    - `rswa.extension.MEI-music.xml`
     - `rswa.extension.xinclude.xml`
 
     A copy of [Raffaele Viglianti's modified version of the MEI ODD](https://github.com/TEI-Music-SIG/tei-mei/):
