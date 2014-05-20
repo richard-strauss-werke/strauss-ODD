@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" xml:base="file:/c:/eXist-db/webapp/ahlsen/strauss-ODD/src/rswa.MAIN.odd.xml" xml:lang="en"><?TEIVERSION Version 2.6.0. Last updated on
+<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" xml:base="file:/c:/eXist-db/webapp/ahlsen/strauss-ODD/strauss-ODD/src/rswa.MAIN.odd.xml" xml:lang="en"><?TEIVERSION Version 2.6.0. Last updated on
 	20th January 2014, revision 12802?>
 	<teiHeader>
 		<fileDesc>
@@ -44,6 +44,8 @@
 			</abstract>
 		</profileDesc>
 		<revisionDesc>
+			<change who="#aerhard" when="2014-05-19">Added document type "place"</change>
+			<change who="#aerhard" when="2014-05-16">Added document type "work"</change>
 			<change who="#aerhard" when="2014-02-10">Adjustments to facilitate the final transformation</change>
 			<change who="#aerhard" when="2014-02-05">Globally refactored</change>
 			<change who="#aerhard" when="2014-01-18">Equiv elements added</change>
@@ -3841,72 +3843,39 @@ resource, either within the current document or elsewhere.</desc>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSGRP">4.3.1. </ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DI.html#DITPEG">9.3.5.1. </ref>
   </listRef>
-</elementSpec><elementSpec module="core" ident="desc">
-  <gloss versionDate="2005-01-14" xml:lang="en">description</gloss>
-  <gloss versionDate="2007-12-20" xml:lang="ko">기술</gloss>
-  <gloss versionDate="2007-05-02" xml:lang="zh-TW">描述</gloss>
-  <gloss versionDate="2008-04-06" xml:lang="ja"/>
-  <gloss versionDate="2007-05-04" xml:lang="es">descripción</gloss>
-  <gloss versionDate="2007-01-21" xml:lang="it">descrizione</gloss>
-  <gloss versionDate="2008-12-09" xml:lang="fr">description</gloss>
-  <desc versionDate="2008-09-03" xml:lang="en">contains a brief description of the object documented by its parent element, including its
-    intended usage, purpose, or application where this is appropriate.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">요소, 속성, 또는 속성 값의 목적과 적용에 대한 간단한 기술을 포함한다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含一段簡短描述，說明一元素、屬性、或屬性值的應用與目的。</desc>
-  <desc versionDate="2008-04-06" xml:lang="ja">当該要素，属性，属性値を採用した目的の簡単な解説を示す．</desc>
-  <desc versionDate="2007-06-12" xml:lang="fr">contient une courte description de l'objet documenté par
+</elementSpec><elementSpec rend="change" module="core" ident="desc"><equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/><gloss versionDate="2005-01-14" xml:lang="en">description</gloss><gloss versionDate="2007-12-20" xml:lang="ko">기술</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">描述</gloss><gloss versionDate="2008-04-06" xml:lang="ja"/><gloss versionDate="2007-05-04" xml:lang="es">descripción</gloss><gloss versionDate="2007-01-21" xml:lang="it">descrizione</gloss><gloss versionDate="2008-12-09" xml:lang="fr">description</gloss><desc versionDate="2008-09-03" xml:lang="en">contains a brief description of the object documented by its parent element, including its
+    intended usage, purpose, or application where this is appropriate.</desc><desc versionDate="2007-12-20" xml:lang="ko">요소, 속성, 또는 속성 값의 목적과 적용에 대한 간단한 기술을 포함한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含一段簡短描述，說明一元素、屬性、或屬性值的應用與目的。</desc><desc versionDate="2008-04-06" xml:lang="ja">当該要素，属性，属性値を採用した目的の簡単な解説を示す．</desc><desc versionDate="2007-06-12" xml:lang="fr">contient une courte description de l'objet documenté par
     son élément parent, qui comprend son utilisation prévue, son but, ou son application là où c'est
-    approprié.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">contiene una breve descripción del objetivo y la
-    aplicación de un elemento, atributo o valor de un atributo.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">contiene una breve descrizione dello scopo o
-    dell'applicazione di un elemento, attributo, o valore di attributo.</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.descLike"/>
-    <memberOf key="att.translatable"/>
-    <memberOf key="att.typed"/>
-    <memberOf key="model.labelLike"/>
-  </classes>
-  <content>
-    <ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.limitedContent"/>
-  </content>
-  <exemplum xml:lang="en">
+    approprié.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene una breve descripción del objetivo y la
+    aplicación de un elemento, atributo o valor de un atributo.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene una breve descrizione dello scopo o
+    dell'applicazione di un elemento, attributo, o valore di attributo.</desc><classes><memberOf key="att.global"/><memberOf key="model.descLike"/><memberOf key="att.typed"/><memberOf key="model.labelLike"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.limitedContent"/></content><attList/><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <desc>contains a brief description of the purpose and application for an element, attribute,
         attribute value, class, or entity.</desc>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <desc>contient une description brève de la raison d'être et du champ d'application d'un
           élément, d'un attribut ou de la valeur d'un attribut, d'une classe ou une entité.</desc>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
+  </exemplum><exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <desc>包含某個元素或屬性之定義與用法的簡短描述。</desc>
     </egXML>
-  </exemplum>
-  <remarks versionDate="2005-01-14" xml:lang="en">
+  </exemplum><remarks versionDate="2005-01-14" xml:lang="en">
     <p rend="dataDesc">TEI convention requires that this be expressed as a finite clause, begining
       with an active verb.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2007-06-12">
+  </remarks><remarks xml:lang="fr" versionDate="2007-06-12">
     <p rend="dataDesc">La convention TEI exige que cela soit exprimé sous la  forme d'une proposition finie,
       introduite  par un verbe actif.</p>
-  </remarks>
-  <remarks xml:lang="es" versionDate="2008-04-06">
+  </remarks><remarks xml:lang="es" versionDate="2008-04-06">
     <p rend="dataDesc">La convención de TEI requiere que esto esté expresado como cláusula finita,
       comenzando con un verbo activo.</p>
-  </remarks>
-  <remarks xml:lang="ja" versionDate="2008-04-05">
+  </remarks><remarks xml:lang="ja" versionDate="2008-04-05">
     <p rend="dataDesc"> TEIの慣習では，動詞を先頭にした文で表現される(訳注：英語で表現する 場合のこと)． </p>
-  </remarks>
-  <listRef>
+  </remarks><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TD.html#TDcrystalsCEdc">22.4.1. </ref>
-  </listRef>
-</elementSpec><elementSpec module="core" ident="sic">
+  </listRef></elementSpec><elementSpec module="core" ident="sic">
   <gloss versionDate="2012-03-15" xml:lang="en">Latin for <gloss>thus</gloss> or <gloss>so</gloss>
    </gloss>
   <gloss versionDate="2009-03-17" xml:lang="fr">du latin, <gloss>ainsi</gloss>
@@ -8730,7 +8699,7 @@ purposes.</p>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERSbp">13.3.1. </ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERSEpc">13.3.2.1. </ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERSEpc">13.3.2.1. </ref>
-  </listRef></elementSpec><elementSpec rend="change" module="namesdates" ident="org"><gloss versionDate="2007-07-04" xml:lang="en">organization</gloss><gloss versionDate="2007-12-20" xml:lang="ko">조직</gloss><gloss versionDate="2008-04-06" xml:lang="es">organización</gloss><gloss versionDate="2008-12-09" xml:lang="fr">organisation</gloss><gloss versionDate="2007-11-06" xml:lang="it">organizzazione</gloss><desc versionDate="2007-06-14" xml:lang="en">provides information about an identifiable organization such as a business, a tribe, or
+  </listRef></elementSpec><elementSpec rend="change" module="namesdates" ident="org"><equiv filter="rswa.xsl" mimeType="text/xsl" name="perOrgRoot"/><gloss versionDate="2007-07-04" xml:lang="en">organization</gloss><gloss versionDate="2007-12-20" xml:lang="ko">조직</gloss><gloss versionDate="2008-04-06" xml:lang="es">organización</gloss><gloss versionDate="2008-12-09" xml:lang="fr">organisation</gloss><gloss versionDate="2007-11-06" xml:lang="it">organizzazione</gloss><desc versionDate="2007-06-14" xml:lang="en">provides information about an identifiable organization such as a business, a tribe, or
         any other grouping of people.</desc><desc versionDate="2007-12-20" xml:lang="ko">업무, 종족, 또는 사람들의 다른 종류의 그룹과 같은 식별 가능한 조직에 대한 정보를 제공한다.</desc><desc versionDate="2008-04-06" xml:lang="es">proporciona a la información sobre una organización
         identificable tal como un negocio, una tribu, o cualquier otro grupo de personas.</desc><desc versionDate="2008-04-05" xml:lang="ja">特定可能な団体の情報を示す．例えば，会社，集団など，人の集まり．</desc><desc versionDate="2008-12-09" xml:lang="fr">fournit des informations sur une organisation
         identifiable, telle qu'une entreprise, une tribu ou tout autre groupement de personnes.</desc><desc versionDate="2007-11-06" xml:lang="it">fornisce informazioni relative a un'organizzazione
@@ -9033,13 +9002,17 @@ specification.</p></remarks>
 				
 				
 				
+				
+				
+				
+				
 			</div>
 			<div xml:id="scopes">
 				<head>Scopes</head>
 				<desc>The 'scopes' below mostly define thematically grouped collections of modules / elements. Combined, they add up to the full scope of a schema. In the whole 'scopes' section, each module and each element may only be cited once.</desc>
 				<div>
 					<head>Shared scope</head>
-					<desc>A scope common to all schemata</desc>
+					<desc>A scope common to all schemata (except of "place" and "work")</desc>
 					<table><row><cell>
 		Module tei</cell><cell/></row><row><cell>
 		Module core</cell><cell/></row><row><cell>
@@ -9112,8 +9085,34 @@ specification.</p></remarks>
 		Element <gi>taskDesc</gi></cell><cell>add</cell></row><row><cell>
 		Element <gi>task</gi></cell><cell>add</cell></row></table>
 </div>
-				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.extension.MEI.xml" xml:lang="">
-	<head>MEI extension</head>
+				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.extension.MEI-head.xml" xml:lang="">
+	<head>MEI head extension</head>
+	<byline>Apart from minor changes to get things working in the current context, the specGrp code is taken literally from Peter Stadler's WeGA_works.odd.xml. For copyright and other information, see the <ref target="https://github.com/Edirom/WeGA-ODD">Carl-Maria-von-Weber-Gesamtausgabe ODDs</ref>.</byline>
+	<desc>Includes TEI header components</desc>
+	
+	<table><row/><row><cell>
+		Module MEI</cell><cell/></row><row><cell>
+		Module MEI.frbr</cell><cell/></row><row><cell>
+		Module MEI.shared</cell><cell/></row><row><cell>
+		Module MEI.header</cell><cell/></row><row><cell>
+		Module MEI.namesdates</cell><cell/></row><row><cell>
+		Module MEI.cmn</cell><cell/></row><row><cell>
+		Module MEI.edittrans</cell><cell/></row><row><cell><ref target="##wega-patterns">reference #wega-patterns</ref></cell><cell/></row><row><cell><ref target="##wega-lists">reference #wega-lists</ref></cell><cell/></row><row><cell><ref target="##wega-common-atts">reference #wega-common-atts</ref></cell><cell/></row><row><cell>
+		Macro <ident type="macro">macro.availabilityPart</ident></cell><cell>change</cell></row><row><cell>
+		Class <ident type="class">att.measurement</ident></cell><cell>change</cell></row><row><cell>
+		Element <gi>mei</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>persName</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>source</gi></cell><cell>change</cell></row><row><cell>
+		Macro <ident type="macro">data.ISODATE</ident></cell><cell>change</cell></row><row><cell>
+		Element <gi>date</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>altId</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>titleStmt</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>title</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>rend</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>extent</gi></cell><cell>change</cell></row></table>
+</div>
+				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.extension.MEI-music.xml" xml:lang="">
+	<head>MEI music extension</head>
 	<byline>modelSpec and classSpec adopted from Raffaele Viglianti's <ref target="https://github.com/TEI-Music-SIG/tei-mei/blob/master/tei-lite_mei-cmn.xml">tei-lite_mei-cmn.xml</ref></byline>
 	<desc>Includes the TEI notatedMusic element and the MEI modules. Note: The moduleRefs below don't refer to the official mei-source.xml, but to a prefixed version, see <ref target="https://github.com/TEI-Music-SIG/tei-mei/">https://github.com/TEI-Music-SIG/tei-mei/</ref></desc>
 	<table><row/><row><cell>
@@ -9127,7 +9126,7 @@ specification.</p></remarks>
 		Module MEI.usersymbols</cell><cell/></row><row><cell>
 		Element <gi>notatedMusic</gi></cell><cell>change</cell></row><row><cell>
 		Class <ident type="class">mei_att.staffident</ident></cell><cell>replace</cell></row></table>
-		</div>
+</div>
 			</div>
 			<div>
 				<head>Edits</head>
@@ -9280,6 +9279,17 @@ specification.</p></remarks>
 		Element <gi>creation</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>term</gi></cell><cell>change</cell></row></table>
 		</div>
+		
+		<div>
+			<head>Place</head>
+			<desc>Contains specifications specific of the place ODD</desc>
+			<table><row><cell>
+		Element <gi>placeName</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>location</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>geo</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>idno</gi></cell><cell>change</cell></row></table>
+		</div>
+		
 		<div>
 			<head>Manuscript sources</head>
 			<desc>Contains specifications for transcriptions of manuscript sources</desc>
@@ -9327,11 +9337,14 @@ specification.</p></remarks>
 		Element <gi>note</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>person</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>event</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>gloss</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>affiliation</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>listEvent</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>sex</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>birth</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>death</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>desc</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>occupation</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>faith</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>persName</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>orgName</gi></cell><cell>change</cell></row><row><cell>

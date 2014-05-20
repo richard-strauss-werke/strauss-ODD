@@ -123,7 +123,7 @@
 			</XSL:variable>
 
 
-			<XSL:template match="@*|node()|comment()|processing-instruction()|text()" priority="-1">
+			<XSL:template match="@*|node()|comment()|processing-instruction()|text()" priority="-2">
 				<XSL:copy>
 					<XSL:apply-templates select="@*|node()|comment()|processing-instruction()|text()"/>
 				</XSL:copy>
@@ -132,7 +132,7 @@
 			<XSL:template match="/processing-instruction()" priority="100"/>
 
 			<!-- write document id to root xml:id -->
-			<XSL:template match="/*">
+			<XSL:template match="/*" priority="-1">
 				<XSL:copy>
 					<XSL:attribute name="xml:id">
 						<XSL:value-of select="$docID"/>

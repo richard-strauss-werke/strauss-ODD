@@ -54,11 +54,6 @@
    </xsl:variable>
    <xsl:variable name="edition">Digitale Ausgabe</xsl:variable>
    <xsl:variable name="sexes">
-      <sex value="M">männlich</sex>
-      <sex value="F">weiblich</sex>
-      <sex value="O">sonstiges</sex>
-      <sex value="N">keines</sex>
-      <sex value="U">unbekannt</sex>
       <empty/>
    </xsl:variable>
    <xsl:variable name="keywords">
@@ -115,41 +110,8 @@
    <xsl:template match="state">
       <xsl:call-template name="keepOnlyWithAttOrChildContent"/>
    </xsl:template>
-   <xsl:template match="gloss">
-      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
-   </xsl:template>
-   <xsl:template match="affiliation">
-      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
-   </xsl:template>
-   <xsl:template match="birth">
-      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
-   </xsl:template>
-   <xsl:template match="death">
-      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
-   </xsl:template>
-   <xsl:template match="faith">
-      <xsl:call-template name="keepOnlyWithAttOrContent"/>
-   </xsl:template>
-   <xsl:template match="occupation">
-      <xsl:call-template name="keepOnlyWithAttOrContent"/>
-   </xsl:template>
-   <xsl:template match="person">
+   <xsl:template match="org">
       <xsl:call-template name="perOrgRoot"/>
-   </xsl:template>
-   <xsl:template match="residence">
-      <xsl:call-template name="keepOnlyWithContent"/>
-   </xsl:template>
-   <xsl:template match="sex">
-      <xsl:call-template name="expandOrRemoveSex"/>
-   </xsl:template>
-   <xsl:template match="affiliation/date">
-      <xsl:call-template name="expandOrRemoveDate"/>
-   </xsl:template>
-   <xsl:template match="birth/date">
-      <xsl:call-template name="expandOrRemoveDate"/>
-   </xsl:template>
-   <xsl:template match="death/date">
-      <xsl:call-template name="expandOrRemoveDate"/>
    </xsl:template>
    <xsl:template match="head/date">
       <xsl:call-template name="expandOrRemoveDate"/>
@@ -157,23 +119,20 @@
    <xsl:template match="event/head">
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
    </xsl:template>
-   <xsl:template match="person/note[@type='commentary']">
+   <xsl:template match="org/note[@type='commentary']">
       <xsl:call-template name="tightenCommentary"/>
    </xsl:template>
-   <xsl:template match="person/note[@type='summary']">
+   <xsl:template match="org/note[@type='summary']">
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
    </xsl:template>
-   <xsl:template match="person/note[@type='discussion']">
+   <xsl:template match="org/note[@type='discussion']">
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
    </xsl:template>
-   <xsl:template match="person/note[@type='uncategorized']">
+   <xsl:template match="org/note[@type='uncategorized']">
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
    </xsl:template>
-   <xsl:template match="person/note[@type='details']">
+   <xsl:template match="org/note[@type='details']">
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
-   </xsl:template>
-   <xsl:template match="person/note[@type='figures']">
-      <xsl:call-template name="keepOnlyWithChildAttOrAnyText"/>
    </xsl:template>
    <xsl:template match="listBibl/bibl">
       <xsl:call-template name="transformOrRemoveBibl"/>

@@ -20,6 +20,16 @@
 
 	<!-- named templates -->
 
+	<xsl:template name="perOrgRoot">
+		<xsl:copy>
+			<xsl:attribute name="xml:id">
+				<xsl:value-of select="$docID"/>
+			</xsl:attribute>
+			<xsl:apply-templates select="@*[not(name()='xml:id')]|node()[local-name()!='note']|comment()|processing-instruction()|text()"/>
+			<xsl:apply-templates select="note"/>
+		</xsl:copy>
+	</xsl:template>
+
 	<xsl:template name="keepOnlyWithAnyText">
 		<xsl:if test="normalize-space()">
 			<xsl:copy>
