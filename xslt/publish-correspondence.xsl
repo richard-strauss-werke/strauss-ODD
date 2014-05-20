@@ -5,10 +5,12 @@
                 version="2.0"
                 xpath-default-namespace="http://www.tei-c.org/ns/1.0">
    <xsl:import href="rswa.xsl"/>
+   <xsl:param name="docIDParam" required="no"/>
    <xsl:output method="xml" indent="no" encoding="utf-8"/>
    <xsl:strip-space elements="additional additions address analytic app availability biblStruct body castList choice cit creation div editionStmt editorialDecl encodingDesc epigraph event facsimile figure fileDesc floatingText front graphic handDesc handNote imprint index lg listBibl listChange listEvent monogr msDesc msIdentifier notatedMusic notesStmt objectDesc org performance person physDesc postscript profileDesc projectDesc publicationStmt relatedItem respons respStmt revisionDesc row seriesStmt sourceDesc sp space state subst supportDesc table teiHeader text textClass titleStmt"/>
    <xsl:key name="who" match="//@who" use="."/>
-   <xsl:variable name="docID" select="replace(base-uri(), '^(.*/)?(.*)\..*$','$2')"/>
+   <xsl:variable name="docID"
+                 select="     if (base-uri()) then     replace(base-uri(), '^(.*/)?(.*)\..*$','$2')     else $docIDParam    "/>
    <xsl:variable name="guidelinesTitleRef">Die vorliegende Ausgabe folgt den <ref target="http://richard-strauss-ausgabe.de/guidelines/xml">Editionsrichtlinien der Kritischen Ausgabe der Werke von Richard Strauss</ref>.</xsl:variable>
    <xsl:variable name="specificFeaturesTitle">Besonderheiten der Edition des vorliegenden Dokuments:</xsl:variable>
    <xsl:variable name="funder">
@@ -52,7 +54,7 @@
    </xsl:variable>
    <xsl:variable name="edition">Digitale Ausgabe</xsl:variable>
    <xsl:variable name="sexes">
-      <dummy/>
+      <empty/>
    </xsl:variable>
    <xsl:variable name="keywords">
       <term ref="http://d-nb.info/gnd/4008240-4">Brief</term>
@@ -73,7 +75,7 @@
       <term ref="http://d-nb.info/gnd/4113357-2">Druckgraphik</term>
       <term ref="http://d-nb.info/gnd/4122164-3">Gemälde</term>
       <term ref="http://d-nb.info/gnd/4045895-7">Photographie</term>
-      <dummy/>
+      <empty/>
    </xsl:variable>
    <xsl:template match="@*|node()|comment()|processing-instruction()|text()"
                  priority="-1">

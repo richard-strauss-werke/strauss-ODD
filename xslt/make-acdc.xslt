@@ -30,6 +30,8 @@
 				<XSL:import href="{.}"/>
 			</xsl:for-each>
 
+			<XSL:param name="docIDParam" required="no"/>
+
 			<XSL:output method="xml" indent="no" encoding="utf-8"/>
 
 			<XSL:strip-space
@@ -55,8 +57,13 @@
 			
 			<XSL:key name="who" match="//@who" use="."/>
 
-			<!-- get document ID from uri: -->
-			<XSL:variable name="docID" select="replace(base-uri(), '^(.*/)?(.*)\..*$','$2')"/>
+			<!-- get document ID from uri or from the docIDParam; the latter is necessary 
+				because base-uri() doesn't currently work in eXist -->
+			<XSL:variable name="docID" select="
+				if (base-uri()) then
+				replace(base-uri(), '^(.*/)?(.*)\..*$','$2')
+				else $docIDParam
+			"/>
 
 			<!-- content from the ODD to be added to the processed TEI files: -->
 			<XSL:variable name="guidelinesTitleRef">
@@ -97,7 +104,7 @@
 					</sex>
 				</xsl:for-each>
 				<!-- maintain a node datatype even if there are no matches: -->
-				<dummy/>
+				<empty/>
 			</XSL:variable>
 			<XSL:variable name="keywords">
 				<xsl:for-each select="//@ident[.=('data.keyword_ms', 'data.keyword_print')]/..//rng:value">
@@ -112,7 +119,7 @@
 					</term>
 				</xsl:for-each>
 				<!-- maintain a node datatype even if there are no matches: -->
-				<dummy/>
+				<empty/>
 			</XSL:variable>
 
 

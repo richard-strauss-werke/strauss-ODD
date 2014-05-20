@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.music-encoding.org/ns/mei"><!--
-Schema generated from ODD source 2014-05-19T15:33:22Z. 
+Schema generated from ODD source 2014-05-19T15:48:44Z. 
 Edition: Version 2.6.0. Last updated on
 	20th January 2014, revision 12802
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
@@ -2812,6 +2812,42 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <ref name="mei_annot"/>
       </oneOrMore>
    </define>
+   <define name="mei_model.biblLike">
+      <choice>
+         <ref name="mei_bibl"/>
+      </choice>
+   </define>
+   <define name="mei_model.biblLike_alternation">
+      <choice>
+         <ref name="mei_bibl"/>
+      </choice>
+   </define>
+   <define name="mei_model.biblLike_sequence">
+      <ref name="mei_bibl"/>
+   </define>
+   <define name="mei_model.biblLike_sequenceOptional">
+      <optional>
+         <ref name="mei_bibl"/>
+      </optional>
+   </define>
+   <define name="mei_model.biblLike_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="mei_bibl"/>
+      </zeroOrMore>
+   </define>
+   <define name="mei_model.biblLike_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="mei_bibl"/>
+      </oneOrMore>
+   </define>
+   <define name="mei_model.biblPart">
+      <choice>
+         <ref name="mei_model.respLike"/>
+         <ref name="mei_creation"/>
+         <ref name="mei_extent"/>
+         <ref name="mei_physLoc"/>
+      </choice>
+   </define>
    <define name="mei_model.controleventLike">
       <choice>
          <ref name="mei_model.controleventLike.cmn"/>
@@ -2881,6 +2917,12 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
       <oneOrMore>
          <ref name="mei_identifier"/>
       </oneOrMore>
+   </define>
+   <define name="mei_model.imprintPart">
+      <choice>
+         <ref name="mei_publisher"/>
+         <ref name="mei_pubPlace"/>
+      </choice>
    </define>
    <define name="mei_model.incipLike">
       <choice>
@@ -3246,6 +3288,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
       <choice>
          <ref name="mei_model.addressLike"/>
          <ref name="mei_model.annotLike"/>
+         <ref name="mei_model.biblLike"/>
          <ref name="mei_model.dateLike"/>
          <ref name="mei_model.identifierLike"/>
          <ref name="mei_model.milestoneLike.text"/>
@@ -3260,6 +3303,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
    <define name="mei_model.textphraseLike.limited">
       <choice>
          <ref name="mei_model.addressLike"/>
+         <ref name="mei_model.biblLike"/>
          <ref name="mei_model.dateLike"/>
          <ref name="mei_model.identifierLike"/>
          <ref name="mei_model.lbLike"/>
@@ -3348,6 +3392,35 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <ref name="mei_att.annot.anl.attributes"/>
          <ref name="mei_att.plist.attributes"/>
          <ref name="mei_att.responsibility.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="mei_bibl">
+      <element name="bibl">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(bibliographic reference) – Provides a loosely-structured bibliographic citation in which the sub-components may or may not be explicitly marked. </a:documentation>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="mei_model.biblPart"/>
+               <ref name="mei_model.imprintPart"/>
+               <ref name="mei_model.textphraseLike"/>
+            </choice>
+         </zeroOrMore>
+         <ref name="mei_att.common.attributes"/>
+         <ref name="mei_att.lang.attributes"/>
+         <ref name="mei_att.pointing.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="mei_biblList">
+      <element name="biblList">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">List of bibliographic references.</a:documentation>
+         <zeroOrMore>
+            <ref name="mei_model.biblLike"/>
+         </zeroOrMore>
+         <ref name="mei_att.common.attributes"/>
+         <ref name="mei_att.lang.attributes"/>
+         <ref name="mei_att.typed.attributes"/>
          <empty/>
       </element>
    </define>
@@ -4178,6 +4251,9 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
                <ref name="mei_model.pLike"/>
             </choice>
          </zeroOrMore>
+         <zeroOrMore>
+            <ref name="mei_biblList"/>
+         </zeroOrMore>
          <ref name="mei_att.bibl.attributes"/>
          <ref name="mei_att.calendared.attributes"/>
          <ref name="mei_att.common.attributes"/>
@@ -4193,6 +4269,9 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <oneOrMore>
             <ref name="mei_event"/>
          </oneOrMore>
+         <zeroOrMore>
+            <ref name="mei_biblList"/>
+         </zeroOrMore>
          <ref name="mei_att.bibl.attributes"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.typed.attributes"/>
@@ -4603,6 +4682,9 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <optional>
             <ref name="mei_perfMedium"/>
          </optional>
+         <zeroOrMore>
+            <ref name="mei_biblList"/>
+         </zeroOrMore>
          <optional>
             <ref name="mei_notesStmt"/>
          </optional>

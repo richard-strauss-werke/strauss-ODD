@@ -48,6 +48,8 @@
 			</abstract>
 		</profileDesc>
 		<revisionDesc>
+			<change who="#aerhard" when="2014-05-19">Added document type "place"</change>
+			<change who="#aerhard" when="2014-05-16">Added document type "work"</change>
 			<change who="#aerhard" when="2014-02-10">Adjustments to facilitate the final transformation</change>
 			<change who="#aerhard" when="2014-02-05">Globally refactored</change>
 			<change who="#aerhard" when="2014-01-18">Equiv elements added</change>
@@ -192,23 +194,17 @@
 				</schemaSpec>
 				
 				<schemaSpec ident="schema.work" ns="http://www.music-encoding.org/ns/mei" xml:lang="en" start="mei source" prefix="mei_">
-					<desc>Works: currently, only compositions by Strauss</desc>
+					<desc>Compositions by Strauss and other works of art. Based on Peter Stadler's WeGA ODD.</desc>
 					<specGrpRef target="#extension.MEI-head"/>
-					<!--<specGrpRef target="#scope.shared"/>
-					<specGrpRef target="#edits.classes.att.shared"/>
-					<specGrpRef target="#edits.datatypes.shared"/>
-					<specGrpRef target="#edits.elements.shared"/>
-					<specGrpRef target="#edits.macros.shared"/>-->
 				</schemaSpec>
 				
-				<!--<schemaSpec ident="schema.work" xml:lang="en" start="bibl" prefix="rswa_">
-					<desc>Works: currently, only compositions by Strauss</desc>
-					<specGrpRef target="#scope.shared"/>
-					<specGrpRef target="#edits.classes.att.shared"/>
-					<specGrpRef target="#edits.datatypes.shared"/>
-					<specGrpRef target="#edits.elements.shared"/>
-					<specGrpRef target="#edits.macros.shared"/>
-				</schemaSpec>-->
+				<schemaSpec ident="schema.place" xml:lang="en" start="place" prefix="rswa_">
+					<desc>Places. Based on Anna Maria Komprecht's WeGA ODD.</desc>
+					<moduleRef key="tei"/>
+					<moduleRef key="header" include="idno"/>
+					<moduleRef key="namesdates" include="country geo location place placeName"/>
+					<specGrpRef target="#edits.elements.place"/>
+				</schemaSpec>
 				
 			</div>
 			<div xml:id="scopes">
@@ -216,7 +212,7 @@
 				<desc>The 'scopes' below mostly define thematically grouped collections of modules / elements. Combined, they add up to the full scope of a schema. In the whole 'scopes' section, each module and each element may only be cited once.</desc>
 				<div>
 					<head>Shared scope</head>
-					<desc>A scope common to all schemata</desc>
+					<desc>A scope common to all schemata (except of "place" and "work")</desc>
 					<specGrp xml:id="scope.shared">
 						<moduleRef key="tei"/>
 						<moduleRef key="core"

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" xml:base="file:/c:/eXist-db/webapp/ahlsen/strauss-ODD/src/rswa.MAIN.odd.xml" xml:lang="en"><?TEIVERSION Version 2.6.0. Last updated on
+<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" xml:base="file:/c:/eXist-db/webapp/ahlsen/strauss-ODD/strauss-ODD/src/rswa.MAIN.odd.xml" xml:lang="en"><?TEIVERSION Version 2.6.0. Last updated on
 	20th January 2014, revision 12802?>
 	<teiHeader>
 		<fileDesc>
@@ -44,6 +44,8 @@
 			</abstract>
 		</profileDesc>
 		<revisionDesc>
+			<change who="#aerhard" when="2014-05-19">Added document type "place"</change>
+			<change who="#aerhard" when="2014-05-16">Added document type "work"</change>
 			<change who="#aerhard" when="2014-02-10">Adjustments to facilitate the final transformation</change>
 			<change who="#aerhard" when="2014-02-05">Globally refactored</change>
 			<change who="#aerhard" when="2014-01-18">Equiv elements added</change>
@@ -12418,19 +12420,19 @@ manuscripts, not necessarily located within a single repository.</desc><desc ver
         </attDef>
       </attList>
     </classSpec><classSpec type="atts" module="MEI.shared" ident="mei_att.staffident" mode="replace">
-					<desc versionDate="2014-02-04" xml:lang="en">signifies the staff on which a notated event occurs or to
+			<desc versionDate="2014-02-04" xml:lang="en">signifies the staff on which a notated event occurs or to
 						which a control event applies.</desc>
-					<attList>
-						<attDef ident="staff" usage="mwa">
-							<datatype>
-								<ref xmlns="http://relaxng.org/ns/structure/1.0" name="string"/>
-							</datatype>
-						</attDef>
-					</attList>
-					<remarks versionDate="2014-02-04" xml:lang="en">
-						<p>The attribute is made mandatory when applicable instead of always mandatory to allow MEI fragments.</p>
-					</remarks>
-				</classSpec><classSpec ident="mei_att.staffloc" module="MEI.shared" type="atts">
+			<attList>
+				<attDef ident="staff" usage="mwa">
+					<datatype>
+						<ref xmlns="http://relaxng.org/ns/structure/1.0" name="string"/>
+					</datatype>
+				</attDef>
+			</attList>
+			<remarks versionDate="2014-02-04" xml:lang="en">
+				<p>The attribute is made mandatory when applicable instead of always mandatory to allow MEI fragments.</p>
+			</remarks>
+		</classSpec><classSpec ident="mei_att.staffloc" module="MEI.shared" type="atts">
       <desc>Attributes that identify location on a staff in terms of lines and spaces.</desc>
       <attList>
         <attDef ident="loc" usage="opt">
@@ -21302,7 +21304,7 @@ autre), soit pour indiquer un changement dans la main, comme un changement d'éc
       </notatedMusic>
     </egXML>
   </exemplum><remarks versionDate="2014-02-04" xml:lang="en">
-						<p>It is possible to describe
+				<p>It is possible to describe
                             the content of the notation using elements from the model.labelLike class and it is possible
                             to point to an external representation using elements from model.ptrLike. It is possible to
                             specify the location of digital objects representing the notated music in other media such
@@ -21312,10 +21314,10 @@ autre), soit pour indiquer un changement dans la main, comme un changement d'éc
                             not displayable by the application using the encoding. The alignment of encoded notated
                             music, images carrying the notation, and audio files is a complex matter for which we refer
                             the encoder to other formats and specifications such as MPEG-SMR.</p>
-						<p>In this TEI with Music Notation customisation, some
+				<p>In this TEI with Music Notation customisation, some
                                 elements from MEI are allowed to occur within the element to
                                 encode the music notation.</p>
-					</remarks><listRef>
+			</remarks><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/FT.html#FTNM">14.3. </ref>
   </listRef></elementSpec><macroSpec rend="add" module="derived-module-schema.correspondence" ident="data.supplPersNameType">
 			<content>
@@ -21596,13 +21598,17 @@ autre), soit pour indiquer un changement dans la main, comme un changement d'éc
 				
 				
 				
+				
+				
+				
+				
 			</div>
 			<div xml:id="scopes">
 				<head>Scopes</head>
 				<desc>The 'scopes' below mostly define thematically grouped collections of modules / elements. Combined, they add up to the full scope of a schema. In the whole 'scopes' section, each module and each element may only be cited once.</desc>
 				<div>
 					<head>Shared scope</head>
-					<desc>A scope common to all schemata</desc>
+					<desc>A scope common to all schemata (except of "place" and "work")</desc>
 					<table><row><cell>
 		Module tei</cell><cell/></row><row><cell>
 		Module core</cell><cell/></row><row><cell>
@@ -21675,8 +21681,34 @@ autre), soit pour indiquer un changement dans la main, comme un changement d'éc
 		Element <gi>taskDesc</gi></cell><cell>add</cell></row><row><cell>
 		Element <gi>task</gi></cell><cell>add</cell></row></table>
 </div>
-				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.extension.MEI.xml" xml:lang="">
-	<head>MEI extension</head>
+				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.extension.MEI-head.xml" xml:lang="">
+	<head>MEI head extension</head>
+	<byline>Apart from minor changes to get things working in the current context, the specGrp code is taken literally from Peter Stadler's WeGA_works.odd.xml. For copyright and other information, see the <ref target="https://github.com/Edirom/WeGA-ODD">Carl-Maria-von-Weber-Gesamtausgabe ODDs</ref>.</byline>
+	<desc>Includes TEI header components</desc>
+	
+	<table><row/><row><cell>
+		Module MEI</cell><cell/></row><row><cell>
+		Module MEI.frbr</cell><cell/></row><row><cell>
+		Module MEI.shared</cell><cell/></row><row><cell>
+		Module MEI.header</cell><cell/></row><row><cell>
+		Module MEI.namesdates</cell><cell/></row><row><cell>
+		Module MEI.cmn</cell><cell/></row><row><cell>
+		Module MEI.edittrans</cell><cell/></row><row><cell><ref target="##wega-patterns">reference #wega-patterns</ref></cell><cell/></row><row><cell><ref target="##wega-lists">reference #wega-lists</ref></cell><cell/></row><row><cell><ref target="##wega-common-atts">reference #wega-common-atts</ref></cell><cell/></row><row><cell>
+		Macro <ident type="macro">macro.availabilityPart</ident></cell><cell>change</cell></row><row><cell>
+		Class <ident type="class">att.measurement</ident></cell><cell>change</cell></row><row><cell>
+		Element <gi>mei</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>persName</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>source</gi></cell><cell>change</cell></row><row><cell>
+		Macro <ident type="macro">data.ISODATE</ident></cell><cell>change</cell></row><row><cell>
+		Element <gi>date</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>altId</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>titleStmt</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>title</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>rend</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>extent</gi></cell><cell>change</cell></row></table>
+</div>
+				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.extension.MEI-music.xml" xml:lang="">
+	<head>MEI music extension</head>
 	<byline>modelSpec and classSpec adopted from Raffaele Viglianti's <ref target="https://github.com/TEI-Music-SIG/tei-mei/blob/master/tei-lite_mei-cmn.xml">tei-lite_mei-cmn.xml</ref></byline>
 	<desc>Includes the TEI notatedMusic element and the MEI modules. Note: The moduleRefs below don't refer to the official mei-source.xml, but to a prefixed version, see <ref target="https://github.com/TEI-Music-SIG/tei-mei/">https://github.com/TEI-Music-SIG/tei-mei/</ref></desc>
 	<table><row/><row><cell>
@@ -21690,7 +21722,7 @@ autre), soit pour indiquer un changement dans la main, comme un changement d'éc
 		Module MEI.usersymbols</cell><cell/></row><row><cell>
 		Element <gi>notatedMusic</gi></cell><cell>change</cell></row><row><cell>
 		Class <ident type="class">mei_att.staffident</ident></cell><cell>replace</cell></row></table>
-		</div>
+</div>
 			</div>
 			<div>
 				<head>Edits</head>
@@ -21843,6 +21875,17 @@ autre), soit pour indiquer un changement dans la main, comme un changement d'éc
 		Element <gi>creation</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>term</gi></cell><cell>change</cell></row></table>
 		</div>
+		
+		<div>
+			<head>Place</head>
+			<desc>Contains specifications specific of the place ODD</desc>
+			<table><row><cell>
+		Element <gi>placeName</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>location</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>geo</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>idno</gi></cell><cell>change</cell></row></table>
+		</div>
+		
 		<div>
 			<head>Manuscript sources</head>
 			<desc>Contains specifications for transcriptions of manuscript sources</desc>
@@ -21890,11 +21933,13 @@ autre), soit pour indiquer un changement dans la main, comme un changement d'éc
 		Element <gi>note</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>person</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>event</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>gloss</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>affiliation</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>listEvent</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>sex</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>birth</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>death</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>occupation</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>faith</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>persName</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>orgName</gi></cell><cell>change</cell></row><row><cell>

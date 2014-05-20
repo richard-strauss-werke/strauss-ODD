@@ -1,8 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
-	xpath-default-namespace="http://www.tei-c.org/ns/1.0" xmlns="http://www.tei-c.org/ns/1.0"
-	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tei="http://www.tei-c.org/ns/1.0"
-	xmlns:rsga="http://richard-strauss-ausgabe.de/ns/1.0" exclude-result-prefixes="rsga xs tei">
+<xsl:stylesheet xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:rsga="http://richard-strauss-ausgabe.de/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0"
+	xmlns:functx="http://www.functx.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="rsga xs tei">
 
 	<!-- xslt version of the original xquery script, adjusted to tei-c usage; alpha -->
 
@@ -181,8 +178,7 @@
 
 	<xsl:template name="processCreationChangeMs">
 		<xsl:copy>
-			<xsl:attribute name="xml:id">change-<xsl:value-of select="count(preceding-sibling::*) + 1"
-				/></xsl:attribute>
+			<xsl:attribute name="xml:id">change-<xsl:value-of select="count(preceding-sibling::*) + 1"/></xsl:attribute>
 			<xsl:apply-templates select="@*|node()"/>
 		</xsl:copy>
 	</xsl:template>
@@ -244,9 +240,11 @@
 	<xsl:template name="expandPublicationStmt">
 		<xsl:copy>
 			<xsl:copy-of select="$publicationStmt"/>
-			<idno type="RSWA">
-				<xsl:value-of select="$docID"/>
-			</idno>
+			<xsl:if test="$docID">
+				<idno type="RSWA">
+					<xsl:value-of select="$docID"/>
+				</idno>
+			</xsl:if>
 			<xsl:apply-templates select="idno"/>
 		</xsl:copy>
 		<xsl:copy-of select="$seriesStmt"/>
@@ -305,8 +303,7 @@
 					</xsl:attribute>
 				</xsl:if>
 				<xsl:if test="@rsga:cert">
-					<certainty match="../@ref|../text()" locus="value"
-						cert="{@rsga:cert}"/>
+					<certainty match="../@ref|../text()" locus="value" cert="{@rsga:cert}"/>
 				</xsl:if>
 				<xsl:apply-templates select="node()"/>
 			</xsl:copy>
@@ -381,8 +378,7 @@
 		<xsl:variable name="notAfter" select="rsga:dateLong($date/@notAfter, 'sp. ')"/>
 		<xsl:variable name="from" select="rsga:dateLong($date/@from, ())"/>
 		<xsl:variable name="to" select="rsga:dateLong($date/@to, ())"/>
-		<xsl:variable name="fromTo"
-			select="if ($from or $to) then concat($from, '&#x00A0;–', (if ($to) then ' ' else ()), $to) else ()"/>
+		<xsl:variable name="fromTo" select="if ($from or $to) then concat($from, '&#160;–', (if ($to) then ' ' else ()), $to) else ()"/>
 		<xsl:variable name="dates">
 			<xsl:value-of select="string-join(($when, $notBefore, $notAfter, $fromTo), ', ')"/>
 		</xsl:variable>
@@ -393,6 +389,25 @@
 		<xsl:value-of select="concat(rsga:precisionString($date), $dates, rsga:certString($date))"/>
 	</xsl:function>
 
+
+	<!-- modified to work with earlier dates, too -->
+	<xsl:function name="functx:day-of-week" as="xs:integer?"
+		xmlns:functx="http://www.functx.com" >
+		<xsl:param name="date" as="xs:anyAtomicType?"/>
+		<xsl:sequence select="
+			if (empty($date))
+			then ()
+			else xs:integer((xs:date($date) - xs:date('1801-01-06'))
+			div xs:dayTimeDuration('P1D')) mod 7
+			"/>
+	</xsl:function>
+
+	<xsl:function name="functx:day-of-week-name-de" as="xs:string?"
+		 >
+		<xsl:param name="date" as="xs:anyAtomicType?"/>
+		<xsl:sequence select="('Dienstag', 'Mittwoch','Donnerstag', 'Freitag', 'Samstag','Sonntag', 'Montag')[functx:day-of-week($date)+1]"/>
+	</xsl:function>
+
 	<xsl:function name="rsga:dateLong" as="xs:string?">
 		<xsl:param name="date" as="xs:string?"/>
 		<xsl:param name="prefix" as="xs:string?"/>
@@ -400,14 +415,13 @@
 			<xsl:variable name="dateOnly">
 				<xsl:choose>
 					<xsl:when test="matches($date, '[\d]{4}-[\d]{2}-[\d]{2}')">
-						<xsl:value-of
-							select="format-date(xs:date($date), '[FNn], [D]. [MNn] [Y]', 'de', (), ())"/>
+						<!-- replaced, since German dates don't work in eXist out of the box -->
+						<!--<xsl:value-of select="format-date(xs:date($date), '[FNn], [D]. [MNn] [Y]', 'de', (), ())"/>-->
+						<xsl:value-of select="concat(
+							functx:day-of-week-name-de($date), ', ', substring($date,9,2), '. ',        ('Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember')[xs:integer(substring($date,6,2))], ' ', substring($date,1,4))"/>
 					</xsl:when>
 					<xsl:when test="matches($date, '[\d]{4}-[\d]{2}')">
-						<xsl:value-of
-							select="concat(('Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 
-							'August', 'September', 'Oktober', 'November', 'Dezember')[xs:integer(substring($date,6,2))], ' ', substring($date,1,4))"
-						/>
+						<xsl:value-of select="concat(('Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli',         'August', 'September', 'Oktober', 'November', 'Dezember')[xs:integer(substring($date,6,2))], ' ', substring($date,1,4))"/>
 					</xsl:when>
 					<xsl:otherwise>
 						<xsl:value-of select="$date"/>
@@ -436,4 +450,3 @@
 	</xsl:function>
 
 </xsl:stylesheet>
-

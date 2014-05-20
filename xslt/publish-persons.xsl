@@ -5,10 +5,12 @@
                 version="2.0"
                 xpath-default-namespace="http://www.tei-c.org/ns/1.0">
    <xsl:import href="rswa.xsl"/>
+   <xsl:param name="docIDParam" required="no"/>
    <xsl:output method="xml" indent="no" encoding="utf-8"/>
    <xsl:strip-space elements="additional additions address analytic app availability biblStruct body castList choice cit creation div editionStmt editorialDecl encodingDesc epigraph event facsimile figure fileDesc floatingText front graphic handDesc handNote imprint index lg listBibl listChange listEvent monogr msDesc msIdentifier notatedMusic notesStmt objectDesc org performance person physDesc postscript profileDesc projectDesc publicationStmt relatedItem respons respStmt revisionDesc row seriesStmt sourceDesc sp space state subst supportDesc table teiHeader text textClass titleStmt"/>
    <xsl:key name="who" match="//@who" use="."/>
-   <xsl:variable name="docID" select="replace(base-uri(), '^(.*/)?(.*)\..*$','$2')"/>
+   <xsl:variable name="docID"
+                 select="     if (base-uri()) then     replace(base-uri(), '^(.*/)?(.*)\..*$','$2')     else $docIDParam    "/>
    <xsl:variable name="guidelinesTitleRef">Die vorliegende Ausgabe folgt den <ref target="http://richard-strauss-ausgabe.de/guidelines/xml">Editionsrichtlinien der Kritischen Ausgabe der Werke von Richard Strauss</ref>.</xsl:variable>
    <xsl:variable name="specificFeaturesTitle">Besonderheiten der Edition des vorliegenden Dokuments:</xsl:variable>
    <xsl:variable name="funder">
@@ -57,7 +59,10 @@
       <sex value="O">sonstiges</sex>
       <sex value="N">keines</sex>
       <sex value="U">unbekannt</sex>
-      <dummy/>
+      <empty/>
+   </xsl:variable>
+   <xsl:variable name="keywords">
+      <empty/>
    </xsl:variable>
    <xsl:template match="@*|node()|comment()|processing-instruction()|text()"
                  priority="-1">
@@ -107,6 +112,9 @@
    <xsl:template match="state">
       <xsl:call-template name="keepOnlyWithAttOrChildContent"/>
    </xsl:template>
+   <xsl:template match="gloss">
+      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
+   </xsl:template>
    <xsl:template match="affiliation">
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
    </xsl:template>
@@ -117,6 +125,9 @@
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
    </xsl:template>
    <xsl:template match="faith">
+      <xsl:call-template name="keepOnlyWithAttOrContent"/>
+   </xsl:template>
+   <xsl:template match="occupation">
       <xsl:call-template name="keepOnlyWithAttOrContent"/>
    </xsl:template>
    <xsl:template match="residence">
