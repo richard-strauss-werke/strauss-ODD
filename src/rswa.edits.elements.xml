@@ -130,9 +130,6 @@
 					</classes>
 				</elementSpec>
 				
-				
-				
-				
 				<!-- taken from WeGA_places.odd.xml -->
 				<elementSpec ident="idno" mode="change" module="namesdates">
 					<gloss versionDate="2013-11-11" xml:lang="en">identifier</gloss>
@@ -168,6 +165,20 @@
 			<head>Manuscript sources</head>
 			<desc>Contains specifications for transcriptions of manuscript sources</desc>
 			<specGrp xml:id="edits.elements.ms">
+
+				<elementSpec ident="text" module="textstructure" mode="change">
+					<classes mode="change">
+						<memberOf key="att.typed" mode="delete"/>
+					</classes>
+					<content>
+						<rng:ref name="body"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="titleStmt" module="header" mode="change">
+					<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandTitleStmtMs"/>
+				</elementSpec>
+				
 				<elementSpec ident="publicationStmt" module="header" mode="replace">
 					<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandPublicationStmt"/>
 					<content>
@@ -194,10 +205,71 @@
 				</elementSpec>
 			</specGrp>
 		</div>
+		
+		<div>
+			<head>Images</head>
+			<desc>Contains specifications for images</desc>
+			<specGrp xml:id="edits.elements.graphic">
+				
+				<elementSpec ident="text" module="textstructure" mode="change">
+					<equiv filter="rswa.xsl" mimeType="text/xsl" name="replaceTextByGraphic"/>
+					<classes mode="change">
+						<memberOf key="att.typed" mode="delete"/>
+					</classes>
+					<content>
+						<rng:ref name="body"/>
+					</content>
+				</elementSpec>
+				
+				<elementSpec ident="titleStmt" module="header" mode="change">
+					<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandTitleStmtGraphic"/>
+				</elementSpec>
+				
+				<elementSpec ident="publicationStmt" module="header" mode="replace">
+					<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandPublicationStmt"/>
+					<content>
+						<rng:ref name="macro.form.publicationStmt_ms"/>
+					</content>
+				</elementSpec>
+				<elementSpec ident="sourceDesc" module="header" mode="replace">
+					<content>
+						<rng:ref name="macro.form.sourceDesc_ms"/>
+					</content>
+				</elementSpec>
+				<elementSpec ident="creation" module="header" mode="replace">
+					<content>
+						<rng:ref name="macro.form.creation_ms"/>
+					</content>
+				</elementSpec>
+				<elementSpec ident="term" module="core" mode="change">
+					<equiv filter="rswa.xsl" mimeType="text/xsl" name="addTermRef"/>
+					<content>
+						<rng:optional>
+							<rng:ref name="data.keyword_ms"/>
+						</rng:optional>
+					</content>
+				</elementSpec>
+			</specGrp>
+		</div>
+		
 		<div>
 			<head>Printed sources</head>
 			<desc>Contains specifications for transcriptions of printed sources</desc>
 			<specGrp xml:id="edits.elements.print">
+
+				<elementSpec ident="text" module="textstructure" mode="change">
+					<classes mode="change">
+						<memberOf key="att.typed" mode="delete"/>
+					</classes>
+					<content>
+						<rng:ref name="body"/>
+					</content>
+				</elementSpec>
+
+				<elementSpec ident="titleStmt" module="header" mode="change">
+					<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandTitleStmtPrint"/>
+				</elementSpec>
+				
 				<elementSpec ident="publicationStmt" mode="replace" module="header">
 					<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandPublicationStmt"/>
 					<content>
@@ -224,6 +296,20 @@
 			<head>Events</head>
 			<desc>Contains specifications for documents describing an event</desc>
 			<specGrp xml:id="edits.elements.events">
+				
+				<elementSpec ident="text" module="textstructure" mode="change">
+					<classes mode="change">
+						<memberOf key="att.typed" mode="delete"/>
+					</classes>
+					<content>
+						<rng:ref name="body"/>
+					</content>
+				</elementSpec>
+				
+				<elementSpec ident="titleStmt" module="header" mode="change">
+					<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandTitleStmtEvent"/>
+				</elementSpec>
+				
 				<elementSpec ident="publicationStmt" mode="replace" module="header">
 					<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandPublicationStmt"/>
 					<content>
@@ -350,11 +436,6 @@
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="respStmt" module="core" mode="change">
 				<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandRespStmt"/>
-			</elementSpec>
-
-			<!-- filter can be applied universally; no xpath look-up is needed -->
-			<elementSpec ident="titleStmt" module="header" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandTitleStmt"/>
 			</elementSpec>
 
 			<!-- filter can be applied universally; no xpath look-up is needed -->
@@ -606,7 +687,7 @@
 			</elementSpec>
 
 			<elementSpec ident="sex" module="namesdates" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandOrRemoveSex"/>
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandOrRemoveSexElement"/>
 				<gloss versionDate="2014-01-26" xml:lang="en">sex</gloss>
 				<gloss versionDate="2014-01-26" xml:lang="de">Geschlecht</gloss>
 				<desc versionDate="2014-01-26" xml:lang="en">specifies the sex of a person.</desc>
@@ -912,15 +993,6 @@
 					<rng:oneOrMore>
 						<rng:ref name="p"/>
 					</rng:oneOrMore>
-				</content>
-			</elementSpec>
-
-			<elementSpec ident="text" module="textstructure" mode="change">
-				<classes mode="change">
-					<memberOf key="att.typed" mode="delete"/>
-				</classes>
-				<content>
-					<rng:ref name="body"/>
 				</content>
 			</elementSpec>
 

@@ -140,7 +140,7 @@
       <xsl:call-template name="keepOnlyWithContent"/>
    </xsl:template>
    <xsl:template match="sex">
-      <xsl:call-template name="expandOrRemoveSex"/>
+      <xsl:call-template name="expandOrRemoveSexElement"/>
    </xsl:template>
    <xsl:template match="affiliation/date">
       <xsl:call-template name="expandOrRemoveDate"/>

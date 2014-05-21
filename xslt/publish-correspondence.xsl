@@ -78,19 +78,22 @@
       <empty/>
    </xsl:variable>
    <xsl:template match="@*|node()|comment()|processing-instruction()|text()"
-                 priority="-1">
+                 priority="-2">
       <xsl:copy>
          <xsl:apply-templates select="@*|node()|comment()|processing-instruction()|text()"/>
       </xsl:copy>
    </xsl:template>
    <xsl:template match="/processing-instruction()" priority="100"/>
-   <xsl:template match="/*">
+   <xsl:template match="/*" priority="-1">
       <xsl:copy>
          <xsl:attribute name="xml:id">
             <xsl:value-of select="$docID"/>
          </xsl:attribute>
          <xsl:apply-templates select="@*[not(name()='xml:id')]|node()|comment()|processing-instruction()|text()"/>
       </xsl:copy>
+   </xsl:template>
+   <xsl:template match="desc">
+      <xsl:call-template name="keepOnlyWithAnyText"/>
    </xsl:template>
    <xsl:template match="rs">
       <xsl:call-template name="processRs"/>

@@ -134,6 +134,20 @@
 					<specGrpRef target="#scope.transcr.ms"/>
 					<specGrpRef target="#extension.MEI-music"/>
 				</schemaSpec>
+				<schemaSpec ident="schema.graphic" xml:lang="en" start="TEI" prefix="rswa_">
+					<desc>Transcriptions of manuscript sources: Correspondence, notes, etc.</desc>
+					<specGrpRef target="#scope.shared"/>
+					<specGrpRef target="#scope.teistructure"/>
+					<specGrpRef target="#scope.transcr"/>
+					<specGrpRef target="#scope.transcr.ms"/>
+<!--					<specGrpRef target="#extension.MEI-music"/>-->
+					<specGrpRef target="#extension.tasks"/>
+					<specGrpRef target="#edits.classes.att.shared"/>
+					<specGrpRef target="#edits.datatypes.shared"/>
+					<specGrpRef target="#edits.elements.shared"/>
+					<specGrpRef target="#edits.macros.shared"/>
+					<specGrpRef target="#edits.elements.graphic"/>
+				</schemaSpec>
 				<schemaSpec ident="schema.literature" xml:lang="en" start="TEI" prefix="rswa_">
 					<desc>Transcriptions of printed sources: Articles, reviews, books, etc.</desc>
 					<specGrpRef target="#scope.shared"/>

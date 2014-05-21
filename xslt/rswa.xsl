@@ -1,5 +1,8 @@
-<xsl:stylesheet xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:rsga="http://richard-strauss-ausgabe.de/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0"
-	xmlns:functx="http://www.functx.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="rsga xs tei">
+<xsl:stylesheet xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:rsga="http://richard-strauss-ausgabe.de/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0"
+	xmlns:functx="http://www.functx.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0"
+	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
+	exclude-result-prefixes="rsga xs tei functx">
 
 	<!-- xslt version of the original xquery script, adjusted to tei-c usage; alpha -->
 
@@ -25,7 +28,8 @@
 			<xsl:attribute name="xml:id">
 				<xsl:value-of select="$docID"/>
 			</xsl:attribute>
-			<xsl:apply-templates select="@*[not(name()='xml:id')]|node()[local-name()!='note']|comment()|processing-instruction()|text()"/>
+			<xsl:apply-templates
+				select="@*[not(name()='xml:id')]|node()[local-name()!='note']|comment()|processing-instruction()|text()"/>
 			<xsl:apply-templates select="note"/>
 		</xsl:copy>
 	</xsl:template>
@@ -138,7 +142,7 @@
 		</xsl:if>
 	</xsl:template>
 
-	<xsl:template name="expandOrRemoveSex">
+	<xsl:template name="expandOrRemoveSexElement">
 		<xsl:if test="@*">
 			<xsl:copy-of select="$sexes/*[@value=current()/@value]"/>
 		</xsl:if>
@@ -188,7 +192,8 @@
 
 	<xsl:template name="processCreationChangeMs">
 		<xsl:copy>
-			<xsl:attribute name="xml:id">change-<xsl:value-of select="count(preceding-sibling::*) + 1"/></xsl:attribute>
+			<xsl:attribute name="xml:id">change-<xsl:value-of select="count(preceding-sibling::*) + 1"
+				/></xsl:attribute>
 			<xsl:apply-templates select="@*|node()"/>
 		</xsl:copy>
 	</xsl:template>
@@ -220,7 +225,7 @@
 		</xsl:if>
 	</xsl:template>
 
-	<xsl:template name="expandTitleStmt">
+	<xsl:template name="expandTitleStmtMs">
 		<xsl:copy>
 			<title>
 				<xsl:for-each select="//change[parent::listChange]">
@@ -231,7 +236,7 @@
 					<xsl:call-template name="processCreationChange"/>
 				</xsl:for-each>
 			</title>
-			<xsl:for-each select="//@role[.='creator'][ancestor::listChange]/..">
+			<xsl:for-each select="//@role[.='creator'][ancestor::listChange][../node()]/..">
 				<author>
 					<xsl:apply-templates select="@key|node()"/>
 					<xsl:value-of select="rsga:certString(./..)"/>
@@ -240,6 +245,60 @@
 			<xsl:copy-of select="$funder"/>
 		</xsl:copy>
 	</xsl:template>
+
+	<xsl:template name="expandTitleStmtGraphic">
+		<xsl:variable name="summary">
+			<xsl:for-each select="//notesStmt/note[@type='summary']">
+				<xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
+			</xsl:for-each>
+		</xsl:variable>
+		<xsl:variable name="changes">
+			<xsl:for-each select="//change[parent::listChange]">
+				<xsl:if test="position() ne 1">
+					<xsl:text> </xsl:text>
+					<lb/>
+				</xsl:if>
+				<xsl:call-template name="processCreationChange"/>
+			</xsl:for-each>
+		</xsl:variable>
+		<xsl:copy>
+			<xsl:element name="title">
+				<xsl:if test="$summary">
+					<xsl:value-of select="normalize-space(string($summary))"/>
+				</xsl:if>
+				<xsl:if test="$summary and $changes/text()[normalize-space()][following::lb]">
+					<xsl:text>, </xsl:text>
+				</xsl:if>
+				<xsl:copy-of select="$changes"/>
+			</xsl:element>
+			<xsl:for-each select="//@role[.='creator'][ancestor::listChange][../node()]/..">
+				<author>
+					<xsl:apply-templates select="@key|node()"/>
+					<xsl:value-of select="rsga:certString(./..)"/>
+				</author>
+			</xsl:for-each>
+			<xsl:copy-of select="$funder"/>
+		</xsl:copy>
+	</xsl:template>
+
+	<xsl:template name="expandTitleStmtPrint">
+		<xsl:comment>TODO Title statement print</xsl:comment>
+	</xsl:template>
+
+	<xsl:template name="expandTitleStmtEvent">
+		<xsl:comment>TODO Title statement event</xsl:comment>
+	</xsl:template>
+
+	<xsl:template name="replaceTextByGraphic">
+		<xsl:element name="facsimile">
+			<xsl:element name="graphic">
+				<xsl:attribute name="url">
+					<xsl:value-of select="(//ptr[@type='image'])[1]/@target"/>
+				</xsl:attribute>
+			</xsl:element>
+		</xsl:element>
+	</xsl:template>
+
 
 	<xsl:template name="expandEdition">
 		<xsl:copy>
@@ -322,14 +381,21 @@
 
 	<xsl:template name="processCreationChange">
 		<xsl:variable name="firstPart">
-			<xsl:for-each select="*[@role='creator']">
-				<xsl:if test="position() ne 1"> / </xsl:if>
-				<xsl:copy>
-					<xsl:apply-templates select="@*[not(name()='role')]"/>
-					<xsl:value-of select="rsga:reverseName(string())"/>
-				</xsl:copy>
-			</xsl:for-each>
-			<xsl:for-each select="*[@role='addressee']">
+			<xsl:variable name="creator">
+				<xsl:for-each select="*[@role='creator'][element()|text()]">
+					<xsl:if test="position() ne 1"> / </xsl:if>
+					<xsl:copy>
+						<xsl:apply-templates select="@*[not(name()='role')]"/>
+						<xsl:value-of select="rsga:reverseName(string())"/>
+					</xsl:copy>
+				</xsl:for-each>
+			</xsl:variable>
+			<xsl:if test="//term/text()">
+				<xsl:value-of select="//term/text()"/>
+				<xsl:if test="normalize-space($creator)"> von </xsl:if>
+			</xsl:if>
+			<xsl:value-of select="$creator"/>
+			<xsl:for-each select="*[@role='addressee'][element()|text()]">
 				<xsl:choose>
 					<xsl:when test="position()=1"> an </xsl:when>
 					<xsl:otherwise> / </xsl:otherwise>
@@ -339,7 +405,7 @@
 					<xsl:value-of select="rsga:reverseName(string())"/>
 				</xsl:copy>
 			</xsl:for-each>
-			<xsl:for-each select="placeName[node()]">
+			<xsl:for-each select="placeName[element()|text()]">
 				<xsl:choose>
 					<xsl:when test="position()=1"> in </xsl:when>
 					<xsl:otherwise> / </xsl:otherwise>
@@ -349,7 +415,7 @@
 		</xsl:variable>
 		<xsl:variable name="secondPart">
 			<xsl:variable name="placesCreator">
-				<xsl:for-each select="origPlace[node()]">
+				<xsl:for-each select="origPlace[@*|text()]">
 					<xsl:if test="position() ne 1"> / </xsl:if>
 					<xsl:call-template name="onlyWithContentAddCert"/>
 				</xsl:for-each>
@@ -360,9 +426,11 @@
 					<xsl:value-of select="rsga:formatDateNode(.)"/>
 				</xsl:for-each>
 			</xsl:variable>
-			<xsl:value-of select="normalize-space(string-join(($placesCreator[normalize-space()], $dates[normalize-space()]), ', '))"/>
+			<xsl:value-of
+				select="normalize-space(string-join(($placesCreator[normalize-space()], $dates[normalize-space()]), ', '))"
+			/>
 		</xsl:variable>
-		<xsl:copy-of select="$firstPart"/>
+		<xsl:value-of select="$firstPart"/>
 		<xsl:if test="$secondPart">
 			<xsl:text> </xsl:text>
 			<lb/>
@@ -388,7 +456,8 @@
 		<xsl:variable name="notAfter" select="rsga:dateLong($date/@notAfter, 'sp. ')"/>
 		<xsl:variable name="from" select="rsga:dateLong($date/@from, ())"/>
 		<xsl:variable name="to" select="rsga:dateLong($date/@to, ())"/>
-		<xsl:variable name="fromTo" select="if ($from or $to) then concat($from, '&#160;–', (if ($to) then ' ' else ()), $to) else ()"/>
+		<xsl:variable name="fromTo"
+			select="if ($from or $to) then concat($from, '&#160;–', (if ($to) then ' ' else ()), $to) else ()"/>
 		<xsl:variable name="dates">
 			<xsl:value-of select="string-join(($when, $notBefore, $notAfter, $fromTo), ', ')"/>
 		</xsl:variable>
@@ -400,22 +469,25 @@
 	</xsl:function>
 
 
-	<!-- modified to work with earlier dates, too -->
-	<xsl:function name="functx:day-of-week" as="xs:integer?"
-		xmlns:functx="http://www.functx.com" >
+	<!-- modified functx function to work with earlier dates, too -->
+	<xsl:function name="functx:day-of-week" as="xs:integer?">
 		<xsl:param name="date" as="xs:anyAtomicType?"/>
-		<xsl:sequence select="
+		<xsl:sequence
+			select="
 			if (empty($date))
 			then ()
 			else xs:integer((xs:date($date) - xs:date('1801-01-06'))
 			div xs:dayTimeDuration('P1D')) mod 7
-			"/>
+			"
+		/>
 	</xsl:function>
 
-	<xsl:function name="functx:day-of-week-name-de" as="xs:string?"
-		 >
+	<!-- modified functx function with German dates -->
+	<xsl:function name="functx:day-of-week-name-de" as="xs:string?">
 		<xsl:param name="date" as="xs:anyAtomicType?"/>
-		<xsl:sequence select="('Dienstag', 'Mittwoch','Donnerstag', 'Freitag', 'Samstag','Sonntag', 'Montag')[functx:day-of-week($date)+1]"/>
+		<xsl:sequence
+			select="('Dienstag', 'Mittwoch','Donnerstag', 'Freitag', 'Samstag','Sonntag', 'Montag')[functx:day-of-week($date)+1]"
+		/>
 	</xsl:function>
 
 	<xsl:function name="rsga:dateLong" as="xs:string?">
@@ -427,11 +499,15 @@
 					<xsl:when test="matches($date, '[\d]{4}-[\d]{2}-[\d]{2}')">
 						<!-- replaced, since German dates don't work in eXist out of the box -->
 						<!--<xsl:value-of select="format-date(xs:date($date), '[FNn], [D]. [MNn] [Y]', 'de', (), ())"/>-->
-						<xsl:value-of select="concat(
-							functx:day-of-week-name-de($date), ', ', substring($date,9,2), '. ',        ('Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember')[xs:integer(substring($date,6,2))], ' ', substring($date,1,4))"/>
+						<xsl:value-of
+							select="concat(
+							functx:day-of-week-name-de($date), ', ', substring($date,9,2), '. ',        ('Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember')[xs:integer(substring($date,6,2))], ' ', substring($date,1,4))"
+						/>
 					</xsl:when>
 					<xsl:when test="matches($date, '[\d]{4}-[\d]{2}')">
-						<xsl:value-of select="concat(('Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli',         'August', 'September', 'Oktober', 'November', 'Dezember')[xs:integer(substring($date,6,2))], ' ', substring($date,1,4))"/>
+						<xsl:value-of
+							select="concat(('Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli',         'August', 'September', 'Oktober', 'November', 'Dezember')[xs:integer(substring($date,6,2))], ' ', substring($date,1,4))"
+						/>
 					</xsl:when>
 					<xsl:otherwise>
 						<xsl:value-of select="$date"/>

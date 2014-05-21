@@ -98,7 +98,7 @@
 				<xsl:value-of select="//edition"/>
 			</XSL:variable>
 			<XSL:variable name="sexes">
-				<xsl:for-each select="//valItem[ancestor::elementSpec/equiv//@name='expandOrRemoveSex']">
+				<xsl:for-each select="//valItem[ancestor::elementSpec/equiv//@name='expandOrRemoveSexElement']">
 					<sex value="{@ident}">
 						<xsl:value-of select="gloss[@xml:lang='de']"/>
 					</sex>
