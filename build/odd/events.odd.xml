@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" xml:base="file:/c:/eXist-db/webapp/ahlsen/strauss-ODD/src/rswa.MAIN.odd.xml" xml:lang="en"><?TEIVERSION Version 2.6.0. Last updated on
+<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" xml:base="file:/c:/eXist-db/webapp/ahlsen/strauss-ODD/strauss-ODD/src/rswa.MAIN.odd.xml" xml:lang="en"><?TEIVERSION Version 2.6.0. Last updated on
 	20th January 2014, revision 12802?>
 	<teiHeader>
 		<fileDesc>
@@ -44,6 +44,8 @@
 			</abstract>
 		</profileDesc>
 		<revisionDesc>
+			<change who="#aerhard" when="2014-05-19">Added document type "place"</change>
+			<change who="#aerhard" when="2014-05-16">Added document type "work"</change>
 			<change who="#aerhard" when="2014-02-10">Adjustments to facilitate the final transformation</change>
 			<change who="#aerhard" when="2014-02-05">Globally refactored</change>
 			<change who="#aerhard" when="2014-01-18">Equiv elements added</change>
@@ -66,6 +68,7 @@
 			</div>
 			<div xml:id="schemata">
 				<head>Schema</head>
+				
 				
 				
 				
@@ -3916,72 +3919,39 @@ en-tête et un texte, constitue un document TEI.</desc>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSGRP">4.3.1. </ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DI.html#DITPEG">9.3.5.1. </ref>
   </listRef>
-</elementSpec><elementSpec module="core" ident="desc">
-  <gloss versionDate="2005-01-14" xml:lang="en">description</gloss>
-  <gloss versionDate="2007-12-20" xml:lang="ko">기술</gloss>
-  <gloss versionDate="2007-05-02" xml:lang="zh-TW">描述</gloss>
-  <gloss versionDate="2008-04-06" xml:lang="ja"/>
-  <gloss versionDate="2007-05-04" xml:lang="es">descripción</gloss>
-  <gloss versionDate="2007-01-21" xml:lang="it">descrizione</gloss>
-  <gloss versionDate="2008-12-09" xml:lang="fr">description</gloss>
-  <desc versionDate="2008-09-03" xml:lang="en">contains a brief description of the object documented by its parent element, including its
-    intended usage, purpose, or application where this is appropriate.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">요소, 속성, 또는 속성 값의 목적과 적용에 대한 간단한 기술을 포함한다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含一段簡短描述，說明一元素、屬性、或屬性值的應用與目的。</desc>
-  <desc versionDate="2008-04-06" xml:lang="ja">当該要素，属性，属性値を採用した目的の簡単な解説を示す．</desc>
-  <desc versionDate="2007-06-12" xml:lang="fr">contient une courte description de l'objet documenté par
+</elementSpec><elementSpec rend="change" module="core" ident="desc"><equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/><gloss versionDate="2005-01-14" xml:lang="en">description</gloss><gloss versionDate="2007-12-20" xml:lang="ko">기술</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">描述</gloss><gloss versionDate="2008-04-06" xml:lang="ja"/><gloss versionDate="2007-05-04" xml:lang="es">descripción</gloss><gloss versionDate="2007-01-21" xml:lang="it">descrizione</gloss><gloss versionDate="2008-12-09" xml:lang="fr">description</gloss><desc versionDate="2008-09-03" xml:lang="en">contains a brief description of the object documented by its parent element, including its
+    intended usage, purpose, or application where this is appropriate.</desc><desc versionDate="2007-12-20" xml:lang="ko">요소, 속성, 또는 속성 값의 목적과 적용에 대한 간단한 기술을 포함한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含一段簡短描述，說明一元素、屬性、或屬性值的應用與目的。</desc><desc versionDate="2008-04-06" xml:lang="ja">当該要素，属性，属性値を採用した目的の簡単な解説を示す．</desc><desc versionDate="2007-06-12" xml:lang="fr">contient une courte description de l'objet documenté par
     son élément parent, qui comprend son utilisation prévue, son but, ou son application là où c'est
-    approprié.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">contiene una breve descripción del objetivo y la
-    aplicación de un elemento, atributo o valor de un atributo.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">contiene una breve descrizione dello scopo o
-    dell'applicazione di un elemento, attributo, o valore di attributo.</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.descLike"/>
-    <memberOf key="att.translatable"/>
-    <memberOf key="att.typed"/>
-    <memberOf key="model.labelLike"/>
-  </classes>
-  <content>
-    <ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.limitedContent"/>
-  </content>
-  <exemplum xml:lang="en">
+    approprié.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene una breve descripción del objetivo y la
+    aplicación de un elemento, atributo o valor de un atributo.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene una breve descrizione dello scopo o
+    dell'applicazione di un elemento, attributo, o valore di attributo.</desc><classes><memberOf key="att.global"/><memberOf key="model.descLike"/><memberOf key="att.typed"/><memberOf key="model.labelLike"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.limitedContent"/></content><attList/><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <desc>contains a brief description of the purpose and application for an element, attribute,
         attribute value, class, or entity.</desc>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <desc>contient une description brève de la raison d'être et du champ d'application d'un
           élément, d'un attribut ou de la valeur d'un attribut, d'une classe ou une entité.</desc>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
+  </exemplum><exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <desc>包含某個元素或屬性之定義與用法的簡短描述。</desc>
     </egXML>
-  </exemplum>
-  <remarks versionDate="2005-01-14" xml:lang="en">
+  </exemplum><remarks versionDate="2005-01-14" xml:lang="en">
     <p rend="dataDesc">TEI convention requires that this be expressed as a finite clause, begining
       with an active verb.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2007-06-12">
+  </remarks><remarks xml:lang="fr" versionDate="2007-06-12">
     <p rend="dataDesc">La convention TEI exige que cela soit exprimé sous la  forme d'une proposition finie,
       introduite  par un verbe actif.</p>
-  </remarks>
-  <remarks xml:lang="es" versionDate="2008-04-06">
+  </remarks><remarks xml:lang="es" versionDate="2008-04-06">
     <p rend="dataDesc">La convención de TEI requiere que esto esté expresado como cláusula finita,
       comenzando con un verbo activo.</p>
-  </remarks>
-  <remarks xml:lang="ja" versionDate="2008-04-05">
+  </remarks><remarks xml:lang="ja" versionDate="2008-04-05">
     <p rend="dataDesc"> TEIの慣習では，動詞を先頭にした文で表現される(訳注：英語で表現する 場合のこと)． </p>
-  </remarks>
-  <listRef>
+  </remarks><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TD.html#TDcrystalsCEdc">22.4.1. </ref>
-  </listRef>
-</elementSpec><elementSpec module="core" ident="sic">
+  </listRef></elementSpec><elementSpec module="core" ident="sic">
   <gloss versionDate="2012-03-15" xml:lang="en">Latin for <gloss>thus</gloss> or <gloss>so</gloss>
    </gloss>
   <gloss versionDate="2009-03-17" xml:lang="fr">du latin, <gloss>ainsi</gloss>
@@ -6405,29 +6375,9 @@ places, in particular where  multiple names are given.</p>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBICOR">3.11.2.2. </ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD21">2.2.1. </ref>
   </listRef>
-</elementSpec><elementSpec module="core" ident="title">
-  <gloss versionDate="2007-06-12" xml:lang="fr">titre</gloss>
-  <desc versionDate="2008-10-25" xml:lang="en">contains a title for any kind of work.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">다양한 종류의 작업에 대한 전체 제목을 제공한다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含任何種類作品的完整題名
-                    。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">作品の完全なタイトルを示す．</desc>
-  <desc versionDate="2007-06-12" xml:lang="fr">contient le titre complet d'une oeuvre quelconque</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">contiene el título completo de una obra de
-                    cualquier tipo.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">contiene il titolo completo di una qualsiaisi                    opera.</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.emphLike"/>
-    <memberOf key="model.msQuoteLike"/>
-    <memberOf key="att.canonical"/>
-    <memberOf key="att.typed"/>
-  </classes>
-  <content>
-    <ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.paraContent"/>
-  </content>
-  <attList>
-    <attDef ident="level" usage="opt">
+</elementSpec><elementSpec rend="change" module="core" ident="title"><equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/><gloss versionDate="2007-06-12" xml:lang="fr">titre</gloss><desc versionDate="2008-10-25" xml:lang="en">contains a title for any kind of work.</desc><desc versionDate="2007-12-20" xml:lang="ko">다양한 종류의 작업에 대한 전체 제목을 제공한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含任何種類作品的完整題名
+                    。</desc><desc versionDate="2008-04-05" xml:lang="ja">作品の完全なタイトルを示す．</desc><desc versionDate="2007-06-12" xml:lang="fr">contient le titre complet d'une oeuvre quelconque</desc><desc versionDate="2007-05-04" xml:lang="es">contiene el título completo de una obra de
+                    cualquier tipo.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene il titolo completo di una qualsiaisi                    opera.</desc><classes><memberOf key="att.global"/><memberOf key="model.emphLike"/><memberOf key="model.msQuoteLike"/><memberOf key="att.canonical"/><memberOf key="att.typed"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.paraContent"/></content><attList><attDef ident="level" usage="opt">
       <desc versionDate="2005-03-05" xml:lang="en">indicates the bibliographic level for a title, that is, whether
                                         it identifies an article, book, journal, series, or
                                         unpublished material.</desc>
@@ -6577,7 +6527,13 @@ places, in particular where  multiple names are given.</p>
 	in such contexts,
         its value should not contradict the value implied by its
 	parent element. 
-
+<!--, the <att>level</att>, if given, must
+        be<q>a</q>; if it appears directly enclosed within a
+        <gi>monogr</gi> element, <att>level</att> must be <q>m</q>,
+        <q>j</q>, or <q>u</q>; when <gi>title</gi> is directly
+        enclosed by ,<att>level</att> must be . If it appears within a
+        <gi>msItem</gi>, the <att>level</att> attribute should not be
+        supplied.-->
 </p>
       </remarks>
       <remarks xml:lang="fr" versionDate="2007-06-12">
@@ -6605,8 +6561,7 @@ doit pas être utilisé.</p>
 素<gi>msItem</gi>中にある場合，当該属性値は付与されない．
                                         </p>
       </remarks>
-    </attDef>
-    <attDef ident="type" mode="change">
+    </attDef><attDef ident="type" mode="change">
       <desc versionDate="2005-01-14" xml:lang="en">classifies the title according to some convenient typology.</desc>
       <desc versionDate="2007-12-20" xml:lang="ko">어떤 편의적 유형에 따른 제목 분류</desc>
       <desc versionDate="2007-05-02" xml:lang="zh-TW">用合適的分類方法將題名分類。</desc>
@@ -6737,70 +6692,57 @@ inclus, peuvent être encodés dans un élément
 副タイトルなどは全て要素<gi>title</gi>の中に入れてしまうことが
 できる． </p>
       </remarks>
-    </attDef>
-  </attList>
-  <exemplum xml:lang="en">
+    </attDef></attList><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <title>Information Technology and the Research Process: Proceedings of
                                         a conference held at Cranfield Institute of Technology, UK,
                                         18–21 July 1989</title>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <title>La vie mode d'emploi. Romans.</title>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Maingeneau_Analyser">
       <title>Analyser les textes de communication</title>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <title>Mélanges de linguistique française et de philologie et littérature médiévales
           offerts à Monsieur Paul Imbs.</title>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Melanges_Imbs">
       <title>Les fleurs du Mal de Charles Baudelaire : une édition électronique</title>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Belloc_Neons">
       <p>quand il rentre de ses chantiers de maçonnerie il dit rien, il pose son cul sur une
           chaise, toujours au même endroit, et il lit <title>l'Humanité.</title>
          </p>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
+  </exemplum><exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <title>毛語錄</title>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
+  </exemplum><exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <title>嚐書：視界與舌尖之外</title>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
+  </exemplum><exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <title> 蒼天有淚—無語問蒼天，台北，1997年12月1日。</title>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
+  </exemplum><exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <title>大般若波羅蜜多經：OCR辨識版本</title>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
+  </exemplum><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <title>Hardy's Tess of the D'Urbervilles: a machine readable
                               edition</title>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="mul">
+  </exemplum><exemplum xml:lang="mul">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <title type="full">
         <title type="main">Synthèse</title>
@@ -6809,28 +6751,24 @@ epistemology, methodology and history of
                                         science</title>
       </title>
     </egXML>
-  </exemplum>
-  <remarks versionDate="2008-09-05" xml:lang="en">
+  </exemplum><remarks versionDate="2008-09-05" xml:lang="en">
     <p>The attributes <att>key</att> and <att>ref</att>, inherited from the class
                                         <ident type="class">att.canonical</ident> may be used to
                               indicate the canonical form for the title; the former, by supplying
                               (for example) the identifier of a record in some external library
                               system; the latter by pointing to an XML element somewhere containing
                               the canonical form of the title.</p>
-  </remarks>
-  <remarks versionDate="2008-12-09" xml:lang="fr">
+  </remarks><remarks versionDate="2008-12-09" xml:lang="fr">
     <p>Les attributs <att>key</att> et <att>ref</att>, hérités de la classe <ident type="class">att.canonical</ident> sont utilisés pour
                               indiquer la forme canonique du titre ; le premier donne (par exemple)
                               l’identifiant d’un enregistrement dans un système externe de
                               bibliothèque ; le second pointe vers un élément XML contenant la forme
                               canonique du titre.</p>
-  </remarks>
-  <listRef>
+  </remarks><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBICOR">3.11.2.2. </ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD21">2.2.1. </ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD26">2.2.5. </ref>
-  </listRef>
-</elementSpec><elementSpec rend="change" module="core" ident="bibl"><gloss versionDate="2014-01-26" xml:lang="en">bibliographic citation</gloss><gloss versionDate="2014-01-26" xml:lang="de">bibliographische Angabe</gloss><desc versionDate="2014-01-26" xml:lang="en">contains a loosely-structured bibliographic citation of which the sub-components may or may
+  </listRef></elementSpec><elementSpec rend="change" module="core" ident="bibl"><gloss versionDate="2014-01-26" xml:lang="en">bibliographic citation</gloss><gloss versionDate="2014-01-26" xml:lang="de">bibliographische Angabe</gloss><desc versionDate="2014-01-26" xml:lang="en">contains a loosely-structured bibliographic citation of which the sub-components may or may
 							not be explicitly tagged. </desc><desc versionDate="2014-01-26" xml:lang="de">Enthält eine frei strukturierte bibliographische Angabe, deren Bestandteile bei Bedarf explizit ausgezeichnet werden können.</desc><classes><memberOf key="att.global"/><memberOf key="model.biblLike"/><memberOf key="model.biblPart"/><memberOf key="att.typed"/></classes><content><zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><choice><text/><ref name="model.gLike"/><ref name="model.highlighted"/><ref name="model.pPart.data"/><ref name="model.pPart.edit"/><ref name="model.segLike"/><ref name="model.ptrLike"/><ref name="model.biblPart"/><ref name="model.global"/></choice></zeroOrMore></content><attList/><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <bibl>Blain, Clements and Grundy: Feminist Companion to Literature in English (Yale,
@@ -7549,38 +7487,15 @@ by the stage direction.</p>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CODV">3.12. </ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRSTA">7.2.4. </ref>
   </listRef>
-</elementSpec><elementSpec module="core" xml:id="TEXTLANG" ident="textLang">
-  <gloss versionDate="2007-07-04" xml:lang="en">text language</gloss>
-  <gloss versionDate="2007-12-20" xml:lang="ko">텍스트 언어</gloss>
-  <gloss versionDate="2007-05-02" xml:lang="zh-TW"/>
-  <gloss versionDate="2008-04-06" xml:lang="es">lengua del texto</gloss>
-  <gloss versionDate="2007-06-12" xml:lang="fr">langues du texte</gloss>
-  <gloss versionDate="2007-11-06" xml:lang="it">lingua del testo</gloss>
-  <desc versionDate="2011-12-07" xml:lang="en" xml:id="textlang.desc">describes the languages and writing systems identified within the bibliographic work  
-  being described, rather than its description.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">(<gi>langUsage</gi>에 기술된 기술과 반대로) 원고에서 사용된 언어와 글 체계를
-    기술한다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">描述手稿中所使用的語言和書寫系統 (相對於其描述時使用的<gi>語言使用</gi>元素) 。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">手書き資料中の言語や書記システムを示す．(要素<gi>langUsage</gi>にあ る情報と対位する)</desc>
-  <desc versionDate="2007-06-12" xml:lang="fr">décrit les langues et systèmes d'écriture utilisés dans
+</elementSpec><elementSpec rend="change" module="core" xml:id="TEXTLANG" ident="textLang"><equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/><gloss versionDate="2007-07-04" xml:lang="en">text language</gloss><gloss versionDate="2007-12-20" xml:lang="ko">텍스트 언어</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW"/><gloss versionDate="2008-04-06" xml:lang="es">lengua del texto</gloss><gloss versionDate="2007-06-12" xml:lang="fr">langues du texte</gloss><gloss versionDate="2007-11-06" xml:lang="it">lingua del testo</gloss><desc versionDate="2011-12-07" xml:lang="en" xml:id="textlang.desc">describes the languages and writing systems identified within the bibliographic work  
+  being described, rather than its description.</desc><desc versionDate="2007-12-20" xml:lang="ko">(<gi>langUsage</gi>에 기술된 기술과 반대로) 원고에서 사용된 언어와 글 체계를
+    기술한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">描述手稿中所使用的語言和書寫系統 (相對於其描述時使用的<gi>語言使用</gi>元素) 。</desc><desc versionDate="2008-04-05" xml:lang="ja">手書き資料中の言語や書記システムを示す．(要素<gi>langUsage</gi>にあ る情報と対位する)</desc><desc versionDate="2007-06-12" xml:lang="fr">décrit les langues et systèmes d'écriture utilisés dans
     un manuscrit (et non dans la description du manuscrit, dont les langues et systèmes d'écriture
-    sont décrits dans l'élément <gi>langUsage</gi>).</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">describe las lenguas y los sistemas de escritura usados
+    sont décrits dans l'élément <gi>langUsage</gi>).</desc><desc versionDate="2007-05-04" xml:lang="es">describe las lenguas y los sistemas de escritura usados
     en un manuscrito (no se ha de confundir con la descripción contenida en el elemento
-      <gi>langUsage</gi>. ****</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">descrive le lingue e i sistemi di scrittura usati da un
+      <gi>langUsage</gi>. ****</desc><desc versionDate="2007-01-21" xml:lang="it">descrive le lingue e i sistemi di scrittura usati da un
     manoscritto (da non confondere con la descrizione contenuta nell'elemento <gi>langUsage</gi>
-   </desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.msItemPart"/>
-    <memberOf key="model.biblPart"/>
-  </classes>
-  <content>
-    <ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/>
-  </content>
-  <attList>
-    <attDef ident="mainLang">
+   </desc><classes><memberOf key="att.global"/><memberOf key="model.msItemPart"/><memberOf key="model.biblPart"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/></content><attList><attDef ident="mainLang">
       <gloss versionDate="2007-07-04" xml:lang="en">main language</gloss>
       <gloss versionDate="2007-12-20" xml:lang="ko">주요 언어</gloss>
       <gloss versionDate="2007-05-02" xml:lang="zh-TW"/>
@@ -7600,8 +7515,7 @@ by the stage direction.</p>
       <datatype>
         <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.language"/>
       </datatype>
-    </attDef>
-    <attDef ident="otherLangs">
+    </attDef><attDef ident="otherLangs">
       <gloss versionDate="2007-07-04" xml:lang="en">other languages</gloss>
       <gloss versionDate="2007-12-20" xml:lang="ko">다른 언어</gloss>
       <gloss versionDate="2007-05-02" xml:lang="zh-TW"/>
@@ -7621,26 +7535,21 @@ by the stage direction.</p>
       <datatype minOccurs="0" maxOccurs="unbounded">
         <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.language"/>
       </datatype>
-    </attDef>
-  </attList>
-  <exemplum xml:lang="en">
+    </attDef></attList><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <textLang mainLang="en" otherLangs="la"> Predominantly in English with Latin
       glosses</textLang>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <textLang mainLang="en" otherLangs="la"> En français essentiellement, avec des gloses en
           latin.</textLang>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
+  </exemplum><exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <textLang mainLang="en" otherLangs="la"> 主要為英文，摻以拉丁字彙。</textLang>
     </egXML>
-  </exemplum>
-  <remarks versionDate="2013-11-20" xml:lang="en">
+  </exemplum><remarks versionDate="2013-11-20" xml:lang="en">
     <p>This element should not be used to document the
 languages or writing systems used for the bibliographic or manuscript description itself: as for
 all other TEI elements, such information should be provided by means of the
@@ -7651,12 +7560,10 @@ containing the description. </p>
 documentation for the language may be provided by a <gi>language</gi>
 element in the TEI Header.
 </p>
-  </remarks>
-  <listRef>
+  </remarks><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBICOI">3.11.2.4. </ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ms.html#mslangs">10.6.6. </ref>
-  </listRef>
-</elementSpec><elementSpec rend="change" module="header" ident="idno"><equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/><gloss versionDate="2010-04-30" xml:lang="en">identifier</gloss><gloss versionDate="2009-01-05" xml:lang="fr">identifiant</gloss><gloss versionDate="2007-12-20" xml:lang="ko">식별 숫자</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">識別代碼</gloss><gloss versionDate="2006-10-18" xml:lang="de">Identifikationsnummer</gloss><gloss versionDate="2007-05-04" xml:lang="es">número identificativo</gloss><gloss versionDate="2007-01-21" xml:lang="it">numero identificatore</gloss><desc versionDate="2010-04-30" xml:lang="en">supplies any form of identifier used to identify some object,
+  </listRef></elementSpec><elementSpec rend="change" module="header" ident="idno"><equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/><gloss versionDate="2010-04-30" xml:lang="en">identifier</gloss><gloss versionDate="2009-01-05" xml:lang="fr">identifiant</gloss><gloss versionDate="2007-12-20" xml:lang="ko">식별 숫자</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">識別代碼</gloss><gloss versionDate="2006-10-18" xml:lang="de">Identifikationsnummer</gloss><gloss versionDate="2007-05-04" xml:lang="es">número identificativo</gloss><gloss versionDate="2007-01-21" xml:lang="it">numero identificatore</gloss><desc versionDate="2010-04-30" xml:lang="en">supplies any form of identifier used to identify some object,
   such as a bibliographic item, a person, a title, an organization,
   etc. in a standardized way.</desc><desc versionDate="2009-01-05" xml:lang="fr">donne un numéro normalisé ou non qui peut être utilisé
     pour identifier une référence bibliographique.</desc><desc versionDate="2007-12-20" xml:lang="ko">서지 정보 항목을 식별하기 위해 사용되는 표준 또는 비표준 숫자를 제시한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">提供任何用來識別書目項目的標準或非標準編碼。</desc><desc versionDate="2008-04-05" xml:lang="ja">書誌項目を特定する標準的・非標準的数値を示す．</desc><desc versionDate="2006-10-18" xml:lang="de">gibt eine standardisierte oder nicht standardisierte
@@ -9665,7 +9572,7 @@ supplied to printer.</change>
 				</remarks><listRef>
 					<ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD2">2.2. </ref>
 					<ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD11">2.1.1. </ref>
-				</listRef></elementSpec><elementSpec ident="profileDesc" module="header" mode="replace"><content>
+				</listRef></elementSpec><elementSpec ident="profileDesc" module="header" mode="replace"><equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/><content>
 					<group xmlns="http://relaxng.org/ns/structure/1.0"><ref name="textClass"/><ref name="creation"/></group>
 				</content><attList/></elementSpec><elementSpec ident="publicationStmt" mode="replace" module="header"><equiv filter="rswa.xsl" mimeType="text/xsl" name="expandPublicationStmt"/><content>
 						<ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.publicationStmt_event"/>
@@ -9673,7 +9580,7 @@ supplied to printer.</change>
 						<ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.sourceDesc_event"/>
 					</content><attList/></elementSpec><elementSpec ident="teiHeader" module="header" mode="replace"><content>
 					<group xmlns="http://relaxng.org/ns/structure/1.0"><ref name="fileDesc"/><ref name="encodingDesc"/><ref name="profileDesc"/><ref name="taskDesc"/><ref name="revisionDesc"/></group>
-				</content><attList/></elementSpec><elementSpec rend="change" module="header" ident="titleStmt"><equiv filter="rswa.xsl" mimeType="text/xsl" name="expandTitleStmt"/><gloss versionDate="2005-01-14" xml:lang="en">title statement</gloss><gloss versionDate="2009-01-05" xml:lang="fr">mention de titre</gloss><gloss versionDate="2007-12-20" xml:lang="ko">제목 진술</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">題名陳述</gloss><gloss versionDate="2006-10-18" xml:lang="de"> Titelinformation</gloss><gloss versionDate="2007-05-04" xml:lang="es">declaración del título</gloss><gloss versionDate="2007-01-21" xml:lang="it">dichiarazione sul titolo</gloss><desc versionDate="2012-04-17" xml:lang="en">groups information about the title of a work and those responsible for its content.</desc><desc versionDate="2009-01-05" xml:lang="fr"> regroupe les informations sur le titre d’une œuvre et
+				</content><attList/></elementSpec><elementSpec rend="change" module="header" ident="titleStmt"><equiv filter="rswa.xsl" mimeType="text/xsl" name="expandTitleStmtEvent"/><gloss versionDate="2005-01-14" xml:lang="en">title statement</gloss><gloss versionDate="2009-01-05" xml:lang="fr">mention de titre</gloss><gloss versionDate="2007-12-20" xml:lang="ko">제목 진술</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">題名陳述</gloss><gloss versionDate="2006-10-18" xml:lang="de"> Titelinformation</gloss><gloss versionDate="2007-05-04" xml:lang="es">declaración del título</gloss><gloss versionDate="2007-01-21" xml:lang="it">dichiarazione sul titolo</gloss><desc versionDate="2012-04-17" xml:lang="en">groups information about the title of a work and those responsible for its content.</desc><desc versionDate="2009-01-05" xml:lang="fr"> regroupe les informations sur le titre d’une œuvre et
     les personnes ou institutions responsables de son contenu intellectuel.</desc><desc versionDate="2007-12-20" xml:lang="ko">저작의 제목 그리고 지적 내용에 대한 책임에 관한 정보를 모아 놓는다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">匯集關於作品標題與作品智慧內容責任歸屬的資訊。</desc><desc versionDate="2008-04-05" xml:lang="ja">作品や知的内容に責任のあるもののタイトルに関する情報をまとめる．</desc><desc versionDate="2006-10-18" xml:lang="de">umfasst Angaben zum Titel eines Werks und zu den für
     seinen Inhalt Verantwortlichen</desc><desc versionDate="2007-05-04" xml:lang="es">agrupa la información referente al título de una obra y a
     los responsables de su contenido intelectual.</desc><desc versionDate="2007-01-21" xml:lang="it">raggruppa le informazioni sul titolo di un'opera e sulle
@@ -9958,13 +9865,17 @@ supplied to printer.</change>
 		</macroSpec><moduleSpec n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec n="CO" xml:id="DCO" ident="core"/><moduleSpec n="HD" xml:id="DHD" ident="header"/><moduleSpec n="ND" xml:id="DND" ident="namesdates"/><moduleSpec n="SA" xml:id="DSA" ident="linking"/><moduleSpec n="CE" xml:id="DCE" ident="certainty"/><moduleSpec n="FT" xml:id="DFTFF" ident="figures"/><moduleSpec n="DS" xml:id="DDS" ident="textstructure"/></schemaSpec>
 				
 				
+				
+				
+				
+				
 			</div>
 			<div xml:id="scopes">
 				<head>Scopes</head>
 				<desc>The 'scopes' below mostly define thematically grouped collections of modules / elements. Combined, they add up to the full scope of a schema. In the whole 'scopes' section, each module and each element may only be cited once.</desc>
 				<div>
 					<head>Shared scope</head>
-					<desc>A scope common to all schemata</desc>
+					<desc>A scope common to all schemata (except of "place" and "work")</desc>
 					<table><row><cell>
 		Module tei</cell><cell/></row><row><cell>
 		Module core</cell><cell/></row><row><cell>
@@ -10037,8 +9948,34 @@ supplied to printer.</change>
 		Element <gi>taskDesc</gi></cell><cell>add</cell></row><row><cell>
 		Element <gi>task</gi></cell><cell>add</cell></row></table>
 </div>
-				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.extension.MEI.xml" xml:lang="">
-	<head>MEI extension</head>
+				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.extension.MEI-head.xml" xml:lang="">
+	<head>MEI head extension</head>
+	<byline>Apart from minor changes to get things working in the current context, the specGrp code is taken literally from Peter Stadler's WeGA_works.odd.xml. For copyright and other information, see the <ref target="https://github.com/Edirom/WeGA-ODD">Carl-Maria-von-Weber-Gesamtausgabe ODDs</ref>.</byline>
+	<desc>Includes TEI header components</desc>
+	
+	<table><row/><row><cell>
+		Module MEI</cell><cell/></row><row><cell>
+		Module MEI.frbr</cell><cell/></row><row><cell>
+		Module MEI.shared</cell><cell/></row><row><cell>
+		Module MEI.header</cell><cell/></row><row><cell>
+		Module MEI.namesdates</cell><cell/></row><row><cell>
+		Module MEI.cmn</cell><cell/></row><row><cell>
+		Module MEI.edittrans</cell><cell/></row><row><cell><ref target="##wega-patterns">reference #wega-patterns</ref></cell><cell/></row><row><cell><ref target="##wega-lists">reference #wega-lists</ref></cell><cell/></row><row><cell><ref target="##wega-common-atts">reference #wega-common-atts</ref></cell><cell/></row><row><cell>
+		Macro <ident type="macro">macro.availabilityPart</ident></cell><cell>change</cell></row><row><cell>
+		Class <ident type="class">att.measurement</ident></cell><cell>change</cell></row><row><cell>
+		Element <gi>mei</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>persName</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>source</gi></cell><cell>change</cell></row><row><cell>
+		Macro <ident type="macro">data.ISODATE</ident></cell><cell>change</cell></row><row><cell>
+		Element <gi>date</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>altId</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>titleStmt</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>title</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>rend</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>extent</gi></cell><cell>change</cell></row></table>
+</div>
+				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.extension.MEI-music.xml" xml:lang="">
+	<head>MEI music extension</head>
 	<byline>modelSpec and classSpec adopted from Raffaele Viglianti's <ref target="https://github.com/TEI-Music-SIG/tei-mei/blob/master/tei-lite_mei-cmn.xml">tei-lite_mei-cmn.xml</ref></byline>
 	<desc>Includes the TEI notatedMusic element and the MEI modules. Note: The moduleRefs below don't refer to the official mei-source.xml, but to a prefixed version, see <ref target="https://github.com/TEI-Music-SIG/tei-mei/">https://github.com/TEI-Music-SIG/tei-mei/</ref></desc>
 	<table><row/><row><cell>
@@ -10052,7 +9989,7 @@ supplied to printer.</change>
 		Module MEI.usersymbols</cell><cell/></row><row><cell>
 		Element <gi>notatedMusic</gi></cell><cell>change</cell></row><row><cell>
 		Class <ident type="class">mei_att.staffident</ident></cell><cell>replace</cell></row></table>
-		</div>
+</div>
 			</div>
 			<div>
 				<head>Edits</head>
@@ -10205,19 +10142,47 @@ supplied to printer.</change>
 		Element <gi>creation</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>term</gi></cell><cell>change</cell></row></table>
 		</div>
+		
+		<div>
+			<head>Place</head>
+			<desc>Contains specifications specific of the place ODD</desc>
+			<table><row><cell>
+		Element <gi>placeName</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>location</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>geo</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>idno</gi></cell><cell>change</cell></row></table>
+		</div>
+		
 		<div>
 			<head>Manuscript sources</head>
 			<desc>Contains specifications for transcriptions of manuscript sources</desc>
 			<table><row><cell>
+		Element <gi>text</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>titleStmt</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>publicationStmt</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>sourceDesc</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>creation</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>term</gi></cell><cell>change</cell></row></table>
 		</div>
+		
+		<div>
+			<head>Images</head>
+			<desc>Contains specifications for images</desc>
+			<table><row><cell>
+		Element <gi>text</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>titleStmt</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>publicationStmt</gi></cell><cell>replace</cell></row><row><cell>
+		Element <gi>sourceDesc</gi></cell><cell>replace</cell></row><row><cell>
+		Element <gi>creation</gi></cell><cell>replace</cell></row><row><cell>
+		Element <gi>term</gi></cell><cell>change</cell></row></table>
+		</div>
+		
 		<div>
 			<head>Printed sources</head>
 			<desc>Contains specifications for transcriptions of printed sources</desc>
 			<table><row><cell>
+		Element <gi>text</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>titleStmt</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>publicationStmt</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>sourceDesc</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>creation</gi></cell><cell>delete</cell></row><row><cell>
@@ -10227,6 +10192,8 @@ supplied to printer.</change>
 			<head>Events</head>
 			<desc>Contains specifications for documents describing an event</desc>
 			<table><row><cell>
+		Element <gi>text</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>titleStmt</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>publicationStmt</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>sourceDesc</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>creation</gi></cell><cell>replace</cell></row></table>
@@ -10246,23 +10213,16 @@ supplied to printer.</change>
 		Element <gi>idno</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>additions</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>respStmt</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>titleStmt</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>edition</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>state</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>note</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>person</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>event</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>gloss</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>affiliation</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>listEvent</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>sex</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>birth</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>death</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>faith</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>persName</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>orgName</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>placeName</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>residence</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>objectDesc</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>origDate</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>origPlace</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>notesStmt</gi></cell><cell>replace</cell></row><row><cell>
@@ -10272,7 +10232,6 @@ supplied to printer.</change>
 		Element <gi>org</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>encodingDesc</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>editorialDecl</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>text</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>msDesc</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>msIdentifier</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>physDesc</gi></cell><cell>replace</cell></row><row><cell>
@@ -10291,7 +10250,21 @@ supplied to printer.</change>
 		Element <gi>profileDesc</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>ptr</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>rs</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>respons</gi></cell><cell>change</cell></row></table>
+		Element <gi>respons</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>edition</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>publisher</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>pubPlace</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>textLang</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>biblScope</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>title</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>desc</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>occupation</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>faith</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>persName</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>orgName</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>placeName</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>residence</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>objectDesc</gi></cell><cell>change</cell></row></table>
 	</div>
 </div><!-- not in use --><!-- 
 <elementSpec ident="rs" module="core" mode="change">

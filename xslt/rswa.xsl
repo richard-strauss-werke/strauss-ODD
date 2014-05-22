@@ -148,6 +148,13 @@
 		</xsl:if>
 	</xsl:template>
 
+	<xsl:template name="processImprint">
+		<xsl:copy>
+			<xsl:apply-templates select="@*|node()[not(name()='note') or node()]"/>
+		</xsl:copy>
+	</xsl:template>
+	
+
 	<xsl:template name="addTermRef">
 		<xsl:copy>
 			<xsl:copy-of select="$keywords//text()[.=current()]/../@ref"/>
@@ -282,11 +289,24 @@
 	</xsl:template>
 
 	<xsl:template name="expandTitleStmtPrint">
-		<xsl:comment>TODO Title statement print</xsl:comment>
+		<xsl:copy>
+			<title>
+				<xsl:copy-of select="(//biblStruct//title[@type='main'])[1]/node()|@*[not(name()='type')]"/>
+			</title>
+			
+			<xsl:copy-of select="//biblStruct/element()[1]//author|editor"/>
+			
+			
+			<xsl:copy-of select="$funder"/>
+		</xsl:copy>
 	</xsl:template>
 
 	<xsl:template name="expandTitleStmtEvent">
-		<xsl:comment>TODO Title statement event</xsl:comment>
+		<xsl:copy>
+			<xsl:element name="title">
+				<xsl:comment>TODO Title statement event</xsl:comment>
+			</xsl:element>
+		</xsl:copy>
 	</xsl:template>
 
 	<xsl:template name="replaceTextByGraphic">
@@ -301,9 +321,16 @@
 
 
 	<xsl:template name="expandEdition">
-		<xsl:copy>
-			<xsl:value-of select="$edition"/>
-		</xsl:copy>
+		<xsl:choose>
+			<xsl:when test="parent::editionStmt">
+				<xsl:copy>
+					<xsl:value-of select="$edition"/>
+				</xsl:copy>				
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:call-template name="keepOnlyWithAnyText"/>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 
 	<xsl:template name="expandPublicationStmt">

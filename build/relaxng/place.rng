@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2014-05-20T00:10:22Z. 
+Schema generated from ODD source 2014-05-22T06:11:07Z. 
 Edition: Version 2.6.0. Last updated on
 	20th January 2014, revision 12802
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
@@ -44,9 +44,6 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          </data>
          <data type="decimal"/>
       </choice>
-   </define>
-   <define name="rswa_data.count">
-      <data type="nonNegativeInteger"/>
    </define>
    <define name="rswa_data.temporal.w3c">
       <choice>
@@ -322,21 +319,6 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.declaring.attributes">
-      <ref name="rswa_att.declaring.attribute.decls"/>
-   </define>
-   <define name="rswa_att.declaring.attribute.decls">
-      <optional>
-         <attribute name="decls">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <list>
-               <oneOrMore>
-                  <ref name="rswa_data.pointer"/>
-               </oneOrMore>
-            </list>
-         </attribute>
-      </optional>
-   </define>
    <define name="rswa_att.responsibility.attributes">
       <ref name="rswa_att.source.attributes"/>
       <ref name="rswa_att.responsibility.attribute.cert"/>
@@ -583,24 +565,6 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
          <ref name="rswa_geo"/>
       </oneOrMore>
    </define>
-   <define name="rswa_model.offsetLike">
-      <notAllowed/>
-   </define>
-   <define name="rswa_model.offsetLike_alternation">
-      <notAllowed/>
-   </define>
-   <define name="rswa_model.offsetLike_sequence">
-      <empty/>
-   </define>
-   <define name="rswa_model.offsetLike_sequenceOptional">
-      <empty/>
-   </define>
-   <define name="rswa_model.offsetLike_sequenceOptionalRepeatable">
-      <empty/>
-   </define>
-   <define name="rswa_model.offsetLike_sequenceRepeatable">
-      <notAllowed/>
-   </define>
    <define name="rswa_model.gLike">
       <notAllowed/>
    </define>
@@ -762,47 +726,23 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_model.placeEventLike">
       <notAllowed/>
    </define>
-   <define name="rswa_model.addressLike">
-      <notAllowed/>
-   </define>
-   <define name="rswa_model.addressLike_alternation">
-      <notAllowed/>
-   </define>
-   <define name="rswa_model.addressLike_sequence">
-      <empty/>
-   </define>
-   <define name="rswa_model.addressLike_sequenceOptional">
-      <empty/>
-   </define>
-   <define name="rswa_model.addressLike_sequenceOptionalRepeatable">
-      <empty/>
-   </define>
-   <define name="rswa_model.addressLike_sequenceRepeatable">
-      <notAllowed/>
-   </define>
    <define name="rswa_model.nameLike">
       <choice>
-         <ref name="rswa_model.offsetLike"/>
          <ref name="rswa_model.placeStateLike"/>
          <ref name="rswa_idno"/>
       </choice>
    </define>
    <define name="rswa_model.nameLike_alternation">
       <choice>
-         <ref name="rswa_model.offsetLike_alternation"/>
          <ref name="rswa_model.placeStateLike_alternation"/>
          <ref name="rswa_idno"/>
       </choice>
    </define>
    <define name="rswa_model.nameLike_sequence">
-      <ref name="rswa_model.offsetLike_sequence"/>
       <ref name="rswa_model.placeStateLike_sequence"/>
       <ref name="rswa_idno"/>
    </define>
    <define name="rswa_model.nameLike_sequenceOptional">
-      <optional>
-         <ref name="rswa_model.offsetLike_sequenceOptional"/>
-      </optional>
       <optional>
          <ref name="rswa_model.placeStateLike_sequenceOptional"/>
       </optional>
@@ -812,9 +752,6 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    </define>
    <define name="rswa_model.nameLike_sequenceOptionalRepeatable">
       <zeroOrMore>
-         <ref name="rswa_model.offsetLike_sequenceOptionalRepeatable"/>
-      </zeroOrMore>
-      <zeroOrMore>
          <ref name="rswa_model.placeStateLike_sequenceOptionalRepeatable"/>
       </zeroOrMore>
       <zeroOrMore>
@@ -822,9 +759,6 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
       </zeroOrMore>
    </define>
    <define name="rswa_model.nameLike_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="rswa_model.offsetLike_sequenceRepeatable"/>
-      </oneOrMore>
       <oneOrMore>
          <ref name="rswa_model.placeStateLike_sequenceRepeatable"/>
       </oneOrMore>
@@ -840,7 +774,6 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_model.pPart.data">
       <choice>
          <ref name="rswa_model.measureLike"/>
-         <ref name="rswa_model.addressLike"/>
          <ref name="rswa_model.nameLike"/>
       </choice>
    </define>
@@ -861,36 +794,6 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
                   <ref name="rswa_data.pointer"/>
                </oneOrMore>
             </list>
-         </attribute>
-      </optional>
-   </define>
-   <define name="rswa_att.personal.attributes">
-      <ref name="rswa_att.naming.attributes"/>
-      <ref name="rswa_att.personal.attribute.full"/>
-      <ref name="rswa_att.personal.attribute.sort"/>
-   </define>
-   <define name="rswa_att.personal.attribute.full">
-      <optional>
-         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                    name="full"
-                    a:defaultValue="yes">
-            <a:documentation/>
-            <choice>
-               <value>yes</value>
-               <a:documentation/>
-               <value>abb</value>
-               <a:documentation/>
-               <value>init</value>
-               <a:documentation/>
-            </choice>
-         </attribute>
-      </optional>
-   </define>
-   <define name="rswa_att.personal.attribute.sort">
-      <optional>
-         <attribute name="sort">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-            <ref name="rswa_data.count"/>
          </attribute>
       </optional>
    </define>
@@ -1055,13 +958,17 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    </define>
    <define name="rswa_placeName">
       <element name="placeName">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"> [13.2.3. ]</a:documentation>
-         <ref name="rswa_macro.phraseSeq"/>
-         <ref name="rswa_att.datable.attributes"/>
-         <ref name="rswa_att.editLike.attributes"/>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.personal.attributes"/>
-         <ref name="rswa_att.typed.attributes"/>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">enthält einen absoluten oder relativen Ortsnamen. [13.2.3. ]</a:documentation>
+         <text/>
+         <attribute name="type">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">charakterisiert das Element in einem gewissen Sinne, wobei irgendeine zweckmäßige Systematik oder Typologie angwendet wird.</a:documentation>
+            <choice>
+               <value>reg</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(regulär) </a:documentation>
+               <value>alt</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Alternative) </a:documentation>
+            </choice>
+         </attribute>
          <empty/>
       </element>
    </define>
@@ -1078,32 +985,14 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    </define>
    <define name="rswa_geo">
       <element name="geo">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"> [13.3.4.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">enthält einen Terminus eines Sets von geographischen Koordinaten, die einen Punkt, eine Linie oder einen Bereich der Erde in einer bestimmten Schreibweise darstellen. [13.3.4.1. ]</a:documentation>
          <text/>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.declaring.attributes"/>
-         <empty/>
       </element>
    </define>
    <define name="rswa_location">
       <element name="location">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"> [13.3.4. ]</a:documentation>
-         <zeroOrMore>
-            <choice>
-               <ref name="rswa_model.labelLike"/>
-               <ref name="rswa_model.placeNamePart"/>
-               <ref name="rswa_model.offsetLike"/>
-               <ref name="rswa_model.measureLike"/>
-               <ref name="rswa_model.addressLike"/>
-               <ref name="rswa_model.noteLike"/>
-               <ref name="rswa_model.biblLike"/>
-            </choice>
-         </zeroOrMore>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.typed.attributes"/>
-         <ref name="rswa_att.datable.attributes"/>
-         <ref name="rswa_att.editLike.attributes"/>
-         <empty/>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">definiert die Lage eines Ortes in einer Reihe von geographischen Koordinaten, in Bezug auf die anderen genannten geo-politische Einheiten, oder als eine Adresse. [13.3.4. ]</a:documentation>
+         <ref name="rswa_geo"/>
       </element>
    </define>
    <define name="rswa_place">

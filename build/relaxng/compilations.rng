@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2014-05-19T15:32:30Z. 
+Schema generated from ODD source 2014-05-22T06:09:24Z. 
 Edition: Version 2.6.0. Last updated on
 	20th January 2014, revision 12802
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
@@ -4367,8 +4367,25 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    <define name="rswa_text">
       <element name="text">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">enthält eigenständigen oder aus mehreren Teilen bestehenden Text, zum Beispiel ein Gedicht oder Drama, eine Sammlung von Aufsätzen, einen Roman, ein Wörterbuch oder eine Auswahl aus einem Korpus [4.  15.1. ]</a:documentation>
-         <ref name="rswa_body"/>
+         <group>
+            <zeroOrMore>
+               <ref name="rswa_model.global"/>
+            </zeroOrMore>
+            <zeroOrMore>
+               <ref name="rswa_model.global"/>
+            </zeroOrMore>
+            <choice>
+               <ref name="rswa_body"/>
+            </choice>
+            <zeroOrMore>
+               <ref name="rswa_model.global"/>
+            </zeroOrMore>
+            <zeroOrMore>
+               <ref name="rswa_model.global"/>
+            </zeroOrMore>
+         </group>
          <ref name="rswa_att.global.attributes"/>
+         <ref name="rswa_att.typed.attributes"/>
          <empty/>
       </element>
    </define>
