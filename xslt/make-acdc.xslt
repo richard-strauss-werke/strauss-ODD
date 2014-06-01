@@ -4,11 +4,6 @@
 	xmlns:rng="http://relaxng.org/ns/structure/1.0"
 	exclude-result-prefixes="rng" version="2.0">
 
-	<!-- xslt version of the original xquery script, adjusted to tei-c usage; alpha -->
-	
-	<!-- currently only supports the correspondence and persons schemata -->
-
-
 	<xsl:key name="macro-parents" match="elementSpec/@ident|rng:element[not(.//rng:element)]/@name"
 		use="..//rng:ref/@name"/>
 
