@@ -7896,69 +7896,38 @@ means of a <gi>glyph</gi> or <gi>char</gi> element referenced here as <code>#sym
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TS.html#TSSAPA">8.4.2. </ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SACS">16.4. </ref>
   </listRef>
-</elementSpec><elementSpec module="linking" ident="seg">
-  <gloss versionDate="2005-01-14" xml:lang="en">arbitrary segment</gloss>
-  <gloss versionDate="2007-12-20" xml:lang="ko">임의의 분절</gloss>
-  <gloss versionDate="2007-05-02" xml:lang="zh-TW">隨機分割</gloss>
-  <gloss versionDate="2007-06-12" xml:lang="fr">segment quelconque</gloss>
-  <gloss versionDate="2007-05-04" xml:lang="es">segmento arbitrario</gloss>
-  <gloss versionDate="2007-01-21" xml:lang="it">segmento arbitrario</gloss>
-  <desc versionDate="2008-01-31" xml:lang="en">represents any segmentation of text below the <soCalled>chunk</soCalled> level.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">(다른 분절 요소를 포함하여) 텍스트의 임의의 구-층위 단위를 포함한다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含文件中任何隨機字詞層次的單元 (包括其他分割元素)。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">任意の句レベルのテキスト単位を示す(要素segを含む)．</desc>
-  <desc versionDate="2009-10-06" xml:lang="fr">contient une unité de texte quelconque de niveau <soCalled>segment</soCalled>.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">contiene cualquier unidad textual a nivel sintagmático (inclusive otros elementos de tipo seg.)</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">contiene una qualsiasi unità testuale a livello sintagmatico (ivi compresi altri elementi del tipo seg)</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.segLike"/>
-    <memberOf key="att.segLike"/>
-    <memberOf key="att.typed"/>
-    <memberOf key="att.responsibility"/>
-    <memberOf key="model.choicePart"/>
-  </classes>
-  <content>
-    <ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.paraContent"/>
-  </content>
-  <exemplum xml:lang="en">
+</elementSpec><elementSpec rend="change" module="linking" ident="seg"><equiv filter="rswa.xsl" mimeType="text/xsl" name="removeIfTyped"/><gloss versionDate="2005-01-14" xml:lang="en">arbitrary segment</gloss><gloss versionDate="2007-12-20" xml:lang="ko">임의의 분절</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">隨機分割</gloss><gloss versionDate="2007-06-12" xml:lang="fr">segment quelconque</gloss><gloss versionDate="2007-05-04" xml:lang="es">segmento arbitrario</gloss><gloss versionDate="2007-01-21" xml:lang="it">segmento arbitrario</gloss><desc versionDate="2008-01-31" xml:lang="en">represents any segmentation of text below the <soCalled>chunk</soCalled> level.</desc><desc versionDate="2007-12-20" xml:lang="ko">(다른 분절 요소를 포함하여) 텍스트의 임의의 구-층위 단위를 포함한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含文件中任何隨機字詞層次的單元 (包括其他分割元素)。</desc><desc versionDate="2008-04-05" xml:lang="ja">任意の句レベルのテキスト単位を示す(要素segを含む)．</desc><desc versionDate="2009-10-06" xml:lang="fr">contient une unité de texte quelconque de niveau <soCalled>segment</soCalled>.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene cualquier unidad textual a nivel sintagmático (inclusive otros elementos de tipo seg.)</desc><desc versionDate="2007-01-21" xml:lang="it">contiene una qualsiasi unità testuale a livello sintagmatico (ivi compresi altri elementi del tipo seg)</desc><classes><memberOf key="att.global"/><memberOf key="model.segLike"/><memberOf key="att.typed"/><memberOf key="att.responsibility"/><memberOf key="model.choicePart"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.paraContent"/></content><attList/><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <seg>When are you leaving?</seg>
       <seg>Tomorrow.</seg>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <seg>Quand partez-vous ?</seg>
       <seg>Demain.</seg>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Flaubert_Sal">
       <s>C' était à <seg type="toponyme">Mégara</seg>, faubourg de <seg type="topon">Carthage</seg>, dans les jardins d' <seg type="patronyme">Hamilcar</seg>. </s>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Lafayette-Cleves">
       <seg type="preambule">La magnificence et la galanterie n'ont jamais paru en <seg type="toponyme">France</seg> avec tant d'éclat que <seg type="date">dans les dernières
             années du règne de <seg type="patronyme">Henri second</seg>. </seg>
         </seg>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
+  </exemplum><exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <seg>你什麼時候出發?</seg>
       <seg>明天。</seg>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
+  </exemplum><exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <s>
         <seg rend="caps" type="initial-cap">此屬性值表示句首第一個字母大寫</seg>
       </s>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
+  </exemplum><exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <seg type="preamble">
         <seg>唐太宗李世民， <seg type="patronym">為唐高祖李淵與竇皇后的次子，</seg>是唐朝第二位皇帝。</seg>
@@ -7966,13 +7935,11 @@ means of a <gi>glyph</gi> or <gi>char</gi> element referenced here as <code>#sym
         <seg>娶長孫氏為妻，長孫皇后是北魏皇族拓跋氏之後...</seg>
       </seg>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
+  </exemplum><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <s><seg rend="caps" type="initial-cap">So father's only</seg> glory was the ballfield. </s>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
+  </exemplum><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <seg type="preamble">
         <seg>Sigmund, <seg type="patronym">the son of Volsung</seg>, was a king in Frankish country.</seg>
@@ -7980,22 +7947,17 @@ means of a <gi>glyph</gi> or <gi>char</gi> element referenced here as <code>#sym
         <seg>Borghild, Sigmund's wife, had a brother ... </seg>
       </seg>
     </egXML>
-  </exemplum>
-  <remarks versionDate="2012-04-20" xml:lang="en">
+  </exemplum><remarks versionDate="2012-04-20" xml:lang="en">
     <p>The <gi>seg</gi> element may be used at the encoder's discretion to mark any segments of the text of interest for processing. One use of the element is to mark text features for which no appropriate markup is otherwise defined. Another use is to provide an identifier for some segment which is to be pointed at by some other element—i.e. to provide a target, or a part of a target, for a <gi>ptr</gi> or other similar element.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2009-10-06">
+  </remarks><remarks xml:lang="fr" versionDate="2009-10-06">
     <p>L'élément <gi>seg</gi> peut être utilisé à la discrétion de l'encodeur pour baliser tout segment du texte intéressant pour un traitement informatique. L'un des usages de cet élément est d'encoder des caractéristiques textuelles pour lesquelles aucun balisage approprié n'est défini par ailleurs. Un autre usage consiste à fournir un identifiant pour un segment vers lequel pointe un autre élément - c'est-à-dire à fournir une cible, ou une partie de cible, pour un élément <gi>ptr</gi> ou pour un autre élément similaire.</p>
-  </remarks>
-  <remarks xml:lang="ja" versionDate="2008-04-05">
+  </remarks><remarks xml:lang="ja" versionDate="2008-04-05">
     <p> 要素<gi>seg</gi>は，何らかの処理対象を想定して，符号化する人の判断 により，使用されるかもしれない．当該要素は，適当な要素が定義されて いないときに，そのテキスト素性を示すために使われる．すなわち，簡易 拡張機能としてある．また，ある部分に識別子を付与するためにも使用さ れる．すなわち，要素<gi>ptr</gi>等から参照される対象を作る． </p>
-  </remarks>
-  <listRef>
+  </remarks><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SASE">16.3. </ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/VE.html#VESE">6.2. </ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRPAL">7.2.5. </ref>
-  </listRef>
-</elementSpec><elementSpec rend="change" module="certainty" ident="respons"><equiv filter="rswa.xsl" mimeType="text/xsl" name="transformRespons"/><gloss versionDate="2005-01-14" xml:lang="en">responsibility</gloss><gloss versionDate="2007-12-20" xml:lang="ko">책임성</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">責任</gloss><gloss versionDate="2007-06-12" xml:lang="fr">Responsabilité</gloss><gloss versionDate="2007-05-04" xml:lang="es">responsabilidad</gloss><gloss versionDate="2007-01-21" xml:lang="it">responsabilità</gloss><desc versionDate="2013-06-19" xml:lang="en">identifies the individual(s) responsible for some aspect of the content or
+  </listRef></elementSpec><elementSpec rend="change" module="certainty" ident="respons"><equiv filter="rswa.xsl" mimeType="text/xsl" name="transformRespons"/><gloss versionDate="2005-01-14" xml:lang="en">responsibility</gloss><gloss versionDate="2007-12-20" xml:lang="ko">책임성</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">責任</gloss><gloss versionDate="2007-06-12" xml:lang="fr">Responsabilité</gloss><gloss versionDate="2007-05-04" xml:lang="es">responsabilidad</gloss><gloss versionDate="2007-01-21" xml:lang="it">responsabilità</gloss><desc versionDate="2013-06-19" xml:lang="en">identifies the individual(s) responsible for some aspect of the content or
 markup of particular element(s).</desc><desc versionDate="2007-12-20" xml:lang="ko">특정 요소의 마크업에 대한 책임이 있는 개인 또는 개인들을 지저정한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">指出標記一或多個特定元素某部分的負責人。</desc><desc versionDate="2008-04-05" xml:lang="ja">ある要素の決定に責任のある個人を特定する．</desc><desc versionDate="2007-06-12" xml:lang="fr">identifie le ou les personne(s) responsable(s) d'un
       aspect du balisage pour un ou plusieurs éléments particuliers.</desc><desc versionDate="2007-05-04" xml:lang="es">Identifica la responsabilidad individual/es de algún aspecto del marcaje de un elemento/s particular.</desc><desc versionDate="2007-01-21" xml:lang="it">indica i soggetti responsabili della codifica di determinati elementi</desc><classes><memberOf key="att.global"/><memberOf key="model.global.meta"/><memberOf key="model.certLike"/><memberOf key="att.responsibility"/></classes><content><zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><choice><ref name="model.descLike"/><ref name="model.certLike"/></choice></zeroOrMore></content><attList org="group"><attDef ns="http://richard-strauss-ausgabe.de/ns/1.0" ident="when">
 						<datatype>
@@ -8989,7 +8951,7 @@ purposes.</p>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="data.encoding-staff">
 			<content>
-				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>slm</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Salome Reiser</a:documentation><value>alx</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Alexander Erhard</a:documentation><value>sts</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Stefan Schenk</a:documentation><value>aap</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Andreas Pernpeintner</a:documentation><value>mmm</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Martina Mengele</a:documentation><value>flr</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Florence Eller</a:documentation><value>sbb</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Sebastian Bolz</a:documentation><value>wwb</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Walter Werbeck</a:documentation><value>clh</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Claudia Heine</a:documentation><value>afl</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Florian Amort</a:documentation><value>stk</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Steffi Kracht</a:documentation></choice>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>slm</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Salome Reiser</a:documentation><value>alx</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Alexander Erhard</a:documentation><value>sts</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Stefan Schenk</a:documentation><value>aap</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Andreas Pernpeintner</a:documentation><value>mmm</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Martina Mengele</a:documentation><value>flr</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Florence Eller</a:documentation><value>sbb</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Sebastian Bolz</a:documentation><value>wwb</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Walter Werbeck</a:documentation><value>clh</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Claudia Heine</a:documentation><value>afl</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Florian Amort</a:documentation><value>stk</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Steffi Kracht</a:documentation><value>oen</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Ursula Welsch</a:documentation><value>ofr</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Oliver Franeske</a:documentation></choice>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="data.gndIdno">
 			<content>
@@ -9256,7 +9218,7 @@ purposes.</p>
 					<oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><element name="placeName">
 							<group><attribute name="role">
 									<rng:value xmlns="http://www.tei-c.org/ns/1.0">destination</rng:value>
-								</attribute><optional><attribute name="cert">
+								</attribute><optional><attribute name="key"/></optional><optional><attribute name="cert">
 										<ref name="data.certainty"/>
 									</attribute></optional><text/></group>
 						</element></oneOrMore>
@@ -9281,6 +9243,8 @@ purposes.</p>
 				<zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><choice><ref name="model.gLike"/><ref name="model.phrase"/><ref name="model.inter"/><ref name="model.divPart"/><ref name="model.global"/></choice></zeroOrMore>
 			</content>
 		</macroSpec><moduleSpec n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec n="CO" xml:id="DCO" ident="core"/><moduleSpec n="HD" xml:id="DHD" ident="header"/><moduleSpec n="ND" xml:id="DND" ident="namesdates"/><moduleSpec n="SA" xml:id="DSA" ident="linking"/><moduleSpec n="CE" xml:id="DCE" ident="certainty"/><moduleSpec n="FT" xml:id="DFTFF" ident="figures"/></schemaSpec>
+				
+				
 				
 				
 				
@@ -9348,7 +9312,8 @@ purposes.</p>
 				<div>
 					<head>Performance specific scope</head>
 					<desc>Adds elements uniquely used in the performance schema</desc>
-					<table><row/><row/></table>
+					<table><row><cell>
+		Module drama</cell><cell/></row><row/><row/></table>
 				</div>
 			</div>
 			<div>
@@ -9387,7 +9352,6 @@ purposes.</p>
 		Element <gi>mei</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>persName</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>source</gi></cell><cell>change</cell></row><row><cell>
-		Macro <ident type="macro">data.ISODATE</ident></cell><cell>change</cell></row><row><cell>
 		Element <gi>date</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>altId</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>titleStmt</gi></cell><cell>change</cell></row><row><cell>
@@ -9672,6 +9636,8 @@ purposes.</p>
 		Element <gi>ptr</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>rs</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>respons</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>div</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>seg</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>edition</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>publisher</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>pubPlace</gi></cell><cell>change</cell></row><row><cell>

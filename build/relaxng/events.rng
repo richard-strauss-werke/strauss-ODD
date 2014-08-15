@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2014-05-22T06:09:45Z. 
+Schema generated from ODD source 2014-08-15T06:36:09Z. 
 Edition: Version 2.6.0. Last updated on
 	20th January 2014, revision 12802
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
@@ -216,9 +216,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
       <element name="listChange">
          <group>
             <element name="change">
-               <optional>
-                  <attribute name="type"/>
-               </optional>
+               <attribute name="type"/>
                <ref name="rswa_macro.form.summaryNote"/>
                <ref name="rswa_macro.form.commentaryNote"/>
                <ref name="rswa_macro.form.discussionNote"/>

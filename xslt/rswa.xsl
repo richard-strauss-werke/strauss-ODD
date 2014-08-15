@@ -153,7 +153,7 @@
 			<xsl:apply-templates select="@*|node()[not(name()='note') or node()]"/>
 		</xsl:copy>
 	</xsl:template>
-	
+
 
 	<xsl:template name="addTermRef">
 		<xsl:copy>
@@ -205,9 +205,67 @@
 		</xsl:copy>
 	</xsl:template>
 
+
+	<!-- TODO dies noch ins ODD einbetten, eleganter machen + noch verbinden mit erstem Paragraphen! -->
 	<xsl:template name="processRevisionDescChange">
 		<xsl:copy>
-			<xsl:apply-templates select="@*|node()[node()]"/>
+			<xsl:apply-templates select="@*"/>
+
+			<xsl:choose>
+				<xsl:when test="@type">
+					<p>
+						<xsl:apply-templates select="element()[1]/@*"/>
+					<xsl:choose>
+						<xsl:when test="@type='UO'">Übertragung nach Original </xsl:when>
+						<xsl:when test="@type='UC'">Übertragung nach Entwurf </xsl:when>
+						<xsl:when test="@type='UA'">Übertragung nach Abschrift v.f.H. </xsl:when>
+						<xsl:when test="@type='UP'">Übertragung nach Xerokopie </xsl:when>
+						<xsl:when test="@type='UI'">Übertragung nach Mikroform </xsl:when>
+						<xsl:when test="@type='UM'">Übertragung nach autogr. Abschrift </xsl:when>
+						<xsl:when test="@type='UD'">Übertragung nach Original [Digitalisat] </xsl:when>
+						<xsl:when test="@type='UG'">Übertragung nach Entwurf [Digitalisat] </xsl:when>
+						<xsl:when test="@type='UH'">Übertragung nach Abschrift v.f.H. [Digitalisat] </xsl:when>
+						<xsl:when test="@type='UF'">Übertragung nach Xerokopie [Digitalisat] </xsl:when>
+						<xsl:when test="@type='UJ'">Übertragung nach Mikroform [Digitalisat] </xsl:when>
+						<xsl:when test="@type='UB'"
+							>Übertragung nach autogr. Abschrift [Digitalisat] </xsl:when>
+						<xsl:when test="@type='UE'">Übertragung nach Edition </xsl:when>
+						<xsl:when test="@type='UZ'">Übertragung nach Auszug </xsl:when>
+						<xsl:when test="@type='UW'">Übertragung </xsl:when>
+						<xsl:when test="@type='KO'">Korrektur nach Original </xsl:when>
+						<xsl:when test="@type='KC'">Korrektur nach Entwurf </xsl:when>
+						<xsl:when test="@type='KA'">Korrektur nach Abschrift v.f.H. </xsl:when>
+						<xsl:when test="@type='KP'">Korrektur nach Xerokopie </xsl:when>
+						<xsl:when test="@type='KI'">Korrektur nach Mikroform </xsl:when>
+						<xsl:when test="@type='KM'">Korrektur nach autogr. Abschrift </xsl:when>
+						<xsl:when test="@type='KD'">Korrektur nach Original [Digitalisat] </xsl:when>
+						<xsl:when test="@type='KG'">Korrektur nach Entwurf [Digitalisat] </xsl:when>
+						<xsl:when test="@type='KH'">Korrektur nach Abschrift v.f.H. [Digitalisat] </xsl:when>
+						<xsl:when test="@type='KF'">Korrektur nach Xerokopie [Digitalisat] </xsl:when>
+						<xsl:when test="@type='KJ'">Korrektur nach Mikroform [Digitalisat] </xsl:when>
+						<xsl:when test="@type='KB'">Korrektur nach autogr. Abschrift [Digitalisat] </xsl:when>
+						<xsl:when test="@type='KE'">Korrektur nach Edition </xsl:when>
+						<xsl:when test="@type='KZ'">Korrektur nach Auszug </xsl:when>
+						<xsl:when test="@type='KW'">Korrektur </xsl:when>
+						<xsl:when test="@type='VQ'"
+							>, Vollständigkeit der Quellenübertragung bestätigt</xsl:when>
+						<xsl:when test="@type='VT'">Vollständigkeit der Textauszeichnung bestätigt </xsl:when>
+						<xsl:when test="@type='VL'">Vollständigkeit der Verlinkung bestätigt </xsl:when>
+						<xsl:when test="@type='P'">vorgeschlagen zur Publikation </xsl:when>
+						<xsl:when test="@type='C'"
+							>als möglicherweise publikationsfertig gekennzeichnet </xsl:when>
+						<xsl:when test="@type='A'">zur Publikation freigegeben </xsl:when>
+						<xsl:otherwise/>
+					</xsl:choose>
+						<xsl:apply-templates select="element()[1]/node()"/>
+					</p>
+					<xsl:apply-templates select="element()[not(position()=1)][node()]"/>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:apply-templates select="element()[node()]"/>
+				</xsl:otherwise>
+			</xsl:choose>
+
 		</xsl:copy>
 	</xsl:template>
 
@@ -291,12 +349,13 @@
 	<xsl:template name="expandTitleStmtPrint">
 		<xsl:copy>
 			<title>
-				<xsl:copy-of select="(//biblStruct//title[@type='main'])[1]/node()|@*[not(name()='type')]"/>
+				<xsl:copy-of
+					select="(//biblStruct//title[@type='main'])[1]/node()|@*[not(name()='type')]"/>
 			</title>
-			
+
 			<xsl:copy-of select="//biblStruct/element()[1]//author|editor"/>
-			
-			
+
+
 			<xsl:copy-of select="$funder"/>
 		</xsl:copy>
 	</xsl:template>
@@ -325,7 +384,7 @@
 			<xsl:when test="parent::editionStmt">
 				<xsl:copy>
 					<xsl:value-of select="$edition"/>
-				</xsl:copy>				
+				</xsl:copy>
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:call-template name="keepOnlyWithAnyText"/>
@@ -384,6 +443,134 @@
 		<xsl:if test="normalize-space()">
 			<xsl:copy>
 				<xsl:apply-templates select="node()[node()]"/>
+			</xsl:copy>
+		</xsl:if>
+	</xsl:template>
+
+	<xsl:template name="processOpenerWP">
+		<xsl:param name="typedSegsI" tunnel="yes"/>
+		<xsl:copy>
+			<xsl:apply-templates select="@*|node()"/>
+			<xsl:if test="$typedSegsI">
+				<xsl:for-each select="$typedSegsI">
+					<salute rend="inparagraph">
+						<xsl:apply-templates select="@*[not(name()='type')]|node()"/>
+					</salute>
+				</xsl:for-each>
+			</xsl:if>
+		</xsl:copy>
+	</xsl:template>
+
+	<xsl:template name="processCloserWP">
+		<xsl:param name="typedSegsC" tunnel="yes"/>
+		<xsl:copy>
+			<xsl:apply-templates select="@*"/>
+			<xsl:if test="$typedSegsC">
+				<xsl:for-each select="$typedSegsC">
+					<salute rend="inparagraph">
+						<xsl:apply-templates select="@*[not(name()='type')]|node()"/>
+					</salute>
+				</xsl:for-each>
+			</xsl:if>
+			<xsl:apply-templates select="node()"/>
+		</xsl:copy>
+	</xsl:template>
+
+	<!-- adds the content of seg[@type] in new opener/closer elements -->
+	<xsl:template name="processDiv">
+		<xsl:variable name="this" select="."/>
+		<xsl:choose>
+			<xsl:when test=".//seg[@type]">
+				<xsl:copy>
+					<xsl:apply-templates select="@*"/>
+
+					<xsl:for-each select="node()">
+						<xsl:variable name="typedSegsI" select=".//seg[@type='initial-salute']"/>
+						<xsl:variable name="typedSegsC" select=".//seg[@type='concluding-salute']"/>
+
+						<xsl:if test="not($this/opener) and $typedSegsI">
+							<opener>
+									<xsl:for-each select="$typedSegsI">
+										<salute rend="inparagraph">
+										<xsl:apply-templates select="@*[not(name()='type')]|node()"/>
+									</salute>
+									</xsl:for-each>
+								</opener>
+						</xsl:if>
+
+						<xsl:choose>
+							<xsl:when test="./name()='opener' and $this//seg[@type='initial-salute']">
+								<xsl:call-template name="processOpenerWP">
+									<xsl:with-param name="typedSegsI"
+										select="$this//seg[@type='initial-salute']" tunnel="yes"/>
+								</xsl:call-template>
+							</xsl:when>
+							<xsl:when test="./name()='closer' and $this//seg[@type='concluding-salute']">
+								<xsl:call-template name="processCloserWP">
+									<xsl:with-param name="typedSegsC"
+										select="$this//seg[@type='concluding-salute']" tunnel="yes"/>
+								</xsl:call-template>
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:apply-templates select="."/>
+							</xsl:otherwise>
+						</xsl:choose>
+
+
+						<xsl:if test="not($this/closer) and $typedSegsC">
+							<closer>
+										<xsl:for-each select="$typedSegsC">
+											<salute rend="inparagraph">
+												<xsl:apply-templates select="@*[not(name()='type')]|node()"/>
+											</salute>
+										</xsl:for-each>
+									</closer>
+						</xsl:if>
+
+					</xsl:for-each>
+
+					<!--					
+					<xsl:if test="$typedSegsI and not(.//opener)">
+						<opener>
+							<xsl:for-each select="$typedSegsI">
+								<salute rend="inparagraph">
+								<xsl:apply-templates select="@*[not(name()='type')]|node()"/>
+							</salute>
+							</xsl:for-each>
+						</opener>
+					</xsl:if>
+					
+					<xsl:apply-templates select="node()[not(name()='postscript')]">
+						<xsl:with-param name="typedSegsI" select="$typedSegsI" tunnel="yes"/>
+						<xsl:with-param name="typedSegsC" select="$typedSegsC" tunnel="yes"/>
+					</xsl:apply-templates>
+					
+					<xsl:if test="$typedSegsC and not(.//closer)">
+						<closer>
+							<xsl:for-each select="$typedSegsC">
+								<salute rend="inparagraph">
+								<xsl:apply-templates select="@*[not(name()='type')]|node()"/>
+							</salute>
+							</xsl:for-each>
+						</closer>
+					</xsl:if>
+					
+					<xsl:apply-templates select="postscript"/>
+-->
+				</xsl:copy>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:copy>
+					<xsl:apply-templates select="@*|node()"/>
+				</xsl:copy>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+
+	<xsl:template name="removeIfTyped">
+		<xsl:if test="not(@type)">
+			<xsl:copy>
+				<xsl:apply-templates select="@*|node()"/>
 			</xsl:copy>
 		</xsl:if>
 	</xsl:template>

@@ -61,12 +61,12 @@
 			<desc>Contains specifications specific of the place ODD</desc>
 			<specGrp xml:id="edits.elements.place">
 				
-				<!-- taken from on WeGA_places.odd.xml -->
+				<!-- based on WeGA_places.odd.xml; modified -->
 				<elementSpec ident="placeName" mode="change" module="namesdates">
 					<desc versionDate="2013-11-11" xml:lang="en">contains an absolute or relative place name.</desc>
 					<desc versionDate="2013-11-11" xml:lang="de">enthält einen absoluten oder relativen Ortsnamen.</desc>
 					<classes mode="change">
-						<memberOf key="att.global" mode="delete"/>
+<!--						<memberOf key="att.global" mode="delete"/>-->
 						<memberOf key="att.naming" mode="delete"/>
 						<memberOf key="att.canonical" mode="delete"/>
 						<memberOf key="att.typed" mode="delete"/>
@@ -93,6 +93,10 @@
 								<valItem ident="alt">
 									<gloss versionDate="2014-01-08" xml:lang="en">alternative</gloss>
 									<gloss versionDate="2014-01-08" xml:lang="de">Alternative</gloss>
+								</valItem>
+								<valItem ident="toponym">
+								</valItem>
+								<valItem ident="local">
 								</valItem>
 							</valList>
 						</attDef>
@@ -125,7 +129,7 @@
 					<gloss versionDate="2013-11-11" xml:lang="en">geographische Koordinaten</gloss>
 					<desc versionDate="2013-11-11" xml:lang="de">enthält einen Terminus eines Sets von geographischen Koordinaten, die einen Punkt, eine Linie oder einen Bereich der Erde in einer bestimmten Schreibweise darstellen.</desc>
 					<classes mode="change">
-						<memberOf key="att.global" mode="delete"/>
+<!--						<memberOf key="att.global" mode="delete"/>-->
 						<memberOf key="att.declaring" mode="delete"/>
 					</classes>
 				</elementSpec>
@@ -137,7 +141,7 @@
 					<gloss versionDate="2013-11-11" xml:lang="de">Bezeichner</gloss>
 					<desc versionDate="2013-11-11" xml:lang="de">lieferte jegliche Form eines Bezeichners in einer standardisierten Form, der benutzt werden kann um Objekte zu identifiziert, wie etwa ein bibliographisches Element, eine Organisation, usw.</desc>
 					<classes mode="change">
-						<memberOf key="att.global" mode="delete"/>
+<!--						<memberOf key="att.global" mode="delete"/>-->
 						<memberOf key="att.sortable" mode="delete"/>
 					</classes>
 					<attList>
@@ -1302,6 +1306,21 @@
 						<rng:ref name="macro.form.revisionDescChange"/>
 					</rng:zeroOrMore>
 				</content>
+				<attList>
+					<attDef ident="status">
+						<valList type="closed">
+							<valItem ident="proposed">
+								<desc versionDate="2014-06-13" xml:lang="de">vorgeschlagen zur Publikation, aber noch nicht fertig</desc>
+							</valItem>
+							<valItem ident="candidate">
+								<desc versionDate="2014-06-13" xml:lang="de">in möglicherweise publikationsbereitem Zustand, aber noch nicht kontrolliert</desc>
+							</valItem>
+							<valItem ident="approved">
+								<desc versionDate="2014-06-13" xml:lang="de">zur Publikation freigegeben</desc>
+							</valItem>
+						</valList>
+					</attDef>
+				</attList>
 			</elementSpec>
 
 			<elementSpec ident="teiHeader" module="header" mode="replace">
@@ -1399,6 +1418,18 @@
 						</datatype>
 					</attDef>
 				</attList>
+			</elementSpec>
+
+			<elementSpec ident="div" module="textstructure" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="processDiv"/>
+			</elementSpec>
+
+
+			<elementSpec ident="seg" module="linking" mode="change">
+				<!-- Element will be removed if there is a type attribute present;
+				the content will then be removed from here and added to the opener or closer.
+				-->
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="removeIfTyped"/>
 			</elementSpec>
 
 			<!-- filter can be applied universally; no xpath look-up is needed -->

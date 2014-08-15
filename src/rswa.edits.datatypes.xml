@@ -83,6 +83,10 @@
 					<a:documentation>Florian Amort</a:documentation>
 					<rng:value>stk</rng:value>
 					<a:documentation>Steffi Kracht</a:documentation>
+					<rng:value>oen</rng:value>
+					<a:documentation>Ursula Welsch</a:documentation>
+					<rng:value>ofr</rng:value>
+					<a:documentation>Oliver Franeske</a:documentation>
 				</rng:choice>
 			</content>
 		</macroSpec>

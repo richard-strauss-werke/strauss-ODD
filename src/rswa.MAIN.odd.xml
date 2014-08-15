@@ -154,6 +154,7 @@
 					<specGrpRef target="#scope.teistructure"/>
 					<specGrpRef target="#scope.transcr"/>
 					<specGrpRef target="#scope.transcr.bibl"/>
+					<specGrpRef target="#extension.MEI-music"/>
 					<specGrpRef target="#extension.tasks"/>
 					<specGrpRef target="#edits.classes.att.shared"/>
 					<specGrpRef target="#edits.datatypes.shared"/>
@@ -215,9 +216,21 @@
 				<schemaSpec ident="schema.place" xml:lang="en" start="place" prefix="rswa_">
 					<desc>Places. Based on Anna Maria Komprecht's WeGA ODD.</desc>
 					<moduleRef key="tei"/>
+					<moduleRef key="core"
+						include="cit date hi item l lb lg list listBibl note p q quote rs"/>
 					<moduleRef key="header" include="idno"/>
-					<moduleRef key="namesdates" include="country geo location place placeName"/>
+					<moduleRef key="namesdates" include="country district geo location place placeName region settlement trait"/>
+					<moduleRef key="linking" include=""/>
 					<specGrpRef target="#edits.elements.place"/>
+				</schemaSpec>
+				
+				<schemaSpec ident="schema.repository" xml:lang="en" start="ab" prefix="rswa_">
+					<desc>Repositories</desc>
+					<moduleRef key="tei"/>
+					<moduleRef key="header" include="idno"/>
+					<moduleRef key="core" include="name"/>
+					<moduleRef key="namesdates" include="country settlement"/>
+					<moduleRef key="linking" include="ab"/>
 				</schemaSpec>
 				
 			</div>
@@ -367,6 +380,7 @@
 					<head>Performance specific scope</head>
 					<desc>Adds elements uniquely used in the performance schema</desc>
 					<specGrp xml:id="scope.performance">
+						<moduleRef key="drama" include="actor castItem castList performance role"/>
 						<!-- namesdates -->
 						<elementRef key="country"/>
 						<elementRef key="settlement"/>

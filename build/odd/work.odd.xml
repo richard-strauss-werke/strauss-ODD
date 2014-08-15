@@ -668,9 +668,24 @@
       <content>
         <data xmlns="http://relaxng.org/ns/structure/1.0" type="IDREF"/>
       </content>
-    </macroSpec><macroSpec rend="change" ident="data.ISODATE" module="MEI" type="dt"><desc>ISO date formats.</desc><content>
-                            <ref xmlns="http://relaxng.org/ns/structure/1.0" name="wega.data.temporal.iso"/>
-                        </content></macroSpec><macroSpec ident="data.ISOTIME" module="MEI" type="dt">
+    </macroSpec><macroSpec ident="data.ISODATE" module="MEI" type="dt">
+      <desc>ISO date formats.</desc>
+      <content>
+        <choice xmlns="http://relaxng.org/ns/structure/1.0">
+          <data type="date"/>
+          <data type="gYear"/>
+          <data type="gMonth"/>
+          <data type="gDay"/>
+          <data type="gYearMonth"/>
+          <data type="gMonthDay"/>
+          <data type="time"/>
+          <data type="dateTime"/>
+          <data type="token">
+            <param name="pattern">[0-9.,DHMPRSTWYZ/:+\-]+</param>
+          </data>
+        </choice>
+      </content>
+    </macroSpec><macroSpec ident="data.ISOTIME" module="MEI" type="dt">
       <desc>ISO 24-hour time format: HH:MM:SS.ss, i.e.,
         [0-9][0-9]:[0-9][0-9]:[0-9][0-9](\.?[0-9]*)?.</desc>
       <content>
@@ -7510,13 +7525,9 @@
           </choice>
         </zeroOrMore>
       </content>
-    </elementSpec><macroSpec rend="add" module="derived-module-schema.work" ident="wega.data.temporal.iso" mode="add">
-            <desc versionDate="2014-04-22" xml:lang="en">A replacement for the TEI macro data.temporal.iso which allows only date (YYYY-MM-DD) and gYear (YYYY).</desc>
-            <desc versionDate="2014-04-22" xml:lang="de">WeGA-Ersatz für das TEI Makro data.temporal.iso mit der Einschränkung auf date (YYYY-MM-DD) und gYear (YYYY).</desc>
-            <content>
-                <choice xmlns="http://relaxng.org/ns/structure/1.0"><data type="date"/><data type="gYear"/></choice>
-            </content>
-        </macroSpec></schemaSpec>
+    </elementSpec></schemaSpec>
+				
+				
 				
 				
 				
@@ -7578,7 +7589,8 @@
 				<div>
 					<head>Performance specific scope</head>
 					<desc>Adds elements uniquely used in the performance schema</desc>
-					<table><row/><row/></table>
+					<table><row><cell>
+		Module drama</cell><cell/></row><row/><row/></table>
 				</div>
 			</div>
 			<div>
@@ -7617,7 +7629,6 @@
 		Element <gi>mei</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>persName</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>source</gi></cell><cell>change</cell></row><row><cell>
-		Macro <ident type="macro">data.ISODATE</ident></cell><cell>change</cell></row><row><cell>
 		Element <gi>date</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>altId</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>titleStmt</gi></cell><cell>change</cell></row><row><cell>
@@ -7902,6 +7913,8 @@
 		Element <gi>ptr</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>rs</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>respons</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>div</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>seg</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>edition</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>publisher</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>pubPlace</gi></cell><cell>change</cell></row><row><cell>

@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.music-encoding.org/ns/mei"><!--
-Schema generated from ODD source 2014-05-22T06:10:53Z. 
+Schema generated from ODD source 2014-08-15T06:37:34Z. 
 Edition: Version 2.6.0. Last updated on
 	20th January 2014, revision 12802
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
@@ -255,7 +255,19 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
       </choice>
    </define>
    <define name="mei_data.ISODATE">
-      <ref name="mei_wega.data.temporal.iso"/>
+      <choice>
+         <data type="date"/>
+         <data type="gYear"/>
+         <data type="gMonth"/>
+         <data type="gDay"/>
+         <data type="gYearMonth"/>
+         <data type="gMonthDay"/>
+         <data type="time"/>
+         <data type="dateTime"/>
+         <data type="token">
+            <param name="pattern">[0-9.,DHMPRSTWYZ/:+\-]+</param>
+         </data>
+      </choice>
    </define>
    <define name="mei_data.ISOTIME">
       <data type="time"/>
@@ -536,12 +548,6 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">1024th note</a:documentation>
          <value>2048</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">2048th note</a:documentation>
-      </choice>
-   </define>
-   <define name="mei_wega.data.temporal.iso">
-      <choice>
-         <data type="date"/>
-         <data type="gYear"/>
       </choice>
    </define>
    <define name="mei_model.expressionLike">

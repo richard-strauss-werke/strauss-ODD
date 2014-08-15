@@ -39,6 +39,8 @@
       <name xml:id="clh">Claudia Heine</name>
       <name xml:id="afl">Florian Amort</name>
       <name xml:id="stk">Steffi Kracht</name>
+      <name xml:id="oen">Ursula Welsch</name>
+      <name xml:id="ofr">Oliver Franeske</name>
    </xsl:variable>
    <xsl:variable name="publicationStmt">
 				  <distributor>Forschungsstelle zur Edition der Werke von Richard Strauss</distributor>
@@ -118,8 +120,14 @@
    <xsl:template match="placeName">
       <xsl:call-template name="onlyWithContentAddCert"/>
    </xsl:template>
+   <xsl:template match="seg">
+      <xsl:call-template name="removeIfTyped"/>
+   </xsl:template>
    <xsl:template match="respons">
       <xsl:call-template name="transformRespons"/>
+   </xsl:template>
+   <xsl:template match="div">
+      <xsl:call-template name="processDiv"/>
    </xsl:template>
    <xsl:template match="repository">
       <xsl:call-template name="transformOrRemoveRepository"/>

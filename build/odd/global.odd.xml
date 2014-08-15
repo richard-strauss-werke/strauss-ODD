@@ -2648,6 +2648,25 @@ division de texte.</desc>
   <listRef>
       <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSDTB">4.2. </ref>
   </listRef>
+</classSpec><classSpec module="tei" xml:id="DRFRONT" type="model" ident="model.frontPart.drama">
+  <desc versionDate="2005-10-10" xml:lang="en">groups elements which appear at the level of divisions within front or back matter of
+    performance texts only.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">단지 공연 텍스트 앞쪽 자료 또는 뒤쪽 자료 내의 구역 층위에서 나타나는 요소를 모아 놓는다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">匯集的元素僅出現於劇本正文前或後資訊內的區段層次。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">演技テキストにおける前付，後付の部分レベルに現れる要素をまとめる．</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments qui n'apparaissent comme des
+    divisions que dans les parties liminaires ou finales des textes de théâtre.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">agrupa elementos que aparecen a nivel de partición
+    textual al interno del paratexto inicial o final.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi che appaiono a livello di partizioni
+    testuali all'interno del peritesto iniziale o del peritesto finale solo in testi di tipo
+    teatrale</desc>
+  <classes>
+      <memberOf key="model.frontPart"/>
+  </classes>
+  <listRef>
+      <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRFAB">7.1. </ref>
+  </listRef>
 </classSpec><classSpec module="tei" xml:id="FMCHUNK" type="model" ident="model.pLike.front">
   <desc versionDate="2007-10-03" xml:lang="en">groups paragraph-like elements which can occur as direct constituents of front matter.</desc>
   <desc versionDate="2007-12-20" xml:lang="ko">앞쪽 자료의 직접 구성성분으로 나타날 수 있는 문단 같은 요소를 모아 놓는다.</desc>
@@ -2769,6 +2788,18 @@ fin d'une division de texte.</desc>
   <listRef>
       <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBI">3.11. </ref>
   </listRef>
+</classSpec><classSpec module="tei" type="model" ident="model.castItemPart">
+  <desc versionDate="2007-10-02" xml:lang="en">groups component elements of an entry in a cast list, such as dramatic role or actor's name.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">극에서 역할 또는 배우의 이름과 같이 등장인물 목록에서 항목의 성분 요소를 모아 놓는다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">用於角色列表中一個項目內的元素，如戲劇角色或演員名稱</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">芝居中の役や役者名などの，配役中の項目要素をまとめる．</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments composants utilisés comme entrée
+    dans une distribution, comme le nom d'un rôle ou le nom d'un acteur.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">elementos usados dentro de una entrada en una lista de
+    personajes, por ejemplo los roles dramáticos o los nombres de actores.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">elementi utilizzati all'interno di una voce in una lista
+    di personaggi, per esempio ruolo o nome dell'attore</desc>
+  <classes/>
 </classSpec><classSpec module="tei" type="model" ident="model.physDescPart">
   
   <desc versionDate="2012-03-14" xml:lang="en">groups specialized elements forming part of the physical description of a manuscript or
@@ -2856,6 +2887,21 @@ fin d'une division de texte.</desc>
     di elementi di citazioni bibliografiche</desc>
   <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBI">3.11. </ref>
+  </listRef>
+</classSpec><classSpec module="tei" xml:id="CLFRONT" type="model" ident="model.frontPart">
+  <desc versionDate="2005-10-10" xml:lang="en">groups elements which appear at the level of divisions within front or back matter.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">전면부 또는 후면부 자료 내에서 구역 층위에 나타나는 요소를 모아 놓는다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">匯集的元素出現於正文前或後資訊內的區段層次中。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">前付，後付の部分レベルに現れる要素をまとめる．</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">regroupe les éléments
+  du niveau des divisions qui peuvent apparaître 
+    dans un <gi>front</gi> ou un <gi>back</gi>.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">agrupa elementos que aparecen a nivel de particiones
+    textuales al interno del paratexto inicial o final.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">raggruppa gli elementi che appaiono a livello di
+    partizioni testuali all'interno del peritesto iniziale o finale</desc>
+  <listRef>
+      <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRFAB">7.1. </ref>
   </listRef>
 </classSpec><classSpec module="tei" xml:id="ADDRPART" type="model" ident="model.addrPart">
   <desc versionDate="2007-10-02" xml:lang="en">groups elements such as names or postal codes which may appear as part of a
@@ -10412,6 +10458,751 @@ manuscripts, not necessarily located within a single repository.</desc><desc ver
   
   <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html#AILC">17.1. </ref>
+  </listRef>
+</elementSpec><elementSpec module="drama" ident="performance">
+  <gloss versionDate="2007-06-12" xml:lang="fr">représentation</gloss>
+  <desc versionDate="2005-01-14" xml:lang="en">contains a section of front or back matter describing how a dramatic piece is to be
+    performed in general or how it was performed on some specific occasion.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">드라마가 일반적으로 공연되는 방법 또는 특정 상황에서 공연되었던 방식을 기술하는, 앞부분 또는 뒷부분의
+    절.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含前頁或後頁部分，描述戲劇作品的一般演出方式、或曾經在某些特定場合的演出方式。</desc>
+  <desc versionDate="2008-04-06" xml:lang="es">contiene una sección del encabezado o de la conclusión
+    que describe cómo un fragmento dramático debe ser realizado en general o cómo fue realizado en
+    una función determinada.</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">芝居の部分が，一般にどのように演技されるのか，特定の場面でどのように 演技されるのかを示す．</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">contient une partie de la préface ou de la postface
+    décrivant comment la pièce de théâtre doit être jouée normalement ou comment elle a été jouée à
+    telle ou telle occasion particulière.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">contiene una sezione del peritesto iniziale o finale che
+    descrive come mettere in scena l'opera teatrale, o come è stata messa in scena in qualche
+    occasione particolare.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="model.frontPart.drama"/>
+  </classes>
+  <content>
+    <group xmlns="http://relaxng.org/ns/structure/1.0">
+      <zeroOrMore>
+        <choice>
+          <ref name="model.divTop"/>
+          <ref name="model.global"/>
+        </choice>
+      </zeroOrMore>
+      <oneOrMore>
+        <group>
+          <ref name="model.common"/>
+        </group>
+        <zeroOrMore>
+          <ref name="model.global"/>
+        </zeroOrMore>
+      </oneOrMore>
+      <zeroOrMore>
+        <group>
+          <ref name="model.divBottom"/>
+        </group>
+        <zeroOrMore>
+          <ref name="model.global"/>
+        </zeroOrMore>
+      </zeroOrMore>
+    </group>
+  </content>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <performance>
+        <p><rs type="place">Gateway Theatre, Edinburgh</rs>, <date>6 September 1948</date><castList><castItem><role>Anath Bithiah</role><actor>Athene Seyler</actor></castItem><castItem><role>Shendi</role><actor>Robert Rietty</actor></castItem></castList></p>
+        <p>Directed by <name>E. Martin Browne</name>
+            </p>
+      </performance>
+    </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Teste">
+      <performance>
+        <p><rs type="place">Théâtre national du Petit-Odéon, Paris</rs>, <date>du 10 Décembre 1974
+              au 12 Janvier 1975</date><castList><castItem><role>Paul Valéry</role><actor>Michel Duchaussoy</actor></castItem><castItem><role>Joseph</role><actor>Gérad Caillaud</actor></castItem><castItem><role>M. Teste</role><actor>Pierre Dux</actor></castItem><castItem><role>Mme Teste</role><actor>Claude Winter</actor></castItem><castItem><role>L'abbé Mosson</role><actor>Jacques Toja</actor></castItem></castList></p>
+        <p>Adaptation et mise en scène de <name>Pierre Franck</name>
+            </p>
+      </performance>
+    </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Knock">
+      <performance>
+        <p>Distribution <rs type="place">Comédie des Champs-Elysées, Paris,</rs>
+               <date>1923</date>(par ordre d'entrée en scène) <castList><castItem>Knock : Louis Jouvet</castItem></castList>
+            </p>
+      </performance>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#biblzh-tw_n34">
+      <performance>
+        <p><rs type="place">新竹市文化局演藝廳</rs>, <date>2008年3月14日</date><castList><castItem><role>劉福春</role><actor>陳忠義</actor></castItem><castItem><role>劉麗月</role><actor>陳慧如</actor></castItem></castList></p>
+        <p>監製： <name>李永得</name>
+            </p>
+      </performance>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <performance>
+        <p>首演假<rs type="place">台北國家劇院</rs>於 <date>2007年10月12日</date>
+               <castList><castItem>劉麗君: 徐堰鈴飾</castItem></castList>
+            </p>
+      </performance>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <performance>
+        <p>Cast of the original production at the <rs type="place">Savoy Theatre, London,</rs> on
+            <date>September 24, 1907</date>
+               <castList><castItem>Colonel Hope : Mr A.E.George</castItem></castList>
+            </p>
+      </performance>
+    </egXML>
+  </exemplum>
+  <remarks versionDate="2005-01-14" xml:lang="en">
+    <p rend="dataDesc">contains paragraphs and an optional cast list only.</p>
+    <p/>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2007-06-12">
+    <p rend="dataDesc">contient des paragraphes et éventuellement, un élément <gi>castList</gi>.</p>
+  </remarks>
+  <remarks xml:lang="ja" versionDate="2008-04-05">
+    <p rend="dataDesc"> 段落と選択的な配役リストのみを含む． </p>
+    <p/>
+  </remarks>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRPERF">7.1.3. </ref>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRFAB">7.1. </ref>
+  </listRef>
+</elementSpec><elementSpec module="drama" ident="castList">
+  <gloss versionDate="2005-01-14" xml:lang="en">cast list</gloss>
+  <gloss versionDate="2007-12-20" xml:lang="ko">배역 목록</gloss>
+  <gloss versionDate="2007-05-02" xml:lang="zh-TW">角色清單</gloss>
+  <gloss versionDate="2008-04-06" xml:lang="es">reparto</gloss>
+  <gloss versionDate="2007-06-12" xml:lang="fr">distribution </gloss>
+  <gloss versionDate="2007-01-21" xml:lang="it">elenco dei personaggi</gloss>
+  <desc versionDate="2005-01-14" xml:lang="en">contains a single cast list or dramatis personae.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">하나의 배역 목록 또는 드라마 등장인물을 포함한다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含單一角色名單或出場人物列表。</desc>
+  <desc versionDate="2008-04-06" xml:lang="es">contiene una única lista con los personajes del reparto.</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">ひとつの配役リストまたは配役表を示す．</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">contient la distribution ou la liste des
+    personnages.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">contiene un unico elenco dei personaggio le dramatis personae.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="model.inter"/>
+    <memberOf key="model.frontPart.drama"/>
+  </classes>
+  <content>
+    <group xmlns="http://relaxng.org/ns/structure/1.0">
+      <zeroOrMore>
+        <choice>
+          <ref name="model.divTop"/>
+          <ref name="model.global"/>
+        </choice>
+      </zeroOrMore>
+      <zeroOrMore>
+        <group>
+          <ref name="model.common"/>
+        </group>
+        <zeroOrMore>
+          <ref name="model.global"/>
+        </zeroOrMore>
+      </zeroOrMore>
+      <oneOrMore>
+        <choice>
+          <ref name="castItem"/>
+          <ref name="castGroup"/>
+        </choice>
+        <zeroOrMore>
+          <ref name="model.global"/>
+        </zeroOrMore>
+      </oneOrMore>
+      <zeroOrMore>
+        <group>
+          <ref name="model.common"/>
+        </group>
+        <zeroOrMore>
+          <ref name="model.global"/>
+        </zeroOrMore>
+      </zeroOrMore>
+    </group>
+  </content>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <castList>
+        <castGroup>
+          <head rend="braced">Mendicants</head>
+          <castItem>
+            <role>Aafaa</role>
+            <actor>Femi Johnson</actor>
+          </castItem>
+          <castItem>
+            <role>Blindman</role>
+            <actor>Femi Osofisan</actor>
+          </castItem>
+          <castItem>
+            <role>Goyi</role>
+            <actor>Wale Ogunyemi</actor>
+          </castItem>
+          <castItem>
+            <role>Cripple</role>
+            <actor>Tunji Oyelana</actor>
+          </castItem>
+        </castGroup>
+        <castItem>
+          <role>Si Bero</role>
+          <roleDesc>Sister to Dr Bero</roleDesc>
+          <actor>Deolo Adedoyin</actor>
+        </castItem>
+        <castGroup>
+          <head rend="braced">Two old women</head>
+          <castItem>
+            <role>Iya Agba</role>
+            <actor>Nguba Agolia</actor>
+          </castItem>
+          <castItem>
+            <role>Iya Mate</role>
+            <actor>Bopo George</actor>
+          </castItem>
+        </castGroup>
+        <castItem>
+          <role>Dr Bero</role>
+          <roleDesc>Specialist</roleDesc>
+          <actor>Nat Okoro</actor>
+        </castItem>
+        <castItem>
+          <role>Priest</role>
+          <actor>Gbenga Sonuga</actor>
+        </castItem>
+        <castItem>
+          <role>The old man</role>
+          <roleDesc>Bero's father</roleDesc>
+          <actor>Dapo Adelugba</actor>
+        </castItem>
+      </castList>
+      <stage type="mix">The action takes place in and around the home surgery of
+Dr Bero, lately returned from the wars.</stage>
+    </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Guerre-Troie">
+      <div n="1">
+        <head>T.N.P. 1963</head>
+        <note place="foot" n="1">A la création au Festivai d'Avignon en juillet 1962, la
+            distribution était légèrement différente : dans l'ordre ci-dessus : Hécube (Annie
+            Monnier) ; Iris (Paule Noël) ; Hector (Daniel lvernel) ; Pâris (Jean-Louis Trintignant)
+            ; Troïus (Bernard Laïk).</note>
+        <castList>
+          <castItem>
+            <role>Andromaque</role>
+            <actor>MARIA MAUBAN </actor>
+          </castItem>
+          <castItem>
+            <role>Hélène</role>
+            <actor>CHRISTIANE MINAZZOLLI</actor>
+          </castItem>
+          <castItem>
+            <role>Hécube</role>
+            <actor>ALINE BERTRAND</actor>
+          </castItem>
+          <castItem><role> Cassandre </role>JUDITH MAGRE ANNE</castItem>
+          <castItem>
+            <role>La Paix</role>
+            <actor>DOMINIQUE VILAR</actor>
+          </castItem>
+          <castItem>
+            <role>Iris </role>
+            <actor>NOELLE VINCENT</actor>
+          </castItem>
+          <castItem>
+            <role>La petite Polyxène</role>
+            <actor>CLAUDINE MAUGEY</actor>
+          </castItem>
+          <castItem>
+            <role>Hector</role>
+            <actor>PIERRE VANECK</actor>
+          </castItem>
+          <castItem>
+            <role>Ulysse</role>
+            <actor>JEAN VILAR</actor>
+          </castItem>
+          <castItem>
+            <role>Demokos</role>
+            <actor> PASCAL MAZZOTTI </actor>
+          </castItem>
+          <castItem>
+            <role>Priam</role>
+            <actor>JEAN-FRANÇOIS REMY</actor>
+          </castItem>
+          <castItem>
+            <role>Pâris</role>
+            <actor>ROBERT ETCHEVERRY</actor>
+          </castItem>
+          <castItem>
+            <role>Oiax</role>
+            <actor>MARIO PILAR</actor>
+          </castItem>
+          <castItem>
+            <role>Le Gabier</role>
+            <actor>GEORGES GERET</actor>
+          </castItem>
+          <castItem>
+            <role>Le Géomètre</role>
+            <actor>PHILIPPE AVRON</actor>
+          </castItem>
+          <castItem>
+            <role>Abnéos</role>
+            <actor>LUCIEN ARNAUD</actor>
+          </castItem>
+          <castItem>
+            <role>Troïlus</role>
+            <actor>MICHEL GONZALES</actor>
+          </castItem>
+          <castItem>
+            <role>Olpidès</role>
+            <actor>MAURICE COUSSONNEAU</actor>
+          </castItem>
+          <castItem>
+            <role>Busiris</role>
+            <actor>GEORGES RIQUIER</actor>
+          </castItem>
+          <castItem>
+            <role>Premier Vieillard</role>
+            <actor>JEAN MONDAIN</actor>
+          </castItem>
+          <castItem>
+            <role>Deuxième Vieillard</role>
+            <actor>LUCIEN ARNAUD</actor>
+          </castItem>
+          <castGroup>
+            <head>Messagers</head>
+            <castItem><actor>Bernard Laïk</actor>, <actor>Jean-Pierre Maurin</actor>.</castItem>
+          </castGroup>
+          <castGroup>
+            <head>Servantes troyennes</head>
+            <castItem><actor>Christiane Oscar</actor>, <actor>Noëlle Vincent.</actor></castItem>
+          </castGroup>
+          <castGroup>
+            <head>Notables</head>
+            <castItem>
+              <actor>Jean-Daniel Ehrrnann</actor>
+              <actor>Bernard Wawer</actor>
+              <actor>Bernard Klein</actor>
+            </castItem>
+          </castGroup>
+          <castGroup>
+            <head>Gardes grecs</head>
+            <castItem><actor>Jean Dufau</actor>, <actor>Alain Deny</actor>, <actor>Jean-Jacques Leconte</actor><actor>Richard Rein</actor></castItem>
+          </castGroup>
+        </castList>
+      </div>
+      <div n="2">
+        <head>Théâtre de la Ville 1971</head>
+        <note place="foot" n="2">La pièce a été reprise au Théâtre de la Ville le 22 janvier 1971
+            dans une nouvelle mise en scène de Jean Mercure, musique de Marc Wilkinson, scénographie
+            et costumes Yannis Kokkos. Elle a été ensuite donnée à partir du 12 juillet dans le
+            cadre du 25e Festival d'Avignon, et continuera sa carrière au Théâtre de la Ville à
+            partir du 5 novembre 1971 (avec quelques modifications de distribution).</note>
+        <castList>
+          <castItem>
+            <role>Andromaque</role>
+            <actor>FRANCINE BERGE </actor>
+          </castItem>
+          <castItem>
+            <role>Hélène</role>
+            <actor>ANNIE DUPEREY</actor>
+          </castItem>
+          <castItem>
+            <role>Hécube</role>
+            <actor>LOUISE CONTE</actor>
+          </castItem>
+          <castItem>
+            <role> Cassandre </role>
+            <actor>ANNE DOAT</actor>
+          </castItem>
+          <castItem>
+            <role>La Paix</role>
+            <actor>JANDELINE</actor>
+          </castItem>
+          <castItem>
+            <role>Iris </role>
+            <actor>ISA MERCURE</actor>
+          </castItem>
+          <castItem><role>La petite Polyxène</role><actor>CHRISTIANE SELLAM </actor> ou<actor> VANINA VINITZKY</actor>
+               </castItem>
+          <castItem>
+            <role>Hector</role>
+            <actor>JOSE-MARIA FLOTATS</actor>
+          </castItem>
+          <castItem>
+            <role>Ulysse</role>
+            <actor>MICHEL DE RE</actor>
+          </castItem>
+          <castItem>
+            <role>Demokos</role>
+            <actor>MAURICE CHEVIT</actor>
+          </castItem>
+          <castItem>
+            <role>Priam</role>
+            <actor>ANDRE VALTIER</actor>
+          </castItem>
+          <castItem>
+            <role>Pâris</role>
+            <actor>DOMINIQUE MAURIN</actor>
+          </castItem>
+          <castItem>
+            <role>Oiax</role>
+            <actor>MARCO-PERRIN</actor>
+          </castItem>
+          <castItem>
+            <role>Le Gabier</role>
+            <actor>LAFLEUR</actor>
+          </castItem>
+          <castItem>
+            <role>Le Géomètre</role>
+            <actor>BERNARD VERON</actor>
+          </castItem>
+          <castItem>
+            <role>Abnéos</role>
+            <actor>ANGELO BARDI</actor>
+          </castItem>
+          <castItem>
+            <role>Troïlus</role>
+            <actor>PHILIPPE NORMAND</actor>
+          </castItem>
+          <castItem>
+            <role>Olpidès</role>
+            <actor>COUSSONNEAU</actor>
+          </castItem>
+          <castItem>
+            <role>Busiris</role>
+            <actor>JEAN MERCURE</actor>
+          </castItem>
+          <castItem>
+            <role>Premier Vieillard</role>
+            <actor>JEAN-MARIE BON</actor>
+          </castItem>
+          <castItem>
+            <role>Deuxième Vieillard</role>
+            <actor>EUGENE BERTHIER</actor>
+          </castItem>
+          <castGroup>
+            <head>Messagers</head>
+            <castItem><actor>Jean-Claude Islert</actor>, <actor>Michel Sausin</actor>.</castItem>
+          </castGroup>
+          <castGroup>
+            <head>Servantes troyennes</head>
+            <castItem><actor>Dominique Jayr</actor>, <actor>Annie Seurat</actor>,<actor> Hélène
+                  Augier</actor></castItem>
+          </castGroup>
+          <castGroup>
+            <head>Gardes grecs</head>
+            <castItem><actor>Jacques Gaffuri</actor>, <actor>Georges Joannon</actor></castItem>
+          </castGroup>
+          <castItem>
+            <role>Suivant de Busiris</role>
+            <actor>Charles Capezzali</actor>
+          </castItem>
+          <castItem>
+            <role>Un marin</role>
+            <actor>Henry Courseaux</actor>
+          </castItem>
+        </castList>
+      </div>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#biblzh-tw_n32">
+      <castList>
+        <castGroup>
+          <head rend="braced">楊延輝</head>
+          <castItem>
+            <role>少年楊延輝</role>
+            <actor>李少春</actor>
+          </castItem>
+          <castItem>
+            <role>中年楊延輝</role>
+            <actor>周信芳</actor>
+          </castItem>
+          <castItem>
+            <role>中年楊延輝</role>
+            <actor>譚富英</actor>
+          </castItem>
+          <castItem>
+            <role>老年楊延輝</role>
+            <actor>馬連良</actor>
+          </castItem>
+        </castGroup>
+        <castItem>
+          <role>鐵鏡公主</role>
+          <roleDesc>遼國公主，嫁楊延輝為妻</roleDesc>
+          <actor>梅蘭芳</actor>
+        </castItem>
+        <castGroup>
+          <head rend="braced">楊家兄弟</head>
+          <castItem>
+            <role>楊延昭</role>
+            <actor>馬盛龍</actor>
+          </castItem>
+          <castItem>
+            <role>楊宗保</role>
+            <actor>姜妙香</actor>
+          </castItem>
+        </castGroup>
+        <castItem>
+          <role>蕭太后</role>
+          <roleDesc>遼景宗耶律賢的皇后</roleDesc>
+          <actor>芙蓉草</actor>
+        </castItem>
+        <castItem>
+          <role>四夫人</role>
+          <actor>高玉倩</actor>
+        </castItem>
+        <castItem>
+          <role>佘太君</role>
+          <roleDesc>楊延輝的母親</roleDesc>
+          <actor>馬富祿</actor>
+        </castItem>
+      </castList>
+      <stage type="mix">場景交換於遼國廷內與飛虎峽宋營之間。</stage>
+    </egXML>
+  </exemplum>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRCAST">7.1.4. </ref>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRFAB">7.1. </ref>
+  </listRef>
+</elementSpec><elementSpec module="drama" ident="castItem">
+  <gloss versionDate="2007-07-04" xml:lang="en">cast list item</gloss>
+  <gloss versionDate="2007-12-20" xml:lang="ko">배역 목록 항목</gloss>
+  <gloss versionDate="2007-05-02" xml:lang="zh-TW">角色項目</gloss>
+  <gloss versionDate="2008-04-06" xml:lang="es">elemento del reparto</gloss>
+  <gloss versionDate="2007-06-12" xml:lang="fr">personnage</gloss>
+  <gloss versionDate="2007-01-21" xml:lang="it">oggetto della lista dei personaggi</gloss>
+  <desc versionDate="2005-01-14" xml:lang="en">contains a single entry within a cast list, describing
+either a single role or a list of non-speaking roles.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">배역 목록에서 하나의 배역, 또는 대사가 없는 배역 목록을 기술하는 하나의 항목을 포함한다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含角色清單中的一個項目，描述單一角色或無台詞角色的列表。</desc>
+  <desc versionDate="2008-04-06" xml:lang="es">contiene una sola entrada dentro de la lista del reparto, describiendo un solo papel o una lista de papeles sin diálogo.</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">配役リスト中の各項目を示す．ひとつの役，または台詞のない役のリスト
+  になる．</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">dans une liste de personnages, entrée décrivant un
+      rôle en particulier ou une liste de rôles muets.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">contiene una singola voce all'interno della lista dei personaggi, descrive o un ruolo o una lista di ruoli privi di battute.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+  </classes>
+  <content>
+    <zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+      <choice>
+        <text/>
+        <ref name="model.gLike"/>
+        <ref name="model.castItemPart"/>
+        <ref name="model.phrase"/>
+        <ref name="model.global"/>
+      </choice>
+    </zeroOrMore>
+  </content>
+  <attList>
+    <attDef ident="type" usage="opt">
+      <desc versionDate="2005-01-14" xml:lang="en">characterizes the cast item.</desc>
+      <desc versionDate="2007-12-20" xml:lang="ko">배역 항목의 특성 기술</desc>
+      <desc versionDate="2007-05-02" xml:lang="zh-TW">說明角色項目的特性。</desc>
+      <desc versionDate="2008-04-06" xml:lang="es">caracteriza el elemento del reparto.</desc>
+      <desc versionDate="2008-04-05" xml:lang="ja">当該項目の種類を示す．</desc>
+      <desc versionDate="2007-06-12" xml:lang="fr">caractérise le personnage.</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">indica la voce della lista dei personaggi</desc>
+      <datatype>
+        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.enumerated"/>
+      </datatype>
+      <defaultVal>role</defaultVal>
+      <valList type="closed">
+        <valItem ident="role">
+          <desc versionDate="2007-06-27" xml:lang="en">the item describes a single role.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">항목이 하나의 배역을 기술한다.</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">該項目為單一角色</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">el elemeto describe un único papel.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">	  ひとつ役を示す．
+	</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">l'item décrit un simple rôle.</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">l'oggetto descrive un solo ruolo.</desc>
+        </valItem>
+        <valItem ident="list">
+          <desc versionDate="2007-06-27" xml:lang="en">the item describes a list of non-speaking roles.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">항목이 대사 없는 배역 목록을 기술한다.</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">該項目為無台詞角色的列表</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">el item describe una lista de papeles sin diálogo.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">	  科白がない役のリストを示す．
+	</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">l'item décrit une liste de rôles muets</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">l'oggetto descrive una lista di ruoli privi di battute.</desc>
+        </valItem>
+      </valList>
+    </attDef>
+  </attList>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <castItem>
+        <role>Player</role>
+        <actor>Mr Milward</actor>
+      </castItem>
+    </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Guerre-Troie">
+      <castItem>
+        <role>Un marin</role>
+        <actor>Henry Courseaux</actor>
+      </castItem>
+    </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <castItem type="list">Agent de police, dessinateur, serrurier, etc.</castItem>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <castItem>
+        <role>段小樓</role>
+        <actor>張豐毅</actor>
+      </castItem>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#biblzh-tw_n31">
+      <castItem type="list">張國榮、張豐毅、鞏俐…等等</castItem>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <castItem type="list">Constables, Drawer, Turnkey, etc.</castItem>
+    </egXML>
+  </exemplum>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRCAST">7.1.4. </ref>
+  </listRef>
+</elementSpec><elementSpec module="drama" ident="role">
+  <gloss versionDate="2007-06-12" xml:lang="fr">rôle</gloss>
+  <desc versionDate="2012-12-27" xml:lang="en">contains the name of a dramatic role, as given in a cast list.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">배역 목록에 제시되는 드라마 배역의 이름</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">角色名單所列的劇中角色名稱。</desc>
+  <desc versionDate="2008-04-06" xml:lang="es">el nombre de un papel dramático, según los dados en el
+    reparto.</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">配役リスト中にある，役名を示す．</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">le nom d'un rôle au théâtre tel qu’il est donné dans la
+    distribution.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">il nome di un ruolo teatrale, secondo la lista dei
+    personaggi.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="model.castItemPart"/>
+  </classes>
+  <content>
+    <ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/>
+  </content>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <role xml:id="jt">Joan Trash</role>
+      <roleDesc>A Ginger-bread-woman</roleDesc>
+    </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <role xml:id="fr_pr">Le professeur Rubeck</role>
+      <roleDesc>sculpteur</roleDesc>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#biblzh-tw_n36">
+      <role xml:id="zh-tw_王">鄧肯</role>
+      <roleDesc>蘇格蘭國王</roleDesc>
+    </egXML>
+  </exemplum>
+  <remarks versionDate="2005-01-14" xml:lang="en">
+    <p>It is important to assign a meaningful ID attribute to the <gi>role</gi> element, since this
+      ID is referred to by <att>who</att> attributes on many other elements.</p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2007-06-12">
+    <p>Il est important de renseigner de façon signifiante et univoque l'attribut <att>id</att> de
+      l'élément <gi>role</gi> : l'identifiant donné sera utilisé pour renseigner l'attribut
+      <att>who</att> de nombreux autres éléments, et faire ainsi référence à l'élément
+      <gi>role</gi>.</p>
+  </remarks>
+  <remarks xml:lang="ja" versionDate="2008-04-05">
+    <p> 要素<gi>role</gi>の属性IDに有意義な値を付与することが重要である． この属性IDの値は，他の要素にある属性<att>who</att>から参照される． </p>
+  </remarks>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRCAST">7.1.4. </ref>
+  </listRef>
+</elementSpec><elementSpec module="drama" ident="actor">
+  <desc versionDate="2012-12-27" xml:lang="en">contains the name of an actor appearing within a cast list.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">배역 목록에 나타나는 배우의 이름</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">角色名單中的演員姓名。</desc>
+  <desc versionDate="2008-04-06" xml:lang="es">Nombre de un actor que aparece dentro de la lista del reparto.</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">登場人物リスト中にある役者名を示す．</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">Nom d'un acteur apparaissant dans une
+    distribution.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">nome di un attore che appare nella lista dei personaggi.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="model.castItemPart"/>
+  </classes>
+  <content>
+    <ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/>
+  </content>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <castItem>
+        <role>Mathias</role>
+        <roleDesc>the Burgomaster</roleDesc>
+        <actor>Mr. Henry Irving</actor>
+      </castItem>
+    </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <castItem>
+        <role>Mrs Saunders</role>
+        <roleDesc>la logeuse</roleDesc>
+        <actor>Sylvia Maryott</actor>
+      </castItem>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#biblzh-tw_n29">
+      <castItem>
+        <role>梁山伯</role>
+        <roleDesc>窮書生</roleDesc>
+        <actor>凌波</actor>
+      </castItem>
+    </egXML>
+  </exemplum>
+  <remarks versionDate="2006-06-11" xml:lang="en">
+    <p>This element should be used only to mark the name of the actor as
+    given in the source. Chapter <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#ND">13. </ref> discusses ways of
+    marking the components of names, and also of associating names with
+    biographical information about a person. </p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2007-06-12">
+    <p>Cet élément ne devrait être utilisé que pour encoder le nom de l'acteur tel qu'il est donné
+                dans la source. Le chapitre <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#ND">13. </ref>
+                traite des différentes manières d'encoder les composants des noms, et aussi celui d'associer des
+                noms à des informations biographiques concernant une personne.</p>
+  </remarks>
+  <remarks xml:lang="ja" versionDate="2008-04-05">
+    <p>
+    当該要素は，元資料にある役者名を示すために使用されるべきである．
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#ND">13. </ref>では，名前の構成要素や，当該人物に関する情報に
+    関連する名前をタグ付けする方法が解説されている．
+ </p>
+  </remarks>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRCAST">7.1.4. </ref>
   </listRef>
 </elementSpec><macroSpec ident="data.BEND.AMOUNT" module="MEI" type="dt">
       <desc>Either a decimal value or a token. The decimal values are limited to .25, .5, .75, or 1,
@@ -22630,7 +23421,7 @@ specification.</p></remarks>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.global" ident="data.encoding-staff">
 			<content>
-				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>slm</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Salome Reiser</a:documentation><value>alx</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Alexander Erhard</a:documentation><value>sts</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Stefan Schenk</a:documentation><value>aap</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Andreas Pernpeintner</a:documentation><value>mmm</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Martina Mengele</a:documentation><value>flr</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Florence Eller</a:documentation><value>sbb</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Sebastian Bolz</a:documentation><value>wwb</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Walter Werbeck</a:documentation><value>clh</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Claudia Heine</a:documentation><value>afl</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Florian Amort</a:documentation><value>stk</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Steffi Kracht</a:documentation></choice>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>slm</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Salome Reiser</a:documentation><value>alx</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Alexander Erhard</a:documentation><value>sts</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Stefan Schenk</a:documentation><value>aap</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Andreas Pernpeintner</a:documentation><value>mmm</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Martina Mengele</a:documentation><value>flr</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Florence Eller</a:documentation><value>sbb</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Sebastian Bolz</a:documentation><value>wwb</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Walter Werbeck</a:documentation><value>clh</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Claudia Heine</a:documentation><value>afl</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Florian Amort</a:documentation><value>stk</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Steffi Kracht</a:documentation><value>oen</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Ursula Welsch</a:documentation><value>ofr</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Oliver Franeske</a:documentation></choice>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.global" ident="data.digit">
 			<content>
@@ -22961,7 +23752,7 @@ specification.</p></remarks>
 					<oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><element name="placeName">
 							<group><attribute name="role">
 									<rng:value xmlns="http://www.tei-c.org/ns/1.0">destination</rng:value>
-								</attribute><optional><attribute name="cert">
+								</attribute><optional><attribute name="key"/></optional><optional><attribute name="cert">
 										<ref name="data.certainty"/>
 									</attribute></optional><text/></group>
 						</element></oneOrMore>
@@ -22971,7 +23762,7 @@ specification.</p></remarks>
 			<content>
 				<rng:element name="listChange">
 					<group xmlns="http://relaxng.org/ns/structure/1.0"><element name="change">
-							<optional><attribute name="type"/></optional>
+							<rng:attribute xmlns="http://www.tei-c.org/ns/1.0" name="type"/>
 							<ref name="macro.form.summaryNote"/>
 							<ref name="macro.form.commentaryNote"/>
 							<ref name="macro.form.discussionNote"/>
@@ -23153,7 +23944,9 @@ specification.</p></remarks>
 					<datatype>
 						<ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.encoding-staff"/>
 					</datatype>
-				</attDef></attList></elementSpec><moduleSpec n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec n="CO" xml:id="DCO" ident="core"/><moduleSpec n="HD" xml:id="DHD" ident="header"/><moduleSpec n="ND" xml:id="DND" ident="namesdates"/><moduleSpec n="SA" xml:id="DSA" ident="linking"/><moduleSpec n="CE" xml:id="DCE" ident="certainty"/><moduleSpec n="FT" xml:id="DFTFF" ident="figures"/><moduleSpec n="DS" xml:id="DDS" ident="textstructure"/><moduleSpec n="PH" xml:id="DPH" ident="transcr"/><moduleSpec n="MS" xml:id="DMSD2" ident="msdescription"/><moduleSpec n="AI" xml:id="DAI" ident="analysis"/></schemaSpec>
+				</attDef></attList></elementSpec><moduleSpec n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec n="CO" xml:id="DCO" ident="core"/><moduleSpec n="HD" xml:id="DHD" ident="header"/><moduleSpec n="ND" xml:id="DND" ident="namesdates"/><moduleSpec n="SA" xml:id="DSA" ident="linking"/><moduleSpec n="CE" xml:id="DCE" ident="certainty"/><moduleSpec n="FT" xml:id="DFTFF" ident="figures"/><moduleSpec n="DS" xml:id="DDS" ident="textstructure"/><moduleSpec n="PH" xml:id="DPH" ident="transcr"/><moduleSpec n="MS" xml:id="DMSD2" ident="msdescription"/><moduleSpec n="AI" xml:id="DAI" ident="analysis"/><moduleSpec n="DR" xml:id="DDR" ident="drama"/></schemaSpec>
+				
+				
 				
 				
 				
@@ -23227,7 +24020,8 @@ specification.</p></remarks>
 				<div>
 					<head>Performance specific scope</head>
 					<desc>Adds elements uniquely used in the performance schema</desc>
-					<table><row/><row/></table>
+					<table><row><cell>
+		Module drama</cell><cell/></row><row/><row/></table>
 				</div>
 			</div>
 			<div>
@@ -23266,7 +24060,6 @@ specification.</p></remarks>
 		Element <gi>mei</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>persName</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>source</gi></cell><cell>change</cell></row><row><cell>
-		Macro <ident type="macro">data.ISODATE</ident></cell><cell>change</cell></row><row><cell>
 		Element <gi>date</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>altId</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>titleStmt</gi></cell><cell>change</cell></row><row><cell>

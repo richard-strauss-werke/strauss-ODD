@@ -39,6 +39,8 @@
       <name xml:id="clh">Claudia Heine</name>
       <name xml:id="afl">Florian Amort</name>
       <name xml:id="stk">Steffi Kracht</name>
+      <name xml:id="oen">Ursula Welsch</name>
+      <name xml:id="ofr">Oliver Franeske</name>
    </xsl:variable>
    <xsl:variable name="publicationStmt">
 				  <distributor>Forschungsstelle zur Edition der Werke von Richard Strauss</distributor>
@@ -101,8 +103,14 @@
    <xsl:template match="graphic">
       <xsl:call-template name="keepOnlyWithAtt"/>
    </xsl:template>
+   <xsl:template match="title">
+      <xsl:call-template name="keepOnlyWithAnyText"/>
+   </xsl:template>
    <xsl:template match="listBibl">
       <xsl:call-template name="keepOnlyWithAnyAttOrAnyText"/>
+   </xsl:template>
+   <xsl:template match="textLang">
+      <xsl:call-template name="keepOnlyWithAnyText"/>
    </xsl:template>
    <xsl:template match="idno">
       <xsl:call-template name="keepOnlyWithContent"/>
@@ -116,11 +124,17 @@
    <xsl:template match="placeName">
       <xsl:call-template name="onlyWithContentAddCert"/>
    </xsl:template>
+   <xsl:template match="seg">
+      <xsl:call-template name="removeIfTyped"/>
+   </xsl:template>
    <xsl:template match="respons">
       <xsl:call-template name="transformRespons"/>
    </xsl:template>
    <xsl:template match="text">
       <xsl:call-template name="replaceTextByGraphic"/>
+   </xsl:template>
+   <xsl:template match="div">
+      <xsl:call-template name="processDiv"/>
    </xsl:template>
    <xsl:template match="repository">
       <xsl:call-template name="transformOrRemoveRepository"/>
@@ -133,6 +147,9 @@
    </xsl:template>
    <xsl:template match="respStmt">
       <xsl:call-template name="expandRespStmt"/>
+   </xsl:template>
+   <xsl:template match="profileDesc">
+      <xsl:call-template name="keepOnlyWithAnyText"/>
    </xsl:template>
    <xsl:template match="publicationStmt">
       <xsl:call-template name="expandPublicationStmt"/>

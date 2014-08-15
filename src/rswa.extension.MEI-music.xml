@@ -8,35 +8,38 @@
 	<byline>modelSpec and classSpec adopted from Raffaele Viglianti's <ref
 		target="https://github.com/TEI-Music-SIG/tei-mei/blob/master/tei-lite_mei-cmn.xml"
 		>tei-lite_mei-cmn.xml</ref></byline>
-	<desc>Includes the TEI notatedMusic element and the MEI modules. Note: The moduleRefs below don't refer to the official mei-source.xml, but to a prefixed version, see <ref
+	<desc>Includes the TEI notatedMusic element and the MEI modules. Note: The moduleRefs below don't refer to the official /Users/Ahlse/Desktop/xml-dokumente/odd/strauss-ODD/src/mei-source.xml, but to a prefixed version, see <ref
 		target="https://github.com/TEI-Music-SIG/tei-mei/"
 		>https://github.com/TEI-Music-SIG/tei-mei/</ref></desc>
 	<specGrp xml:id="extension.MEI-music">
-
-		<!-- note: when odd2odd.xsl throws an error in the build process, it might be necessary to 1) replace the source attributes below by absolute paths, or 2) alternatively, copy mei-source.xml to odd2odd.xsl's folder (for example, file:/C:/Program%20Files/Oxygen%20XML%20Editor%2015/frameworks/tei/xml/tei/stylesheet/odds; don't delete the copy in your odd folder). -->
-
+		
+		<!-- note: when odd2odd.xsl throws an error in the build process, it might be necessary to 1) replace the source attributes below by absolute paths, or 2) alternatively, copy /Users/Ahlse/Desktop/xml-dokumente/odd/strauss-ODD/src/mei-source.xml to odd2odd.xsl's folder (for example, file:/C:/Program%20Files/Oxygen%20XML%20Editor%2015/frameworks/tei/xml/tei/stylesheet/odds; don't delete the copy in your odd folder). -->
+		
 		<!-- figures modules -->
 		<elementRef key="notatedMusic"/>
-
-		<moduleRef key="MEI" source="mei-source.xml"/>
-		<moduleRef key="MEI.shared" source="mei-source.xml"/>
-		<!--                    <moduleRef key="MEI.header" source="mei-source.xml"/>-->
-		<moduleRef key="MEI.cmn" source="mei-source.xml"/>
-		<!--                    <moduleRef key="MEI.analysis" source="mei-source.xml"/>-->
-		<moduleRef key="MEI.cmnOrnaments" source="mei-source.xml"/>
-		<!--                    <moduleRef key="MEI.corpus" source="mei-source.xml"/>-->
-		<moduleRef key="MEI.critapp" source="mei-source.xml"/>
-		<moduleRef key="MEI.edittrans" source="mei-source.xml"/>
-		<!--                    <moduleRef key="MEI.facsimile" source="mei-source.xml"/>-->
-		<!--                    <moduleRef key="MEI.figtable" source="mei-source.xml"/>-->
-		<!--                    <moduleRef key="MEI.frbr" source="mei-source.xml"/>-->
-		<!--                    <moduleRef key="MEI.linkalign" source="mei-source.xml"/>-->
-		<moduleRef key="MEI.lyrics" source="mei-source.xml"/>
-		<!--                    <moduleRef key="MEI.namesdates" source="mei-source.xml"/>-->
-		<!--                    <moduleRef key="MEI.ptrref" source="mei-source.xml"/>-->
-		<!--                    <moduleRef key="MEI.text" source="mei-source.xml"/>-->
-		<moduleRef key="MEI.usersymbols" source="mei-source.xml"/>
-
+		
+		<moduleRef url="/eXist-db/webapp/ahlsen/strauss-ODD/strauss-ODD/src/mei2vexflow-modified.rng" prefix="mei_"/>
+		
+		
+		<!--		<moduleRef key="MEI" source="/Users/Ahlse/Desktop/xml-dokumente/odd/strauss-ODD/src/mei-source.xml"/>
+		<moduleRef key="MEI.shared" source="/Users/Ahlse/Desktop/xml-dokumente/odd/strauss-ODD/src/mei-source.xml"/>
+		<!-\-                    <moduleRef key="MEI.header" source="/Users/Ahlse/Desktop/xml-dokumente/odd/strauss-ODD/src/mei-source.xml"/>-\->
+		<moduleRef key="MEI.cmn" source="/Users/Ahlse/Desktop/xml-dokumente/odd/strauss-ODD/src/mei-source.xml"/>
+		<!-\-                    <moduleRef key="MEI.analysis" source="/Users/Ahlse/Desktop/xml-dokumente/odd/strauss-ODD/src/mei-source.xml"/>-\->
+		<moduleRef key="MEI.cmnOrnaments" source="/Users/Ahlse/Desktop/xml-dokumente/odd/strauss-ODD/src/mei-source.xml"/>
+		<!-\-                    <moduleRef key="MEI.corpus" source="/Users/Ahlse/Desktop/xml-dokumente/odd/strauss-ODD/src/mei-source.xml"/>-\->
+		<moduleRef key="MEI.critapp" source="/Users/Ahlse/Desktop/xml-dokumente/odd/strauss-ODD/src/mei-source.xml"/>
+		<moduleRef key="MEI.edittrans" source="/Users/Ahlse/Desktop/xml-dokumente/odd/strauss-ODD/src/mei-source.xml"/>
+		<!-\-                    <moduleRef key="MEI.facsimile" source="/Users/Ahlse/Desktop/xml-dokumente/odd/strauss-ODD/src/mei-source.xml"/>-\->
+		<!-\-                    <moduleRef key="MEI.figtable" source="/Users/Ahlse/Desktop/xml-dokumente/odd/strauss-ODD/src/mei-source.xml"/>-\->
+		<!-\-                    <moduleRef key="MEI.frbr" source="/Users/Ahlse/Desktop/xml-dokumente/odd/strauss-ODD/src/mei-source.xml"/>-\->
+		<!-\-                    <moduleRef key="MEI.linkalign" source="/Users/Ahlse/Desktop/xml-dokumente/odd/strauss-ODD/src/mei-source.xml"/>-\->
+		<moduleRef key="MEI.lyrics" source="/Users/Ahlse/Desktop/xml-dokumente/odd/strauss-ODD/src/mei-source.xml"/>
+		<!-\-                    <moduleRef key="MEI.namesdates" source="/Users/Ahlse/Desktop/xml-dokumente/odd/strauss-ODD/src/mei-source.xml"/>-\->
+		<!-\-                    <moduleRef key="MEI.ptrref" source="/Users/Ahlse/Desktop/xml-dokumente/odd/strauss-ODD/src/mei-source.xml"/>-\->
+		<!-\-                    <moduleRef key="MEI.text" source="/Users/Ahlse/Desktop/xml-dokumente/odd/strauss-ODD/src/mei-source.xml"/>-\->
+		<moduleRef key="MEI.usersymbols" source="/Users/Ahlse/Desktop/xml-dokumente/odd/strauss-ODD/src/mei-source.xml"/>-->
+		
 		<elementSpec xmlns="http://www.tei-c.org/ns/1.0" module="figures" ident="notatedMusic"
 			mode="change">
 			<equiv/>
@@ -59,10 +62,10 @@
 				</zeroOrMore>
 				<rng:optional>
 					<rng:choice>
-						<rng:ref name="mei"/>
-						<rng:ref name="music"/>
-						<rng:ref name="mdiv"/>
-						<rng:ref name="layer"/>
+						<rng:ref name="mei_mei"/>
+						<rng:ref name="mei_music"/>
+						<rng:ref name="mei_mdiv"/>
+						<rng:ref name="mei_layer"/>
 					</rng:choice>
 				</rng:optional>
 			</content>
@@ -81,13 +84,14 @@
                                 elements from MEI are allowed to occur within the element to
                                 encode the music notation.</p>
 			</remarks>
-
+			
 		</elementSpec>
-
+		
+		
 		<!-- Changes to MEI components -->
-
+		
 		<!-- Make @source mandatory when applicable. -->
-		<classSpec type="atts" module="MEI.shared" ident="mei_att.staffident" mode="replace">
+		<!--<classSpec type="atts" module="MEI.shared" ident="mei_att.staffident" mode="replace">
 			<desc versionDate="2014-02-04" xml:lang="en"
 				>signifies the staff on which a notated event occurs or to
 						which a control event applies.</desc>
@@ -101,6 +105,6 @@
 			<remarks versionDate="2014-02-04" xml:lang="en">
 				<p>The attribute is made mandatory when applicable instead of always mandatory to allow MEI fragments.</p>
 			</remarks>
-		</classSpec>
+		</classSpec>-->
 	</specGrp>
 </div>
