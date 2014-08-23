@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?> <?oxygen RNGSchema="p5odds.rnc"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
+	xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+	xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron"
+	xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title/>
+			</titleStmt>
+			<publicationStmt>
+				<p/>
+			</publicationStmt>
+			<sourceDesc>
+				<p/>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+	<text>
+		<body>
+			<schemaSpec ident="schema.events" xml:lang="en" start="TEI" prefix="rswa_">
+				<desc>Events related to Strauss</desc>
+				<moduleRef key="tei"/>
+				<moduleRef key="core"
+					include="abbr add author bibl choice cit corr date del desc expan gap graphic head hi item l lb lg list listBibl milestone name note p pb q quote ref resp respStmt rs sic sp speaker stage textLang time title unclear"/>
+				<moduleRef key="header" include="availability change creation fileDesc idno profileDesc publicationStmt sourceDesc teiHeader titleStmt"/>
+				<moduleRef key="namesdates" include="orgName persName placeName"/>
+				<moduleRef key="linking" include="ab anchor seg"/>
+				<moduleRef key="certainty" include="respons"/>
+				<moduleRef key="figures" include="cell figDesc figure row table"/>
+				<moduleRef key="textstructure" include="TEI body div text"/>
+				
+				<specGrpRef target="#edits.classes.att"/>
+				<specGrpRef target="#edits.datatypes"/>
+				<specGrpRef target="#edits.elements"/>
+				<specGrpRef target="#edits.macros"/>
+				
+				<specGrpRef target="#edits.elements.events"/>
+			</schemaSpec>
+			
+			<div>
+				<head>Edits</head>
+				<xi:include href="edits/classes.att.xml"/>
+				<xi:include href="edits/datatypes.xml"/>
+				<xi:include href="edits/elements.xml"/>
+				<xi:include href="edits/macros.xml"/>
+			</div>
+			
+			<div>
+				<head>Events</head>
+				<desc>Contains specifications for documents describing an event</desc>
+				<specGrp xml:id="edits.elements.events">
+					
+					<elementSpec ident="text" module="textstructure" mode="change">
+						<classes mode="change">
+							<memberOf key="att.typed" mode="delete"/>
+						</classes>
+						<content>
+							<rng:ref name="body"/>
+						</content>
+					</elementSpec>
+					
+					<elementSpec ident="titleStmt" module="header" mode="change">
+						<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandTitleStmtEvent"/>
+					</elementSpec>
+					
+					<elementSpec ident="publicationStmt" mode="replace" module="header">
+						<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandPublicationStmt"/>
+						<content>
+							<rng:ref name="macro.form.publicationStmt_event"/>
+						</content>
+					</elementSpec>
+					<elementSpec ident="sourceDesc" module="header" mode="replace">
+						<content>
+							<rng:ref name="macro.form.sourceDesc_event"/>
+						</content>
+					</elementSpec>
+					<elementSpec ident="creation" module="header" mode="replace">
+						<content>
+							<rng:ref name="macro.form.creation_event"/>
+						</content>
+					</elementSpec>
+				</specGrp>
+			</div>
+			
+
+		</body>
+	</text>
+</TEI>

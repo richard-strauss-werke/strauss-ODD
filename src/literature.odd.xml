@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?> <?oxygen RNGSchema="p5odds.rnc"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
+	xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+	xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron"
+	xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title/>
+			</titleStmt>
+			<publicationStmt>
+				<p/>
+			</publicationStmt>
+			<sourceDesc>
+				<p/>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+	<text>
+		<body>
+			<schemaSpec ident="schema.literature" xml:lang="en" start="TEI" prefix="rswa_">
+				<desc>Transcriptions of printed sources: Articles, reviews, books, etc.</desc>
+				<moduleRef key="tei"/>
+				<moduleRef key="core"
+					include="abbr add addrLine address analytic author bibl biblScope biblStruct choice cit corr date del desc editor expan gap graphic head hi imprint item l lb lg list listBibl milestone monogr name note p pb ptr pubPlace publisher q quote ref relatedItem resp respStmt rs series sic sp speaker stage term textLang time title unclear"/>
+				<moduleRef key="header" include="availability change creation edition editionStmt editorialDecl encodingDesc fileDesc idno notesStmt profileDesc publicationStmt revisionDesc sourceDesc teiHeader textClass titleStmt"/>
+				<moduleRef key="namesdates" include="orgName persName placeName"/>
+				<moduleRef key="linking" include="ab anchor seg"/>
+				<moduleRef key="certainty" include="respons"/>
+				<moduleRef key="figures" include="cell figDesc figure row table"/>
+				<moduleRef key="textstructure" include="TEI body byline closer dateline div epigraph opener postscript salute signed text"/>
+				<moduleRef key="transcr" include="space supplied surplus"/>
+				<moduleRef key="msdescription"
+					include="additional collection msDesc msIdentifier notesStmt repository"/>
+				<moduleRef key="analysis" include="pc"/>
+				
+				<specGrpRef target="#extension.mei"/>
+				<specGrpRef target="#extension.tasks"/>
+				
+				<specGrpRef target="#edits.classes.att"/>
+				<specGrpRef target="#edits.datatypes"/>
+				<specGrpRef target="#edits.elements"/>
+				<specGrpRef target="#edits.macros"/>
+				
+				<specGrpRef target="#edits.elements.print"/>
+			</schemaSpec>
+			
+			<div>
+				<head>TEI Extensions</head>
+				<xi:include href="extension/tasks.xml"/>
+				<xi:include href="extension/mei.xml"/>
+			</div>
+			<div>
+				<head>Edits</head>
+				<xi:include href="edits/classes.att.xml"/>
+				<xi:include href="edits/datatypes.xml"/>
+				<xi:include href="edits/elements.xml"/>
+				<xi:include href="edits/macros.xml"/>
+			</div>
+			
+			<div>
+				<head>Printed sources</head>
+				<desc>Contains specifications for transcriptions of printed sources</desc>
+				<specGrp xml:id="edits.elements.print">
+					
+					<elementSpec ident="text" module="textstructure" mode="change">
+						<classes mode="change">
+							<memberOf key="att.typed" mode="delete"/>
+						</classes>
+						<content>
+							<rng:ref name="body"/>
+						</content>
+					</elementSpec>
+					
+					<elementSpec ident="titleStmt" module="header" mode="change">
+						<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandTitleStmtPrint"/>
+					</elementSpec>
+					
+					<elementSpec ident="publicationStmt" mode="replace" module="header">
+						<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandPublicationStmt"/>
+						<content>
+							<rng:ref name="macro.form.publicationStmt_print"/>
+						</content>
+					</elementSpec>
+					<elementSpec ident="sourceDesc" module="header" mode="replace">
+						<content>
+							<rng:ref name="macro.form.sourceDesc_print"/>
+						</content>
+					</elementSpec>
+					<elementSpec ident="creation" module="header" mode="delete"/>
+					<elementSpec ident="term" module="core" mode="change">
+						<equiv filter="rswa.xsl" mimeType="text/xsl" name="addTermRef"/>
+						<content>
+							<rng:optional>
+								<rng:ref name="data.keyword_print"/>
+							</rng:optional>
+						</content>
+					</elementSpec>
+				</specGrp>
+			</div>
+
+		</body>
+	</text>
+</TEI>

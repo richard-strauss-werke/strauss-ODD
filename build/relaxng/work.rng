@@ -3,12 +3,12 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.music-encoding.org/ns/mei"><!--
-Schema generated from ODD source 2014-08-15T06:37:34Z. 
+Schema generated from ODD source 2014-08-23T15:22:26Z. 
 Edition: Version 2.6.0. Last updated on
 	20th January 2014, revision 12802
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
-  
---><!--This work is licensed under a Creative Commons Attribution 3.0 Unported License.-->
+ Works of art. Based on Peter Stadler's WeGA ODD. 
+--><!---->
    <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron"
            prefix="tei"
            uri="http://www.tei-c.org/ns/1.0"/>
@@ -192,12 +192,6 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <value>dotted</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">dotted</a:documentation>
       </choice>
-   </define>
-   <define name="mei_data.DEGREES">
-      <data type="decimal">
-         <param name="maxInclusive">360.0</param>
-         <param name="minInclusive">-360.0</param>
-      </data>
    </define>
    <define name="mei_data.DURATION">
       <choice>
@@ -423,88 +417,6 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
    <define name="mei_data.TEMPOVALUE">
       <data type="positiveInteger"/>
    </define>
-   <define name="mei_data.TEXTRENDITION">
-      <list>
-         <oneOrMore>
-            <choice>
-               <value>xx-small</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">relative font size</a:documentation>
-               <value>x-small</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">relative font size</a:documentation>
-               <value>small</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">relative font size</a:documentation>
-               <value>medium</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">relative font size</a:documentation>
-               <value>large</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">relative font size</a:documentation>
-               <value>x-large</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">relative font size</a:documentation>
-               <value>xx-large</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">relative font size</a:documentation>
-               <value>smaller</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">relative font size</a:documentation>
-               <value>larger</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">relative font size</a:documentation>
-               <value>italic</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">italicized (slanted to right)</a:documentation>
-               <value>oblique</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">oblique (slanted to left)</a:documentation>
-               <value>smcaps</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">small capitals</a:documentation>
-               <value>bold</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">relative font weight</a:documentation>
-               <value>bolder</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">relative font weight</a:documentation>
-               <value>lighter</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">relative font weight</a:documentation>
-               <value>box</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">enclosed in box</a:documentation>
-               <value>circle</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">enclosed in ellipse/circle</a:documentation>
-               <value>dbox</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">enclosed in diamond</a:documentation>
-               <value>tbox</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">enclosed in triangle</a:documentation>
-               <value>bslash</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">struck through by '\' (back slash)</a:documentation>
-               <value>fslash</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">struck through by '/' (forward slash)</a:documentation>
-               <value>line-through</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">struck through by '-'; may be qualified to indicate multiple lines,
-                e.g. line-through(2)</a:documentation>
-               <value>none</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">not rendered, invisible</a:documentation>
-               <value>overline</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">line above the text; may be qualified to indicate multiple lines,
-                e.g. overline(3)</a:documentation>
-               <value>strike</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">struck through by '-'; equivalent to line-through; may be qualified
-                to indicate multiple lines, e.g. strike(3)</a:documentation>
-               <value>sub</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">subscript</a:documentation>
-               <value>sup</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">superscript</a:documentation>
-               <value>underline</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">underlined; may be qualified to indicate multiple lines, e.g.
-                underline(2)</a:documentation>
-               <value>ltr</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">left-to-right (BIDI embed)</a:documentation>
-               <value>rtl</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">right-to-left (BIDI embed)</a:documentation>
-               <value>lro</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">eft-to-right (BIDI override)</a:documentation>
-               <value>rlo</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">right-to-left (BIDI override)</a:documentation>
-               <data type="string">
-                  <param name="pattern">(underline|overline|line-through|strike|letter-spacing|line-height)\(\d+\)</param>
-               </data>
-               <data type="string">
-                  <param name="pattern">(letter-spacing|line-height)\((\+|-)?\d+(\.\d+)?\)</param>
-               </data>
-            </choice>
-         </oneOrMore>
-      </list>
-   </define>
    <define name="mei_data.TSTAMPOFFSET">
       <data type="decimal"/>
    </define>
@@ -517,6 +429,33 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
             <ref name="mei_data.URI"/>
          </zeroOrMore>
       </list>
+   </define>
+   <define name="mei_macro.musicPart">
+      <optional>
+         <choice>
+            <ref name="mei_body"/>
+            <ref name="mei_group"/>
+         </choice>
+      </optional>
+   </define>
+   <define name="mei_macro.availabilityPart">
+      <optional>
+         <ref name="mei_useRestrict"/>
+      </optional>
+   </define>
+   <define name="mei_macro.bibldescPart">
+      <optional>
+         <ref name="mei_pubStmt"/>
+      </optional>
+      <optional>
+         <ref name="mei_physDesc"/>
+      </optional>
+      <zeroOrMore>
+         <ref name="mei_physLoc"/>
+      </zeroOrMore>
+      <optional>
+         <ref name="mei_seriesStmt"/>
+      </optional>
    </define>
    <define name="mei_data.DURATION.cmn">
       <choice>
@@ -581,7 +520,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
             </zeroOrMore>
          </choice>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="componentGrp-constraint-checkComponentGrp">
+                  id="schema.work-componentGrp-checkComponentGrp-constraint-1">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -603,6 +542,9 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <zeroOrMore>
             <ref name="mei_model.identifierLike"/>
          </zeroOrMore>
+         <optional>
+            <ref name="mei_macro.availabilityPart"/>
+         </optional>
          <optional>
             <ref name="mei_physDesc"/>
          </optional>
@@ -677,7 +619,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="dots-constraint-dots_attribute_requires_dur">
+            id="schema.work-att.augmentdots-dots-dots_attribute_requires_dur-constraint-2">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -1070,7 +1012,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="dur-constraint-ignore_dots_attribute">
+            id="schema.work-att.duration.additive-dur-ignore_dots_attribute-constraint-3">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -1178,26 +1120,6 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <attribute name="hand">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">signifies the hand responsible for an action. The value must be the ID of a &lt;hand&gt; element declared in the header.</a:documentation>
             <ref name="mei_data.URI"/>
-         </attribute>
-      </optional>
-   </define>
-   <define name="mei_att.horizontalalign.attributes">
-      <ref name="mei_att.horizontalalign.attribute.halign"/>
-   </define>
-   <define name="mei_att.horizontalalign.attribute.halign">
-      <optional>
-         <attribute name="halign">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">records horizontal alignment.</a:documentation>
-            <choice>
-               <value>left</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">left aligned.</a:documentation>
-               <value>right</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">right aligned.</a:documentation>
-               <value>center</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">centered.</a:documentation>
-               <value>justify</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">left and right aligned.</a:documentation>
-            </choice>
          </attribute>
       </optional>
    </define>
@@ -2522,7 +2444,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="subtype-constraint-When_subtype">
+            id="schema.work-att.typed-subtype-When_subtype-constraint-4">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -2692,22 +2614,6 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <attribute name="endvo">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">records a vertical adjustment of a feature's programmatically-determined end point.</a:documentation>
             <ref name="mei_data.MEASUREMENT"/>
-         </attribute>
-      </optional>
-   </define>
-   <define name="mei_att.whitespace.attributes">
-      <ref name="mei_att.whitespace.attribute.xmlspace"/>
-   </define>
-   <define name="mei_att.whitespace.attribute.xmlspace">
-      <optional>
-         <attribute name="xml:space">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">allows one to signal to an application whether an element's white space is "significant". The behavior of xml:space cascades to all descendant elements, but it can be turned off locally by setting the xml:space attribute to the value "default".</a:documentation>
-            <choice>
-               <value>default</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">allows the application to handle white space as necessary. Not including an xml:space attribute produces the same result as using the default value.</a:documentation>
-               <value>preserve</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">instructs the application to maintain white space "as-is", suggesting that it might have meaning.</a:documentation>
-            </choice>
          </attribute>
       </optional>
    </define>
@@ -3430,6 +3336,17 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <empty/>
       </element>
    </define>
+   <define name="mei_body">
+      <element name="body">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Contains the whole of a single musical text, excluding any front or back matter. </a:documentation>
+         <oneOrMore>
+            <ref name="mei_model.mdivLike"/>
+         </oneOrMore>
+         <ref name="mei_att.common.attributes"/>
+         <ref name="mei_att.declaring.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <define name="mei_creation">
       <element name="creation">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Non-bibliographic details of the creation of an intellectual entity, in narrative form, such as the date, place, and circumstances of its composition. </a:documentation>
@@ -3447,25 +3364,58 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
       </element>
    </define>
    <define name="mei_date">
-      <element name="date">
+      <element name="date" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">A string identifying a point in time or the time period between two such points.</a:documentation>
          <zeroOrMore>
             <choice>
                <text/>
                <ref name="mei_model.textphraseLike"/>
             </choice>
-         </zeroOrMore>
-         <ref name="mei_att.bibl.attributes"/>
+         </zeroOrMore>  
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="schema.work-date-dateHeuristics1-constraint-1">
+            <rule context="mei:date">
+               <sch:report xmlns="http://www.tei-c.org/ns/1.0"
+                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                           xmlns:s="http://www.ascc.net/xml/schematron"
+                           xmlns:xi="http://www.w3.org/2001/XInclude"
+                           test="(@notbefore gt @notafter) and not(starts-with(@notbefore, '-'))">value of notBefore greater than notAfter</sch:report>
+            </rule>
+         </pattern>  
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="schema.work-date-dateHeuristics3-constraint-2">
+            <rule context="mei:date">
+               <sch:report xmlns="http://www.tei-c.org/ns/1.0"
+                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                           xmlns:s="http://www.ascc.net/xml/schematron"
+                           xmlns:xi="http://www.w3.org/2001/XInclude"
+                           test="(@startdate or @enddate) and (@isodate or @notafter or @notbefore)">cooccurence of date and duration attributes</sch:report>
+            </rule>
+         </pattern>  
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="schema.work-date-dateHeuristics4-constraint-3">
+            <rule context="mei:date">
+               <sch:report xmlns="http://www.tei-c.org/ns/1.0"
+                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                           xmlns:s="http://www.ascc.net/xml/schematron"
+                           xmlns:xi="http://www.w3.org/2001/XInclude"
+                           test="@isodate and (@notafter or @notbefore)">cooccurence of exact and uncertain date attributes</sch:report>
+            </rule>
+         </pattern>
          <ref name="mei_att.calendared.attributes"/>
-         <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.datable.attributes"/>
          <ref name="mei_att.edit.attributes"/>
-         <ref name="mei_att.lang.attributes"/>
          <empty/>
       </element>
    </define>
    <define name="mei_extent">
-      <element name="extent">
+      <element name="extent" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Used to express size in terms other than physical dimensions, such as number of pages, number of records in file, number of bytes, performance duration for music, audio recordings and visual projections, etc. </a:documentation>
          <zeroOrMore>
             <choice>
@@ -3474,7 +3424,6 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
             </choice>
          </zeroOrMore>
          <ref name="mei_att.common.attributes"/>
-         <ref name="mei_att.bibl.attributes"/>
          <ref name="mei_att.measurement.attributes"/>
          <empty/>
       </element>
@@ -3572,15 +3521,15 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
       </element>
    </define>
    <define name="mei_mei">
-      <element name="mei">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Contains a single MEI-conformant document, consisting of an MEI header and a musical text, either in isolation or as part of an meiCorpus element. </a:documentation>
+      <element name="mei" ns="http://www.music-encoding.org/ns/mei">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">enthält ein einzelenes MEI-konformes Dokument, dass aus einem MEI header und muskialischem Text, entweder alleinstehend oder als Teil eines meiCorpus Elements, besteht.</a:documentation>
          <ref name="mei_meiHead"/>
          <ref name="mei_music"/>
          <ns xmlns="http://purl.oclc.org/dsdl/schematron"
              prefix="mei"
              uri="http://www.music-encoding.org/ns/mei"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="mei-constraint-Check_staff">
+                  id="schema.work-mei-Check_staff-constraint-5">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -3593,7 +3542,9 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
             </sch:rule>
          </pattern>
          <ref name="mei_att.meiversion.attributes"/>
-         <ref name="mei_att.id.attributes"/>
+         <attribute name="xml:id">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         </attribute>
          <empty/>
       </element>
    </define>
@@ -3603,6 +3554,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <zeroOrMore>
             <ref name="mei_model.resourceLike"/>
          </zeroOrMore>
+         <ref name="mei_macro.musicPart"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.declaring.attributes"/>
          <ref name="mei_att.meiversion.attributes"/>
@@ -3668,7 +3620,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
       </element>
    </define>
    <define name="mei_rend">
-      <element name="rend">
+      <element name="rend" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(render) – A formatting element indicating special visual rendering, e.g., bold or italicized, of a text word or phrase. </a:documentation>
          <zeroOrMore>
             <choice>
@@ -3678,45 +3630,6 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
                <ref name="mei_model.transcriptionLike"/>
             </choice>
          </zeroOrMore>
-         <ref name="mei_att.color.attributes"/>
-         <ref name="mei_att.common.attributes"/>
-         <ref name="mei_att.horizontalalign.attributes"/>
-         <ref name="mei_att.lang.attributes"/>
-         <ref name="mei_att.typography.attributes"/>
-         <ref name="mei_att.whitespace.attributes"/>
-         <optional>
-            <attribute name="altrend">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">used to extend the values of the rend attribute.</a:documentation>
-               <text/>
-            </attribute>
-         </optional>
-         <optional>
-            <attribute name="rend">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">captures the appearance of the element's contents using MEI-defined descriptors.</a:documentation>
-               <ref name="mei_data.TEXTRENDITION"/>
-            </attribute>
-         </optional>
-         <optional>
-            <attribute name="rotation">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">A positive value for rotation rotates the text in a counter-clockwise fashion, while negative values produce clockwise rotation.</a:documentation>
-               <ref name="mei_data.DEGREES"/>
-            </attribute>
-         </optional>
-         <optional>
-            <attribute name="valign">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the vertical position of the element content relative to the surrounding text.</a:documentation>
-               <choice>
-                  <value>top</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">aligns the top of the content with the top of the surrounding text.</a:documentation>
-                  <value>middle</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">aligns the middle of the content with the middle of the surrounding text.</a:documentation>
-                  <value>bottom</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">aligns the bottom of the content with the bottom of the surrounding text.</a:documentation>
-                  <value>baseline</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">aligns the baseline of the content with the baseline of the surrounding text.</a:documentation>
-               </choice>
-            </attribute>
-         </optional>
          <empty/>
       </element>
    </define>
@@ -3806,7 +3719,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="section-constraint-Check_sectionexpansion">
+                  id="schema.work-section-Check_sectionexpansion-constraint-6">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -3843,7 +3756,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="staffDef-constraint-Check_staffDefn">
+                  id="schema.work-staffDef-Check_staffDefn-constraint-7">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -3860,7 +3773,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
             </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="staffDef-constraint-Check_ancestor_staff">
+                  id="schema.work-staffDef-Check_ancestor_staff-constraint-8">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -3874,7 +3787,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
             </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="staffDef-constraint-Check_clef_position_staffDef">
+                  id="schema.work-staffDef-Check_clef_position_staffDef-constraint-9">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -3887,7 +3800,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
             </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="staffDef-constraint-Check_clef_position_staffDef_nolines">
+                  id="schema.work-staffDef-Check_clef_position_staffDef_nolines-constraint-10">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -3903,7 +3816,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
             </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="staffDef-constraint-Check_tab_strings">
+                  id="schema.work-staffDef-Check_tab_strings-constraint-11">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -3918,7 +3831,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
             </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="staffDef-constraint-Check_tab_strings">
+                  id="schema.work-staffDef-Check_tab_strings-constraint-12">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -4006,7 +3919,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
             </choice>
          </oneOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="staffGrp-constraint-Check_staffGrp_unique_staff_n_values">
+                  id="schema.work-staffGrp-Check_staffGrp_unique_staff_n_values-constraint-17">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -4031,22 +3944,32 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
       </element>
    </define>
    <define name="mei_title">
-      <element name="title">
+      <element name="title" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Title of a bibliographic entity. </a:documentation>
-         <zeroOrMore>
+         <oneOrMore>
             <choice>
                <text/>
-               <ref name="mei_model.textphraseLike"/>
-               <ref name="mei_model.editLike"/>
-               <ref name="mei_model.transcriptionLike"/>
+               <ref name="mei_lb"/>
+               <ref name="mei_persName"/>
             </choice>
-         </zeroOrMore>
-         <ref name="mei_att.common.attributes"/>
-         <ref name="mei_att.authorized.attributes"/>
-         <ref name="mei_att.canonical.attributes"/>
-         <ref name="mei_att.bibl.attributes"/>
+         </oneOrMore>
+         <ref name="mei_att.common.attribute.n"/>
+         <ref name="mei_att.id.attribute.xmlid"/>
          <ref name="mei_att.lang.attributes"/>
-         <ref name="mei_att.typed.attributes"/>
+         <ref name="mei_att.typed.attribute.subtype"/>
+         <optional>
+            <attribute name="type">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.</a:documentation>
+               <choice>
+                  <value>sub</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Markiert einen Untertitel.</a:documentation>
+                  <value>alt</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(alternativ) Markiert einen alternativen Titel, meist in Übersetzung (siehe xml:lang).</a:documentation>
+                  <value>div</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Nummer) Markiert einen Titel einer musikalischen Nummer (z.B. Szene, Arie).</a:documentation>
+               </choice>
+            </attribute>
+         </optional>
          <optional>
             <attribute name="level">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the bibliographic level for a title.</a:documentation>
@@ -4134,24 +4057,37 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
       </choice>
    </define>
    <define name="mei_altId">
-      <element name="altId">
+      <element name="altId" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(alternative identifier) – May contain a bibliographic identifier that does not fit within the meiHead element's id attribute, for example because the id does not fit the definition of an XML id or because multiple identifiers are needed. </a:documentation>
-         <zeroOrMore>
+         <text/>
+         <ref name="mei_att.common.attribute.label"/>
+         <ref name="mei_att.common.attribute.n"/>
+         <ref name="mei_att.id.attribute.xmlid"/>
+         <ref name="mei_att.typed.attribute.subtype"/>
+         <attribute name="type">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.
+Empfohlene Werte sind: 1] gnd(Gemeinsame Normdatei) ; 2] JV(Jähns-Verzeichnis) ; 3] KS(Kaiser-Schriften) ; 4] opus; 5] WeV(Weber Werkverzeichnis) </a:documentation>
             <choice>
-               <text/>
-               <ref name="mei_model.lbLike"/>
-               <ref name="mei_model.rendLike"/>
+               <value>gnd</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Gemeinsame Normdatei) Markiert Angaben (ID sowie Einheitssachtitel) nach der Gemeinsamen Normdatei.</a:documentation>
+               <value>JV</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Jähns-Verzeichnis) Markiert eine Verzeichnisnummer nach Jähns.</a:documentation>
+               <value>KS</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Kaiser-Schriften) Markiert eine Verzeichnisnummer nach Kaiser.</a:documentation>
+               <value>opus</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Markiert eine Opuszahl.</a:documentation>
+               <value>WeV</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Weber Werkverzeichnis) Markiert eine Verzeichnisnummer des WeV.</a:documentation>
+               <data type="NMTOKEN"/>
             </choice>
-         </zeroOrMore>
-         <ref name="mei_att.bibl.attributes"/>
-         <ref name="mei_att.common.attributes"/>
-         <ref name="mei_att.typed.attributes"/>
+         </attribute>
          <empty/>
       </element>
    </define>
    <define name="mei_availability">
       <element name="availability">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Groups elements that describe the availability of and access to a bibliographic item, including an MEI-encoded document. </a:documentation>
+         <ref name="mei_macro.availabilityPart"/>
          <ref name="mei_att.bibl.attributes"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.datapointing.attributes"/>
@@ -4169,7 +4105,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
             <ref name="mei_model.dateLike"/>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="change-constraint-change_requirements">
+                  id="schema.work-change-change_requirements-constraint-18">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -4577,13 +4513,17 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
       </element>
    </define>
    <define name="mei_source">
-      <element name="source">
+      <element name="source" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">A bibliographic description of a source used in the creation of the electronic file.</a:documentation>
          <zeroOrMore>
             <ref name="mei_model.identifierLike"/>
          </zeroOrMore>
          <optional>
             <ref name="mei_titleStmt"/>
+         </optional>
+         <ref name="mei_macro.bibldescPart"/>
+         <optional>
+            <ref name="mei_history"/>
          </optional>
          <optional>
             <ref name="mei_notesStmt"/>
@@ -4597,6 +4537,18 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <optional>
             <ref name="mei_componentGrp"/>
          </optional>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="schema.work-source-id-check-constraint-19">
+            <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                      xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      xmlns:s="http://www.ascc.net/xml/schematron"
+                      xmlns:xi="http://www.w3.org/2001/XInclude"
+                      context="mei:source">
+								       <sch:assert test="@xml:id or ancestor::mei:source"> Am Wurzelelement muss eine XML-ID angegeben sein. </sch:assert>
+							     </sch:rule>
+         </pattern>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
          <ref name="mei_att.datapointing.attributes"/>
@@ -4643,16 +4595,30 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
       </element>
    </define>
    <define name="mei_titleStmt">
-      <element name="titleStmt">
+      <element name="titleStmt" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(title statement) – Container for title and responsibility meta-data.</a:documentation>
          <oneOrMore>
-            <ref name="mei_model.titleLike"/>
+            <ref name="mei_title"/>
          </oneOrMore>
-         <zeroOrMore>
-            <ref name="mei_model.respLike"/>
-         </zeroOrMore>
+         <optional>
+            <ref name="mei_respStmt"/>
+         </optional>
          <ref name="mei_att.bibl.attributes"/>
+         <ref name="mei_att.id.attribute.xmlid"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="mei_useRestrict">
+      <element name="useRestrict">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(usage restrictions) – Container for information about the conditions that affect use of a bibliographic item after access has been granted. </a:documentation>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="mei_model.textphraseLike.limited"/>
+            </choice>
+         </zeroOrMore>
          <ref name="mei_att.common.attributes"/>
+         <ref name="mei_att.bibl.attributes"/>
          <empty/>
       </element>
    </define>
@@ -4915,8 +4881,8 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
       </element>
    </define>
    <define name="mei_persName">
-      <element name="persName">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(personal name) – Designation for an individual, including any or all of that individual's forenames, surnames, honorific titles, and added names </a:documentation>
+      <element name="persName" ns="http://www.music-encoding.org/ns/mei">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Personenname) enthält einen Eigennamen oder ein Nominalphrase im Bezug auf eine Person, möglicherweise einschließlich einer oder mehrerer Vornamen, Nachnamen, Höflichkeitsformen, hinzugefügten Namen, usw.</a:documentation>
          <zeroOrMore>
             <choice>
                <text/>
@@ -4925,13 +4891,22 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
                <ref name="mei_model.transcriptionLike"/>
             </choice>
          </zeroOrMore>
-         <ref name="mei_att.bibl.attributes"/>
-         <ref name="mei_att.common.attributes"/>
-         <ref name="mei_att.datable.attributes"/>
-         <ref name="mei_att.edit.attributes"/>
-         <ref name="mei_att.lang.attributes"/>
-         <ref name="mei_att.name.attributes"/>
-         <ref name="mei_att.typed.attributes"/>
+         <optional>
+            <attribute name="role">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Die Rolle oder Beziehung der Person mit dem Text/der Partitur. Werte werden von der MARC Code List for Relators genommen.</a:documentation>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="dbkey">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="cert">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">signifies the degree of certainty or precision of identifying this person.besagt den Grad der Gewissheit oder Präzision der Identifikation der Person.</a:documentation>
+               <ref name="mei_data.CERTAINTY"/>
+            </attribute>
+         </optional>
          <empty/>
       </element>
    </define>
@@ -6382,7 +6357,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="beam-constraint-When_not_copyof_beam_content">
+                  id="schema.work-beam-When_not_copyof_beam_content-constraint-20">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -6407,7 +6382,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(beam span) – Alternative element for explicitly encoding beams, particularly those which extend across bar lines. </a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="beamSpan-constraint-Start-_and_end-type_attributes_required_on_some_control_events">
+                  id="schema.work-beamSpan-Start-_and_end-type_attributes_required_on_some_control_events-constraint-21">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -6446,7 +6421,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">A variation in pitch (often micro-tonal) upwards or downwards during the course of a note.</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="bend-constraint-Start-_and_end-type_attributes_required_on_some_control_events">
+                  id="schema.work-bend-Start-_and_end-type_attributes_required_on_some_control_events-constraint-22">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -6473,7 +6448,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(breath mark) – A indication of a point at which the performer on an instrument requiring breath (including the voice) may breathe. </a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="breath-constraint-Start-type_attributes_required_on_some_control_events">
+                  id="schema.work-breath-Start-type_attributes_required_on_some_control_events-constraint-23">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -6510,7 +6485,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">An indication placed over a note or rest to indicate that it should be held longer than its written value. May also occur over a bar line to indicate the end of a phrase or section. Sometimes called a 'hold' or 'pause'. </a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="fermata-constraint-Start-type_attributes_required_on_some_control_events">
+                  id="schema.work-fermata-Start-type_attributes_required_on_some_control_events-constraint-24">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -6547,7 +6522,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(glissando) – A continuous or sliding movement from one pitch to another, usually indicated by a straight or wavy line. </a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="gliss-constraint-Start-_and_end-type_attributes_required_on_some_control_events">
+                  id="schema.work-gliss-Start-_and_end-type_attributes_required_on_some_control_events-constraint-25">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -6574,7 +6549,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Indicates continuous dynamics expressed on the score as wedge-shaped graphics, e.g. &lt; and &gt;. </a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="hairpin-constraint-Start-_and_end-type_attributes_required_on_some_control_events">
+                  id="schema.work-hairpin-Start-_and_end-type_attributes_required_on_some_control_events-constraint-26">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -6613,7 +6588,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(harp pedal) – Harp pedal diagram. </a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="harpPedal-constraint-Start-type_attributes_required_on_some_control_events">
+                  id="schema.work-harpPedal-Start-type_attributes_required_on_some_control_events-constraint-27">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -6772,7 +6747,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">An indication that a passage should be performed one or more octaves above or below its written pitch. </a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="octave-constraint-Start-_and_end-type_attributes_required_on_some_control_events">
+                  id="schema.work-octave-Start-_and_end-type_attributes_required_on_some_control_events-constraint-28">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -6839,7 +6814,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Piano pedal mark. </a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="pedal-constraint-Start-type_attributes_required_on_some_control_events">
+                  id="schema.work-pedal-Start-type_attributes_required_on_some_control_events-constraint-31">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -6882,7 +6857,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Indication of 1) a "unified melodic idea" or 2) performance technique. </a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="slur-constraint-Start-_and_end-type_attributes_required_on_some_control_events">
+                  id="schema.work-slur-Start-_and_end-type_attributes_required_on_some_control_events-constraint-32">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -6910,7 +6885,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">An indication that two notes of the same pitch form a single note with their combined rhythmic values. </a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tie-constraint-Start-_and_end-type_attributes_required_on_some_control_events">
+                  id="schema.work-tie-Start-_and_end-type_attributes_required_on_some_control_events-constraint-33">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -6944,7 +6919,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tuplet-constraint-When_not_copyof_tuplet_content">
+                  id="schema.work-tuplet-When_not_copyof_tuplet_content-constraint-34">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -6969,7 +6944,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(tuplet span) – Alternative element for encoding tuplets, especially useful for tuplets that extend across bar lines. </a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tupletSpan-constraint-Start-_and_end-type_attributes_required_on_some_control_events">
+                  id="schema.work-tupletSpan-Start-_and_end-type_attributes_required_on_some_control_events-constraint-35">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"

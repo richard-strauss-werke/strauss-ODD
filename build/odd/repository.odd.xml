@@ -1,90 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" xml:base="file:/c:/eXist-db/webapp/ahlsen/strauss-ODD/strauss-ODD/src/rswa.MAIN.odd.xml" xml:lang="en"><?TEIVERSION Version 2.6.0. Last updated on
+<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" xml:base="file:/c:/eXist-db/webapp/ahlsen/strauss-ODD/strauss-ODD/src/repository.odd.xml" xml:lang="en"><?TEIVERSION Version 2.6.0. Last updated on
 	20th January 2014, revision 12802?>
 	<teiHeader>
 		<fileDesc>
 			<titleStmt>
-				<title xml:lang="en">Encoding Guidelines</title>
-				<title xml:lang="de">Codierungsrichtlinien</title>
-				<author xml:id="aerhard">Alexander Erhard</author>
-				<!-- template for the final version of the TEI files:-->
-				<funder>
-					<name ref="http://www.badw.de">Bayerische Akademie der Wissenschaften</name>
-					<address>
-						<street>Alfons-Goppel-Straße 11</street>
-						<postCode>80539</postCode>
-						<placeName>
-							<country>D</country>
-							<settlement>München</settlement>
-						</placeName>
-					</address>
-				</funder>
+				<title/>
 			</titleStmt>
-			<editionStmt>
-				<edition>Digitale Ausgabe</edition>
-			</editionStmt>
-			<!-- template for the final version of the TEI files:-->
 			<publicationStmt>
-				<distributor>Forschungsstelle zur Edition der Werke von Richard Strauss</distributor>
-				<availability status="restricted">
-					<p>This work is licensed under a <ref target="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</ref>.</p>
-				</availability>
-				<pubPlace>München</pubPlace>
+				<p/>
 			</publicationStmt>
-			<!-- template for the the final version of the TEI files:-->
-			<seriesStmt>
-				<title>Digitale Dokumentensammlung zum Werk von Richard Strauss</title>
-			</seriesStmt>
 			<sourceDesc>
-				<p>based on the TEI P5 specifications at <ref target="http://www.tei-c.org/release/xml/tei/odd/p5subset.xml">http://www.tei-c.org/release/xml/tei/odd/p5subset.xml</ref>, this ODD integrates Raffaele Viglianti's prefixed version of the MEI's "mei-source.xml" (<ref target="https://github.com/TEI-Music-SIG/tei-mei/">tei-mei</ref>), the TEI-C's <ref target="http://www.tei-c.org/release/xml/tei/custom/odd/tei_xinclude.odd">XInclude ODD</ref>, and draws on specifications in Peter Stadler's <ref target="https://github.com/Edirom/WeGA-ODD">Carl-Maria-von-Weber-Gesamtausgabe ODDs</ref>.</p>
+				<p/>
 			</sourceDesc>
 		</fileDesc>
-		<profileDesc>
-			<abstract>
-				<p><!-- to be added --></p>
-			</abstract>
-		</profileDesc>
-		<revisionDesc>
-			<change who="#aerhard" when="2014-05-19">Added document type "place"</change>
-			<change who="#aerhard" when="2014-05-16">Added document type "work"</change>
-			<change who="#aerhard" when="2014-02-10">Adjustments to facilitate the final transformation</change>
-			<change who="#aerhard" when="2014-02-05">Globally refactored</change>
-			<change who="#aerhard" when="2014-01-18">Equiv elements added</change>
-			<change who="#aerhard" when="2013-06-08">First draft</change>
-		</revisionDesc>
 	</teiHeader>
 	<text>
 		<body>
-			<!-- various text parts are used as templates for the final version of the TEI files:-->
-			<div xml:id="introduction">
-				<head>Introduction</head>
-				<p>...</p>
-				<p>The documents can be accessed at <ref target="http://richard-strauss-ausgabe.de/documents/view/" xml:id="xmlDocsUrl">http://richard-strauss-ausgabe.de/xml/</ref>, followed by the identification number.</p>
-				<p>The contributors involved in the preparation of a document are listed with their corresponding <att>xml:id</att> in the section <title xml:id="contributorsResp">Vorbereitung der digitalen Edition</title>.</p>
-				<p>All documents contain the following statements:</p>
-				<list>
-					<item xml:id="guidelinesTitleRef">Die vorliegende Ausgabe folgt den <ref target="http://richard-strauss-ausgabe.de/guidelines/xml">Editionsrichtlinien der Kritischen Ausgabe der Werke von Richard Strauss</ref>.</item>
-					<item xml:id="specificFeaturesTitle">Besonderheiten der Edition des vorliegenden Dokuments:</item>
-				</list>
-			</div>
-			<div xml:id="schemata">
-				<head>Schema</head>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				<schemaSpec ident="schema.repository" xml:lang="en" start="ab" prefix="rswa_" source="\Program Files\Oxygen XML Editor 15\frameworks\tei\xml\tei\odd\p5subset.xml"><classSpec module="tei" type="atts" ident="att.canonical">
+			<schemaSpec ident="schema.repository" xml:lang="en" start="ab" prefix="rswa_" source="\Program Files\Oxygen XML Editor 16\frameworks\tei\xml\tei\odd\p5subset.xml"><classSpec module="tei" type="atts" ident="att.canonical">
   <desc versionDate="2008-09-05" xml:lang="en">provides attributes which can be used to associate a representation such as a name or title
     with canonical information about the object being named or referenced.</desc>
   <desc versionDate="2009-05-25" xml:lang="fr">fournit des attributs qui peuvent être utilisés pour
@@ -1971,6 +1902,143 @@ or corporate bodies.</desc>
   <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STEC">1.3. </ref>
   </listRef>
+</classSpec><classSpec module="tei" type="atts" ident="att.source" predeclare="true">
+  <desc versionDate="2013-01-11" xml:lang="en">provides attributes for pointing to the source of a bibliographic reference.</desc>
+  <attList>
+    <attDef ident="source" usage="opt">
+
+
+      <desc versionDate="2013-01-11" xml:lang="en">provides a pointer to the bibliographical source from which a quotation or citation is drawn.</desc>
+      <datatype maxOccurs="unbounded">
+        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.pointer"/>
+      </datatype>
+    </attDef>
+  </attList>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#SOURCE-eg-01">
+      <p><!-- ... -->
+        As Willard McCarty (<bibl xml:id="mcc_2012">2012, p.2</bibl>) 
+      tells us, <quote source="#mcc_2012">‘Collaboration’  is  a   
+        problematic  and  should  be  a  contested  term.</quote>
+            <!-- ... -->
+         </p>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <p>
+        <!-- ... -->
+        <quote source="#chicago_15_ed">Grammatical theories 
+        are in flux, and the more we learn, the less we 
+        seem to know.</quote>
+        <!-- ... -->
+      </p>
+      <!-- ... -->
+      <bibl xml:id="chicago_15_ed"><title level="m">The Chicago Manual of Style</title>, 
+        <edition>15th edition</edition>. 
+        <pubPlace>Chicago</pubPlace>: 
+        <publisher>University of Chicago Press</publisher> 
+        (<date>2003</date>), 
+        <biblScope unit="page">p.147</biblScope>.
+      </bibl>
+    </egXML>
+  </exemplum>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COHQQ">3.3.3. </ref>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TS.html#TSBAWR">8.3.4. </ref>
+  </listRef>
+</classSpec><classSpec module="tei" type="atts" ident="att.personal">
+  <gloss versionDate="2012-10-24" xml:lang="en">attributes for components of names usually, but not necessarily, personal names</gloss>
+  <gloss versionDate="2007-12-20" xml:lang="ko">사람 이름의 성분에 대한 속성</gloss>
+  <gloss versionDate="2007-05-02" xml:lang="zh-TW">用於個人名稱元件的屬性</gloss>
+  <gloss versionDate="2007-06-12" xml:lang="fr">attributs des composantes des noms de personnes</gloss>
+  <gloss versionDate="2007-05-04" xml:lang="es">atributos para los componentes de nombres propios de persona</gloss>
+  <gloss versionDate="2007-01-21" xml:lang="it">attributi per componenti di nomi propri di persona</gloss>
+  <desc versionDate="2012-10-24" xml:lang="en">common attributes for those elements which form part of a name usually, but not necessarily, a personal name.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">사람 이름의 부분을 형성하는 요소에 대한 공통 속성</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">構成部分個人名稱的元素所用之通用屬性</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">個人名の構成要素となる要素に付与される属性．</desc>
+  <desc versionDate="2009-05-28" xml:lang="fr">attributs communs des éléments qui composent un nom de personne</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">atributos comunes para los elementos que forman parte de un nombre propio de persona.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">attributi comuni agli
+  elementi che compongono un nome proprio di persona</desc>
+  <classes>
+    <memberOf key="att.naming"/>
+  </classes>
+  <attList>
+    <attDef ident="full" usage="opt">
+      <desc versionDate="2005-10-10" xml:lang="en">indicates whether the name component is given in full, as an
+abbreviation or simply as an initial.</desc>
+      <desc versionDate="2007-12-20" xml:lang="ko">축약 또는 이니셜로 간단하게 이름 성분이 완전히 제시된 것인지의 여부를 나타낸다.</desc>
+      <desc versionDate="2007-05-02" xml:lang="zh-TW">指出所提供的名稱元件是否完整，為一縮寫或僅為一字首字母。</desc>
+      <desc versionDate="2008-04-05" xml:lang="ja">当該名前要素は省略がないか，省略形か，イニシャルのような簡単なも
+    のか示す．</desc>
+      <desc versionDate="2007-06-12" xml:lang="fr">indique si la composante du nom est donnée en intégralité, sous forme d'abréviation ou simplement d'initiale.</desc>
+      <desc versionDate="2007-05-04" xml:lang="es">indica si el componente del nombre aparece por completo, como una abreviatura o como una inicial.</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">indica se la componente del nome compare per esteso, come abbreviazione o come iniziale</desc>
+      <datatype>
+        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.enumerated"/>
+      </datatype>
+      <defaultVal>yes</defaultVal>
+      <valList type="closed">
+        <valItem ident="yes">
+          <gloss versionDate="2009-05-28" xml:lang="fr">complet</gloss>
+          <desc versionDate="2007-06-27" xml:lang="en">the name component is spelled out in full.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">이름 성분이 완전히 제시된다.</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">該名稱元件的拼字完整。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">el componente nombre se deletrea por completo.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">当該名前要素は，省略無く示されている．</desc>
+          <desc versionDate="2009-05-28" xml:lang="fr">la composante du nom est orthographiée en intégralité.</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">la componente del nome compare per esteso</desc>
+        </valItem>
+        <valItem ident="abb">
+          <gloss versionDate="2007-07-04" xml:lang="en">abbreviated</gloss>
+          <gloss versionDate="2007-12-20" xml:lang="ko">축약된</gloss>
+          <gloss versionDate="2009-05-28" xml:lang="fr">abrégé</gloss>
+          <gloss versionDate="2007-11-06" xml:lang="it">abbreviato</gloss>
+          <gloss versionDate="2007-05-04" xml:lang="es">el componente del nombre aparece como forma abreviada.</gloss>
+          <desc versionDate="2007-06-27" xml:lang="en">the name component is given in an abbreviated form.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">이름 성분이 축약형으로 제시된다.</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">該名稱元件為縮寫形式。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">el componente conocido se da en una forma abreviada.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">当該名前要素には，省略がある．</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">la composante du nom est donnée sous forme abrégée.</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">la componente del nome compare in forma abbreviata</desc>
+        </valItem>
+        <valItem ident="init">
+          <gloss versionDate="2007-07-04" xml:lang="en">initial letter</gloss>
+          <gloss versionDate="2007-12-20" xml:lang="ko">이니셜 문자</gloss>
+          <gloss versionDate="2007-06-12" xml:lang="fr">initiale</gloss>
+          <gloss versionDate="2007-11-06" xml:lang="it">lettera iniziale</gloss>
+          <gloss versionDate="2007-05-04" xml:lang="es">el componente del nombre aparece mediante la inicial.</gloss>
+          <desc versionDate="2007-06-27" xml:lang="en">the name component is indicated only by
+one initial.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">이름 성분이 하나의 이니셜(첫글자)로 제시되었다.</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">該名稱元件僅以一字首字母表示。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">el componente conocido es indicado solamente por una inicial.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">当該名前要素は，イニシャルだけで示されている．</desc>
+          <desc versionDate="2009-05-28" xml:lang="fr">la composante du nom n'est indiquée que par sa lettre initiale.</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">la componente del nome è indicata da una sola iniziale</desc>
+        </valItem>
+      </valList>
+    </attDef>
+    <attDef ident="sort" usage="opt">
+      <gloss versionDate="2009-05-28" xml:lang="fr">ordre</gloss>
+      <desc versionDate="2012-10-24" xml:lang="en">specifies the sort order of the name component in relation to others within the name.</desc>
+      <desc versionDate="2007-12-20" xml:lang="ko">사람 이름 내에 다른 것과 관련된 이름 성분의 정렬 순서를 명시한다.</desc>
+      <desc versionDate="2007-05-02" xml:lang="zh-TW">指明個人名稱中該名稱元件與其他元件之間的排列順序。</desc>
+      <desc versionDate="2008-04-05" xml:lang="ja">個人名間で並び替えをする際の順番を示す．</desc>
+      <desc versionDate="2009-05-28" xml:lang="fr">précise dans quel ordre est placé la composante par rapport aux autres dans le nom d'une personne.</desc>
+      <desc versionDate="2007-05-04" xml:lang="es">especifica la posición del componente al interno del nombre propio de persona en relación con los otros componentes.</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">specifica la posizione della componente all'interno del nome proprio di persona in relazione alle altre componenti</desc>
+      <datatype>
+        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.count"/>
+      </datatype>
+    </attDef>
+  </attList>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPER">13.2.1. </ref>
+  </listRef>
 </classSpec><macroSpec module="tei" type="pe" ident="macro.paraContent">
   <gloss versionDate="2005-01-14" xml:lang="en">paragraph content</gloss>
   <gloss versionDate="2007-12-20" xml:lang="ko">문단 내용</gloss>
@@ -2810,144 +2878,7 @@ resource, either within the current document or elsewhere.</desc>
       de valeurs dans la spécification de l'attribut associé, exprimée par un élément
       <gi>valList</gi>.</p>
   </remarks>
-</macroSpec><classSpec module="tei" type="atts" ident="att.source" predeclare="true">
-  <desc versionDate="2013-01-11" xml:lang="en">provides attributes for pointing to the source of a bibliographic reference.</desc>
-  <attList>
-    <attDef ident="source" usage="opt">
-
-
-      <desc versionDate="2013-01-11" xml:lang="en">provides a pointer to the bibliographical source from which a quotation or citation is drawn.</desc>
-      <datatype maxOccurs="unbounded">
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.pointer"/>
-      </datatype>
-    </attDef>
-  </attList>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#SOURCE-eg-01">
-      <p><!-- ... -->
-        As Willard McCarty (<bibl xml:id="mcc_2012">2012, p.2</bibl>) 
-      tells us, <quote source="#mcc_2012">‘Collaboration’  is  a   
-        problematic  and  should  be  a  contested  term.</quote>
-            <!-- ... -->
-         </p>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <p>
-        <!-- ... -->
-        <quote source="#chicago_15_ed">Grammatical theories 
-        are in flux, and the more we learn, the less we 
-        seem to know.</quote>
-        <!-- ... -->
-      </p>
-      <!-- ... -->
-      <bibl xml:id="chicago_15_ed"><title level="m">The Chicago Manual of Style</title>, 
-        <edition>15th edition</edition>. 
-        <pubPlace>Chicago</pubPlace>: 
-        <publisher>University of Chicago Press</publisher> 
-        (<date>2003</date>), 
-        <biblScope unit="page">p.147</biblScope>.
-      </bibl>
-    </egXML>
-  </exemplum>
-  <listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COHQQ">3.3.3. </ref>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TS.html#TSBAWR">8.3.4. </ref>
-  </listRef>
-</classSpec><classSpec module="tei" type="atts" ident="att.personal">
-  <gloss versionDate="2012-10-24" xml:lang="en">attributes for components of names usually, but not necessarily, personal names</gloss>
-  <gloss versionDate="2007-12-20" xml:lang="ko">사람 이름의 성분에 대한 속성</gloss>
-  <gloss versionDate="2007-05-02" xml:lang="zh-TW">用於個人名稱元件的屬性</gloss>
-  <gloss versionDate="2007-06-12" xml:lang="fr">attributs des composantes des noms de personnes</gloss>
-  <gloss versionDate="2007-05-04" xml:lang="es">atributos para los componentes de nombres propios de persona</gloss>
-  <gloss versionDate="2007-01-21" xml:lang="it">attributi per componenti di nomi propri di persona</gloss>
-  <desc versionDate="2012-10-24" xml:lang="en">common attributes for those elements which form part of a name usually, but not necessarily, a personal name.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">사람 이름의 부분을 형성하는 요소에 대한 공통 속성</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">構成部分個人名稱的元素所用之通用屬性</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">個人名の構成要素となる要素に付与される属性．</desc>
-  <desc versionDate="2009-05-28" xml:lang="fr">attributs communs des éléments qui composent un nom de personne</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">atributos comunes para los elementos que forman parte de un nombre propio de persona.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">attributi comuni agli
-  elementi che compongono un nome proprio di persona</desc>
-  <classes>
-    <memberOf key="att.naming"/>
-  </classes>
-  <attList>
-    <attDef ident="full" usage="opt">
-      <desc versionDate="2005-10-10" xml:lang="en">indicates whether the name component is given in full, as an
-abbreviation or simply as an initial.</desc>
-      <desc versionDate="2007-12-20" xml:lang="ko">축약 또는 이니셜로 간단하게 이름 성분이 완전히 제시된 것인지의 여부를 나타낸다.</desc>
-      <desc versionDate="2007-05-02" xml:lang="zh-TW">指出所提供的名稱元件是否完整，為一縮寫或僅為一字首字母。</desc>
-      <desc versionDate="2008-04-05" xml:lang="ja">当該名前要素は省略がないか，省略形か，イニシャルのような簡単なも
-    のか示す．</desc>
-      <desc versionDate="2007-06-12" xml:lang="fr">indique si la composante du nom est donnée en intégralité, sous forme d'abréviation ou simplement d'initiale.</desc>
-      <desc versionDate="2007-05-04" xml:lang="es">indica si el componente del nombre aparece por completo, como una abreviatura o como una inicial.</desc>
-      <desc versionDate="2007-01-21" xml:lang="it">indica se la componente del nome compare per esteso, come abbreviazione o come iniziale</desc>
-      <datatype>
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.enumerated"/>
-      </datatype>
-      <defaultVal>yes</defaultVal>
-      <valList type="closed">
-        <valItem ident="yes">
-          <gloss versionDate="2009-05-28" xml:lang="fr">complet</gloss>
-          <desc versionDate="2007-06-27" xml:lang="en">the name component is spelled out in full.</desc>
-          <desc versionDate="2007-12-20" xml:lang="ko">이름 성분이 완전히 제시된다.</desc>
-          <desc versionDate="2007-05-02" xml:lang="zh-TW">該名稱元件的拼字完整。</desc>
-          <desc versionDate="2008-04-06" xml:lang="es">el componente nombre se deletrea por completo.</desc>
-          <desc versionDate="2008-04-05" xml:lang="ja">当該名前要素は，省略無く示されている．</desc>
-          <desc versionDate="2009-05-28" xml:lang="fr">la composante du nom est orthographiée en intégralité.</desc>
-          <desc versionDate="2007-01-21" xml:lang="it">la componente del nome compare per esteso</desc>
-        </valItem>
-        <valItem ident="abb">
-          <gloss versionDate="2007-07-04" xml:lang="en">abbreviated</gloss>
-          <gloss versionDate="2007-12-20" xml:lang="ko">축약된</gloss>
-          <gloss versionDate="2009-05-28" xml:lang="fr">abrégé</gloss>
-          <gloss versionDate="2007-11-06" xml:lang="it">abbreviato</gloss>
-          <gloss versionDate="2007-05-04" xml:lang="es">el componente del nombre aparece como forma abreviada.</gloss>
-          <desc versionDate="2007-06-27" xml:lang="en">the name component is given in an abbreviated form.</desc>
-          <desc versionDate="2007-12-20" xml:lang="ko">이름 성분이 축약형으로 제시된다.</desc>
-          <desc versionDate="2007-05-02" xml:lang="zh-TW">該名稱元件為縮寫形式。</desc>
-          <desc versionDate="2008-04-06" xml:lang="es">el componente conocido se da en una forma abreviada.</desc>
-          <desc versionDate="2008-04-05" xml:lang="ja">当該名前要素には，省略がある．</desc>
-          <desc versionDate="2008-03-30" xml:lang="fr">la composante du nom est donnée sous forme abrégée.</desc>
-          <desc versionDate="2007-01-21" xml:lang="it">la componente del nome compare in forma abbreviata</desc>
-        </valItem>
-        <valItem ident="init">
-          <gloss versionDate="2007-07-04" xml:lang="en">initial letter</gloss>
-          <gloss versionDate="2007-12-20" xml:lang="ko">이니셜 문자</gloss>
-          <gloss versionDate="2007-06-12" xml:lang="fr">initiale</gloss>
-          <gloss versionDate="2007-11-06" xml:lang="it">lettera iniziale</gloss>
-          <gloss versionDate="2007-05-04" xml:lang="es">el componente del nombre aparece mediante la inicial.</gloss>
-          <desc versionDate="2007-06-27" xml:lang="en">the name component is indicated only by
-one initial.</desc>
-          <desc versionDate="2007-12-20" xml:lang="ko">이름 성분이 하나의 이니셜(첫글자)로 제시되었다.</desc>
-          <desc versionDate="2007-05-02" xml:lang="zh-TW">該名稱元件僅以一字首字母表示。</desc>
-          <desc versionDate="2008-04-06" xml:lang="es">el componente conocido es indicado solamente por una inicial.</desc>
-          <desc versionDate="2008-04-05" xml:lang="ja">当該名前要素は，イニシャルだけで示されている．</desc>
-          <desc versionDate="2009-05-28" xml:lang="fr">la composante du nom n'est indiquée que par sa lettre initiale.</desc>
-          <desc versionDate="2007-01-21" xml:lang="it">la componente del nome è indicata da una sola iniziale</desc>
-        </valItem>
-      </valList>
-    </attDef>
-    <attDef ident="sort" usage="opt">
-      <gloss versionDate="2009-05-28" xml:lang="fr">ordre</gloss>
-      <desc versionDate="2012-10-24" xml:lang="en">specifies the sort order of the name component in relation to others within the name.</desc>
-      <desc versionDate="2007-12-20" xml:lang="ko">사람 이름 내에 다른 것과 관련된 이름 성분의 정렬 순서를 명시한다.</desc>
-      <desc versionDate="2007-05-02" xml:lang="zh-TW">指明個人名稱中該名稱元件與其他元件之間的排列順序。</desc>
-      <desc versionDate="2008-04-05" xml:lang="ja">個人名間で並び替えをする際の順番を示す．</desc>
-      <desc versionDate="2009-05-28" xml:lang="fr">précise dans quel ordre est placé la composante par rapport aux autres dans le nom d'une personne.</desc>
-      <desc versionDate="2007-05-04" xml:lang="es">especifica la posición del componente al interno del nombre propio de persona en relación con los otros componentes.</desc>
-      <desc versionDate="2007-01-21" xml:lang="it">specifica la posizione della componente all'interno del nome proprio di persona in relazione alle altre componenti</desc>
-      <datatype>
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.count"/>
-      </datatype>
-    </attDef>
-  </attList>
-  <listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPER">13.2.1. </ref>
-  </listRef>
-</classSpec><macroSpec module="tei" type="dt" ident="data.temporal.iso">
+</macroSpec><macroSpec module="tei" type="dt" ident="data.temporal.iso">
   <desc versionDate="2007-04-08" xml:lang="en">defines the range of attribute values expressing a temporal expression such as a date, a
     time, or a combination of them, that conform to the international standard <title>Data elements
       and interchange formats – Information interchange – Representation of dates and times</title>.</desc>
@@ -3889,567 +3820,8 @@ means of a <gi>glyph</gi> or <gi>char</gi> element referenced here as <code>#sym
   <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SASE">16.3. </ref>
   </listRef>
-</elementSpec><moduleSpec n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec n="CO" xml:id="DCO" ident="core"/><moduleSpec n="HD" xml:id="DHD" ident="header"/><moduleSpec n="ND" xml:id="DND" ident="namesdates"/><moduleSpec n="SA" xml:id="DSA" ident="linking"/></schemaSpec>
-				
-			</div>
-			<div xml:id="scopes">
-				<head>Scopes</head>
-				<desc>The 'scopes' below mostly define thematically grouped collections of modules / elements. Combined, they add up to the full scope of a schema. In the whole 'scopes' section, each module and each element may only be cited once.</desc>
-				<div>
-					<head>Shared scope</head>
-					<desc>A scope common to all schemata (except of "place" and "work")</desc>
-					<table><row><cell>
-		Module tei</cell><cell/></row><row><cell>
-		Module core</cell><cell/></row><row><cell>
-		Module header</cell><cell/></row><row><cell>
-		Module namesdates</cell><cell/></row><row><cell>
-		Module linking</cell><cell/></row><row><cell>
-		Module certainty</cell><cell/></row><row><cell>
-		Module figures</cell><cell/></row></table>
-				</div>
-				<div>
-					<head>Header and basic text structure scope</head>
-					<desc>Common to all schemata containing a TEI header</desc>
-					<table><row><cell>
-		Module textstructure</cell><cell/></row><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/></table>
-				</div>
-				<div>
-					<head>Transcription specific scope</head>
-					<desc>Depends on scope.teistructure</desc>
-					<table><row><cell>
-		Module transcr</cell><cell/></row><row><cell>
-		Module msdescription</cell><cell/></row><row><cell>
-		Module analysis</cell><cell/></row><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/></table>
-				</div>
-				<div>
-					<head>Manuscript specific scope</head>
-					<desc>Depends on scope.transcr</desc>
-					<table><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/></table>
-				</div>
-				<div>
-					<head>Print specific scope</head>
-					<desc>Depends on scope.transcr</desc>
-					<table><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/></table>
-				</div>
-				<div>
-					<head>State and eventList scope</head>
-					<desc>Common to schemata providing a state and a listEvent element (i.e. the person and org schemata)</desc>
-					<table><row/><row/><row/></table>
-				</div>
-				<div>
-					<head>Person specific scope</head>
-					<desc>Adds elements uniquely used in the person schema</desc>
-					<table><row/><row/><row/><row/><row/><row/><row/><row/><row/></table>
-				</div>
-				<div>
-					<head>Organization specific scope</head>
-					<desc>Adds elements uniquely used in the org schema</desc>
-					<table><row/></table>
-				</div>
-				<div>
-					<head>Performance specific scope</head>
-					<desc>Adds elements uniquely used in the performance schema</desc>
-					<table><row><cell>
-		Module drama</cell><cell/></row><row/><row/></table>
-				</div>
-			</div>
-			<div>
-				<head>TEI Extensions</head>
-				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.extension.xinclude.xml" xml:lang="">
-	<head>XInclude extension</head>
-	<byline>XInclude support adopted from the TEI-C's 
-		<ref target="http://www.tei-c.org/release/xml/tei/custom/odd/tei_xinclude.odd">XInclude ODD</ref></byline>
-	<table><row><cell>
-		Element <gi>conRef</gi></cell><cell>add</cell></row><row><cell>
-		Element <gi>include</gi></cell><cell>add</cell></row><row><cell>
-		Element <gi>fallback</gi></cell><cell>add</cell></row><row><cell>
-		Macro <ident type="macro">macro.anyThing</ident></cell><cell>add</cell></row></table>
-</div>
-				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.extension.tasks.xml" xml:lang="">
-	<head>taskDescr extension</head>
-	<table><row><cell>
-		Element <gi>taskDesc</gi></cell><cell>add</cell></row><row><cell>
-		Element <gi>task</gi></cell><cell>add</cell></row></table>
-</div>
-				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.extension.MEI-head.xml" xml:lang="">
-	<head>MEI head extension</head>
-	<byline>Apart from minor changes to get things working in the current context, the specGrp code is taken literally from Peter Stadler's WeGA_works.odd.xml. For copyright and other information, see the <ref target="https://github.com/Edirom/WeGA-ODD">Carl-Maria-von-Weber-Gesamtausgabe ODDs</ref>.</byline>
-	<desc>Includes TEI header components</desc>
-	
-	<table><row/><row><cell>
-		Module MEI</cell><cell/></row><row><cell>
-		Module MEI.frbr</cell><cell/></row><row><cell>
-		Module MEI.shared</cell><cell/></row><row><cell>
-		Module MEI.header</cell><cell/></row><row><cell>
-		Module MEI.namesdates</cell><cell/></row><row><cell>
-		Module MEI.cmn</cell><cell/></row><row><cell>
-		Module MEI.edittrans</cell><cell/></row><row><cell><ref target="##wega-patterns">reference #wega-patterns</ref></cell><cell/></row><row><cell><ref target="##wega-lists">reference #wega-lists</ref></cell><cell/></row><row><cell><ref target="##wega-common-atts">reference #wega-common-atts</ref></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.availabilityPart</ident></cell><cell>change</cell></row><row><cell>
-		Class <ident type="class">att.measurement</ident></cell><cell>change</cell></row><row><cell>
-		Element <gi>mei</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>persName</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>source</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>date</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>altId</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>titleStmt</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>title</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>rend</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>extent</gi></cell><cell>change</cell></row></table>
-</div>
-				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.extension.MEI-music.xml" xml:lang="">
-	<head>MEI music extension</head>
-	<byline>modelSpec and classSpec adopted from Raffaele Viglianti's <ref target="https://github.com/TEI-Music-SIG/tei-mei/blob/master/tei-lite_mei-cmn.xml">tei-lite_mei-cmn.xml</ref></byline>
-	<desc>Includes the TEI notatedMusic element and the MEI modules. Note: The moduleRefs below don't refer to the official mei-source.xml, but to a prefixed version, see <ref target="https://github.com/TEI-Music-SIG/tei-mei/">https://github.com/TEI-Music-SIG/tei-mei/</ref></desc>
-	<table><row/><row><cell>
-		Module MEI</cell><cell/></row><row><cell>
-		Module MEI.shared</cell><cell/></row><row><cell>
-		Module MEI.cmn</cell><cell/></row><row><cell>
-		Module MEI.cmnOrnaments</cell><cell/></row><row><cell>
-		Module MEI.critapp</cell><cell/></row><row><cell>
-		Module MEI.edittrans</cell><cell/></row><row><cell>
-		Module MEI.lyrics</cell><cell/></row><row><cell>
-		Module MEI.usersymbols</cell><cell/></row><row><cell>
-		Element <gi>notatedMusic</gi></cell><cell>change</cell></row><row><cell>
-		Class <ident type="class">mei_att.staffident</ident></cell><cell>replace</cell></row></table>
-</div>
-			</div>
-			<div>
-				<head>Edits</head>
-				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.edits.classes.att.xml" xml:lang="">
-	<head>Attribute classes</head>
-	<table><row><cell>
-		Class <ident type="class">att.msExcerpt</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.patternReplacement</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.breaking</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.cReferencing</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.damaged</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.datable</ident></cell><cell>change</cell></row><row><cell>
-		Class <ident type="class">att.datable.custom</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.datable.iso</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.datcat</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.declarable</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.declaring</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.divLike</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.edition</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.editLike</ident></cell><cell>change</cell></row><row><cell>
-		Class <ident type="class">att.fragmentable</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.global</ident></cell><cell>change</cell></row><row><cell>
-		Class <ident type="class">att.global.analytic</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.global.linking</ident></cell><cell>change</cell></row><row><cell>
-		Class <ident type="class">att.internetMedia</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.interpLike</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.naming</ident></cell><cell>change</cell></row><row><cell>
-		Class <ident type="class">att.personal</ident></cell><cell>change</cell></row><row><cell>
-		Class <ident type="class">att.pointing</ident></cell><cell>change</cell></row><row><cell>
-		Class <ident type="class">att.pointing.group</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.ranging</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.readFrom</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.resourced</ident></cell><cell>change</cell></row><row><cell>
-		Class <ident type="class">att.scoping</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.segLike</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.sortable</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.source</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.spanning</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.styleDef</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.timed</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.translatable</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.coordinated</ident></cell><cell>delete</cell></row><row><cell>
-		Class <ident type="class">att.global.facs</ident></cell><cell>delete</cell></row></table>
-</div>
-				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.edits.datatypes.xml" xml:lang="">
-	<head>Datatypes</head>
-	<table><row><cell>
-		Macro <ident type="macro">data.supplPersNameType</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">data.msDescRend</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">data.encoding-staff</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">data.digit</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">data.gndIdno</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">data.rsqvIdno</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">data.keyword_ms</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">data.keyword_print</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">data.biblType</ident></cell><cell/></row></table>
-</div><!-- currently not in use --><!--<macroSpec ident="data.compilationKey">
-			<content>
-				<rng:data type="string">
-					<rng:param name="pattern">m\d{5}</rng:param>
-				</rng:data>
-			</content>
-		</macroSpec>
-		
-		<macroSpec ident="data.correspKey">
-			<content>
-				<rng:data type="string">
-					<rng:param name="pattern">c\d{5}</rng:param>
-				</rng:data>
-			</content>
-		</macroSpec>
-		
-		<macroSpec ident="data.personKey">
-			<content>
-				<rng:data type="string">
-					<rng:param name="pattern">p\d{5}</rng:param>
-				</rng:data>
-			</content>
-		</macroSpec>
-		
-		<macroSpec ident="data.orgKey">
-			<content>
-				<rng:data type="string">
-					<!-\- sic: p... -\->
-					<rng:param name="pattern">p\d{5}</rng:param>
-				</rng:data>
-			</content>
-		</macroSpec>
-		
-		<macroSpec ident="data.eventKey">
-			<content>
-				<rng:data type="string">
-					<rng:param name="pattern">e0\d{5}</rng:param>
-				</rng:data>
-			</content>
-		</macroSpec>
-		
-		<macroSpec ident="data.literatureKey">
-			<content>
-				<rng:data type="string">
-					<rng:param name="pattern">b\d{5}</rng:param>
-				</rng:data>
-			</content>
-		</macroSpec>
-		
-		<macroSpec ident="data.receptionKey">
-			<content>
-				<rng:data type="string">
-					<rng:param name="pattern">r\d{5}</rng:param>
-				</rng:data>
-			</content>
-		</macroSpec>
-		
-		<macroSpec ident="data.graphicKey">
-			<content>
-				<rng:data type="string">
-					<rng:param name="pattern">g\d{5}</rng:param>
-				</rng:data>
-			</content>
-		</macroSpec>
-		
-		<macroSpec ident="data.workKey">
-			<content>
-				<rng:data type="string">
-					<rng:param name="pattern">w\d{4}</rng:param>
-				</rng:data>
-			</content>
-		</macroSpec>
-		
-		<macroSpec ident="data.performanceKey">
-			<content>
-				<rng:data type="string">
-					<rng:param name="pattern">a\d{5}</rng:param>
-				</rng:data>
-			</content>
-		</macroSpec>
--->
-				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.edits.elements.xml" xml:lang="">
-	<head>Modifications of Elements</head>
+</elementSpec><desc>Repositories</desc><moduleSpec n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec n="CO" xml:id="DCO" ident="core"/><moduleSpec n="HD" xml:id="DHD" ident="header"/><moduleSpec n="ND" xml:id="DND" ident="namesdates"/><moduleSpec n="SA" xml:id="DSA" ident="linking"/></schemaSpec>
 
-	<div>
-		<head>Modifications specific to single schemata</head>
-		<desc>These specifications are not meant to be combined; no more than one can be chosen</desc>
-		<div>
-			<head>Global (all-encompassing) schema</head>
-			<desc>presents the specifications following as alternatives</desc>
-			<table><row><cell>
-		Element <gi>publicationStmt</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>sourceDesc</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>creation</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>term</gi></cell><cell>change</cell></row></table>
-		</div>
-		
-		<div>
-			<head>Place</head>
-			<desc>Contains specifications specific of the place ODD</desc>
-			<table><row><cell>
-		Element <gi>placeName</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>location</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>geo</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>idno</gi></cell><cell>change</cell></row></table>
-		</div>
-		
-		<div>
-			<head>Manuscript sources</head>
-			<desc>Contains specifications for transcriptions of manuscript sources</desc>
-			<table><row><cell>
-		Element <gi>text</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>titleStmt</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>publicationStmt</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>sourceDesc</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>creation</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>term</gi></cell><cell>change</cell></row></table>
-		</div>
-		
-		<div>
-			<head>Images</head>
-			<desc>Contains specifications for images</desc>
-			<table><row><cell>
-		Element <gi>text</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>titleStmt</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>publicationStmt</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>sourceDesc</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>creation</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>term</gi></cell><cell>change</cell></row></table>
-		</div>
-		
-		<div>
-			<head>Printed sources</head>
-			<desc>Contains specifications for transcriptions of printed sources</desc>
-			<table><row><cell>
-		Element <gi>text</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>titleStmt</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>publicationStmt</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>sourceDesc</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>creation</gi></cell><cell>delete</cell></row><row><cell>
-		Element <gi>term</gi></cell><cell>change</cell></row></table>
-		</div>
-		<div>
-			<head>Events</head>
-			<desc>Contains specifications for documents describing an event</desc>
-			<table><row><cell>
-		Element <gi>text</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>titleStmt</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>publicationStmt</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>sourceDesc</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>creation</gi></cell><cell>replace</cell></row></table>
-		</div>
-	</div>
-
-	<div>
-		<head>Modifications shared by all schemata</head>
-		<desc>These modifications change the way an element is specified for all schemata linking to this specGrp. Currently, this applies to every schema in use. If a specific element is not included in a schema, the corresponding specifications below will have no effect on that schema.</desc>
-		<table><row><cell>
-		Element <gi>listBibl</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>fileDesc</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>textClass</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>graphic</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>repository</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>collection</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>idno</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>additions</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>respStmt</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>state</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>note</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>person</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>event</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>gloss</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>affiliation</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>listEvent</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>sex</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>birth</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>death</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>origDate</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>origPlace</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>notesStmt</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>editionStmt</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>availability</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>bibl</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>org</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>encodingDesc</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>editorialDecl</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>msDesc</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>msIdentifier</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>physDesc</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>additional</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>handNote</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>handShift</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>add</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>del</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>extent</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>biblStruct</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>analytic</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>imprint</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>series</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>revisionDesc</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>teiHeader</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>profileDesc</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>ptr</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>rs</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>respons</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>div</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>seg</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>edition</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>publisher</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>pubPlace</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>textLang</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>biblScope</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>title</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>desc</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>occupation</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>faith</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>persName</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>orgName</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>placeName</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>residence</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>objectDesc</gi></cell><cell>change</cell></row></table>
-	</div>
-</div><!-- not in use --><!-- 
-<elementSpec ident="rs" module="core" mode="change">
-	<gloss versionDate="2005-01-14" xml:lang="en">referencing string</gloss>
-	<gloss versionDate="2014-02-06" xml:lang="de">verweisende Zeichenfolge</gloss>
-	<desc versionDate="2005-01-14" xml:lang="en">contains a general purpose name or referring string.</desc>
-	<desc versionDate="2014-02-06" xml:lang="de"
-		>Mehrzweckelement; enthält eine Zeichenfolge, die allgemein etwas benennt oder auf etwas verweist.</desc>
-	<classes mode="change">
-		<memberOf key="att.naming" mode="delete"/>
-		<memberOf key="att.typed" mode="delete"/>
-	</classes>
-	<content>
-		<ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/>
-		<rng:optional>
-			<rng:choice>
-				<rng:group>
-					<rng:attribute name="type">
-						<rng:value>compilation</rng:value>
-					</rng:attribute>
-					<rng:attribute name="key">
-						<rng:ref name="data.compilationKey"/>
-					</rng:attribute>
-				</rng:group>
-				<rng:group>
-					<rng:attribute name="type">
-						<rng:value>letter</rng:value>
-					</rng:attribute>
-					<rng:attribute name="key">
-						<rng:ref name="data.correspKey"/>
-					</rng:attribute>
-				</rng:group>
-				<rng:group>
-					<rng:attribute name="type">
-						<rng:value>person</rng:value>
-					</rng:attribute>
-					<rng:attribute name="key">
-						<rng:ref name="data.personKey"/>
-					</rng:attribute>
-				</rng:group>
-				<rng:group>
-					<rng:attribute name="type">
-						<rng:value>org</rng:value>
-					</rng:attribute>
-					<rng:attribute name="key">
-						<rng:ref name="data.orgKey"/>
-					</rng:attribute>
-				</rng:group>
-				<rng:group>
-					<rng:attribute name="type">
-						<rng:value>event</rng:value>
-					</rng:attribute>
-					<rng:attribute name="key">
-						<rng:ref name="data.eventKey"/>
-					</rng:attribute>
-				</rng:group>
-				<rng:group>
-					<rng:attribute name="type">
-						<rng:choice>
-							<rng:value>lit</rng:value>
-							<rng:value>rez</rng:value>
-						</rng:choice>
-					</rng:attribute>
-					<rng:attribute name="key">
-						<rng:choice>
-							<rng:ref name="data.literatureKey"/>
-							<rng:ref name="data.receptionKey"/>
-						</rng:choice>
-					</rng:attribute>
-					<rng:optional>
-						<rng:attribute name="pdf" ns="http://richard-strauss-ausgabe.de/ns/1.0">
-							<rng:ref name="data.pointer"/>
-						</rng:attribute>
-					</rng:optional>
-					<rng:optional>
-						<rng:attribute name="seite" ns="http://richard-strauss-ausgabe.de/ns/1.0">
-							<rng:ref name="data.text"/>
-						</rng:attribute>
-					</rng:optional>
-					<rng:optional>
-						<rng:attribute name="seitepdf"
-							ns="http://richard-strauss-ausgabe.de/ns/1.0">
-							<rng:ref name="data.count"/>
-						</rng:attribute>
-					</rng:optional>
-					<rng:optional>
-						<rng:attribute name="cert"
-							ns="http://richard-strauss-ausgabe.de/ns/1.0">
-							<rng:ref name="data.certainty"/>
-						</rng:attribute>
-					</rng:optional>
-				</rng:group>
-				<rng:group>
-					<rng:attribute name="type">
-						<rng:value>graphic</rng:value>
-					</rng:attribute>
-					<rng:attribute name="key">
-						<rng:ref name="data.graphicKey"/>
-					</rng:attribute>
-				</rng:group>
-				<rng:group>
-					<rng:attribute name="type">
-						<rng:value>work</rng:value>
-					</rng:attribute>
-					<rng:optional>
-						<rng:attribute name="key">
-							<rng:ref name="data.workKey"/>
-						</rng:attribute>
-					</rng:optional>
-				</rng:group>
-				<rng:group>
-					<rng:attribute name="type">
-						<rng:value>performance</rng:value>
-					</rng:attribute>
-					<rng:attribute name="key">
-						<rng:ref name="data.performanceKey"/>
-					</rng:attribute>
-				</rng:group>
-			</rng:choice>
-		</rng:optional>
-	</content>
-	<listRef>
-					<ptr target="#NDPER"/>
-					<ptr target="#CONARS"/>
-				</listRef>
-</elementSpec>
--->
-				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.edits.macros.xml" xml:lang="">
-	<head>Macros</head>
-	<table><row><cell>
-		Macro <ident type="macro">macro.form.date</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.gndIdno</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.rsqvIdno</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.isbnIdno</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.uagIdno</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.regularPersName</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.supplementaryPersName</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.datePlaceNameHead</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.commentaryNote</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.summaryNote</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.discussionNote</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.uncategorizedNote</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.detailsNote</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.figuresNote</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.publicationStmt_ms</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.publicationStmt_print</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.publicationStmt_event</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.sourceDesc_ms</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.sourceDesc_print</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.sourceDesc_event</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.creation_ms</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.creation.change_ms</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.creation_event</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.revisionDescChange</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.bibl</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.authors</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.titles.full</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.titles.short</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.noteParagraph</ident></cell><cell/></row></table>
-</div>
-			</div>
 		</body>
 	</text>
 </TEI>

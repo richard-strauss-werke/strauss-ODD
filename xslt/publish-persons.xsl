@@ -27,21 +27,6 @@
 				  </funder>
    </xsl:variable>
    <xsl:variable name="contributorsResp">Vorbereitung der digitalen Edition</xsl:variable>
-   <xsl:variable name="staff">
-      <name xml:id="slm">Salome Reiser</name>
-      <name xml:id="alx">Alexander Erhard</name>
-      <name xml:id="sts">Stefan Schenk</name>
-      <name xml:id="aap">Andreas Pernpeintner</name>
-      <name xml:id="mmm">Martina Mengele</name>
-      <name xml:id="flr">Florence Eller</name>
-      <name xml:id="sbb">Sebastian Bolz</name>
-      <name xml:id="wwb">Walter Werbeck</name>
-      <name xml:id="clh">Claudia Heine</name>
-      <name xml:id="afl">Florian Amort</name>
-      <name xml:id="stk">Steffi Kracht</name>
-      <name xml:id="oen">Ursula Welsch</name>
-      <name xml:id="ofr">Oliver Franeske</name>
-   </xsl:variable>
    <xsl:variable name="publicationStmt">
 				  <distributor>Forschungsstelle zur Edition der Werke von Richard Strauss</distributor>
 				  <availability status="restricted">
@@ -55,6 +40,21 @@
 			   </seriesStmt>
    </xsl:variable>
    <xsl:variable name="edition">Digitale Ausgabe</xsl:variable>
+   <xsl:variable name="staff">
+      <name xml:id="slm">Salome Reiser</name>
+      <name xml:id="alx">Alexander Erhard</name>
+      <name xml:id="sts">Stefan Schenk</name>
+      <name xml:id="aap">Andreas Pernpeintner</name>
+      <name xml:id="mmm">Martina Mengele</name>
+      <name xml:id="flr">Florence Eller</name>
+      <name xml:id="sbb">Sebastian Bolz</name>
+      <name xml:id="wwb">Walter Werbeck</name>
+      <name xml:id="clh">Claudia Heine</name>
+      <name xml:id="afl">Florian Amort</name>
+      <name xml:id="stk">Steffi Kracht</name>
+      <name xml:id="oen">Ursula Welsch</name>
+      <name xml:id="ofr">Oliver Fraenske</name>
+   </xsl:variable>
    <xsl:variable name="sexes">
       <sex value="M">männlich</sex>
       <sex value="F">weiblich</sex>
@@ -84,6 +84,9 @@
    <xsl:template match="desc">
       <xsl:call-template name="keepOnlyWithAnyText"/>
    </xsl:template>
+   <xsl:template match="gloss">
+      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
+   </xsl:template>
    <xsl:template match="rs">
       <xsl:call-template name="processRs"/>
    </xsl:template>
@@ -111,24 +114,6 @@
    <xsl:template match="placeName">
       <xsl:call-template name="onlyWithContentAddCert"/>
    </xsl:template>
-   <xsl:template match="seg">
-      <xsl:call-template name="removeIfTyped"/>
-   </xsl:template>
-   <xsl:template match="respons">
-      <xsl:call-template name="transformRespons"/>
-   </xsl:template>
-   <xsl:template match="event">
-      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
-   </xsl:template>
-   <xsl:template match="listEvent">
-      <xsl:call-template name="keepOnlyWithAnyAttOrAnyText"/>
-   </xsl:template>
-   <xsl:template match="state">
-      <xsl:call-template name="keepOnlyWithAttOrChildContent"/>
-   </xsl:template>
-   <xsl:template match="gloss">
-      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
-   </xsl:template>
    <xsl:template match="affiliation">
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
    </xsl:template>
@@ -138,8 +123,14 @@
    <xsl:template match="death">
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
    </xsl:template>
+   <xsl:template match="event">
+      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
+   </xsl:template>
    <xsl:template match="faith">
       <xsl:call-template name="keepOnlyWithAttOrContent"/>
+   </xsl:template>
+   <xsl:template match="listEvent">
+      <xsl:call-template name="keepOnlyWithAnyAttOrAnyText"/>
    </xsl:template>
    <xsl:template match="occupation">
       <xsl:call-template name="keepOnlyWithAttOrContent"/>
@@ -152,6 +143,15 @@
    </xsl:template>
    <xsl:template match="sex">
       <xsl:call-template name="expandOrRemoveSexElement"/>
+   </xsl:template>
+   <xsl:template match="state">
+      <xsl:call-template name="keepOnlyWithAttOrChildContent"/>
+   </xsl:template>
+   <xsl:template match="seg">
+      <xsl:call-template name="removeIfTyped"/>
+   </xsl:template>
+   <xsl:template match="respons">
+      <xsl:call-template name="transformRespons"/>
    </xsl:template>
    <xsl:template match="affiliation/date">
       <xsl:call-template name="expandOrRemoveDate"/>

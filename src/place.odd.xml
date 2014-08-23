@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?> <?oxygen RNGSchema="p5odds.rnc"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
+	xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+	xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron"
+	xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title/>
+			</titleStmt>
+			<publicationStmt>
+				<p/>
+			</publicationStmt>
+			<sourceDesc>
+				<p/>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+	<text>
+		<body>
+			<schemaSpec ident="schema.place" xml:lang="en" start="place" prefix="rswa_">
+				<desc>Places. Based on Anna Maria Komprecht's WeGA ODD.</desc>
+				<moduleRef key="tei"/>
+				<moduleRef key="core"
+					include="cit date hi item l lb lg list listBibl note p q quote rs"/>
+				<moduleRef key="header" include="idno"/>
+				<moduleRef key="namesdates"
+					include="country district geo location place placeName region settlement trait"/>
+				<moduleRef key="linking" include=""/>
+				<specGrpRef target="#edits.elements.place"/>
+			</schemaSpec>
+			
+			<div>
+				<head>Place</head>
+				<desc>Contains specifications specific of the place ODD</desc>
+				<specGrp xml:id="edits.elements.place">
+					
+					<!-- based on WeGA_places.odd.xml; modified -->
+					<elementSpec ident="placeName" mode="change" module="namesdates">
+						<desc versionDate="2013-11-11" xml:lang="en">contains an absolute or relative place name.</desc>
+						<desc versionDate="2013-11-11" xml:lang="de">enthält einen absoluten oder relativen Ortsnamen.</desc>
+						<classes mode="change">
+							<!--						<memberOf key="att.global" mode="delete"/>-->
+							<memberOf key="att.naming" mode="delete"/>
+							<memberOf key="att.canonical" mode="delete"/>
+							<memberOf key="att.typed" mode="delete"/>
+							<memberOf key="att.datable" mode="delete"/>
+							<memberOf key="att.editLike" mode="delete"/>
+							<memberOf key="att.dimensions" mode="delete"/>
+							<memberOf key="att.ranging" mode="delete"/>
+							<memberOf key="att.responsibility" mode="delete"/>
+							<memberOf key="att.source" mode="delete"/>
+							<memberOf key="att.personal" mode="delete"/>
+						</classes>
+						<content>
+							<rng:text/>
+						</content>
+						<attList>
+							<attDef ident="type" mode="add" usage="req">
+								<desc versionDate="2014-01-08" xml:lang="en">characterizes the element in some sense, using any convenient classification scheme or typology.</desc>
+								<desc versionDate="2014-01-08" xml:lang="de">charakterisiert das Element in einem gewissen Sinne, wobei irgendeine zweckmäßige Systematik oder Typologie angwendet wird.</desc>
+								<valList type="closed">
+									<valItem ident="reg">
+										<gloss versionDate="2013-11-11" xml:lang="en">regular</gloss>
+										<gloss versionDate="2013-11-11" xml:lang="de">regulär</gloss>
+									</valItem>
+									<valItem ident="alt">
+										<gloss versionDate="2014-01-08" xml:lang="en">alternative</gloss>
+										<gloss versionDate="2014-01-08" xml:lang="de">Alternative</gloss>
+									</valItem>
+									<valItem ident="toponym">
+									</valItem>
+									<valItem ident="local">
+									</valItem>
+								</valList>
+							</attDef>
+						</attList>
+					</elementSpec>
+					
+					<!-- taken from on WeGA_places.odd.xml -->
+					<elementSpec ident="location" mode="change" module="namesdates">
+						<desc versionDate="2013-11-11" xml:lang="en">defines the location of a place as a set of geographical coordinates, in terms of other named geo-political entities, or as an address.</desc>
+						<desc versionDate="2013-11-11" xml:lang="de">definiert die Lage eines Ortes in einer Reihe von geographischen Koordinaten, in Bezug auf die anderen genannten geo-politische Einheiten, oder als eine Adresse.</desc>
+						<classes mode="change">
+							<memberOf key="att.global" mode="delete"/>
+							<memberOf key="att.typed" mode="delete"/>
+							<memberOf key="att.datable" mode="delete"/>
+							<memberOf key="att.editLike" mode="delete"/>
+							<memberOf key="att.dimensions" mode="delete"/>
+							<memberOf key="att.ranging" mode="delete"/>
+							<memberOf key="att.responsibilty" mode="delete"/>
+							<memberOf key="att.source" mode="delete"/>
+						</classes>
+						<content>
+							<rng:ref name="geo"/>
+						</content>
+					</elementSpec>
+					
+					<!-- taken from on WeGA_places.odd.xml -->
+					<elementSpec ident="geo" mode="change" module="namesdates">
+						<gloss versionDate="2013-11-11" xml:lang="en">geographical coordinates</gloss>
+						<desc versionDate="2013-11-11" xml:lang="en">contains any expression of a set of geographic coordinates, representing a point, line, or area on the surface of the earth in some notation.</desc>
+						<gloss versionDate="2013-11-11" xml:lang="en">geographische Koordinaten</gloss>
+						<desc versionDate="2013-11-11" xml:lang="de">enthält einen Terminus eines Sets von geographischen Koordinaten, die einen Punkt, eine Linie oder einen Bereich der Erde in einer bestimmten Schreibweise darstellen.</desc>
+						<classes mode="change">
+							<!--						<memberOf key="att.global" mode="delete"/>-->
+							<memberOf key="att.declaring" mode="delete"/>
+						</classes>
+					</elementSpec>
+					
+					<!-- taken from WeGA_places.odd.xml -->
+					<elementSpec ident="idno" mode="change" module="namesdates">
+						<gloss versionDate="2013-11-11" xml:lang="en">identifier</gloss>
+						<desc versionDate="2013-11-11" xml:lang="en">supplies any form of identifier used to identify some object, such as a bibliographic item, a person, a title, an organization, etc. in a standardized way.</desc>
+						<gloss versionDate="2013-11-11" xml:lang="de">Bezeichner</gloss>
+						<desc versionDate="2013-11-11" xml:lang="de">lieferte jegliche Form eines Bezeichners in einer standardisierten Form, der benutzt werden kann um Objekte zu identifiziert, wie etwa ein bibliographisches Element, eine Organisation, usw.</desc>
+						<classes mode="change">
+							<!--						<memberOf key="att.global" mode="delete"/>-->
+							<memberOf key="att.sortable" mode="delete"/>
+						</classes>
+						<attList>
+							<attDef ident="type" mode="change" usage="req">
+								<desc versionDate="2014-01-08" xml:lang="en">characterizes the element in some sense, using any convenient classification scheme or typology.</desc>
+								<desc versionDate="2014-01-08" xml:lang="de">charakterisiert das Element in einem gewissen Sinne, wobei irgendeine zweckmäßige Systematik oder Typologie angwendet wird.</desc>
+								<valList type="closed" mode="replace">
+									<valItem ident="geonames">
+										<desc versionDate="2014-01-08" xml:lang="en">ID taken from http://www.geonames.org/</desc>
+										<desc versionDate="2014-01-08" xml:lang="de">ID von http://www.geonames.org/</desc>
+									</valItem>
+									<valItem ident="getty">
+										<desc versionDate="2014-01-08" xml:lang="en">ID taken from http://www.getty.edu/research/tools/vocabularies/tgn/</desc>
+										<desc versionDate="2014-01-08" xml:lang="de">ID von http://www.getty.edu/research/tools/vocabularies/tgn/</desc>
+									</valItem>
+								</valList>
+							</attDef>
+						</attList>
+					</elementSpec>
+					
+				</specGrp>
+			</div>
+			
+		</body>
+	</text>
+</TEI>

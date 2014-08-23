@@ -1,0 +1,1304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
+	xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+	xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron">
+	<head>Modifications of elements</head>
+		<desc>These modifications change the way an element is specified for all schemata linking to this specGrp. Currently, this applies to every schema in use. If a specific element is not included in a schema, the corresponding specifications below will have no effect on that schema.</desc>
+		<specGrp xml:id="edits.elements">
+
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="listBibl" module="core" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyAttOrAnyText"/>
+				<gloss versionDate="2014-01-26" xml:lang="en">citation list</gloss>
+				<gloss versionDate="2014-01-26" xml:lang="ko">Bibliographie</gloss>
+				<desc versionDate="2014-01-26" xml:lang="en"
+					>contains a list of bibliographic citations of any kind. </desc>
+				<desc versionDate="2014-01-26" xml:lang="de"
+					>Enthält eine Liste bibliographischer Angaben beliebiger Art.</desc>
+				<classes>
+					<memberOf key="att.global" mode="delete"/>
+					<memberOf key="att.sortable" mode="delete"/>
+					<memberOf key="att.typed" mode="delete"/>
+					<!-- @keep
+							<memberOf key="model.biblLike"/>
+							 -->
+				</classes>
+				<content>
+					<rng:zeroOrMore>
+						<rng:ref name="macro.form.bibl"/>
+					</rng:zeroOrMore>
+				</content>
+				<!--<listRef>
+							<ptr target="#COBITY"/>
+							<ptr target="#HD3"/>
+							<ptr target="#CCAS2"/>
+						</listRef>-->
+			</elementSpec>
+
+			<elementSpec ident="fileDesc" module="header" mode="change">
+				<gloss versionDate="2007-07-05" xml:lang="en">file description</gloss>
+				<gloss versionDate="2006-10-18" xml:lang="de">Dateibeschreibung</gloss>
+				<desc versionDate="2005-01-14" xml:lang="en"
+					>contains a full bibliographic description of an electronic file.</desc>
+				<desc versionDate="2006-10-18" xml:lang="de"
+					>enthält die detaillierte bibliografische Beschreibung
+							einer elektronischen Datei.</desc>
+				<classes>
+					<memberOf key="att.global" mode="delete"/>
+				</classes>
+				<content>
+					<rng:ref name="titleStmt"/>
+					<rng:ref name="editionStmt"/>
+					<rng:ref name="publicationStmt"/>
+					<rng:ref name="notesStmt"/>
+					<rng:ref name="sourceDesc"/>
+				</content>
+				<remarks versionDate="2014-02-05" xml:lang="en">
+					<p>The content of this element is partly determined by macros specific to single schemata.</p>
+				</remarks>
+				<listRef>
+					<ptr target="#HD2"/>
+					<ptr target="#HD11"/>
+				</listRef>
+			</elementSpec>
+
+			<elementSpec ident="textClass" module="header" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
+				<gloss versionDate="2005-01-14" xml:lang="en">text classification</gloss>
+				<gloss versionDate="2006-10-18" xml:lang="de">Textklassifikation</gloss>
+				<classes>
+					<memberOf key="att.global" mode="delete"/>
+					<memberOf key="model.profileDescPart"/>
+				</classes>
+				<content>
+					<rng:element name="keywords">
+						<rng:oneOrMore>
+							<rng:ref name="term"/>
+						</rng:oneOrMore>
+					</rng:element>
+				</content>
+			</elementSpec>
+
+			<elementSpec ident="graphic" module="core" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAtt"/>
+				<content/>
+			</elementSpec>
+
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="repository" module="namesdates" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="transformOrRemoveRepository"/>
+			</elementSpec>
+
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="collection" module="namesdates" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
+			</elementSpec>
+
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="idno" module="header" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
+			</elementSpec>
+
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="additions" module="msdescription" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
+			</elementSpec>
+
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="respStmt" module="core" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandRespStmt"/>
+			</elementSpec>
+
+			<elementSpec ident="state" module="namesdates" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAttOrChildContent"/>
+				<gloss versionDate="2014-01-26" xml:lang="en">state</gloss>
+				<gloss versionDate="2014-01-26" xml:lang="de">Status</gloss>
+				<desc versionDate="2014-01-26" xml:lang="en"
+					>contains a description of some status or quality attributed to a person, place, or organization often at some specific time or for a specific date range.</desc>
+				<desc versionDate="2014-01-26" xml:lang="de"
+					>enthält die Beschreibung eines Status oder einer Eigenschaft, die einer Person, einem Ort oder einer Organisation zugeschrieben wird, häufig zu einem bestimmten Zeitpunkt oder in einer bestimmten Zeitspanne.</desc>
+				<classes mode="change">
+					<memberOf key="att.global" mode="delete"/>
+					<!-- @keep
+							<memberOf key="att.datable"/>
+							<memberOf key="att.editLike"/>
+							-->
+					<memberOf key="att.typed" mode="delete"/>
+					<memberOf key="att.naming" mode="delete"/>
+					<!-- @keep
+							<memberOf key="model.persStateLike"/>
+							<memberOf key="model.orgStateLike"/>
+							<memberOf key="model.placeStateLike"/>
+							 -->
+				</classes>
+				<content>
+					<rng:ref name="desc"/>
+				</content>
+				<exemplum versionDate="2014-01-26" xml:lang="de">
+					<egXML xmlns="http://www.tei-c.org/ns/Examples">
+						<person>
+							<state from="1909" to="1920">
+								<desc versionDate="2014-02-04" xml:lang="de">Freund von <persName
+									key="p10000">Richard Strauss</persName></desc>
+							</state>
+						</person>
+					</egXML>
+				</exemplum>
+				<!--<listRef>
+							<ptr target="#NDPERSbp"/>
+							<ptr target="#NDPERSEpc"/>
+							<ptr target="#NDPERSEpc"/>
+						</listRef>-->
+			</elementSpec>
+
+			<elementSpec ident="note" module="core" mode="change">
+				<attList>
+					<attDef ident="anchored" mode="delete"/>
+				</attList>
+			</elementSpec>
+
+			<elementSpec ident="person" module="namesdates" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="perOrgRoot"/>
+				<gloss versionDate="2014-01-26" xml:lang="en">person</gloss>
+				<gloss versionDate="2014-01-26" xml:lang="de">Person</gloss>
+				<desc versionDate="2014-01-26" xml:lang="en"
+					>provides information about an identifiable individual, for example a participant in a language interaction, or a person referred to in a
+							historical source.</desc>
+				<desc versionDate="2014-01-26" xml:lang="de"
+					>gibt Informationen über ein identifizierbares Individuum, z.B. einen Teilnehmer an einer sprachlichen Interaktion oder eine Person, auf die in einer historischen Quelle verwiesen wird.</desc>
+				<classes>
+					<memberOf key="att.global"/>
+					<memberOf key="att.editLike"/>
+					<memberOf key="model.personLike"/>
+					<memberOf key="att.sortable"/>
+				</classes>
+				<content>
+					<rng:ref name="macro.form.summaryNote"/>
+					<rng:ref name="macro.form.commentaryNote"/>
+					<rng:ref name="macro.form.discussionNote"/>
+					<rng:ref name="macro.form.uncategorizedNote"/>
+					<rng:ref name="macro.form.gndIdno"/>
+					<rng:ref name="macro.form.rsqvIdno"/>
+					<rng:ref name="macro.form.regularPersName"/>
+					<rng:oneOrMore>
+						<rng:ref name="macro.form.supplementaryPersName"/>
+					</rng:oneOrMore>
+					<rng:ref name="sex"/>
+					<rng:ref name="birth"/>
+					<rng:ref name="death"/>
+					<rng:oneOrMore>
+						<rng:ref name="occupation"/>
+					</rng:oneOrMore>
+					<rng:oneOrMore>
+						<rng:ref name="residence"/>
+					</rng:oneOrMore>
+					<rng:oneOrMore>
+						<rng:ref name="affiliation"/>
+					</rng:oneOrMore>
+					<rng:oneOrMore>
+						<rng:ref name="state"/>
+					</rng:oneOrMore>
+					<rng:oneOrMore>
+						<rng:ref name="faith"/>
+					</rng:oneOrMore>
+					<rng:ref name="macro.form.detailsNote"/>
+					<rng:ref name="listEvent"/>
+					<rng:ref name="listBibl"/>
+					<rng:ref name="macro.form.figuresNote"/>
+				</content>
+				<attList>
+					<attDef ident="role" usage="opt" mode="delete"/>
+					<attDef ident="sex" usage="opt" mode="delete"/>
+					<attDef ident="age" usage="opt" mode="delete"/>
+				</attList>
+				<listRef>
+					<!--					<ptr target="#persons"/>-->
+					<ptr target="#NDPERSE"/>
+					<!-- @removed (about particDesc, which is not in use here)
+								<ptr target="#CCAHPA"/>
+							-->
+				</listRef>
+			</elementSpec>
+
+			<elementSpec ident="event" module="namesdates" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
+				<gloss versionDate="2014-01-26" xml:lang="en">event</gloss>
+				<gloss versionDate="2014-01-26" xml:lang="de">Ereignis</gloss>
+				<desc versionDate="2014-01-26" xml:lang="en"
+					>contains data relating to any kind of significant event associated with a person, place, or organization.</desc>
+				<desc versionDate="2014-01-26" xml:lang="de"
+					>Enthält Daten, die sich auf ein signifikantes Ereignis im Zusammenhang mit einer Person, eines Orts oder einer Organisation beziehen.</desc>
+				<classes mode="change">
+					<memberOf key="att.global" mode="delete"/>
+					<memberOf key="att.datable" mode="delete"/>
+					<memberOf key="att.editLike" mode="delete"/>
+					<memberOf key="att.typed" mode="delete"/>
+					<memberOf key="att.naming" mode="delete"/>
+					<memberOf key="att.sortable" mode="delete"/>
+					<!-- @keep
+							<memberOf key="model.persEventLike"/>
+							<memberOf key="model.placeEventLike"/>
+							-->
+				</classes>
+
+				<content>
+					<rng:ref name="macro.form.datePlaceNameHead"/>
+					<rng:oneOrMore>
+						<rng:ref name="p"/>
+					</rng:oneOrMore>
+				</content>
+				<attList>
+					<attDef ident="where" usage="opt" mode="delete"/>
+				</attList>
+				<exemplum versionDate="2014-01-26" xml:lang="de" type="form">
+					<egXML xmlns="http://www.tei-c.org/ns/Examples">
+						<event>
+							<head>
+								<date when="1924-02-03"/>
+								<placeName>München</placeName>
+							</head>
+							<p>Oberdoktor-Auszeichnung</p>
+						</event>
+					</egXML>
+				</exemplum>
+				<!--<listRef>
+							<ptr target="#NDPERSbp"/>
+						</listRef>-->
+			</elementSpec>
+
+			<elementSpec ident="gloss" module="core" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
+			</elementSpec>
+
+			<elementSpec ident="affiliation" module="namesdates" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
+				<gloss versionDate="2014-01-26" xml:lang="en">affiliation</gloss>
+				<gloss versionDate="2014-01-26" xml:lang="de">Zugehörigkeit</gloss>
+				<desc versionDate="2014-01-26" xml:lang="en"
+					>contains an informal description of a person's present or past affiliation with some
+                		organization, for example an employer or sponsor.</desc>
+				<desc versionDate="2014-01-26" xml:lang="fr"
+					>Enthält eine informelle Beschreibung der gegenwärtigen oder früheren Zugehörigkeit einer Person zu einer Organisation, z.B. zu einem Arbeit- oder Geldgeber.</desc>
+				<classes mode="change">
+					<memberOf key="att.global" mode="delete"/>
+					<memberOf key="model.addressLike" mode="delete"/>
+					<!-- @keep 
+							<memberOf key="model.persStateLike"/>
+							 -->
+					<memberOf key="att.editLike" mode="delete"/>
+					<memberOf key="att.datable" mode="delete"/>
+					<memberOf key="att.naming" mode="delete"/>
+				</classes>
+				<content>
+					<rng:ref name="macro.form.date"/>
+					<rng:ref name="orgName"/>
+					<rng:ref name="gloss"/>
+					<!-- @remove 
+							<ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/>
+							-->
+				</content>
+				<exemplum versionDate="2014-01-26" xml:lang="de">
+					<egXML xmlns="http://www.tei-c.org/ns/Examples">
+						<affiliation>
+							<date from="1900" to="1903"/>
+							<orgName>Verlag Adolph Fürstner</orgName>
+							<gloss>Inhaber</gloss>
+						</affiliation>
+					</egXML>
+				</exemplum>
+				<!--<listRef>
+							<ptr target="#CCAHPA"/>
+						</listRef>-->
+			</elementSpec>
+
+			<elementSpec ident="listEvent" module="namesdates" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyAttOrAnyText"/>
+				<gloss versionDate="2014-01-26" xml:lang="en">list of events</gloss>
+				<gloss versionDate="2014-01-26" xml:lang="de">Ereignisliste</gloss>
+				<desc versionDate="2014-01-26" xml:lang="en"
+					>contains a list of descriptions, each of which provides information
+                			about an identifiable event. </desc>
+				<desc versionDate="2014-01-26" xml:lang="de"
+					>Enthält eine Liste von Beschreibungen, von denen jede Informationen über ein identifizierbares Ereignis enthält.</desc>
+				<classes mode="change">
+					<memberOf key="att.global" mode="delete"/>
+					<memberOf key="att.typed" mode="delete"/>
+					<memberOf key="att.sortable" mode="delete"/>
+					<memberOf key="model.listLike" mode="delete"/>
+					<!-- @keep 
+                			<memberOf key="model.persEventLike"/>
+                			 -->
+				</classes>
+				<content>
+					<rng:zeroOrMore>
+						<rng:ref name="event"/>
+					</rng:zeroOrMore>
+				</content>
+				<exemplum versionDate="2014-01-26" xml:lang="de" type="form">
+					<egXML xmlns="http://www.tei-c.org/ns/Examples">
+						<listEvent>
+							<event>
+								<head>
+									<date when="1924-02-03"/>
+									<placeName>München</placeName>
+								</head>
+								<p>Oberdoktor-Auszeichnung</p>
+							</event>
+						</listEvent>
+					</egXML>
+				</exemplum>
+				<!--<listRef>
+                			<ptr target="#NDPERSbp"/>
+                		</listRef>-->
+			</elementSpec>
+
+			<elementSpec ident="sex" module="namesdates" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandOrRemoveSexElement"/>
+				<gloss versionDate="2014-01-26" xml:lang="en">sex</gloss>
+				<gloss versionDate="2014-01-26" xml:lang="de">Geschlecht</gloss>
+				<desc versionDate="2014-01-26" xml:lang="en">specifies the sex of a person.</desc>
+				<desc versionDate="2014-01-26" xml:lang="de"
+					>bestimmt das Geschlecht einer Person.</desc>
+				<classes mode="change">
+					<memberOf key="att.global" mode="delete"/>
+					<!-- @keep 
+                                <memberOf key="model.persStateLike"/>
+                            -->
+					<memberOf key="att.editLike" mode="delete"/>
+					<memberOf key="att.datable" mode="delete"/>
+				</classes>
+				<content>
+					<rng:empty/>
+				</content>
+				<attList>
+					<attDef ident="value" usage="opt" mode="replace">
+						<desc versionDate="2014-01-26" xml:lang="en">supplies a coded value for sex</desc>
+						<desc versionDate="2014-01-26" xml:lang="de"
+							>bestimmt das Geschlecht in codierter Form</desc>
+						<valList type="closed">
+							<valItem ident="M">
+								<gloss versionDate="2014-01-26" xml:lang="en">male</gloss>
+								<gloss versionDate="2014-01-26" xml:lang="de">männlich</gloss>
+							</valItem>
+							<valItem ident="F">
+								<gloss versionDate="2014-01-26" xml:lang="en">female</gloss>
+								<gloss versionDate="2014-01-26" xml:lang="de">weiblich</gloss>
+							</valItem>
+							<valItem ident="O">
+								<gloss versionDate="2014-01-26" xml:lang="en">other</gloss>
+								<gloss versionDate="2014-01-26" xml:lang="de">sonstiges</gloss>
+							</valItem>
+							<valItem ident="N">
+								<gloss versionDate="2014-01-26" xml:lang="en">none</gloss>
+								<gloss versionDate="2014-01-26" xml:lang="de">keines</gloss>
+							</valItem>
+							<valItem ident="U">
+								<gloss versionDate="2014-01-26" xml:lang="en">unknown</gloss>
+								<gloss versionDate="2014-01-26" xml:lang="de">unbekannt</gloss>
+							</valItem>
+						</valList>
+						<remarks versionDate="2014-02-04" xml:lang="en">
+							<p>Values for this attribute refer to vCard's sex property <ptr target="http://microformats.org/wiki/gender-formats"/>.</p>
+						</remarks>
+						<remarks versionDate="2014-02-04" xml:lang="de">
+							<p>Die Werte dieses Attributs beziehen sich auf die vCard-Unterscheidung der Geschlechter <ptr target="http://microformats.org/wiki/gender-formats"/>.</p>
+						</remarks>
+					</attDef>
+				</attList>
+				<exemplum versionDate="2014-01-26" xml:lang="de" type="form" xml:id="exSexForm">
+					<egXML xmlns="http://www.tei-c.org/ns/Examples">
+						<sex value="M"/>
+					</egXML>
+				</exemplum>
+				<exemplum versionDate="2014-01-26" xml:lang="de" type="final" corresp="#exSexForm">
+					<egXML xmlns="http://www.tei-c.org/ns/Examples">
+						<sex value="M">männlich</sex>
+					</egXML>
+				</exemplum>
+				<remarks versionDate="2014-01-26" xml:lang="en">
+					<p>The text content will be generated form the attribute value for publication.</p>
+				</remarks>
+				<remarks versionDate="2014-01-26" xml:lang="de">
+					<p>Der Textinhalt wird zur Publikation aus dem Attributwert generiert.</p>
+				</remarks>
+				<!--<listRef>
+                            <ptr target="#NDPERSEpc"/>
+                        </listRef>-->
+			</elementSpec>
+
+			<elementSpec ident="birth" module="namesdates" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
+				<gloss versionDate="2014-01-26" xml:lang="en">birth</gloss>
+				<gloss versionDate="2014-01-26" xml:lang="de">Geburt</gloss>
+				<desc versionDate="2014-01-26" xml:lang="en"
+					>contains information about a person's birth date and place.</desc>
+				<desc versionDate="2014-01-26" xml:lang="de"
+					>Enthält Angaben zu Geburtsdatum und -ort einer Person.</desc>
+				<classes mode="change">
+					<memberOf key="att.global" mode="delete"/>
+					<!-- @keep  
+                                <memberOf key="model.persEventLike"/>
+                            -->
+					<memberOf key="att.editLike" mode="delete"/>
+					<memberOf key="att.datable" mode="delete"/>
+					<memberOf key="att.naming" mode="delete"/>
+				</classes>
+				<content>
+					<!-- @remove
+                                <rng:ref name="macro.phraseSeq"/>
+                            -->
+					<rng:ref name="macro.form.date"/>
+					<rng:ref name="placeName"/>
+				</content>
+				<exemplum versionDate="2014-01-26" xml:lang="de" type="form" xml:id="exBirthForm">
+					<egXML xmlns="http://www.tei-c.org/ns/Examples">
+						<birth>
+							<date precision="medium" when="1909-12-25"/>
+							<placeName cert="high">Dresden</placeName>
+						</birth>
+					</egXML>
+				</exemplum>
+				<exemplum versionDate="2014-01-26" xml:lang="de" type="final" corresp="#exBirthForm">
+					<egXML xmlns="http://www.tei-c.org/ns/Examples">
+						<birth>
+							<date precision="medium" when="1909-12-25">ca. 25. Dezember 1909</date>
+							<placeName cert="high">Dresden (ws.)</placeName>
+						</birth>
+					</egXML>
+				</exemplum>
+				<!--<listRef>
+                            <ptr target="#CCAHPA"/>
+                        </listRef>-->
+			</elementSpec>
+
+			<elementSpec ident="death" module="namesdates" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
+				<gloss versionDate="2014-01-26" xml:lang="en">death</gloss>
+				<gloss versionDate="2014-01-26" xml:lang="de">Tod</gloss>
+				<desc versionDate="2014-01-26" xml:lang="en"
+					>contains information about person's death date and place.</desc>
+				<desc versionDate="2014-01-26" xml:lang="de"
+					>Enthält Angaben zu Todesdatum und -ort einer Person.</desc>
+				<classes mode="change">
+					<memberOf key="att.global" mode="delete"/>
+					<!-- @keep  
+                                <memberOf key="model.persEventLike"/>
+                            -->
+					<memberOf key="att.editLike" mode="delete"/>
+					<memberOf key="att.datable" mode="delete"/>
+					<memberOf key="att.naming" mode="delete"/>
+				</classes>
+				<content>
+					<rng:ref name="macro.form.date"/>
+					<rng:ref name="placeName"/>
+				</content>
+				<exemplum versionDate="2014-01-26" xml:lang="de" type="form" xml:id="exDeathForm">
+					<egXML xmlns="http://www.tei-c.org/ns/Examples">
+						<death>
+							<date precision="medium" when="1909-12-25"/>
+							<placeName cert="high">Dresden</placeName>
+						</death>
+					</egXML>
+				</exemplum>
+				<exemplum versionDate="2014-01-26" xml:lang="de" type="final" corresp="#exDeathForm">
+					<egXML xmlns="http://www.tei-c.org/ns/Examples">
+						<death>
+							<date precision="medium" when="1909-12-25">ca. 25. Dezember 1909</date>
+							<placeName cert="high">Dresden (ws.)</placeName>
+						</death>
+					</egXML>
+				</exemplum>
+				<!--<listRef>
+                            <ptr target="#CCAHPA"/>
+                        </listRef>-->
+			</elementSpec>
+
+			<elementSpec ident="origDate" module="msdescription" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandOrRemoveDate"/>
+			</elementSpec>
+
+			<elementSpec ident="origPlace" module="msdescription" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandOrRemoveOrigPlace"/>
+			</elementSpec>
+
+
+			<elementSpec ident="notesStmt" mode="replace" module="header">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithGrandChildContent"/>
+				<content>
+					<rng:group>
+						<rng:ref name="macro.form.summaryNote"/>
+						<rng:ref name="macro.form.commentaryNote"/>
+						<rng:ref name="macro.form.discussionNote"/>
+						<rng:ref name="macro.form.uncategorizedNote"/>
+					</rng:group>
+				</content>
+			</elementSpec>
+
+			<elementSpec ident="editionStmt" mode="replace" module="header">
+				<content>
+					<rng:ref name="edition"/>
+					<rng:element name="respStmt">
+						<rng:group>
+							<rng:ref name="resp"/>
+							<rng:element name="name">
+								<rng:optional>
+									<rng:attribute name="key">
+										<rng:ref name="data.encoding-staff"/>
+									</rng:attribute>
+								</rng:optional>
+							</rng:element>
+						</rng:group>
+					</rng:element>
+				</content>
+			</elementSpec>
+
+			<elementSpec ident="availability" module="header" mode="replace">
+				<content>
+					<rng:attribute name="status"/>
+					<rng:oneOrMore>
+						<rng:ref name="p"/>
+					</rng:oneOrMore>
+				</content>
+			</elementSpec>
+
+			<elementSpec ident="bibl" module="core" mode="change">
+				<gloss versionDate="2014-01-26" xml:lang="en">bibliographic citation</gloss>
+				<gloss versionDate="2014-01-26" xml:lang="de">bibliographische Angabe</gloss>
+				<desc versionDate="2014-01-26" xml:lang="en"
+					>contains a loosely-structured bibliographic citation of which the sub-components may or may
+							not be explicitly tagged. </desc>
+				<desc versionDate="2014-01-26" xml:lang="de"
+					>Enthält eine frei strukturierte bibliographische Angabe, deren Bestandteile bei Bedarf explizit ausgezeichnet werden können.</desc>
+				<classes mode="change">
+					<memberOf key="att.docStatus" mode="delete"/>
+				</classes>
+			</elementSpec>
+
+			<elementSpec ident="org" mode="change" module="namesdates">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="perOrgRoot"/>
+				<content>
+					<rng:ref name="macro.form.summaryNote"/>
+					<rng:ref name="macro.form.commentaryNote"/>
+					<rng:ref name="macro.form.discussionNote"/>
+					<rng:ref name="macro.form.uncategorizedNote"/>
+					<rng:ref name="macro.form.gndIdno"/>
+					<rng:ref name="macro.form.rsqvIdno"/>
+					<rng:group>
+						<rng:element name="orgName">
+							<rng:attribute name="type">
+								<rng:value>reg</rng:value>
+							</rng:attribute>
+							<rng:text/>
+						</rng:element>
+						<rng:oneOrMore>
+							<rng:ref name="orgName"/>
+						</rng:oneOrMore>
+						<rng:ref name="desc"/>
+						<rng:oneOrMore>
+							<rng:ref name="placeName"/>
+						</rng:oneOrMore>
+						<rng:oneOrMore>
+							<rng:ref name="state"/>
+						</rng:oneOrMore>
+						<rng:ref name="macro.form.detailsNote"/>
+						<rng:ref name="listEvent"/>
+						<rng:ref name="listBibl"/>
+					</rng:group>
+				</content>
+			</elementSpec>
+
+			<elementSpec ident="encodingDesc" mode="replace" module="core">
+				<content>
+					<rng:ref name="editorialDecl"/>
+				</content>
+			</elementSpec>
+
+			<elementSpec ident="editorialDecl" mode="replace" module="header">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandEditorialDecl"/>
+				<content>
+					<rng:oneOrMore>
+						<rng:ref name="p"/>
+					</rng:oneOrMore>
+				</content>
+			</elementSpec>
+
+			<elementSpec ident="msDesc" mode="replace" module="msdescription">
+				<content>
+					<rng:ref name="msIdentifier"/>
+					<!-- note: physDesc is only included in transr.ms, so it will be 
+						excluded from the transcr.print schema -->
+					<rng:ref name="physDesc"/>
+					<rng:ref name="additional"/>
+				</content>
+				<attList>
+					<attDef ident="rend" mode="add" usage="opt">
+						<datatype>
+							<rng:ref name="data.msDescRend"/>
+						</datatype>
+					</attDef>
+				</attList>
+			</elementSpec>
+
+			<elementSpec ident="msIdentifier" module="msdescription" mode="replace">
+				<content>
+					<rng:ref name="repository"/>
+					<rng:ref name="collection"/>
+					<rng:ref name="idno"/>
+				</content>
+			</elementSpec>
+
+			<elementSpec ident="physDesc" module="msdescription" mode="replace">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="processPhysDesc"/>
+				<content>
+					<rng:group>
+						<rng:oneOrMore>
+							<rng:ref name="p"/>
+						</rng:oneOrMore>
+						<rng:element name="objectDesc">
+							<rng:group>
+								<rng:element name="supportDesc">
+									<rng:ref name="extent"/>
+								</rng:element>
+							</rng:group>
+						</rng:element>
+						<rng:optional>
+							<rng:ref name="handDesc"/>
+						</rng:optional>
+						<rng:element name="additions">
+							<rng:oneOrMore>
+								<rng:ref name="p"/>
+							</rng:oneOrMore>
+						</rng:element>
+						<rng:ref name="accMat"/>
+					</rng:group>
+				</content>
+			</elementSpec>
+
+			<elementSpec ident="additional" module="msdescription" mode="replace">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyAttOrAnyText"/>
+				<content>
+					<rng:group>
+						<rng:element name="surrogates">
+							<rng:group>
+								<rng:zeroOrMore>
+									<rng:ref name="ptr"/>
+								</rng:zeroOrMore>
+								<rng:zeroOrMore>
+									<rng:ref name="msDesc"/>
+								</rng:zeroOrMore>
+							</rng:group>
+						</rng:element>
+					</rng:group>
+				</content>
+			</elementSpec>
+
+			<elementSpec ident="handNote" module="header" mode="change">
+				<content>
+					<rng:element name="choice">
+						<rng:ref name="abbr"/>
+						<rng:ref name="expan"/>
+					</rng:element>
+				</content>
+				<constraintSpec ident="require-content-in-handNote" scheme="isoschematron">
+					<constraint>
+						<sch:assert test=".//tei:abbr/node()"
+							>Schreiberhand-Einträge müssen eine Beschreibung enthalten.</sch:assert>
+					</constraint>
+				</constraintSpec>
+			</elementSpec>
+
+			<elementSpec ident="handShift" module="transcr" mode="change">
+				<constraintSpec ident="require-xml-id-target" scheme="isoschematron">
+					<constraint>
+						<sch:assert
+							test="/*[@xml:id='compilation'] or not(@new) or @new='pre-printed' or (@new = //@xml:id)"
+							>Es gibt Schreiberhand-Wechsel, die auf eine nicht existente Schreiber-Definition verweisen.</sch:assert>
+					</constraint>
+				</constraintSpec>
+			</elementSpec>
+
+			<!-- based on WeGA_common.odd.xml, modified -->
+			<elementSpec ident="add" module="core" mode="change">
+				<gloss versionDate="2013-11-11" xml:lang="en">addition</gloss>
+				<desc versionDate="2013-11-11" xml:lang="en"
+					>contains letters, words, or phrases inserted in the source text by an author, scribe, annotator, or corrector.</desc>
+				<gloss versionDate="2013-11-11" xml:lang="de">Ergänzung</gloss>
+				<desc versionDate="2013-11-11" xml:lang="de"
+					>enthält Buchstaben, Wörter oder Sätze im Quelltext, die von einem Autor, Schreiber, Kommentator oder Korrektor eingesetzt wurden.</desc>
+				<classes mode="change">
+					<!--              <memberOf key="att.global" mode="delete"/>-->
+					<memberOf key="att.dimensions" mode="delete"/>
+					<memberOf key="att.ranging" mode="delete"/>
+					<memberOf key="att.transcriptional" mode="delete"/>
+					<memberOf key="att.placement" mode="delete"/>
+					<memberOf key="att.editLike" mode="delete"/>
+					<memberOf key="att.responsibility" mode="delete"/>
+					<memberOf key="att.typed" mode="delete"/>
+				</classes>
+				<attList>
+					<attDef ident="hand" mode="add" usage="mwa">
+						<desc versionDate="2013-11-11" xml:lang="en"
+							>signifies the hand of the agent which made the intervention.</desc>
+						<desc versionDate="2013-11-11" xml:lang="de"
+							>bezeichnet die Schreiberhand, welche den Eingriff vorgenommen hat.</desc>
+						<datatype>
+							<rng:ref name="data.pointer"/>
+						</datatype>
+					</attDef>
+					<attDef ident="place" mode="add" usage="req">
+						<desc versionDate="2013-11-11" xml:lang="en"
+							>specifies where this item is placed.</desc>
+						<desc versionDate="2013-11-11" xml:lang="de"
+							>spezifiert wo das Element angebracht ist.</desc>
+						<valList type="closed">
+							<valItem ident="above">
+								<desc versionDate="2013-11-11" xml:lang="en"
+									>insertion above the line.</desc>
+								<desc versionDate="2013-11-11" xml:lang="de"
+									>Einfügung über der Zeile.</desc>
+							</valItem>
+							<valItem ident="below">
+								<desc versionDate="2013-11-11" xml:lang="en"
+									>insertion below the line.</desc>
+								<desc versionDate="2013-11-11" xml:lang="de"
+									>Einfügung unter der Zeile.</desc>
+							</valItem>
+							<valItem ident="inline">
+								<desc versionDate="2013-11-11" xml:lang="en">insertion inline.</desc>
+								<desc versionDate="2013-11-11" xml:lang="de">Einfügung in der Zeile.</desc>
+							</valItem>
+							<valItem ident="margin">
+								<desc versionDate="2013-11-11" xml:lang="en">insertion at margin.</desc>
+								<desc versionDate="2013-11-11" xml:lang="de">Einfügung am Rand.</desc>
+							</valItem>
+							<valItem ident="mixed">
+								<desc versionDate="2014-02-04" xml:lang="en"
+									>insertion in multiple places</desc>
+								<desc versionDate="2014-02-04" xml:lang="de"
+									>Einfügung an mehreren Orten</desc>
+							</valItem>
+							<valItem ident="unknown">
+								<desc versionDate="2014-02-04" xml:lang="en"
+									>the place of the addition is unknown</desc>
+								<desc versionDate="2014-02-04" xml:lang="de"
+									>Der Ort der Einfügung ist unbekannt</desc>
+							</valItem>
+						</valList>
+					</attDef>
+				</attList>
+			</elementSpec>
+
+			<!-- based on WeGA_common.odd.xml, modified -->
+			<elementSpec ident="del" module="core" mode="change">
+				<gloss versionDate="2013-11-11" xml:lang="en">deletion</gloss>
+				<desc versionDate="2013-11-11" xml:lang="en"
+					>contains a letter, word, or passage deleted, marked as deleted, or otherwise indicated as superfluous or spurious in the copy text by an author, scribe, annotator, or corrector.</desc>
+				<gloss versionDate="2013-11-11" xml:lang="de">Löschung</gloss>
+				<desc versionDate="2013-11-11" xml:lang="de"
+					>enthält einen Buchstaben, ein Wort, oder eine Passage die gestrichen wurde, die als gelöscht markiert, oder auf andere Weise als überflüssig oder falsch in der Textkopie von einem Autor, Schreiber, Kommentator oder Korrektor angegeben wird</desc>
+				<classes mode="change">
+					<!--              <memberOf key="att.global" mode="delete"/>-->
+					<memberOf key="att.dimensions" mode="delete"/>
+					<memberOf key="att.ranging" mode="delete"/>
+					<memberOf key="att.transcriptional" mode="delete"/>
+					<memberOf key="att.editLike" mode="delete"/>
+					<memberOf key="att.responsibility" mode="delete"/>
+					<memberOf key="att.typed" mode="delete"/>
+				</classes>
+				<attList>
+					<attDef ident="rend" mode="change" usage="req">
+						<gloss versionDate="2013-11-11" xml:lang="en">rendition</gloss>
+						<desc versionDate="2013-11-11" xml:lang="en"
+							>indicates how the element in question was rendered or presented in the source text.</desc>
+						<gloss versionDate="2013-11-11" xml:lang="de">Ausgabe</gloss>
+						<desc versionDate="2013-11-11" xml:lang="de"
+							>gibt an, wie das fragliche Element ausgegeben wurde oder im Quelltext präsentiert ist.</desc>
+						<valList type="closed">
+							<valItem ident="strikethrough">
+								<gloss versionDate="2013-11-11" xml:lang="en">crossed out</gloss>
+								<desc versionDate="2013-11-11" xml:lang="en"
+									>The deleted word (or the deleted character) is crossed out.</desc>
+								<gloss versionDate="2013-11-11" xml:lang="de">durchgestrichen</gloss>
+								<desc versionDate="2013-11-11" xml:lang="de"
+									>Das gelöschte Wort (bzw. das gelöschte Zeichen) ist durchgestrichen.</desc>
+							</valItem>
+							<valItem ident="overwritten">
+								<gloss versionDate="2013-11-11" xml:lang="en">overwritten</gloss>
+								<desc versionDate="2013-11-11" xml:lang="en"
+									>The deleted word (or the deleted character) is overwritten by the substitution.</desc>
+								<gloss versionDate="2013-11-11" xml:lang="de">überschrieben</gloss>
+								<desc versionDate="2013-11-11" xml:lang="de"
+									>Das gelöschte Wort (bzw. das gelöschte Zeichen) ist durch die Ersetzung überschrieben.</desc>
+							</valItem>
+							<valItem ident="erased">
+								<gloss versionDate="2013-11-11" xml:lang="en">covered</gloss>
+								<desc versionDate="2013-11-11" xml:lang="en"
+									>The deleted word (or the deleted character) is repaid by shaving or other means.</desc>
+								<gloss versionDate="2013-11-11" xml:lang="de">getilgt</gloss>
+								<desc versionDate="2013-11-11" xml:lang="de"
+									>Das gelöschte Wort (bzw. das gelöschte Zeichen) ist durch Rasur oder sonstige Weise getilgt.</desc>
+							</valItem>
+							<valItem ident="unknown">
+								<desc versionDate="2014-02-04" xml:lang="en"
+									>The rendition of the deletion is unknown.</desc>
+								<desc versionDate="2014-02-04" xml:lang="de"
+									>Die Erscheinungsweise der Tilgung ist unbekannt.</desc>
+							</valItem>
+						</valList>
+					</attDef>
+					<attDef ident="hand" mode="add" usage="mwa">
+						<desc versionDate="2013-11-11" xml:lang="en"
+							>signifies the hand of the agent which made the intervention.</desc>
+						<desc versionDate="2013-11-11" xml:lang="de"
+							>bezeichnet die Schreiberhand, welche den Eingriff vorgenommen hat.</desc>
+						<datatype>
+							<rng:ref name="data.pointer"/>
+						</datatype>
+					</attDef>
+				</attList>
+			</elementSpec>
+
+			<elementSpec ident="extent" mode="change" module="header">
+				<desc versionDate="2014-02-04" xml:lang="de"
+					>Gibt den physischen Umfang der Quelle (Blattzählung) sowie in Klammern den beschriebenen Umfang (Seitenzählung) an, sowie ggf. das Vorhandensein einer Adressangabe. Beispiele: 1 Bl. (1 b.S.) m. Umschl. u. Addr.; 1 Dbl. (3 b.S.); 1 Umschl.; 1 Kt. (1 b.S.)</desc>
+			</elementSpec>
+
+			<elementSpec ident="biblStruct" module="core" mode="replace">
+				<content>
+					<rng:choice>
+						<rng:group>
+							<rng:ref name="analytic"/>
+							<rng:element name="monogr">
+								<rng:optional>
+									<rng:attribute name="sameAs"/>
+								</rng:optional>
+								<rng:ref name="macro.form.authors"/>
+								<rng:ref name="macro.form.titles.short"/>
+								<rng:ref name="edition"/>
+								<rng:ref name="macro.form.isbnIdno"/>
+								<rng:ref name="imprint"/>
+							</rng:element>
+						</rng:group>
+						<rng:group>
+							<rng:element name="monogr">
+								<rng:ref name="macro.form.authors"/>
+								<rng:ref name="macro.form.titles.full"/>
+								<rng:ref name="textLang"/>
+								<rng:ref name="edition"/>
+								<rng:ref name="macro.form.isbnIdno"/>
+								<rng:ref name="imprint"/>
+							</rng:element>
+						</rng:group>
+					</rng:choice>
+					<rng:oneOrMore>
+						<rng:ref name="series"/>
+					</rng:oneOrMore>
+					<rng:element name="idno">
+						<rng:attribute name="type">
+							<rng:value>url</rng:value>
+						</rng:attribute>
+						<rng:text/>
+					</rng:element>
+					<!--<rng:oneOrMore>
+                                <rng:ref name="relatedItem"/>
+                            </rng:oneOrMore>-->
+				</content>
+			</elementSpec>
+
+			<elementSpec ident="analytic" mode="replace" module="core">
+				<content>
+					<rng:ref name="macro.form.authors"/>
+					<rng:ref name="macro.form.titles.full"/>
+					<rng:ref name="textLang"/>
+				</content>
+			</elementSpec>
+
+			<elementSpec ident="imprint" mode="replace" module="core">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="processImprint"/>
+				<content>
+					<rng:element name="biblScope">
+						<rng:attribute name="unit">
+							<rng:value>vol</rng:value>
+						</rng:attribute>
+						<rng:text/>
+					</rng:element>
+					<rng:element name="biblScope">
+						<rng:attribute name="unit">
+							<rng:value>date</rng:value>
+						</rng:attribute>
+						<rng:text/>
+					</rng:element>
+					<rng:element name="biblScope">
+						<rng:attribute name="unit">
+							<rng:value>issue</rng:value>
+						</rng:attribute>
+						<rng:text/>
+					</rng:element>
+					<rng:ref name="publisher"/>
+					<rng:ref name="pubPlace"/>
+					<rng:oneOrMore>
+						<rng:ref name="date"/>
+					</rng:oneOrMore>
+					<rng:ref name="note"/>
+					<rng:element name="biblScope">
+						<rng:attribute name="unit">
+							<rng:choice>
+								<rng:value>pp</rng:value>
+								<rng:value>col</rng:value>
+								<rng:value>fol</rng:value>
+							</rng:choice>
+						</rng:attribute>
+						<rng:text/>
+					</rng:element>
+				</content>
+			</elementSpec>
+
+			<elementSpec ident="series" mode="replace" module="core">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
+				<content>
+					<rng:ref name="title"/>
+					<rng:element name="biblScope">
+						<rng:attribute name="unit">
+							<rng:value>vol</rng:value>
+						</rng:attribute>
+						<rng:text/>
+					</rng:element>
+				</content>
+			</elementSpec>
+
+			<elementSpec ident="revisionDesc" mode="replace" module="header">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
+				<content>
+					<rng:zeroOrMore>
+						<rng:ref name="macro.form.revisionDescChange"/>
+					</rng:zeroOrMore>
+				</content>
+				<attList>
+					<attDef ident="status">
+						<valList type="closed">
+							<valItem ident="proposed">
+								<desc versionDate="2014-06-13" xml:lang="de">vorgeschlagen zur Publikation, aber noch nicht fertig</desc>
+							</valItem>
+							<valItem ident="candidate">
+								<desc versionDate="2014-06-13" xml:lang="de">in möglicherweise publikationsbereitem Zustand, aber noch nicht kontrolliert</desc>
+							</valItem>
+							<valItem ident="approved">
+								<desc versionDate="2014-06-13" xml:lang="de">zur Publikation freigegeben</desc>
+							</valItem>
+						</valList>
+					</attDef>
+				</attList>
+			</elementSpec>
+
+			<elementSpec ident="teiHeader" module="header" mode="replace">
+				<content>
+					<rng:group>
+						<rng:ref name="fileDesc"/>
+						<rng:ref name="encodingDesc"/>
+						<rng:ref name="profileDesc"/>
+						<rng:ref name="taskDesc"/>
+						<rng:ref name="revisionDesc"/>
+					</rng:group>
+				</content>
+			</elementSpec>
+
+			<elementSpec ident="profileDesc" module="header" mode="replace">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
+				<content>
+					<rng:group>
+						<rng:ref name="textClass"/>
+						<rng:ref name="creation"/>
+					</rng:group>
+				</content>
+			</elementSpec>
+
+			<elementSpec ident="ptr" module="core" mode="change">
+				<gloss versionDate="2007-07-04" xml:lang="en">pointer</gloss>
+				<gloss versionDate="2014-02-17" xml:lang="de">Hinweis</gloss>
+				<desc versionDate="2006-01-11" xml:lang="en"
+					>defines a pointer to another location.</desc>
+				<desc versionDate="2014-02-17" xml:lang="de"
+					>definiert einen Hinweis auf einen anderen Ort.</desc>
+				<classes mode="change">
+					<memberOf key="att.typed" mode="delete"/>
+				</classes>
+				<attList>
+					<attDef ident="type" mode="add" usage="req">
+						<valList type="closed">
+							<valItem ident="pdf"/>
+							<valItem ident="image"/>
+						</valList>
+					</attDef>
+				</attList>
+			</elementSpec>
+
+
+			<!-- ************************ TEI-conformable additions in a separate namespace ************************ -->
+
+			<elementSpec ident="rs" module="core" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="processRs"/>
+				<gloss versionDate="2005-01-14" xml:lang="en">referencing string</gloss>
+				<gloss versionDate="2014-02-06" xml:lang="de">verweisende Zeichenfolge</gloss>
+				<desc versionDate="2014-02-06" xml:lang="en"
+					>general purpose element; contains a name or referring string.</desc>
+				<desc versionDate="2014-02-06" xml:lang="de"
+					>Mehrzweckelement; enthält eine Zeichenfolge, die etwas benennt oder auf etwas verweist.</desc>
+				<attList org="group">
+					<attDef mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0" ident="pdf"
+						usage="opt">
+						<datatype>
+							<rng:ref name="data.pointer"/>
+						</datatype>
+					</attDef>
+					<attDef mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0" ident="seite"
+						usage="opt">
+						<datatype>
+							<rng:ref name="data.text"/>
+						</datatype>
+					</attDef>
+					<attDef mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0" ident="seitepdf"
+						usage="opt">
+						<datatype>
+							<rng:ref name="data.count"/>
+						</datatype>
+					</attDef>
+					<attDef ident="cert" mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0"
+						usage="opt">
+						<datatype>
+							<rng:ref name="data.certainty"/>
+						</datatype>
+					</attDef>
+				</attList>
+			</elementSpec>
+
+			<elementSpec ident="respons" module="certainty" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="transformRespons"/>
+				<attList org="group">
+					<attDef ident="who" mode="change">
+						<datatype>
+							<rng:ref name="data.encoding-staff"/>
+						</datatype>
+					</attDef>
+					<attDef ns="http://richard-strauss-ausgabe.de/ns/1.0" mode="add" ident="when">
+						<datatype>
+							<rng:data type="string"/>
+						</datatype>
+					</attDef>
+				</attList>
+			</elementSpec>
+
+			<elementSpec ident="div" module="textstructure" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="processDiv"/>
+			</elementSpec>
+
+
+			<elementSpec ident="seg" module="linking" mode="change">
+				<!-- Element will be removed if there is a type attribute present;
+				the content will then be removed from here and added to the opener or closer.
+				-->
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="removeIfTyped"/>
+			</elementSpec>
+
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="edition" module="header" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandEdition"/>
+			</elementSpec>
+			
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="publisher" module="core" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
+			</elementSpec>
+			
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="pubPlace" module="core" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
+			</elementSpec>
+			
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="textLang" module="core" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
+			</elementSpec>
+			
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="biblScope" module="core" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
+			</elementSpec>
+			
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="title" module="core" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
+			</elementSpec>
+			
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="desc" module="namesdates" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
+			</elementSpec>
+			
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="occupation" module="namesdates" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAttOrContent"/>
+			</elementSpec>
+			
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="faith" module="namesdates" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAttOrContent"/>
+			</elementSpec>
+			
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="persName" module="namesdates" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="onlyWithContentAddCert"/>
+			</elementSpec>
+			
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="orgName" module="namesdates" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="onlyWithContentAddCert"/>
+			</elementSpec>
+			
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="placeName" module="namesdates" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="onlyWithContentAddCert"/>
+			</elementSpec>
+			
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="residence" module="namesdates" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
+			</elementSpec>
+			
+			<!-- filter can be applied universally; no xpath look-up is needed -->
+			<elementSpec ident="objectDesc" module="msdescription" mode="change">
+				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
+			</elementSpec>
+
+		</specGrp>
+	
+</div>
+
+<!-- not in use -->
+<!-- 
+<elementSpec ident="rs" module="core" mode="change">
+	<gloss versionDate="2005-01-14" xml:lang="en">referencing string</gloss>
+	<gloss versionDate="2014-02-06" xml:lang="de">verweisende Zeichenfolge</gloss>
+	<desc versionDate="2005-01-14" xml:lang="en">contains a general purpose name or referring string.</desc>
+	<desc versionDate="2014-02-06" xml:lang="de"
+		>Mehrzweckelement; enthält eine Zeichenfolge, die allgemein etwas benennt oder auf etwas verweist.</desc>
+	<classes mode="change">
+		<memberOf key="att.naming" mode="delete"/>
+		<memberOf key="att.typed" mode="delete"/>
+	</classes>
+	<content>
+		<ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/>
+		<rng:optional>
+			<rng:choice>
+				<rng:group>
+					<rng:attribute name="type">
+						<rng:value>compilation</rng:value>
+					</rng:attribute>
+					<rng:attribute name="key">
+						<rng:ref name="data.compilationKey"/>
+					</rng:attribute>
+				</rng:group>
+				<rng:group>
+					<rng:attribute name="type">
+						<rng:value>letter</rng:value>
+					</rng:attribute>
+					<rng:attribute name="key">
+						<rng:ref name="data.correspKey"/>
+					</rng:attribute>
+				</rng:group>
+				<rng:group>
+					<rng:attribute name="type">
+						<rng:value>person</rng:value>
+					</rng:attribute>
+					<rng:attribute name="key">
+						<rng:ref name="data.personKey"/>
+					</rng:attribute>
+				</rng:group>
+				<rng:group>
+					<rng:attribute name="type">
+						<rng:value>org</rng:value>
+					</rng:attribute>
+					<rng:attribute name="key">
+						<rng:ref name="data.orgKey"/>
+					</rng:attribute>
+				</rng:group>
+				<rng:group>
+					<rng:attribute name="type">
+						<rng:value>event</rng:value>
+					</rng:attribute>
+					<rng:attribute name="key">
+						<rng:ref name="data.eventKey"/>
+					</rng:attribute>
+				</rng:group>
+				<rng:group>
+					<rng:attribute name="type">
+						<rng:choice>
+							<rng:value>lit</rng:value>
+							<rng:value>rez</rng:value>
+						</rng:choice>
+					</rng:attribute>
+					<rng:attribute name="key">
+						<rng:choice>
+							<rng:ref name="data.literatureKey"/>
+							<rng:ref name="data.receptionKey"/>
+						</rng:choice>
+					</rng:attribute>
+					<rng:optional>
+						<rng:attribute name="pdf" ns="http://richard-strauss-ausgabe.de/ns/1.0">
+							<rng:ref name="data.pointer"/>
+						</rng:attribute>
+					</rng:optional>
+					<rng:optional>
+						<rng:attribute name="seite" ns="http://richard-strauss-ausgabe.de/ns/1.0">
+							<rng:ref name="data.text"/>
+						</rng:attribute>
+					</rng:optional>
+					<rng:optional>
+						<rng:attribute name="seitepdf"
+							ns="http://richard-strauss-ausgabe.de/ns/1.0">
+							<rng:ref name="data.count"/>
+						</rng:attribute>
+					</rng:optional>
+					<rng:optional>
+						<rng:attribute name="cert"
+							ns="http://richard-strauss-ausgabe.de/ns/1.0">
+							<rng:ref name="data.certainty"/>
+						</rng:attribute>
+					</rng:optional>
+				</rng:group>
+				<rng:group>
+					<rng:attribute name="type">
+						<rng:value>graphic</rng:value>
+					</rng:attribute>
+					<rng:attribute name="key">
+						<rng:ref name="data.graphicKey"/>
+					</rng:attribute>
+				</rng:group>
+				<rng:group>
+					<rng:attribute name="type">
+						<rng:value>work</rng:value>
+					</rng:attribute>
+					<rng:optional>
+						<rng:attribute name="key">
+							<rng:ref name="data.workKey"/>
+						</rng:attribute>
+					</rng:optional>
+				</rng:group>
+				<rng:group>
+					<rng:attribute name="type">
+						<rng:value>performance</rng:value>
+					</rng:attribute>
+					<rng:attribute name="key">
+						<rng:ref name="data.performanceKey"/>
+					</rng:attribute>
+				</rng:group>
+			</rng:choice>
+		</rng:optional>
+	</content>
+	<listRef>
+					<ptr target="#NDPER"/>
+					<ptr target="#CONARS"/>
+				</listRef>
+</elementSpec>
+-->

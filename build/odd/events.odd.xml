@@ -1,83 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" xml:base="file:/c:/eXist-db/webapp/ahlsen/strauss-ODD/strauss-ODD/src/rswa.MAIN.odd.xml" xml:lang="en"><?TEIVERSION Version 2.6.0. Last updated on
+<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" xml:base="file:/c:/eXist-db/webapp/ahlsen/strauss-ODD/strauss-ODD/src/events.odd.xml" xml:lang="en"><?TEIVERSION Version 2.6.0. Last updated on
 	20th January 2014, revision 12802?>
 	<teiHeader>
 		<fileDesc>
 			<titleStmt>
-				<title xml:lang="en">Encoding Guidelines</title>
-				<title xml:lang="de">Codierungsrichtlinien</title>
-				<author xml:id="aerhard">Alexander Erhard</author>
-				<!-- template for the final version of the TEI files:-->
-				<funder>
-					<name ref="http://www.badw.de">Bayerische Akademie der Wissenschaften</name>
-					<address>
-						<street>Alfons-Goppel-Straße 11</street>
-						<postCode>80539</postCode>
-						<placeName>
-							<country>D</country>
-							<settlement>München</settlement>
-						</placeName>
-					</address>
-				</funder>
+				<title/>
 			</titleStmt>
-			<editionStmt>
-				<edition>Digitale Ausgabe</edition>
-			</editionStmt>
-			<!-- template for the final version of the TEI files:-->
 			<publicationStmt>
-				<distributor>Forschungsstelle zur Edition der Werke von Richard Strauss</distributor>
-				<availability status="restricted">
-					<p>This work is licensed under a <ref target="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</ref>.</p>
-				</availability>
-				<pubPlace>München</pubPlace>
+				<p/>
 			</publicationStmt>
-			<!-- template for the the final version of the TEI files:-->
-			<seriesStmt>
-				<title>Digitale Dokumentensammlung zum Werk von Richard Strauss</title>
-			</seriesStmt>
 			<sourceDesc>
-				<p>based on the TEI P5 specifications at <ref target="http://www.tei-c.org/release/xml/tei/odd/p5subset.xml">http://www.tei-c.org/release/xml/tei/odd/p5subset.xml</ref>, this ODD integrates Raffaele Viglianti's prefixed version of the MEI's "mei-source.xml" (<ref target="https://github.com/TEI-Music-SIG/tei-mei/">tei-mei</ref>), the TEI-C's <ref target="http://www.tei-c.org/release/xml/tei/custom/odd/tei_xinclude.odd">XInclude ODD</ref>, and draws on specifications in Peter Stadler's <ref target="https://github.com/Edirom/WeGA-ODD">Carl-Maria-von-Weber-Gesamtausgabe ODDs</ref>.</p>
+				<p/>
 			</sourceDesc>
 		</fileDesc>
-		<profileDesc>
-			<abstract>
-				<p><!-- to be added --></p>
-			</abstract>
-		</profileDesc>
-		<revisionDesc>
-			<change who="#aerhard" when="2014-05-19">Added document type "place"</change>
-			<change who="#aerhard" when="2014-05-16">Added document type "work"</change>
-			<change who="#aerhard" when="2014-02-10">Adjustments to facilitate the final transformation</change>
-			<change who="#aerhard" when="2014-02-05">Globally refactored</change>
-			<change who="#aerhard" when="2014-01-18">Equiv elements added</change>
-			<change who="#aerhard" when="2013-06-08">First draft</change>
-		</revisionDesc>
 	</teiHeader>
 	<text>
 		<body>
-			<!-- various text parts are used as templates for the final version of the TEI files:-->
-			<div xml:id="introduction">
-				<head>Introduction</head>
-				<p>...</p>
-				<p>The documents can be accessed at <ref target="http://richard-strauss-ausgabe.de/documents/view/" xml:id="xmlDocsUrl">http://richard-strauss-ausgabe.de/xml/</ref>, followed by the identification number.</p>
-				<p>The contributors involved in the preparation of a document are listed with their corresponding <att>xml:id</att> in the section <title xml:id="contributorsResp">Vorbereitung der digitalen Edition</title>.</p>
-				<p>All documents contain the following statements:</p>
-				<list>
-					<item xml:id="guidelinesTitleRef">Die vorliegende Ausgabe folgt den <ref target="http://richard-strauss-ausgabe.de/guidelines/xml">Editionsrichtlinien der Kritischen Ausgabe der Werke von Richard Strauss</ref>.</item>
-					<item xml:id="specificFeaturesTitle">Besonderheiten der Edition des vorliegenden Dokuments:</item>
-				</list>
-			</div>
-			<div xml:id="schemata">
-				<head>Schema</head>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				<schemaSpec ident="schema.events" xml:lang="en" start="TEI" prefix="rswa_" source="\Program Files\Oxygen XML Editor 15\frameworks\tei\xml\tei\odd\p5subset.xml"><classSpec module="tei" type="atts" ident="att.ascribed">
+			<schemaSpec ident="schema.events" xml:lang="en" start="TEI" prefix="rswa_" source="\Program Files\Oxygen XML Editor 16\frameworks\tei\xml\tei\odd\p5subset.xml"><classSpec module="tei" type="atts" ident="att.ascribed">
   <desc versionDate="2006-01-05" xml:lang="en">provides attributes for elements representing speech or action that can be ascribed to a
     specific individual.</desc>
   <desc versionDate="2007-12-20" xml:lang="ko">특정 개인의 대화 또는 행위를 표시하는 요소에 대한 속성을 제공한다.</desc>
@@ -2371,7 +2309,21 @@ division de texte.</desc>
     haut.</desc>
   <desc versionDate="2007-11-06" xml:lang="it">raggruppa partizioni testuali di primo livello</desc>
   <desc versionDate="2007-05-04" xml:lang="es">agrupa divisiones estructurales de nivel superior.</desc>
-</classSpec><macroSpec module="tei" type="pe" ident="macro.paraContent">
+</classSpec><classSpec module="tei" type="model" ident="model.resourceLike" predeclare="true">
+  <desc versionDate="2007-10-03" xml:lang="en">groups non-textual elements which may appear together with a
+  header and a text to constitute a TEI document.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">TEI 문서를 구성하는 헤더 및 텍스트와 함께 나타날 수 있는 비테스트적 요소를 모아 놓는다.</desc>
+  <desc versionDate="2008-04-06" xml:lang="es">agrupa los elementos no-textuales que pueden aparecer junto al encabezado y un texto para constituir un documento de TEI.</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">ヘダーやTEI文書を構成するテキストと共に出現する，非テキスト要素をま
+  とめる．</desc>
+  <desc versionDate="2009-10-06" xml:lang="fr">regroupe des éléments non-textuels qui, avec un
+en-tête et un texte, constitue un document TEI.</desc>
+  <desc versionDate="2007-11-06" xml:lang="it">raggruppa elementi non testuali che possono costituire un documento TEI insieme a un'intestazione e a un testo</desc>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STEC">1.3. </ref>
+  </listRef>
+</classSpec><classSpec rend="change" module="tei" type="atts" ident="att.personal"><desc versionDate="2012-10-24" xml:lang="en">common attributes for those elements which form part of a name usually, but not necessarily, a personal name.</desc><desc versionDate="2007-12-20" xml:lang="ko">사람 이름의 부분을 형성하는 요소에 대한 공통 속성</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">構成部分個人名稱的元素所用之通用屬性</desc><desc versionDate="2008-04-05" xml:lang="ja">個人名の構成要素となる要素に付与される属性．</desc><desc versionDate="2009-05-28" xml:lang="fr">attributs communs des éléments qui composent un nom de personne</desc><desc versionDate="2007-05-04" xml:lang="es">atributos comunes para los elementos que forman parte de un nombre propio de persona.</desc><desc versionDate="2007-01-21" xml:lang="it">attributi comuni agli
+  elementi che compongono un nome proprio di persona</desc><classes><memberOf key="att.naming"/></classes><attList/></classSpec><macroSpec module="tei" type="pe" ident="macro.paraContent">
   <gloss versionDate="2005-01-14" xml:lang="en">paragraph content</gloss>
   <gloss versionDate="2007-12-20" xml:lang="ko">문단 내용</gloss>
   <gloss versionDate="2007-05-02" xml:lang="zh-TW">段落內容</gloss>
@@ -3155,21 +3107,7 @@ resource, either within the current document or elsewhere.</desc>
       de valeurs dans la spécification de l'attribut associé, exprimée par un élément
       <gi>valList</gi>.</p>
   </remarks>
-</macroSpec><classSpec module="tei" type="model" ident="model.resourceLike" predeclare="true">
-  <desc versionDate="2007-10-03" xml:lang="en">groups non-textual elements which may appear together with a
-  header and a text to constitute a TEI document.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">TEI 문서를 구성하는 헤더 및 텍스트와 함께 나타날 수 있는 비테스트적 요소를 모아 놓는다.</desc>
-  <desc versionDate="2008-04-06" xml:lang="es">agrupa los elementos no-textuales que pueden aparecer junto al encabezado y un texto para constituir un documento de TEI.</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">ヘダーやTEI文書を構成するテキストと共に出現する，非テキスト要素をま
-  とめる．</desc>
-  <desc versionDate="2009-10-06" xml:lang="fr">regroupe des éléments non-textuels qui, avec un
-en-tête et un texte, constitue un document TEI.</desc>
-  <desc versionDate="2007-11-06" xml:lang="it">raggruppa elementi non testuali che possono costituire un documento TEI insieme a un'intestazione e a un testo</desc>
-  <listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STEC">1.3. </ref>
-  </listRef>
-</classSpec><classSpec rend="change" module="tei" type="atts" ident="att.personal"><desc versionDate="2012-10-24" xml:lang="en">common attributes for those elements which form part of a name usually, but not necessarily, a personal name.</desc><desc versionDate="2007-12-20" xml:lang="ko">사람 이름의 부분을 형성하는 요소에 대한 공통 속성</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">構成部分個人名稱的元素所用之通用屬性</desc><desc versionDate="2008-04-05" xml:lang="ja">個人名の構成要素となる要素に付与される属性．</desc><desc versionDate="2009-05-28" xml:lang="fr">attributs communs des éléments qui composent un nom de personne</desc><desc versionDate="2007-05-04" xml:lang="es">atributos comunes para los elementos que forman parte de un nombre propio de persona.</desc><desc versionDate="2007-01-21" xml:lang="it">attributi comuni agli
-  elementi che compongono un nome proprio di persona</desc><classes><memberOf key="att.naming"/></classes><attList/></classSpec><macroSpec module="tei" type="dt" ident="data.duration.iso">
+</macroSpec><macroSpec module="tei" type="dt" ident="data.duration.iso">
   <desc versionDate="2007-04-09" xml:lang="en">defines the range of attribute values available for representation of a duration in time
     using ISO 8601 standard formats</desc>
   <desc versionDate="2007-12-20" xml:lang="ko">ISO 8601 표준 형식을 사용하여 시간의 지속을 나타내는 속성 값 범위를 정의한다.</desc>
@@ -6375,6 +6313,134 @@ places, in particular where  multiple names are given.</p>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBICOR">3.11.2.2. </ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD21">2.2.1. </ref>
   </listRef>
+</elementSpec><elementSpec rend="change" module="core" ident="respStmt"><equiv filter="rswa.xsl" mimeType="text/xsl" name="expandRespStmt"/><gloss versionDate="2005-03-01" xml:lang="en">statement of responsibility</gloss><gloss versionDate="2007-12-20" xml:lang="ko">책임성 진술</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">責任陳述</gloss><gloss versionDate="2007-06-12" xml:lang="fr">mention de responsabilité</gloss><gloss versionDate="2007-05-04" xml:lang="es">declaración de responsabilidad</gloss><gloss versionDate="2007-01-21" xml:lang="it">dichiarazione di responsabilità</gloss><desc versionDate="2011-11-16" xml:lang="en">supplies a statement of responsibility for the intellectual content of a text, edition,
+    recording, or series, where the specialized elements for authors, editors, etc. do not suffice
+    or do not apply. May also be used to encode information about individuals or organizations 
+    which have played a role in the production or distribution of a bibliographic work.</desc><desc versionDate="2007-12-20" xml:lang="ko">텍스트, 편집, 녹음 또는 총서의 지적 내용에 대한 책임성 진술을 제시한다. 여기에서 작가, 편집자
+    등에 대한 특별한 요소는 충분치 않거나 적용되지 않는다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">當未使用作者、編輯者等特定元素，或元素內容不足時，在此補充說明文件、版本、記錄、或是叢書的智慧內容所屬負責人的責任陳述。</desc><desc versionDate="2008-04-05" xml:lang="ja">著者や編集者など特定の役割を示す要素が充分ではない場合に，テキスト， 版，記録などの知的内容に関する責任を示す．</desc><desc versionDate="2008-12-09" xml:lang="fr">indique la responsabilité quant au contenu
+    intellectuel d'un texte, d'une édition, d'un enregistrement ou d'une publication en série,
+    lorsque les éléments spécifiques relatifs aux auteurs, éditeurs, etc. ne suffisent pas ou ne
+    s'appliquent pas.</desc><desc versionDate="2007-05-04" xml:lang="es">proporciona la declaración de la responsabilidad para el
+    contenido intelectual de un texto, edición, grabación o serie, donde no basten o no se apliquen
+    los elementos especializados para autores, editores, etc.</desc><desc versionDate="2007-01-21" xml:lang="it">fornisce una dichiarazione di responsabilità per qualcuno
+    responsabile del contenuto intelletuale di un testo, curatela, registrazione o collana, nel caso
+    in cui gli elementi specifici per autore, curatore ecc. non sono sufficienti o non applicabili.</desc><classes><memberOf key="att.global"/><memberOf key="att.canonical"/><memberOf key="model.respLike"/><memberOf key="model.recordingPart"/></classes><content><choice xmlns="http://relaxng.org/ns/structure/1.0"><group><oneOrMore><ref name="resp"/></oneOrMore><oneOrMore><ref name="model.nameLike.agent"/></oneOrMore></group><group><oneOrMore><ref name="model.nameLike.agent"/></oneOrMore><oneOrMore><ref name="resp"/></oneOrMore></group></choice></content><attList/><exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <respStmt>
+        <resp>transcribed from original ms</resp>
+        <persName>Claus Huitfeldt</persName>
+      </respStmt>
+    </egXML>
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <respStmt>
+        <resp>Nouvelle édition originale</resp>
+        <persName>Geneviève Hasenohr</persName>
+      </respStmt>
+    </egXML>
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <respStmt>
+        <resp>converti en langage SGML</resp>
+        <name>Alan Morrison</name>
+      </respStmt>
+    </egXML>
+  </exemplum><exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <respStmt>
+        <resp>謄寫自原始手稿</resp>
+        <persName>徐大明</persName>
+      </respStmt>
+    </egXML>
+  </exemplum><exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <respStmt>
+        <resp>轉換成SGML編碼</resp>
+        <name>許雁</name>
+      </respStmt>
+    </egXML>
+  </exemplum><exemplum versionDate="2012-07-16" xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <respStmt>
+        <resp>converted to XML encoding</resp>
+        <name>Alan Morrison</name>
+      </respStmt>
+    </egXML>
+  </exemplum><listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBICOR">3.11.2.2. </ref>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD21">2.2.1. </ref>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD22">2.2.2. </ref>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD26">2.2.5. </ref>
+  </listRef></elementSpec><elementSpec module="core" ident="resp">
+  <gloss versionDate="2007-07-04" xml:lang="en">responsibility</gloss>
+  <gloss versionDate="2007-12-20" xml:lang="ko">책임성</gloss>
+  <gloss versionDate="2007-05-02" xml:lang="zh-TW"/>
+  <gloss versionDate="2008-04-06" xml:lang="es">responsabilidad</gloss>
+  <gloss versionDate="2007-06-12" xml:lang="fr">responsabilité</gloss>
+  <gloss versionDate="2007-11-06" xml:lang="it">responsabilità</gloss>
+  <desc versionDate="2011-11-16" xml:lang="en">contains a phrase describing the nature of a person's intellectual responsibility, or an organization's role 
+    in the production or distribution of a work.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">개인의 지적 책임성에 관한 특성을 기술하는 구를 포함한다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含一個詞彙，來描述個人智慧責任的類型。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">人物の知的責任の性質を表す一節を示す．</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">contient une expression décrivant la nature de la
+    responsabilité intellectuelle d'une personne.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">contiene un sintagma que describe la naturaleza de la
+    responsabilidad intelectual de una persona.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">contiene una frase che descrive la natura della
+    responsabilità intellettuale di una persona.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="att.canonical"/>
+  </classes>
+  <content>
+    <ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq.limited"/>
+  </content>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <respStmt>
+        <resp key="com">compiler</resp>
+        <name>Edward Child</name>
+      </respStmt>
+    </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <respStmt>
+        <resp>compilateur</resp>
+        <name>Edward Child</name>
+      </respStmt>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <respStmt>
+        <resp>編輯</resp>
+        <name>林偉</name>
+      </respStmt>
+    </egXML>
+  </exemplum>
+  <remarks versionDate="2012-03-14" xml:lang="en">
+    <p>The attributes <att>key</att> or <att>ref</att>, inherited from the class <ident type="class">att.canonical</ident> may be used to indicate the kind of responsibility in a normalized
+      form, by referring directly (using <att>ref</att>) or indirectly (using <att>key</att>) to a
+      standardized list of responsibility types, such as that maintained by a naming authority, for
+      example the list maintained at <ptr target="http://www.loc.gov/marc/relators/relacode.html"/>
+      for bibliographic usage.</p>
+  </remarks>
+  <remarks versionDate="2008-12-09" xml:lang="fr">
+    <p>Les attributs <att>key</att> or <att>ref</att>, issus de la classe <ident type="class">att.canonical</ident>, peuvent être utilisés pour indiquer le type de responsabilité sous
+      une forme normalisée, en faisant référence directement (par l'utilisation de <att>ref</att>)
+      ou indirectement (par l'utilisation de <att>key</att>) à une liste normalisée contenant des types de
+      responsabilité, comme celle qui est maintenue par une autorité de nommage, par exemple la
+      liste <ptr target="http://www.loc.gov/marc/relators/relacode.html"/> à usage bibliographique.
+    </p>
+  </remarks>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBICOR">3.11.2.2. </ref>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD21">2.2.1. </ref>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD22">2.2.2. </ref>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD26">2.2.5. </ref>
+  </listRef>
 </elementSpec><elementSpec rend="change" module="core" ident="title"><equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/><gloss versionDate="2007-06-12" xml:lang="fr">titre</gloss><desc versionDate="2008-10-25" xml:lang="en">contains a title for any kind of work.</desc><desc versionDate="2007-12-20" xml:lang="ko">다양한 종류의 작업에 대한 전체 제목을 제공한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含任何種類作品的完整題名
                     。</desc><desc versionDate="2008-04-05" xml:lang="ja">作品の完全なタイトルを示す．</desc><desc versionDate="2007-06-12" xml:lang="fr">contient le titre complet d'une oeuvre quelconque</desc><desc versionDate="2007-05-04" xml:lang="es">contiene el título completo de una obra de
                     cualquier tipo.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene il titolo completo di una qualsiaisi                    opera.</desc><classes><memberOf key="att.global"/><memberOf key="model.emphLike"/><memberOf key="model.msQuoteLike"/><memberOf key="att.canonical"/><memberOf key="att.typed"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.paraContent"/></content><attList><attDef ident="level" usage="opt">
@@ -7563,7 +7629,101 @@ element in the TEI Header.
   </remarks><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBICOI">3.11.2.4. </ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ms.html#mslangs">10.6.6. </ref>
-  </listRef></elementSpec><elementSpec rend="change" module="header" ident="idno"><equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/><gloss versionDate="2010-04-30" xml:lang="en">identifier</gloss><gloss versionDate="2009-01-05" xml:lang="fr">identifiant</gloss><gloss versionDate="2007-12-20" xml:lang="ko">식별 숫자</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">識別代碼</gloss><gloss versionDate="2006-10-18" xml:lang="de">Identifikationsnummer</gloss><gloss versionDate="2007-05-04" xml:lang="es">número identificativo</gloss><gloss versionDate="2007-01-21" xml:lang="it">numero identificatore</gloss><desc versionDate="2010-04-30" xml:lang="en">supplies any form of identifier used to identify some object,
+  </listRef></elementSpec><elementSpec ident="teiHeader" module="header" mode="replace"><content>
+					<group xmlns="http://relaxng.org/ns/structure/1.0"><ref name="fileDesc"/><ref name="encodingDesc"/><ref name="profileDesc"/><ref name="taskDesc"/><ref name="revisionDesc"/></group>
+				</content><attList/></elementSpec><elementSpec rend="change" module="header" ident="fileDesc"><gloss versionDate="2007-07-05" xml:lang="en">file description</gloss><gloss versionDate="2006-10-18" xml:lang="de">Dateibeschreibung</gloss><desc versionDate="2005-01-14" xml:lang="en">contains a full bibliographic description of an electronic file.</desc><desc versionDate="2006-10-18" xml:lang="de">enthält die detaillierte bibliografische Beschreibung
+							einer elektronischen Datei.</desc><classes/><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="titleStmt"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="editionStmt"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="publicationStmt"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="notesStmt"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="sourceDesc"/></content><attList/><exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <fileDesc>
+        <titleStmt>
+          <title>The shortest possible TEI document</title>
+        </titleStmt>
+        <publicationStmt>
+          <p>Distributed as part of TEI P5</p>
+        </publicationStmt>
+        <sourceDesc>
+          <p>No print source exists: this is an original digital text</p>
+        </sourceDesc>
+      </fileDesc>
+    </egXML>
+  </exemplum><exemplum xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <teiHeader>
+        <fileDesc>
+          <titleStmt>
+            <title>Le document TEI minimal</title>
+          </titleStmt>
+          <publicationStmt>
+            <p>Distribué comme partie de TEI P5</p>
+          </publicationStmt>
+          <sourceDesc>
+            <p>Aucune source : ce document est né numérique</p>
+          </sourceDesc>
+        </fileDesc>
+      </teiHeader>
+    </egXML>
+  </exemplum><remarks versionDate="2014-02-05" xml:lang="en">
+					<p>The content of this element is partly determined by macros specific to single schemata.</p>
+				</remarks><listRef>
+					<ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD2">2.2. </ref>
+					<ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD11">2.1.1. </ref>
+				</listRef></elementSpec><elementSpec rend="change" module="header" ident="titleStmt"><equiv filter="rswa.xsl" mimeType="text/xsl" name="expandTitleStmtEvent"/><gloss versionDate="2005-01-14" xml:lang="en">title statement</gloss><gloss versionDate="2009-01-05" xml:lang="fr">mention de titre</gloss><gloss versionDate="2007-12-20" xml:lang="ko">제목 진술</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">題名陳述</gloss><gloss versionDate="2006-10-18" xml:lang="de"> Titelinformation</gloss><gloss versionDate="2007-05-04" xml:lang="es">declaración del título</gloss><gloss versionDate="2007-01-21" xml:lang="it">dichiarazione sul titolo</gloss><desc versionDate="2012-04-17" xml:lang="en">groups information about the title of a work and those responsible for its content.</desc><desc versionDate="2009-01-05" xml:lang="fr"> regroupe les informations sur le titre d’une œuvre et
+    les personnes ou institutions responsables de son contenu intellectuel.</desc><desc versionDate="2007-12-20" xml:lang="ko">저작의 제목 그리고 지적 내용에 대한 책임에 관한 정보를 모아 놓는다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">匯集關於作品標題與作品智慧內容責任歸屬的資訊。</desc><desc versionDate="2008-04-05" xml:lang="ja">作品や知的内容に責任のあるもののタイトルに関する情報をまとめる．</desc><desc versionDate="2006-10-18" xml:lang="de">umfasst Angaben zum Titel eines Werks und zu den für
+    seinen Inhalt Verantwortlichen</desc><desc versionDate="2007-05-04" xml:lang="es">agrupa la información referente al título de una obra y a
+    los responsables de su contenido intelectual.</desc><desc versionDate="2007-01-21" xml:lang="it">raggruppa le informazioni sul titolo di un'opera e sulle
+    responsabilità del suo contenuto intellettuale.</desc><classes><memberOf key="att.global"/></classes><content><group xmlns="http://relaxng.org/ns/structure/1.0"><oneOrMore><ref name="title"/></oneOrMore><zeroOrMore><ref name="model.respLike"/></zeroOrMore></group></content><attList/><exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <titleStmt>
+        <title>Capgrave's Life of St. John Norbert: a machine-readable transcription</title>
+        <respStmt>
+          <resp>compiled by</resp>
+          <name>P.J. Lucas</name>
+        </respStmt>
+      </titleStmt>
+    </egXML>
+  </exemplum><exemplum versionDate="2010-02-26" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Sanctoral-ee">
+      <titleStmt>
+        <title>Le sanctoral du lectionnaire de l'office dominicain (1254-1256)</title>
+        <funder>2008—..., École nationale des chartes</funder>
+        <principal>Anne-Élisabeth Urfels-Capot</principal>
+        <respStmt>
+          <resp>responsable des publications</resp>
+          <name>Olivier Canteaut (École nationale des chartes)</name>
+        </respStmt>
+        <respStmt>
+          <resp> 2009—..., Éditeur électronique : du TEI à l'écran</resp>
+          <name ref="vincent.jolivet@enc.sorbonne.fr">Vincent Jolivet (École nationale
+              des chartes)</name>
+        </respStmt>
+        <respStmt>
+          <resp>2009, Éditeur scientifique</resp>
+          <name ref="pascale.bourgain@enc.sorbonne.fr">Pascale Bourgain (École
+              nationale des chartes)</name>
+        </respStmt>
+        <respStmt>
+          <resp>2008, Conversion du document bureautique vers TEI</resp>
+          <name ref="frederic.glorieux@enc.sorbonne.fr">Frédéric Glorieux (École
+              nationale des chartes)</name>
+        </respStmt>
+      </titleStmt>
+    </egXML>
+  </exemplum><exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <titleStmt>
+        <title>Taisho Tripitaka, Electronic version, No. 251 般若波羅蜜多心經</title>
+        <respStmt>
+          <resp>電子化</resp>
+          <name>中華電子佛典協會</name>
+        </respStmt>
+      </titleStmt>
+    </egXML>
+  </exemplum><listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD21">2.2.1. </ref>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD2">2.2. </ref>
+  </listRef></elementSpec><elementSpec ident="publicationStmt" mode="replace" module="header"><equiv filter="rswa.xsl" mimeType="text/xsl" name="expandPublicationStmt"/><content>
+							<ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.publicationStmt_event"/>
+						</content><attList/></elementSpec><elementSpec rend="change" module="header" ident="idno"><equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/><gloss versionDate="2010-04-30" xml:lang="en">identifier</gloss><gloss versionDate="2009-01-05" xml:lang="fr">identifiant</gloss><gloss versionDate="2007-12-20" xml:lang="ko">식별 숫자</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">識別代碼</gloss><gloss versionDate="2006-10-18" xml:lang="de">Identifikationsnummer</gloss><gloss versionDate="2007-05-04" xml:lang="es">número identificativo</gloss><gloss versionDate="2007-01-21" xml:lang="it">numero identificatore</gloss><desc versionDate="2010-04-30" xml:lang="en">supplies any form of identifier used to identify some object,
   such as a bibliographic item, a person, a title, an organization,
   etc. in a standardized way.</desc><desc versionDate="2009-01-05" xml:lang="fr">donne un numéro normalisé ou non qui peut être utilisé
     pour identifier une référence bibliographique.</desc><desc versionDate="2007-12-20" xml:lang="ko">서지 정보 항목을 식별하기 위해 사용되는 표준 또는 비표준 숫자를 제시한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">提供任何用來識別書目項目的標準或非標準編碼。</desc><desc versionDate="2008-04-05" xml:lang="ja">書誌項目を特定する標準的・非標準的数値を示す．</desc><desc versionDate="2006-10-18" xml:lang="de">gibt eine standardisierte oder nicht standardisierte
@@ -7617,7 +7777,136 @@ means of a <gi>glyph</gi> or <gi>char</gi> element referenced here as <code>#sym
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD24">2.2.4. </ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD26">2.2.5. </ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBICOI">3.11.2.4. </ref>
-  </listRef></elementSpec><elementSpec rend="change" module="namesdates" ident="orgName"><equiv filter="rswa.xsl" mimeType="text/xsl" name="onlyWithContentAddCert"/><gloss versionDate="2005-01-14" xml:lang="en">organization name</gloss><gloss versionDate="2007-12-20" xml:lang="ko">조직명</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">組織名稱</gloss><gloss versionDate="2008-12-09" xml:lang="fr">nom d'organisation</gloss><gloss versionDate="2007-05-04" xml:lang="es">nombre de una organización</gloss><gloss versionDate="2007-01-21" xml:lang="it">nome di organizzazione</gloss><desc versionDate="2005-01-14" xml:lang="en">contains an organizational name.</desc><desc versionDate="2007-12-20" xml:lang="ko">조직명을 포함한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含一個組織名稱。</desc><desc versionDate="2008-04-05" xml:lang="ja">組織の名前を示す．</desc><desc versionDate="2009-03-19" xml:lang="fr">contient le nom d'une organisation.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene el nombre de una organización.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene il nome proprio di un'organizzazione</desc><classes><memberOf key="att.global"/><memberOf key="model.nameLike.agent"/><memberOf key="att.datable"/><memberOf key="att.editLike"/><memberOf key="att.personal"/><memberOf key="att.typed"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/></content><attList/><exemplum xml:lang="en">
+  </listRef></elementSpec><elementSpec ident="availability" module="header" mode="replace"><content>
+					<rng:attribute name="status"/>
+					<oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="p"/></oneOrMore>
+				</content><attList/></elementSpec><elementSpec ident="sourceDesc" module="header" mode="replace"><content>
+							<ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.sourceDesc_event"/>
+						</content><attList/></elementSpec><elementSpec ident="profileDesc" module="header" mode="replace"><equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/><content>
+					<group xmlns="http://relaxng.org/ns/structure/1.0"><ref name="textClass"/><ref name="creation"/></group>
+				</content><attList/></elementSpec><elementSpec ident="creation" module="header" mode="replace"><content>
+							<ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.creation_event"/>
+						</content><attList/></elementSpec><elementSpec module="header" ident="change">
+  <desc versionDate="2011-10-31" xml:lang="en">documents a change or set of changes made during the production
+  of a source document, or during the revision of an electronic file.</desc>
+  <desc versionDate="2009-01-05" xml:lang="fr">résume une modification ou une correction apportée à une
+    version particulière d’un texte électronique partagé entre plusieurs chercheurs.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">몇몇 연구자들 사이에 공유된 전자 텍스트의 특정 버전에 대한 특정 변경 또는 수정 사항을 요약한다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">概述多位研究者共享的某版本電子文本當中，某特定的內容變更或修正。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">研究者間で共有されている電子テキストの特定の版に対して施された変更や 修正を示す．</desc>
+  <desc versionDate="2006-10-18" xml:lang="de">gibt eine bestimmte Veränderung oder Korrektur an einer
+    bestimmten Version eines elektronischen Textes an, an der verschiedene Bearbeiter beteiligt
+    sind.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">resume un cambio o corrección determinada llevada a cabo
+    en una versión dada de un texto electrónico en el que trabajan diversos investigadores.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">sintetizza un particolare cambiamento o correzione
+    effettuato ad una particolare versione di un documento elettronico, condivisa da più
+    ricercatori.</desc>
+  <classes>
+    <memberOf key="att.ascribed"/>
+    <memberOf key="att.datable"/>
+    <memberOf key="att.docStatus"/>
+    <memberOf key="att.global"/>
+    <memberOf key="att.typed"/>
+    
+  </classes>
+  <content>
+    
+    <ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.specialPara"/>
+  </content>
+  <attList>
+    <attDef ident="target">
+      <desc versionDate="2011-10-31" xml:lang="en">points to one or more elements that belong to this change.</desc>
+      <datatype minOccurs="1" maxOccurs="unbounded">
+        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.pointer"/>
+      </datatype>
+    </attDef>
+  </attList>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <titleStmt>
+        <title> ... </title>
+        <editor xml:id="LDB">Lou Burnard</editor>
+        <respStmt xml:id="BZ">
+          <resp>copy editing</resp>
+          <name>Brett Zamir</name>
+        </respStmt>
+      </titleStmt>
+      <!-- ... -->
+      <revisionDesc status="published">
+        <change who="#BZ" when="2008-02-02" status="public">Finished chapter 23</change>
+        <change who="#BZ" when="2008-01-02" status="draft">Finished chapter 2</change>
+        <change n="P2.2" when="1991-12-21" who="#LDB">Added examples to section 3</change>
+        <change when="1991-11-11" who="#MSM">Deleted chapter 10</change>
+      </revisionDesc>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <profileDesc>
+        <creation>
+          <listChange>
+            <change xml:id="DRAFT1">First draft in pencil</change>
+            <change xml:id="DRAFT2" notBefore="1880-12-09">First revision, mostly
+using green ink</change>
+            <change xml:id="DRAFT3" notBefore="1881-02-13">Final corrections as
+supplied to printer.</change>
+          </listChange>
+        </creation>
+      </profileDesc>
+    </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <titleStmt>
+        <title> ... </title>
+        <editor xml:id="fr_GK">G.K.</editor>
+        <respStmt xml:id="fr_RT">
+          <resp>copie</resp>
+          <name>R.T.</name>
+        </respStmt>
+      </titleStmt>
+      <revisionDesc>
+        <change who="#fr_RT" when="2008-02-02">Fin du chapitre 23</change>
+        <change who="#fr_RT" when="2008-01-02">FIn du chapitre 2</change>
+        <change n="P2.2" when="1991-12-21" who="#fr_GK">Ajout d'exemples dans la section 3</change>
+        <change when="1991-11-11" who="#fr_MSM">Suppression du chapitre 10</change>
+      </revisionDesc>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <change n="P2.2" when="1991-12-21">張三新增範例於第三節</change>
+      <change when="1991-11-11">李四刪除第十章</change>
+    </egXML>
+  </exemplum>
+  <remarks versionDate="2010-05-06" xml:lang="en">
+    <p>The <att>who</att> attribute may be used to point to any other element, but will typically
+      specify a <gi>respStmt</gi> or <gi>person</gi> element elsewhere in the header, identifying
+      the person responsible for the change and their role in making it.</p>
+    <p>It is recommended that changes be recorded with the most recent
+    first. The <att>status</att> attribute may be used to indicate the
+    status of a document following the change documented.  </p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2007-06-12">
+    <p>Les modifications doivent être enregistrées dans l'ordre, par exemple la plus récente en
+      premier.</p>
+  </remarks>
+  <remarks xml:lang="es" versionDate="2008-04-06">
+    <p>El atributo <att>quién</att> (who) se puede utilizar para señalar a cualquier otro elemento,
+      pero especificará típicamente a <gi>respStmt</gi> o al elemento <gi>persona</gi> de cualquier
+      parte del encabezado, identificando a la persona responsable del cambio y de su papel en la
+      producciónl.</p>
+    <p>Se recomienda que los cambios se registren con el primero más reciente.</p>
+  </remarks>
+  <remarks xml:lang="ja" versionDate="2008-04-05">
+    <p>修正は一貫した並びで記録されるべきである．例えば，最新のものが 最初に書かれる，など． </p>
+  </remarks>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD6">2.5. </ref>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD4C">2.4.1. </ref>
+  </listRef>
+</elementSpec><elementSpec rend="change" module="namesdates" ident="orgName"><equiv filter="rswa.xsl" mimeType="text/xsl" name="onlyWithContentAddCert"/><gloss versionDate="2005-01-14" xml:lang="en">organization name</gloss><gloss versionDate="2007-12-20" xml:lang="ko">조직명</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">組織名稱</gloss><gloss versionDate="2008-12-09" xml:lang="fr">nom d'organisation</gloss><gloss versionDate="2007-05-04" xml:lang="es">nombre de una organización</gloss><gloss versionDate="2007-01-21" xml:lang="it">nome di organizzazione</gloss><desc versionDate="2005-01-14" xml:lang="en">contains an organizational name.</desc><desc versionDate="2007-12-20" xml:lang="ko">조직명을 포함한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含一個組織名稱。</desc><desc versionDate="2008-04-05" xml:lang="ja">組織の名前を示す．</desc><desc versionDate="2009-03-19" xml:lang="fr">contient le nom d'une organisation.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene el nombre de una organización.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene il nome proprio di un'organizzazione</desc><classes><memberOf key="att.global"/><memberOf key="model.nameLike.agent"/><memberOf key="att.datable"/><memberOf key="att.editLike"/><memberOf key="att.personal"/><memberOf key="att.typed"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/></content><attList/><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">About a year back, a question of considerable interest was agitated in the <orgName key="PAS1" type="voluntary"><placeName key="PEN">Pennsyla.</placeName> Abolition Society</orgName>....</egXML>
   </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -9165,380 +9454,29 @@ P5. </p>
     </egXML>
   </exemplum><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSDIV">4.1. </ref>
-  </listRef></elementSpec><elementSpec module="core" ident="resp">
-  <gloss versionDate="2007-07-04" xml:lang="en">responsibility</gloss>
-  <gloss versionDate="2007-12-20" xml:lang="ko">책임성</gloss>
-  <gloss versionDate="2007-05-02" xml:lang="zh-TW"/>
-  <gloss versionDate="2008-04-06" xml:lang="es">responsabilidad</gloss>
-  <gloss versionDate="2007-06-12" xml:lang="fr">responsabilité</gloss>
-  <gloss versionDate="2007-11-06" xml:lang="it">responsabilità</gloss>
-  <desc versionDate="2011-11-16" xml:lang="en">contains a phrase describing the nature of a person's intellectual responsibility, or an organization's role 
-    in the production or distribution of a work.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">개인의 지적 책임성에 관한 특성을 기술하는 구를 포함한다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含一個詞彙，來描述個人智慧責任的類型。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">人物の知的責任の性質を表す一節を示す．</desc>
-  <desc versionDate="2007-06-12" xml:lang="fr">contient une expression décrivant la nature de la
-    responsabilité intellectuelle d'une personne.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">contiene un sintagma que describe la naturaleza de la
-    responsabilidad intelectual de una persona.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">contiene una frase che descrive la natura della
-    responsabilità intellettuale di una persona.</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="att.canonical"/>
-  </classes>
-  <content>
-    <ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq.limited"/>
-  </content>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <respStmt>
-        <resp key="com">compiler</resp>
-        <name>Edward Child</name>
-      </respStmt>
-    </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <respStmt>
-        <resp>compilateur</resp>
-        <name>Edward Child</name>
-      </respStmt>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <respStmt>
-        <resp>編輯</resp>
-        <name>林偉</name>
-      </respStmt>
-    </egXML>
-  </exemplum>
-  <remarks versionDate="2012-03-14" xml:lang="en">
-    <p>The attributes <att>key</att> or <att>ref</att>, inherited from the class <ident type="class">att.canonical</ident> may be used to indicate the kind of responsibility in a normalized
-      form, by referring directly (using <att>ref</att>) or indirectly (using <att>key</att>) to a
-      standardized list of responsibility types, such as that maintained by a naming authority, for
-      example the list maintained at <ptr target="http://www.loc.gov/marc/relators/relacode.html"/>
-      for bibliographic usage.</p>
-  </remarks>
-  <remarks versionDate="2008-12-09" xml:lang="fr">
-    <p>Les attributs <att>key</att> or <att>ref</att>, issus de la classe <ident type="class">att.canonical</ident>, peuvent être utilisés pour indiquer le type de responsabilité sous
-      une forme normalisée, en faisant référence directement (par l'utilisation de <att>ref</att>)
-      ou indirectement (par l'utilisation de <att>key</att>) à une liste normalisée contenant des types de
-      responsabilité, comme celle qui est maintenue par une autorité de nommage, par exemple la
-      liste <ptr target="http://www.loc.gov/marc/relators/relacode.html"/> à usage bibliographique.
-    </p>
-  </remarks>
-  <listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBICOR">3.11.2.2. </ref>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD21">2.2.1. </ref>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD22">2.2.2. </ref>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD26">2.2.5. </ref>
-  </listRef>
-</elementSpec><elementSpec rend="change" module="core" ident="respStmt"><equiv filter="rswa.xsl" mimeType="text/xsl" name="expandRespStmt"/><gloss versionDate="2005-03-01" xml:lang="en">statement of responsibility</gloss><gloss versionDate="2007-12-20" xml:lang="ko">책임성 진술</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">責任陳述</gloss><gloss versionDate="2007-06-12" xml:lang="fr">mention de responsabilité</gloss><gloss versionDate="2007-05-04" xml:lang="es">declaración de responsabilidad</gloss><gloss versionDate="2007-01-21" xml:lang="it">dichiarazione di responsabilità</gloss><desc versionDate="2011-11-16" xml:lang="en">supplies a statement of responsibility for the intellectual content of a text, edition,
-    recording, or series, where the specialized elements for authors, editors, etc. do not suffice
-    or do not apply. May also be used to encode information about individuals or organizations 
-    which have played a role in the production or distribution of a bibliographic work.</desc><desc versionDate="2007-12-20" xml:lang="ko">텍스트, 편집, 녹음 또는 총서의 지적 내용에 대한 책임성 진술을 제시한다. 여기에서 작가, 편집자
-    등에 대한 특별한 요소는 충분치 않거나 적용되지 않는다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">當未使用作者、編輯者等特定元素，或元素內容不足時，在此補充說明文件、版本、記錄、或是叢書的智慧內容所屬負責人的責任陳述。</desc><desc versionDate="2008-04-05" xml:lang="ja">著者や編集者など特定の役割を示す要素が充分ではない場合に，テキスト， 版，記録などの知的内容に関する責任を示す．</desc><desc versionDate="2008-12-09" xml:lang="fr">indique la responsabilité quant au contenu
-    intellectuel d'un texte, d'une édition, d'un enregistrement ou d'une publication en série,
-    lorsque les éléments spécifiques relatifs aux auteurs, éditeurs, etc. ne suffisent pas ou ne
-    s'appliquent pas.</desc><desc versionDate="2007-05-04" xml:lang="es">proporciona la declaración de la responsabilidad para el
-    contenido intelectual de un texto, edición, grabación o serie, donde no basten o no se apliquen
-    los elementos especializados para autores, editores, etc.</desc><desc versionDate="2007-01-21" xml:lang="it">fornisce una dichiarazione di responsabilità per qualcuno
-    responsabile del contenuto intelletuale di un testo, curatela, registrazione o collana, nel caso
-    in cui gli elementi specifici per autore, curatore ecc. non sono sufficienti o non applicabili.</desc><classes><memberOf key="att.global"/><memberOf key="att.canonical"/><memberOf key="model.respLike"/><memberOf key="model.recordingPart"/></classes><content><choice xmlns="http://relaxng.org/ns/structure/1.0"><group><oneOrMore><ref name="resp"/></oneOrMore><oneOrMore><ref name="model.nameLike.agent"/></oneOrMore></group><group><oneOrMore><ref name="model.nameLike.agent"/></oneOrMore><oneOrMore><ref name="resp"/></oneOrMore></group></choice></content><attList/><exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <respStmt>
-        <resp>transcribed from original ms</resp>
-        <persName>Claus Huitfeldt</persName>
-      </respStmt>
-    </egXML>
-  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <respStmt>
-        <resp>Nouvelle édition originale</resp>
-        <persName>Geneviève Hasenohr</persName>
-      </respStmt>
-    </egXML>
-  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <respStmt>
-        <resp>converti en langage SGML</resp>
-        <name>Alan Morrison</name>
-      </respStmt>
-    </egXML>
-  </exemplum><exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <respStmt>
-        <resp>謄寫自原始手稿</resp>
-        <persName>徐大明</persName>
-      </respStmt>
-    </egXML>
-  </exemplum><exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <respStmt>
-        <resp>轉換成SGML編碼</resp>
-        <name>許雁</name>
-      </respStmt>
-    </egXML>
-  </exemplum><exemplum versionDate="2012-07-16" xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <respStmt>
-        <resp>converted to XML encoding</resp>
-        <name>Alan Morrison</name>
-      </respStmt>
-    </egXML>
-  </exemplum><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBICOR">3.11.2.2. </ref>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD21">2.2.1. </ref>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD22">2.2.2. </ref>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD26">2.2.5. </ref>
-  </listRef></elementSpec><elementSpec ident="availability" module="header" mode="replace"><content>
-					<rng:attribute name="status"/>
-					<oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="p"/></oneOrMore>
-				</content><attList/></elementSpec><elementSpec module="header" ident="change">
-  <desc versionDate="2011-10-31" xml:lang="en">documents a change or set of changes made during the production
-  of a source document, or during the revision of an electronic file.</desc>
-  <desc versionDate="2009-01-05" xml:lang="fr">résume une modification ou une correction apportée à une
-    version particulière d’un texte électronique partagé entre plusieurs chercheurs.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">몇몇 연구자들 사이에 공유된 전자 텍스트의 특정 버전에 대한 특정 변경 또는 수정 사항을 요약한다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">概述多位研究者共享的某版本電子文本當中，某特定的內容變更或修正。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">研究者間で共有されている電子テキストの特定の版に対して施された変更や 修正を示す．</desc>
-  <desc versionDate="2006-10-18" xml:lang="de">gibt eine bestimmte Veränderung oder Korrektur an einer
-    bestimmten Version eines elektronischen Textes an, an der verschiedene Bearbeiter beteiligt
-    sind.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">resume un cambio o corrección determinada llevada a cabo
-    en una versión dada de un texto electrónico en el que trabajan diversos investigadores.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">sintetizza un particolare cambiamento o correzione
-    effettuato ad una particolare versione di un documento elettronico, condivisa da più
-    ricercatori.</desc>
-  <classes>
-    <memberOf key="att.ascribed"/>
-    <memberOf key="att.datable"/>
-    <memberOf key="att.docStatus"/>
-    <memberOf key="att.global"/>
-    <memberOf key="att.typed"/>
-    
-  </classes>
-  <content>
-    
-    <ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.specialPara"/>
-  </content>
-  <attList>
-    <attDef ident="target">
-      <desc versionDate="2011-10-31" xml:lang="en">points to one or more elements that belong to this change.</desc>
-      <datatype minOccurs="1" maxOccurs="unbounded">
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.pointer"/>
-      </datatype>
-    </attDef>
-  </attList>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <titleStmt>
-        <title> ... </title>
-        <editor xml:id="LDB">Lou Burnard</editor>
-        <respStmt xml:id="BZ">
-          <resp>copy editing</resp>
-          <name>Brett Zamir</name>
-        </respStmt>
-      </titleStmt>
-      <!-- ... -->
-      <revisionDesc status="published">
-        <change who="#BZ" when="2008-02-02" status="public">Finished chapter 23</change>
-        <change who="#BZ" when="2008-01-02" status="draft">Finished chapter 2</change>
-        <change n="P2.2" when="1991-12-21" who="#LDB">Added examples to section 3</change>
-        <change when="1991-11-11" who="#MSM">Deleted chapter 10</change>
-      </revisionDesc>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <profileDesc>
-        <creation>
-          <listChange>
-            <change xml:id="DRAFT1">First draft in pencil</change>
-            <change xml:id="DRAFT2" notBefore="1880-12-09">First revision, mostly
-using green ink</change>
-            <change xml:id="DRAFT3" notBefore="1881-02-13">Final corrections as
-supplied to printer.</change>
-          </listChange>
-        </creation>
-      </profileDesc>
-    </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <titleStmt>
-        <title> ... </title>
-        <editor xml:id="fr_GK">G.K.</editor>
-        <respStmt xml:id="fr_RT">
-          <resp>copie</resp>
-          <name>R.T.</name>
-        </respStmt>
-      </titleStmt>
-      <revisionDesc>
-        <change who="#fr_RT" when="2008-02-02">Fin du chapitre 23</change>
-        <change who="#fr_RT" when="2008-01-02">FIn du chapitre 2</change>
-        <change n="P2.2" when="1991-12-21" who="#fr_GK">Ajout d'exemples dans la section 3</change>
-        <change when="1991-11-11" who="#fr_MSM">Suppression du chapitre 10</change>
-      </revisionDesc>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <change n="P2.2" when="1991-12-21">張三新增範例於第三節</change>
-      <change when="1991-11-11">李四刪除第十章</change>
-    </egXML>
-  </exemplum>
-  <remarks versionDate="2010-05-06" xml:lang="en">
-    <p>The <att>who</att> attribute may be used to point to any other element, but will typically
-      specify a <gi>respStmt</gi> or <gi>person</gi> element elsewhere in the header, identifying
-      the person responsible for the change and their role in making it.</p>
-    <p>It is recommended that changes be recorded with the most recent
-    first. The <att>status</att> attribute may be used to indicate the
-    status of a document following the change documented.  </p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2007-06-12">
-    <p>Les modifications doivent être enregistrées dans l'ordre, par exemple la plus récente en
-      premier.</p>
-  </remarks>
-  <remarks xml:lang="es" versionDate="2008-04-06">
-    <p>El atributo <att>quién</att> (who) se puede utilizar para señalar a cualquier otro elemento,
-      pero especificará típicamente a <gi>respStmt</gi> o al elemento <gi>persona</gi> de cualquier
-      parte del encabezado, identificando a la persona responsable del cambio y de su papel en la
-      producciónl.</p>
-    <p>Se recomienda que los cambios se registren con el primero más reciente.</p>
-  </remarks>
-  <remarks xml:lang="ja" versionDate="2008-04-05">
-    <p>修正は一貫した並びで記録されるべきである．例えば，最新のものが 最初に書かれる，など． </p>
-  </remarks>
-  <listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD6">2.5. </ref>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD4C">2.4.1. </ref>
-  </listRef>
-</elementSpec><elementSpec ident="creation" module="header" mode="replace"><content>
-						<ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.creation_event"/>
-					</content><attList/></elementSpec><elementSpec rend="change" module="header" ident="fileDesc"><gloss versionDate="2007-07-05" xml:lang="en">file description</gloss><gloss versionDate="2006-10-18" xml:lang="de">Dateibeschreibung</gloss><desc versionDate="2005-01-14" xml:lang="en">contains a full bibliographic description of an electronic file.</desc><desc versionDate="2006-10-18" xml:lang="de">enthält die detaillierte bibliografische Beschreibung
-							einer elektronischen Datei.</desc><classes/><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="titleStmt"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="editionStmt"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="publicationStmt"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="notesStmt"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="sourceDesc"/></content><attList/><exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <fileDesc>
-        <titleStmt>
-          <title>The shortest possible TEI document</title>
-        </titleStmt>
-        <publicationStmt>
-          <p>Distributed as part of TEI P5</p>
-        </publicationStmt>
-        <sourceDesc>
-          <p>No print source exists: this is an original digital text</p>
-        </sourceDesc>
-      </fileDesc>
-    </egXML>
-  </exemplum><exemplum xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <teiHeader>
-        <fileDesc>
-          <titleStmt>
-            <title>Le document TEI minimal</title>
-          </titleStmt>
-          <publicationStmt>
-            <p>Distribué comme partie de TEI P5</p>
-          </publicationStmt>
-          <sourceDesc>
-            <p>Aucune source : ce document est né numérique</p>
-          </sourceDesc>
-        </fileDesc>
-      </teiHeader>
-    </egXML>
-  </exemplum><remarks versionDate="2014-02-05" xml:lang="en">
-					<p>The content of this element is partly determined by macros specific to single schemata.</p>
-				</remarks><listRef>
-					<ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD2">2.2. </ref>
-					<ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD11">2.1.1. </ref>
-				</listRef></elementSpec><elementSpec ident="profileDesc" module="header" mode="replace"><equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/><content>
-					<group xmlns="http://relaxng.org/ns/structure/1.0"><ref name="textClass"/><ref name="creation"/></group>
-				</content><attList/></elementSpec><elementSpec ident="publicationStmt" mode="replace" module="header"><equiv filter="rswa.xsl" mimeType="text/xsl" name="expandPublicationStmt"/><content>
-						<ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.publicationStmt_event"/>
-					</content><attList/></elementSpec><elementSpec ident="sourceDesc" module="header" mode="replace"><content>
-						<ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.sourceDesc_event"/>
-					</content><attList/></elementSpec><elementSpec ident="teiHeader" module="header" mode="replace"><content>
-					<group xmlns="http://relaxng.org/ns/structure/1.0"><ref name="fileDesc"/><ref name="encodingDesc"/><ref name="profileDesc"/><ref name="taskDesc"/><ref name="revisionDesc"/></group>
-				</content><attList/></elementSpec><elementSpec rend="change" module="header" ident="titleStmt"><equiv filter="rswa.xsl" mimeType="text/xsl" name="expandTitleStmtEvent"/><gloss versionDate="2005-01-14" xml:lang="en">title statement</gloss><gloss versionDate="2009-01-05" xml:lang="fr">mention de titre</gloss><gloss versionDate="2007-12-20" xml:lang="ko">제목 진술</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">題名陳述</gloss><gloss versionDate="2006-10-18" xml:lang="de"> Titelinformation</gloss><gloss versionDate="2007-05-04" xml:lang="es">declaración del título</gloss><gloss versionDate="2007-01-21" xml:lang="it">dichiarazione sul titolo</gloss><desc versionDate="2012-04-17" xml:lang="en">groups information about the title of a work and those responsible for its content.</desc><desc versionDate="2009-01-05" xml:lang="fr"> regroupe les informations sur le titre d’une œuvre et
-    les personnes ou institutions responsables de son contenu intellectuel.</desc><desc versionDate="2007-12-20" xml:lang="ko">저작의 제목 그리고 지적 내용에 대한 책임에 관한 정보를 모아 놓는다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">匯集關於作品標題與作品智慧內容責任歸屬的資訊。</desc><desc versionDate="2008-04-05" xml:lang="ja">作品や知的内容に責任のあるもののタイトルに関する情報をまとめる．</desc><desc versionDate="2006-10-18" xml:lang="de">umfasst Angaben zum Titel eines Werks und zu den für
-    seinen Inhalt Verantwortlichen</desc><desc versionDate="2007-05-04" xml:lang="es">agrupa la información referente al título de una obra y a
-    los responsables de su contenido intelectual.</desc><desc versionDate="2007-01-21" xml:lang="it">raggruppa le informazioni sul titolo di un'opera e sulle
-    responsabilità del suo contenuto intellettuale.</desc><classes><memberOf key="att.global"/></classes><content><group xmlns="http://relaxng.org/ns/structure/1.0"><oneOrMore><ref name="title"/></oneOrMore><zeroOrMore><ref name="model.respLike"/></zeroOrMore></group></content><attList/><exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <titleStmt>
-        <title>Capgrave's Life of St. John Norbert: a machine-readable transcription</title>
-        <respStmt>
-          <resp>compiled by</resp>
-          <name>P.J. Lucas</name>
-        </respStmt>
-      </titleStmt>
-    </egXML>
-  </exemplum><exemplum versionDate="2010-02-26" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Sanctoral-ee">
-      <titleStmt>
-        <title>Le sanctoral du lectionnaire de l'office dominicain (1254-1256)</title>
-        <funder>2008—..., École nationale des chartes</funder>
-        <principal>Anne-Élisabeth Urfels-Capot</principal>
-        <respStmt>
-          <resp>responsable des publications</resp>
-          <name>Olivier Canteaut (École nationale des chartes)</name>
-        </respStmt>
-        <respStmt>
-          <resp> 2009—..., Éditeur électronique : du TEI à l'écran</resp>
-          <name ref="vincent.jolivet@enc.sorbonne.fr">Vincent Jolivet (École nationale
-              des chartes)</name>
-        </respStmt>
-        <respStmt>
-          <resp>2009, Éditeur scientifique</resp>
-          <name ref="pascale.bourgain@enc.sorbonne.fr">Pascale Bourgain (École
-              nationale des chartes)</name>
-        </respStmt>
-        <respStmt>
-          <resp>2008, Conversion du document bureautique vers TEI</resp>
-          <name ref="frederic.glorieux@enc.sorbonne.fr">Frédéric Glorieux (École
-              nationale des chartes)</name>
-        </respStmt>
-      </titleStmt>
-    </egXML>
-  </exemplum><exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <titleStmt>
-        <title>Taisho Tripitaka, Electronic version, No. 251 般若波羅蜜多心經</title>
-        <respStmt>
-          <resp>電子化</resp>
-          <name>中華電子佛典協會</name>
-        </respStmt>
-      </titleStmt>
-    </egXML>
-  </exemplum><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD21">2.2.1. </ref>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD2">2.2. </ref>
-  </listRef></elementSpec><macroSpec rend="add" module="derived-module-schema.events" ident="data.supplPersNameType">
+  </listRef></elementSpec><desc>Events related to Strauss</desc><macroSpec rend="add" module="derived-module-schema.events" ident="data.supplPersNameType">
 			<content>
-				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>unknown</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">unbekannte Art</a:documentation><value>full</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">voller Name</a:documentation><value>former</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">früherer Name</a:documentation><value>later</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">späterer Name</a:documentation><value>birth</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Geburtsname</a:documentation><value>real</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">wirklicher Name</a:documentation><value>pseud</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Pseudonym</a:documentation><value>nickname</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Kosename</a:documentation><value>variant</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Variante</a:documentation><value>other</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">sonstige Art</a:documentation></choice>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>unknown</value><a:documentation>unbekannte Art</a:documentation><value>full</value><a:documentation>voller Name</a:documentation><value>former</value><a:documentation>früherer Name</a:documentation><value>later</value><a:documentation>späterer Name</a:documentation><value>birth</value><a:documentation>Geburtsname</a:documentation><value>real</value><a:documentation>wirklicher Name</a:documentation><value>pseud</value><a:documentation>Pseudonym</a:documentation><value>nickname</value><a:documentation>Kosename</a:documentation><value>variant</value><a:documentation>Variante</a:documentation><value>other</value><a:documentation>sonstige Art</a:documentation></choice>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="data.encoding-staff">
 			<content>
-				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>slm</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Salome Reiser</a:documentation><value>alx</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Alexander Erhard</a:documentation><value>sts</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Stefan Schenk</a:documentation><value>aap</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Andreas Pernpeintner</a:documentation><value>mmm</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Martina Mengele</a:documentation><value>flr</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Florence Eller</a:documentation><value>sbb</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Sebastian Bolz</a:documentation><value>wwb</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Walter Werbeck</a:documentation><value>clh</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Claudia Heine</a:documentation><value>afl</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Florian Amort</a:documentation><value>stk</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Steffi Kracht</a:documentation><value>oen</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Ursula Welsch</a:documentation><value>ofr</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Oliver Franeske</a:documentation></choice>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>slm</value><a:documentation>Salome Reiser</a:documentation><value>alx</value><a:documentation>Alexander Erhard</a:documentation><value>sts</value><a:documentation>Stefan Schenk</a:documentation><value>aap</value><a:documentation>Andreas Pernpeintner</a:documentation><value>mmm</value><a:documentation>Martina Mengele</a:documentation><value>flr</value><a:documentation>Florence Eller</a:documentation><value>sbb</value><a:documentation>Sebastian Bolz</a:documentation><value>wwb</value><a:documentation>Walter Werbeck</a:documentation><value>clh</value><a:documentation>Claudia Heine</a:documentation><value>afl</value><a:documentation>Florian Amort</a:documentation><value>stk</value><a:documentation>Steffi Kracht</a:documentation><value>oen</value><a:documentation>Ursula Welsch</a:documentation><value>ofr</value><a:documentation>Oliver Fraenske</a:documentation></choice>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="data.gndIdno">
 			<content>
-				<rng:data type="string">
-					<rng:param name="pattern">\d{1,9}\-?[\dX]</rng:param>
-				</rng:data>
+				<data xmlns="http://relaxng.org/ns/structure/1.0" type="string">
+					<param name="pattern">\d{1,9}\-?[\dX]</param>
+				</data>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="data.rsqvIdno">
 			<content>
-				<rng:data type="string">
-					<rng:param name="pattern">[a-z]\d{4,5}</rng:param>
-				</rng:data>
+				<data xmlns="http://relaxng.org/ns/structure/1.0" type="string">
+					<param name="pattern">[a-z]\d{4,5}</param>
+				</data>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="data.biblType">
 			<content>
-				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>e</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Edition in ...</a:documentation><value>a</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Auszug in ...</a:documentation><value>f</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Faksimile in ...</a:documentation><value>n</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Bezugnahme in ...</a:documentation><value>o</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Folgeauflage = </a:documentation><value>w</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Wiederabdruck = </a:documentation><value>t</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Übersetzung =</a:documentation><value>u</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">unbekannt</a:documentation><value>s</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">Sonstiges</a:documentation></choice>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>e</value><a:documentation>Edition in ...</a:documentation><value>a</value><a:documentation>Auszug in ...</a:documentation><value>f</value><a:documentation>Faksimile in ...</a:documentation><value>n</value><a:documentation>Bezugnahme in ...</a:documentation><value>o</value><a:documentation>Folgeauflage = </a:documentation><value>w</value><a:documentation>Wiederabdruck = </a:documentation><value>t</value><a:documentation>Übersetzung =</a:documentation><value>u</value><a:documentation>unbekannt</a:documentation><value>s</value><a:documentation>Sonstiges</a:documentation></choice>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="macro.form.date">
 			<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandOrRemoveDate"/>
@@ -9556,9 +9494,9 @@ supplied to printer.</change>
 			<desc versionDate="2014-01-26" xml:lang="de">Makro für ein <gi>idno</gi>-Element, in dem ein <att>type</att>-Attribut mit dem Wert <val>RSQV</val> vorhanden sein muss.</desc>
 			<content>
 				<oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><element name="idno">
-						<rng:attribute xmlns="http://www.tei-c.org/ns/1.0" name="type">
-							<rng:value>RSQV</rng:value>
-						</rng:attribute>
+						<attribute name="type">
+							<value>RSQV</value>
+						</attribute>
 						<optional><ref name="data.rsqvIdno"/></optional>
 					</element></oneOrMore>
 			</content>
@@ -9576,9 +9514,9 @@ supplied to printer.</change>
 			<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
 			<content>
 				<zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><element name="idno">
-						<rng:attribute xmlns="http://www.tei-c.org/ns/1.0" name="type">
-							<rng:value>UAG</rng:value>
-						</rng:attribute>
+						<attribute name="type">
+							<value>UAG</value>
+						</attribute>
 						<optional><ref name="data.word"/></optional>
 					</element></zeroOrMore>
 			</content>
@@ -9589,15 +9527,15 @@ supplied to printer.</change>
 			<desc versionDate="2014-01-26" xml:lang="en">Macro for a <gi>note</gi> element in which (work specific) commentaries about the object described in the containing element are specified.</desc>
 			<desc versionDate="2014-01-26" xml:lang="de">Makro für ein <gi>note</gi>-Element, in dem (werkspezifische) Kommentare über den im enthaltenden Element beschriebenen Gegenstand angegeben werden.</desc>
 			<content>
-				<rng:element name="note">
-					<rng:attribute name="type">
-						<rng:value>commentary</rng:value>
-					</rng:attribute>
-					<zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><element name="note">
+				<element xmlns="http://relaxng.org/ns/structure/1.0" name="note">
+					<attribute name="type">
+						<value>commentary</value>
+					</attribute>
+					<zeroOrMore><element name="note">
 							<ref name="rs"/>
 							<oneOrMore><ref name="p"/></oneOrMore>
 						</element></zeroOrMore>
-				</rng:element>
+				</element>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="macro.form.summaryNote">
 			<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
@@ -9606,12 +9544,12 @@ supplied to printer.</change>
 			<desc versionDate="2014-01-26" xml:lang="en">Macro for a <gi>note</gi> element in which details about the object described in the containing element are specified.</desc>
 			<desc versionDate="2014-01-26" xml:lang="de">Makro für ein <gi>note</gi>-Element, in dem Details über den im enthaltenden Element beschriebenen Gegenstand angegeben werden.</desc>
 			<content>
-				<rng:element name="note">
-					<rng:attribute name="type">
-						<rng:value>summary</rng:value>
-					</rng:attribute>
-					<ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.noteParagraph"/>
-				</rng:element>
+				<element xmlns="http://relaxng.org/ns/structure/1.0" name="note">
+					<attribute name="type">
+						<value>summary</value>
+					</attribute>
+					<ref name="macro.form.noteParagraph"/>
+				</element>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="macro.form.discussionNote">
 			<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
@@ -9620,12 +9558,12 @@ supplied to printer.</change>
 			<desc versionDate="2014-01-26" xml:lang="en">Macro for a <gi>note</gi> element in which the object described in the containing element can be discussed.</desc>
 			<desc versionDate="2014-01-26" xml:lang="de">Makro für ein <gi>note</gi>-Element, in dem der im enthaltenden Element beschriebenen Gegenstand diskutiert werden kann.</desc>
 			<content>
-				<rng:element name="note">
-					<rng:attribute name="type">
-						<rng:value>discussion</rng:value>
-					</rng:attribute>
-					<ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.noteParagraph"/>
-				</rng:element>
+				<element xmlns="http://relaxng.org/ns/structure/1.0" name="note">
+					<attribute name="type">
+						<value>discussion</value>
+					</attribute>
+					<ref name="macro.form.noteParagraph"/>
+				</element>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="macro.form.uncategorizedNote">
 			<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
@@ -9634,12 +9572,12 @@ supplied to printer.</change>
 			<desc versionDate="2014-01-26" xml:lang="en">Macro for a <gi>note</gi> element in which notes about the object described in the containing element that don't fit anywhere else can be given.</desc>
 			<desc versionDate="2014-01-26" xml:lang="de">Makro für ein <gi>note</gi>-Element, in dem Anmerkungen über den im enthaltenden Element beschriebenen Gegenstand, die an keinen anderen Ort passen, angegeben werden können.</desc>
 			<content>
-				<rng:element name="note">
-					<rng:attribute name="type">
-						<rng:value>uncategorized</rng:value>
-					</rng:attribute>
-					<ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.noteParagraph"/>
-				</rng:element>
+				<element xmlns="http://relaxng.org/ns/structure/1.0" name="note">
+					<attribute name="type">
+						<value>uncategorized</value>
+					</attribute>
+					<ref name="macro.form.noteParagraph"/>
+				</element>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="macro.form.publicationStmt_event">
 			<content>
@@ -9652,16 +9590,16 @@ supplied to printer.</change>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="macro.form.creation.change_ms">
 		<equiv filter="rswa.xsl" mimeType="text/xsl" name="processCreationChangeMs"/>
 			<content>
-				<rng:element name="change">
-					<optional xmlns="http://relaxng.org/ns/structure/1.0"><attribute name="type"/></optional>
-					<optional xmlns="http://relaxng.org/ns/structure/1.0"><attribute name="id" ns="http://www.w3.org/XML/1998/namespace">
-							<rng:data xmlns="http://www.tei-c.org/ns/1.0" type="ID"/>
+				<element xmlns="http://relaxng.org/ns/structure/1.0" name="change">
+					<optional><attribute name="type"/></optional>
+					<optional><attribute name="id" ns="http://www.w3.org/XML/1998/namespace">
+							<data type="ID"/>
 						</attribute></optional>
 
-					<zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><element name="persName">
-							<rng:attribute xmlns="http://www.tei-c.org/ns/1.0" name="role">
-								<rng:value>creator</rng:value>
-							</rng:attribute>
+					<zeroOrMore><element name="persName">
+							<attribute name="role">
+								<value>creator</value>
+							</attribute>
 							<optional><attribute name="cert">
 									<ref name="data.certainty"/>
 								</attribute></optional>
@@ -9669,10 +9607,10 @@ supplied to printer.</change>
 							<optional><text/></optional>
 						</element></zeroOrMore>
 
-					<zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><element name="orgName">
-							<rng:attribute xmlns="http://www.tei-c.org/ns/1.0" name="role">
-								<rng:value>creator</rng:value>
-							</rng:attribute>
+					<zeroOrMore><element name="orgName">
+							<attribute name="role">
+								<value>creator</value>
+							</attribute>
 							<optional><attribute name="cert">
 									<ref name="data.certainty"/>
 								</attribute></optional>
@@ -9680,10 +9618,10 @@ supplied to printer.</change>
 							<optional><text/></optional>
 						</element></zeroOrMore>
 
-					<zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><element name="persName">
-							<rng:attribute xmlns="http://www.tei-c.org/ns/1.0" name="role">
-								<rng:value>addressee</rng:value>
-							</rng:attribute>
+					<zeroOrMore><element name="persName">
+							<attribute name="role">
+								<value>addressee</value>
+							</attribute>
 							<optional><attribute name="cert">
 									<ref name="data.certainty"/>
 								</attribute></optional>
@@ -9691,32 +9629,32 @@ supplied to printer.</change>
 							<optional><text/></optional>
 						</element></zeroOrMore>
 
-					<zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><element name="orgName">
-							<rng:attribute xmlns="http://www.tei-c.org/ns/1.0" name="role">
-								<rng:value>addressee</rng:value>
-							</rng:attribute>
+					<zeroOrMore><element name="orgName">
+							<attribute name="role">
+								<value>addressee</value>
+							</attribute>
 							<optional><attribute name="cert">
 									<ref name="data.certainty"/>
 								</attribute></optional>
 							<optional><attribute name="key"/></optional>
 							<optional><text/></optional>
 						</element></zeroOrMore>
-					<oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="origDate"/></oneOrMore>
-					<oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="origPlace"/></oneOrMore>
-					<oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><element name="placeName">
+					<oneOrMore><ref name="origDate"/></oneOrMore>
+					<oneOrMore><ref name="origPlace"/></oneOrMore>
+					<oneOrMore><element name="placeName">
 							<group><attribute name="role">
-									<rng:value xmlns="http://www.tei-c.org/ns/1.0">destination</rng:value>
+									<value>destination</value>
 								</attribute><optional><attribute name="key"/></optional><optional><attribute name="cert">
 										<ref name="data.certainty"/>
 									</attribute></optional><text/></group>
 						</element></oneOrMore>
-				</rng:element>
+				</element>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="macro.form.creation_event">
 			<content>
-				<rng:element name="listChange">
-					<group xmlns="http://relaxng.org/ns/structure/1.0"><element name="change">
-							<rng:attribute xmlns="http://www.tei-c.org/ns/1.0" name="type"/>
+				<element xmlns="http://relaxng.org/ns/structure/1.0" name="listChange">
+					<group><element name="change">
+							<attribute name="type"/>
 							<ref name="macro.form.summaryNote"/>
 							<ref name="macro.form.commentaryNote"/>
 							<ref name="macro.form.discussionNote"/>
@@ -9724,20 +9662,20 @@ supplied to printer.</change>
 							<oneOrMore><ref name="date"/></oneOrMore>
 							<oneOrMore><ref name="placeName"/></oneOrMore>
 						</element></group>
-				</rng:element>
+				</element>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="macro.form.bibl">
 			<equiv filter="rswa.xsl" mimeType="text/xsl" name="transformOrRemoveBibl"/>
 			<content>
-				<rng:element name="bibl">
-					<optional xmlns="http://relaxng.org/ns/structure/1.0"><attribute name="type">
+				<element xmlns="http://relaxng.org/ns/structure/1.0" name="bibl">
+					<optional><attribute name="type">
 							<ref name="data.biblType"/>
 						</attribute></optional>
-					<optional xmlns="http://relaxng.org/ns/structure/1.0"><ref name="rs"/></optional>
-					<rng:element name="note">
-						<oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="p"/></oneOrMore>
-					</rng:element>
-				</rng:element>
+					<optional><ref name="rs"/></optional>
+					<element name="note">
+						<oneOrMore><ref name="p"/></oneOrMore>
+					</element>
+				</element>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="macro.form.noteParagraph">
 			<desc versionDate="2014-02-07" xml:lang="en">Defines the content allowed in a metadata form note.</desc>
@@ -9745,139 +9683,10 @@ supplied to printer.</change>
 				<zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><choice><ref name="model.gLike"/><ref name="model.phrase"/><ref name="model.inter"/><ref name="model.divPart"/><ref name="model.global"/></choice></zeroOrMore>
 			</content>
 		</macroSpec><moduleSpec n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec n="CO" xml:id="DCO" ident="core"/><moduleSpec n="HD" xml:id="DHD" ident="header"/><moduleSpec n="ND" xml:id="DND" ident="namesdates"/><moduleSpec n="SA" xml:id="DSA" ident="linking"/><moduleSpec n="CE" xml:id="DCE" ident="certainty"/><moduleSpec n="FT" xml:id="DFTFF" ident="figures"/><moduleSpec n="DS" xml:id="DDS" ident="textstructure"/></schemaSpec>
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			<div xml:id="scopes">
-				<head>Scopes</head>
-				<desc>The 'scopes' below mostly define thematically grouped collections of modules / elements. Combined, they add up to the full scope of a schema. In the whole 'scopes' section, each module and each element may only be cited once.</desc>
-				<div>
-					<head>Shared scope</head>
-					<desc>A scope common to all schemata (except of "place" and "work")</desc>
-					<table><row><cell>
-		Module tei</cell><cell/></row><row><cell>
-		Module core</cell><cell/></row><row><cell>
-		Module header</cell><cell/></row><row><cell>
-		Module namesdates</cell><cell/></row><row><cell>
-		Module linking</cell><cell/></row><row><cell>
-		Module certainty</cell><cell/></row><row><cell>
-		Module figures</cell><cell/></row></table>
-				</div>
-				<div>
-					<head>Header and basic text structure scope</head>
-					<desc>Common to all schemata containing a TEI header</desc>
-					<table><row><cell>
-		Module textstructure</cell><cell/></row><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/></table>
-				</div>
-				<div>
-					<head>Transcription specific scope</head>
-					<desc>Depends on scope.teistructure</desc>
-					<table><row><cell>
-		Module transcr</cell><cell/></row><row><cell>
-		Module msdescription</cell><cell/></row><row><cell>
-		Module analysis</cell><cell/></row><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/></table>
-				</div>
-				<div>
-					<head>Manuscript specific scope</head>
-					<desc>Depends on scope.transcr</desc>
-					<table><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/></table>
-				</div>
-				<div>
-					<head>Print specific scope</head>
-					<desc>Depends on scope.transcr</desc>
-					<table><row/><row/><row/><row/><row/><row/><row/><row/><row/><row/></table>
-				</div>
-				<div>
-					<head>State and eventList scope</head>
-					<desc>Common to schemata providing a state and a listEvent element (i.e. the person and org schemata)</desc>
-					<table><row/><row/><row/></table>
-				</div>
-				<div>
-					<head>Person specific scope</head>
-					<desc>Adds elements uniquely used in the person schema</desc>
-					<table><row/><row/><row/><row/><row/><row/><row/><row/><row/></table>
-				</div>
-				<div>
-					<head>Organization specific scope</head>
-					<desc>Adds elements uniquely used in the org schema</desc>
-					<table><row/></table>
-				</div>
-				<div>
-					<head>Performance specific scope</head>
-					<desc>Adds elements uniquely used in the performance schema</desc>
-					<table><row><cell>
-		Module drama</cell><cell/></row><row/><row/></table>
-				</div>
-			</div>
-			<div>
-				<head>TEI Extensions</head>
-				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.extension.xinclude.xml" xml:lang="">
-	<head>XInclude extension</head>
-	<byline>XInclude support adopted from the TEI-C's 
-		<ref target="http://www.tei-c.org/release/xml/tei/custom/odd/tei_xinclude.odd">XInclude ODD</ref></byline>
-	<table><row><cell>
-		Element <gi>conRef</gi></cell><cell>add</cell></row><row><cell>
-		Element <gi>include</gi></cell><cell>add</cell></row><row><cell>
-		Element <gi>fallback</gi></cell><cell>add</cell></row><row><cell>
-		Macro <ident type="macro">macro.anyThing</ident></cell><cell>add</cell></row></table>
-</div>
-				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.extension.tasks.xml" xml:lang="">
-	<head>taskDescr extension</head>
-	<table><row><cell>
-		Element <gi>taskDesc</gi></cell><cell>add</cell></row><row><cell>
-		Element <gi>task</gi></cell><cell>add</cell></row></table>
-</div>
-				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.extension.MEI-head.xml" xml:lang="">
-	<head>MEI head extension</head>
-	<byline>Apart from minor changes to get things working in the current context, the specGrp code is taken literally from Peter Stadler's WeGA_works.odd.xml. For copyright and other information, see the <ref target="https://github.com/Edirom/WeGA-ODD">Carl-Maria-von-Weber-Gesamtausgabe ODDs</ref>.</byline>
-	<desc>Includes TEI header components</desc>
-	
-	<table><row/><row><cell>
-		Module MEI</cell><cell/></row><row><cell>
-		Module MEI.frbr</cell><cell/></row><row><cell>
-		Module MEI.shared</cell><cell/></row><row><cell>
-		Module MEI.header</cell><cell/></row><row><cell>
-		Module MEI.namesdates</cell><cell/></row><row><cell>
-		Module MEI.cmn</cell><cell/></row><row><cell>
-		Module MEI.edittrans</cell><cell/></row><row><cell><ref target="##wega-patterns">reference #wega-patterns</ref></cell><cell/></row><row><cell><ref target="##wega-lists">reference #wega-lists</ref></cell><cell/></row><row><cell><ref target="##wega-common-atts">reference #wega-common-atts</ref></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.availabilityPart</ident></cell><cell>change</cell></row><row><cell>
-		Class <ident type="class">att.measurement</ident></cell><cell>change</cell></row><row><cell>
-		Element <gi>mei</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>persName</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>source</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>date</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>altId</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>titleStmt</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>title</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>rend</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>extent</gi></cell><cell>change</cell></row></table>
-</div>
-				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.extension.MEI-music.xml" xml:lang="">
-	<head>MEI music extension</head>
-	<byline>modelSpec and classSpec adopted from Raffaele Viglianti's <ref target="https://github.com/TEI-Music-SIG/tei-mei/blob/master/tei-lite_mei-cmn.xml">tei-lite_mei-cmn.xml</ref></byline>
-	<desc>Includes the TEI notatedMusic element and the MEI modules. Note: The moduleRefs below don't refer to the official mei-source.xml, but to a prefixed version, see <ref target="https://github.com/TEI-Music-SIG/tei-mei/">https://github.com/TEI-Music-SIG/tei-mei/</ref></desc>
-	<table><row/><row><cell>
-		Module MEI</cell><cell/></row><row><cell>
-		Module MEI.shared</cell><cell/></row><row><cell>
-		Module MEI.cmn</cell><cell/></row><row><cell>
-		Module MEI.cmnOrnaments</cell><cell/></row><row><cell>
-		Module MEI.critapp</cell><cell/></row><row><cell>
-		Module MEI.edittrans</cell><cell/></row><row><cell>
-		Module MEI.lyrics</cell><cell/></row><row><cell>
-		Module MEI.usersymbols</cell><cell/></row><row><cell>
-		Element <gi>notatedMusic</gi></cell><cell>change</cell></row><row><cell>
-		Class <ident type="class">mei_att.staffident</ident></cell><cell>replace</cell></row></table>
-</div>
-			</div>
+			
 			<div>
 				<head>Edits</head>
-				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.edits.classes.att.xml" xml:lang="">
+				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="edits/classes.att.xml" xml:lang="">
 	<head>Attribute classes</head>
 	<table><row><cell>
 		Class <ident type="class">att.msExcerpt</ident></cell><cell>delete</cell></row><row><cell>
@@ -9918,7 +9727,7 @@ supplied to printer.</change>
 		Class <ident type="class">att.coordinated</ident></cell><cell>delete</cell></row><row><cell>
 		Class <ident type="class">att.global.facs</ident></cell><cell>delete</cell></row></table>
 </div>
-				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.edits.datatypes.xml" xml:lang="">
+				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="edits/datatypes.xml" xml:lang="">
 	<head>Datatypes</head>
 	<table><row><cell>
 		Macro <ident type="macro">data.supplPersNameType</ident></cell><cell/></row><row><cell>
@@ -10011,81 +9820,8 @@ supplied to printer.</change>
 			</content>
 		</macroSpec>
 -->
-				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.edits.elements.xml" xml:lang="">
-	<head>Modifications of Elements</head>
-
-	<div>
-		<head>Modifications specific to single schemata</head>
-		<desc>These specifications are not meant to be combined; no more than one can be chosen</desc>
-		<div>
-			<head>Global (all-encompassing) schema</head>
-			<desc>presents the specifications following as alternatives</desc>
-			<table><row><cell>
-		Element <gi>publicationStmt</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>sourceDesc</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>creation</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>term</gi></cell><cell>change</cell></row></table>
-		</div>
-		
-		<div>
-			<head>Place</head>
-			<desc>Contains specifications specific of the place ODD</desc>
-			<table><row><cell>
-		Element <gi>placeName</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>location</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>geo</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>idno</gi></cell><cell>change</cell></row></table>
-		</div>
-		
-		<div>
-			<head>Manuscript sources</head>
-			<desc>Contains specifications for transcriptions of manuscript sources</desc>
-			<table><row><cell>
-		Element <gi>text</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>titleStmt</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>publicationStmt</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>sourceDesc</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>creation</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>term</gi></cell><cell>change</cell></row></table>
-		</div>
-		
-		<div>
-			<head>Images</head>
-			<desc>Contains specifications for images</desc>
-			<table><row><cell>
-		Element <gi>text</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>titleStmt</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>publicationStmt</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>sourceDesc</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>creation</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>term</gi></cell><cell>change</cell></row></table>
-		</div>
-		
-		<div>
-			<head>Printed sources</head>
-			<desc>Contains specifications for transcriptions of printed sources</desc>
-			<table><row><cell>
-		Element <gi>text</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>titleStmt</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>publicationStmt</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>sourceDesc</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>creation</gi></cell><cell>delete</cell></row><row><cell>
-		Element <gi>term</gi></cell><cell>change</cell></row></table>
-		</div>
-		<div>
-			<head>Events</head>
-			<desc>Contains specifications for documents describing an event</desc>
-			<table><row><cell>
-		Element <gi>text</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>titleStmt</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>publicationStmt</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>sourceDesc</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>creation</gi></cell><cell>replace</cell></row></table>
-		</div>
-	</div>
-
-	<div>
-		<head>Modifications shared by all schemata</head>
+				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="edits/elements.xml" xml:lang="">
+	<head>Modifications of elements</head>
 		<desc>These modifications change the way an element is specified for all schemata linking to this specGrp. Currently, this applies to every schema in use. If a specific element is not included in a schema, the corresponding specifications below will have no effect on that schema.</desc>
 		<table><row><cell>
 		Element <gi>listBibl</gi></cell><cell>change</cell></row><row><cell>
@@ -10151,7 +9887,7 @@ supplied to printer.</change>
 		Element <gi>placeName</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>residence</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>objectDesc</gi></cell><cell>change</cell></row></table>
-	</div>
+	
 </div><!-- not in use --><!-- 
 <elementSpec ident="rs" module="core" mode="change">
 	<gloss versionDate="2005-01-14" xml:lang="en">referencing string</gloss>
@@ -10278,7 +10014,7 @@ supplied to printer.</change>
 				</listRef>
 </elementSpec>
 -->
-				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="rswa.edits.macros.xml" xml:lang="">
+				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="edits/macros.xml" xml:lang="">
 	<head>Macros</head>
 	<table><row><cell>
 		Macro <ident type="macro">macro.form.date</ident></cell><cell/></row><row><cell>
@@ -10312,6 +10048,19 @@ supplied to printer.</change>
 		Macro <ident type="macro">macro.form.noteParagraph</ident></cell><cell/></row></table>
 </div>
 			</div>
+			
+			<div>
+				<head>Events</head>
+				<desc>Contains specifications for documents describing an event</desc>
+				<table><row><cell>
+		Element <gi>text</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>titleStmt</gi></cell><cell>change</cell></row><row><cell>
+		Element <gi>publicationStmt</gi></cell><cell>replace</cell></row><row><cell>
+		Element <gi>sourceDesc</gi></cell><cell>replace</cell></row><row><cell>
+		Element <gi>creation</gi></cell><cell>replace</cell></row></table>
+			</div>
+			
+
 		</body>
 	</text>
 </TEI>

@@ -3,12 +3,12 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2014-08-15T06:38:23Z. 
+Schema generated from ODD source 2014-08-23T14:42:43Z. 
 Edition: Version 2.6.0. Last updated on
 	20th January 2014, revision 12802
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
-  
---><!--This work is licensed under a Creative Commons Attribution 3.0 Unported License.-->
+ Repositories 
+--><!---->
    <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron"
            prefix="tei"
            uri="http://www.tei-c.org/ns/1.0"/>
@@ -123,7 +123,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
    <define name="rswa_att.canonical.attribute.key">
       <optional>
          <attribute name="key">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides an externally-defined means of identifying the entity (or entities) being named, using a coded value of some kind.</a:documentation>
             <ref name="rswa_data.text"/>
          </attribute>
       </optional>
@@ -131,7 +131,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
    <define name="rswa_att.canonical.attribute.ref">
       <optional>
          <attribute name="ref">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference) provides an explicit means of locating a full definition for the entity being named by means of one or more URIs.</a:documentation>
             <list>
                <oneOrMore>
                   <ref name="rswa_data.pointer"/>
@@ -150,7 +150,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
    <define name="rswa_att.ranging.attribute.atLeast">
       <optional>
          <attribute name="atLeast">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gives a minimum estimated value for the approximate measurement.</a:documentation>
             <ref name="rswa_data.numeric"/>
          </attribute>
       </optional>
@@ -158,7 +158,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
    <define name="rswa_att.ranging.attribute.atMost">
       <optional>
          <attribute name="atMost">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gives a maximum estimated value for the approximate measurement.</a:documentation>
             <ref name="rswa_data.numeric"/>
          </attribute>
       </optional>
@@ -166,7 +166,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
    <define name="rswa_att.ranging.attribute.min">
       <optional>
          <attribute name="min">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">where the measurement summarizes more than one observation or a range, supplies the minimum value observed.</a:documentation>
             <ref name="rswa_data.numeric"/>
          </attribute>
       </optional>
@@ -174,7 +174,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
    <define name="rswa_att.ranging.attribute.max">
       <optional>
          <attribute name="max">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">where the measurement summarizes more than one observation or a range, supplies the maximum value observed.</a:documentation>
             <ref name="rswa_data.numeric"/>
          </attribute>
       </optional>
@@ -198,19 +198,19 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
    <define name="rswa_att.dimensions.attribute.unit">
       <optional>
          <attribute name="unit">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-Empfohlene Werte sind: 1] cm; 2] mm; 3] in; 4] lines; 5] chars</a:documentation>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">names the unit used for the measurement
+Empfohlene Werte sind: 1] cm(centimetres) ; 2] mm(millimetres) ; 3] in(inches) ; 4] lines; 5] chars(characters) </a:documentation>
             <choice>
                <value>cm</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(centimetres) </a:documentation>
                <value>mm</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(millimetres) </a:documentation>
                <value>in</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(inches) </a:documentation>
                <value>lines</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">lines of text</a:documentation>
                <value>chars</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(characters) characters of text</a:documentation>
                <data type="Name"/>
             </choice>
          </attribute>
@@ -219,7 +219,7 @@ Empfohlene Werte sind: 1] cm; 2] mm; 3] in; 4] lines; 5] chars</a:documentation>
    <define name="rswa_att.dimensions.attribute.quantity">
       <optional>
          <attribute name="quantity">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the length in the units specified</a:documentation>
             <ref name="rswa_data.numeric"/>
          </attribute>
       </optional>
@@ -227,7 +227,7 @@ Empfohlene Werte sind: 1] cm; 2] mm; 3] in; 4] lines; 5] chars</a:documentation>
    <define name="rswa_att.dimensions.attribute.extent">
       <optional>
          <attribute name="extent">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the size of the object concerned using a project-specific vocabulary combining quantity and units in a single string of words.</a:documentation>
             <ref name="rswa_data.text"/>
          </attribute>
       </optional>
@@ -235,7 +235,7 @@ Empfohlene Werte sind: 1] cm; 2] mm; 3] in; 4] lines; 5] chars</a:documentation>
    <define name="rswa_att.dimensions.attribute.precision">
       <optional>
          <attribute name="precision">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the precision of the values specified by the other attributes.</a:documentation>
             <ref name="rswa_data.certainty"/>
          </attribute>
       </optional>
@@ -243,7 +243,7 @@ Empfohlene Werte sind: 1] cm; 2] mm; 3] in; 4] lines; 5] chars</a:documentation>
    <define name="rswa_att.dimensions.attribute.scope">
       <optional>
          <attribute name="scope">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">where the measurement summarizes more than one observation, specifies the applicability of this measurement.
 Beispielwerte sind etwa: 1] all; 2] most; 3] range</a:documentation>
             <ref name="rswa_data.enumerated"/>
          </attribute>
@@ -259,7 +259,7 @@ Beispielwerte sind etwa: 1] all; 2] most; 3] range</a:documentation>
    <define name="rswa_att.datable.w3c.attribute.when">
       <optional>
          <attribute name="when">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies the value of the date or time in a standard form, e.g. yyyy-mm-dd.</a:documentation>
             <ref name="rswa_data.temporal.w3c"/>
          </attribute>
       </optional>
@@ -267,7 +267,7 @@ Beispielwerte sind etwa: 1] all; 2] most; 3] range</a:documentation>
    <define name="rswa_att.datable.w3c.attribute.notBefore">
       <optional>
          <attribute name="notBefore">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the earliest possible date for the event in standard form, e.g. yyyy-mm-dd.</a:documentation>
             <ref name="rswa_data.temporal.w3c"/>
          </attribute>
       </optional>
@@ -275,7 +275,7 @@ Beispielwerte sind etwa: 1] all; 2] most; 3] range</a:documentation>
    <define name="rswa_att.datable.w3c.attribute.notAfter">
       <optional>
          <attribute name="notAfter">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the latest possible date for the event in standard form, e.g. yyyy-mm-dd.</a:documentation>
             <ref name="rswa_data.temporal.w3c"/>
          </attribute>
       </optional>
@@ -283,7 +283,7 @@ Beispielwerte sind etwa: 1] all; 2] most; 3] range</a:documentation>
    <define name="rswa_att.datable.w3c.attribute.from">
       <optional>
          <attribute name="from">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the starting point of the period in standard form, e.g. yyyy-mm-dd.</a:documentation>
             <ref name="rswa_data.temporal.w3c"/>
          </attribute>
       </optional>
@@ -291,7 +291,7 @@ Beispielwerte sind etwa: 1] all; 2] most; 3] range</a:documentation>
    <define name="rswa_att.datable.w3c.attribute.to">
       <optional>
          <attribute name="to">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the ending point of the period in standard form, e.g. yyyy-mm-dd.</a:documentation>
             <ref name="rswa_data.temporal.w3c"/>
          </attribute>
       </optional>
@@ -306,13 +306,13 @@ Beispielwerte sind etwa: 1] all; 2] most; 3] range</a:documentation>
    <define name="rswa_att.datable.attribute.calendar">
       <optional>
          <attribute name="calendar">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the system or calendar to which the date represented by the content of this element belongs.</a:documentation>
             <ref name="rswa_data.pointer"/>
          </attribute>
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="calendar-constraint-calendar">
+            id="schema.repository-att.datable-calendar-calendar-constraint-1">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -328,7 +328,7 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
    <define name="rswa_att.datable.attribute.period">
       <optional>
          <attribute name="period">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies a pointer to some location defining a named period of time within which the datable item is understood to have occurred.</a:documentation>
             <ref name="rswa_data.pointer"/>
          </attribute>
       </optional>
@@ -339,7 +339,7 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
    <define name="rswa_att.declaring.attribute.decls">
       <optional>
          <attribute name="decls">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">identifies one or more declarable elements within the header, which are understood to apply to the element bearing this attribute and its content.</a:documentation>
             <list>
                <oneOrMore>
                   <ref name="rswa_data.pointer"/>
@@ -359,15 +359,15 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
             <a:documentation>specifies whether or not its parent element is fragmented in some way, typically by some other overlapping structure: for example a speech which is divided between two or more verse stanzas, a paragraph which is split across a page division, a verse line which is divided between two speakers.</a:documentation>
             <choice>
                <value>Y</value>
-               <a:documentation>the element is fragmented in some (unspecified) respect</a:documentation>
+               <a:documentation>(yes) the element is fragmented in some (unspecified) respect</a:documentation>
                <value>N</value>
-               <a:documentation>either the element is not fragmented, or no claim is made as to its completeness.</a:documentation>
+               <a:documentation>(no) either the element is not fragmented, or no claim is made as to its completeness.</a:documentation>
                <value>I</value>
-               <a:documentation>this is the initial part of a fragmented element</a:documentation>
+               <a:documentation>(initial) this is the initial part of a fragmented element</a:documentation>
                <value>M</value>
-               <a:documentation>this is a medial part of a fragmented element</a:documentation>
+               <a:documentation>(medial) this is a medial part of a fragmented element</a:documentation>
                <value>F</value>
-               <a:documentation>this is the final part of a fragmented element</a:documentation>
+               <a:documentation>(final) this is the final part of a fragmented element</a:documentation>
             </choice>
          </attribute>
       </optional>
@@ -380,7 +380,7 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
    <define name="rswa_att.responsibility.attribute.cert">
       <optional>
          <attribute name="cert">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(certainty) signifies the degree of certainty associated with the intervention or interpretation.</a:documentation>
             <ref name="rswa_data.certainty"/>
          </attribute>
       </optional>
@@ -388,7 +388,7 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
    <define name="rswa_att.responsibility.attribute.resp">
       <optional>
          <attribute name="resp">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(responsible party) indicates the agency responsible for the intervention or interpretation, for example an editor or transcriber.</a:documentation>
             <list>
                <oneOrMore>
                   <ref name="rswa_data.pointer"/>
@@ -406,17 +406,17 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
    <define name="rswa_att.editLike.attribute.evidence">
       <optional>
          <attribute name="evidence">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the nature of the evidence supporting the reliability or accuracy of the intervention or interpretation.
 Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
             <list>
                <oneOrMore>
                   <choice>
                      <value>internal</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">there is internal evidence to support the intervention.</a:documentation>
                      <value>external</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">there is external evidence to support the intervention.</a:documentation>
                      <value>conjecture</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the intervention or interpretation has been made by the editor, cataloguer, or scholar on the basis of their expertise.</a:documentation>
                      <data type="Name"/>
                   </choice>
                </oneOrMore>
@@ -448,7 +448,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.global.attribute.xmlid">
       <optional>
          <attribute name="xml:id">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(identifier) provides a unique identifier for the element bearing the attribute.</a:documentation>
             <data type="ID"/>
          </attribute>
       </optional>
@@ -456,7 +456,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.global.attribute.n">
       <optional>
          <attribute name="n">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(number) gives a number (or other label) for an element, which is not necessarily unique within the document.</a:documentation>
             <ref name="rswa_data.text"/>
          </attribute>
       </optional>
@@ -464,7 +464,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.global.attribute.xmllang">
       <optional>
          <attribute name="xml:lang">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(language) indicates the language of the element content using a tag generated according to BCP 47.</a:documentation>
             <ref name="rswa_data.language"/>
          </attribute>
       </optional>
@@ -472,7 +472,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.global.attribute.rend">
       <optional>
          <attribute name="rend">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(rendition) indicates how the element in question was rendered or presented in the source text.</a:documentation>
             <list>
                <oneOrMore>
                   <ref name="rswa_data.word"/>
@@ -492,7 +492,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.global.attribute.rendition">
       <optional>
          <attribute name="rendition">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to a description of the rendering or presentation used for this element in the source text.</a:documentation>
             <list>
                <oneOrMore>
                   <ref name="rswa_data.pointer"/>
@@ -504,7 +504,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.global.attribute.xmlbase">
       <optional>
          <attribute name="xml:base">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides a base URI reference with which applications can resolve relative URI references into absolute URI references.</a:documentation>
             <ref name="rswa_data.pointer"/>
          </attribute>
       </optional>
@@ -512,7 +512,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.global.attribute.xmlspace">
       <optional>
          <attribute name="xml:space">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">signals an intention about how white space should be managed by applications.</a:documentation>
             <choice>
                <value>default</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">signals that the application's default white-space processing modes are acceptable</a:documentation>
@@ -538,7 +538,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.naming.attribute.nymRef">
       <optional>
          <attribute name="nymRef">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference to the canonical name) provides a means of locating the canonical form (nym) of the names associated with the object named by the element bearing it.</a:documentation>
             <list>
                <oneOrMore>
                   <ref name="rswa_data.pointer"/>
@@ -554,7 +554,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.typed.attribute.type">
       <optional>
          <attribute name="type">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.</a:documentation>
             <ref name="rswa_data.enumerated"/>
          </attribute>
       </optional>
@@ -562,13 +562,13 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.typed.attribute.subtype">
       <optional>
          <attribute name="subtype">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides a sub-categorization of the element, if needed</a:documentation>
             <ref name="rswa_data.enumerated"/>
          </attribute>
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="att.typed-constraint-subtypeTyped">
+            id="schema.repository-att.typed-subtypeTyped-constraint-2">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -811,14 +811,14 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
          <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
                     name="full"
                     a:defaultValue="yes">
-            <a:documentation/>
+            <a:documentation>indicates whether the name component is given in full, as an abbreviation or simply as an initial.</a:documentation>
             <choice>
                <value>yes</value>
-               <a:documentation/>
+               <a:documentation>the name component is spelled out in full.</a:documentation>
                <value>abb</value>
-               <a:documentation/>
+               <a:documentation>(abbreviated) the name component is given in an abbreviated form.</a:documentation>
                <value>init</value>
-               <a:documentation/>
+               <a:documentation>(initial letter) the name component is indicated only by one initial.</a:documentation>
             </choice>
          </attribute>
       </optional>
@@ -826,14 +826,14 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.personal.attribute.sort">
       <optional>
          <attribute name="sort">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the sort order of the name component in relation to others within the name.</a:documentation>
             <ref name="rswa_data.count"/>
          </attribute>
       </optional>
    </define>
    <define name="rswa_name">
       <element name="name">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"> [3.5.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(name, proper noun) contains a proper noun or noun phrase. [3.5.1. ]</a:documentation>
          <ref name="rswa_macro.phraseSeq"/>
          <ref name="rswa_att.global.attributes"/>
          <ref name="rswa_att.personal.attributes"/>
@@ -959,7 +959,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.datable.iso.attribute.when-iso">
       <optional>
          <attribute name="when-iso">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies the value of a date or time in a standard form.</a:documentation>
             <ref name="rswa_data.temporal.iso"/>
          </attribute>
       </optional>
@@ -967,7 +967,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.datable.iso.attribute.notBefore-iso">
       <optional>
          <attribute name="notBefore-iso">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the earliest possible date for the event in standard form, e.g. yyyy-mm-dd.</a:documentation>
             <ref name="rswa_data.temporal.iso"/>
          </attribute>
       </optional>
@@ -975,7 +975,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.datable.iso.attribute.notAfter-iso">
       <optional>
          <attribute name="notAfter-iso">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the latest possible date for the event in standard form, e.g. yyyy-mm-dd.</a:documentation>
             <ref name="rswa_data.temporal.iso"/>
          </attribute>
       </optional>
@@ -983,7 +983,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.datable.iso.attribute.from-iso">
       <optional>
          <attribute name="from-iso">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the starting point of the period in standard form.</a:documentation>
             <ref name="rswa_data.temporal.iso"/>
          </attribute>
       </optional>
@@ -991,14 +991,14 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.datable.iso.attribute.to-iso">
       <optional>
          <attribute name="to-iso">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the ending point of the period in standard form.</a:documentation>
             <ref name="rswa_data.temporal.iso"/>
          </attribute>
       </optional>
    </define>
    <define name="rswa_country">
       <element name="country">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"> [13.2.3. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(country) contains the name of a geo-political unit, such as a nation, country, colony, or commonwealth, larger than or administratively superior to a region and smaller than a bloc. [13.2.3. ]</a:documentation>
          <ref name="rswa_macro.phraseSeq"/>
          <ref name="rswa_att.global.attributes"/>
          <ref name="rswa_att.naming.attributes"/>
@@ -1009,7 +1009,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    </define>
    <define name="rswa_settlement">
       <element name="settlement">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"> [13.2.3. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the name of a settlement such as a city, town, or village identified as a single geo-political or administrative unit. [13.2.3. ]</a:documentation>
          <ref name="rswa_macro.phraseSeq"/>
          <ref name="rswa_att.global.attributes"/>
          <ref name="rswa_att.naming.attributes"/>
@@ -1031,7 +1031,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.global.linking.attribute.corresp">
       <optional>
          <attribute name="corresp">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(corresponds) points to elements that correspond to the current element in some way.</a:documentation>
             <list>
                <oneOrMore>
                   <ref name="rswa_data.pointer"/>
@@ -1043,7 +1043,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.global.linking.attribute.synch">
       <optional>
          <attribute name="synch">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(synchronous) points to elements that are synchronous with the current element.</a:documentation>
             <list>
                <oneOrMore>
                   <ref name="rswa_data.pointer"/>
@@ -1055,7 +1055,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.global.linking.attribute.sameAs">
       <optional>
          <attribute name="sameAs">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to an element that is the same as the current element.</a:documentation>
             <ref name="rswa_data.pointer"/>
          </attribute>
       </optional>
@@ -1063,7 +1063,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.global.linking.attribute.copyOf">
       <optional>
          <attribute name="copyOf">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to an element of which the current element is a copy.</a:documentation>
             <ref name="rswa_data.pointer"/>
          </attribute>
       </optional>
@@ -1071,7 +1071,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.global.linking.attribute.next">
       <optional>
          <attribute name="next">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to the next element of a virtual aggregate of which the current element is part.</a:documentation>
             <ref name="rswa_data.pointer"/>
          </attribute>
       </optional>
@@ -1079,7 +1079,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.global.linking.attribute.prev">
       <optional>
          <attribute name="prev">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(previous) points to the previous element of a virtual aggregate of which the current element is part.</a:documentation>
             <ref name="rswa_data.pointer"/>
          </attribute>
       </optional>
@@ -1087,7 +1087,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.global.linking.attribute.exclude">
       <optional>
          <attribute name="exclude">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to elements that are in exclusive alternation with the current element.</a:documentation>
             <list>
                <oneOrMore>
                   <ref name="rswa_data.pointer"/>
@@ -1099,7 +1099,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.global.linking.attribute.select">
       <optional>
          <attribute name="select">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">selects one or more alternants; if one alternant is selected, the ambiguity or uncertainty is marked as resolved. If more than one alternant is selected, the degree of ambiguity or uncertainty is marked as reduced by the number of alternants not selected.</a:documentation>
             <list>
                <oneOrMore>
                   <ref name="rswa_data.pointer"/>
@@ -1110,7 +1110,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    </define>
    <define name="rswa_ab">
       <element name="ab">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"> [16.3. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(anonymous block) contains any arbitrary component-level unit of text, acting as an anonymous container for phrase or inter level elements analogous to, but without the semantic baggage of, a paragraph. [16.3. ]</a:documentation>
          <ref name="rswa_macro.paraContent"/>
          <ref name="rswa_att.global.attributes"/>
          <ref name="rswa_att.typed.attributes"/>

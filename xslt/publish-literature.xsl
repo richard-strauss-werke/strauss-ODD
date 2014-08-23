@@ -27,21 +27,6 @@
 				  </funder>
    </xsl:variable>
    <xsl:variable name="contributorsResp">Vorbereitung der digitalen Edition</xsl:variable>
-   <xsl:variable name="staff">
-      <name xml:id="slm">Salome Reiser</name>
-      <name xml:id="alx">Alexander Erhard</name>
-      <name xml:id="sts">Stefan Schenk</name>
-      <name xml:id="aap">Andreas Pernpeintner</name>
-      <name xml:id="mmm">Martina Mengele</name>
-      <name xml:id="flr">Florence Eller</name>
-      <name xml:id="sbb">Sebastian Bolz</name>
-      <name xml:id="wwb">Walter Werbeck</name>
-      <name xml:id="clh">Claudia Heine</name>
-      <name xml:id="afl">Florian Amort</name>
-      <name xml:id="stk">Steffi Kracht</name>
-      <name xml:id="oen">Ursula Welsch</name>
-      <name xml:id="ofr">Oliver Franeske</name>
-   </xsl:variable>
    <xsl:variable name="publicationStmt">
 				  <distributor>Forschungsstelle zur Edition der Werke von Richard Strauss</distributor>
 				  <availability status="restricted">
@@ -55,6 +40,21 @@
 			   </seriesStmt>
    </xsl:variable>
    <xsl:variable name="edition">Digitale Ausgabe</xsl:variable>
+   <xsl:variable name="staff">
+      <name xml:id="slm">Salome Reiser</name>
+      <name xml:id="alx">Alexander Erhard</name>
+      <name xml:id="sts">Stefan Schenk</name>
+      <name xml:id="aap">Andreas Pernpeintner</name>
+      <name xml:id="mmm">Martina Mengele</name>
+      <name xml:id="flr">Florence Eller</name>
+      <name xml:id="sbb">Sebastian Bolz</name>
+      <name xml:id="wwb">Walter Werbeck</name>
+      <name xml:id="clh">Claudia Heine</name>
+      <name xml:id="afl">Florian Amort</name>
+      <name xml:id="stk">Steffi Kracht</name>
+      <name xml:id="oen">Ursula Welsch</name>
+      <name xml:id="ofr">Oliver Fraenske</name>
+   </xsl:variable>
    <xsl:variable name="sexes">
       <empty/>
    </xsl:variable>
@@ -93,13 +93,34 @@
    <xsl:template match="desc">
       <xsl:call-template name="keepOnlyWithAnyText"/>
    </xsl:template>
+   <xsl:template match="term">
+      <xsl:call-template name="addTermRef"/>
+   </xsl:template>
    <xsl:template match="rs">
       <xsl:call-template name="processRs"/>
    </xsl:template>
    <xsl:template match="graphic">
       <xsl:call-template name="keepOnlyWithAtt"/>
    </xsl:template>
+   <xsl:template match="series">
+      <xsl:call-template name="keepOnlyWithAnyText"/>
+   </xsl:template>
+   <xsl:template match="respStmt">
+      <xsl:call-template name="expandRespStmt"/>
+   </xsl:template>
    <xsl:template match="title">
+      <xsl:call-template name="keepOnlyWithAnyText"/>
+   </xsl:template>
+   <xsl:template match="imprint">
+      <xsl:call-template name="processImprint"/>
+   </xsl:template>
+   <xsl:template match="publisher">
+      <xsl:call-template name="keepOnlyWithAnyText"/>
+   </xsl:template>
+   <xsl:template match="biblScope">
+      <xsl:call-template name="keepOnlyWithAnyText"/>
+   </xsl:template>
+   <xsl:template match="pubPlace">
       <xsl:call-template name="keepOnlyWithAnyText"/>
    </xsl:template>
    <xsl:template match="listBibl">
@@ -108,7 +129,31 @@
    <xsl:template match="textLang">
       <xsl:call-template name="keepOnlyWithAnyText"/>
    </xsl:template>
+   <xsl:template match="titleStmt">
+      <xsl:call-template name="expandTitleStmtPrint"/>
+   </xsl:template>
+   <xsl:template match="edition">
+      <xsl:call-template name="expandEdition"/>
+   </xsl:template>
+   <xsl:template match="publicationStmt">
+      <xsl:call-template name="expandPublicationStmt"/>
+   </xsl:template>
    <xsl:template match="idno">
+      <xsl:call-template name="keepOnlyWithContent"/>
+   </xsl:template>
+   <xsl:template match="notesStmt">
+      <xsl:call-template name="keepOnlyWithGrandChildContent"/>
+   </xsl:template>
+   <xsl:template match="editorialDecl">
+      <xsl:call-template name="expandEditorialDecl"/>
+   </xsl:template>
+   <xsl:template match="profileDesc">
+      <xsl:call-template name="keepOnlyWithAnyText"/>
+   </xsl:template>
+   <xsl:template match="textClass">
+      <xsl:call-template name="keepOnlyWithAnyText"/>
+   </xsl:template>
+   <xsl:template match="revisionDesc">
       <xsl:call-template name="keepOnlyWithContent"/>
    </xsl:template>
    <xsl:template match="orgName">
@@ -138,50 +183,8 @@
    <xsl:template match="additional">
       <xsl:call-template name="keepOnlyWithAnyAttOrAnyText"/>
    </xsl:template>
-   <xsl:template match="respStmt">
-      <xsl:call-template name="expandRespStmt"/>
-   </xsl:template>
-   <xsl:template match="profileDesc">
-      <xsl:call-template name="keepOnlyWithAnyText"/>
-   </xsl:template>
-   <xsl:template match="publicationStmt">
-      <xsl:call-template name="expandPublicationStmt"/>
-   </xsl:template>
-   <xsl:template match="titleStmt">
-      <xsl:call-template name="expandTitleStmtPrint"/>
-   </xsl:template>
-   <xsl:template match="term">
-      <xsl:call-template name="addTermRef"/>
-   </xsl:template>
-   <xsl:template match="edition">
-      <xsl:call-template name="expandEdition"/>
-   </xsl:template>
-   <xsl:template match="editorialDecl">
-      <xsl:call-template name="expandEditorialDecl"/>
-   </xsl:template>
-   <xsl:template match="notesStmt">
-      <xsl:call-template name="keepOnlyWithGrandChildContent"/>
-   </xsl:template>
-   <xsl:template match="revisionDesc">
-      <xsl:call-template name="keepOnlyWithContent"/>
-   </xsl:template>
-   <xsl:template match="textClass">
-      <xsl:call-template name="keepOnlyWithAnyText"/>
-   </xsl:template>
-   <xsl:template match="biblScope">
-      <xsl:call-template name="keepOnlyWithAnyText"/>
-   </xsl:template>
-   <xsl:template match="imprint">
-      <xsl:call-template name="processImprint"/>
-   </xsl:template>
-   <xsl:template match="pubPlace">
-      <xsl:call-template name="keepOnlyWithAnyText"/>
-   </xsl:template>
-   <xsl:template match="publisher">
-      <xsl:call-template name="keepOnlyWithAnyText"/>
-   </xsl:template>
-   <xsl:template match="series">
-      <xsl:call-template name="keepOnlyWithAnyText"/>
+   <xsl:template match="rsga:taskDesc">
+      <xsl:call-template name="warnIfHasChildOrRemove"/>
    </xsl:template>
    <xsl:template match="notesStmt/note[@type='commentary']">
       <xsl:call-template name="tightenCommentary"/>
@@ -200,9 +203,6 @@
    </xsl:template>
    <xsl:template match="listBibl/bibl">
       <xsl:call-template name="transformOrRemoveBibl"/>
-   </xsl:template>
-   <xsl:template match="rsga:taskDesc">
-      <xsl:call-template name="warnIfHasChildOrRemove"/>
    </xsl:template>
    <xsl:template match="@key">
       <xsl:attribute name="ref">http://richard-strauss-ausgabe.de/documents/view/<xsl:value-of select="."/>

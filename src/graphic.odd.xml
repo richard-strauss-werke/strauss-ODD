@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?> <?oxygen RNGSchema="p5odds.rnc"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
+	xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+	xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron"
+	xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title/>
+			</titleStmt>
+			<publicationStmt>
+				<p/>
+			</publicationStmt>
+			<sourceDesc>
+				<p/>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+	<text>
+		<body>
+			<schemaSpec ident="schema.graphic" xml:lang="en" start="TEI" prefix="rswa_">
+				<desc>Transcriptions of manuscript sources: Correspondence, notes, etc.</desc>
+				<moduleRef key="tei"/>
+				<moduleRef key="core"
+					include="abbr add addrLine address author bibl choice cit corr date del desc expan gap graphic head hi item l lb lg list listBibl milestone name note p pb ptr q quote ref resp respStmt rs sic sp speaker stage term textLang time title unclear"/>
+				<moduleRef key="header" include="availability change creation edition editionStmt editorialDecl encodingDesc extent fileDesc handNote idno notesStmt profileDesc publicationStmt revisionDesc sourceDesc teiHeader titleStmt textClass"/>
+				<moduleRef key="namesdates" include="orgName persName placeName"/>
+				<moduleRef key="linking" include="ab anchor seg"/>
+				<moduleRef key="certainty" include="respons"/>
+				<moduleRef key="figures" include="cell figDesc figure row table"/>
+				<moduleRef key="textstructure" include="TEI body byline closer dateline div epigraph opener postscript salute signed text"/>
+				<moduleRef key="transcr" include="handShift mod space subst supplied surplus"/>
+				<moduleRef key="msdescription"
+					include="additional accMat additions collection handDesc msDesc msIdentifier notesStmt objectDesc origDate origPlace physDesc repository"/>
+				<moduleRef key="analysis" include="pc"/>
+				
+				<!-- <specGrpRef target="#extension.mei"/>-->
+				<specGrpRef target="#extension.tasks"/>
+				
+				<specGrpRef target="#edits.classes.att"/>
+				<specGrpRef target="#edits.datatypes"/>
+				<specGrpRef target="#edits.elements"/>
+				<specGrpRef target="#edits.macros"/>
+				
+				<specGrpRef target="#edits.elements.graphic"/>
+			</schemaSpec>
+			
+			<div>
+				<head>TEI Extensions</head>
+				<xi:include href="extension/tasks.xml"/>
+				<xi:include href="extension/mei.xml"/>
+			</div>
+			<div>
+				<head>Edits</head>
+				<xi:include href="edits/classes.att.xml"/>
+				<xi:include href="edits/datatypes.xml"/>
+				<xi:include href="edits/elements.xml"/>
+				<xi:include href="edits/macros.xml"/>
+			</div>
+			
+			<div>
+				<head>Images</head>
+				<desc>Contains specifications for images</desc>
+				<specGrp xml:id="edits.elements.graphic">
+					
+					<elementSpec ident="text" module="textstructure" mode="change">
+						<equiv filter="rswa.xsl" mimeType="text/xsl" name="replaceTextByGraphic"/>
+						<classes mode="change">
+							<memberOf key="att.typed" mode="delete"/>
+						</classes>
+						<content>
+							<rng:ref name="body"/>
+						</content>
+					</elementSpec>
+					
+					<elementSpec ident="titleStmt" module="header" mode="change">
+						<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandTitleStmtGraphic"/>
+					</elementSpec>
+					
+					<elementSpec ident="publicationStmt" module="header" mode="replace">
+						<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandPublicationStmt"/>
+						<content>
+							<rng:ref name="macro.form.publicationStmt_ms"/>
+						</content>
+					</elementSpec>
+					<elementSpec ident="sourceDesc" module="header" mode="replace">
+						<content>
+							<rng:ref name="macro.form.sourceDesc_ms"/>
+						</content>
+					</elementSpec>
+					<elementSpec ident="creation" module="header" mode="replace">
+						<content>
+							<rng:ref name="macro.form.creation_ms"/>
+						</content>
+					</elementSpec>
+					<elementSpec ident="term" module="core" mode="change">
+						<equiv filter="rswa.xsl" mimeType="text/xsl" name="addTermRef"/>
+						<content>
+							<rng:optional>
+								<rng:ref name="data.keyword_ms"/>
+							</rng:optional>
+						</content>
+					</elementSpec>
+				</specGrp>
+			</div>
+
+		</body>
+	</text>
+</TEI>

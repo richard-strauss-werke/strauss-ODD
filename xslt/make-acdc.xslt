@@ -7,9 +7,12 @@
 	<xsl:key name="macro-parents" match="elementSpec/@ident|rng:element[not(.//rng:element)]/@name"
 		use="..//rng:ref/@name"/>
 
+	<xsl:variable name="common" select="document('../src/common.xml')"/>
+
 	<xsl:variable name="xmlDocsUrl">
-		<xsl:value-of select="id('xmlDocsUrl')/@target"/>
+		<xsl:value-of select="$common/id('xmlDocsUrl')/@target"/>
 	</xsl:variable>
+
 
 	<xsl:output method="xml" indent="yes" encoding="utf-8"/>
 
@@ -62,17 +65,28 @@
 
 			<!-- content from the ODD to be added to the processed TEI files: -->
 			<XSL:variable name="guidelinesTitleRef">
-				<xsl:copy-of select="id('guidelinesTitleRef')/node()" copy-namespaces="no"/>
+				<xsl:copy-of select="$common/id('guidelinesTitleRef')/node()" copy-namespaces="no"/>
 			</XSL:variable>
 			<XSL:variable name="specificFeaturesTitle">
-				<xsl:copy-of select="id('specificFeaturesTitle')/node()" copy-namespaces="no"/>
+				<xsl:copy-of select="$common/id('specificFeaturesTitle')/node()" copy-namespaces="no"/>
 			</XSL:variable>
 			<XSL:variable name="funder">
-				<xsl:copy-of select="//funder" copy-namespaces="no"
+				<xsl:copy-of select="$common//funder" copy-namespaces="no"
 					extension-element-prefixes="#default"/>
 			</XSL:variable>
 			<XSL:variable name="contributorsResp">
-				<xsl:value-of select="id('contributorsResp')"/>
+				<xsl:value-of select="$common/id('contributorsResp')"/>
+			</XSL:variable>
+			<XSL:variable name="publicationStmt">
+				<xsl:copy-of select="$common//publicationStmt/node()" copy-namespaces="no"
+					extension-element-prefixes="#default"/>
+			</XSL:variable>
+			<XSL:variable name="seriesStmt">
+				<xsl:copy-of select="$common//seriesStmt" copy-namespaces="no"
+					extension-element-prefixes="#default"/>
+			</XSL:variable>
+			<XSL:variable name="edition">
+				<xsl:value-of select="$common//edition"/>
 			</XSL:variable>
 			<XSL:variable name="staff">
 				<xsl:for-each select="//@ident[.='data.encoding-staff']/..//rng:value">
@@ -80,17 +94,6 @@
 						<xsl:value-of select="following-sibling::*[1]"/>
 					</name>
 				</xsl:for-each>
-			</XSL:variable>
-			<XSL:variable name="publicationStmt">
-				<xsl:copy-of select="//publicationStmt/node()" copy-namespaces="no"
-					extension-element-prefixes="#default"/>
-			</XSL:variable>
-			<XSL:variable name="seriesStmt">
-				<xsl:copy-of select="//seriesStmt" copy-namespaces="no"
-					extension-element-prefixes="#default"/>
-			</XSL:variable>
-			<XSL:variable name="edition">
-				<xsl:value-of select="//edition"/>
 			</XSL:variable>
 			<XSL:variable name="sexes">
 				<xsl:for-each select="//valItem[ancestor::elementSpec/equiv//@name='expandOrRemoveSexElement']">

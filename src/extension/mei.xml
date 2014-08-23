@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+
+<div xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
+	xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+	xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron">
+	<head>MEI music extension</head>
+	<desc>Includes the MEI RNG and modifies the content model of notatedMusic to include MEI elements.</desc>
+	<specGrp xml:id="extension.mei">
+		
+		<!-- figures modules -->
+		<elementRef key="notatedMusic"/>
+		
+		<!-- change this path according to your folder structure -->
+		<moduleRef url="/eXist-db/webapp/ahlsen/strauss-ODD/strauss-ODD/dependencies/mei2vexflow-modified.rng" prefix="mei_"/>
+		
+		<!-- from https://github.com/TEI-Music-SIG/tei-mei/blob/master/tei-lite_mei-cmn.xml by Raffaele Viglianti -->
+		<elementSpec xmlns="http://www.tei-c.org/ns/1.0" module="figures" ident="notatedMusic"
+			mode="change">
+			<equiv/>
+			<desc versionDate="2014-02-04" xml:lang="en"
+				>encodes the presence of music notation in a text. Some MEI elements are allowed within.</desc>
+			<classes>
+				<memberOf key="model.global"/>
+				<memberOf key="att.global"/>
+				<memberOf key="att.placement"/>
+				<memberOf key="att.typed"/>
+			</classes>
+			<content>
+				<zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+					<choice>
+						<ref name="model.labelLike"/>
+						<ref name="model.ptrLike"/>
+						<ref name="graphic"/>
+						<ref name="binaryObject"/>
+					</choice>
+				</zeroOrMore>
+				<rng:optional>
+					<rng:choice>
+						<rng:ref name="mei_mei"/>
+						<rng:ref name="mei_music"/>
+						<rng:ref name="mei_mdiv"/>
+						<rng:ref name="mei_layer"/>
+					</rng:choice>
+				</rng:optional>
+			</content>
+			<remarks versionDate="2014-02-04" xml:lang="en">
+				<p>It is possible to describe
+                            the content of the notation using elements from the model.labelLike class and it is possible
+                            to point to an external representation using elements from model.ptrLike. It is possible to
+                            specify the location of digital objects representing the notated music in other media such
+                            as images or audio-visual files. The encoder's interpretation of the correspondence between
+                            the notated music and these digital objects is not encoded explicitly. We recommend the use
+                            of graphic and binaryObject mainly as a fallback mechanism when the notated music format is
+                            not displayable by the application using the encoding. The alignment of encoded notated
+                            music, images carrying the notation, and audio files is a complex matter for which we refer
+                            the encoder to other formats and specifications such as MPEG-SMR.</p>
+				<p>In this TEI with Music Notation customisation, some
+                                elements from MEI are allowed to occur within the element to
+                                encode the music notation.</p>
+			</remarks>
+			
+		</elementSpec>
+		
+	</specGrp>
+</div>
