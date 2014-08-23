@@ -150,7 +150,23 @@
 
 	<xsl:template name="processImprint">
 		<xsl:copy>
-			<xsl:apply-templates select="@*|node()[not(name()='note') or node()]"/>
+			<xsl:apply-templates select="@*"/>
+			<xsl:for-each select="*">
+					<xsl:choose>
+						<xsl:when test="local-name()='date'">
+							<xsl:copy>
+								<xsl:apply-templates select="@*"/>
+								<xsl:value-of select="rsga:formatDateNode(.)"/>
+							</xsl:copy>
+						</xsl:when>
+						<xsl:when test="node()">
+							<xsl:copy>
+								<xsl:apply-templates select="@*|node()"/>
+							</xsl:copy>
+						</xsl:when>
+					</xsl:choose>
+				
+			</xsl:for-each>
 		</xsl:copy>
 	</xsl:template>
 
