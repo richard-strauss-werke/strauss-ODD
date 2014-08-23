@@ -39,7 +39,7 @@
 				<title>Digitale Dokumentensammlung zum Werk von Richard Strauss</title>
 			</seriesStmt>
 			<sourceDesc>
-				<p>based on the TEI P5 specifications at <ref target="http://www.tei-c.org/release/xml/tei/odd/p5subset.xml">http://www.tei-c.org/release/xml/tei/odd/p5subset.xml</ref>, this ODD integrates Raffaele Viglianti's prefixed version of the MEI's "mei-source.xml" (<ref target="https://github.com/TEI-Music-SIG/tei-mei/">tei-mei</ref>), the TEI-C's <ref target="http://www.tei-c.org/release/xml/tei/custom/odd/tei_xinclude.odd">XInclude ODD</ref>, and draws on specifications in Peter Stadler's <ref target="https://github.com/Edirom/WeGA-ODD">Carl-Maria-von-Weber-Gesamtausgabe ODDs</ref>.</p>
+				<p>based on the TEI P5 specifications at <ref target="http://www.tei-c.org/release/xml/tei/odd/p5subset.xml">http://www.tei-c.org/release/xml/tei/odd/p5subset.xml</ref>, this ODD integrates the TEI-C's <ref target="http://www.tei-c.org/release/xml/tei/custom/odd/tei_xinclude.odd">XInclude ODD</ref> and draws on specifications in <ref target="https://github.com/Edirom/WeGA-ODD">Carl-Maria-von-Weber-Gesamtausgabe ODDs</ref> by Peter Stadler and Anna Maria Komprecht and (<ref target="https://github.com/TEI-Music-SIG/tei-mei/">tei-mei</ref>) by Raffaele Viglianti.</p>
 			</sourceDesc>
 		</fileDesc>
 		<profileDesc>

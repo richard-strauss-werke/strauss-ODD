@@ -30,10 +30,13 @@ Files
     - `rswa.extension.MEI-music.xml`
     - `rswa.extension.xinclude.xml`
 
-	The MEI ODDs in two versions, one with prefixes to be used in conjunction with TEI, one without:
+    The MEI ODD:
 
     - `mei-source.2.1.0.xml`
-    - `mei-source.xml` (prefixed version)
+  
+    and a custom MEI schema for encoding music notation:
+  
+    - `mei2vexflow-modified.xml`
 
 - `xslt` - the xslt directory contains scripts for the transformation of internal TEI files used for production to TEI conformant published versions
  
