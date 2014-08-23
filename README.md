@@ -16,7 +16,7 @@ Folders
 
 - `src` - ODD source folder 
 
-- `xslt` - the xslt directory contains scripts for the transformation of internal TEI files used for production to TEI conformant published versions 
+- `xslt` - the xslt directory contains scripts to generate transformation sheets from production TEI files to publishable versions 
 
 Build instructions
 ------------------
