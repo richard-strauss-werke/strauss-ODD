@@ -1,0 +1,85 @@
+<project name="strauss-odd" default="rng" basedir=".">
+	<description> Strauss ODD build file </description>
+	<property name="project.version" value="0.6"/>
+	<property file="build.properties"/>
+	
+	<property name="srcPath" location="src"/>
+	<property name="build.path" location="build"/>
+
+	<property name="name" value="correspondence"/>
+	
+	<path id="classpath.core">
+		<fileset dir="${server.dir}/lib">
+			<include name="**/*.jar"/>
+		</fileset>
+		<pathelement path="${server.dir}/exist.jar"/>
+		<pathelement path="${server.dir}/exist-optional.jar"/>
+	</path>
+	
+	<typedef resource="org/exist/ant/antlib.xml" uri="http://exist-db.org/ant">
+		<classpath refid="classpath.core"/>
+	</typedef>
+	
+	<target name="rng">
+		<ant antfile="${teiCStylesheetPath}/relaxng/build-to.xml" dir="${srcPath}"
+			usenativebasedir="true">
+			<property name="defaultSource" value="${defaultSource}"/>
+			<property name="selectedSchema" value="schema.${name}"/>
+			<property name="inputFile" value="${inputPath}\${name}.odd.xml"/>
+			<property name="outputFile" value="${outputPath}\relaxng\${name}.rng"/>
+			<property name="lang" value="de"/>
+			<property name="processODD" value="true"/>
+		</ant>
+	</target>
+
+	<target name="odd">
+		<ant antfile="${teiCStylesheetPath}/odd/build-to.xml" dir="${srcPath}"
+			usenativebasedir="true">
+			<property name="defaultSource" value="${defaultSource}"/>
+			<property name="selectedSchema" value="schema.${name}"/>
+			<property name="inputFile" value="${inputPath}\${name}.odd.xml"/>
+			<property name="outputFile" value="${outputPath}\odd\${name}.odd.xml"/>
+			<property name="lang" value="de"/>
+			<property name="processODD" value="true"/>
+		</ant>
+	</target>
+
+<!-- 
+	java -jar %saxon% -o:%outputPath%\publish-%%M.xsl -s:%inputPath%\%%M.odd.xml -xsl:%xsl%
+	-->
+
+
+	<target name="xslt">
+		<xslt processor="trax" force="yes" style="xslt/make-acdc.xslt" in="${outputPath}\odd\${name}.odd.xml" out="${outputPath}\xslt\publish-${name}.xsl">
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+		</xslt>
+		<copy file="xslt\rswa.xsl" tofile="${outputPath}\xslt\rswa.xsl"/>
+	</target>
+
+	<target name="copy-rng-oxygen">
+		<copy file="${outputPath}\relaxng\${name}.rng"
+			tofile="${oxygen.schema}\${name}.rng"/>
+	</target>
+	
+	<target name="copy-rng-exist">
+		<xdb:store xmlns:xdb="http://exist-db.org/ant" uri="${server.uri}/schema"
+			createcollection="true" createsubcollections="true" user="${config.username}"
+			password="${config.password}" srcfile="${outputPath}\relaxng\${name}.rng"
+		/>
+	</target>
+
+	<target name="copy-xslt-exist">
+		<xdb:store xmlns:xdb="http://exist-db.org/ant" uri="${server.uri}/xsl"
+			createcollection="true" createsubcollections="true" user="${config.username}"
+			password="${config.password}" srcfile="${outputPath}\xslt\publish-${name}.xsl"
+		/>
+		<xdb:store xmlns:xdb="http://exist-db.org/ant" uri="${server.uri}/xsl"
+			createcollection="true" createsubcollections="true" user="${config.username}"
+			password="${config.password}" srcfile="${outputPath}\xslt\rswa.xsl"
+		/>
+	</target>
+
+	<target name="dist-rng" depends="rng, copy-rng-oxygen, copy-rng-exist"> </target>
+	<target name="dist-xslt" depends="odd, xslt, copy-xslt-exist"> </target>
+	
+</project>
