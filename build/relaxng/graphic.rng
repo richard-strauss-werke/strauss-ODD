@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2014-08-23T20:19:45Z. 
+Schema generated from ODD source 2014-08-25T19:49:05Z. 
 Edition: Version 2.6.0. Last updated on
 	20th January 2014, revision 12802
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
@@ -1216,6 +1216,24 @@ Beispielwerte sind etwa: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] 
          <ref name="rswa_time"/>
       </oneOrMore>
    </define>
+   <define name="rswa_model.measureLike">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.measureLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.measureLike_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.measureLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.measureLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.measureLike_sequenceRepeatable">
+      <notAllowed/>
+   </define>
    <define name="rswa_model.egLike">
       <notAllowed/>
    </define>
@@ -1238,6 +1256,24 @@ Beispielwerte sind etwa: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] 
       <choice>
          <ref name="rswa_graphic"/>
       </choice>
+   </define>
+   <define name="rswa_model.offsetLike">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.offsetLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.offsetLike_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.offsetLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.offsetLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.offsetLike_sequenceRepeatable">
+      <notAllowed/>
    </define>
    <define name="rswa_model.pPart.msdesc">
       <choice>
@@ -1445,6 +1481,9 @@ Beispielwerte sind etwa: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] 
          <ref name="rswa_ref"/>
       </choice>
    </define>
+   <define name="rswa_model.lPart">
+      <notAllowed/>
+   </define>
    <define name="rswa_model.global.meta">
       <choice>
          <ref name="rswa_respons"/>
@@ -1459,6 +1498,30 @@ Beispielwerte sind etwa: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] 
       </choice>
    </define>
    <define name="rswa_model.gLike">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.oddDecl">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.oddDecl_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.oddDecl_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.oddDecl_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.oddDecl_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.oddDecl_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.phrase.xml">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.specDescLike">
       <notAllowed/>
    </define>
    <define name="rswa_model.biblLike">
@@ -1899,6 +1962,9 @@ Beispielwerte sind etwa: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] 
          <ref name="rswa_seg"/>
       </choice>
    </define>
+   <define name="rswa_model.imprintPart">
+      <notAllowed/>
+   </define>
    <define name="rswa_model.addressLike">
       <choice>
          <ref name="rswa_address"/>
@@ -1930,28 +1996,37 @@ Beispielwerte sind etwa: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] 
    <define name="rswa_model.nameLike">
       <choice>
          <ref name="rswa_model.nameLike.agent"/>
+         <ref name="rswa_model.offsetLike"/>
          <ref name="rswa_model.placeStateLike"/>
          <ref name="rswa_rs"/>
          <ref name="rswa_idno"/>
+         <ref name="rswa_model.persNamePart"/>
       </choice>
    </define>
    <define name="rswa_model.nameLike_alternation">
       <choice>
          <ref name="rswa_model.nameLike.agent_alternation"/>
+         <ref name="rswa_model.offsetLike_alternation"/>
          <ref name="rswa_model.placeStateLike_alternation"/>
          <ref name="rswa_rs"/>
          <ref name="rswa_idno"/>
+         <ref name="rswa_model.persNamePart_alternation"/>
       </choice>
    </define>
    <define name="rswa_model.nameLike_sequence">
       <ref name="rswa_model.nameLike.agent_sequence"/>
+      <ref name="rswa_model.offsetLike_sequence"/>
       <ref name="rswa_model.placeStateLike_sequence"/>
       <ref name="rswa_rs"/>
       <ref name="rswa_idno"/>
+      <ref name="rswa_model.persNamePart_sequence"/>
    </define>
    <define name="rswa_model.nameLike_sequenceOptional">
       <optional>
          <ref name="rswa_model.nameLike.agent_sequenceOptional"/>
+      </optional>
+      <optional>
+         <ref name="rswa_model.offsetLike_sequenceOptional"/>
       </optional>
       <optional>
          <ref name="rswa_model.placeStateLike_sequenceOptional"/>
@@ -1962,10 +2037,16 @@ Beispielwerte sind etwa: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] 
       <optional>
          <ref name="rswa_idno"/>
       </optional>
+      <optional>
+         <ref name="rswa_model.persNamePart_sequenceOptional"/>
+      </optional>
    </define>
    <define name="rswa_model.nameLike_sequenceOptionalRepeatable">
       <zeroOrMore>
          <ref name="rswa_model.nameLike.agent_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="rswa_model.offsetLike_sequenceOptionalRepeatable"/>
       </zeroOrMore>
       <zeroOrMore>
          <ref name="rswa_model.placeStateLike_sequenceOptionalRepeatable"/>
@@ -1976,10 +2057,16 @@ Beispielwerte sind etwa: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] 
       <zeroOrMore>
          <ref name="rswa_idno"/>
       </zeroOrMore>
+      <zeroOrMore>
+         <ref name="rswa_model.persNamePart_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
    </define>
    <define name="rswa_model.nameLike_sequenceRepeatable">
       <oneOrMore>
          <ref name="rswa_model.nameLike.agent_sequenceRepeatable"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="rswa_model.offsetLike_sequenceRepeatable"/>
       </oneOrMore>
       <oneOrMore>
          <ref name="rswa_model.placeStateLike_sequenceRepeatable"/>
@@ -1989,6 +2076,9 @@ Beispielwerte sind etwa: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] 
       </oneOrMore>
       <oneOrMore>
          <ref name="rswa_idno"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="rswa_model.persNamePart_sequenceRepeatable"/>
       </oneOrMore>
    </define>
    <define name="rswa_model.global">
@@ -2003,6 +2093,7 @@ Beispielwerte sind etwa: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] 
    <define name="rswa_model.biblPart">
       <choice>
          <ref name="rswa_model.respLike"/>
+         <ref name="rswa_model.imprintPart"/>
          <ref name="rswa_bibl"/>
          <ref name="rswa_textLang"/>
          <ref name="rswa_edition"/>
@@ -2018,6 +2109,7 @@ Beispielwerte sind etwa: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] 
    <define name="rswa_model.pPart.data">
       <choice>
          <ref name="rswa_model.dateLike"/>
+         <ref name="rswa_model.measureLike"/>
          <ref name="rswa_model.addressLike"/>
          <ref name="rswa_model.nameLike"/>
       </choice>
@@ -2025,6 +2117,7 @@ Beispielwerte sind etwa: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] 
    <define name="rswa_model.inter">
       <choice>
          <ref name="rswa_model.egLike"/>
+         <ref name="rswa_model.oddDecl"/>
          <ref name="rswa_model.biblLike"/>
          <ref name="rswa_model.labelLike"/>
          <ref name="rswa_model.listLike"/>
@@ -2046,6 +2139,9 @@ Beispielwerte sind etwa: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] 
          <ref name="rswa_model.pPart.msdesc"/>
          <ref name="rswa_model.pPart.edit"/>
          <ref name="rswa_model.ptrLike"/>
+         <ref name="rswa_model.lPart"/>
+         <ref name="rswa_model.phrase.xml"/>
+         <ref name="rswa_model.specDescLike"/>
          <ref name="rswa_model.pPart.data"/>
       </choice>
    </define>
@@ -2056,6 +2152,7 @@ Beispielwerte sind etwa: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] 
          <ref name="rswa_model.pPart.msdesc"/>
          <ref name="rswa_model.pPart.editorial"/>
          <ref name="rswa_model.ptrLike"/>
+         <ref name="rswa_model.phrase.xml"/>
          <ref name="rswa_model.pPart.data"/>
       </choice>
    </define>
@@ -3196,6 +3293,24 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
          <empty/>
       </element>
    </define>
+   <define name="rswa_model.persNamePart">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.persNamePart_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.persNamePart_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.persNamePart_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.persNamePart_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.persNamePart_sequenceRepeatable">
+      <notAllowed/>
+   </define>
    <define name="rswa_orgName">
       <element name="orgName">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(organization name) contains an organizational name. [13.2.2. ]</a:documentation>
@@ -4044,25 +4159,6 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
          </group>
       </element>
    </define>
-   <define name="rswa_objectDesc">
-      <element name="objectDesc">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a description of the physical components making up the object which is being described. [10.7.1. ]</a:documentation>
-         <choice>
-            <oneOrMore>
-               <ref name="rswa_model.pLike"/>
-            </oneOrMore>
-            <empty/>
-         </choice>
-         <ref name="rswa_att.global.attributes"/>
-         <optional>
-            <attribute name="form">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">a short project-specific name identifying the physical form of the carrier, for example as a codex, roll, fragment, partial leaf, cutting etc.</a:documentation>
-               <ref name="rswa_data.enumerated"/>
-            </attribute>
-         </optional>
-         <empty/>
-      </element>
-   </define>
    <define name="rswa_handDesc">
       <element name="handDesc">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(description of hands) contains a description of all the different kinds of writing used in a manuscript. [10.7.2. ]</a:documentation>
@@ -4083,14 +4179,6 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
                <ref name="rswa_data.count"/>
             </attribute>
          </optional>
-         <empty/>
-      </element>
-   </define>
-   <define name="rswa_additions">
-      <element name="additions">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a description of any significant additions found within a manuscript, such as marginalia or other annotations. [10.7.2. ]</a:documentation>
-         <ref name="rswa_macro.specialPara"/>
-         <ref name="rswa_att.global.attributes"/>
          <empty/>
       </element>
    </define>

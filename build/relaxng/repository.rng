@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2014-08-23T20:20:42Z. 
+Schema generated from ODD source 2014-08-25T19:50:13Z. 
 Edition: Version 2.6.0. Last updated on
 	20th January 2014, revision 12802
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
@@ -619,36 +619,197 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
          <ref name="rswa_name"/>
       </oneOrMore>
    </define>
+   <define name="rswa_model.segLike">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.hiLike">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.hiLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.hiLike_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.hiLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.hiLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.hiLike_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.emphLike">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.emphLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.emphLike_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.emphLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.emphLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.emphLike_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.highlighted">
+      <choice>
+         <ref name="rswa_model.hiLike"/>
+         <ref name="rswa_model.emphLike"/>
+      </choice>
+   </define>
+   <define name="rswa_model.dateLike">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.dateLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.dateLike_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.dateLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.dateLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.dateLike_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.measureLike">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.measureLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.measureLike_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.measureLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.measureLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.measureLike_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.egLike">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.graphicLike">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.offsetLike">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.offsetLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.offsetLike_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.offsetLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.offsetLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.offsetLike_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.pPart.msdesc">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.pPart.editorial">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.pPart.editorial_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.pPart.editorial_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.pPart.editorial_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.pPart.editorial_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.pPart.editorial_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.pPart.transcriptional">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.pPart.transcriptional_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.pPart.transcriptional_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.pPart.transcriptional_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.pPart.transcriptional_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.pPart.transcriptional_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.pPart.edit">
+      <choice>
+         <ref name="rswa_model.pPart.editorial"/>
+         <ref name="rswa_model.pPart.transcriptional"/>
+      </choice>
+   </define>
+   <define name="rswa_model.ptrLike">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.lPart">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.global.meta">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.milestoneLike">
+      <notAllowed/>
+   </define>
    <define name="rswa_model.gLike">
       <notAllowed/>
    </define>
-   <define name="rswa_model.pLike">
-      <choice>
-         <ref name="rswa_ab"/>
-      </choice>
+   <define name="rswa_model.oddDecl">
+      <notAllowed/>
    </define>
-   <define name="rswa_model.pLike_alternation">
-      <choice>
-         <ref name="rswa_ab"/>
-      </choice>
+   <define name="rswa_model.phrase.xml">
+      <notAllowed/>
    </define>
-   <define name="rswa_model.pLike_sequence">
-      <ref name="rswa_ab"/>
+   <define name="rswa_model.specDescLike">
+      <notAllowed/>
    </define>
-   <define name="rswa_model.pLike_sequenceOptional">
-      <optional>
-         <ref name="rswa_ab"/>
-      </optional>
+   <define name="rswa_model.biblLike">
+      <notAllowed/>
    </define>
-   <define name="rswa_model.pLike_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="rswa_ab"/>
-      </zeroOrMore>
+   <define name="rswa_model.labelLike">
+      <notAllowed/>
    </define>
-   <define name="rswa_model.pLike_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="rswa_ab"/>
-      </oneOrMore>
+   <define name="rswa_model.listLike">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.noteLike">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.stageLike">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.global.edit">
+      <notAllowed/>
    </define>
    <define name="rswa_model.placeNamePart">
       <choice>
@@ -718,28 +879,78 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
          <ref name="rswa_model.placeNamePart_sequenceRepeatable"/>
       </oneOrMore>
    </define>
+   <define name="rswa_model.quoteLike">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.quoteLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.quoteLike_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.quoteLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.quoteLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.quoteLike_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.qLike">
+      <choice>
+         <ref name="rswa_model.quoteLike"/>
+      </choice>
+   </define>
+   <define name="rswa_model.addressLike">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.addressLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.addressLike_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.addressLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.addressLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.addressLike_sequenceRepeatable">
+      <notAllowed/>
+   </define>
    <define name="rswa_model.nameLike">
       <choice>
          <ref name="rswa_model.nameLike.agent"/>
+         <ref name="rswa_model.offsetLike"/>
          <ref name="rswa_model.placeStateLike"/>
          <ref name="rswa_idno"/>
+         <ref name="rswa_model.persNamePart"/>
       </choice>
    </define>
    <define name="rswa_model.nameLike_alternation">
       <choice>
          <ref name="rswa_model.nameLike.agent_alternation"/>
+         <ref name="rswa_model.offsetLike_alternation"/>
          <ref name="rswa_model.placeStateLike_alternation"/>
          <ref name="rswa_idno"/>
+         <ref name="rswa_model.persNamePart_alternation"/>
       </choice>
    </define>
    <define name="rswa_model.nameLike_sequence">
       <ref name="rswa_model.nameLike.agent_sequence"/>
+      <ref name="rswa_model.offsetLike_sequence"/>
       <ref name="rswa_model.placeStateLike_sequence"/>
       <ref name="rswa_idno"/>
+      <ref name="rswa_model.persNamePart_sequence"/>
    </define>
    <define name="rswa_model.nameLike_sequenceOptional">
       <optional>
          <ref name="rswa_model.nameLike.agent_sequenceOptional"/>
+      </optional>
+      <optional>
+         <ref name="rswa_model.offsetLike_sequenceOptional"/>
       </optional>
       <optional>
          <ref name="rswa_model.placeStateLike_sequenceOptional"/>
@@ -747,10 +958,16 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
       <optional>
          <ref name="rswa_idno"/>
       </optional>
+      <optional>
+         <ref name="rswa_model.persNamePart_sequenceOptional"/>
+      </optional>
    </define>
    <define name="rswa_model.nameLike_sequenceOptionalRepeatable">
       <zeroOrMore>
          <ref name="rswa_model.nameLike.agent_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="rswa_model.offsetLike_sequenceOptionalRepeatable"/>
       </zeroOrMore>
       <zeroOrMore>
          <ref name="rswa_model.placeStateLike_sequenceOptionalRepeatable"/>
@@ -758,10 +975,16 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
       <zeroOrMore>
          <ref name="rswa_idno"/>
       </zeroOrMore>
+      <zeroOrMore>
+         <ref name="rswa_model.persNamePart_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
    </define>
    <define name="rswa_model.nameLike_sequenceRepeatable">
       <oneOrMore>
          <ref name="rswa_model.nameLike.agent_sequenceRepeatable"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="rswa_model.offsetLike_sequenceRepeatable"/>
       </oneOrMore>
       <oneOrMore>
          <ref name="rswa_model.placeStateLike_sequenceRepeatable"/>
@@ -769,20 +992,48 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
       <oneOrMore>
          <ref name="rswa_idno"/>
       </oneOrMore>
+      <oneOrMore>
+         <ref name="rswa_model.persNamePart_sequenceRepeatable"/>
+      </oneOrMore>
    </define>
    <define name="rswa_model.global">
-      <notAllowed/>
+      <choice>
+         <ref name="rswa_model.global.meta"/>
+         <ref name="rswa_model.milestoneLike"/>
+         <ref name="rswa_model.noteLike"/>
+         <ref name="rswa_model.global.edit"/>
+      </choice>
    </define>
    <define name="rswa_model.pPart.data">
       <choice>
+         <ref name="rswa_model.dateLike"/>
+         <ref name="rswa_model.measureLike"/>
+         <ref name="rswa_model.addressLike"/>
          <ref name="rswa_model.nameLike"/>
       </choice>
    </define>
    <define name="rswa_model.inter">
-      <notAllowed/>
+      <choice>
+         <ref name="rswa_model.egLike"/>
+         <ref name="rswa_model.oddDecl"/>
+         <ref name="rswa_model.biblLike"/>
+         <ref name="rswa_model.labelLike"/>
+         <ref name="rswa_model.listLike"/>
+         <ref name="rswa_model.stageLike"/>
+         <ref name="rswa_model.qLike"/>
+      </choice>
    </define>
    <define name="rswa_model.phrase">
       <choice>
+         <ref name="rswa_model.segLike"/>
+         <ref name="rswa_model.highlighted"/>
+         <ref name="rswa_model.graphicLike"/>
+         <ref name="rswa_model.pPart.msdesc"/>
+         <ref name="rswa_model.pPart.edit"/>
+         <ref name="rswa_model.ptrLike"/>
+         <ref name="rswa_model.lPart"/>
+         <ref name="rswa_model.phrase.xml"/>
+         <ref name="rswa_model.specDescLike"/>
          <ref name="rswa_model.pPart.data"/>
       </choice>
    </define>
@@ -948,6 +1199,24 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
             <ref name="rswa_data.pointer"/>
          </attribute>
       </optional>
+   </define>
+   <define name="rswa_model.persNamePart">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.persNamePart_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.persNamePart_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.persNamePart_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.persNamePart_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.persNamePart_sequenceRepeatable">
+      <notAllowed/>
    </define>
    <define name="rswa_att.datable.iso.attributes">
       <ref name="rswa_att.datable.iso.attribute.when-iso"/>

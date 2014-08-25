@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2014-08-23T20:19:15Z. 
+Schema generated from ODD source 2014-08-25T19:48:36Z. 
 Edition: Version 2.6.0. Last updated on
 	20th January 2014, revision 12802
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
@@ -11086,7 +11086,6 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
          <ref name="rswa_actor"/>
          <ref name="rswa_add"/>
          <ref name="rswa_additional"/>
-         <ref name="rswa_additions"/>
          <ref name="rswa_addrLine"/>
          <ref name="rswa_address"/>
          <ref name="rswa_affiliation"/>
@@ -11163,19 +11162,15 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
          <ref name="rswa_name"/>
          <ref name="rswa_notatedMusic"/>
          <ref name="rswa_note"/>
-         <ref name="rswa_objectDesc"/>
          <ref name="rswa_occupation"/>
          <ref name="rswa_opener"/>
-         <ref name="rswa_org"/>
          <ref name="rswa_orgName"/>
          <ref name="rswa_origDate"/>
          <ref name="rswa_origPlace"/>
          <ref name="rswa_p"/>
          <ref name="rswa_pb"/>
          <ref name="rswa_pc"/>
-         <ref name="rswa_performance"/>
          <ref name="rswa_persName"/>
-         <ref name="rswa_person"/>
          <ref name="rswa_physDesc"/>
          <ref name="rswa_placeName"/>
          <ref name="rswa_postscript"/>
@@ -11213,7 +11208,6 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
          <ref name="rswa_task"/>
          <ref name="rswa_term"/>
          <ref name="rswa_text"/>
-         <ref name="rswa_textClass"/>
          <ref name="rswa_textLang"/>
          <ref name="rswa_time"/>
          <ref name="rswa_title"/>
@@ -11333,30 +11327,6 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
    </define>
    <define name="rswa_macro.form.date">
       <ref name="rswa_date"/>
-   </define>
-   <define name="rswa_macro.form.gndIdno">
-      <oneOrMore>
-         <element name="idno">
-            <attribute name="type">
-               <value>GND</value>
-            </attribute>
-            <optional>
-               <ref name="rswa_data.gndIdno"/>
-            </optional>
-         </element>
-      </oneOrMore>
-   </define>
-   <define name="rswa_macro.form.rsqvIdno">
-      <oneOrMore>
-         <element name="idno">
-            <attribute name="type">
-               <value>RSQV</value>
-            </attribute>
-            <optional>
-               <ref name="rswa_data.rsqvIdno"/>
-            </optional>
-         </element>
-      </oneOrMore>
    </define>
    <define name="rswa_macro.form.regularPersName">
       <element name="persName">
@@ -12358,6 +12328,24 @@ Empfohlene Werte sind: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] par
          <ref name="rswa_time"/>
       </oneOrMore>
    </define>
+   <define name="rswa_model.measureLike">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.measureLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.measureLike_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.measureLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.measureLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.measureLike_sequenceRepeatable">
+      <notAllowed/>
+   </define>
    <define name="rswa_model.egLike">
       <notAllowed/>
    </define>
@@ -12380,6 +12368,24 @@ Empfohlene Werte sind: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] par
       <choice>
          <ref name="rswa_graphic"/>
       </choice>
+   </define>
+   <define name="rswa_model.offsetLike">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.offsetLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.offsetLike_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.offsetLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.offsetLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.offsetLike_sequenceRepeatable">
+      <notAllowed/>
    </define>
    <define name="rswa_model.pPart.msdesc">
       <choice>
@@ -12587,6 +12593,9 @@ Empfohlene Werte sind: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] par
          <ref name="rswa_ref"/>
       </choice>
    </define>
+   <define name="rswa_model.lPart">
+      <notAllowed/>
+   </define>
    <define name="rswa_model.global.meta">
       <choice>
          <ref name="rswa_respons"/>
@@ -12601,6 +12610,30 @@ Empfohlene Werte sind: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] par
       </choice>
    </define>
    <define name="rswa_model.gLike">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.oddDecl">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.oddDecl_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.oddDecl_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.oddDecl_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.oddDecl_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.oddDecl_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.phrase.xml">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.specDescLike">
       <notAllowed/>
    </define>
    <define name="rswa_model.biblLike">
@@ -13122,28 +13155,37 @@ Empfohlene Werte sind: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] par
    <define name="rswa_model.nameLike">
       <choice>
          <ref name="rswa_model.nameLike.agent"/>
+         <ref name="rswa_model.offsetLike"/>
          <ref name="rswa_model.placeStateLike"/>
          <ref name="rswa_rs"/>
          <ref name="rswa_idno"/>
+         <ref name="rswa_model.persNamePart"/>
       </choice>
    </define>
    <define name="rswa_model.nameLike_alternation">
       <choice>
          <ref name="rswa_model.nameLike.agent_alternation"/>
+         <ref name="rswa_model.offsetLike_alternation"/>
          <ref name="rswa_model.placeStateLike_alternation"/>
          <ref name="rswa_rs"/>
          <ref name="rswa_idno"/>
+         <ref name="rswa_model.persNamePart_alternation"/>
       </choice>
    </define>
    <define name="rswa_model.nameLike_sequence">
       <ref name="rswa_model.nameLike.agent_sequence"/>
+      <ref name="rswa_model.offsetLike_sequence"/>
       <ref name="rswa_model.placeStateLike_sequence"/>
       <ref name="rswa_rs"/>
       <ref name="rswa_idno"/>
+      <ref name="rswa_model.persNamePart_sequence"/>
    </define>
    <define name="rswa_model.nameLike_sequenceOptional">
       <optional>
          <ref name="rswa_model.nameLike.agent_sequenceOptional"/>
+      </optional>
+      <optional>
+         <ref name="rswa_model.offsetLike_sequenceOptional"/>
       </optional>
       <optional>
          <ref name="rswa_model.placeStateLike_sequenceOptional"/>
@@ -13154,10 +13196,16 @@ Empfohlene Werte sind: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] par
       <optional>
          <ref name="rswa_idno"/>
       </optional>
+      <optional>
+         <ref name="rswa_model.persNamePart_sequenceOptional"/>
+      </optional>
    </define>
    <define name="rswa_model.nameLike_sequenceOptionalRepeatable">
       <zeroOrMore>
          <ref name="rswa_model.nameLike.agent_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="rswa_model.offsetLike_sequenceOptionalRepeatable"/>
       </zeroOrMore>
       <zeroOrMore>
          <ref name="rswa_model.placeStateLike_sequenceOptionalRepeatable"/>
@@ -13168,10 +13216,16 @@ Empfohlene Werte sind: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] par
       <zeroOrMore>
          <ref name="rswa_idno"/>
       </zeroOrMore>
+      <zeroOrMore>
+         <ref name="rswa_model.persNamePart_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
    </define>
    <define name="rswa_model.nameLike_sequenceRepeatable">
       <oneOrMore>
          <ref name="rswa_model.nameLike.agent_sequenceRepeatable"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="rswa_model.offsetLike_sequenceRepeatable"/>
       </oneOrMore>
       <oneOrMore>
          <ref name="rswa_model.placeStateLike_sequenceRepeatable"/>
@@ -13181,6 +13235,9 @@ Empfohlene Werte sind: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] par
       </oneOrMore>
       <oneOrMore>
          <ref name="rswa_idno"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="rswa_model.persNamePart_sequenceRepeatable"/>
       </oneOrMore>
    </define>
    <define name="rswa_model.global">
@@ -13213,6 +13270,7 @@ Empfohlene Werte sind: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] par
    <define name="rswa_model.pPart.data">
       <choice>
          <ref name="rswa_model.dateLike"/>
+         <ref name="rswa_model.measureLike"/>
          <ref name="rswa_model.addressLike"/>
          <ref name="rswa_model.nameLike"/>
       </choice>
@@ -13220,6 +13278,7 @@ Empfohlene Werte sind: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] par
    <define name="rswa_model.inter">
       <choice>
          <ref name="rswa_model.egLike"/>
+         <ref name="rswa_model.oddDecl"/>
          <ref name="rswa_model.biblLike"/>
          <ref name="rswa_model.labelLike"/>
          <ref name="rswa_model.listLike"/>
@@ -13244,6 +13303,9 @@ Empfohlene Werte sind: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] par
          <ref name="rswa_model.pPart.msdesc"/>
          <ref name="rswa_model.pPart.edit"/>
          <ref name="rswa_model.ptrLike"/>
+         <ref name="rswa_model.lPart"/>
+         <ref name="rswa_model.phrase.xml"/>
+         <ref name="rswa_model.specDescLike"/>
          <ref name="rswa_model.pPart.data"/>
       </choice>
    </define>
@@ -13254,6 +13316,7 @@ Empfohlene Werte sind: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] par
          <ref name="rswa_model.pPart.msdesc"/>
          <ref name="rswa_model.pPart.editorial"/>
          <ref name="rswa_model.ptrLike"/>
+         <ref name="rswa_model.phrase.xml"/>
          <ref name="rswa_model.pPart.data"/>
       </choice>
    </define>
@@ -14424,15 +14487,23 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
          <empty/>
       </element>
    </define>
-   <define name="rswa_textClass">
-      <element name="textClass">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Textklassifikation) umfasst Informationen über Art oder Thematik eines Texts unter Bezug auf ein Standard-Klassifikationsschema, einen Thesaurus, usw. [2.4.3. ]</a:documentation>
-         <element name="keywords">
-            <oneOrMore>
-               <ref name="rswa_term"/>
-            </oneOrMore>
-         </element>
-      </element>
+   <define name="rswa_model.persNamePart">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.persNamePart_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.persNamePart_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.persNamePart_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.persNamePart_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.persNamePart_sequenceRepeatable">
+      <notAllowed/>
    </define>
    <define name="rswa_orgName">
       <element name="orgName">
@@ -14562,92 +14633,6 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
                <ref name="rswa_data.pointer"/>
             </attribute>
          </optional>
-         <empty/>
-      </element>
-   </define>
-   <define name="rswa_org">
-      <element name="org">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(organization) provides information about an identifiable organization such as a business, a tribe, or any other grouping of people. [13.2.2. ]</a:documentation>
-         <ref name="rswa_macro.form.summaryNote"/>
-         <ref name="rswa_macro.form.commentaryNote"/>
-         <ref name="rswa_macro.form.discussionNote"/>
-         <ref name="rswa_macro.form.uncategorizedNote"/>
-         <ref name="rswa_macro.form.gndIdno"/>
-         <ref name="rswa_macro.form.rsqvIdno"/>
-         <group>
-            <element name="orgName">
-               <attribute name="type">
-                  <value>reg</value>
-               </attribute>
-               <text/>
-            </element>
-            <oneOrMore>
-               <ref name="rswa_orgName"/>
-            </oneOrMore>
-            <ref name="rswa_desc"/>
-            <oneOrMore>
-               <ref name="rswa_placeName"/>
-            </oneOrMore>
-            <oneOrMore>
-               <ref name="rswa_state"/>
-            </oneOrMore>
-            <ref name="rswa_macro.form.detailsNote"/>
-            <ref name="rswa_listEvent"/>
-            <ref name="rswa_listBibl"/>
-         </group>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.typed.attributes"/>
-         <ref name="rswa_att.editLike.attributes"/>
-         <optional>
-            <attribute name="role">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies a primary role or classification for the organization.</a:documentation>
-               <list>
-                  <oneOrMore>
-                     <ref name="rswa_data.word"/>
-                  </oneOrMore>
-               </list>
-            </attribute>
-         </optional>
-         <empty/>
-      </element>
-   </define>
-   <define name="rswa_person">
-      <element name="person">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Person) gibt Informationen über ein identifizierbares Individuum, z.B. einen Teilnehmer an einer sprachlichen Interaktion oder eine Person, auf die in einer historischen Quelle verwiesen wird. [13.3.2. ]</a:documentation>
-         <ref name="rswa_macro.form.summaryNote"/>
-         <ref name="rswa_macro.form.commentaryNote"/>
-         <ref name="rswa_macro.form.discussionNote"/>
-         <ref name="rswa_macro.form.uncategorizedNote"/>
-         <ref name="rswa_macro.form.gndIdno"/>
-         <ref name="rswa_macro.form.rsqvIdno"/>
-         <ref name="rswa_macro.form.regularPersName"/>
-         <oneOrMore>
-            <ref name="rswa_macro.form.supplementaryPersName"/>
-         </oneOrMore>
-         <ref name="rswa_sex"/>
-         <ref name="rswa_birth"/>
-         <ref name="rswa_death"/>
-         <oneOrMore>
-            <ref name="rswa_occupation"/>
-         </oneOrMore>
-         <oneOrMore>
-            <ref name="rswa_residence"/>
-         </oneOrMore>
-         <oneOrMore>
-            <ref name="rswa_affiliation"/>
-         </oneOrMore>
-         <oneOrMore>
-            <ref name="rswa_state"/>
-         </oneOrMore>
-         <oneOrMore>
-            <ref name="rswa_faith"/>
-         </oneOrMore>
-         <ref name="rswa_macro.form.detailsNote"/>
-         <ref name="rswa_listEvent"/>
-         <ref name="rswa_listBibl"/>
-         <ref name="rswa_macro.form.figuresNote"/>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.editLike.attributes"/>
          <empty/>
       </element>
    </define>
@@ -15523,25 +15508,6 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
          </group>
       </element>
    </define>
-   <define name="rswa_objectDesc">
-      <element name="objectDesc">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a description of the physical components making up the object which is being described. [10.7.1. ]</a:documentation>
-         <choice>
-            <oneOrMore>
-               <ref name="rswa_model.pLike"/>
-            </oneOrMore>
-            <empty/>
-         </choice>
-         <ref name="rswa_att.global.attributes"/>
-         <optional>
-            <attribute name="form">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">a short project-specific name identifying the physical form of the carrier, for example as a codex, roll, fragment, partial leaf, cutting etc.</a:documentation>
-               <ref name="rswa_data.enumerated"/>
-            </attribute>
-         </optional>
-         <empty/>
-      </element>
-   </define>
    <define name="rswa_handDesc">
       <element name="handDesc">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(description of hands) contains a description of all the different kinds of writing used in a manuscript. [10.7.2. ]</a:documentation>
@@ -15562,14 +15528,6 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
                <ref name="rswa_data.count"/>
             </attribute>
          </optional>
-         <empty/>
-      </element>
-   </define>
-   <define name="rswa_additions">
-      <element name="additions">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a description of any significant additions found within a manuscript, such as marginalia or other annotations. [10.7.2. ]</a:documentation>
-         <ref name="rswa_macro.specialPara"/>
-         <ref name="rswa_att.global.attributes"/>
          <empty/>
       </element>
    </define>
@@ -15636,37 +15594,6 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
                <ref name="rswa_data.truthValue"/>
             </attribute>
          </optional>
-         <empty/>
-      </element>
-   </define>
-   <define name="rswa_performance">
-      <element name="performance">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a section of front or back matter describing how a dramatic piece is to be performed in general or how it was performed on some specific occasion. [7.1.3.  7.1. ]</a:documentation>
-         <group>
-            <zeroOrMore>
-               <choice>
-                  <ref name="rswa_model.divTop"/>
-                  <ref name="rswa_model.global"/>
-               </choice>
-            </zeroOrMore>
-            <oneOrMore>
-               <group>
-                  <ref name="rswa_model.common"/>
-               </group>
-               <zeroOrMore>
-                  <ref name="rswa_model.global"/>
-               </zeroOrMore>
-            </oneOrMore>
-            <zeroOrMore>
-               <group>
-                  <ref name="rswa_model.divBottom"/>
-               </group>
-               <zeroOrMore>
-                  <ref name="rswa_model.global"/>
-               </zeroOrMore>
-            </zeroOrMore>
-         </group>
-         <ref name="rswa_att.global.attributes"/>
          <empty/>
       </element>
    </define>

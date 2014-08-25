@@ -7,7 +7,10 @@
 	<property name="build.path" location="build"/>
 
 	<property name="name" value="correspondence"/>
-	
+
+	<property name="profile" value="default"/>
+	<property name="displayMode" value="rng"/>
+
 	<path id="classpath.core">
 		<fileset dir="${server.dir}/lib">
 			<include name="**/*.jar"/>
@@ -43,6 +46,22 @@
 			<property name="processODD" value="true"/>
 		</ant>
 	</target>
+	
+	<target name="html">
+		<ant antfile="${teiCStylesheetPath}/html/build-to.xml" dir="${srcPath}"
+			usenativebasedir="true">
+			<property name="defaultSource" value="${defaultSource}"/>
+			<property name="selectedSchema" value="schema.${name}"/>
+			<property name="inputFile" value="${inputPath}\${name}.odd.xml"/>
+			<property name="outputFile" value="${outputPath}\html\${name}.html"/>
+			<property name="lang" value="de"/>
+			<property name="profile" value="${profile}"/>
+			<property name="displayMode" value="${displayMode}"/>
+			<property name="processODD" value="true"/>
+		</ant>
+	</target>
+
+<!---DoutputFile=%outputPath%\%%M.%outputExtension% -->
 
 <!-- 
 	java -jar %saxon% -o:%outputPath%\publish-%%M.xsl -s:%inputPath%\%%M.odd.xml -xsl:%xsl%

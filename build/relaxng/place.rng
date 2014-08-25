@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2014-08-23T20:20:34Z. 
+Schema generated from ODD source 2014-08-25T19:50:01Z. 
 Edition: Version 2.6.0. Last updated on
 	20th January 2014, revision 12802
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
@@ -832,6 +832,27 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
                   </sch:assert>
           </sch:rule>
    </pattern>
+   <define name="rswa_model.nameLike.agent">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.nameLike.agent_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.nameLike.agent_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.nameLike.agent_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.nameLike.agent_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.nameLike.agent_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.segLike">
+      <notAllowed/>
+   </define>
    <define name="rswa_model.hiLike">
       <choice>
          <ref name="rswa_hi"/>
@@ -860,9 +881,28 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
          <ref name="rswa_hi"/>
       </oneOrMore>
    </define>
+   <define name="rswa_model.emphLike">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.emphLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.emphLike_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.emphLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.emphLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.emphLike_sequenceRepeatable">
+      <notAllowed/>
+   </define>
    <define name="rswa_model.highlighted">
       <choice>
          <ref name="rswa_model.hiLike"/>
+         <ref name="rswa_model.emphLike"/>
       </choice>
    </define>
    <define name="rswa_model.dateLike">
@@ -924,22 +964,79 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
    <define name="rswa_model.egLike">
       <notAllowed/>
    </define>
-   <define name="rswa_model.egLike_alternation">
+   <define name="rswa_model.graphicLike">
       <notAllowed/>
    </define>
-   <define name="rswa_model.egLike_sequence">
-      <empty/>
-   </define>
-   <define name="rswa_model.egLike_sequenceOptional">
-      <empty/>
-   </define>
-   <define name="rswa_model.egLike_sequenceOptionalRepeatable">
-      <empty/>
-   </define>
-   <define name="rswa_model.egLike_sequenceRepeatable">
+   <define name="rswa_model.offsetLike">
       <notAllowed/>
+   </define>
+   <define name="rswa_model.offsetLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.offsetLike_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.offsetLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.offsetLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.offsetLike_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.pPart.msdesc">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.pPart.editorial">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.pPart.editorial_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.pPart.editorial_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.pPart.editorial_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.pPart.editorial_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.pPart.editorial_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.pPart.transcriptional">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.pPart.transcriptional_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.pPart.transcriptional_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.pPart.transcriptional_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.pPart.transcriptional_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.pPart.transcriptional_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.pPart.edit">
+      <choice>
+         <ref name="rswa_model.pPart.editorial"/>
+         <ref name="rswa_model.pPart.transcriptional"/>
+      </choice>
    </define>
    <define name="rswa_model.ptrLike">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.lPart">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.global.meta">
       <notAllowed/>
    </define>
    <define name="rswa_model.milestoneLike">
@@ -950,33 +1047,19 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
    <define name="rswa_model.gLike">
       <notAllowed/>
    </define>
+   <define name="rswa_model.oddDecl">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.phrase.xml">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.specDescLike">
+      <notAllowed/>
+   </define>
    <define name="rswa_model.biblLike">
       <choice>
          <ref name="rswa_listBibl"/>
       </choice>
-   </define>
-   <define name="rswa_model.biblLike_alternation">
-      <choice>
-         <ref name="rswa_listBibl"/>
-      </choice>
-   </define>
-   <define name="rswa_model.biblLike_sequence">
-      <ref name="rswa_listBibl"/>
-   </define>
-   <define name="rswa_model.biblLike_sequenceOptional">
-      <optional>
-         <ref name="rswa_listBibl"/>
-      </optional>
-   </define>
-   <define name="rswa_model.biblLike_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="rswa_listBibl"/>
-      </zeroOrMore>
-   </define>
-   <define name="rswa_model.biblLike_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="rswa_listBibl"/>
-      </oneOrMore>
    </define>
    <define name="rswa_model.headLike">
       <notAllowed/>
@@ -999,48 +1082,10 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
    <define name="rswa_model.labelLike">
       <notAllowed/>
    </define>
-   <define name="rswa_model.labelLike_alternation">
-      <notAllowed/>
-   </define>
-   <define name="rswa_model.labelLike_sequence">
-      <empty/>
-   </define>
-   <define name="rswa_model.labelLike_sequenceOptional">
-      <empty/>
-   </define>
-   <define name="rswa_model.labelLike_sequenceOptionalRepeatable">
-      <empty/>
-   </define>
-   <define name="rswa_model.labelLike_sequenceRepeatable">
-      <notAllowed/>
-   </define>
    <define name="rswa_model.listLike">
       <choice>
          <ref name="rswa_list"/>
       </choice>
-   </define>
-   <define name="rswa_model.listLike_alternation">
-      <choice>
-         <ref name="rswa_list"/>
-      </choice>
-   </define>
-   <define name="rswa_model.listLike_sequence">
-      <ref name="rswa_list"/>
-   </define>
-   <define name="rswa_model.listLike_sequenceOptional">
-      <optional>
-         <ref name="rswa_list"/>
-      </optional>
-   </define>
-   <define name="rswa_model.listLike_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="rswa_list"/>
-      </zeroOrMore>
-   </define>
-   <define name="rswa_model.listLike_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="rswa_list"/>
-      </oneOrMore>
    </define>
    <define name="rswa_model.noteLike">
       <choice>
@@ -1052,76 +1097,18 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
          <ref name="rswa_l"/>
       </choice>
    </define>
-   <define name="rswa_model.lLike_alternation">
-      <choice>
-         <ref name="rswa_l"/>
-      </choice>
-   </define>
-   <define name="rswa_model.lLike_sequence">
-      <ref name="rswa_l"/>
-   </define>
-   <define name="rswa_model.lLike_sequenceOptional">
-      <optional>
-         <ref name="rswa_l"/>
-      </optional>
-   </define>
-   <define name="rswa_model.lLike_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="rswa_l"/>
-      </zeroOrMore>
-   </define>
-   <define name="rswa_model.lLike_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="rswa_l"/>
-      </oneOrMore>
-   </define>
    <define name="rswa_model.pLike">
       <choice>
          <ref name="rswa_p"/>
       </choice>
    </define>
-   <define name="rswa_model.pLike_alternation">
-      <choice>
-         <ref name="rswa_p"/>
-      </choice>
-   </define>
-   <define name="rswa_model.pLike_sequence">
-      <ref name="rswa_p"/>
-   </define>
-   <define name="rswa_model.pLike_sequenceOptional">
-      <optional>
-         <ref name="rswa_p"/>
-      </optional>
-   </define>
-   <define name="rswa_model.pLike_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="rswa_p"/>
-      </zeroOrMore>
-   </define>
-   <define name="rswa_model.pLike_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="rswa_p"/>
-      </oneOrMore>
-   </define>
    <define name="rswa_model.stageLike">
       <notAllowed/>
    </define>
-   <define name="rswa_model.stageLike_alternation">
-      <notAllowed/>
-   </define>
-   <define name="rswa_model.stageLike_sequence">
-      <empty/>
-   </define>
-   <define name="rswa_model.stageLike_sequenceOptional">
-      <empty/>
-   </define>
-   <define name="rswa_model.stageLike_sequenceOptionalRepeatable">
-      <empty/>
-   </define>
-   <define name="rswa_model.stageLike_sequenceRepeatable">
-      <notAllowed/>
-   </define>
    <define name="rswa_model.entryPart">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.global.edit">
       <notAllowed/>
    </define>
    <define name="rswa_model.divPart">
@@ -1308,39 +1295,8 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
          <ref name="rswa_q"/>
       </choice>
    </define>
-   <define name="rswa_model.qLike_alternation">
-      <choice>
-         <ref name="rswa_model.quoteLike_alternation"/>
-         <ref name="rswa_q"/>
-      </choice>
-   </define>
-   <define name="rswa_model.qLike_sequence">
-      <ref name="rswa_model.quoteLike_sequence"/>
-      <ref name="rswa_q"/>
-   </define>
-   <define name="rswa_model.qLike_sequenceOptional">
-      <optional>
-         <ref name="rswa_model.quoteLike_sequenceOptional"/>
-      </optional>
-      <optional>
-         <ref name="rswa_q"/>
-      </optional>
-   </define>
-   <define name="rswa_model.qLike_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="rswa_model.quoteLike_sequenceOptionalRepeatable"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="rswa_q"/>
-      </zeroOrMore>
-   </define>
-   <define name="rswa_model.qLike_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="rswa_model.quoteLike_sequenceRepeatable"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="rswa_q"/>
-      </oneOrMore>
+   <define name="rswa_model.divWrapper">
+      <notAllowed/>
    </define>
    <define name="rswa_model.divTopPart">
       <choice>
@@ -1349,32 +1305,72 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
    </define>
    <define name="rswa_model.divTop">
       <choice>
+         <ref name="rswa_model.divWrapper"/>
          <ref name="rswa_model.divTopPart"/>
       </choice>
    </define>
+   <define name="rswa_model.divBottomPart">
+      <notAllowed/>
+   </define>
    <define name="rswa_model.divBottom">
+      <choice>
+         <ref name="rswa_model.divWrapper"/>
+         <ref name="rswa_model.divBottomPart"/>
+      </choice>
+   </define>
+   <define name="rswa_model.addressLike">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.addressLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.addressLike_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.addressLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.addressLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.addressLike_sequenceRepeatable">
       <notAllowed/>
    </define>
    <define name="rswa_model.nameLike">
       <choice>
+         <ref name="rswa_model.nameLike.agent"/>
+         <ref name="rswa_model.offsetLike"/>
          <ref name="rswa_model.placeStateLike"/>
          <ref name="rswa_rs"/>
          <ref name="rswa_idno"/>
+         <ref name="rswa_model.persNamePart"/>
       </choice>
    </define>
    <define name="rswa_model.nameLike_alternation">
       <choice>
+         <ref name="rswa_model.nameLike.agent_alternation"/>
+         <ref name="rswa_model.offsetLike_alternation"/>
          <ref name="rswa_model.placeStateLike_alternation"/>
          <ref name="rswa_rs"/>
          <ref name="rswa_idno"/>
+         <ref name="rswa_model.persNamePart_alternation"/>
       </choice>
    </define>
    <define name="rswa_model.nameLike_sequence">
+      <ref name="rswa_model.nameLike.agent_sequence"/>
+      <ref name="rswa_model.offsetLike_sequence"/>
       <ref name="rswa_model.placeStateLike_sequence"/>
       <ref name="rswa_rs"/>
       <ref name="rswa_idno"/>
+      <ref name="rswa_model.persNamePart_sequence"/>
    </define>
    <define name="rswa_model.nameLike_sequenceOptional">
+      <optional>
+         <ref name="rswa_model.nameLike.agent_sequenceOptional"/>
+      </optional>
+      <optional>
+         <ref name="rswa_model.offsetLike_sequenceOptional"/>
+      </optional>
       <optional>
          <ref name="rswa_model.placeStateLike_sequenceOptional"/>
       </optional>
@@ -1384,8 +1380,17 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
       <optional>
          <ref name="rswa_idno"/>
       </optional>
+      <optional>
+         <ref name="rswa_model.persNamePart_sequenceOptional"/>
+      </optional>
    </define>
    <define name="rswa_model.nameLike_sequenceOptionalRepeatable">
+      <zeroOrMore>
+         <ref name="rswa_model.nameLike.agent_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="rswa_model.offsetLike_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
       <zeroOrMore>
          <ref name="rswa_model.placeStateLike_sequenceOptionalRepeatable"/>
       </zeroOrMore>
@@ -1395,8 +1400,17 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
       <zeroOrMore>
          <ref name="rswa_idno"/>
       </zeroOrMore>
+      <zeroOrMore>
+         <ref name="rswa_model.persNamePart_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
    </define>
    <define name="rswa_model.nameLike_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="rswa_model.nameLike.agent_sequenceRepeatable"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="rswa_model.offsetLike_sequenceRepeatable"/>
+      </oneOrMore>
       <oneOrMore>
          <ref name="rswa_model.placeStateLike_sequenceRepeatable"/>
       </oneOrMore>
@@ -1406,23 +1420,30 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
       <oneOrMore>
          <ref name="rswa_idno"/>
       </oneOrMore>
+      <oneOrMore>
+         <ref name="rswa_model.persNamePart_sequenceRepeatable"/>
+      </oneOrMore>
    </define>
    <define name="rswa_model.global">
       <choice>
+         <ref name="rswa_model.global.meta"/>
          <ref name="rswa_model.milestoneLike"/>
          <ref name="rswa_model.noteLike"/>
+         <ref name="rswa_model.global.edit"/>
       </choice>
    </define>
    <define name="rswa_model.pPart.data">
       <choice>
          <ref name="rswa_model.dateLike"/>
          <ref name="rswa_model.measureLike"/>
+         <ref name="rswa_model.addressLike"/>
          <ref name="rswa_model.nameLike"/>
       </choice>
    </define>
    <define name="rswa_model.inter">
       <choice>
          <ref name="rswa_model.egLike"/>
+         <ref name="rswa_model.oddDecl"/>
          <ref name="rswa_model.biblLike"/>
          <ref name="rswa_model.labelLike"/>
          <ref name="rswa_model.listLike"/>
@@ -1432,8 +1453,15 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
    </define>
    <define name="rswa_model.phrase">
       <choice>
+         <ref name="rswa_model.segLike"/>
          <ref name="rswa_model.highlighted"/>
+         <ref name="rswa_model.graphicLike"/>
+         <ref name="rswa_model.pPart.msdesc"/>
+         <ref name="rswa_model.pPart.edit"/>
          <ref name="rswa_model.ptrLike"/>
+         <ref name="rswa_model.lPart"/>
+         <ref name="rswa_model.phrase.xml"/>
+         <ref name="rswa_model.specDescLike"/>
          <ref name="rswa_model.pPart.data"/>
       </choice>
    </define>
@@ -1878,6 +1906,24 @@ Empfohlene Werte sind: 1] ordered; 2] bulleted; 3] simple; 4] gloss</a:documenta
             <ref name="rswa_data.pointer"/>
          </attribute>
       </optional>
+   </define>
+   <define name="rswa_model.persNamePart">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.persNamePart_alternation">
+      <notAllowed/>
+   </define>
+   <define name="rswa_model.persNamePart_sequence">
+      <empty/>
+   </define>
+   <define name="rswa_model.persNamePart_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="rswa_model.persNamePart_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="rswa_model.persNamePart_sequenceRepeatable">
+      <notAllowed/>
    </define>
    <define name="rswa_att.datable.iso.attributes">
       <ref name="rswa_att.datable.iso.attribute.when-iso"/>
