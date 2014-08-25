@@ -1,7 +1,7 @@
 strauss-ODD
 ===========
 
-ODD and ODD-related files for TEI / MEI encoding at the Kritische Ausgabe der Werke von Richard Strauss
+ODDs and ODD-related files for TEI / MEI encoding at the Kritische Ausgabe der Werke von Richard Strauss
 
 The schemata generated from these ODDs target a partially form-based editing of TEI code in oXygen's Author Mode. 
 In order to make documents created on this basis fully TEI conformant, they have be transformed 
