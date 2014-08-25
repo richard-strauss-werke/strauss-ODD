@@ -1,11 +1,11 @@
 strauss-ODD
 ===========
 
-ODD and ODD-related files for TEI / MEI encoding at the Kritische Ausgabe der Werke von Richard Strauss
+ODDs and ODD-related files for TEI / MEI encoding at the Kritische Ausgabe der Werke von Richard Strauss
 
-The schemata generated with this ODD target a partially form-based editing of TEI code in oXygen's Author Mode. 
-In order to make documents created on basis of these schemata fully TEI conformant, they have be transformed 
-by XSLT scripts generated on basis of the ODDs. 
+The schemata generated from these ODDs target a partially form-based editing of TEI code in oXygen's Author Mode. 
+In order to make documents created on this basis fully TEI conformant, they have be transformed 
+by the accompagnying XSLT scripts (which are generated from the ODDs as well). 
  
 Folders
 -----
@@ -16,7 +16,7 @@ Folders
 
 - `src` - ODD source folder 
 
-- `xslt` - the xslt directory contains scripts for the transformation of internal TEI files used for production to TEI conformant published versions 
+- `xslt` - the xslt directory contains scripts to generate transformation sheets from production TEI files to publishable versions 
 
 Build instructions
 ------------------
