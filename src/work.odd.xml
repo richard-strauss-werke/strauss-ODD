@@ -353,6 +353,10 @@
 						<attDef ident="xml:base" mode="delete"/>
 						<attDef ident="type" mode="change" usage="mwa">
 							<valList mode="replace" type="closed">
+								<valItem ident="main">
+									<desc versionDate="2014-04-30" xml:lang="de"
+										>Markiert den Haupttitel.</desc>
+								</valItem>
 								<valItem ident="sub">
 									<desc versionDate="2014-04-30" xml:lang="de"
 										>Markiert einen Untertitel.</desc>
@@ -373,6 +377,18 @@
 										>Markiert einen Titel einer musikalischen Nummer (z.B. Szene, Arie).</desc>
 									<desc versionDate="2014-04-30" xml:lang="en"
 										>marks a title of a musical division (e.g. scene, aria).</desc>
+								</valItem>
+								<valItem ident="original">
+									<gloss versionDate="2014-04-30" xml:lang="de">Original</gloss>
+									<gloss versionDate="2014-04-30" xml:lang="en">original</gloss>
+									<desc versionDate="2014-04-30" xml:lang="de"
+										>Markiert den Originaltitel eines Werks</desc>
+								</valItem>
+								<valItem ident="version">
+									<gloss versionDate="2014-04-30" xml:lang="de">Fassung</gloss>
+									<gloss versionDate="2014-04-30" xml:lang="en">version</gloss>
+									<desc versionDate="2014-04-30" xml:lang="de"
+										>Markiert die Benennung der Fassung eines Werks</desc>
 								</valItem>
 							</valList>
 						</attDef>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" xml:base="file:/c:/eXist-db/webapp/ahlsen/strauss-ODD/strauss-ODD/src/persons.odd.xml" xml:lang="en"><?TEIVERSION Version 2.7.0. Last updated on
+<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" xml:base="file:/c:/eXist-db/webapp/ahlsen/strauss-ODD/strauss-ODD/src/performance.odd.xml" xml:lang="en"><?TEIVERSION Version 2.7.0. Last updated on
 	16th September 2014, revision 13036?>
 	<teiHeader>
 		<fileDesc>
@@ -15,7 +15,7 @@
 	</teiHeader>
 	<text>
 		<body>
-			<schemaSpec ident="schema.persons" xml:lang="en" start="person" prefix="rswa_" source="/Program Files/Oxygen XML Editor 16/frameworks/tei/xml/tei/odd/p5subset.xml"><classSpec module="tei" type="atts" ident="att.ascribed">
+			<schemaSpec ident="schema.performance" xml:lang="en" start="performance" prefix="rswa_" source="/Program Files/Oxygen XML Editor 16/frameworks/tei/xml/tei/odd/p5subset.xml"><classSpec module="tei" type="atts" ident="att.ascribed">
   <desc versionDate="2006-01-05" xml:lang="en">provides attributes for elements representing speech or action that can be ascribed to a
     specific individual.</desc>
   <desc versionDate="2007-12-20" xml:lang="ko">특정 개인의 대화 또는 행위를 표시하는 요소에 대한 속성을 제공한다.</desc>
@@ -2068,6 +2068,18 @@ fin d'une division de texte.</desc>
   <listRef>
       <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBI">3.11. </ref>
   </listRef>
+</classSpec><classSpec module="tei" type="model" ident="model.castItemPart">
+  <desc versionDate="2007-10-02" xml:lang="en">groups component elements of an entry in a cast list, such as dramatic role or actor's name.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">극에서 역할 또는 배우의 이름과 같이 등장인물 목록에서 항목의 성분 요소를 모아 놓는다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">用於角色列表中一個項目內的元素，如戲劇角色或演員名稱</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">芝居中の役や役者名などの，配役中の項目要素をまとめる．</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments composants utilisés comme entrée
+    dans une distribution, comme le nom d'un rôle ou le nom d'un acteur.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">elementos usados dentro de una entrada en una lista de
+    personajes, por ejemplo los roles dramáticos o los nombres de actores.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">elementi utilizzati all'interno di una voce in una lista
+    di personaggi, per esempio ruolo o nome dell'attore</desc>
+  <classes/>
 </classSpec><classSpec module="tei" type="model" ident="model.addressLike">
   <desc versionDate="2007-10-02" xml:lang="en">groups elements used to represent a postal or email address.</desc>
   <desc versionDate="2007-12-20" xml:lang="ko">우편 또는 전자메일 주소를 나타내는 요소를 모아 놓는다.</desc>
@@ -3770,35 +3782,6 @@ resource, either within the current document or elsewhere.</desc>
   </remarks><remarks xml:lang="ja" versionDate="2008-04-05">
     <p rend="dataDesc"> TEIの慣習では，動詞を先頭にした文で表現される(訳注：英語で表現する 場合のこと)． </p>
   </remarks><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TD.html#TDcrystalsCEdc">22.4.1. </ref>
-  </listRef></elementSpec><elementSpec rend="change" module="core" ident="gloss"><equiv rend="replace" filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/><gloss versionDate="2009-01-06" xml:lang="fr">glose</gloss><desc versionDate="2005-01-14" xml:lang="en">identifies a phrase or word used to provide a gloss or definition for some other word or
-    phrase.</desc><desc versionDate="2007-12-20" xml:lang="ko">다른 단어나 구에 대한 해설 또는 정의를 제공할 때 사용되는 구나 단어를 표시한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">標明用來為另一個字詞下定義或提供註解的字詞。</desc><desc versionDate="2008-04-05" xml:lang="ja">語句の説明や定義を示す．</desc><desc versionDate="2009-01-06" xml:lang="fr">identifie une expression ou un mot utilisé pour fournir
-    une glose ou une définition à quelque autre mot ou expression.</desc><desc versionDate="2007-05-04" xml:lang="es">identifica una locución o palabra usada para proporcionar
-    una glosa o definición sobre otra palabra o frase.</desc><desc versionDate="2007-01-21" xml:lang="it">identifica un sintagma o una parola che fornisce una
-    glossa o definizione per qualche altra parola o sintagma.</desc><classes><memberOf key="att.global"/><memberOf key="model.emphLike"/><memberOf key="att.typed"/><memberOf key="att.pointing"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/></content><attList/><exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">We may define <term xml:id="tdpv" rend="sc">discoursal point of view</term> as <gloss target="#tdpv">the relationship, expressed
-        through discourse structure, between the implied author or some other addresser, and the
-        fiction.</gloss>
-      </egXML>
-  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Dubois_Dict_Ling"> Les<term>
-          embrayeurs</term> sont <gloss>une classe de mots dont le sens varie avec la situation; ces
-          mots, n'ayant pas de référence propre dans la langue, ne reçoivent un référent que
-          lorsqu'ils sont inclus dans un message.</gloss>
-      </egXML>
-  </exemplum><exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#biblzh-tw_n4"> 我們可以定義 <term xml:id="zh-tw_tdpv" rend="sc">戀母情結</term> 為 <gloss target="#zh-tw_tdpv">佛洛伊德心理分析理論中的重要觀念，指三至六歲大的男孩在性慾上有一種戀母情結的階段，這情結更進一步發展成對父親的忌妒仇視，甚至亟欲除之而後快。</gloss>
-      </egXML>
-  </exemplum><remarks versionDate="2005-10-13" xml:lang="en">
-    <p>The <att>target</att> and <att>cRef</att> attributes are mutually exclusive.</p>
-  </remarks><remarks xml:lang="fr" versionDate="2007-06-12">
-    <p>Les attributs <att>target</att> et <att>cRef</att> sont exclusifs l'un de l'autre.</p>
-  </remarks><remarks xml:lang="es" versionDate="2008-04-06">
-    <p>Los atributos <att>blanco</att> y <att>cRef</att> son mutuamente exclusivos.</p>
-  </remarks><remarks xml:lang="ja" versionDate="2008-04-05">
-    <p> 属性<att>target</att>と<att>cRef</att>は，排他的に使用される． </p>
-  </remarks><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COHQU">3.3.4. </ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TD.html#TDcrystalsCEdc">22.4.1. </ref>
   </listRef></elementSpec><elementSpec module="core" ident="sic">
   <gloss versionDate="2012-03-15" xml:lang="en">Latin for <gloss>thus</gloss> or <gloss>so</gloss>
@@ -7589,361 +7572,111 @@ means of a <gi>glyph</gi> or <gi>char</gi> element referenced here as <code>#sym
     </egXML>
   </exemplum><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPLAC">13.2.3. </ref>
-  </listRef></elementSpec><elementSpec rend="change" module="namesdates" ident="affiliation"><equiv rend="replace" filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/><gloss rend="replace" versionDate="2014-01-26" xml:lang="en">affiliation</gloss><gloss rend="replace" versionDate="2014-01-26" xml:lang="de">Zugehörigkeit</gloss><desc rend="replace" versionDate="2014-01-26" xml:lang="en">contains an informal description of a person's present or past affiliation with some
-                		organization, for example an employer or sponsor.</desc><desc rend="replace" versionDate="2014-01-26" xml:lang="fr">Enthält eine informelle Beschreibung der gegenwärtigen oder früheren Zugehörigkeit einer Person zu einer Organisation, z.B. zu einem Arbeit- oder Geldgeber.</desc><classes/><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.date"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="orgName"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="gloss"/></content><attList/><exemplum versionDate="2014-01-26" xml:lang="de">
-					<egXML xmlns="http://www.tei-c.org/ns/Examples">
-						<affiliation>
-							<date from="1900" to="1903"/>
-							<orgName>Verlag Adolph Fürstner</orgName>
-							<gloss>Inhaber</gloss>
-						</affiliation>
-					</egXML>
-				</exemplum><remarks versionDate="2005-12-14" xml:lang="en">
-    <p>If included, the name of an organization may be tagged using either the <gi>name</gi>
-            element as above, or the more specific <gi>orgName</gi> element.</p>
-  </remarks><remarks versionDate="2009-05-29" xml:lang="fr">
-    <p>S'il est présent, le nom d'une organisation peut être balisé en utilisant soit l'élément
-            <gi>name</gi> comme ci-dessus, soit l'élément plus spécifique
-        <gi>orgName</gi>.</p>
-  </remarks><remarks xml:lang="ja" versionDate="2008-04-05">
-    <p> 組織名は，要素<gi>name</gi>または，より特化した要素 <gi>orgName</gi>でマークアップした方がよい． </p>
-  </remarks><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CC.html#CCAHPA">15.2.2. </ref>
-  </listRef></elementSpec><elementSpec rend="change" module="namesdates" ident="birth"><equiv rend="replace" filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/><gloss rend="replace" versionDate="2014-01-26" xml:lang="en">birth</gloss><gloss rend="replace" versionDate="2014-01-26" xml:lang="de">Geburt</gloss><desc rend="replace" versionDate="2014-01-26" xml:lang="en">contains information about a person's birth date and place.</desc><desc rend="replace" versionDate="2014-01-26" xml:lang="de">Enthält Angaben zu Geburtsdatum und -ort einer Person.</desc><classes/><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.date"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="placeName"/></content><attList/><exemplum versionDate="2014-01-26" xml:lang="de" type="form" xml:id="exBirthForm">
-					<egXML xmlns="http://www.tei-c.org/ns/Examples">
-						<birth>
-							<date precision="medium" when="1909-12-25"/>
-							<placeName cert="high">Dresden</placeName>
-						</birth>
-					</egXML>
-				</exemplum><exemplum versionDate="2014-01-26" xml:lang="de" type="final" corresp="#exBirthForm">
-					<egXML xmlns="http://www.tei-c.org/ns/Examples">
-						<birth>
-							<date precision="medium" when="1909-12-25">ca. 25. Dezember 1909</date>
-							<placeName cert="high">Dresden (ws.)</placeName>
-						</birth>
-					</egXML>
-				</exemplum><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CC.html#CCAHPA">15.2.2. </ref>
-  </listRef></elementSpec><elementSpec rend="change" module="namesdates" ident="death"><equiv rend="replace" filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/><gloss rend="replace" versionDate="2014-01-26" xml:lang="en">death</gloss><gloss rend="replace" versionDate="2014-01-26" xml:lang="de">Tod</gloss><desc rend="replace" versionDate="2014-01-26" xml:lang="en">contains information about person's death date and place.</desc><desc rend="replace" versionDate="2014-01-26" xml:lang="de">Enthält Angaben zu Todesdatum und -ort einer Person.</desc><classes/><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.date"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="placeName"/></content><attList/><exemplum versionDate="2014-01-26" xml:lang="de" type="form" xml:id="exDeathForm">
-					<egXML xmlns="http://www.tei-c.org/ns/Examples">
-						<death>
-							<date precision="medium" when="1909-12-25"/>
-							<placeName cert="high">Dresden</placeName>
-						</death>
-					</egXML>
-				</exemplum><exemplum versionDate="2014-01-26" xml:lang="de" type="final" corresp="#exDeathForm">
-					<egXML xmlns="http://www.tei-c.org/ns/Examples">
-						<death>
-							<date precision="medium" when="1909-12-25">ca. 25. Dezember 1909</date>
-							<placeName cert="high">Dresden (ws.)</placeName>
-						</death>
-					</egXML>
-				</exemplum><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CC.html#CCAHPA">15.2.2. </ref>
-  </listRef></elementSpec><elementSpec rend="change" module="namesdates" ident="event"><equiv rend="replace" filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/><gloss rend="replace" versionDate="2014-01-26" xml:lang="en">event</gloss><gloss rend="replace" versionDate="2014-01-26" xml:lang="de">Ereignis</gloss><desc rend="replace" versionDate="2014-01-26" xml:lang="en">contains data relating to any kind of significant event associated with a person, place, or organization.</desc><desc rend="replace" versionDate="2014-01-26" xml:lang="de">Enthält Daten, die sich auf ein signifikantes Ereignis im Zusammenhang mit einer Person, eines Orts oder einer Organisation beziehen.</desc><classes/><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.datePlaceNameHead"/><oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="p"/></oneOrMore></content><attList><attDef ident="where" usage="opt" mode="delete"/></attList><exemplum versionDate="2014-01-26" xml:lang="de" type="form">
-					<egXML xmlns="http://www.tei-c.org/ns/Examples">
-						<event>
-							<head>
-								<date when="1924-02-03"/>
-								<placeName>München</placeName>
-							</head>
-							<p>Oberdoktor-Auszeichnung</p>
-						</event>
-					</egXML>
-				</exemplum><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERSbp">13.3.1. </ref>
-  </listRef></elementSpec><elementSpec rend="change" module="namesdates" ident="faith"><equiv rend="replace" filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAttOrContent"/><gloss versionDate="2008-12-09" xml:lang="fr">religion</gloss><desc versionDate="2006-06-21" xml:lang="en">specifies the faith, religion, or belief set of a person.</desc><desc versionDate="2007-12-20" xml:lang="ko">개인의 신념, 종교 또는 믿음을 명시한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">標明個人的宗教信仰或其他信念。</desc><desc versionDate="2008-04-05" xml:lang="ja">人物の信仰・宗教を示す．</desc><desc versionDate="2009-03-19" xml:lang="fr">précise la foi, la religion ou les croyances d'une personne.</desc><desc versionDate="2007-05-04" xml:lang="es">indica la fe, religión, o creencias de una persona.</desc><desc versionDate="2007-01-21" xml:lang="it">indica fede, religione, o credo di una persona</desc><classes><memberOf key="att.global"/><memberOf key="att.editLike"/><memberOf key="att.datable"/><memberOf key="att.canonical"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/></content><attList/><exemplum xml:lang="en">
+  </listRef></elementSpec><elementSpec module="namesdates" ident="country">
+  <gloss versionDate="2008-12-09" xml:lang="fr">pays</gloss>
+  <desc versionDate="2006-01-22" xml:lang="en">contains the name of a geo-political unit, such as a nation, country, colony, or
+    commonwealth, larger than or administratively superior to a region and smaller than a bloc.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">하나의 블록보다 큰 국가, 지역, 식민지, 또는 공화국, 또는 하나의 블록보다 작은 지역의 상급
+    행정기관과 같은, 지리-정치 단위명을 포함한다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含一個地理政治區域名稱，例如民族、國家、殖民地、或聯邦區域，範圍大於一般地區或行政地位較高，但小於國家聯盟性的地理政治區。</desc>
+  <desc versionDate="2008-04-06" xml:lang="es">contiene el nombre de una unidad geopolítica, como una
+    nación, país, colonia, etc. más grande o administrativamente superior que una región y más
+    pequeño que un bloque.</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">1つの国家に相当する地政学的な単位名を示す．国家，植民地，共同体・連
+    邦を含む．これは，行政単位上の地域よりも大きい単位で，連合より小さな 単位である．</desc>
+  <desc versionDate="2008-12-09" xml:lang="fr">contient le nom d'une unité géo-politique, comme une
+    nation, un pays, une colonie ou une communauté, plus grande ou administrativement supérieure à
+    une région et plus petite qu'un bloc.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">contiene il nome di un'unità geopolitica, come una
+    nazione, un paese, una colonia, o un'unione di stati, che sia più ampia o amministrativamente
+    superiore rispetto a una regione ma di dimensioni inferiori rispetto a un blocco</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="model.placeNamePart"/>
+    <memberOf key="att.naming"/>
+    <memberOf key="att.typed"/>
+    <memberOf key="att.datable"/>
+  </classes>
+  <content>
+    <ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/>
+  </content>
+  <exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <faith>protestant</faith>
+      <country key="DK">Denmark</country>
     </egXML>
-  </exemplum><exemplum xml:lang="en">
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <faith ref="http://dbpedia.org/page/Manichaeism">Manichaeism</faith>
+      <country key="DK">Danemark</country>
     </egXML>
-  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <faith>protestant</faith>
+      <country key="DK">丹麥</country>
     </egXML>
-  </exemplum><exemplum xml:lang="zh-TW">
+  </exemplum>
+  <remarks versionDate="2007-06-28" xml:lang="en">
+    <p>The recommended source for codes to represent coded country names is ISO 3166.</p>
+  </remarks>
+  <remarks versionDate="2008-12-09" xml:lang="fr">
+    <p>La source recommandée des codes pour représenter les noms de pays est ISO 3166.</p>
+  </remarks>
+  <remarks xml:lang="ja" versionDate="2008-04-05">
+    <p> 当該国家相当地域を示すコードは，ISO3166にあるコードを使うことが推 奨される． </p>
+  </remarks>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPLAC">13.2.3. </ref>
+  </listRef>
+</elementSpec><elementSpec module="namesdates" ident="settlement">
+  <gloss versionDate="2008-12-09" xml:lang="fr">lieu de peuplement</gloss>
+  <desc versionDate="2006-01-22" xml:lang="en">contains the name of a settlement such as a city, town, or village identified as a single geo-political or administrative unit.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">하나의 지리-정치 또는 행정 단위로 식별되는 시, 읍, 마을과 같이 거주지명을 포함한다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含主行政區的名稱，例如城市、鄉鎮、村莊等單一地理政治或行政單位。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">地政学上または行政上の単位としてある市，街，村などの居住地の名前を示 す．</desc>
+  <desc versionDate="2009-03-19" xml:lang="fr">contient le nom d'un lieu de peuplement comme une cité, une ville ou un village, identifié comme une
+        unité géo-politique ou administrative unique.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">contiene el nombre de un asentamiento, del tipo ciudad, pueblo, villa etc. identificado como una unidad
+        geopolítica o administrativa.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">contiene il nome di un insediamento quale una città o un comune considerati come unità geopolitica o
+        amministrativa</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="model.placeNamePart"/>
+    <memberOf key="att.naming"/>
+    <memberOf key="att.typed"/>
+    <memberOf key="att.datable"/>
+  </classes>
+  <content>
+    <ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/>
+  </content>
+  <exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <faith>清教徒</faith>
+      <placeName>
+        <settlement type="town">Glasgow</settlement>
+        <region>Scotland</region>
+      </placeName>
     </egXML>
-  </exemplum><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERSEpc">13.3.2.1. </ref>
-  </listRef></elementSpec><elementSpec rend="change" module="namesdates" ident="listEvent"><equiv rend="replace" filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyAttOrAnyText"/><gloss rend="replace" versionDate="2014-01-26" xml:lang="en">list of events</gloss><gloss rend="replace" versionDate="2014-01-26" xml:lang="de">Ereignisliste</gloss><desc rend="replace" versionDate="2014-01-26" xml:lang="en">contains a list of descriptions, each of which provides information
-                			about an identifiable event. </desc><desc rend="replace" versionDate="2014-01-26" xml:lang="de">Enthält eine Liste von Beschreibungen, von denen jede Informationen über ein identifizierbares Ereignis enthält.</desc><classes/><content><zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="event"/></zeroOrMore></content><attList/><exemplum versionDate="2014-01-26" xml:lang="de" type="form">
-					<egXML xmlns="http://www.tei-c.org/ns/Examples">
-						<listEvent>
-							<event>
-								<head>
-									<date when="1924-02-03"/>
-									<placeName>München</placeName>
-								</head>
-								<p>Oberdoktor-Auszeichnung</p>
-							</event>
-						</listEvent>
-					</egXML>
-				</exemplum><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERSbp">13.3.1. </ref>
-  </listRef></elementSpec><elementSpec rend="change" module="namesdates" ident="occupation"><equiv rend="replace" filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAttOrContent"/><gloss versionDate="2008-12-09" xml:lang="fr">activité</gloss><desc versionDate="2005-01-14" xml:lang="en">contains an informal description of a person's trade, profession or occupation.</desc><desc versionDate="2007-12-20" xml:lang="ko">개인의 직업에 대한 비공식적 기술을 포함한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含非正式的敘述，表示個人所從事的行業或所屬的專業。</desc><desc versionDate="2008-04-05" xml:lang="ja">人物の仕事や職業の，形式的でない説明を示す．</desc><desc versionDate="2009-03-19" xml:lang="fr">contient une description non formalisée de l'activité, de la profession ou de l'occupation d'une
-        personne.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene una descripción informal de las actividades, la profesión o la ocupación de una persona.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene una descrizione informale dell'attività, professione o occupazione di una persona</desc><classes><memberOf key="att.global"/><memberOf key="att.datable"/><memberOf key="att.editLike"/><memberOf key="att.naming"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/></content><attList><attDef ident="scheme" usage="opt">
-      <desc versionDate="2013-12-21" xml:lang="en">indicates the
-      classification system or taxonomy in use, for example by
-      supplying the identifier of a <gi>taxonomy</gi> element, or
-      pointing to some other resource.</desc>
-      <desc versionDate="2007-12-20" xml:lang="ko">헤더에 <gi>taxonomy</gi> 요소의 확인소를 제공하여 분류 체계 또는 분류법을 식별한다.</desc>
-      <desc versionDate="2007-05-02" xml:lang="zh-TW">提供標頭中元素<gi>taxonomy</gi>的識別符號，來標明所使用的分類系統或分類法。</desc>
-      <desc versionDate="2008-04-05" xml:lang="ja">ヘダー内にある要素<gi>taxonomy</gi>の識別子により，使われている 分類システムを示す．</desc>
-      <desc versionDate="2008-12-09" xml:lang="fr">identifie le système de classification ou la taxinomie utilisés, en fournissant l'identifiant
-                d'un élément <gi>taxonomy</gi> déclaré ailleurs dans l'en-tête.</desc>
-      <desc versionDate="2007-05-04" xml:lang="es">identifica el sistema de clasificación o la taxonomía utilizada para la identificación de un
-                elemento <gi>taxonomy</gi> colocado en el encabezado.</desc>
-      <desc versionDate="2007-01-21" xml:lang="it">identifica il sistema di classificazione o la tassonomia utilizzate tramite l'identificatore di
-                un elemento <gi>taxonomy</gi> collocato nell'intestazione</desc>
-      <datatype>
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.pointer"/>
-      </datatype>
-    </attDef><attDef ident="code" usage="opt">
-      <desc versionDate="2005-01-14" xml:lang="en">identifies an occupation code defined within the classification system or taxonomy defined by the <att>scheme</att>
-                attribute.</desc>
-      <desc versionDate="2007-12-20" xml:lang="ko"><att>scheme</att> 속성에 의해 정의된 분류 체계 또는 분류법 내에서 정의된 직업 부호를 식별한다.</desc>
-      <desc versionDate="2007-05-02" xml:lang="zh-TW">標明分類系統或分類法中所定義的職業代碼，該分類系統或分類法由屬性<att>scheme</att>所定義。</desc>
-      <desc versionDate="2008-04-05" xml:lang="ja">属性<att>scheme</att>で定義されている分類システムの中で定義され る仕事コードを示す．</desc>
-      <desc versionDate="2009-03-19" xml:lang="fr">contient un code d'activité défini dans le système de classification ou dans la taxonomie déclaré
-                dans l'attribut <att>scheme</att>.</desc>
-      <desc versionDate="2007-05-04" xml:lang="es">identifica un código relativo a la ocupación definido en el sistema de clasificación o taxonomía
-                establecido por el atributo <att>scheme</att>.</desc>
-      <desc versionDate="2007-01-21" xml:lang="it">corrisponde a un codice relativo all'occupazione definito nel sistema di classificazione o
-                tassonomia stabiliti dall'attributo <att>scheme</att>
-         </desc>
-      <datatype>
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.pointer"/>
-      </datatype>
-    </attDef></attList><exemplum xml:lang="en">
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <occupation>accountant</occupation>
+      <placeName>
+        <settlement type="town">Brest</settlement>
+        <region>Bretagne</region>
+      </placeName>
     </egXML>
-  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <occupation>Comptable</occupation>
+      <placeName>
+        <settlement type="town">淡水</settlement>
+        <region>台北縣</region>
+      </placeName>
     </egXML>
-  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <occupation scheme="#fr_rg" code="#acc">Comptable</occupation>
-    </egXML>
-  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <occupation scheme="#fr_rg" code="#acc">Comptable spécialisé dans l'industrie
-        pétrolière</occupation>
-    </egXML>
-  </exemplum><exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <occupation>會計師</occupation>
-    </egXML>
-  </exemplum><exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <occupation scheme="#zh-tw_rg" code="#acc">擅長油業的會計師</occupation>
-    </egXML>
-  </exemplum><exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <occupation scheme="#occupationtaxonomy" code="#acc">accountant</occupation>
-    </egXML>
-  </exemplum><remarks versionDate="2005-01-14" xml:lang="en">
-    <p>The content of this element may be used as an alternative to the more formal specification made possible by its attributes; it may also be
-            used to supplement the formal specification with commentary or clarification.</p>
-  </remarks><remarks versionDate="2008-12-09" xml:lang="fr">
-    <p>Le contenu de cet élément peut être utilisé à la place d'une caractérisation plus formelle que ses attributs permettent ; il peut aussi
-            être utilisé pour compléter cette caractérisation formelle par un commentaire ou une explication.</p>
-  </remarks><remarks xml:lang="ja" versionDate="2008-04-05">
-    <p> 当該要素の内容は，より形式的な定義の代替として使用されるかもしれな い．また，解説または分類を伴う形式的定義を補うために使用されるかも しれない． </p>
-  </remarks><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CC.html#CCAHPA">15.2.2. </ref>
-  </listRef></elementSpec><elementSpec rend="change" module="namesdates" ident="person"><equiv rend="replace" filter="rswa.xsl" mimeType="text/xsl" name="perOrgRoot"/><gloss rend="replace" versionDate="2014-01-26" xml:lang="en">person</gloss><gloss rend="replace" versionDate="2014-01-26" xml:lang="de">Person</gloss><desc rend="replace" versionDate="2014-01-26" xml:lang="en">provides information about an identifiable individual, for example a participant in a language interaction, or a person referred to in a
-							historical source.</desc><desc rend="replace" versionDate="2014-01-26" xml:lang="de">gibt Informationen über ein identifizierbares Individuum, z.B. einen Teilnehmer an einer sprachlichen Interaktion oder eine Person, auf die in einer historischen Quelle verwiesen wird.</desc><classes><memberOf key="att.global"/><memberOf key="att.editLike"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.summaryNote"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.commentaryNote"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.discussionNote"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.uncategorizedNote"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.gndIdno"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.rsqvIdno"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.regularPersName"/><oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="macro.form.supplementaryPersName"/></oneOrMore><ref xmlns="http://relaxng.org/ns/structure/1.0" name="sex"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="birth"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="death"/><oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="occupation"/></oneOrMore><oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="residence"/></oneOrMore><oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="affiliation"/></oneOrMore><oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="state"/></oneOrMore><oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="faith"/></oneOrMore><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.detailsNote"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="listEvent"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="listBibl"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.figuresNote"/></content><attList><attDef ident="role" usage="opt" mode="delete"/><attDef ident="sex" usage="opt" mode="delete"/><attDef ident="age" usage="opt" mode="delete"/></attList><exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <person sex="F" age="adult">
-        <p>Female respondent, well-educated, born in Shropshire UK, 12 Jan 1950, of unknown occupation. Speaks French fluently. Socio-Economic
-          status B2.</p>
-      </person>
-    </egXML>
-  </exemplum><exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <person sex="intersex" role="god" age="immortal">
-        <persName>Hermaphroditos</persName>
-        <persName xml:lang="grc">Ἑρμαφρόδιτος</persName>
-      </person>
-    </egXML>
-  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <person sex="2" age="adult">
-        <p>Personne interrogée, de sexe féminin, instruite, née à Shropshire, au ROYAUME-UNI le 12
-            Janvier 1950, d'occupation inconnue. Parle le français couramment. Statut
-            socio-économique B2.</p>
-      </person>
-    </egXML>
-  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <person xml:id="fr_Ovi01" sex="1" role="poet">
-        <persName xml:lang="en">Ovid</persName>
-        <persName xml:lang="la">Publius Ovidius Naso</persName>
-        <birth when="-0044-03-20"> 20 March 43 BC<placeName><settlement type="city">Sulmona</settlement><country key="IT">Italie</country></placeName>
-            </birth>
-        <death notBefore="0017" notAfter="0018">17 or 18 AD<placeName><settlement type="city">Tomis (Constanta)</settlement><country key="RO">Roumanie</country></placeName>
-            </death>
-      </person>
-    </egXML>
-  </exemplum><exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <person sex="2" age="adult">
-        <p>女性被告。1950年1月12日生於西藏，受過良好教育，職業不明。能說流利漢語，中產階級。</p>
-      </person>
-    </egXML>
-  </exemplum><exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <person xml:id="zh-tw_Ovi01" sex="1" role="poet">
-        <persName xml:lang="en">Ovid</persName>
-        <persName xml:lang="zh-TW">奧維德</persName>
-        <birth when="-0044-03-20"> 西元前43年3月20日<placeName><settlement type="city">Sulmona</settlement><country key="IT">義大利</country></placeName>
-            </birth>
-        <death notBefore="0017" notAfter="0018">西元後17或18年<placeName><settlement type="city">Tomis (Constanta)</settlement><country key="RO">羅馬尼亞</country></placeName>
-            </death>
-      </person>
-    </egXML>
-  </exemplum><exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <person xml:id="Ovi01" sex="1" role="poet">
-        <persName xml:lang="en">Ovid</persName>
-        <persName xml:lang="la">Publius Ovidius Naso</persName>
-        <birth when="-0044-03-20"> 20 March 43 BC <placeName><settlement type="city">Sulmona</settlement><country key="IT">Italy</country></placeName>
-            </birth>
-        <death notBefore="0017" notAfter="0018">17 or 18 AD <placeName><settlement type="city">Tomis (Constanta)</settlement><country key="RO">Romania</country></placeName>
-            </death>
-      </person>
-    </egXML>
-  </exemplum><remarks versionDate="2005-12-14" xml:lang="en">
-    <p rend="dataDesc">May contain either a prose description organized as paragraphs, or a sequence of more specific demographic elements drawn
-            from the <ident type="class">model.personPart</ident> class.</p>
-  </remarks><remarks versionDate="2008-12-09" xml:lang="fr">
-    <p rend="dataDesc">Peut contenir soit une description en prose organisée en paragraphes, soit une suite d'éléments spécifiques relatifs à la
-            démographie extraits de la classe <ident type="class">model.personPart</ident>.</p>
-  </remarks><remarks xml:lang="ja" versionDate="2008-04-05">
-    <p rend="dataDesc"> 段落による散文の解説，またはクラス <ident type="class">model.personPart</ident>にある一連の人口統計要 素を含むかもしれない． </p>
-  </remarks><listRef>
-					
-					<ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERSE">13.3.2. </ref>
-					
-				</listRef></elementSpec><elementSpec rend="change" module="namesdates" ident="residence"><equiv rend="replace" filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/><gloss versionDate="2007-12-20" xml:lang="ko">거주</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">住所</gloss><gloss versionDate="2008-12-09" xml:lang="fr">résidence</gloss><gloss versionDate="2007-05-04" xml:lang="es">residencia</gloss><gloss versionDate="2007-01-21" xml:lang="it">residenza</gloss><desc versionDate="2005-01-14" xml:lang="en">describes a person's present or past places of residence.</desc><desc versionDate="2007-12-20" xml:lang="ko">개인의 현재 또는 과거의 거주지를 기술한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">描述個人過去或現在的住所。</desc><desc versionDate="2008-04-05" xml:lang="ja">人物の，現在または過去の住居を示す．</desc><desc versionDate="2009-03-19" xml:lang="fr">décrit les lieux de résidence présents ou passés d'une personne.</desc><desc versionDate="2007-05-04" xml:lang="es">describe el lugar de residencia presente o pasado de una persona.</desc><desc versionDate="2007-01-21" xml:lang="it">descrive il luogo di residenza presente o passato di una persona</desc><classes><memberOf key="att.global"/><memberOf key="att.datable"/><memberOf key="att.editLike"/><memberOf key="att.naming"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/></content><attList/><exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <residence>Childhood in East Africa and long term resident of Glasgow, Scotland.</residence>
-    </egXML>
-  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <residence>Enfance passée en Afrique orientale, résidant longtemps à Glasgow en
-        Ecosse.</residence>
-    </egXML>
-  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <residence notAfter="1997">Mbeni estate, Dzukumura region, Matabele land</residence>
-      <residence notBefore="1903" notAfter="1996">
-        <placeName>
-          <settlement>Glasgow</settlement>
-          <region>Ecosse</region>
-        </placeName>
-      </residence>
-    </egXML>
-  </exemplum><exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <residence>童年生活於中亞，長期居留在中國青島。</residence>
-    </egXML>
-  </exemplum><exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <residence notAfter="1997">台北東區帝寶大廈</residence>
-      <residence notBefore="1903" notAfter="1996">
-        <placeName>
-          <settlement>沙鹿</settlement>
-          <region>台中</region>
-        </placeName>
-      </residence>
-    </egXML>
-  </exemplum><exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <residence notAfter="1997">Mbeni estate, Dzukumura region, Matabele land</residence>
-      <residence notBefore="1903" notAfter="1996">
-        <placeName>
-          <settlement>Glasgow</settlement>
-          <region>Scotland</region>
-        </placeName>
-      </residence>
-    </egXML>
-  </exemplum><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CC.html#CCAHPA">15.2.2. </ref>
-  </listRef></elementSpec><elementSpec rend="change" module="namesdates" ident="sex"><equiv rend="replace" filter="rswa.xsl" mimeType="text/xsl" name="expandOrRemoveSexElement"/><gloss rend="replace" versionDate="2014-01-26" xml:lang="en">sex</gloss><gloss rend="replace" versionDate="2014-01-26" xml:lang="de">Geschlecht</gloss><desc rend="replace" versionDate="2014-01-26" xml:lang="en">specifies the sex of a person.</desc><desc rend="replace" versionDate="2014-01-26" xml:lang="de">bestimmt das Geschlecht einer Person.</desc><classes/><content><rng:empty/></content><attList><attDef ident="value" usage="opt" mode="replace">
-						<desc versionDate="2014-01-26" xml:lang="en">supplies a coded value for sex</desc>
-						<desc versionDate="2014-01-26" xml:lang="de">bestimmt das Geschlecht in codierter Form</desc>
-						<valList type="closed">
-							<valItem ident="M">
-								<gloss versionDate="2014-01-26" xml:lang="en">male</gloss>
-								<gloss versionDate="2014-01-26" xml:lang="de">männlich</gloss>
-							</valItem>
-							<valItem ident="F">
-								<gloss versionDate="2014-01-26" xml:lang="en">female</gloss>
-								<gloss versionDate="2014-01-26" xml:lang="de">weiblich</gloss>
-							</valItem>
-							<valItem ident="O">
-								<gloss versionDate="2014-01-26" xml:lang="en">other</gloss>
-								<gloss versionDate="2014-01-26" xml:lang="de">sonstiges</gloss>
-							</valItem>
-							<valItem ident="N">
-								<gloss versionDate="2014-01-26" xml:lang="en">none</gloss>
-								<gloss versionDate="2014-01-26" xml:lang="de">keines</gloss>
-							</valItem>
-							<valItem ident="U">
-								<gloss versionDate="2014-01-26" xml:lang="en">unknown</gloss>
-								<gloss versionDate="2014-01-26" xml:lang="de">unbekannt</gloss>
-							</valItem>
-						</valList>
-						<remarks versionDate="2014-02-04" xml:lang="en">
-							<p>Values for this attribute refer to vCard's sex property <ptr target="http://microformats.org/wiki/gender-formats"/>.</p>
-						</remarks>
-						<remarks versionDate="2014-02-04" xml:lang="de">
-							<p>Die Werte dieses Attributs beziehen sich auf die vCard-Unterscheidung der Geschlechter <ptr target="http://microformats.org/wiki/gender-formats"/>.</p>
-						</remarks>
-					</attDef></attList><exemplum versionDate="2014-01-26" xml:lang="de" type="form" xml:id="exSexForm">
-					<egXML xmlns="http://www.tei-c.org/ns/Examples">
-						<sex value="M"/>
-					</egXML>
-				</exemplum><exemplum versionDate="2014-01-26" xml:lang="de" type="final" corresp="#exSexForm">
-					<egXML xmlns="http://www.tei-c.org/ns/Examples">
-						<sex value="M">männlich</sex>
-					</egXML>
-				</exemplum><remarks versionDate="2014-01-26" xml:lang="en">
-					<p>The text content will be generated form the attribute value for publication.</p>
-				</remarks><remarks versionDate="2014-01-26" xml:lang="de">
-					<p>Der Textinhalt wird zur Publikation aus dem Attributwert generiert.</p>
-				</remarks><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERSEpc">13.3.2.1. </ref>
-  </listRef></elementSpec><elementSpec rend="change" module="namesdates" ident="state"><equiv rend="replace" filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAttOrChildContent"/><gloss rend="replace" versionDate="2014-01-26" xml:lang="en">state</gloss><gloss rend="replace" versionDate="2014-01-26" xml:lang="de">Status</gloss><desc rend="replace" versionDate="2014-01-26" xml:lang="en">contains a description of some status or quality attributed to a person, place, or organization often at some specific time or for a specific date range.</desc><desc rend="replace" versionDate="2014-01-26" xml:lang="de">enthält die Beschreibung eines Status oder einer Eigenschaft, die einer Person, einem Ort oder einer Organisation zugeschrieben wird, häufig zu einem bestimmten Zeitpunkt oder in einer bestimmten Zeitspanne.</desc><classes><memberOf key="att.datable"/><memberOf key="att.editLike"/><memberOf key="model.placeStateLike"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="desc"/></content><attList/><exemplum versionDate="2014-01-26" xml:lang="de">
-					<egXML xmlns="http://www.tei-c.org/ns/Examples">
-						<person>
-							<state from="1909" to="1920">
-								<desc versionDate="2014-02-04" xml:lang="de">Freund von <persName key="p10000">Richard Strauss</persName></desc>
-							</state>
-						</person>
-					</egXML>
-				</exemplum><remarks versionDate="2011-12-01" xml:lang="en">
-    <p>Where there is confusion between <gi>trait</gi> and <gi>state</gi> the more general purpose
-      element <gi>state</gi> should be used even for unchanging characteristics. If you wish to
-      distinguish between characteristics that are generally perceived to be time-bound states and
-      those assumed to be fixed traits, then <gi>trait</gi> is available for the more static of
-      these. The <gi>state</gi> element encodes characteristics which are sometimes assumed to
-      change, often at specific times or over a date range, whereas the <gi>trait</gi> elements are
-      used to record characteristics, such as eye-colour, which are less subject to change. Traits are typically, but not necessarily, 
-      independent of the volition or action of the holder.</p>
-  </remarks><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERSbp">13.3.1. </ref>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERSEpc">13.3.2.1. </ref>
-  </listRef></elementSpec><classSpec rend="change" predeclare="true" module="linking" xml:id="CLLINK" type="atts" ident="att.global.linking"><desc versionDate="2013-03-18" xml:lang="en">defines a set of attributes for hypertextual linking.</desc><desc versionDate="2007-12-20" xml:lang="ko">하이퍼텍스트와 다른 연결에 대한 속성의 집합을 정의한다. 이것은 연결에 대한 부가적 태그 집합이 선택될 때 모든 요소에 가능해야 한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">定義一組用於超文字連結及其他連結的屬性，當連結的附加標籤組被選擇時，這些屬性可用於所有元素。</desc><desc versionDate="2008-04-05" xml:lang="ja">リンクに関する付加的タグが使用される場合，全ての要素に付与可能な，リ
+  </exemplum>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPLAC">13.2.3. </ref>
+  </listRef>
+</elementSpec><classSpec rend="change" predeclare="true" module="linking" xml:id="CLLINK" type="atts" ident="att.global.linking"><desc versionDate="2013-03-18" xml:lang="en">defines a set of attributes for hypertextual linking.</desc><desc versionDate="2007-12-20" xml:lang="ko">하이퍼텍스트와 다른 연결에 대한 속성의 집합을 정의한다. 이것은 연결에 대한 부가적 태그 집합이 선택될 때 모든 요소에 가능해야 한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">定義一組用於超文字連結及其他連結的屬性，當連結的附加標籤組被選擇時，這些屬性可用於所有元素。</desc><desc versionDate="2008-04-05" xml:lang="ja">リンクに関する付加的タグが使用される場合，全ての要素に付与可能な，リ
   ンクやハイパーテキストのための属性を定義する．</desc><desc versionDate="2007-06-12" xml:lang="fr">définit un ensemble d'attributs pour décrire les
       liens hypertextuels.</desc><desc versionDate="2007-05-04" xml:lang="es">define un conjunto de atributos para hipertexto u otro vínculo habilitado para todos los elementos cuando se selecciona la etiqueta adicional para los enlaces.</desc><desc versionDate="2007-01-21" xml:lang="it">definisce un insieme di attributi per ipertesto o altro legame abilitati per tutti gli elementi quando è selezionato il sottoinsieme di marcatori per i collegamenti</desc><classes/><attList><attDef ident="corresp" usage="opt">
       <gloss versionDate="2007-07-04" xml:lang="en">corresponds</gloss>
@@ -8847,31 +8580,777 @@ purposes.</p>
   <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/FT.html#FTGRA">14.4. </ref>
   </listRef>
-</elementSpec><desc>Persons</desc><macroSpec rend="add" module="derived-module-schema.persons" ident="data.supplPersNameType">
+</elementSpec><elementSpec module="drama" ident="performance">
+  <gloss versionDate="2007-06-12" xml:lang="fr">représentation</gloss>
+  <desc versionDate="2005-01-14" xml:lang="en">contains a section of front or back matter describing how a dramatic piece is to be
+    performed in general or how it was performed on some specific occasion.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">드라마가 일반적으로 공연되는 방법 또는 특정 상황에서 공연되었던 방식을 기술하는, 앞부분 또는 뒷부분의
+    절.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含前頁或後頁部分，描述戲劇作品的一般演出方式、或曾經在某些特定場合的演出方式。</desc>
+  <desc versionDate="2008-04-06" xml:lang="es">contiene una sección del encabezado o de la conclusión
+    que describe cómo un fragmento dramático debe ser realizado en general o cómo fue realizado en
+    una función determinada.</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">芝居の部分が，一般にどのように演技されるのか，特定の場面でどのように 演技されるのかを示す．</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">contient une partie de la préface ou de la postface
+    décrivant comment la pièce de théâtre doit être jouée normalement ou comment elle a été jouée à
+    telle ou telle occasion particulière.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">contiene una sezione del peritesto iniziale o finale che
+    descrive come mettere in scena l'opera teatrale, o come è stata messa in scena in qualche
+    occasione particolare.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    
+  </classes>
+  <content>
+    <group xmlns="http://relaxng.org/ns/structure/1.0">
+      <zeroOrMore>
+        <choice>
+          <ref name="model.divTop"/>
+          <ref name="model.global"/>
+        </choice>
+      </zeroOrMore>
+      <oneOrMore>
+        <group>
+          <ref name="model.common"/>
+        </group>
+        <zeroOrMore>
+          <ref name="model.global"/>
+        </zeroOrMore>
+      </oneOrMore>
+      <zeroOrMore>
+        <group>
+          <ref name="model.divBottom"/>
+        </group>
+        <zeroOrMore>
+          <ref name="model.global"/>
+        </zeroOrMore>
+      </zeroOrMore>
+    </group>
+  </content>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <performance>
+        <p><rs type="place">Gateway Theatre, Edinburgh</rs>, <date>6 September 1948</date><castList><castItem><role>Anath Bithiah</role><actor>Athene Seyler</actor></castItem><castItem><role>Shendi</role><actor>Robert Rietty</actor></castItem></castList></p>
+        <p>Directed by <name>E. Martin Browne</name>
+            </p>
+      </performance>
+    </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Teste">
+      <performance>
+        <p><rs type="place">Théâtre national du Petit-Odéon, Paris</rs>, <date>du 10 Décembre 1974
+              au 12 Janvier 1975</date><castList><castItem><role>Paul Valéry</role><actor>Michel Duchaussoy</actor></castItem><castItem><role>Joseph</role><actor>Gérad Caillaud</actor></castItem><castItem><role>M. Teste</role><actor>Pierre Dux</actor></castItem><castItem><role>Mme Teste</role><actor>Claude Winter</actor></castItem><castItem><role>L'abbé Mosson</role><actor>Jacques Toja</actor></castItem></castList></p>
+        <p>Adaptation et mise en scène de <name>Pierre Franck</name>
+            </p>
+      </performance>
+    </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Knock">
+      <performance>
+        <p>Distribution <rs type="place">Comédie des Champs-Elysées, Paris,</rs>
+               <date>1923</date>(par ordre d'entrée en scène) <castList><castItem>Knock : Louis Jouvet</castItem></castList>
+            </p>
+      </performance>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#biblzh-tw_n34">
+      <performance>
+        <p><rs type="place">新竹市文化局演藝廳</rs>, <date>2008年3月14日</date><castList><castItem><role>劉福春</role><actor>陳忠義</actor></castItem><castItem><role>劉麗月</role><actor>陳慧如</actor></castItem></castList></p>
+        <p>監製： <name>李永得</name>
+            </p>
+      </performance>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <performance>
+        <p>首演假<rs type="place">台北國家劇院</rs>於 <date>2007年10月12日</date>
+               <castList><castItem>劉麗君: 徐堰鈴飾</castItem></castList>
+            </p>
+      </performance>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <performance>
+        <p>Cast of the original production at the <rs type="place">Savoy Theatre, London,</rs> on
+            <date>September 24, 1907</date>
+               <castList><castItem>Colonel Hope : Mr A.E.George</castItem></castList>
+            </p>
+      </performance>
+    </egXML>
+  </exemplum>
+  <remarks versionDate="2005-01-14" xml:lang="en">
+    <p rend="dataDesc">contains paragraphs and an optional cast list only.</p>
+    <p/>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2007-06-12">
+    <p rend="dataDesc">contient des paragraphes et éventuellement, un élément <gi>castList</gi>.</p>
+  </remarks>
+  <remarks xml:lang="ja" versionDate="2008-04-05">
+    <p rend="dataDesc"> 段落と選択的な配役リストのみを含む． </p>
+    <p/>
+  </remarks>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRPERF">7.1.3. </ref>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRFAB">7.1. </ref>
+  </listRef>
+</elementSpec><elementSpec module="drama" ident="castList">
+  <gloss versionDate="2005-01-14" xml:lang="en">cast list</gloss>
+  <gloss versionDate="2007-12-20" xml:lang="ko">배역 목록</gloss>
+  <gloss versionDate="2007-05-02" xml:lang="zh-TW">角色清單</gloss>
+  <gloss versionDate="2008-04-06" xml:lang="es">reparto</gloss>
+  <gloss versionDate="2007-06-12" xml:lang="fr">distribution </gloss>
+  <gloss versionDate="2007-01-21" xml:lang="it">elenco dei personaggi</gloss>
+  <desc versionDate="2005-01-14" xml:lang="en">contains a single cast list or dramatis personae.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">하나의 배역 목록 또는 드라마 등장인물을 포함한다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含單一角色名單或出場人物列表。</desc>
+  <desc versionDate="2008-04-06" xml:lang="es">contiene una única lista con los personajes del reparto.</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">ひとつの配役リストまたは配役表を示す．</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">contient la distribution ou la liste des
+    personnages.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">contiene un unico elenco dei personaggio le dramatis personae.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="model.inter"/>
+    
+  </classes>
+  <content>
+    <group xmlns="http://relaxng.org/ns/structure/1.0">
+      <zeroOrMore>
+        <choice>
+          <ref name="model.divTop"/>
+          <ref name="model.global"/>
+        </choice>
+      </zeroOrMore>
+      <zeroOrMore>
+        <group>
+          <ref name="model.common"/>
+        </group>
+        <zeroOrMore>
+          <ref name="model.global"/>
+        </zeroOrMore>
+      </zeroOrMore>
+      <oneOrMore>
+        <choice>
+          <ref name="castItem"/>
+          <ref name="castGroup"/>
+        </choice>
+        <zeroOrMore>
+          <ref name="model.global"/>
+        </zeroOrMore>
+      </oneOrMore>
+      <zeroOrMore>
+        <group>
+          <ref name="model.common"/>
+        </group>
+        <zeroOrMore>
+          <ref name="model.global"/>
+        </zeroOrMore>
+      </zeroOrMore>
+    </group>
+  </content>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <castList>
+        <castGroup>
+          <head rend="braced">Mendicants</head>
+          <castItem>
+            <role>Aafaa</role>
+            <actor>Femi Johnson</actor>
+          </castItem>
+          <castItem>
+            <role>Blindman</role>
+            <actor>Femi Osofisan</actor>
+          </castItem>
+          <castItem>
+            <role>Goyi</role>
+            <actor>Wale Ogunyemi</actor>
+          </castItem>
+          <castItem>
+            <role>Cripple</role>
+            <actor>Tunji Oyelana</actor>
+          </castItem>
+        </castGroup>
+        <castItem>
+          <role>Si Bero</role>
+          <roleDesc>Sister to Dr Bero</roleDesc>
+          <actor>Deolo Adedoyin</actor>
+        </castItem>
+        <castGroup>
+          <head rend="braced">Two old women</head>
+          <castItem>
+            <role>Iya Agba</role>
+            <actor>Nguba Agolia</actor>
+          </castItem>
+          <castItem>
+            <role>Iya Mate</role>
+            <actor>Bopo George</actor>
+          </castItem>
+        </castGroup>
+        <castItem>
+          <role>Dr Bero</role>
+          <roleDesc>Specialist</roleDesc>
+          <actor>Nat Okoro</actor>
+        </castItem>
+        <castItem>
+          <role>Priest</role>
+          <actor>Gbenga Sonuga</actor>
+        </castItem>
+        <castItem>
+          <role>The old man</role>
+          <roleDesc>Bero's father</roleDesc>
+          <actor>Dapo Adelugba</actor>
+        </castItem>
+      </castList>
+      <stage type="mix">The action takes place in and around the home surgery of
+Dr Bero, lately returned from the wars.</stage>
+    </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Guerre-Troie">
+      <div n="1">
+        <head>T.N.P. 1963</head>
+        <note place="foot" n="1">A la création au Festivai d'Avignon en juillet 1962, la
+            distribution était légèrement différente : dans l'ordre ci-dessus : Hécube (Annie
+            Monnier) ; Iris (Paule Noël) ; Hector (Daniel lvernel) ; Pâris (Jean-Louis Trintignant)
+            ; Troïus (Bernard Laïk).</note>
+        <castList>
+          <castItem>
+            <role>Andromaque</role>
+            <actor>MARIA MAUBAN </actor>
+          </castItem>
+          <castItem>
+            <role>Hélène</role>
+            <actor>CHRISTIANE MINAZZOLLI</actor>
+          </castItem>
+          <castItem>
+            <role>Hécube</role>
+            <actor>ALINE BERTRAND</actor>
+          </castItem>
+          <castItem><role> Cassandre </role>JUDITH MAGRE ANNE</castItem>
+          <castItem>
+            <role>La Paix</role>
+            <actor>DOMINIQUE VILAR</actor>
+          </castItem>
+          <castItem>
+            <role>Iris </role>
+            <actor>NOELLE VINCENT</actor>
+          </castItem>
+          <castItem>
+            <role>La petite Polyxène</role>
+            <actor>CLAUDINE MAUGEY</actor>
+          </castItem>
+          <castItem>
+            <role>Hector</role>
+            <actor>PIERRE VANECK</actor>
+          </castItem>
+          <castItem>
+            <role>Ulysse</role>
+            <actor>JEAN VILAR</actor>
+          </castItem>
+          <castItem>
+            <role>Demokos</role>
+            <actor> PASCAL MAZZOTTI </actor>
+          </castItem>
+          <castItem>
+            <role>Priam</role>
+            <actor>JEAN-FRANÇOIS REMY</actor>
+          </castItem>
+          <castItem>
+            <role>Pâris</role>
+            <actor>ROBERT ETCHEVERRY</actor>
+          </castItem>
+          <castItem>
+            <role>Oiax</role>
+            <actor>MARIO PILAR</actor>
+          </castItem>
+          <castItem>
+            <role>Le Gabier</role>
+            <actor>GEORGES GERET</actor>
+          </castItem>
+          <castItem>
+            <role>Le Géomètre</role>
+            <actor>PHILIPPE AVRON</actor>
+          </castItem>
+          <castItem>
+            <role>Abnéos</role>
+            <actor>LUCIEN ARNAUD</actor>
+          </castItem>
+          <castItem>
+            <role>Troïlus</role>
+            <actor>MICHEL GONZALES</actor>
+          </castItem>
+          <castItem>
+            <role>Olpidès</role>
+            <actor>MAURICE COUSSONNEAU</actor>
+          </castItem>
+          <castItem>
+            <role>Busiris</role>
+            <actor>GEORGES RIQUIER</actor>
+          </castItem>
+          <castItem>
+            <role>Premier Vieillard</role>
+            <actor>JEAN MONDAIN</actor>
+          </castItem>
+          <castItem>
+            <role>Deuxième Vieillard</role>
+            <actor>LUCIEN ARNAUD</actor>
+          </castItem>
+          <castGroup>
+            <head>Messagers</head>
+            <castItem><actor>Bernard Laïk</actor>, <actor>Jean-Pierre Maurin</actor>.</castItem>
+          </castGroup>
+          <castGroup>
+            <head>Servantes troyennes</head>
+            <castItem><actor>Christiane Oscar</actor>, <actor>Noëlle Vincent.</actor></castItem>
+          </castGroup>
+          <castGroup>
+            <head>Notables</head>
+            <castItem>
+              <actor>Jean-Daniel Ehrrnann</actor>
+              <actor>Bernard Wawer</actor>
+              <actor>Bernard Klein</actor>
+            </castItem>
+          </castGroup>
+          <castGroup>
+            <head>Gardes grecs</head>
+            <castItem><actor>Jean Dufau</actor>, <actor>Alain Deny</actor>, <actor>Jean-Jacques Leconte</actor><actor>Richard Rein</actor></castItem>
+          </castGroup>
+        </castList>
+      </div>
+      <div n="2">
+        <head>Théâtre de la Ville 1971</head>
+        <note place="foot" n="2">La pièce a été reprise au Théâtre de la Ville le 22 janvier 1971
+            dans une nouvelle mise en scène de Jean Mercure, musique de Marc Wilkinson, scénographie
+            et costumes Yannis Kokkos. Elle a été ensuite donnée à partir du 12 juillet dans le
+            cadre du 25e Festival d'Avignon, et continuera sa carrière au Théâtre de la Ville à
+            partir du 5 novembre 1971 (avec quelques modifications de distribution).</note>
+        <castList>
+          <castItem>
+            <role>Andromaque</role>
+            <actor>FRANCINE BERGE </actor>
+          </castItem>
+          <castItem>
+            <role>Hélène</role>
+            <actor>ANNIE DUPEREY</actor>
+          </castItem>
+          <castItem>
+            <role>Hécube</role>
+            <actor>LOUISE CONTE</actor>
+          </castItem>
+          <castItem>
+            <role> Cassandre </role>
+            <actor>ANNE DOAT</actor>
+          </castItem>
+          <castItem>
+            <role>La Paix</role>
+            <actor>JANDELINE</actor>
+          </castItem>
+          <castItem>
+            <role>Iris </role>
+            <actor>ISA MERCURE</actor>
+          </castItem>
+          <castItem><role>La petite Polyxène</role><actor>CHRISTIANE SELLAM </actor> ou<actor> VANINA VINITZKY</actor>
+               </castItem>
+          <castItem>
+            <role>Hector</role>
+            <actor>JOSE-MARIA FLOTATS</actor>
+          </castItem>
+          <castItem>
+            <role>Ulysse</role>
+            <actor>MICHEL DE RE</actor>
+          </castItem>
+          <castItem>
+            <role>Demokos</role>
+            <actor>MAURICE CHEVIT</actor>
+          </castItem>
+          <castItem>
+            <role>Priam</role>
+            <actor>ANDRE VALTIER</actor>
+          </castItem>
+          <castItem>
+            <role>Pâris</role>
+            <actor>DOMINIQUE MAURIN</actor>
+          </castItem>
+          <castItem>
+            <role>Oiax</role>
+            <actor>MARCO-PERRIN</actor>
+          </castItem>
+          <castItem>
+            <role>Le Gabier</role>
+            <actor>LAFLEUR</actor>
+          </castItem>
+          <castItem>
+            <role>Le Géomètre</role>
+            <actor>BERNARD VERON</actor>
+          </castItem>
+          <castItem>
+            <role>Abnéos</role>
+            <actor>ANGELO BARDI</actor>
+          </castItem>
+          <castItem>
+            <role>Troïlus</role>
+            <actor>PHILIPPE NORMAND</actor>
+          </castItem>
+          <castItem>
+            <role>Olpidès</role>
+            <actor>COUSSONNEAU</actor>
+          </castItem>
+          <castItem>
+            <role>Busiris</role>
+            <actor>JEAN MERCURE</actor>
+          </castItem>
+          <castItem>
+            <role>Premier Vieillard</role>
+            <actor>JEAN-MARIE BON</actor>
+          </castItem>
+          <castItem>
+            <role>Deuxième Vieillard</role>
+            <actor>EUGENE BERTHIER</actor>
+          </castItem>
+          <castGroup>
+            <head>Messagers</head>
+            <castItem><actor>Jean-Claude Islert</actor>, <actor>Michel Sausin</actor>.</castItem>
+          </castGroup>
+          <castGroup>
+            <head>Servantes troyennes</head>
+            <castItem><actor>Dominique Jayr</actor>, <actor>Annie Seurat</actor>,<actor> Hélène
+                  Augier</actor></castItem>
+          </castGroup>
+          <castGroup>
+            <head>Gardes grecs</head>
+            <castItem><actor>Jacques Gaffuri</actor>, <actor>Georges Joannon</actor></castItem>
+          </castGroup>
+          <castItem>
+            <role>Suivant de Busiris</role>
+            <actor>Charles Capezzali</actor>
+          </castItem>
+          <castItem>
+            <role>Un marin</role>
+            <actor>Henry Courseaux</actor>
+          </castItem>
+        </castList>
+      </div>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#biblzh-tw_n32">
+      <castList>
+        <castGroup>
+          <head rend="braced">楊延輝</head>
+          <castItem>
+            <role>少年楊延輝</role>
+            <actor>李少春</actor>
+          </castItem>
+          <castItem>
+            <role>中年楊延輝</role>
+            <actor>周信芳</actor>
+          </castItem>
+          <castItem>
+            <role>中年楊延輝</role>
+            <actor>譚富英</actor>
+          </castItem>
+          <castItem>
+            <role>老年楊延輝</role>
+            <actor>馬連良</actor>
+          </castItem>
+        </castGroup>
+        <castItem>
+          <role>鐵鏡公主</role>
+          <roleDesc>遼國公主，嫁楊延輝為妻</roleDesc>
+          <actor>梅蘭芳</actor>
+        </castItem>
+        <castGroup>
+          <head rend="braced">楊家兄弟</head>
+          <castItem>
+            <role>楊延昭</role>
+            <actor>馬盛龍</actor>
+          </castItem>
+          <castItem>
+            <role>楊宗保</role>
+            <actor>姜妙香</actor>
+          </castItem>
+        </castGroup>
+        <castItem>
+          <role>蕭太后</role>
+          <roleDesc>遼景宗耶律賢的皇后</roleDesc>
+          <actor>芙蓉草</actor>
+        </castItem>
+        <castItem>
+          <role>四夫人</role>
+          <actor>高玉倩</actor>
+        </castItem>
+        <castItem>
+          <role>佘太君</role>
+          <roleDesc>楊延輝的母親</roleDesc>
+          <actor>馬富祿</actor>
+        </castItem>
+      </castList>
+      <stage type="mix">場景交換於遼國廷內與飛虎峽宋營之間。</stage>
+    </egXML>
+  </exemplum>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRCAST">7.1.4. </ref>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRFAB">7.1. </ref>
+  </listRef>
+</elementSpec><elementSpec module="drama" ident="castItem">
+  <gloss versionDate="2007-07-04" xml:lang="en">cast list item</gloss>
+  <gloss versionDate="2007-12-20" xml:lang="ko">배역 목록 항목</gloss>
+  <gloss versionDate="2007-05-02" xml:lang="zh-TW">角色項目</gloss>
+  <gloss versionDate="2008-04-06" xml:lang="es">elemento del reparto</gloss>
+  <gloss versionDate="2007-06-12" xml:lang="fr">personnage</gloss>
+  <gloss versionDate="2007-01-21" xml:lang="it">oggetto della lista dei personaggi</gloss>
+  <desc versionDate="2005-01-14" xml:lang="en">contains a single entry within a cast list, describing
+either a single role or a list of non-speaking roles.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">배역 목록에서 하나의 배역, 또는 대사가 없는 배역 목록을 기술하는 하나의 항목을 포함한다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含角色清單中的一個項目，描述單一角色或無台詞角色的列表。</desc>
+  <desc versionDate="2008-04-06" xml:lang="es">contiene una sola entrada dentro de la lista del reparto, describiendo un solo papel o una lista de papeles sin diálogo.</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">配役リスト中の各項目を示す．ひとつの役，または台詞のない役のリスト
+  になる．</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">dans une liste de personnages, entrée décrivant un
+      rôle en particulier ou une liste de rôles muets.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">contiene una singola voce all'interno della lista dei personaggi, descrive o un ruolo o una lista di ruoli privi di battute.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+  </classes>
+  <content>
+    <zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+      <choice>
+        <text/>
+        <ref name="model.gLike"/>
+        <ref name="model.castItemPart"/>
+        <ref name="model.phrase"/>
+        <ref name="model.global"/>
+      </choice>
+    </zeroOrMore>
+  </content>
+  <attList>
+    <attDef ident="type" usage="opt">
+      <desc versionDate="2005-01-14" xml:lang="en">characterizes the cast item.</desc>
+      <desc versionDate="2007-12-20" xml:lang="ko">배역 항목의 특성 기술</desc>
+      <desc versionDate="2007-05-02" xml:lang="zh-TW">說明角色項目的特性。</desc>
+      <desc versionDate="2008-04-06" xml:lang="es">caracteriza el elemento del reparto.</desc>
+      <desc versionDate="2008-04-05" xml:lang="ja">当該項目の種類を示す．</desc>
+      <desc versionDate="2007-06-12" xml:lang="fr">caractérise le personnage.</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">indica la voce della lista dei personaggi</desc>
+      <datatype>
+        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.enumerated"/>
+      </datatype>
+      <defaultVal>role</defaultVal>
+      <valList type="closed">
+        <valItem ident="role">
+          <desc versionDate="2007-06-27" xml:lang="en">the item describes a single role.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">항목이 하나의 배역을 기술한다.</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">該項目為單一角色</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">el elemeto describe un único papel.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">	  ひとつ役を示す．
+	</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">l'item décrit un simple rôle.</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">l'oggetto descrive un solo ruolo.</desc>
+        </valItem>
+        <valItem ident="list">
+          <desc versionDate="2007-06-27" xml:lang="en">the item describes a list of non-speaking roles.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">항목이 대사 없는 배역 목록을 기술한다.</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">該項目為無台詞角色的列表</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">el item describe una lista de papeles sin diálogo.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">	  科白がない役のリストを示す．
+	</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">l'item décrit une liste de rôles muets</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">l'oggetto descrive una lista di ruoli privi di battute.</desc>
+        </valItem>
+      </valList>
+    </attDef>
+  </attList>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <castItem>
+        <role>Player</role>
+        <actor>Mr Milward</actor>
+      </castItem>
+    </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Guerre-Troie">
+      <castItem>
+        <role>Un marin</role>
+        <actor>Henry Courseaux</actor>
+      </castItem>
+    </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <castItem type="list">Agent de police, dessinateur, serrurier, etc.</castItem>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <castItem>
+        <role>段小樓</role>
+        <actor>張豐毅</actor>
+      </castItem>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#biblzh-tw_n31">
+      <castItem type="list">張國榮、張豐毅、鞏俐…等等</castItem>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <castItem type="list">Constables, Drawer, Turnkey, etc.</castItem>
+    </egXML>
+  </exemplum>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRCAST">7.1.4. </ref>
+  </listRef>
+</elementSpec><elementSpec module="drama" ident="role">
+  <gloss versionDate="2007-06-12" xml:lang="fr">rôle</gloss>
+  <desc versionDate="2012-12-27" xml:lang="en">contains the name of a dramatic role, as given in a cast list.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">배역 목록에 제시되는 드라마 배역의 이름</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">角色名單所列的劇中角色名稱。</desc>
+  <desc versionDate="2008-04-06" xml:lang="es">el nombre de un papel dramático, según los dados en el
+    reparto.</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">配役リスト中にある，役名を示す．</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">le nom d'un rôle au théâtre tel qu’il est donné dans la
+    distribution.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">il nome di un ruolo teatrale, secondo la lista dei
+    personaggi.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="model.castItemPart"/>
+  </classes>
+  <content>
+    <ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/>
+  </content>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <role xml:id="jt">Joan Trash</role>
+      <roleDesc>A Ginger-bread-woman</roleDesc>
+    </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <role xml:id="fr_pr">Le professeur Rubeck</role>
+      <roleDesc>sculpteur</roleDesc>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#biblzh-tw_n36">
+      <role xml:id="zh-tw_王">鄧肯</role>
+      <roleDesc>蘇格蘭國王</roleDesc>
+    </egXML>
+  </exemplum>
+  <remarks versionDate="2005-01-14" xml:lang="en">
+    <p>It is important to assign a meaningful ID attribute to the <gi>role</gi> element, since this
+      ID is referred to by <att>who</att> attributes on many other elements.</p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2007-06-12">
+    <p>Il est important de fournir un identifiant signifiant pour
+    l'attribut <att>xml:id</att> de l'élément <gi>role</gi> :
+    l'identifiant donné sera utilisé pour renseigner l'attribut
+    <att>who</att> de nombreux autres éléments, et faire ainsi
+    référence à l'élément <gi>role</gi>.</p>
+  </remarks>
+  <remarks xml:lang="ja" versionDate="2008-04-05">
+    <p> 要素<gi>role</gi>の属性IDに有意義な値を付与することが重要である． この属性IDの値は，他の要素にある属性<att>who</att>から参照される． </p>
+  </remarks>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRCAST">7.1.4. </ref>
+  </listRef>
+</elementSpec><elementSpec module="drama" ident="actor">
+  <desc versionDate="2012-12-27" xml:lang="en">contains the name of an actor appearing within a cast list.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">배역 목록에 나타나는 배우의 이름</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">角色名單中的演員姓名。</desc>
+  <desc versionDate="2008-04-06" xml:lang="es">Nombre de un actor que aparece dentro de la lista del reparto.</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">登場人物リスト中にある役者名を示す．</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">Nom d'un acteur apparaissant dans une
+    distribution.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">nome di un attore che appare nella lista dei personaggi.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="model.castItemPart"/>
+  </classes>
+  <content>
+    <ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/>
+  </content>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <castItem>
+        <role>Mathias</role>
+        <roleDesc>the Burgomaster</roleDesc>
+        <actor>Mr. Henry Irving</actor>
+      </castItem>
+    </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <castItem>
+        <role>Mrs Saunders</role>
+        <roleDesc>la logeuse</roleDesc>
+        <actor>Sylvia Maryott</actor>
+      </castItem>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#biblzh-tw_n29">
+      <castItem>
+        <role>梁山伯</role>
+        <roleDesc>窮書生</roleDesc>
+        <actor>凌波</actor>
+      </castItem>
+    </egXML>
+  </exemplum>
+  <remarks versionDate="2006-06-11" xml:lang="en">
+    <p>This element should be used only to mark the name of the actor as
+    given in the source. Chapter <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#ND">13. </ref> discusses ways of
+    marking the components of names, and also of associating names with
+    biographical information about a person. </p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2007-06-12">
+    <p>Cet élément ne devrait être utilisé que pour encoder le nom de l'acteur tel qu'il est donné
+                dans la source. Le chapitre <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#ND">13. </ref>
+                traite des différentes manières d'encoder les composants des noms, et aussi celui d'associer des
+                noms à des informations biographiques concernant une personne.</p>
+  </remarks>
+  <remarks xml:lang="ja" versionDate="2008-04-05">
+    <p>
+    当該要素は，元資料にある役者名を示すために使用されるべきである．
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#ND">13. </ref>では，名前の構成要素や，当該人物に関する情報に
+    関連する名前をタグ付けする方法が解説されている．
+ </p>
+  </remarks>
+  <listRef>
+    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRCAST">7.1.4. </ref>
+  </listRef>
+</elementSpec><desc>Performances (currently only of Strauss's works)</desc><macroSpec rend="add" module="derived-module-schema.performance" ident="data.supplPersNameType">
 			<content>
 				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>unknown</value><a:documentation>unbekannte Art</a:documentation><value>full</value><a:documentation>voller Name</a:documentation><value>former</value><a:documentation>früherer Name</a:documentation><value>later</value><a:documentation>späterer Name</a:documentation><value>birth</value><a:documentation>Geburtsname</a:documentation><value>real</value><a:documentation>wirklicher Name</a:documentation><value>pseud</value><a:documentation>Pseudonym</a:documentation><value>nickname</value><a:documentation>Kosename</a:documentation><value>variant</value><a:documentation>Variante</a:documentation><value>other</value><a:documentation>sonstige Art</a:documentation></choice>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="data.encoding-staff">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.performance" ident="data.encoding-staff">
 			<content>
 				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>slm</value><a:documentation>Salome Reiser</a:documentation><value>alx</value><a:documentation>Alexander Erhard</a:documentation><value>sts</value><a:documentation>Stefan Schenk</a:documentation><value>aap</value><a:documentation>Andreas Pernpeintner</a:documentation><value>mmm</value><a:documentation>Martina Mengele</a:documentation><value>flr</value><a:documentation>Florence Eller</a:documentation><value>sbb</value><a:documentation>Sebastian Bolz</a:documentation><value>wwb</value><a:documentation>Walter Werbeck</a:documentation><value>clh</value><a:documentation>Claudia Heine</a:documentation><value>afl</value><a:documentation>Florian Amort</a:documentation><value>stk</value><a:documentation>Steffi Kracht</a:documentation><value>oen</value><a:documentation>Ursula Welsch</a:documentation><value>ofr</value><a:documentation>Oliver Fraenske</a:documentation><value>pfr</value><a:documentation>Peter Fröhlich</a:documentation><value>clh</value><a:documentation>Claudia Heine</a:documentation><value>dpl</value><a:documentation>Dominik Leipold</a:documentation></choice>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="data.gndIdno">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.performance" ident="data.gndIdno">
 			<content>
 				<data xmlns="http://relaxng.org/ns/structure/1.0" type="string">
 					<param name="pattern">\d{1,9}\-?[\dX]</param>
 				</data>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="data.rsqvIdno">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.performance" ident="data.rsqvIdno">
 			<content>
 				<data xmlns="http://relaxng.org/ns/structure/1.0" type="string">
 					<param name="pattern">[a-z]\d{4,5}</param>
 				</data>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="data.biblType">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.performance" ident="data.biblType">
 			<content>
 				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>e</value><a:documentation>Edition in ...</a:documentation><value>a</value><a:documentation>Auszug in ...</a:documentation><value>f</value><a:documentation>Faksimile in ...</a:documentation><value>n</value><a:documentation>Bezugnahme in ...</a:documentation><value>o</value><a:documentation>Folgeauflage = </a:documentation><value>w</value><a:documentation>Wiederabdruck = </a:documentation><value>t</value><a:documentation>Übersetzung =</a:documentation><value>u</value><a:documentation>unbekannt</a:documentation><value>s</value><a:documentation>Sonstiges</a:documentation></choice>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="macro.form.date">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.performance" ident="macro.form.date">
 			<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandOrRemoveDate"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">date (form)</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">Datum (Formular)</gloss>
@@ -8880,26 +9359,7 @@ purposes.</p>
 			<content>
 				<ref xmlns="http://relaxng.org/ns/structure/1.0" name="date"/>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="macro.form.gndIdno">
-			<gloss versionDate="2014-01-26" xml:lang="en">GND idno</gloss>
-			<gloss versionDate="2014-01-26" xml:lang="de">GND-idno</gloss>
-			<desc versionDate="2014-01-26" xml:lang="en">Macro for a <gi>idno</gi> element in which a <att>type</att> attribute with the value <val>GND</val> must be present.</desc>
-			<desc versionDate="2014-01-26" xml:lang="de">Makro für ein <gi>idno</gi>-Element, in dem ein <att>type</att>-Attribut mit dem Wert <val>GND</val> vorhanden sein muss.</desc>
-			<content>
-				<oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><element name="idno">
-						<attribute name="type">
-							<value>GND</value>
-						</attribute>
-						<optional><ref name="data.gndIdno"/></optional>
-					</element></oneOrMore>
-			</content>
-			<remarks versionDate="2014-02-04" xml:lang="en">
-				<p>The text content of this element refers to an id number of the Gemeinsame Normdatei (GND) <ptr target="http://www.dnb.de/"/>.</p>
-			</remarks>
-			<remarks versionDate="2014-02-04" xml:lang="de">
-				<p>Der Textinhalt dieses Elements bezieht sich auf eine ID-Nummer der Gemeinsamen Normdatei (GND) <ptr target="http://www.dnb.de/"/>.</p>
-			</remarks>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="macro.form.rsqvIdno">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.performance" ident="macro.form.rsqvIdno">
 			<gloss versionDate="2014-01-26" xml:lang="en">RSQV idno</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">RSQV-idno</gloss>
 			<desc versionDate="2014-01-26" xml:lang="en">Macro for a <gi>idno</gi> element in which a <att>type</att> attribute with the value <val>RSQV</val> must be present.</desc>
@@ -8918,7 +9378,7 @@ purposes.</p>
 			<remarks versionDate="2014-02-04" xml:lang="de">
 				<p>Der Textinhalt dieses Elements bezieht sich auf eine ID-Nummer des Richard Strauss Quellenverzeichnis (RSQV) <ptr target="http://rsqv.de"/>.</p>
 			</remarks>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="macro.form.uagIdno">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.performance" ident="macro.form.uagIdno">
 			<gloss versionDate="2014-01-26" xml:lang="en">UAG idno</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">UAG-idno</gloss>
 			<desc versionDate="2014-01-26" xml:lang="en">Macro for a <gi>idno</gi> element in which a <att>type</att> attribute with the value <val>UAG</val> must be present.</desc>
@@ -8932,45 +9392,7 @@ purposes.</p>
 						<optional><ref name="data.word"/></optional>
 					</element></zeroOrMore>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="macro.form.regularPersName">
-			<gloss versionDate="2014-01-26" xml:lang="en">regular person name</gloss>
-			<gloss versionDate="2014-01-26" xml:lang="de">regulärer Personenname</gloss>
-			<desc versionDate="2014-01-26" xml:lang="en">Macro for a <gi>persName</gi> element in which a <att>type</att> attribute with the value <val>reg</val> is required.</desc>
-			<desc versionDate="2014-01-26" xml:lang="de">Makro für ein <gi>persName</gi>-Element, in dem ein <att>type</att>-Attribut mit dem Wert <val>reg</val> vorhanden sein muss.</desc>
-			<content>
-				<element xmlns="http://relaxng.org/ns/structure/1.0" name="persName">
-					<attribute name="type">
-						<value>reg</value>
-					</attribute>
-					<text/>
-				</element>
-			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="macro.form.supplementaryPersName">
-			<gloss versionDate="2014-01-26" xml:lang="en">supplementary person name</gloss>
-			<gloss versionDate="2014-01-26" xml:lang="de">zusätzlicher Personenname</gloss>
-			<desc versionDate="2014-01-26" xml:lang="en">Macro for a <gi>persName</gi> element in which a <att>type</att> attribute can can occur.</desc>
-			<desc versionDate="2014-01-26" xml:lang="de">Makro für ein <gi>persName</gi>-Element, in dem ein <att>type</att>-Attribut vorkommen kann.</desc>
-			<content>
-				<element xmlns="http://relaxng.org/ns/structure/1.0" name="persName">
-					<optional><attribute name="type">
-							<ref name="data.supplPersNameType"/>
-						</attribute></optional>
-					<text/>
-				</element>
-			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="macro.form.datePlaceNameHead">
-			<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
-			<gloss versionDate="2014-01-26" xml:lang="en">head with date and placeName</gloss>
-			<gloss versionDate="2014-01-26" xml:lang="de">head mit date und placeName</gloss>
-			<desc versionDate="2014-01-26" xml:lang="en">Macro for a <gi>head</gi> element in which only <gi>date</gi> and <gi>placeName</gi> can (and have to) occur one or more times.</desc>
-			<desc versionDate="2014-01-26" xml:lang="de">Makro für ein <gi>head</gi>-Element, in dem nur <gi>date</gi> und <gi>placeName</gi> einmal oder öfter vorkommen.</desc>
-			<content>
-				<element xmlns="http://relaxng.org/ns/structure/1.0" name="head">
-					<oneOrMore><ref name="macro.form.date"/></oneOrMore>
-					<oneOrMore><ref name="placeName"/></oneOrMore>
-				</element>
-			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="macro.form.commentaryNote">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.performance" ident="macro.form.commentaryNote">
 			<equiv filter="rswa.xsl" mimeType="text/xsl" name="tightenCommentary"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">Details note</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">Detail-Anmerkung</gloss>
@@ -8987,7 +9409,7 @@ purposes.</p>
 						</element></zeroOrMore>
 				</element>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="macro.form.summaryNote">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.performance" ident="macro.form.summaryNote">
 			<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">Details note</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">Detail-Anmerkung</gloss>
@@ -9001,7 +9423,7 @@ purposes.</p>
 					<ref name="macro.form.noteParagraph"/>
 				</element>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="macro.form.discussionNote">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.performance" ident="macro.form.discussionNote">
 			<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">discussion note</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">Diskussions-Anmerkung</gloss>
@@ -9015,7 +9437,7 @@ purposes.</p>
 					<ref name="macro.form.noteParagraph"/>
 				</element>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="macro.form.uncategorizedNote">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.performance" ident="macro.form.uncategorizedNote">
 			<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">uncategorized note</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">Anmerkung ohne Kategorie</gloss>
@@ -9029,41 +9451,7 @@ purposes.</p>
 					<ref name="macro.form.noteParagraph"/>
 				</element>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="macro.form.detailsNote">
-			<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
-			<gloss versionDate="2014-01-26" xml:lang="en">Details note</gloss>
-			<gloss versionDate="2014-01-26" xml:lang="de">Detail-Anmerkung</gloss>
-			<desc versionDate="2014-01-26" xml:lang="en">Macro for a <gi>note</gi> element in which details about the object described in the containing element are specified.</desc>
-			<desc versionDate="2014-01-26" xml:lang="de">Makro für ein <gi>note</gi>-Element, in dem Details über den im enthaltenden Element beschriebenen Gegenstand angegeben werden.</desc>
-			<content>
-				<element xmlns="http://relaxng.org/ns/structure/1.0" name="note">
-					<attribute name="type">
-						<value>details</value>
-					</attribute>
-					<ref name="macro.form.noteParagraph"/>
-				</element>
-			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="macro.form.figuresNote">
-			<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrAnyText"/>
-			<gloss versionDate="2014-01-26" xml:lang="en">Figures</gloss>
-			<gloss versionDate="2014-01-26" xml:lang="de">Abbildungen</gloss>
-			<desc versionDate="2014-01-26" xml:lang="en">Macro for a <gi>note</gi> element in which pictures of a person or the persons's script are presented oder discussed.</desc>
-			<desc versionDate="2014-01-26" xml:lang="de">Makro für ein <gi>note</gi>-Element, in dem Abbildungen einer Person oder ihrer Schrift dargestellt oder besprochen werden.</desc>
-			<content>
-				<element xmlns="http://relaxng.org/ns/structure/1.0" name="note">
-					<attribute name="type">
-						<value>figures</value>
-					</attribute>
-					<zeroOrMore><element name="figure">
-							<optional><attribute name="place">
-									<value>top</value>
-								</attribute></optional>
-							<ref name="graphic"/>
-							<ref name="desc"/>
-						</element></zeroOrMore>
-				</element>
-			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="macro.form.creation.change_ms">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.performance" ident="macro.form.creation.change_ms">
 		<equiv filter="rswa.xsl" mimeType="text/xsl" name="processCreationChangeMs"/>
 			<content>
 				<element xmlns="http://relaxng.org/ns/structure/1.0" name="change">
@@ -9126,7 +9514,7 @@ purposes.</p>
 						</element></oneOrMore>
 				</element>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="macro.form.bibl">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.performance" ident="macro.form.bibl">
 			<equiv filter="rswa.xsl" mimeType="text/xsl" name="transformOrRemoveBibl"/>
 			<content>
 				<element xmlns="http://relaxng.org/ns/structure/1.0" name="bibl">
@@ -9139,12 +9527,12 @@ purposes.</p>
 					</element>
 				</element>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.persons" ident="macro.form.noteParagraph">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.performance" ident="macro.form.noteParagraph">
 			<desc versionDate="2014-02-07" xml:lang="en">Defines the content allowed in a metadata form note.</desc>
 			<content>
 				<zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><choice><ref name="model.gLike"/><ref name="model.phrase"/><ref name="model.inter"/><ref name="model.divPart"/><ref name="model.global"/></choice></zeroOrMore>
 			</content>
-		</macroSpec><moduleSpec n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec n="CO" xml:id="DCO" ident="core"/><moduleSpec n="HD" xml:id="DHD" ident="header"/><moduleSpec n="ND" xml:id="DND" ident="namesdates"/><moduleSpec n="SA" xml:id="DSA" ident="linking"/><moduleSpec n="CE" xml:id="DCE" ident="certainty"/><moduleSpec n="FT" xml:id="DFTFF" ident="figures"/></schemaSpec>
+		</macroSpec><moduleSpec n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec n="CO" xml:id="DCO" ident="core"/><moduleSpec n="HD" xml:id="DHD" ident="header"/><moduleSpec n="ND" xml:id="DND" ident="namesdates"/><moduleSpec n="SA" xml:id="DSA" ident="linking"/><moduleSpec n="CE" xml:id="DCE" ident="certainty"/><moduleSpec n="FT" xml:id="DFTFF" ident="figures"/><moduleSpec n="DR" xml:id="DDR" ident="drama"/></schemaSpec>
 			
 			<div>
 				<head>Edits</head>

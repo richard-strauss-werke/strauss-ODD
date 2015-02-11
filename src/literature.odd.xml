@@ -6,44 +6,100 @@
 	<teiHeader>
 		<fileDesc>
 			<titleStmt>
-				<title/>
+				<title type="main">Codierungsrichtlinien der Richard-Strauss-Ausgabe</title>
+				<title type="sub">Editionen gedruckter Quellen</title>
+				<author>Alexander Erhard</author>
 			</titleStmt>
+			<editionStmt>
+				<edition></edition>
+				<funder></funder>
+			</editionStmt>
 			<publicationStmt>
-				<p/>
+				<p></p>
 			</publicationStmt>
 			<sourceDesc>
-				<p/>
+				<p>Original work.</p>
 			</sourceDesc>
 		</fileDesc>
+		<encodingDesc>
+			<projectDesc>
+				<ab>Kritische Ausgabe der Werke von Richard Strauss</ab>
+			</projectDesc>
+		</encodingDesc>
+		<profileDesc>
+		</profileDesc>
 	</teiHeader>
 	<text>
+		<front>
+			<divGen type="TOC"/>
+		</front>
 		<body>
-			<schemaSpec ident="schema.literature" xml:lang="en" start="TEI" prefix="rswa_">
-				<desc>Transcriptions of printed sources: Articles, reviews, books, etc.</desc>
-				<moduleRef key="tei"/>
-				<moduleRef key="core"
-					include="abbr add addrLine address analytic author bibl biblScope biblStruct choice cit corr date del desc editor expan gap graphic head hi imprint item l lb lg list listBibl milestone monogr name note p pb ptr pubPlace publisher q quote ref relatedItem resp respStmt rs series sic sp speaker stage term textLang time title unclear"/>
-				<moduleRef key="header" include="availability change creation edition editionStmt editorialDecl encodingDesc fileDesc idno notesStmt profileDesc publicationStmt revisionDesc sourceDesc teiHeader textClass titleStmt"/>
-				<moduleRef key="namesdates" include="orgName persName placeName"/>
-				<moduleRef key="linking" include="ab anchor seg"/>
-				<moduleRef key="certainty" include="respons"/>
-				<moduleRef key="figures" include="cell figDesc figure row table"/>
-				<moduleRef key="textstructure" include="TEI body byline closer dateline div epigraph opener postscript salute signed text"/>
-				<moduleRef key="transcr" include="space supplied surplus"/>
-				<moduleRef key="msdescription"
-					include="additional collection msDesc msIdentifier notesStmt repository"/>
-				<moduleRef key="analysis" include="pc"/>
+			<div>
+				<head>Erläuterungen</head>
 				
-				<specGrpRef target="#extension.mei"/>
-				<specGrpRef target="#extension.tasks"/>
+				<div>
+					<head>Gegenstandsbereich</head>
+					<p>Gedruckte Rezensionen usw. + Abgrenzung von anderen Quellen</p>
+				</div>
 				
-				<specGrpRef target="#edits.classes.att"/>
-				<specGrpRef target="#edits.datatypes"/>
-				<specGrpRef target="#edits.elements"/>
-				<specGrpRef target="#edits.macros"/>
+				<!-- + auch erläutern: spezielles Schema, das durch ein XSLT dann in endgültige Form gebracht wird -->
 				
-				<specGrpRef target="#edits.elements.print"/>
-			</schemaSpec>
+				<div>
+					<head>Metadaten im 'Header'</head>
+				</div>
+				
+				<div>
+					<head>Übertragung</head>
+					
+					
+					<p>(Unter Überschrift: Zeichensetzung) Original-Anführungszeichen werden nicht mit q, sondern als Zeichen gesetzt. Die Anführungszeichen werden standardisiert wiedergegeben als gt/lt (Möglichkeit, das später bei der Ausgabe umzuwandeln). Setzung von Leerzeichen: standardisiert; große Abstände in der Quelle können -- wenn damit besondere Bedeutung verbunden ist -- durch das space-Element kodiert werden; dabei ist zu wählen, ob es sich um einen in jedem Fall oder nur bei einer diplomatischen Wiedergabe darzustellenden Leerraum handelt.  
+					</p>
+					
+					<p>generell: es gilt das im allgemeinen Abschnitt gesagte; hier werden Besonderheiten erläutert</p>
+
+					<p>Vielleicht sogar Punkt 1: Strukturelemente, die zur Verfügung stehen</p>
+
+					<p>Header: Keine Äußerlichkeiten, (aber besondere Markierungen innerhalb der Strukturelemente</p>
+					
+					<p>Abkürzungen auflösen?</p>
+					
+					<p>Offensichtliche Fehler: Als Herausgeberkorrekturen kennzeichnen; jedenfalls: richtigstellen statt sic schreiben! Sic: als Element verwenden, nicht schreiben "[sic]"</p>
+
+				</div>
+				
+			</div>
+			<div>
+				<head>Spezifikationen</head>
+				<schemaSpec ident="schema.literature" xml:lang="en" start="TEI" prefix="rswa_">
+					<desc>Transcriptions of printed sources: Articles, reviews, books, etc.</desc>
+					<moduleRef key="tei"/>
+					<moduleRef key="core"
+						include="abbr add addrLine address analytic author bibl biblScope biblStruct choice cit corr date del desc editor expan gap graphic head hi imprint item l lb lg list listBibl milestone monogr name note p pb ptr pubPlace publisher q quote ref relatedItem resp respStmt rs series sic sp speaker stage term textLang time title unclear"/>
+					<moduleRef key="header" include="availability change creation edition editionStmt editorialDecl encodingDesc fileDesc idno notesStmt profileDesc publicationStmt revisionDesc sourceDesc teiHeader textClass titleStmt"/>
+					<moduleRef key="namesdates" include="orgName persName placeName"/>
+					<moduleRef key="linking" include="ab anchor seg"/>
+					<moduleRef key="certainty" include="respons"/>
+					<moduleRef key="figures" include="cell figDesc figure row table"/>
+					<moduleRef key="textstructure" include="TEI body byline closer dateline div epigraph opener postscript salute signed text"/>
+					<moduleRef key="transcr" include="space supplied surplus"/>
+					<moduleRef key="msdescription"
+						include="additional collection msDesc msIdentifier notesStmt repository"/>
+					<moduleRef key="analysis" include="pc"/>
+					
+					<specGrpRef target="#extension.mei"/>
+					<specGrpRef target="#extension.tasks"/>
+					
+					<specGrpRef target="#edits.classes.att"/>
+					<specGrpRef target="#edits.datatypes"/>
+					<specGrpRef target="#edits.elements"/>
+					<specGrpRef target="#edits.macros"/>
+					
+					<specGrpRef target="#edits.elements.print"/>
+				</schemaSpec>
+			</div>
+			
+			
+			
 			
 			<div>
 				<head>TEI Extensions</head>

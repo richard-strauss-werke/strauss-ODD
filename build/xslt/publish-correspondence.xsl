@@ -54,6 +54,9 @@
       <name xml:id="stk">Steffi Kracht</name>
       <name xml:id="oen">Ursula Welsch</name>
       <name xml:id="ofr">Oliver Fraenske</name>
+      <name xml:id="pfr">Peter Fröhlich</name>
+      <name xml:id="clh">Claudia Heine</name>
+      <name xml:id="dpl">Dominik Leipold</name>
    </xsl:variable>
    <xsl:variable name="sexes">
       <empty/>

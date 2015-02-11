@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.music-encoding.org/ns/mei"><!--
-Schema generated from ODD source 2014-08-25T19:50:34Z. 
+Schema generated from ODD source 2014-10-19T17:41:29Z. 
 Edition: Version 2.6.0. Last updated on
 	20th January 2014, revision 12802
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
@@ -3979,12 +3979,18 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
             <attribute name="type">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.</a:documentation>
                <choice>
+                  <value>main</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Markiert den Haupttitel.</a:documentation>
                   <value>sub</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Markiert einen Untertitel.</a:documentation>
                   <value>alt</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(alternativ) Markiert einen alternativen Titel, meist in Übersetzung (siehe xml:lang).</a:documentation>
                   <value>div</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Nummer) Markiert einen Titel einer musikalischen Nummer (z.B. Szene, Arie).</a:documentation>
+                  <value>original</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Original) Markiert den Originaltitel eines Werks</a:documentation>
+                  <value>version</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Fassung) Markiert die Benennung der Fassung eines Werks</a:documentation>
                </choice>
             </attribute>
          </optional>
