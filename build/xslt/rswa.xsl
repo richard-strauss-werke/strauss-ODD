@@ -601,9 +601,6 @@
 						<xsl:value-of select="@rsga:seite"/>
 					</xsl:attribute>
 				</xsl:if>
-				<xsl:if test="@rsga:cert">
-					<certainty match="../@ref|../text()" locus="value" cert="{@rsga:cert}"/>
-				</xsl:if>
 				<xsl:apply-templates select="node()"/>
 			</xsl:copy>
 		</xsl:if>

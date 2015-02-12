@@ -4221,7 +4221,7 @@ resource, either within the current document or elsewhere.</desc>
   <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COEDADD">3.4.3. </ref>
   </listRef>
-</elementSpec><elementSpec rend="change" module="core" ident="add"><gloss rend="replace" versionDate="2013-11-11" xml:lang="en">addition</gloss><gloss rend="replace" versionDate="2013-11-11" xml:lang="de">Ergänzung</gloss><desc rend="replace" versionDate="2013-11-11" xml:lang="en">contains letters, words, or phrases inserted in the source text by an author, scribe, annotator, or corrector.</desc><desc rend="replace" versionDate="2013-11-11" xml:lang="de">enthält Buchstaben, Wörter oder Sätze im Quelltext, die von einem Autor, Schreiber, Kommentator oder Korrektor eingesetzt wurden.</desc><classes><memberOf key="att.global"/><memberOf key="model.pPart.transcriptional"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.paraContent"/></content><attList><attDef ident="hand" usage="mwa">
+</elementSpec><elementSpec rend="change" module="core" ident="add"><gloss rend="replace" versionDate="2013-11-11" xml:lang="en">addition</gloss><gloss rend="replace" versionDate="2013-11-11" xml:lang="de">Ergänzung</gloss><desc rend="replace" versionDate="2013-11-11" xml:lang="en">contains letters, words, or phrases inserted in the source text by an author, scribe, annotator, or corrector.</desc><desc rend="replace" versionDate="2013-11-11" xml:lang="de">enthält Buchstaben, Wörter oder Sätze im Quelltext, die von einem Autor, Schreiber, Kommentator oder Korrektor eingesetzt wurden.</desc><classes><memberOf key="att.global"/><memberOf key="model.pPart.transcriptional"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.paraContent"/></content><attList><attDef ident="hand" usage="rec">
 						<desc versionDate="2013-11-11" xml:lang="en">signifies the hand of the agent which made the intervention.</desc>
 						<desc versionDate="2013-11-11" xml:lang="de">bezeichnet die Schreiberhand, welche den Eingriff vorgenommen hat.</desc>
 						<datatype>
@@ -4291,7 +4291,7 @@ resource, either within the current document or elsewhere.</desc>
     </p>
   </remarks><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COEDADD">3.4.3. </ref>
-  </listRef></elementSpec><elementSpec rend="change" module="core" ident="del"><gloss rend="replace" versionDate="2013-11-11" xml:lang="en">deletion</gloss><gloss rend="replace" versionDate="2013-11-11" xml:lang="de">Löschung</gloss><desc rend="replace" versionDate="2013-11-11" xml:lang="en">contains a letter, word, or passage deleted, marked as deleted, or otherwise indicated as superfluous or spurious in the copy text by an author, scribe, annotator, or corrector.</desc><desc rend="replace" versionDate="2013-11-11" xml:lang="de">enthält einen Buchstaben, ein Wort, oder eine Passage die gestrichen wurde, die als gelöscht markiert, oder auf andere Weise als überflüssig oder falsch in der Textkopie von einem Autor, Schreiber, Kommentator oder Korrektor angegeben wird</desc><classes><memberOf key="att.global"/><memberOf key="model.pPart.transcriptional"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.paraContent"/></content><attList><attDef ident="hand" usage="mwa">
+  </listRef></elementSpec><elementSpec rend="change" module="core" ident="del"><gloss rend="replace" versionDate="2013-11-11" xml:lang="en">deletion</gloss><gloss rend="replace" versionDate="2013-11-11" xml:lang="de">Löschung</gloss><desc rend="replace" versionDate="2013-11-11" xml:lang="en">contains a letter, word, or passage deleted, marked as deleted, or otherwise indicated as superfluous or spurious in the copy text by an author, scribe, annotator, or corrector.</desc><desc rend="replace" versionDate="2013-11-11" xml:lang="de">enthält einen Buchstaben, ein Wort, oder eine Passage die gestrichen wurde, die als gelöscht markiert, oder auf andere Weise als überflüssig oder falsch in der Textkopie von einem Autor, Schreiber, Kommentator oder Korrektor angegeben wird</desc><classes><memberOf key="att.global"/><memberOf key="model.pPart.transcriptional"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.paraContent"/></content><attList><attDef ident="hand" usage="rec">
 						<desc versionDate="2013-11-11" xml:lang="en">signifies the hand of the agent which made the intervention.</desc>
 						<desc versionDate="2013-11-11" xml:lang="de">bezeichnet die Schreiberhand, welche den Eingriff vorgenommen hat.</desc>
 						<datatype>
@@ -4648,10 +4648,6 @@ concerned, as further discussed in section <ref target="http://www.tei-c.org/rel
 					</attDef><attDef ns="http://richard-strauss-ausgabe.de/ns/1.0" ident="seitepdf" usage="opt">
 						<datatype>
 							<ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.count"/>
-						</datatype>
-					</attDef><attDef ident="cert" ns="http://richard-strauss-ausgabe.de/ns/1.0" usage="opt">
-						<datatype>
-							<ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.certainty"/>
 						</datatype>
 					</attDef></attList><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples"><q>My dear <rs type="person">Mr. Bennet</rs>, </q> said <rs type="person">his lady</rs>

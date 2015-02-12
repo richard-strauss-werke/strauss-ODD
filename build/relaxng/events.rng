@@ -3,10 +3,10 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2014-10-19T17:39:53Z. 
-Edition: Version 2.6.0. Last updated on
-	20th January 2014, revision 12802
-Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
+Schema generated from ODD source 2015-02-12T09:30:36Z. 
+Edition: Version 2.7.0. Last updated on
+	16th September 2014, revision 13036
+Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
  Events related to Strauss 
 --><!---->
    <define name="rswa_macro.paraContent">
@@ -551,8 +551,12 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.naming.attribute.role">
       <optional>
          <attribute name="role">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">may be used to specify further information about the entity referenced by this name, for example the occupation of a person, or the status of a place.</a:documentation>
-            <ref name="rswa_data.enumerated"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">may be used to specify further information about the entity referenced by this name in the form of a set of whitespace-separated values, for example the occupation of a person, or the status of a place.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <ref name="rswa_data.enumerated"/>
+               </oneOrMore>
+            </list>
          </attribute>
       </optional>
    </define>
@@ -1867,7 +1871,7 @@ Empfohlene Werte sind: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] foreig
    </define>
    <define name="rswa_gap">
       <element name="gap">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(gap) indicates a point where material has been omitted in a transcription, whether for editorial reasons described in the TEI header, as part of sampling practice, or because the material is illegible, invisible, or inaudible. [3.4.3. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates a point where material has been omitted in a transcription, whether for editorial reasons described in the TEI header, as part of sampling practice, or because the material is illegible, invisible, or inaudible. [3.4.3. ]</a:documentation>
          <zeroOrMore>
             <choice>
                <ref name="rswa_model.descLike"/>
@@ -2011,6 +2015,7 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
          <ref name="rswa_att.global.attributes"/>
          <ref name="rswa_att.naming.attributes"/>
          <ref name="rswa_att.typed.attributes"/>
+         <ref name="rswa_att.responsibility.attributes"/>
          <optional>
             <attribute name="pdf" ns="http://richard-strauss-ausgabe.de/ns/1.0">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
@@ -2027,12 +2032,6 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
             <attribute name="seitepdf" ns="http://richard-strauss-ausgabe.de/ns/1.0">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                <ref name="rswa_data.count"/>
-            </attribute>
-         </optional>
-         <optional>
-            <attribute name="cert" ns="http://richard-strauss-ausgabe.de/ns/1.0">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <ref name="rswa_data.certainty"/>
             </attribute>
          </optional>
          <empty/>
@@ -2124,7 +2123,7 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
    </define>
    <define name="rswa_list">
       <element name="list">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(list) contains any sequence of items organized as a list. [3.7. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains any sequence of items organized as a list. [3.7. ]</a:documentation>
          <group>
             <zeroOrMore>
                <choice>
@@ -2167,21 +2166,22 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
             </zeroOrMore>
          </group>
          <ref name="rswa_att.global.attributes"/>
+         <ref name="rswa_att.typed.attribute.subtype"/>
          <optional>
-            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                       name="type"
-                       a:defaultValue="simple">
-               <a:documentation>describes the form of the list.
-Empfohlene Werte sind: 1] ordered; 2] bulleted; 3] simple; 4] gloss</a:documentation>
+            <attribute name="type">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes the nature of the items in the list.
+Empfohlene Werte sind: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syllogism</a:documentation>
                <choice>
-                  <value>ordered</value>
-                  <a:documentation>list items are numbered or lettered.</a:documentation>
-                  <value>bulleted</value>
-                  <a:documentation>list items are marked with a bullet or other typographic device.</a:documentation>
-                  <value>simple</value>
-                  <a:documentation>list items are not numbered or bulleted.</a:documentation>
                   <value>gloss</value>
-                  <a:documentation>each list item glosses some term or concept, which is given by a label element preceding the list item.</a:documentation>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">each list item glosses some term or concept, which is given by a label element preceding the list item.</a:documentation>
+                  <value>index</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">each list item is an entry in an index such as the alphabetical topical index at the back of a print volume.</a:documentation>
+                  <value>instructions</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">each list item is a step in a sequence of instructions, as in a recipe.</a:documentation>
+                  <value>litany</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">each list item is one of a sequence of petitions, supplications or invocations, typically in a religious ritual.</a:documentation>
+                  <value>syllogism</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">each list item is part of an argument consisting of two or more propositions and a final conclusion derived from them.</a:documentation>
                   <data type="Name"/>
                </choice>
             </attribute>
@@ -2319,6 +2319,7 @@ Empfohlene Werte sind: 1] ordered; 2] bulleted; 3] simple; 4] gloss</a:documenta
          <ref name="rswa_macro.phraseSeq.limited"/>
          <ref name="rswa_att.global.attributes"/>
          <ref name="rswa_att.canonical.attributes"/>
+         <ref name="rswa_att.datable.attributes"/>
          <empty/>
       </element>
    </define>

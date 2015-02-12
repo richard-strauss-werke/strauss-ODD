@@ -3,10 +3,10 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2014-10-19T17:41:09Z. 
-Edition: Version 2.6.0. Last updated on
-	20th January 2014, revision 12802
-Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
+Schema generated from ODD source 2015-02-12T09:31:48Z. 
+Edition: Version 2.7.0. Last updated on
+	16th September 2014, revision 13036
+Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
  Repositories 
 --><!---->
    <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -530,8 +530,12 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rswa_att.naming.attribute.role">
       <optional>
          <attribute name="role">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">may be used to specify further information about the entity referenced by this name, for example the occupation of a person, or the status of a place.</a:documentation>
-            <ref name="rswa_data.enumerated"/>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">may be used to specify further information about the entity referenced by this name in the form of a set of whitespace-separated values, for example the occupation of a person, or the status of a place.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <ref name="rswa_data.enumerated"/>
+               </oneOrMore>
+            </list>
          </attribute>
       </optional>
    </define>
@@ -1267,7 +1271,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    </define>
    <define name="rswa_country">
       <element name="country">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(country) contains the name of a geo-political unit, such as a nation, country, colony, or commonwealth, larger than or administratively superior to a region and smaller than a bloc. [13.2.3. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the name of a geo-political unit, such as a nation, country, colony, or commonwealth, larger than or administratively superior to a region and smaller than a bloc. [13.2.3. ]</a:documentation>
          <ref name="rswa_macro.phraseSeq"/>
          <ref name="rswa_att.global.attributes"/>
          <ref name="rswa_att.naming.attributes"/>
