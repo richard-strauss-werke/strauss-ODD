@@ -12,7 +12,7 @@
 		<elementRef key="notatedMusic"/>
 		
 		<!-- change this path according to your folder structure -->
-		<moduleRef url="/eXist-db/webapp/ahlsen/strauss-ODD/strauss-ODD/dependencies/mei2vexflow-modified.rng" prefix="mei_"/>
+		<moduleRef url="/current/strauss-ODD/strauss-ODD/dependencies/mei2vexflow-modified.rng" prefix="mei_"/>
 		
 		<!-- from https://github.com/TEI-Music-SIG/tei-mei/blob/master/tei-lite_mei-cmn.xml by Raffaele Viglianti -->
 		<elementSpec xmlns="http://www.tei-c.org/ns/1.0" module="figures" ident="notatedMusic"

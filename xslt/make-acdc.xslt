@@ -202,9 +202,6 @@
 					select="."/></XSL:attribute>
 			</XSL:template>
 
-			<!-- removed here; transformed to a "certainty" element when processing the parent "rs" element -->
-			<XSL:template match="rsga:cert"/>
-
 			<XSL:template match="@change">
 				<XSL:attribute name="change">#change-<XSL:value-of select="."/></XSL:attribute>
 			</XSL:template>

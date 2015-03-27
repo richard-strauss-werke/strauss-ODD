@@ -59,27 +59,14 @@
       <name xml:id="dpl">Dominik Leipold</name>
    </xsl:variable>
    <xsl:variable name="sexes">
+      <sex value="M">männlich</sex>
+      <sex value="F">weiblich</sex>
+      <sex value="O">sonstiges</sex>
+      <sex value="N">keines</sex>
+      <sex value="U">unbekannt</sex>
       <empty/>
    </xsl:variable>
    <xsl:variable name="keywords">
-      <term ref="http://d-nb.info/gnd/4008240-4">Brief</term>
-      <term ref="http://d-nb.info/gnd/4046902-5">Postkarte</term>
-      <term/>
-      <term ref="http://d-nb.info/gnd/4146614-7">Briefumschlag</term>
-      <term ref="http://d-nb.info/gnd/4184647-3">Telegramm</term>
-      <term ref="http://d-nb.info/gnd/4180011-4">schriftliche Mitteilung</term>
-      <term ref="http://d-nb.info/gnd/4188409-7">Visitenkarte</term>
-      <term ref="http://d-nb.info/gnd/4063270-2">Vertrag</term>
-      <term ref="http://d-nb.info/gnd/4206777-7">Notiz</term>
-      <term ref="http://d-nb.info/gnd/4225695-1">Notizbuch</term>
-      <term ref="http://d-nb.info/gnd/4040847-4">Musikhandschrift</term>
-      <term ref="http://d-nb.info/gnd/4180009-6">Schriftstück</term>
-      <term ref="http://d-nb.info/gnd/4185060-9">Theaterzettel</term>
-      <term ref="http://d-nb.info/gnd/4127900-1">Zeichnung</term>
-      <term ref="http://d-nb.info/gnd/4152458-5">Entwurfszeichnung</term>
-      <term ref="http://d-nb.info/gnd/4113357-2">Druckgraphik</term>
-      <term ref="http://d-nb.info/gnd/4122164-3">Gemälde</term>
-      <term ref="http://d-nb.info/gnd/4045895-7">Photographie</term>
       <empty/>
    </xsl:variable>
    <xsl:template match="@*|node()|comment()|processing-instruction()|text()"
@@ -100,8 +87,8 @@
    <xsl:template match="desc">
       <xsl:call-template name="keepOnlyWithAnyText"/>
    </xsl:template>
-   <xsl:template match="term">
-      <xsl:call-template name="addTermRef"/>
+   <xsl:template match="gloss">
+      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
    </xsl:template>
    <xsl:template match="rs">
       <xsl:call-template name="processRs"/>
@@ -109,10 +96,25 @@
    <xsl:template match="graphic">
       <xsl:call-template name="keepOnlyWithAtt"/>
    </xsl:template>
+   <xsl:template match="series">
+      <xsl:call-template name="keepOnlyWithAnyText"/>
+   </xsl:template>
    <xsl:template match="respStmt">
       <xsl:call-template name="expandRespStmt"/>
    </xsl:template>
    <xsl:template match="title">
+      <xsl:call-template name="keepOnlyWithAnyText"/>
+   </xsl:template>
+   <xsl:template match="imprint">
+      <xsl:call-template name="processImprint"/>
+   </xsl:template>
+   <xsl:template match="publisher">
+      <xsl:call-template name="keepOnlyWithAnyText"/>
+   </xsl:template>
+   <xsl:template match="biblScope">
+      <xsl:call-template name="keepOnlyWithAnyText"/>
+   </xsl:template>
+   <xsl:template match="pubPlace">
       <xsl:call-template name="keepOnlyWithAnyText"/>
    </xsl:template>
    <xsl:template match="listBibl">
@@ -121,14 +123,8 @@
    <xsl:template match="textLang">
       <xsl:call-template name="keepOnlyWithAnyText"/>
    </xsl:template>
-   <xsl:template match="titleStmt">
-      <xsl:call-template name="expandTitleStmtGraphic"/>
-   </xsl:template>
    <xsl:template match="edition">
       <xsl:call-template name="expandEdition"/>
-   </xsl:template>
-   <xsl:template match="publicationStmt">
-      <xsl:call-template name="expandPublicationStmt"/>
    </xsl:template>
    <xsl:template match="idno">
       <xsl:call-template name="keepOnlyWithContent"/>
@@ -138,9 +134,6 @@
    </xsl:template>
    <xsl:template match="editorialDecl">
       <xsl:call-template name="expandEditorialDecl"/>
-   </xsl:template>
-   <xsl:template match="profileDesc">
-      <xsl:call-template name="keepOnlyWithAnyText"/>
    </xsl:template>
    <xsl:template match="textClass">
       <xsl:call-template name="keepOnlyWithAnyText"/>
@@ -157,14 +150,47 @@
    <xsl:template match="placeName">
       <xsl:call-template name="onlyWithContentAddCert"/>
    </xsl:template>
+   <xsl:template match="affiliation">
+      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
+   </xsl:template>
+   <xsl:template match="birth">
+      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
+   </xsl:template>
+   <xsl:template match="death">
+      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
+   </xsl:template>
+   <xsl:template match="event">
+      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
+   </xsl:template>
+   <xsl:template match="faith">
+      <xsl:call-template name="keepOnlyWithAttOrContent"/>
+   </xsl:template>
+   <xsl:template match="listEvent">
+      <xsl:call-template name="keepOnlyWithAnyAttOrAnyText"/>
+   </xsl:template>
+   <xsl:template match="occupation">
+      <xsl:call-template name="keepOnlyWithAttOrContent"/>
+   </xsl:template>
+   <xsl:template match="org">
+      <xsl:call-template name="perOrgRoot"/>
+   </xsl:template>
+   <xsl:template match="person">
+      <xsl:call-template name="perOrgRoot"/>
+   </xsl:template>
+   <xsl:template match="residence">
+      <xsl:call-template name="keepOnlyWithContent"/>
+   </xsl:template>
+   <xsl:template match="sex">
+      <xsl:call-template name="expandOrRemoveSexElement"/>
+   </xsl:template>
+   <xsl:template match="state">
+      <xsl:call-template name="keepOnlyWithAttOrChildContent"/>
+   </xsl:template>
    <xsl:template match="seg">
       <xsl:call-template name="removeIfTyped"/>
    </xsl:template>
    <xsl:template match="respons">
       <xsl:call-template name="transformRespons"/>
-   </xsl:template>
-   <xsl:template match="text">
-      <xsl:call-template name="replaceTextByGraphic"/>
    </xsl:template>
    <xsl:template match="div">
       <xsl:call-template name="processDiv"/>
@@ -196,20 +222,65 @@
    <xsl:template match="rsga:taskDesc">
       <xsl:call-template name="warnIfHasChildOrRemove"/>
    </xsl:template>
+   <xsl:template match="affiliation/date">
+      <xsl:call-template name="expandOrRemoveDate"/>
+   </xsl:template>
+   <xsl:template match="birth/date">
+      <xsl:call-template name="expandOrRemoveDate"/>
+   </xsl:template>
+   <xsl:template match="death/date">
+      <xsl:call-template name="expandOrRemoveDate"/>
+   </xsl:template>
+   <xsl:template match="head/date">
+      <xsl:call-template name="expandOrRemoveDate"/>
+   </xsl:template>
+   <xsl:template match="event/head">
+      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
+   </xsl:template>
    <xsl:template match="notesStmt/note[@type='commentary']">
+      <xsl:call-template name="tightenCommentary"/>
+   </xsl:template>
+   <xsl:template match="org/note[@type='commentary']">
+      <xsl:call-template name="tightenCommentary"/>
+   </xsl:template>
+   <xsl:template match="person/note[@type='commentary']">
       <xsl:call-template name="tightenCommentary"/>
    </xsl:template>
    <xsl:template match="notesStmt/note[@type='summary']">
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
    </xsl:template>
+   <xsl:template match="org/note[@type='summary']">
+      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
+   </xsl:template>
+   <xsl:template match="person/note[@type='summary']">
+      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
+   </xsl:template>
    <xsl:template match="notesStmt/note[@type='discussion']">
+      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
+   </xsl:template>
+   <xsl:template match="org/note[@type='discussion']">
+      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
+   </xsl:template>
+   <xsl:template match="person/note[@type='discussion']">
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
    </xsl:template>
    <xsl:template match="notesStmt/note[@type='uncategorized']">
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
    </xsl:template>
-   <xsl:template match="listChange/change">
-      <xsl:call-template name="processCreationChangeMs"/>
+   <xsl:template match="org/note[@type='uncategorized']">
+      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
+   </xsl:template>
+   <xsl:template match="person/note[@type='uncategorized']">
+      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
+   </xsl:template>
+   <xsl:template match="org/note[@type='details']">
+      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
+   </xsl:template>
+   <xsl:template match="person/note[@type='details']">
+      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
+   </xsl:template>
+   <xsl:template match="person/note[@type='figures']">
+      <xsl:call-template name="keepOnlyWithChildAttOrAnyText"/>
    </xsl:template>
    <xsl:template match="revisionDesc/change">
       <xsl:call-template name="processRevisionDescChange"/>

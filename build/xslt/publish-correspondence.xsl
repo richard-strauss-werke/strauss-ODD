@@ -28,7 +28,7 @@
    </xsl:variable>
    <xsl:variable name="contributorsResp">Vorbereitung der digitalen Edition</xsl:variable>
    <xsl:variable name="publicationStmt">
-				  <distributor>Forschungsstelle zur Edition der Werke von Richard Strauss</distributor>
+				  <distributor>Forschungsstelle Richard-Strauss-Ausgabe</distributor>
 				  <availability status="restricted">
 					    <p>This work is licensed under a <ref target="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</ref>.</p>
 				  </availability>
@@ -36,7 +36,7 @@
 			</xsl:variable>
    <xsl:variable name="seriesStmt">
       <seriesStmt>
-				     <title>Digitale Dokumentensammlung zum Werk von Richard Strauss</title>
+				     <title>Richard Strauss: Werke. Kritische Ausgabe. Digitale Dokumentensammlung</title>
 			   </seriesStmt>
    </xsl:variable>
    <xsl:variable name="edition">Digitale Ausgabe</xsl:variable>
@@ -223,7 +223,6 @@
       <xsl:attribute name="{name()}">#<xsl:value-of select="."/>
       </xsl:attribute>
    </xsl:template>
-   <xsl:template match="rsga:cert"/>
    <xsl:template match="@change">
       <xsl:attribute name="change">#change-<xsl:value-of select="."/>
       </xsl:attribute>

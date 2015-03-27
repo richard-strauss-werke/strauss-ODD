@@ -591,7 +591,7 @@
 		</xsl:if>
 	</xsl:template>
 
-	<!-- @rsga:pdf and @rsga:seitepdf only refer to internal files and will be removed from the public version -->
+	<!-- @rsga:pdf and @rsga:seitepdf only refer to internal files and get removed from the public version -->
 	<xsl:template name="processRs">
 		<xsl:if test="normalize-space()">
 			<xsl:copy>
@@ -600,9 +600,6 @@
 					<xsl:attribute name="n">
 						<xsl:value-of select="@rsga:seite"/>
 					</xsl:attribute>
-				</xsl:if>
-				<xsl:if test="@rsga:cert">
-					<certainty match="../@ref|../text()" locus="value" cert="{@rsga:cert}"/>
 				</xsl:if>
 				<xsl:apply-templates select="node()"/>
 			</xsl:copy>

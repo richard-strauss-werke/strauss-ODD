@@ -28,7 +28,7 @@
 			</editionStmt>
 			<!-- template for the final version of the TEI files:-->
 			<publicationStmt>
-				<distributor>Forschungsstelle zur Edition der Werke von Richard Strauss</distributor>
+				<distributor>Forschungsstelle Richard-Strauss-Ausgabe</distributor>
 				<availability status="restricted">
 					<p>This work is licensed under a <ref target="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</ref>.</p>
 				</availability>
@@ -36,7 +36,7 @@
 			</publicationStmt>
 			<!-- template for the the final version of the TEI files:-->
 			<seriesStmt>
-				<title>Digitale Dokumentensammlung zum Werk von Richard Strauss</title>
+				<title>Richard Strauss: Werke. Kritische Ausgabe. Digitale Dokumentensammlung</title>
 			</seriesStmt>
 			<sourceDesc>
 				<p>based on the TEI P5 specifications at <ref target="http://www.tei-c.org/release/xml/tei/odd/p5subset.xml">http://www.tei-c.org/release/xml/tei/odd/p5subset.xml</ref>, this ODD integrates the TEI-C's <ref target="http://www.tei-c.org/release/xml/tei/custom/odd/tei_xinclude.odd">XInclude ODD</ref> and draws on specifications in <ref target="https://github.com/Edirom/WeGA-ODD">Carl-Maria-von-Weber-Gesamtausgabe ODDs</ref> by Peter Stadler and Anna Maria Komprecht and (<ref target="https://github.com/TEI-Music-SIG/tei-mei/">tei-mei</ref>) by Raffaele Viglianti.</p>
@@ -73,207 +73,8 @@
 			</div>
 			<div xml:id="schemata">
 				<head>Schema</head>
-				<!--<schemaSpec ident="schema.compilations" xml:lang="en" start="TEI" prefix="rswa_">
-					<desc>Compilations: Editorial compilations of text snippets from other documents</desc>
-					<moduleRef key="tei"/>
-					<moduleRef key="core"
-						include="abbr add address addrLine analytic author availability bibl biblScope biblStruct change choice cit corr creation date del desc editor expan fileDesc gap gloss graphic head hi imprint item l lb lg list listBibl milestone monogr name note p pb profileDesc ptr publicationStmt pubPlace publisher q quote ref relatedItem resp respStmt rs series sic sourceDesc sp speaker stage teiHeader term textLang time title titleStmt unclear"/>
-					<moduleRef key="header" include="edition editionStmt editorialDecl encodingDesc extent handNote idno notesStmt revisionDesc textClass"/>
-					<moduleRef key="namesdates" include="affiliation birth country death event faith listEvent state occupation org orgName persName person placeName residence settlement sex"/>
-					<moduleRef key="linking" include="ab anchor seg"/>
-					<moduleRef key="certainty" include="respons"/>
-					<moduleRef key="figures" include="cell figDesc figure row table"/>
-					<moduleRef key="textstructure" include="TEI body byline closer dateline div epigraph opener postscript salute signed text"/>
-					<moduleRef key="transcr" include="handShift mod space subst supplied surplus"/>
-					<moduleRef key="msdescription" include="additional accMat additions collection handDesc msDesc msIdentifier notesStmt objectDesc origDate origPlace physDesc repository"/>
-					<moduleRef key="analysis" include="pc"/>
-					<moduleRef key="drama" include="actor castItem castList performance role"/>
-					
-					<specGrpRef target="#extension.mei"/>
-					<specGrpRef target="#extension.xinclude"/>
-					<specGrpRef target="#extension.tasks"/>
-					
-					<specGrpRef target="#edits.classes.att"/>
-					<specGrpRef target="#edits.datatypes"/>
-					<specGrpRef target="#edits.elements"/>
-					<specGrpRef target="#edits.macros"/>
-					
-					<xi:include href="extension/xinclude.xml"/>
-					
-				</schemaSpec>-->
-				
-<!--				<schemaSpec ident="schema.correspondence" xml:lang="en" start="TEI" prefix="rswa_">
-					<desc>Transcriptions of manuscript sources: Correspondence, notes, etc.</desc>
-					<moduleRef key="tei"/>
-					<moduleRef key="core"
-						include="abbr add addrLine address author bibl choice cit corr date del desc expan gap graphic head hi item l lb lg list listBibl milestone name note p pb ptr q quote ref resp respStmt rs sic sp speaker stage term textLang time title unclear"/>
-					<moduleRef key="header" include="availability change creation edition editionStmt editorialDecl encodingDesc extent fileDesc handNote idno notesStmt profileDesc publicationStmt revisionDesc sourceDesc teiHeader textClass titleStmt"/>
-					<moduleRef key="namesdates" include="orgName persName placeName"/>
-					<moduleRef key="linking" include="ab anchor seg"/>
-					<moduleRef key="certainty" include="respons"/>
-					<moduleRef key="figures" include="cell figDesc figure row table"/>
-					<moduleRef key="textstructure" include="TEI byline closer dateline body div epigraph opener postscript salute signed text"/>
-					<moduleRef key="transcr" include="handShift mod space subst supplied surplus"/>
-					<moduleRef key="msdescription"
-						include="accMat additional additions collection handDesc msDesc msIdentifier notesStmt objectDesc origDate origPlace physDesc repository"/>
-					<moduleRef key="analysis" include="pc"/>
-					
-					<specGrpRef target="#extension.mei"/>
-					<specGrpRef target="#extension.tasks"/>
-					<specGrpRef target="#edits.classes.att"/>
-					<specGrpRef target="#edits.datatypes"/>
-					<specGrpRef target="#edits.elements"/>
-					<specGrpRef target="#edits.macros"/>
-					<specGrpRef target="#edits.elements.ms"/>
-				</schemaSpec>-->
-				
-				<!--<schemaSpec ident="schema.graphic" xml:lang="en" start="TEI" prefix="rswa_">
-					<desc>Transcriptions of manuscript sources: Correspondence, notes, etc.</desc>
-					<moduleRef key="tei"/>
-					<moduleRef key="core"
-						include="abbr add addrLine address author bibl choice cit corr date del desc expan gap graphic head hi item l lb lg list listBibl milestone name note p pb ptr q quote ref resp respStmt rs sic sp speaker stage term textLang time title unclear"/>
-					<moduleRef key="header" include="availability change creation edition editionStmt editorialDecl encodingDesc extent fileDesc handNote idno notesStmt profileDesc publicationStmt revisionDesc sourceDesc teiHeader titleStmt textClass"/>
-					<moduleRef key="namesdates" include="orgName persName placeName"/>
-					<moduleRef key="linking" include="ab anchor seg"/>
-					<moduleRef key="certainty" include="respons"/>
-					<moduleRef key="figures" include="cell figDesc figure row table"/>
-					<moduleRef key="textstructure" include="TEI body byline closer dateline div epigraph opener postscript salute signed text"/>
-					<moduleRef key="transcr" include="handShift mod space subst supplied surplus"/>
-					<moduleRef key="msdescription"
-						include="additional accMat additions collection handDesc msDesc msIdentifier notesStmt objectDesc origDate origPlace physDesc repository"/>
-					<moduleRef key="analysis" include="pc"/>
-					
-					<!-\- <specGrpRef target="#extension.mei"/>-\->
-					<specGrpRef target="#extension.tasks"/>
-					<specGrpRef target="#edits.classes.att"/>
-					<specGrpRef target="#edits.datatypes"/>
-					<specGrpRef target="#edits.elements"/>
-					<specGrpRef target="#edits.macros"/>
-					<specGrpRef target="#edits.elements.graphic"/>
-				</schemaSpec>-->
-				
-<!--				<schemaSpec ident="schema.literature" xml:lang="en" start="TEI" prefix="rswa_">
-					<desc>Transcriptions of printed sources: Articles, reviews, books, etc.</desc>
-					<moduleRef key="tei"/>
-					<moduleRef key="core"
-						include="abbr add addrLine address analytic author bibl biblScope biblStruct choice cit corr date del desc editor expan gap graphic head hi imprint item l lb lg list listBibl milestone monogr name note p pb ptr pubPlace publisher q quote ref relatedItem resp respStmt rs series sic sp speaker stage term textLang time title unclear"/>
-					<moduleRef key="header" include="availability change creation edition editionStmt editorialDecl encodingDesc fileDesc idno notesStmt profileDesc publicationStmt revisionDesc sourceDesc teiHeader textClass titleStmt"/>
-					<moduleRef key="namesdates" include="orgName persName placeName"/>
-					<moduleRef key="linking" include="ab anchor seg"/>
-					<moduleRef key="certainty" include="respons"/>
-					<moduleRef key="figures" include="cell figDesc figure row table"/>
-					<moduleRef key="textstructure" include="TEI body byline closer dateline div epigraph opener postscript salute signed text"/>
-					<moduleRef key="transcr" include="space supplied surplus"/>
-					<moduleRef key="msdescription"
-						include="additional collection msDesc msIdentifier notesStmt repository"/>
-					<moduleRef key="analysis" include="pc"/>
-					
-					<specGrpRef target="#extension.mei"/>
-					<specGrpRef target="#extension.tasks"/>
-					<specGrpRef target="#edits.classes.att"/>
-					<specGrpRef target="#edits.datatypes"/>
-					<specGrpRef target="#edits.elements"/>
-					<specGrpRef target="#edits.macros"/>
-					<specGrpRef target="#edits.elements.print"/>
-				</schemaSpec>-->
-				
-				<!--<schemaSpec ident="schema.persons" xml:lang="en" start="person" prefix="rswa_">
-					<desc>Persons</desc>
-					<moduleRef key="tei"/>
-					<moduleRef key="core"
-						include="abbr add author bibl choice cit corr date del desc expan gap gloss graphic head hi item l lb lg list listBibl milestone name note p pb q quote ref rs sic sp speaker stage textLang time title unclear"/>
-					<moduleRef key="header" include="idno"/>
-					<moduleRef key="namesdates" include="affiliation birth death event faith listEvent occupation orgName persName person placeName residence sex state"/>
-					<moduleRef key="linking" include="ab anchor seg"/>
-					<moduleRef key="certainty" include="respons"/>
-					<moduleRef key="figures" include="cell figDesc figure row table"/>
-					
-					<specGrpRef target="#edits.classes.att"/>
-					<specGrpRef target="#edits.datatypes"/>
-					<specGrpRef target="#edits.elements"/>
-					<specGrpRef target="#edits.macros"/>
-				</schemaSpec>-->
-				
-<!--				<schemaSpec ident="schema.events" xml:lang="en" start="TEI" prefix="rswa_">
-					<desc>Events related to Strauss</desc>
-					<moduleRef key="tei"/>
-					<moduleRef key="core"
-						include="abbr add author bibl choice cit corr date del desc expan gap graphic head hi item l lb lg list listBibl milestone name note p pb q quote ref resp respStmt rs sic sp speaker stage textLang time title unclear"/>
-					<moduleRef key="header" include="availability change creation fileDesc idno profileDesc publicationStmt sourceDesc teiHeader titleStmt"/>
-					<moduleRef key="namesdates" include="orgName persName placeName"/>
-					<moduleRef key="linking" include="ab anchor seg"/>
-					<moduleRef key="certainty" include="respons"/>
-					<moduleRef key="figures" include="cell figDesc figure row table"/>
-					<moduleRef key="textstructure" include="TEI body div text"/>
-					
-					<specGrpRef target="#edits.classes.att"/>
-					<specGrpRef target="#edits.datatypes"/>
-					<specGrpRef target="#edits.elements"/>
-					<specGrpRef target="#edits.macros"/>
-					
-					<specGrpRef target="#edits.elements.events"/>
-				</schemaSpec>-->
-				
-<!--				<schemaSpec ident="schema.performance" xml:lang="en" start="performance" prefix="rswa_">
-					<desc>Performances (currently only of Strauss's works)</desc>
-					<moduleRef key="tei"/>
-					<moduleRef key="core"
-						include="abbr add author bibl choice cit corr date del desc expan gap graphic head hi item l lb lg list listBibl milestone name note p pb q quote ref rs sic sp speaker stage textLang time title unclear"/>
-					<moduleRef key="header" include="idno"/>
-					<moduleRef key="namesdates" include="country orgName persName placeName settlement"/>
-					<moduleRef key="linking" include="ab anchor seg"/>
-					<moduleRef key="certainty" include="respons"/>
-					<moduleRef key="figures" include="cell figDesc figure row table"/>
-					<moduleRef key="drama" include="actor castItem castList performance role"/>
-					
-					<specGrpRef target="#edits.classes.att"/>
-					<specGrpRef target="#edits.datatypes"/>
-					<specGrpRef target="#edits.elements"/>
-					<specGrpRef target="#edits.macros"/>
-				</schemaSpec>-->
-				
-				<!--<schemaSpec ident="schema.work" ns="http://www.music-encoding.org/ns/mei" xml:lang="en"
-					start="mei source" prefix="mei_">
-					<desc>Compositions by Strauss and other works of art. Based on Peter Stadler's WeGA ODD.</desc>
-					<specGrpRef target="#extension.MEI-head"/>
-					
-					<xi:include href="extension/MEI-head.xml"/>
-				</schemaSpec>-->
-				
-				<!--<schemaSpec ident="schema.place" xml:lang="en" start="place" prefix="rswa_">
-					<desc>Places. Based on Anna Maria Komprecht's WeGA ODD.</desc>
-					<moduleRef key="tei"/>
-					<moduleRef key="core"
-						include="cit date hi item l lb lg list listBibl note p q quote rs"/>
-					<moduleRef key="header" include="idno"/>
-					<moduleRef key="namesdates"
-						include="country district geo location place placeName region settlement trait"/>
-					<moduleRef key="linking" include=""/>
-					<specGrpRef target="#edits.elements.place"/>
-				</schemaSpec>-->
-				
-				<!--<schemaSpec ident="schema.repository" xml:lang="en" start="ab" prefix="rswa_">
-					<desc>Repositories</desc>
-					<moduleRef key="tei"/>
-					<moduleRef key="header" include="idno"/>
-					<moduleRef key="core" include="name"/>
-					<moduleRef key="namesdates" include="country settlement"/>
-					<moduleRef key="linking" include="ab"/>
-				</schemaSpec>-->
 			</div>
-			
-			<!--<div>
-				<head>TEI Extensions</head>
-				<xi:include href="extension/tasks.xml"/>
-				<xi:include href="extension/mei.xml"/>
-			</div>
-			<div>
-				<head>Edits</head>
-				<xi:include href="edits/classes.att.xml"/>
-				<xi:include href="edits/datatypes.xml"/>
-				<xi:include href="edits/elements.xml"/>
-				<xi:include href="edits/macros.xml"/>
-			</div>-->
+
 		</body>
 	</text>
 </TEI>

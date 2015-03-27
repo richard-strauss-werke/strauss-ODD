@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2015-02-12T09:31:12Z. 
+Schema generated from ODD source 2015-03-26T11:02:58Z. 
 Edition: Version 2.7.0. Last updated on
 	16th September 2014, revision 13036
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
@@ -2595,8 +2595,12 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
          <ref name="rswa_macro.form.commentaryNote"/>
          <ref name="rswa_macro.form.discussionNote"/>
          <ref name="rswa_macro.form.uncategorizedNote"/>
-         <ref name="rswa_macro.form.gndIdno"/>
-         <ref name="rswa_macro.form.rsqvIdno"/>
+         <oneOrMore>
+            <choice>
+               <ref name="rswa_macro.form.gndIdno"/>
+               <ref name="rswa_macro.form.rsqvIdno"/>
+            </choice>
+         </oneOrMore>
          <group>
             <element name="orgName">
                <attribute name="type">

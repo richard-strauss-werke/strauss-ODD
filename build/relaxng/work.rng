@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.music-encoding.org/ns/mei"><!--
-Schema generated from ODD source 2015-02-12T09:31:57Z. 
+Schema generated from ODD source 2015-03-26T11:03:31Z. 
 Edition: Version 2.7.0. Last updated on
 	16th September 2014, revision 13036
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
@@ -3389,7 +3389,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
                <text/>
                <ref name="mei_model.textphraseLike"/>
             </choice>
-         </zeroOrMore>  
+         </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="schema.work-date-dateHeuristics1-constraint-1">
             <rule context="mei:date">
@@ -3401,7 +3401,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
                            xmlns:xi="http://www.w3.org/2001/XInclude"
                            test="(@notbefore gt @notafter) and not(starts-with(@notbefore, '-'))">value of notBefore greater than notAfter</sch:report>
             </rule>
-         </pattern>  
+         </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="schema.work-date-dateHeuristics3-constraint-2">
             <rule context="mei:date">
@@ -3413,7 +3413,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
                            xmlns:xi="http://www.w3.org/2001/XInclude"
                            test="(@startdate or @enddate) and (@isodate or @notafter or @notbefore)">cooccurence of date and duration attributes</sch:report>
             </rule>
-         </pattern>  
+         </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="schema.work-date-dateHeuristics4-constraint-3">
             <rule context="mei:date">

@@ -591,7 +591,7 @@
 		</xsl:if>
 	</xsl:template>
 
-	<!-- @rsga:pdf and @rsga:seitepdf only refer to internal files and will be removed from the public version -->
+	<!-- @rsga:pdf and @rsga:seitepdf only refer to internal files and get removed from the public version -->
 	<xsl:template name="processRs">
 		<xsl:if test="normalize-space()">
 			<xsl:copy>

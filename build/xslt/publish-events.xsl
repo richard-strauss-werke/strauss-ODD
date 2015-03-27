@@ -62,24 +62,6 @@
       <empty/>
    </xsl:variable>
    <xsl:variable name="keywords">
-      <term ref="http://d-nb.info/gnd/4008240-4">Brief</term>
-      <term ref="http://d-nb.info/gnd/4046902-5">Postkarte</term>
-      <term/>
-      <term ref="http://d-nb.info/gnd/4146614-7">Briefumschlag</term>
-      <term ref="http://d-nb.info/gnd/4184647-3">Telegramm</term>
-      <term ref="http://d-nb.info/gnd/4180011-4">schriftliche Mitteilung</term>
-      <term ref="http://d-nb.info/gnd/4188409-7">Visitenkarte</term>
-      <term ref="http://d-nb.info/gnd/4063270-2">Vertrag</term>
-      <term ref="http://d-nb.info/gnd/4206777-7">Notiz</term>
-      <term ref="http://d-nb.info/gnd/4225695-1">Notizbuch</term>
-      <term ref="http://d-nb.info/gnd/4040847-4">Musikhandschrift</term>
-      <term ref="http://d-nb.info/gnd/4180009-6">Schriftstück</term>
-      <term ref="http://d-nb.info/gnd/4185060-9">Theaterzettel</term>
-      <term ref="http://d-nb.info/gnd/4127900-1">Zeichnung</term>
-      <term ref="http://d-nb.info/gnd/4152458-5">Entwurfszeichnung</term>
-      <term ref="http://d-nb.info/gnd/4113357-2">Druckgraphik</term>
-      <term ref="http://d-nb.info/gnd/4122164-3">Gemälde</term>
-      <term ref="http://d-nb.info/gnd/4045895-7">Photographie</term>
       <empty/>
    </xsl:variable>
    <xsl:template match="@*|node()|comment()|processing-instruction()|text()"
@@ -100,9 +82,6 @@
    <xsl:template match="desc">
       <xsl:call-template name="keepOnlyWithAnyText"/>
    </xsl:template>
-   <xsl:template match="term">
-      <xsl:call-template name="addTermRef"/>
-   </xsl:template>
    <xsl:template match="rs">
       <xsl:call-template name="processRs"/>
    </xsl:template>
@@ -122,10 +101,7 @@
       <xsl:call-template name="keepOnlyWithAnyText"/>
    </xsl:template>
    <xsl:template match="titleStmt">
-      <xsl:call-template name="expandTitleStmtGraphic"/>
-   </xsl:template>
-   <xsl:template match="edition">
-      <xsl:call-template name="expandEdition"/>
+      <xsl:call-template name="expandTitleStmtEvent"/>
    </xsl:template>
    <xsl:template match="publicationStmt">
       <xsl:call-template name="expandPublicationStmt"/>
@@ -133,20 +109,8 @@
    <xsl:template match="idno">
       <xsl:call-template name="keepOnlyWithContent"/>
    </xsl:template>
-   <xsl:template match="notesStmt">
-      <xsl:call-template name="keepOnlyWithGrandChildContent"/>
-   </xsl:template>
-   <xsl:template match="editorialDecl">
-      <xsl:call-template name="expandEditorialDecl"/>
-   </xsl:template>
    <xsl:template match="profileDesc">
       <xsl:call-template name="keepOnlyWithAnyText"/>
-   </xsl:template>
-   <xsl:template match="textClass">
-      <xsl:call-template name="keepOnlyWithAnyText"/>
-   </xsl:template>
-   <xsl:template match="revisionDesc">
-      <xsl:call-template name="keepOnlyWithContent"/>
    </xsl:template>
    <xsl:template match="orgName">
       <xsl:call-template name="onlyWithContentAddCert"/>
@@ -163,56 +127,20 @@
    <xsl:template match="respons">
       <xsl:call-template name="transformRespons"/>
    </xsl:template>
-   <xsl:template match="text">
-      <xsl:call-template name="replaceTextByGraphic"/>
-   </xsl:template>
    <xsl:template match="div">
       <xsl:call-template name="processDiv"/>
    </xsl:template>
-   <xsl:template match="origDate">
-      <xsl:call-template name="expandOrRemoveDate"/>
-   </xsl:template>
-   <xsl:template match="origPlace">
-      <xsl:call-template name="expandOrRemoveOrigPlace"/>
-   </xsl:template>
-   <xsl:template match="repository">
-      <xsl:call-template name="transformOrRemoveRepository"/>
-   </xsl:template>
-   <xsl:template match="collection">
-      <xsl:call-template name="keepOnlyWithContent"/>
-   </xsl:template>
-   <xsl:template match="physDesc">
-      <xsl:call-template name="processPhysDesc"/>
-   </xsl:template>
-   <xsl:template match="objectDesc">
-      <xsl:call-template name="keepOnlyWithAnyText"/>
-   </xsl:template>
-   <xsl:template match="additions">
-      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
-   </xsl:template>
-   <xsl:template match="additional">
-      <xsl:call-template name="keepOnlyWithAnyAttOrAnyText"/>
-   </xsl:template>
-   <xsl:template match="rsga:taskDesc">
-      <xsl:call-template name="warnIfHasChildOrRemove"/>
-   </xsl:template>
-   <xsl:template match="notesStmt/note[@type='commentary']">
+   <xsl:template match="change/note[@type='commentary']">
       <xsl:call-template name="tightenCommentary"/>
    </xsl:template>
-   <xsl:template match="notesStmt/note[@type='summary']">
+   <xsl:template match="change/note[@type='summary']">
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
    </xsl:template>
-   <xsl:template match="notesStmt/note[@type='discussion']">
+   <xsl:template match="change/note[@type='discussion']">
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
    </xsl:template>
-   <xsl:template match="notesStmt/note[@type='uncategorized']">
+   <xsl:template match="change/note[@type='uncategorized']">
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
-   </xsl:template>
-   <xsl:template match="listChange/change">
-      <xsl:call-template name="processCreationChangeMs"/>
-   </xsl:template>
-   <xsl:template match="revisionDesc/change">
-      <xsl:call-template name="processRevisionDescChange"/>
    </xsl:template>
    <xsl:template match="listBibl/bibl">
       <xsl:call-template name="transformOrRemoveBibl"/>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" xml:base="file:/c:/eXist-db/webapp/ahlsen/strauss-ODD/strauss-ODD/src/literature.odd.xml" xml:lang="en"><?TEIVERSION Version 2.7.0. Last updated on
+<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" xml:base="file:/d:/current/strauss-ODD/strauss-ODD/src/literature.odd.xml" xml:lang="en"><?TEIVERSION Version 2.7.0. Last updated on
 	16th September 2014, revision 13036?>
 	<teiHeader>
 		<fileDesc>
@@ -67,7 +67,7 @@
 			</div>
 			<div>
 				<head>Spezifikationen</head>
-				<schemaSpec ident="schema.literature" xml:lang="en" start="TEI" prefix="rswa_" source="/Program Files/Oxygen XML Editor 16/frameworks/tei/xml/tei/odd/p5subset.xml"><classSpec module="tei" type="atts" ident="att.ascribed">
+				<schemaSpec ident="schema.literature" xml:lang="en" start="TEI" prefix="rswa_" source="/current/strauss-ODD/strauss-ODD/dependencies/p5subset.xml"><classSpec module="tei" type="atts" ident="att.ascribed">
   <desc versionDate="2006-01-05" xml:lang="en">provides attributes for elements representing speech or action that can be ascribed to a
     specific individual.</desc>
   <desc versionDate="2007-12-20" xml:lang="ko">특정 개인의 대화 또는 행위를 표시하는 요소에 대한 속성을 제공한다.</desc>
@@ -11761,7 +11761,7 @@ manuscripts, not necessarily located within a single repository.</desc><desc ver
                                 encode the music notation.</p>
 			</remarks><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/FT.html#FTNM">14.3. </ref>
-  </listRef></elementSpec><moduleRef url="/eXist-db/webapp/ahlsen/strauss-ODD/strauss-ODD/dependencies/mei2vexflow-modified.rng" prefix="mei_"/><elementSpec rend="add" module="derived-module-schema.literature" ident="taskDesc" mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0"><equiv filter="rswa.xsl" mimeType="text/xsl" name="warnIfHasChildOrRemove"/><content>
+  </listRef></elementSpec><moduleRef url="/current/strauss-ODD/strauss-ODD/dependencies/mei2vexflow-modified.rng" prefix="mei_"/><elementSpec rend="add" module="derived-module-schema.literature" ident="taskDesc" mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0"><equiv filter="rswa.xsl" mimeType="text/xsl" name="warnIfHasChildOrRemove"/><content>
 				<zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="task"/></zeroOrMore>
 			</content><attList/></elementSpec><elementSpec rend="add" module="derived-module-schema.literature" ident="task" mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0"><content>
 				<oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="p"/></oneOrMore>
@@ -12341,132 +12341,7 @@ manuscripts, not necessarily located within a single repository.</desc><desc ver
 		Element <gi>residence</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>objectDesc</gi></cell><cell>change</cell></row></table>
 	
-</div><!-- not in use --><!-- 
-<elementSpec ident="rs" module="core" mode="change">
-	<gloss versionDate="2005-01-14" xml:lang="en">referencing string</gloss>
-	<gloss versionDate="2014-02-06" xml:lang="de">verweisende Zeichenfolge</gloss>
-	<desc versionDate="2005-01-14" xml:lang="en">contains a general purpose name or referring string.</desc>
-	<desc versionDate="2014-02-06" xml:lang="de"
-		>Mehrzweckelement; enthält eine Zeichenfolge, die allgemein etwas benennt oder auf etwas verweist.</desc>
-	<classes mode="change">
-		<memberOf key="att.naming" mode="delete"/>
-		<memberOf key="att.typed" mode="delete"/>
-	</classes>
-	<content>
-		<ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/>
-		<rng:optional>
-			<rng:choice>
-				<rng:group>
-					<rng:attribute name="type">
-						<rng:value>compilation</rng:value>
-					</rng:attribute>
-					<rng:attribute name="key">
-						<rng:ref name="data.compilationKey"/>
-					</rng:attribute>
-				</rng:group>
-				<rng:group>
-					<rng:attribute name="type">
-						<rng:value>letter</rng:value>
-					</rng:attribute>
-					<rng:attribute name="key">
-						<rng:ref name="data.correspKey"/>
-					</rng:attribute>
-				</rng:group>
-				<rng:group>
-					<rng:attribute name="type">
-						<rng:value>person</rng:value>
-					</rng:attribute>
-					<rng:attribute name="key">
-						<rng:ref name="data.personKey"/>
-					</rng:attribute>
-				</rng:group>
-				<rng:group>
-					<rng:attribute name="type">
-						<rng:value>org</rng:value>
-					</rng:attribute>
-					<rng:attribute name="key">
-						<rng:ref name="data.orgKey"/>
-					</rng:attribute>
-				</rng:group>
-				<rng:group>
-					<rng:attribute name="type">
-						<rng:value>event</rng:value>
-					</rng:attribute>
-					<rng:attribute name="key">
-						<rng:ref name="data.eventKey"/>
-					</rng:attribute>
-				</rng:group>
-				<rng:group>
-					<rng:attribute name="type">
-						<rng:choice>
-							<rng:value>lit</rng:value>
-							<rng:value>rez</rng:value>
-						</rng:choice>
-					</rng:attribute>
-					<rng:attribute name="key">
-						<rng:choice>
-							<rng:ref name="data.literatureKey"/>
-							<rng:ref name="data.receptionKey"/>
-						</rng:choice>
-					</rng:attribute>
-					<rng:optional>
-						<rng:attribute name="pdf" ns="http://richard-strauss-ausgabe.de/ns/1.0">
-							<rng:ref name="data.pointer"/>
-						</rng:attribute>
-					</rng:optional>
-					<rng:optional>
-						<rng:attribute name="seite" ns="http://richard-strauss-ausgabe.de/ns/1.0">
-							<rng:ref name="data.text"/>
-						</rng:attribute>
-					</rng:optional>
-					<rng:optional>
-						<rng:attribute name="seitepdf"
-							ns="http://richard-strauss-ausgabe.de/ns/1.0">
-							<rng:ref name="data.count"/>
-						</rng:attribute>
-					</rng:optional>
-					<rng:optional>
-						<rng:attribute name="cert"
-							ns="http://richard-strauss-ausgabe.de/ns/1.0">
-							<rng:ref name="data.certainty"/>
-						</rng:attribute>
-					</rng:optional>
-				</rng:group>
-				<rng:group>
-					<rng:attribute name="type">
-						<rng:value>graphic</rng:value>
-					</rng:attribute>
-					<rng:attribute name="key">
-						<rng:ref name="data.graphicKey"/>
-					</rng:attribute>
-				</rng:group>
-				<rng:group>
-					<rng:attribute name="type">
-						<rng:value>work</rng:value>
-					</rng:attribute>
-					<rng:optional>
-						<rng:attribute name="key">
-							<rng:ref name="data.workKey"/>
-						</rng:attribute>
-					</rng:optional>
-				</rng:group>
-				<rng:group>
-					<rng:attribute name="type">
-						<rng:value>performance</rng:value>
-					</rng:attribute>
-					<rng:attribute name="key">
-						<rng:ref name="data.performanceKey"/>
-					</rng:attribute>
-				</rng:group>
-			</rng:choice>
-		</rng:optional>
-	</content>
-	<listRef>
-					<ptr target="#NDPER"/>
-					<ptr target="#CONARS"/>
-				</listRef>
-</elementSpec>
--->
+</div>
 				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="edits/macros.xml" xml:lang="">
 	<head>Macros</head>
 	<table><row><cell>
