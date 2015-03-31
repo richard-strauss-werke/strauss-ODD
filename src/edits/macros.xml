@@ -181,8 +181,8 @@
 
 		<macroSpec ident="macro.form.commentaryNote">
 			<equiv filter="rswa.xsl" mimeType="text/xsl" name="tightenCommentary"/>
-			<gloss versionDate="2014-01-26" xml:lang="en">Details note</gloss>
-			<gloss versionDate="2014-01-26" xml:lang="de">Detail-Anmerkung</gloss>
+			<gloss versionDate="2014-01-26" xml:lang="en">Commentary note</gloss>
+			<gloss versionDate="2014-01-26" xml:lang="de">Kommentar-Anmerkung</gloss>
 			<desc versionDate="2014-01-26" xml:lang="en"
 				>Macro for a <gi>note</gi> element in which (work specific) commentaries about the object described in the containing element are specified.</desc>
 			<desc versionDate="2014-01-26" xml:lang="de"
@@ -194,6 +194,7 @@
 					</rng:attribute>
 					<rng:zeroOrMore>
 						<rng:element name="note">
+							<rng:ref name="rswa_att.global.attribute.xmlid"/>
 							<rng:ref name="rs"/>
 							<rng:oneOrMore>
 								<rng:ref name="p"/>
@@ -544,6 +545,7 @@
 						<rng:ref name="rs"/>
 					</rng:optional>
 					<rng:element name="note">
+						<rng:ref name="rswa_att.global.attribute.xmlid"/>
 						<rng:oneOrMore>
 							<rng:ref name="p"/>
 						</rng:oneOrMore>
