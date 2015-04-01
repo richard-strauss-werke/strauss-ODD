@@ -70,7 +70,7 @@
 			</div>
 			<div>
 				<head>Spezifikationen</head>
-				<schemaSpec ident="schema.literature" xml:lang="en" start="TEI" prefix="rswa_">
+				<schemaSpec ident="schema.literature" xml:lang="en" start="TEI" prefix="rsw_">
 					<desc>Transcriptions of printed sources: Articles, reviews, books, etc.</desc>
 					<moduleRef key="tei"/>
 					<moduleRef key="core"
@@ -129,11 +129,11 @@
 					</elementSpec>
 					
 					<elementSpec ident="titleStmt" module="header" mode="change">
-						<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandTitleStmtPrint"/>
+						<equiv filter="rsw.xsl" mimeType="text/xsl" name="expandTitleStmtPrint"/>
 					</elementSpec>
 					
 					<elementSpec ident="publicationStmt" mode="replace" module="header">
-						<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandPublicationStmt"/>
+						<equiv filter="rsw.xsl" mimeType="text/xsl" name="expandPublicationStmt"/>
 						<content>
 							<rng:ref name="macro.form.publicationStmt_print"/>
 						</content>
@@ -145,7 +145,7 @@
 					</elementSpec>
 					<elementSpec ident="creation" module="header" mode="delete"/>
 					<elementSpec ident="term" module="core" mode="change">
-						<equiv filter="rswa.xsl" mimeType="text/xsl" name="addTermRef"/>
+						<equiv filter="rsw.xsl" mimeType="text/xsl" name="addTermRef"/>
 						<content>
 							<rng:optional>
 								<rng:ref name="data.keyword_print"/>

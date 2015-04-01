@@ -7,7 +7,7 @@
 	<specGrp xml:id="edits.macros">
 
 		<macroSpec ident="macro.form.date">
-			<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandOrRemoveDate"/>
+			<equiv filter="rsw.xsl" mimeType="text/xsl" name="expandOrRemoveDate"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">date (form)</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">Datum (Formular)</gloss>
 			<desc versionDate="2014-01-26" xml:lang="en"
@@ -107,7 +107,7 @@
 				>Macro for a <gi>idno</gi> element in which a <att>type</att> attribute with the value <val>UAG</val> must be present.</desc>
 			<desc versionDate="2014-01-26" xml:lang="de"
 				>Makro für ein <gi>idno</gi>-Element, in dem ein <att>type</att>-Attribut mit dem Wert <val>UAG</val> vorhanden sein muss.</desc>
-			<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
+			<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
 			<content>
 				<rng:zeroOrMore>
 					<rng:element name="idno">
@@ -159,7 +159,7 @@
 		</macroSpec>
 
 		<macroSpec ident="macro.form.datePlaceNameHead">
-			<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
+			<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">head with date and placeName</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">head mit date und placeName</gloss>
 			<desc versionDate="2014-01-26" xml:lang="en"
@@ -180,7 +180,7 @@
 		
 
 		<macroSpec ident="macro.form.commentaryNote">
-			<equiv filter="rswa.xsl" mimeType="text/xsl" name="tightenCommentary"/>
+			<equiv filter="rsw.xsl" mimeType="text/xsl" name="tightenCommentary"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">Commentary note</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">Kommentar-Anmerkung</gloss>
 			<desc versionDate="2014-01-26" xml:lang="en"
@@ -194,7 +194,7 @@
 					</rng:attribute>
 					<rng:zeroOrMore>
 						<rng:element name="note">
-							<rng:ref name="rswa_att.global.attribute.xmlid"/>
+							<rng:ref name="rsw_att.global.attribute.xmlid"/>
 							<rng:ref name="rs"/>
 							<rng:oneOrMore>
 								<rng:ref name="p"/>
@@ -206,7 +206,7 @@
 		</macroSpec>
 
 		<macroSpec ident="macro.form.summaryNote">
-			<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
+			<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">Details note</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">Detail-Anmerkung</gloss>
 			<desc versionDate="2014-01-26" xml:lang="en"
@@ -224,7 +224,7 @@
 		</macroSpec>
 
 		<macroSpec ident="macro.form.discussionNote">
-			<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
+			<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">discussion note</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">Diskussions-Anmerkung</gloss>
 			<desc versionDate="2014-01-26" xml:lang="en"
@@ -242,7 +242,7 @@
 		</macroSpec>
 
 		<macroSpec ident="macro.form.uncategorizedNote">
-			<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
+			<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">uncategorized note</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">Anmerkung ohne Kategorie</gloss>
 			<desc versionDate="2014-01-26" xml:lang="en"
@@ -260,7 +260,7 @@
 		</macroSpec>
 
 		<macroSpec ident="macro.form.detailsNote">
-			<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
+			<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">Details note</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">Detail-Anmerkung</gloss>
 			<desc versionDate="2014-01-26" xml:lang="en"
@@ -278,7 +278,7 @@
 		</macroSpec>
 
 		<macroSpec ident="macro.form.figuresNote">
-			<equiv filter="rswa.xsl" mimeType="text/xsl"
+			<equiv filter="rsw.xsl" mimeType="text/xsl"
 				name="keepOnlyWithChildAttOrAnyText"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">Figures</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">Abbildungen</gloss>
@@ -375,7 +375,7 @@
 		</macroSpec>
 		
 		<macroSpec ident="macro.form.creation.change_ms">
-		<equiv filter="rswa.xsl" mimeType="text/xsl" name="processCreationChangeMs"/>
+		<equiv filter="rsw.xsl" mimeType="text/xsl" name="processCreationChangeMs"/>
 			<content>
 				<rng:element name="change">
 					<rng:optional>
@@ -513,7 +513,7 @@
 		</macroSpec>
 
 		<macroSpec ident="macro.form.revisionDescChange">
-			<equiv filter="rswa.xsl" mimeType="text/xsl" name="processRevisionDescChange"/>
+			<equiv filter="rsw.xsl" mimeType="text/xsl" name="processRevisionDescChange"/>
 			<content>
 				<rng:element name="change">
 					<rng:optional>
@@ -533,7 +533,7 @@
 		</macroSpec>
 
 		<macroSpec ident="macro.form.bibl">
-			<equiv filter="rswa.xsl" mimeType="text/xsl" name="transformOrRemoveBibl"/>
+			<equiv filter="rsw.xsl" mimeType="text/xsl" name="transformOrRemoveBibl"/>
 			<content>
 				<rng:element name="bibl">
 					<rng:optional>
@@ -545,7 +545,7 @@
 						<rng:ref name="rs"/>
 					</rng:optional>
 					<rng:element name="note">
-						<rng:ref name="rswa_att.global.attribute.xmlid"/>
+						<rng:ref name="rsw_att.global.attribute.xmlid"/>
 						<rng:oneOrMore>
 							<rng:ref name="p"/>
 						</rng:oneOrMore>

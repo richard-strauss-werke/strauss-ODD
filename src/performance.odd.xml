@@ -18,7 +18,7 @@
 	</teiHeader>
 	<text>
 		<body>
-			<schemaSpec ident="schema.performance" xml:lang="en" start="performance" prefix="rswa_">
+			<schemaSpec ident="schema.performance" xml:lang="en" start="performance" prefix="rsw_">
 				<desc>Performances (currently only of Strauss's works)</desc>
 				<moduleRef key="tei"/>
 				<moduleRef key="core"

@@ -18,7 +18,7 @@
 	</teiHeader>
 	<text>
 		<body>
-			<schemaSpec ident="schema.place" xml:lang="en" start="place" prefix="rswa_">
+			<schemaSpec ident="schema.place" xml:lang="en" start="place" prefix="rsw_">
 				<desc>Places. Based on Anna Maria Komprecht's WeGA ODD.</desc>
 				<moduleRef key="tei"/>
 				<moduleRef key="core"

@@ -18,7 +18,7 @@
 	</teiHeader>
 	<text>
 		<body>
-			<schemaSpec ident="schema.repository" xml:lang="en" start="ab" prefix="rswa_">
+			<schemaSpec ident="schema.repository" xml:lang="en" start="ab" prefix="rsw_">
 				<desc>Repositories</desc>
 				<moduleRef key="tei"/>
 				<moduleRef key="header" include="idno"/>

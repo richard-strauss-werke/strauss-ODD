@@ -18,7 +18,7 @@
 	</teiHeader>
 	<text>
 		<body>
-			<schemaSpec ident="schema.org" xml:lang="en" start="org" prefix="rswa_">
+			<schemaSpec ident="schema.org" xml:lang="en" start="org" prefix="rsw_">
 				<desc>Organizations: orchestras, publishing houses, families, etc.</desc>
 				
 				<moduleRef key="tei"/>

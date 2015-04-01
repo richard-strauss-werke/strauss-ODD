@@ -10,7 +10,7 @@
 
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="listBibl" module="core" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyAttOrAnyText"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAnyAttOrAnyText"/>
 				<gloss versionDate="2014-01-26" xml:lang="en">citation list</gloss>
 				<gloss versionDate="2014-01-26" xml:lang="ko">Bibliographie</gloss>
 				<desc versionDate="2014-01-26" xml:lang="en"
@@ -65,7 +65,7 @@
 			</elementSpec>
 
 			<elementSpec ident="textClass" module="header" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
 				<gloss versionDate="2005-01-14" xml:lang="en">text classification</gloss>
 				<gloss versionDate="2006-10-18" xml:lang="de">Textklassifikation</gloss>
 				<classes>
@@ -82,37 +82,37 @@
 			</elementSpec>
 
 			<elementSpec ident="graphic" module="core" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAtt"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAtt"/>
 				<content/>
 			</elementSpec>
 
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="repository" module="namesdates" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="transformOrRemoveRepository"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="transformOrRemoveRepository"/>
 			</elementSpec>
 
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="collection" module="namesdates" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
 			</elementSpec>
 
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="idno" module="header" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
 			</elementSpec>
 
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="additions" module="msdescription" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
 			</elementSpec>
 
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="respStmt" module="core" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandRespStmt"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="expandRespStmt"/>
 			</elementSpec>
 
 			<elementSpec ident="state" module="namesdates" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAttOrChildContent"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAttOrChildContent"/>
 				<gloss versionDate="2014-01-26" xml:lang="en">state</gloss>
 				<gloss versionDate="2014-01-26" xml:lang="de">Status</gloss>
 				<desc versionDate="2014-01-26" xml:lang="en"
@@ -160,7 +160,7 @@
 			</elementSpec>
 
 			<elementSpec ident="person" module="namesdates" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="perOrgRoot"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="perOrgRoot"/>
 				<gloss versionDate="2014-01-26" xml:lang="en">person</gloss>
 				<gloss versionDate="2014-01-26" xml:lang="de">Person</gloss>
 				<desc versionDate="2014-01-26" xml:lang="en"
@@ -227,7 +227,7 @@
 			</elementSpec>
 
 			<elementSpec ident="event" module="namesdates" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
 				<gloss versionDate="2014-01-26" xml:lang="en">event</gloss>
 				<gloss versionDate="2014-01-26" xml:lang="de">Ereignis</gloss>
 				<desc versionDate="2014-01-26" xml:lang="en"
@@ -273,11 +273,11 @@
 			</elementSpec>
 
 			<elementSpec ident="gloss" module="core" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
 			</elementSpec>
 
 			<elementSpec ident="affiliation" module="namesdates" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
 				<gloss versionDate="2014-01-26" xml:lang="en">affiliation</gloss>
 				<gloss versionDate="2014-01-26" xml:lang="de">Zugehörigkeit</gloss>
 				<desc versionDate="2014-01-26" xml:lang="en"
@@ -318,7 +318,7 @@
 			</elementSpec>
 
 			<elementSpec ident="listEvent" module="namesdates" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyAttOrAnyText"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAnyAttOrAnyText"/>
 				<gloss versionDate="2014-01-26" xml:lang="en">list of events</gloss>
 				<gloss versionDate="2014-01-26" xml:lang="de">Ereignisliste</gloss>
 				<desc versionDate="2014-01-26" xml:lang="en"
@@ -359,7 +359,7 @@
 			</elementSpec>
 
 			<elementSpec ident="sex" module="namesdates" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandOrRemoveSexElement"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="expandOrRemoveSexElement"/>
 				<gloss versionDate="2014-01-26" xml:lang="en">sex</gloss>
 				<gloss versionDate="2014-01-26" xml:lang="de">Geschlecht</gloss>
 				<desc versionDate="2014-01-26" xml:lang="en">specifies the sex of a person.</desc>
@@ -433,7 +433,7 @@
 			</elementSpec>
 
 			<elementSpec ident="birth" module="namesdates" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
 				<gloss versionDate="2014-01-26" xml:lang="en">birth</gloss>
 				<gloss versionDate="2014-01-26" xml:lang="de">Geburt</gloss>
 				<desc versionDate="2014-01-26" xml:lang="en"
@@ -478,7 +478,7 @@
 			</elementSpec>
 
 			<elementSpec ident="death" module="namesdates" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
 				<gloss versionDate="2014-01-26" xml:lang="en">death</gloss>
 				<gloss versionDate="2014-01-26" xml:lang="de">Tod</gloss>
 				<desc versionDate="2014-01-26" xml:lang="en"
@@ -520,16 +520,16 @@
 			</elementSpec>
 
 			<elementSpec ident="origDate" module="msdescription" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandOrRemoveDate"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="expandOrRemoveDate"/>
 			</elementSpec>
 
 			<elementSpec ident="origPlace" module="msdescription" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandOrRemoveOrigPlace"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="expandOrRemoveOrigPlace"/>
 			</elementSpec>
 
 
 			<elementSpec ident="notesStmt" mode="replace" module="header">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithGrandChildContent"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithGrandChildContent"/>
 				<content>
 					<rng:group>
 						<rng:ref name="macro.form.summaryNote"/>
@@ -581,7 +581,7 @@
 			</elementSpec>
 
 			<elementSpec ident="org" mode="change" module="namesdates">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="perOrgRoot"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="perOrgRoot"/>
 				<content>
 					<rng:ref name="macro.form.summaryNote"/>
 					<rng:ref name="macro.form.commentaryNote"/>
@@ -624,7 +624,7 @@
 			</elementSpec>
 
 			<elementSpec ident="editorialDecl" mode="replace" module="header">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandEditorialDecl"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="expandEditorialDecl"/>
 				<content>
 					<rng:oneOrMore>
 						<rng:ref name="p"/>
@@ -658,7 +658,7 @@
 			</elementSpec>
 
 			<elementSpec ident="physDesc" module="msdescription" mode="replace">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="processPhysDesc"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="processPhysDesc"/>
 				<content>
 					<rng:group>
 						<rng:oneOrMore>
@@ -685,7 +685,7 @@
 			</elementSpec>
 
 			<elementSpec ident="additional" module="msdescription" mode="replace">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyAttOrAnyText"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAnyAttOrAnyText"/>
 				<content>
 					<rng:group>
 						<rng:element name="surrogates">
@@ -924,7 +924,7 @@
 			</elementSpec>
 
 			<elementSpec ident="imprint" mode="replace" module="core">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="processImprint"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="processImprint"/>
 				<content>
 					<rng:element name="biblScope">
 						<rng:attribute name="unit">
@@ -964,7 +964,7 @@
 			</elementSpec>
 
 			<elementSpec ident="series" mode="replace" module="core">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
 				<content>
 					<rng:ref name="title"/>
 					<rng:element name="biblScope">
@@ -977,7 +977,7 @@
 			</elementSpec>
 
 			<elementSpec ident="revisionDesc" mode="replace" module="header">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
 				<content>
 					<rng:zeroOrMore>
 						<rng:ref name="macro.form.revisionDescChange"/>
@@ -1013,7 +1013,7 @@
 			</elementSpec>
 
 			<elementSpec ident="profileDesc" module="header" mode="replace">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
 				<content>
 					<rng:group>
 						<rng:ref name="textClass"/>
@@ -1046,7 +1046,7 @@
 			<!-- ************************ TEI-conformable additions in a separate namespace ************************ -->
 
 			<elementSpec ident="rs" module="core" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="processRs"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="processRs"/>
 				<gloss versionDate="2005-01-14" xml:lang="en">referencing string</gloss>
 				<gloss versionDate="2014-02-06" xml:lang="de">verweisende Zeichenfolge</gloss>
 				<desc versionDate="2014-02-06" xml:lang="en"
@@ -1076,7 +1076,7 @@
 			</elementSpec>
 
 			<elementSpec ident="respons" module="certainty" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="transformRespons"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="transformRespons"/>
 				<attList org="group">
 					<attDef ident="who" mode="change">
 						<datatype>
@@ -1092,7 +1092,7 @@
 			</elementSpec>
 
 			<elementSpec ident="div" module="textstructure" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="processDiv"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="processDiv"/>
 			</elementSpec>
 
 
@@ -1100,77 +1100,77 @@
 				<!-- Element will be removed if there is a type attribute present;
 				the content will then be removed from here and added to the opener or closer.
 				-->
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="removeIfTyped"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="removeIfTyped"/>
 			</elementSpec>
 
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="edition" module="header" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandEdition"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="expandEdition"/>
 			</elementSpec>
 			
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="publisher" module="core" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
 			</elementSpec>
 			
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="pubPlace" module="core" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
 			</elementSpec>
 			
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="textLang" module="core" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
 			</elementSpec>
 			
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="biblScope" module="core" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
 			</elementSpec>
 			
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="title" module="core" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
 			</elementSpec>
 			
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="desc" module="namesdates" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
 			</elementSpec>
 			
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="occupation" module="namesdates" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAttOrContent"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAttOrContent"/>
 			</elementSpec>
 			
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="faith" module="namesdates" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAttOrContent"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAttOrContent"/>
 			</elementSpec>
 			
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="persName" module="namesdates" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="onlyWithContentAddCert"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="onlyWithContentAddCert"/>
 			</elementSpec>
 			
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="orgName" module="namesdates" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="onlyWithContentAddCert"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="onlyWithContentAddCert"/>
 			</elementSpec>
 			
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="placeName" module="namesdates" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="onlyWithContentAddCert"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="onlyWithContentAddCert"/>
 			</elementSpec>
 			
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="residence" module="namesdates" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
 			</elementSpec>
 			
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="objectDesc" module="msdescription" mode="change">
-				<equiv filter="rswa.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
 			</elementSpec>
 
 		</specGrp>

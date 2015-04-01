@@ -4,7 +4,7 @@
                 xmlns:rsga="http://richard-strauss-ausgabe.de/ns/1.0"
                 version="2.0"
                 xpath-default-namespace="http://www.tei-c.org/ns/1.0">
-   <xsl:import href="rswa.xsl"/>
+   <xsl:import href="rsw.xsl"/>
    <xsl:param name="docIDParam" required="no"/>
    <xsl:output method="xml" indent="no" encoding="utf-8"/>
    <xsl:strip-space elements="additional additions address analytic app availability biblStruct body castList choice cit creation div editionStmt editorialDecl encodingDesc epigraph event facsimile figure fileDesc floatingText front graphic handDesc handNote imprint index lg listBibl listChange listEvent monogr msDesc msIdentifier notatedMusic notesStmt objectDesc org performance person physDesc postscript profileDesc projectDesc publicationStmt relatedItem respons respStmt revisionDesc row seriesStmt sourceDesc sp space state subst supportDesc table teiHeader text textClass titleStmt"/>

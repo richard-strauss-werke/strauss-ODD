@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2015-03-31T20:02:44Z. 
+Schema generated from ODD source 2015-04-01T06:24:39Z. 
 Edition: Version 2.7.0. Last updated on
 	16th September 2014, revision 13036
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
@@ -12,41 +12,41 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
    <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron"
            prefix="tei"
            uri="http://www.tei-c.org/ns/1.0"/>
-   <define name="rswa_macro.paraContent">
+   <define name="rsw_macro.paraContent">
       <zeroOrMore>
          <choice>
             <text/>
-            <ref name="rswa_model.gLike"/>
-            <ref name="rswa_model.phrase"/>
-            <ref name="rswa_model.inter"/>
-            <ref name="rswa_model.global"/>
-            <ref name="rswa_lg"/>
+            <ref name="rsw_model.gLike"/>
+            <ref name="rsw_model.phrase"/>
+            <ref name="rsw_model.inter"/>
+            <ref name="rsw_model.global"/>
+            <ref name="rsw_lg"/>
          </choice>
       </zeroOrMore>
    </define>
-   <define name="rswa_macro.phraseSeq">
+   <define name="rsw_macro.phraseSeq">
       <zeroOrMore>
          <choice>
             <text/>
-            <ref name="rswa_model.gLike"/>
-            <ref name="rswa_model.phrase"/>
-            <ref name="rswa_model.global"/>
+            <ref name="rsw_model.gLike"/>
+            <ref name="rsw_model.phrase"/>
+            <ref name="rsw_model.global"/>
          </choice>
       </zeroOrMore>
    </define>
-   <define name="rswa_macro.specialPara">
+   <define name="rsw_macro.specialPara">
       <zeroOrMore>
          <choice>
             <text/>
-            <ref name="rswa_model.gLike"/>
-            <ref name="rswa_model.phrase"/>
-            <ref name="rswa_model.inter"/>
-            <ref name="rswa_model.divPart"/>
-            <ref name="rswa_model.global"/>
+            <ref name="rsw_model.gLike"/>
+            <ref name="rsw_model.phrase"/>
+            <ref name="rsw_model.inter"/>
+            <ref name="rsw_model.divPart"/>
+            <ref name="rsw_model.global"/>
          </choice>
       </zeroOrMore>
    </define>
-   <define name="rswa_data.certainty">
+   <define name="rsw_data.certainty">
       <choice>
          <value>high</value>
          <value>medium</value>
@@ -54,13 +54,13 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
          <value>unknown</value>
       </choice>
    </define>
-   <define name="rswa_data.probability">
+   <define name="rsw_data.probability">
       <data type="double">
          <param name="minInclusive">0</param>
          <param name="maxInclusive">1</param>
       </data>
    </define>
-   <define name="rswa_data.numeric">
+   <define name="rsw_data.numeric">
       <choice>
          <data type="double"/>
          <data type="token">
@@ -69,7 +69,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
          <data type="decimal"/>
       </choice>
    </define>
-   <define name="rswa_data.temporal.w3c">
+   <define name="rsw_data.temporal.w3c">
       <choice>
          <data type="date"/>
          <data type="gYear"/>
@@ -81,40 +81,40 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
          <data type="dateTime"/>
       </choice>
    </define>
-   <define name="rswa_data.truthValue">
+   <define name="rsw_data.truthValue">
       <data type="boolean"/>
    </define>
-   <define name="rswa_data.xTruthValue">
+   <define name="rsw_data.xTruthValue">
       <choice>
          <data type="boolean"/>
          <value>unknown</value>
          <value>inapplicable</value>
       </choice>
    </define>
-   <define name="rswa_data.language">
+   <define name="rsw_data.language">
       <choice>
          <data type="language"/>
          <value/>
       </choice>
    </define>
-   <define name="rswa_data.pointer">
+   <define name="rsw_data.pointer">
       <data type="anyURI"/>
    </define>
-   <define name="rswa_data.word">
+   <define name="rsw_data.word">
       <data type="token">
          <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
       </data>
    </define>
-   <define name="rswa_data.text">
+   <define name="rsw_data.text">
       <data type="string"/>
    </define>
-   <define name="rswa_data.name">
+   <define name="rsw_data.name">
       <data type="Name"/>
    </define>
-   <define name="rswa_data.enumerated">
-      <ref name="rswa_data.name"/>
+   <define name="rsw_data.enumerated">
+      <ref name="rsw_data.name"/>
    </define>
-   <define name="rswa_data.temporal.iso">
+   <define name="rsw_data.temporal.iso">
       <choice>
          <data type="date"/>
          <data type="gYear"/>
@@ -129,101 +129,101 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
          </data>
       </choice>
    </define>
-   <define name="rswa_att.ascribed.attributes">
-      <ref name="rswa_att.ascribed.attribute.who"/>
+   <define name="rsw_att.ascribed.attributes">
+      <ref name="rsw_att.ascribed.attribute.who"/>
    </define>
-   <define name="rswa_att.ascribed.attribute.who">
+   <define name="rsw_att.ascribed.attribute.who">
       <optional>
          <attribute name="who">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the person, or group of people, to whom the element content is ascribed.</a:documentation>
             <list>
                <oneOrMore>
-                  <ref name="rswa_data.pointer"/>
+                  <ref name="rsw_data.pointer"/>
                </oneOrMore>
             </list>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.canonical.attributes">
-      <ref name="rswa_att.canonical.attribute.key"/>
-      <ref name="rswa_att.canonical.attribute.ref"/>
+   <define name="rsw_att.canonical.attributes">
+      <ref name="rsw_att.canonical.attribute.key"/>
+      <ref name="rsw_att.canonical.attribute.ref"/>
    </define>
-   <define name="rswa_att.canonical.attribute.key">
+   <define name="rsw_att.canonical.attribute.key">
       <optional>
          <attribute name="key">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides an externally-defined means of identifying the entity (or entities) being named, using a coded value of some kind.</a:documentation>
-            <ref name="rswa_data.text"/>
+            <ref name="rsw_data.text"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.canonical.attribute.ref">
+   <define name="rsw_att.canonical.attribute.ref">
       <optional>
          <attribute name="ref">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference) provides an explicit means of locating a full definition for the entity being named by means of one or more URIs.</a:documentation>
             <list>
                <oneOrMore>
-                  <ref name="rswa_data.pointer"/>
+                  <ref name="rsw_data.pointer"/>
                </oneOrMore>
             </list>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.ranging.attributes">
-      <ref name="rswa_att.ranging.attribute.atLeast"/>
-      <ref name="rswa_att.ranging.attribute.atMost"/>
-      <ref name="rswa_att.ranging.attribute.min"/>
-      <ref name="rswa_att.ranging.attribute.max"/>
-      <ref name="rswa_att.ranging.attribute.confidence"/>
+   <define name="rsw_att.ranging.attributes">
+      <ref name="rsw_att.ranging.attribute.atLeast"/>
+      <ref name="rsw_att.ranging.attribute.atMost"/>
+      <ref name="rsw_att.ranging.attribute.min"/>
+      <ref name="rsw_att.ranging.attribute.max"/>
+      <ref name="rsw_att.ranging.attribute.confidence"/>
    </define>
-   <define name="rswa_att.ranging.attribute.atLeast">
+   <define name="rsw_att.ranging.attribute.atLeast">
       <optional>
          <attribute name="atLeast">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gives a minimum estimated value for the approximate measurement.</a:documentation>
-            <ref name="rswa_data.numeric"/>
+            <ref name="rsw_data.numeric"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.ranging.attribute.atMost">
+   <define name="rsw_att.ranging.attribute.atMost">
       <optional>
          <attribute name="atMost">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gives a maximum estimated value for the approximate measurement.</a:documentation>
-            <ref name="rswa_data.numeric"/>
+            <ref name="rsw_data.numeric"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.ranging.attribute.min">
+   <define name="rsw_att.ranging.attribute.min">
       <optional>
          <attribute name="min">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">where the measurement summarizes more than one observation or a range, supplies the minimum value observed.</a:documentation>
-            <ref name="rswa_data.numeric"/>
+            <ref name="rsw_data.numeric"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.ranging.attribute.max">
+   <define name="rsw_att.ranging.attribute.max">
       <optional>
          <attribute name="max">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">where the measurement summarizes more than one observation or a range, supplies the maximum value observed.</a:documentation>
-            <ref name="rswa_data.numeric"/>
+            <ref name="rsw_data.numeric"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.ranging.attribute.confidence">
+   <define name="rsw_att.ranging.attribute.confidence">
       <optional>
          <attribute name="confidence">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the degree of statistical confidence (between zero and one) that a value falls within the range specified by min and max, or the proportion of observed values that fall within that range.</a:documentation>
-            <ref name="rswa_data.probability"/>
+            <ref name="rsw_data.probability"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.dimensions.attributes">
-      <ref name="rswa_att.ranging.attributes"/>
-      <ref name="rswa_att.dimensions.attribute.unit"/>
-      <ref name="rswa_att.dimensions.attribute.quantity"/>
-      <ref name="rswa_att.dimensions.attribute.extent"/>
-      <ref name="rswa_att.dimensions.attribute.precision"/>
-      <ref name="rswa_att.dimensions.attribute.scope"/>
+   <define name="rsw_att.dimensions.attributes">
+      <ref name="rsw_att.ranging.attributes"/>
+      <ref name="rsw_att.dimensions.attribute.unit"/>
+      <ref name="rsw_att.dimensions.attribute.quantity"/>
+      <ref name="rsw_att.dimensions.attribute.extent"/>
+      <ref name="rsw_att.dimensions.attribute.precision"/>
+      <ref name="rsw_att.dimensions.attribute.scope"/>
    </define>
-   <define name="rswa_att.dimensions.attribute.unit">
+   <define name="rsw_att.dimensions.attribute.unit">
       <optional>
          <attribute name="unit">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">names the unit used for the measurement
@@ -244,109 +244,109 @@ Empfohlene Werte sind: 1] cm(centimetres) ; 2] mm(millimetres) ; 3] in(inches) ;
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.dimensions.attribute.quantity">
+   <define name="rsw_att.dimensions.attribute.quantity">
       <optional>
          <attribute name="quantity">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the length in the units specified</a:documentation>
-            <ref name="rswa_data.numeric"/>
+            <ref name="rsw_data.numeric"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.dimensions.attribute.extent">
+   <define name="rsw_att.dimensions.attribute.extent">
       <optional>
          <attribute name="extent">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the size of the object concerned using a project-specific vocabulary combining quantity and units in a single string of words.</a:documentation>
-            <ref name="rswa_data.text"/>
+            <ref name="rsw_data.text"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.dimensions.attribute.precision">
+   <define name="rsw_att.dimensions.attribute.precision">
       <optional>
          <attribute name="precision">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the precision of the values specified by the other attributes.</a:documentation>
-            <ref name="rswa_data.certainty"/>
+            <ref name="rsw_data.certainty"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.dimensions.attribute.scope">
+   <define name="rsw_att.dimensions.attribute.scope">
       <optional>
          <attribute name="scope">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">where the measurement summarizes more than one observation, specifies the applicability of this measurement.
 Beispielwerte sind etwa: 1] all; 2] most; 3] range</a:documentation>
-            <ref name="rswa_data.enumerated"/>
+            <ref name="rsw_data.enumerated"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.breaking.attributes">
-      <ref name="rswa_att.breaking.attribute.break"/>
+   <define name="rsw_att.breaking.attributes">
+      <ref name="rsw_att.breaking.attribute.break"/>
    </define>
-   <define name="rswa_att.breaking.attribute.break">
+   <define name="rsw_att.breaking.attribute.break">
       <optional>
          <attribute name="break">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates whether or not the element bearing this attribute should be considered to mark the end of an orthographic token in the same way as whitespace.</a:documentation>
-            <ref name="rswa_data.enumerated"/>
+            <ref name="rsw_data.enumerated"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.datable.w3c.attributes">
-      <ref name="rswa_att.datable.w3c.attribute.when"/>
-      <ref name="rswa_att.datable.w3c.attribute.notBefore"/>
-      <ref name="rswa_att.datable.w3c.attribute.notAfter"/>
-      <ref name="rswa_att.datable.w3c.attribute.from"/>
-      <ref name="rswa_att.datable.w3c.attribute.to"/>
+   <define name="rsw_att.datable.w3c.attributes">
+      <ref name="rsw_att.datable.w3c.attribute.when"/>
+      <ref name="rsw_att.datable.w3c.attribute.notBefore"/>
+      <ref name="rsw_att.datable.w3c.attribute.notAfter"/>
+      <ref name="rsw_att.datable.w3c.attribute.from"/>
+      <ref name="rsw_att.datable.w3c.attribute.to"/>
    </define>
-   <define name="rswa_att.datable.w3c.attribute.when">
+   <define name="rsw_att.datable.w3c.attribute.when">
       <optional>
          <attribute name="when">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies the value of the date or time in a standard form, e.g. yyyy-mm-dd.</a:documentation>
-            <ref name="rswa_data.temporal.w3c"/>
+            <ref name="rsw_data.temporal.w3c"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.datable.w3c.attribute.notBefore">
+   <define name="rsw_att.datable.w3c.attribute.notBefore">
       <optional>
          <attribute name="notBefore">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the earliest possible date for the event in standard form, e.g. yyyy-mm-dd.</a:documentation>
-            <ref name="rswa_data.temporal.w3c"/>
+            <ref name="rsw_data.temporal.w3c"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.datable.w3c.attribute.notAfter">
+   <define name="rsw_att.datable.w3c.attribute.notAfter">
       <optional>
          <attribute name="notAfter">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the latest possible date for the event in standard form, e.g. yyyy-mm-dd.</a:documentation>
-            <ref name="rswa_data.temporal.w3c"/>
+            <ref name="rsw_data.temporal.w3c"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.datable.w3c.attribute.from">
+   <define name="rsw_att.datable.w3c.attribute.from">
       <optional>
          <attribute name="from">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the starting point of the period in standard form, e.g. yyyy-mm-dd.</a:documentation>
-            <ref name="rswa_data.temporal.w3c"/>
+            <ref name="rsw_data.temporal.w3c"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.datable.w3c.attribute.to">
+   <define name="rsw_att.datable.w3c.attribute.to">
       <optional>
          <attribute name="to">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the ending point of the period in standard form, e.g. yyyy-mm-dd.</a:documentation>
-            <ref name="rswa_data.temporal.w3c"/>
+            <ref name="rsw_data.temporal.w3c"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.datable.attributes">
-      <ref name="rswa_att.datable.w3c.attributes"/>
-      <ref name="rswa_att.datable.iso.attributes"/>
-      <ref name="rswa_att.datable.custom.attributes"/>
-      <ref name="rswa_att.datable.attribute.calendar"/>
-      <ref name="rswa_att.datable.attribute.period"/>
+   <define name="rsw_att.datable.attributes">
+      <ref name="rsw_att.datable.w3c.attributes"/>
+      <ref name="rsw_att.datable.iso.attributes"/>
+      <ref name="rsw_att.datable.custom.attributes"/>
+      <ref name="rsw_att.datable.attribute.calendar"/>
+      <ref name="rsw_att.datable.attribute.period"/>
    </define>
-   <define name="rswa_att.datable.attribute.calendar">
+   <define name="rsw_att.datable.attribute.calendar">
       <optional>
          <attribute name="calendar">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the system or calendar to which the date represented by the content of this element belongs.</a:documentation>
-            <ref name="rswa_data.pointer"/>
+            <ref name="rsw_data.pointer"/>
          </attribute>
       </optional>
    </define>
@@ -364,18 +364,18 @@ Beispielwerte sind etwa: 1] all; 2] most; 3] range</a:documentation>
 belongs, but this <sch:name/> element has no textual content.</sch:assert>
           </sch:rule>
    </pattern>
-   <define name="rswa_att.datable.attribute.period">
+   <define name="rsw_att.datable.attribute.period">
       <optional>
          <attribute name="period">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies a pointer to some location defining a named period of time within which the datable item is understood to have occurred.</a:documentation>
-            <ref name="rswa_data.pointer"/>
+            <ref name="rsw_data.pointer"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.declarable.attributes">
-      <ref name="rswa_att.declarable.attribute.default"/>
+   <define name="rsw_att.declarable.attributes">
+      <ref name="rsw_att.declarable.attribute.default"/>
    </define>
-   <define name="rswa_att.declarable.attribute.default">
+   <define name="rsw_att.declarable.attribute.default">
       <optional>
          <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
                     name="default"
@@ -390,25 +390,25 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.declaring.attributes">
-      <ref name="rswa_att.declaring.attribute.decls"/>
+   <define name="rsw_att.declaring.attributes">
+      <ref name="rsw_att.declaring.attribute.decls"/>
    </define>
-   <define name="rswa_att.declaring.attribute.decls">
+   <define name="rsw_att.declaring.attribute.decls">
       <optional>
          <attribute name="decls">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">identifies one or more declarable elements within the header, which are understood to apply to the element bearing this attribute and its content.</a:documentation>
             <list>
                <oneOrMore>
-                  <ref name="rswa_data.pointer"/>
+                  <ref name="rsw_data.pointer"/>
                </oneOrMore>
             </list>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.fragmentable.attributes">
-      <ref name="rswa_att.fragmentable.attribute.part"/>
+   <define name="rsw_att.fragmentable.attributes">
+      <ref name="rsw_att.fragmentable.attribute.part"/>
    </define>
-   <define name="rswa_att.fragmentable.attribute.part">
+   <define name="rsw_att.fragmentable.attribute.part">
       <optional>
          <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
                     name="part"
@@ -429,12 +429,12 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.divLike.attributes">
-      <ref name="rswa_att.fragmentable.attributes"/>
-      <ref name="rswa_att.divLike.attribute.org"/>
-      <ref name="rswa_att.divLike.attribute.sample"/>
+   <define name="rsw_att.divLike.attributes">
+      <ref name="rsw_att.fragmentable.attributes"/>
+      <ref name="rsw_att.divLike.attribute.org"/>
+      <ref name="rsw_att.divLike.attribute.sample"/>
    </define>
-   <define name="rswa_att.divLike.attribute.org">
+   <define name="rsw_att.divLike.attribute.org">
       <optional>
          <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
                     name="org"
@@ -449,7 +449,7 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.divLike.attribute.sample">
+   <define name="rsw_att.divLike.attribute.sample">
       <optional>
          <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
                     name="sample"
@@ -470,38 +470,38 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.responsibility.attributes">
-      <ref name="rswa_att.source.attributes"/>
-      <ref name="rswa_att.responsibility.attribute.cert"/>
-      <ref name="rswa_att.responsibility.attribute.resp"/>
+   <define name="rsw_att.responsibility.attributes">
+      <ref name="rsw_att.source.attributes"/>
+      <ref name="rsw_att.responsibility.attribute.cert"/>
+      <ref name="rsw_att.responsibility.attribute.resp"/>
    </define>
-   <define name="rswa_att.responsibility.attribute.cert">
+   <define name="rsw_att.responsibility.attribute.cert">
       <optional>
          <attribute name="cert">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(certainty) signifies the degree of certainty associated with the intervention or interpretation.</a:documentation>
-            <ref name="rswa_data.certainty"/>
+            <ref name="rsw_data.certainty"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.responsibility.attribute.resp">
+   <define name="rsw_att.responsibility.attribute.resp">
       <optional>
          <attribute name="resp">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(responsible party) indicates the agency responsible for the intervention or interpretation, for example an editor or transcriber.</a:documentation>
             <list>
                <oneOrMore>
-                  <ref name="rswa_data.pointer"/>
+                  <ref name="rsw_data.pointer"/>
                </oneOrMore>
             </list>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.editLike.attributes">
-      <ref name="rswa_att.dimensions.attributes"/>
-      <ref name="rswa_att.responsibility.attributes"/>
-      <ref name="rswa_att.editLike.attribute.evidence"/>
-      <ref name="rswa_att.editLike.attribute.instant"/>
+   <define name="rsw_att.editLike.attributes">
+      <ref name="rsw_att.dimensions.attributes"/>
+      <ref name="rsw_att.responsibility.attributes"/>
+      <ref name="rsw_att.editLike.attribute.evidence"/>
+      <ref name="rsw_att.editLike.attribute.instant"/>
    </define>
-   <define name="rswa_att.editLike.attribute.evidence">
+   <define name="rsw_att.editLike.attribute.evidence">
       <optional>
          <attribute name="evidence">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the nature of the evidence supporting the reliability or accuracy of the intervention or interpretation.
@@ -522,28 +522,28 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.editLike.attribute.instant">
+   <define name="rsw_att.editLike.attribute.instant">
       <optional>
          <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
                     name="instant"
                     a:defaultValue="false">
             <a:documentation>indicates whether this is an instant revision or not.</a:documentation>
-            <ref name="rswa_data.xTruthValue"/>
+            <ref name="rsw_data.xTruthValue"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.global.attributes">
-      <ref name="rswa_att.global.linking.attributes"/>
-      <ref name="rswa_att.global.attribute.xmlid"/>
-      <ref name="rswa_att.global.attribute.n"/>
-      <ref name="rswa_att.global.attribute.xmllang"/>
-      <ref name="rswa_att.global.attribute.rend"/>
-      <ref name="rswa_att.global.attribute.style"/>
-      <ref name="rswa_att.global.attribute.rendition"/>
-      <ref name="rswa_att.global.attribute.xmlbase"/>
-      <ref name="rswa_att.global.attribute.xmlspace"/>
+   <define name="rsw_att.global.attributes">
+      <ref name="rsw_att.global.linking.attributes"/>
+      <ref name="rsw_att.global.attribute.xmlid"/>
+      <ref name="rsw_att.global.attribute.n"/>
+      <ref name="rsw_att.global.attribute.xmllang"/>
+      <ref name="rsw_att.global.attribute.rend"/>
+      <ref name="rsw_att.global.attribute.style"/>
+      <ref name="rsw_att.global.attribute.rendition"/>
+      <ref name="rsw_att.global.attribute.xmlbase"/>
+      <ref name="rsw_att.global.attribute.xmlspace"/>
    </define>
-   <define name="rswa_att.global.attribute.xmlid">
+   <define name="rsw_att.global.attribute.xmlid">
       <optional>
          <attribute name="xml:id">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(identifier) provides a unique identifier for the element bearing the attribute.</a:documentation>
@@ -551,63 +551,63 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.global.attribute.n">
+   <define name="rsw_att.global.attribute.n">
       <optional>
          <attribute name="n">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(number) gives a number (or other label) for an element, which is not necessarily unique within the document.</a:documentation>
-            <ref name="rswa_data.text"/>
+            <ref name="rsw_data.text"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.global.attribute.xmllang">
+   <define name="rsw_att.global.attribute.xmllang">
       <optional>
          <attribute name="xml:lang">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(language) indicates the language of the element content using a tag generated according to BCP 47.</a:documentation>
-            <ref name="rswa_data.language"/>
+            <ref name="rsw_data.language"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.global.attribute.rend">
+   <define name="rsw_att.global.attribute.rend">
       <optional>
          <attribute name="rend">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(rendition) indicates how the element in question was rendered or presented in the source text.</a:documentation>
             <list>
                <oneOrMore>
-                  <ref name="rswa_data.word"/>
+                  <ref name="rsw_data.word"/>
                </oneOrMore>
             </list>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.global.attribute.style">
+   <define name="rsw_att.global.attribute.style">
       <optional>
          <attribute name="style">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains an expression in some formal style definition language which defines the rendering or presentation used for this element in the source text</a:documentation>
-            <ref name="rswa_data.text"/>
+            <ref name="rsw_data.text"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.global.attribute.rendition">
+   <define name="rsw_att.global.attribute.rendition">
       <optional>
          <attribute name="rendition">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to a description of the rendering or presentation used for this element in the source text.</a:documentation>
             <list>
                <oneOrMore>
-                  <ref name="rswa_data.pointer"/>
+                  <ref name="rsw_data.pointer"/>
                </oneOrMore>
             </list>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.global.attribute.xmlbase">
+   <define name="rsw_att.global.attribute.xmlbase">
       <optional>
          <attribute name="xml:base">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides a base URI reference with which applications can resolve relative URI references into absolute URI references.</a:documentation>
-            <ref name="rswa_data.pointer"/>
+            <ref name="rsw_data.pointer"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.global.attribute.xmlspace">
+   <define name="rsw_att.global.attribute.xmlspace">
       <optional>
          <attribute name="xml:space">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">signals an intention about how white space should be managed by applications.</a:documentation>
@@ -620,39 +620,39 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.naming.attributes">
-      <ref name="rswa_att.canonical.attributes"/>
-      <ref name="rswa_att.naming.attribute.role"/>
-      <ref name="rswa_att.naming.attribute.nymRef"/>
+   <define name="rsw_att.naming.attributes">
+      <ref name="rsw_att.canonical.attributes"/>
+      <ref name="rsw_att.naming.attribute.role"/>
+      <ref name="rsw_att.naming.attribute.nymRef"/>
    </define>
-   <define name="rswa_att.naming.attribute.role">
+   <define name="rsw_att.naming.attribute.role">
       <optional>
          <attribute name="role">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">may be used to specify further information about the entity referenced by this name in the form of a set of whitespace-separated values, for example the occupation of a person, or the status of a place.</a:documentation>
             <list>
                <oneOrMore>
-                  <ref name="rswa_data.enumerated"/>
+                  <ref name="rsw_data.enumerated"/>
                </oneOrMore>
             </list>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.naming.attribute.nymRef">
+   <define name="rsw_att.naming.attribute.nymRef">
       <optional>
          <attribute name="nymRef">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference to the canonical name) provides a means of locating the canonical form (nym) of the names associated with the object named by the element bearing it.</a:documentation>
             <list>
                <oneOrMore>
-                  <ref name="rswa_data.pointer"/>
+                  <ref name="rsw_data.pointer"/>
                </oneOrMore>
             </list>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.placement.attributes">
-      <ref name="rswa_att.placement.attribute.place"/>
+   <define name="rsw_att.placement.attributes">
+      <ref name="rsw_att.placement.attribute.place"/>
    </define>
-   <define name="rswa_att.placement.attribute.place">
+   <define name="rsw_att.placement.attribute.place">
       <optional>
          <attribute name="place">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies where this item is placed
@@ -687,23 +687,23 @@ Empfohlene Werte sind: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6] o
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.typed.attributes">
-      <ref name="rswa_att.typed.attribute.type"/>
-      <ref name="rswa_att.typed.attribute.subtype"/>
+   <define name="rsw_att.typed.attributes">
+      <ref name="rsw_att.typed.attribute.type"/>
+      <ref name="rsw_att.typed.attribute.subtype"/>
    </define>
-   <define name="rswa_att.typed.attribute.type">
+   <define name="rsw_att.typed.attribute.type">
       <optional>
          <attribute name="type">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.</a:documentation>
-            <ref name="rswa_data.enumerated"/>
+            <ref name="rsw_data.enumerated"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.typed.attribute.subtype">
+   <define name="rsw_att.typed.attribute.subtype">
       <optional>
          <attribute name="subtype">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides a sub-categorization of the element, if needed</a:documentation>
-            <ref name="rswa_data.enumerated"/>
+            <ref name="rsw_data.enumerated"/>
          </attribute>
       </optional>
    </define>
@@ -720,16 +720,16 @@ Empfohlene Werte sind: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6] o
  unless also categorized in general with @type</sch:assert>
       </sch:rule>
    </pattern>
-   <define name="rswa_att.pointing.attributes">
-      <ref name="rswa_att.pointing.attribute.targetLang"/>
-      <ref name="rswa_att.pointing.attribute.target"/>
-      <ref name="rswa_att.pointing.attribute.evaluate"/>
+   <define name="rsw_att.pointing.attributes">
+      <ref name="rsw_att.pointing.attribute.targetLang"/>
+      <ref name="rsw_att.pointing.attribute.target"/>
+      <ref name="rsw_att.pointing.attribute.evaluate"/>
    </define>
-   <define name="rswa_att.pointing.attribute.targetLang">
+   <define name="rsw_att.pointing.attribute.targetLang">
       <optional>
          <attribute name="targetLang">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the language of the content to be found at the destination referenced by target, using a language tag generated according to BCP 47.</a:documentation>
-            <ref name="rswa_data.language"/>
+            <ref name="rsw_data.language"/>
          </attribute>
       </optional>
    </define>
@@ -745,19 +745,19 @@ Empfohlene Werte sind: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6] o
             <sch:assert test="count(@target)">@targetLang can only be used if @target is specified.</sch:assert>
           </sch:rule>
    </pattern>
-   <define name="rswa_att.pointing.attribute.target">
+   <define name="rsw_att.pointing.attribute.target">
       <optional>
          <attribute name="target">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the destination of the reference by supplying one or more URI References</a:documentation>
             <list>
                <oneOrMore>
-                  <ref name="rswa_data.pointer"/>
+                  <ref name="rsw_data.pointer"/>
                </oneOrMore>
             </list>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.pointing.attribute.evaluate">
+   <define name="rsw_att.pointing.attribute.evaluate">
       <optional>
          <attribute name="evaluate">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the intended meaning when the target of a pointer is itself a pointer.</a:documentation>
@@ -772,53 +772,53 @@ Empfohlene Werte sind: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6] o
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.sortable.attributes">
-      <ref name="rswa_att.sortable.attribute.sortKey"/>
+   <define name="rsw_att.sortable.attributes">
+      <ref name="rsw_att.sortable.attribute.sortKey"/>
    </define>
-   <define name="rswa_att.sortable.attribute.sortKey">
+   <define name="rsw_att.sortable.attribute.sortKey">
       <optional>
          <attribute name="sortKey">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies the sort key for this element in an index, list or group which contains it.</a:documentation>
-            <ref name="rswa_data.word"/>
+            <ref name="rsw_data.word"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.edition.attributes">
-      <ref name="rswa_att.edition.attribute.ed"/>
-      <ref name="rswa_att.edition.attribute.edRef"/>
+   <define name="rsw_att.edition.attributes">
+      <ref name="rsw_att.edition.attribute.ed"/>
+      <ref name="rsw_att.edition.attribute.edRef"/>
    </define>
-   <define name="rswa_att.edition.attribute.ed">
+   <define name="rsw_att.edition.attribute.ed">
       <optional>
          <attribute name="ed">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(edition) supplies a sigil or other arbitrary identifier for the source edition in which the associated feature (for example, a page, column, or line break) occurs at this point in the text.</a:documentation>
             <list>
                <oneOrMore>
-                  <ref name="rswa_data.word"/>
+                  <ref name="rsw_data.word"/>
                </oneOrMore>
             </list>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.edition.attribute.edRef">
+   <define name="rsw_att.edition.attribute.edRef">
       <optional>
          <attribute name="edRef">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(edition reference) provides a pointer to the source edition in which the associated feature (for example, a page, column, or line break) occurs at this point in the text.</a:documentation>
             <list>
                <oneOrMore>
-                  <ref name="rswa_data.pointer"/>
+                  <ref name="rsw_data.pointer"/>
                </oneOrMore>
             </list>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.spanning.attributes">
-      <ref name="rswa_att.spanning.attribute.spanTo"/>
+   <define name="rsw_att.spanning.attributes">
+      <ref name="rsw_att.spanning.attribute.spanTo"/>
    </define>
-   <define name="rswa_att.spanning.attribute.spanTo">
+   <define name="rsw_att.spanning.attribute.spanTo">
       <optional>
          <attribute name="spanTo">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the end of a span initiated by the element bearing this attribute.</a:documentation>
-            <ref name="rswa_data.pointer"/>
+            <ref name="rsw_data.pointer"/>
          </attribute>
       </optional>
    </define>
@@ -836,694 +836,694 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
                   </sch:assert>
           </sch:rule>
    </pattern>
-   <define name="rswa_model.nameLike.agent">
+   <define name="rsw_model.nameLike.agent">
       <notAllowed/>
    </define>
-   <define name="rswa_model.nameLike.agent_alternation">
+   <define name="rsw_model.nameLike.agent_alternation">
       <notAllowed/>
    </define>
-   <define name="rswa_model.nameLike.agent_sequence">
+   <define name="rsw_model.nameLike.agent_sequence">
       <empty/>
    </define>
-   <define name="rswa_model.nameLike.agent_sequenceOptional">
+   <define name="rsw_model.nameLike.agent_sequenceOptional">
       <empty/>
    </define>
-   <define name="rswa_model.nameLike.agent_sequenceOptionalRepeatable">
+   <define name="rsw_model.nameLike.agent_sequenceOptionalRepeatable">
       <empty/>
    </define>
-   <define name="rswa_model.nameLike.agent_sequenceRepeatable">
+   <define name="rsw_model.nameLike.agent_sequenceRepeatable">
       <notAllowed/>
    </define>
-   <define name="rswa_model.segLike">
+   <define name="rsw_model.segLike">
       <notAllowed/>
    </define>
-   <define name="rswa_model.hiLike">
+   <define name="rsw_model.hiLike">
       <choice>
-         <ref name="rswa_hi"/>
+         <ref name="rsw_hi"/>
       </choice>
    </define>
-   <define name="rswa_model.hiLike_alternation">
+   <define name="rsw_model.hiLike_alternation">
       <choice>
-         <ref name="rswa_hi"/>
+         <ref name="rsw_hi"/>
       </choice>
    </define>
-   <define name="rswa_model.hiLike_sequence">
-      <ref name="rswa_hi"/>
+   <define name="rsw_model.hiLike_sequence">
+      <ref name="rsw_hi"/>
    </define>
-   <define name="rswa_model.hiLike_sequenceOptional">
+   <define name="rsw_model.hiLike_sequenceOptional">
       <optional>
-         <ref name="rswa_hi"/>
+         <ref name="rsw_hi"/>
       </optional>
    </define>
-   <define name="rswa_model.hiLike_sequenceOptionalRepeatable">
+   <define name="rsw_model.hiLike_sequenceOptionalRepeatable">
       <zeroOrMore>
-         <ref name="rswa_hi"/>
+         <ref name="rsw_hi"/>
       </zeroOrMore>
    </define>
-   <define name="rswa_model.hiLike_sequenceRepeatable">
+   <define name="rsw_model.hiLike_sequenceRepeatable">
       <oneOrMore>
-         <ref name="rswa_hi"/>
+         <ref name="rsw_hi"/>
       </oneOrMore>
    </define>
-   <define name="rswa_model.emphLike">
+   <define name="rsw_model.emphLike">
       <notAllowed/>
    </define>
-   <define name="rswa_model.emphLike_alternation">
+   <define name="rsw_model.emphLike_alternation">
       <notAllowed/>
    </define>
-   <define name="rswa_model.emphLike_sequence">
+   <define name="rsw_model.emphLike_sequence">
       <empty/>
    </define>
-   <define name="rswa_model.emphLike_sequenceOptional">
+   <define name="rsw_model.emphLike_sequenceOptional">
       <empty/>
    </define>
-   <define name="rswa_model.emphLike_sequenceOptionalRepeatable">
+   <define name="rsw_model.emphLike_sequenceOptionalRepeatable">
       <empty/>
    </define>
-   <define name="rswa_model.emphLike_sequenceRepeatable">
+   <define name="rsw_model.emphLike_sequenceRepeatable">
       <notAllowed/>
    </define>
-   <define name="rswa_model.highlighted">
+   <define name="rsw_model.highlighted">
       <choice>
-         <ref name="rswa_model.hiLike"/>
-         <ref name="rswa_model.emphLike"/>
+         <ref name="rsw_model.hiLike"/>
+         <ref name="rsw_model.emphLike"/>
       </choice>
    </define>
-   <define name="rswa_model.dateLike">
+   <define name="rsw_model.dateLike">
       <choice>
-         <ref name="rswa_date"/>
+         <ref name="rsw_date"/>
       </choice>
    </define>
-   <define name="rswa_model.dateLike_alternation">
+   <define name="rsw_model.dateLike_alternation">
       <choice>
-         <ref name="rswa_date"/>
+         <ref name="rsw_date"/>
       </choice>
    </define>
-   <define name="rswa_model.dateLike_sequence">
-      <ref name="rswa_date"/>
+   <define name="rsw_model.dateLike_sequence">
+      <ref name="rsw_date"/>
    </define>
-   <define name="rswa_model.dateLike_sequenceOptional">
+   <define name="rsw_model.dateLike_sequenceOptional">
       <optional>
-         <ref name="rswa_date"/>
+         <ref name="rsw_date"/>
       </optional>
    </define>
-   <define name="rswa_model.dateLike_sequenceOptionalRepeatable">
+   <define name="rsw_model.dateLike_sequenceOptionalRepeatable">
       <zeroOrMore>
-         <ref name="rswa_date"/>
+         <ref name="rsw_date"/>
       </zeroOrMore>
    </define>
-   <define name="rswa_model.dateLike_sequenceRepeatable">
+   <define name="rsw_model.dateLike_sequenceRepeatable">
       <oneOrMore>
-         <ref name="rswa_date"/>
+         <ref name="rsw_date"/>
       </oneOrMore>
    </define>
-   <define name="rswa_model.measureLike">
+   <define name="rsw_model.measureLike">
       <choice>
-         <ref name="rswa_geo"/>
+         <ref name="rsw_geo"/>
       </choice>
    </define>
-   <define name="rswa_model.measureLike_alternation">
+   <define name="rsw_model.measureLike_alternation">
       <choice>
-         <ref name="rswa_geo"/>
+         <ref name="rsw_geo"/>
       </choice>
    </define>
-   <define name="rswa_model.measureLike_sequence">
-      <ref name="rswa_geo"/>
+   <define name="rsw_model.measureLike_sequence">
+      <ref name="rsw_geo"/>
    </define>
-   <define name="rswa_model.measureLike_sequenceOptional">
+   <define name="rsw_model.measureLike_sequenceOptional">
       <optional>
-         <ref name="rswa_geo"/>
+         <ref name="rsw_geo"/>
       </optional>
    </define>
-   <define name="rswa_model.measureLike_sequenceOptionalRepeatable">
+   <define name="rsw_model.measureLike_sequenceOptionalRepeatable">
       <zeroOrMore>
-         <ref name="rswa_geo"/>
+         <ref name="rsw_geo"/>
       </zeroOrMore>
    </define>
-   <define name="rswa_model.measureLike_sequenceRepeatable">
+   <define name="rsw_model.measureLike_sequenceRepeatable">
       <oneOrMore>
-         <ref name="rswa_geo"/>
+         <ref name="rsw_geo"/>
       </oneOrMore>
    </define>
-   <define name="rswa_model.egLike">
+   <define name="rsw_model.egLike">
       <notAllowed/>
    </define>
-   <define name="rswa_model.graphicLike">
+   <define name="rsw_model.graphicLike">
       <notAllowed/>
    </define>
-   <define name="rswa_model.offsetLike">
+   <define name="rsw_model.offsetLike">
       <notAllowed/>
    </define>
-   <define name="rswa_model.offsetLike_alternation">
+   <define name="rsw_model.offsetLike_alternation">
       <notAllowed/>
    </define>
-   <define name="rswa_model.offsetLike_sequence">
+   <define name="rsw_model.offsetLike_sequence">
       <empty/>
    </define>
-   <define name="rswa_model.offsetLike_sequenceOptional">
+   <define name="rsw_model.offsetLike_sequenceOptional">
       <empty/>
    </define>
-   <define name="rswa_model.offsetLike_sequenceOptionalRepeatable">
+   <define name="rsw_model.offsetLike_sequenceOptionalRepeatable">
       <empty/>
    </define>
-   <define name="rswa_model.offsetLike_sequenceRepeatable">
+   <define name="rsw_model.offsetLike_sequenceRepeatable">
       <notAllowed/>
    </define>
-   <define name="rswa_model.pPart.msdesc">
+   <define name="rsw_model.pPart.msdesc">
       <notAllowed/>
    </define>
-   <define name="rswa_model.pPart.editorial">
+   <define name="rsw_model.pPart.editorial">
       <notAllowed/>
    </define>
-   <define name="rswa_model.pPart.editorial_alternation">
+   <define name="rsw_model.pPart.editorial_alternation">
       <notAllowed/>
    </define>
-   <define name="rswa_model.pPart.editorial_sequence">
+   <define name="rsw_model.pPart.editorial_sequence">
       <empty/>
    </define>
-   <define name="rswa_model.pPart.editorial_sequenceOptional">
+   <define name="rsw_model.pPart.editorial_sequenceOptional">
       <empty/>
    </define>
-   <define name="rswa_model.pPart.editorial_sequenceOptionalRepeatable">
+   <define name="rsw_model.pPart.editorial_sequenceOptionalRepeatable">
       <empty/>
    </define>
-   <define name="rswa_model.pPart.editorial_sequenceRepeatable">
+   <define name="rsw_model.pPart.editorial_sequenceRepeatable">
       <notAllowed/>
    </define>
-   <define name="rswa_model.pPart.transcriptional">
+   <define name="rsw_model.pPart.transcriptional">
       <notAllowed/>
    </define>
-   <define name="rswa_model.pPart.transcriptional_alternation">
+   <define name="rsw_model.pPart.transcriptional_alternation">
       <notAllowed/>
    </define>
-   <define name="rswa_model.pPart.transcriptional_sequence">
+   <define name="rsw_model.pPart.transcriptional_sequence">
       <empty/>
    </define>
-   <define name="rswa_model.pPart.transcriptional_sequenceOptional">
+   <define name="rsw_model.pPart.transcriptional_sequenceOptional">
       <empty/>
    </define>
-   <define name="rswa_model.pPart.transcriptional_sequenceOptionalRepeatable">
+   <define name="rsw_model.pPart.transcriptional_sequenceOptionalRepeatable">
       <empty/>
    </define>
-   <define name="rswa_model.pPart.transcriptional_sequenceRepeatable">
+   <define name="rsw_model.pPart.transcriptional_sequenceRepeatable">
       <notAllowed/>
    </define>
-   <define name="rswa_model.pPart.edit">
+   <define name="rsw_model.pPart.edit">
       <choice>
-         <ref name="rswa_model.pPart.editorial"/>
-         <ref name="rswa_model.pPart.transcriptional"/>
+         <ref name="rsw_model.pPart.editorial"/>
+         <ref name="rsw_model.pPart.transcriptional"/>
       </choice>
    </define>
-   <define name="rswa_model.ptrLike">
+   <define name="rsw_model.ptrLike">
       <notAllowed/>
    </define>
-   <define name="rswa_model.lPart">
+   <define name="rsw_model.lPart">
       <notAllowed/>
    </define>
-   <define name="rswa_model.global.meta">
+   <define name="rsw_model.global.meta">
       <notAllowed/>
    </define>
-   <define name="rswa_model.milestoneLike">
+   <define name="rsw_model.milestoneLike">
       <choice>
-         <ref name="rswa_lb"/>
+         <ref name="rsw_lb"/>
       </choice>
    </define>
-   <define name="rswa_model.gLike">
+   <define name="rsw_model.gLike">
       <notAllowed/>
    </define>
-   <define name="rswa_model.oddDecl">
+   <define name="rsw_model.oddDecl">
       <notAllowed/>
    </define>
-   <define name="rswa_model.phrase.xml">
+   <define name="rsw_model.phrase.xml">
       <notAllowed/>
    </define>
-   <define name="rswa_model.specDescLike">
+   <define name="rsw_model.specDescLike">
       <notAllowed/>
    </define>
-   <define name="rswa_model.biblLike">
+   <define name="rsw_model.biblLike">
       <choice>
-         <ref name="rswa_listBibl"/>
+         <ref name="rsw_listBibl"/>
       </choice>
    </define>
-   <define name="rswa_model.headLike">
+   <define name="rsw_model.headLike">
       <notAllowed/>
    </define>
-   <define name="rswa_model.headLike_alternation">
+   <define name="rsw_model.headLike_alternation">
       <notAllowed/>
    </define>
-   <define name="rswa_model.headLike_sequence">
+   <define name="rsw_model.headLike_sequence">
       <empty/>
    </define>
-   <define name="rswa_model.headLike_sequenceOptional">
+   <define name="rsw_model.headLike_sequenceOptional">
       <empty/>
    </define>
-   <define name="rswa_model.headLike_sequenceOptionalRepeatable">
+   <define name="rsw_model.headLike_sequenceOptionalRepeatable">
       <empty/>
    </define>
-   <define name="rswa_model.headLike_sequenceRepeatable">
+   <define name="rsw_model.headLike_sequenceRepeatable">
       <notAllowed/>
    </define>
-   <define name="rswa_model.labelLike">
+   <define name="rsw_model.labelLike">
       <notAllowed/>
    </define>
-   <define name="rswa_model.listLike">
+   <define name="rsw_model.listLike">
       <choice>
-         <ref name="rswa_list"/>
+         <ref name="rsw_list"/>
       </choice>
    </define>
-   <define name="rswa_model.noteLike">
+   <define name="rsw_model.noteLike">
       <choice>
-         <ref name="rswa_note"/>
+         <ref name="rsw_note"/>
       </choice>
    </define>
-   <define name="rswa_model.lLike">
+   <define name="rsw_model.lLike">
       <choice>
-         <ref name="rswa_l"/>
+         <ref name="rsw_l"/>
       </choice>
    </define>
-   <define name="rswa_model.pLike">
+   <define name="rsw_model.pLike">
       <choice>
-         <ref name="rswa_p"/>
+         <ref name="rsw_p"/>
       </choice>
    </define>
-   <define name="rswa_model.stageLike">
+   <define name="rsw_model.stageLike">
       <notAllowed/>
    </define>
-   <define name="rswa_model.entryPart">
+   <define name="rsw_model.entryPart">
       <notAllowed/>
    </define>
-   <define name="rswa_model.global.edit">
+   <define name="rsw_model.global.edit">
       <notAllowed/>
    </define>
-   <define name="rswa_model.divPart">
+   <define name="rsw_model.divPart">
       <choice>
-         <ref name="rswa_model.lLike"/>
-         <ref name="rswa_model.pLike"/>
-         <ref name="rswa_lg"/>
+         <ref name="rsw_model.lLike"/>
+         <ref name="rsw_model.pLike"/>
+         <ref name="rsw_lg"/>
       </choice>
    </define>
-   <define name="rswa_model.placeNamePart">
+   <define name="rsw_model.placeNamePart">
       <choice>
-         <ref name="rswa_placeName"/>
-         <ref name="rswa_country"/>
-         <ref name="rswa_region"/>
-         <ref name="rswa_district"/>
-         <ref name="rswa_settlement"/>
+         <ref name="rsw_placeName"/>
+         <ref name="rsw_country"/>
+         <ref name="rsw_region"/>
+         <ref name="rsw_district"/>
+         <ref name="rsw_settlement"/>
       </choice>
    </define>
-   <define name="rswa_model.placeNamePart_alternation">
+   <define name="rsw_model.placeNamePart_alternation">
       <choice>
-         <ref name="rswa_placeName"/>
-         <ref name="rswa_country"/>
-         <ref name="rswa_region"/>
-         <ref name="rswa_district"/>
-         <ref name="rswa_settlement"/>
+         <ref name="rsw_placeName"/>
+         <ref name="rsw_country"/>
+         <ref name="rsw_region"/>
+         <ref name="rsw_district"/>
+         <ref name="rsw_settlement"/>
       </choice>
    </define>
-   <define name="rswa_model.placeNamePart_sequence">
-      <ref name="rswa_placeName"/>
-      <ref name="rswa_country"/>
-      <ref name="rswa_region"/>
-      <ref name="rswa_district"/>
-      <ref name="rswa_settlement"/>
+   <define name="rsw_model.placeNamePart_sequence">
+      <ref name="rsw_placeName"/>
+      <ref name="rsw_country"/>
+      <ref name="rsw_region"/>
+      <ref name="rsw_district"/>
+      <ref name="rsw_settlement"/>
    </define>
-   <define name="rswa_model.placeNamePart_sequenceOptional">
+   <define name="rsw_model.placeNamePart_sequenceOptional">
       <optional>
-         <ref name="rswa_placeName"/>
+         <ref name="rsw_placeName"/>
       </optional>
       <optional>
-         <ref name="rswa_country"/>
+         <ref name="rsw_country"/>
       </optional>
       <optional>
-         <ref name="rswa_region"/>
+         <ref name="rsw_region"/>
       </optional>
       <optional>
-         <ref name="rswa_district"/>
+         <ref name="rsw_district"/>
       </optional>
       <optional>
-         <ref name="rswa_settlement"/>
+         <ref name="rsw_settlement"/>
       </optional>
    </define>
-   <define name="rswa_model.placeNamePart_sequenceOptionalRepeatable">
+   <define name="rsw_model.placeNamePart_sequenceOptionalRepeatable">
       <zeroOrMore>
-         <ref name="rswa_placeName"/>
+         <ref name="rsw_placeName"/>
       </zeroOrMore>
       <zeroOrMore>
-         <ref name="rswa_country"/>
+         <ref name="rsw_country"/>
       </zeroOrMore>
       <zeroOrMore>
-         <ref name="rswa_region"/>
+         <ref name="rsw_region"/>
       </zeroOrMore>
       <zeroOrMore>
-         <ref name="rswa_district"/>
+         <ref name="rsw_district"/>
       </zeroOrMore>
       <zeroOrMore>
-         <ref name="rswa_settlement"/>
+         <ref name="rsw_settlement"/>
       </zeroOrMore>
    </define>
-   <define name="rswa_model.placeNamePart_sequenceRepeatable">
+   <define name="rsw_model.placeNamePart_sequenceRepeatable">
       <oneOrMore>
-         <ref name="rswa_placeName"/>
+         <ref name="rsw_placeName"/>
       </oneOrMore>
       <oneOrMore>
-         <ref name="rswa_country"/>
+         <ref name="rsw_country"/>
       </oneOrMore>
       <oneOrMore>
-         <ref name="rswa_region"/>
+         <ref name="rsw_region"/>
       </oneOrMore>
       <oneOrMore>
-         <ref name="rswa_district"/>
+         <ref name="rsw_district"/>
       </oneOrMore>
       <oneOrMore>
-         <ref name="rswa_settlement"/>
+         <ref name="rsw_settlement"/>
       </oneOrMore>
    </define>
-   <define name="rswa_model.placeStateLike">
+   <define name="rsw_model.placeStateLike">
       <choice>
-         <ref name="rswa_model.placeNamePart"/>
-         <ref name="rswa_location"/>
-         <ref name="rswa_trait"/>
+         <ref name="rsw_model.placeNamePart"/>
+         <ref name="rsw_location"/>
+         <ref name="rsw_trait"/>
       </choice>
    </define>
-   <define name="rswa_model.placeStateLike_alternation">
+   <define name="rsw_model.placeStateLike_alternation">
       <choice>
-         <ref name="rswa_model.placeNamePart_alternation"/>
-         <ref name="rswa_location"/>
-         <ref name="rswa_trait"/>
+         <ref name="rsw_model.placeNamePart_alternation"/>
+         <ref name="rsw_location"/>
+         <ref name="rsw_trait"/>
       </choice>
    </define>
-   <define name="rswa_model.placeStateLike_sequence">
-      <ref name="rswa_model.placeNamePart_sequence"/>
-      <ref name="rswa_location"/>
-      <ref name="rswa_trait"/>
+   <define name="rsw_model.placeStateLike_sequence">
+      <ref name="rsw_model.placeNamePart_sequence"/>
+      <ref name="rsw_location"/>
+      <ref name="rsw_trait"/>
    </define>
-   <define name="rswa_model.placeStateLike_sequenceOptional">
+   <define name="rsw_model.placeStateLike_sequenceOptional">
       <optional>
-         <ref name="rswa_model.placeNamePart_sequenceOptional"/>
+         <ref name="rsw_model.placeNamePart_sequenceOptional"/>
       </optional>
       <optional>
-         <ref name="rswa_location"/>
+         <ref name="rsw_location"/>
       </optional>
       <optional>
-         <ref name="rswa_trait"/>
+         <ref name="rsw_trait"/>
       </optional>
    </define>
-   <define name="rswa_model.placeStateLike_sequenceOptionalRepeatable">
+   <define name="rsw_model.placeStateLike_sequenceOptionalRepeatable">
       <zeroOrMore>
-         <ref name="rswa_model.placeNamePart_sequenceOptionalRepeatable"/>
+         <ref name="rsw_model.placeNamePart_sequenceOptionalRepeatable"/>
       </zeroOrMore>
       <zeroOrMore>
-         <ref name="rswa_location"/>
+         <ref name="rsw_location"/>
       </zeroOrMore>
       <zeroOrMore>
-         <ref name="rswa_trait"/>
+         <ref name="rsw_trait"/>
       </zeroOrMore>
    </define>
-   <define name="rswa_model.placeStateLike_sequenceRepeatable">
+   <define name="rsw_model.placeStateLike_sequenceRepeatable">
       <oneOrMore>
-         <ref name="rswa_model.placeNamePart_sequenceRepeatable"/>
+         <ref name="rsw_model.placeNamePart_sequenceRepeatable"/>
       </oneOrMore>
       <oneOrMore>
-         <ref name="rswa_location"/>
+         <ref name="rsw_location"/>
       </oneOrMore>
       <oneOrMore>
-         <ref name="rswa_trait"/>
+         <ref name="rsw_trait"/>
       </oneOrMore>
    </define>
-   <define name="rswa_model.placeEventLike">
+   <define name="rsw_model.placeEventLike">
       <notAllowed/>
    </define>
-   <define name="rswa_model.quoteLike">
+   <define name="rsw_model.quoteLike">
       <choice>
-         <ref name="rswa_quote"/>
-         <ref name="rswa_cit"/>
+         <ref name="rsw_quote"/>
+         <ref name="rsw_cit"/>
       </choice>
    </define>
-   <define name="rswa_model.quoteLike_alternation">
+   <define name="rsw_model.quoteLike_alternation">
       <choice>
-         <ref name="rswa_quote"/>
-         <ref name="rswa_cit"/>
+         <ref name="rsw_quote"/>
+         <ref name="rsw_cit"/>
       </choice>
    </define>
-   <define name="rswa_model.quoteLike_sequence">
-      <ref name="rswa_quote"/>
-      <ref name="rswa_cit"/>
+   <define name="rsw_model.quoteLike_sequence">
+      <ref name="rsw_quote"/>
+      <ref name="rsw_cit"/>
    </define>
-   <define name="rswa_model.quoteLike_sequenceOptional">
+   <define name="rsw_model.quoteLike_sequenceOptional">
       <optional>
-         <ref name="rswa_quote"/>
+         <ref name="rsw_quote"/>
       </optional>
       <optional>
-         <ref name="rswa_cit"/>
+         <ref name="rsw_cit"/>
       </optional>
    </define>
-   <define name="rswa_model.quoteLike_sequenceOptionalRepeatable">
+   <define name="rsw_model.quoteLike_sequenceOptionalRepeatable">
       <zeroOrMore>
-         <ref name="rswa_quote"/>
+         <ref name="rsw_quote"/>
       </zeroOrMore>
       <zeroOrMore>
-         <ref name="rswa_cit"/>
+         <ref name="rsw_cit"/>
       </zeroOrMore>
    </define>
-   <define name="rswa_model.quoteLike_sequenceRepeatable">
+   <define name="rsw_model.quoteLike_sequenceRepeatable">
       <oneOrMore>
-         <ref name="rswa_quote"/>
+         <ref name="rsw_quote"/>
       </oneOrMore>
       <oneOrMore>
-         <ref name="rswa_cit"/>
+         <ref name="rsw_cit"/>
       </oneOrMore>
    </define>
-   <define name="rswa_model.qLike">
+   <define name="rsw_model.qLike">
       <choice>
-         <ref name="rswa_model.quoteLike"/>
-         <ref name="rswa_q"/>
+         <ref name="rsw_model.quoteLike"/>
+         <ref name="rsw_q"/>
       </choice>
    </define>
-   <define name="rswa_model.divWrapper">
+   <define name="rsw_model.divWrapper">
       <notAllowed/>
    </define>
-   <define name="rswa_model.divTopPart">
+   <define name="rsw_model.divTopPart">
       <choice>
-         <ref name="rswa_model.headLike"/>
+         <ref name="rsw_model.headLike"/>
       </choice>
    </define>
-   <define name="rswa_model.divTop">
+   <define name="rsw_model.divTop">
       <choice>
-         <ref name="rswa_model.divWrapper"/>
-         <ref name="rswa_model.divTopPart"/>
+         <ref name="rsw_model.divWrapper"/>
+         <ref name="rsw_model.divTopPart"/>
       </choice>
    </define>
-   <define name="rswa_model.divBottomPart">
+   <define name="rsw_model.divBottomPart">
       <notAllowed/>
    </define>
-   <define name="rswa_model.divBottom">
+   <define name="rsw_model.divBottom">
       <choice>
-         <ref name="rswa_model.divWrapper"/>
-         <ref name="rswa_model.divBottomPart"/>
+         <ref name="rsw_model.divWrapper"/>
+         <ref name="rsw_model.divBottomPart"/>
       </choice>
    </define>
-   <define name="rswa_model.addressLike">
+   <define name="rsw_model.addressLike">
       <notAllowed/>
    </define>
-   <define name="rswa_model.addressLike_alternation">
+   <define name="rsw_model.addressLike_alternation">
       <notAllowed/>
    </define>
-   <define name="rswa_model.addressLike_sequence">
+   <define name="rsw_model.addressLike_sequence">
       <empty/>
    </define>
-   <define name="rswa_model.addressLike_sequenceOptional">
+   <define name="rsw_model.addressLike_sequenceOptional">
       <empty/>
    </define>
-   <define name="rswa_model.addressLike_sequenceOptionalRepeatable">
+   <define name="rsw_model.addressLike_sequenceOptionalRepeatable">
       <empty/>
    </define>
-   <define name="rswa_model.addressLike_sequenceRepeatable">
+   <define name="rsw_model.addressLike_sequenceRepeatable">
       <notAllowed/>
    </define>
-   <define name="rswa_model.nameLike">
+   <define name="rsw_model.nameLike">
       <choice>
-         <ref name="rswa_model.nameLike.agent"/>
-         <ref name="rswa_model.offsetLike"/>
-         <ref name="rswa_model.placeStateLike"/>
-         <ref name="rswa_rs"/>
-         <ref name="rswa_idno"/>
-         <ref name="rswa_model.persNamePart"/>
+         <ref name="rsw_model.nameLike.agent"/>
+         <ref name="rsw_model.offsetLike"/>
+         <ref name="rsw_model.placeStateLike"/>
+         <ref name="rsw_rs"/>
+         <ref name="rsw_idno"/>
+         <ref name="rsw_model.persNamePart"/>
       </choice>
    </define>
-   <define name="rswa_model.nameLike_alternation">
+   <define name="rsw_model.nameLike_alternation">
       <choice>
-         <ref name="rswa_model.nameLike.agent_alternation"/>
-         <ref name="rswa_model.offsetLike_alternation"/>
-         <ref name="rswa_model.placeStateLike_alternation"/>
-         <ref name="rswa_rs"/>
-         <ref name="rswa_idno"/>
-         <ref name="rswa_model.persNamePart_alternation"/>
+         <ref name="rsw_model.nameLike.agent_alternation"/>
+         <ref name="rsw_model.offsetLike_alternation"/>
+         <ref name="rsw_model.placeStateLike_alternation"/>
+         <ref name="rsw_rs"/>
+         <ref name="rsw_idno"/>
+         <ref name="rsw_model.persNamePart_alternation"/>
       </choice>
    </define>
-   <define name="rswa_model.nameLike_sequence">
-      <ref name="rswa_model.nameLike.agent_sequence"/>
-      <ref name="rswa_model.offsetLike_sequence"/>
-      <ref name="rswa_model.placeStateLike_sequence"/>
-      <ref name="rswa_rs"/>
-      <ref name="rswa_idno"/>
-      <ref name="rswa_model.persNamePart_sequence"/>
+   <define name="rsw_model.nameLike_sequence">
+      <ref name="rsw_model.nameLike.agent_sequence"/>
+      <ref name="rsw_model.offsetLike_sequence"/>
+      <ref name="rsw_model.placeStateLike_sequence"/>
+      <ref name="rsw_rs"/>
+      <ref name="rsw_idno"/>
+      <ref name="rsw_model.persNamePart_sequence"/>
    </define>
-   <define name="rswa_model.nameLike_sequenceOptional">
+   <define name="rsw_model.nameLike_sequenceOptional">
       <optional>
-         <ref name="rswa_model.nameLike.agent_sequenceOptional"/>
+         <ref name="rsw_model.nameLike.agent_sequenceOptional"/>
       </optional>
       <optional>
-         <ref name="rswa_model.offsetLike_sequenceOptional"/>
+         <ref name="rsw_model.offsetLike_sequenceOptional"/>
       </optional>
       <optional>
-         <ref name="rswa_model.placeStateLike_sequenceOptional"/>
+         <ref name="rsw_model.placeStateLike_sequenceOptional"/>
       </optional>
       <optional>
-         <ref name="rswa_rs"/>
+         <ref name="rsw_rs"/>
       </optional>
       <optional>
-         <ref name="rswa_idno"/>
+         <ref name="rsw_idno"/>
       </optional>
       <optional>
-         <ref name="rswa_model.persNamePart_sequenceOptional"/>
+         <ref name="rsw_model.persNamePart_sequenceOptional"/>
       </optional>
    </define>
-   <define name="rswa_model.nameLike_sequenceOptionalRepeatable">
+   <define name="rsw_model.nameLike_sequenceOptionalRepeatable">
       <zeroOrMore>
-         <ref name="rswa_model.nameLike.agent_sequenceOptionalRepeatable"/>
+         <ref name="rsw_model.nameLike.agent_sequenceOptionalRepeatable"/>
       </zeroOrMore>
       <zeroOrMore>
-         <ref name="rswa_model.offsetLike_sequenceOptionalRepeatable"/>
+         <ref name="rsw_model.offsetLike_sequenceOptionalRepeatable"/>
       </zeroOrMore>
       <zeroOrMore>
-         <ref name="rswa_model.placeStateLike_sequenceOptionalRepeatable"/>
+         <ref name="rsw_model.placeStateLike_sequenceOptionalRepeatable"/>
       </zeroOrMore>
       <zeroOrMore>
-         <ref name="rswa_rs"/>
+         <ref name="rsw_rs"/>
       </zeroOrMore>
       <zeroOrMore>
-         <ref name="rswa_idno"/>
+         <ref name="rsw_idno"/>
       </zeroOrMore>
       <zeroOrMore>
-         <ref name="rswa_model.persNamePart_sequenceOptionalRepeatable"/>
+         <ref name="rsw_model.persNamePart_sequenceOptionalRepeatable"/>
       </zeroOrMore>
    </define>
-   <define name="rswa_model.nameLike_sequenceRepeatable">
+   <define name="rsw_model.nameLike_sequenceRepeatable">
       <oneOrMore>
-         <ref name="rswa_model.nameLike.agent_sequenceRepeatable"/>
+         <ref name="rsw_model.nameLike.agent_sequenceRepeatable"/>
       </oneOrMore>
       <oneOrMore>
-         <ref name="rswa_model.offsetLike_sequenceRepeatable"/>
+         <ref name="rsw_model.offsetLike_sequenceRepeatable"/>
       </oneOrMore>
       <oneOrMore>
-         <ref name="rswa_model.placeStateLike_sequenceRepeatable"/>
+         <ref name="rsw_model.placeStateLike_sequenceRepeatable"/>
       </oneOrMore>
       <oneOrMore>
-         <ref name="rswa_rs"/>
+         <ref name="rsw_rs"/>
       </oneOrMore>
       <oneOrMore>
-         <ref name="rswa_idno"/>
+         <ref name="rsw_idno"/>
       </oneOrMore>
       <oneOrMore>
-         <ref name="rswa_model.persNamePart_sequenceRepeatable"/>
+         <ref name="rsw_model.persNamePart_sequenceRepeatable"/>
       </oneOrMore>
    </define>
-   <define name="rswa_model.global">
+   <define name="rsw_model.global">
       <choice>
-         <ref name="rswa_model.global.meta"/>
-         <ref name="rswa_model.milestoneLike"/>
-         <ref name="rswa_model.noteLike"/>
-         <ref name="rswa_model.global.edit"/>
+         <ref name="rsw_model.global.meta"/>
+         <ref name="rsw_model.milestoneLike"/>
+         <ref name="rsw_model.noteLike"/>
+         <ref name="rsw_model.global.edit"/>
       </choice>
    </define>
-   <define name="rswa_model.pPart.data">
+   <define name="rsw_model.pPart.data">
       <choice>
-         <ref name="rswa_model.dateLike"/>
-         <ref name="rswa_model.measureLike"/>
-         <ref name="rswa_model.addressLike"/>
-         <ref name="rswa_model.nameLike"/>
+         <ref name="rsw_model.dateLike"/>
+         <ref name="rsw_model.measureLike"/>
+         <ref name="rsw_model.addressLike"/>
+         <ref name="rsw_model.nameLike"/>
       </choice>
    </define>
-   <define name="rswa_model.inter">
+   <define name="rsw_model.inter">
       <choice>
-         <ref name="rswa_model.egLike"/>
-         <ref name="rswa_model.oddDecl"/>
-         <ref name="rswa_model.biblLike"/>
-         <ref name="rswa_model.labelLike"/>
-         <ref name="rswa_model.listLike"/>
-         <ref name="rswa_model.stageLike"/>
-         <ref name="rswa_model.qLike"/>
+         <ref name="rsw_model.egLike"/>
+         <ref name="rsw_model.oddDecl"/>
+         <ref name="rsw_model.biblLike"/>
+         <ref name="rsw_model.labelLike"/>
+         <ref name="rsw_model.listLike"/>
+         <ref name="rsw_model.stageLike"/>
+         <ref name="rsw_model.qLike"/>
       </choice>
    </define>
-   <define name="rswa_model.phrase">
+   <define name="rsw_model.phrase">
       <choice>
-         <ref name="rswa_model.segLike"/>
-         <ref name="rswa_model.highlighted"/>
-         <ref name="rswa_model.graphicLike"/>
-         <ref name="rswa_model.pPart.msdesc"/>
-         <ref name="rswa_model.pPart.edit"/>
-         <ref name="rswa_model.ptrLike"/>
-         <ref name="rswa_model.lPart"/>
-         <ref name="rswa_model.phrase.xml"/>
-         <ref name="rswa_model.specDescLike"/>
-         <ref name="rswa_model.pPart.data"/>
+         <ref name="rsw_model.segLike"/>
+         <ref name="rsw_model.highlighted"/>
+         <ref name="rsw_model.graphicLike"/>
+         <ref name="rsw_model.pPart.msdesc"/>
+         <ref name="rsw_model.pPart.edit"/>
+         <ref name="rsw_model.ptrLike"/>
+         <ref name="rsw_model.lPart"/>
+         <ref name="rsw_model.phrase.xml"/>
+         <ref name="rsw_model.specDescLike"/>
+         <ref name="rsw_model.pPart.data"/>
       </choice>
    </define>
-   <define name="rswa_att.source.attributes">
-      <ref name="rswa_att.source.attribute.source"/>
+   <define name="rsw_att.source.attributes">
+      <ref name="rsw_att.source.attribute.source"/>
    </define>
-   <define name="rswa_att.source.attribute.source">
+   <define name="rsw_att.source.attribute.source">
       <optional>
          <attribute name="source">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides a pointer to the bibliographical source from which a quotation or citation is drawn.</a:documentation>
             <list>
                <oneOrMore>
-                  <ref name="rswa_data.pointer"/>
+                  <ref name="rsw_data.pointer"/>
                </oneOrMore>
             </list>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_model.placeLike">
+   <define name="rsw_model.placeLike">
       <choice>
-         <ref name="rswa_place"/>
+         <ref name="rsw_place"/>
       </choice>
    </define>
-   <define name="rswa_p">
+   <define name="rsw_p">
       <element name="p">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(paragraph) marks paragraphs in prose. [3.1.  7.2.5. ]</a:documentation>
-         <ref name="rswa_macro.paraContent"/>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.declaring.attributes"/>
-         <ref name="rswa_att.fragmentable.attributes"/>
+         <ref name="rsw_macro.paraContent"/>
+         <ref name="rsw_att.global.attributes"/>
+         <ref name="rsw_att.declaring.attributes"/>
+         <ref name="rsw_att.fragmentable.attributes"/>
          <empty/>
       </element>
    </define>
-   <define name="rswa_hi">
+   <define name="rsw_hi">
       <element name="hi">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(highlighted) marks a word or phrase as graphically distinct from the surrounding text, for reasons concerning which no claim is made. [3.3.2.2.  3.3.2. ]</a:documentation>
-         <ref name="rswa_macro.paraContent"/>
-         <ref name="rswa_att.global.attributes"/>
+         <ref name="rsw_macro.paraContent"/>
+         <ref name="rsw_att.global.attributes"/>
          <empty/>
       </element>
    </define>
-   <define name="rswa_quote">
+   <define name="rsw_quote">
       <element name="quote">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(quotation) contains a phrase or passage attributed by the narrator or author to some agency external to the text. [3.3.3.  4.3.1. ]</a:documentation>
-         <ref name="rswa_macro.specialPara"/>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.typed.attributes"/>
-         <ref name="rswa_att.source.attributes"/>
+         <ref name="rsw_macro.specialPara"/>
+         <ref name="rsw_att.global.attributes"/>
+         <ref name="rsw_att.typed.attributes"/>
+         <ref name="rsw_att.source.attributes"/>
          <empty/>
       </element>
    </define>
-   <define name="rswa_q">
+   <define name="rsw_q">
       <element name="q">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(quoted) contains material which is distinguished from the surrounding text using quotation marks or a similar method, for any one of a variety of reasons including, but not limited to: direct speech or thought, technical terms or jargon, authorial distance, quotations from elsewhere, and passages that are mentioned but not used. [3.3.3. ]</a:documentation>
-         <ref name="rswa_macro.specialPara"/>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.ascribed.attributes"/>
-         <ref name="rswa_att.source.attributes"/>
+         <ref name="rsw_macro.specialPara"/>
+         <ref name="rsw_att.global.attributes"/>
+         <ref name="rsw_att.ascribed.attributes"/>
+         <ref name="rsw_att.source.attributes"/>
          <optional>
             <attribute name="type">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">may be used to indicate whether the offset passage is spoken or thought, or to characterize it more finely.
@@ -1554,82 +1554,82 @@ Empfohlene Werte sind: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] foreig
          <empty/>
       </element>
    </define>
-   <define name="rswa_cit">
+   <define name="rsw_cit">
       <element name="cit">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(cited quotation) contains a quotation from some other document, together with a bibliographic reference to its source. In a dictionary it may contain an example text with at least one occurrence of the word form, used in the sense being described, or a translation of the headword, or an example. [3.3.3.  4.3.1.  9.3.5.1. ]</a:documentation>
          <oneOrMore>
             <choice>
-               <ref name="rswa_model.qLike"/>
-               <ref name="rswa_model.egLike"/>
-               <ref name="rswa_model.biblLike"/>
-               <ref name="rswa_model.ptrLike"/>
-               <ref name="rswa_model.global"/>
-               <ref name="rswa_model.entryPart"/>
+               <ref name="rsw_model.qLike"/>
+               <ref name="rsw_model.egLike"/>
+               <ref name="rsw_model.biblLike"/>
+               <ref name="rsw_model.ptrLike"/>
+               <ref name="rsw_model.global"/>
+               <ref name="rsw_model.entryPart"/>
             </choice>
          </oneOrMore>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.typed.attributes"/>
+         <ref name="rsw_att.global.attributes"/>
+         <ref name="rsw_att.typed.attributes"/>
          <empty/>
       </element>
    </define>
-   <define name="rswa_rs">
+   <define name="rsw_rs">
       <element name="rs">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(referencing string) contains a general purpose name or referring string. [13.2.1.  3.5.1. ]</a:documentation>
-         <ref name="rswa_macro.phraseSeq"/>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.naming.attributes"/>
-         <ref name="rswa_att.typed.attributes"/>
-         <ref name="rswa_att.responsibility.attributes"/>
+         <ref name="rsw_macro.phraseSeq"/>
+         <ref name="rsw_att.global.attributes"/>
+         <ref name="rsw_att.naming.attributes"/>
+         <ref name="rsw_att.typed.attributes"/>
+         <ref name="rsw_att.responsibility.attributes"/>
          <empty/>
       </element>
    </define>
-   <define name="rswa_date">
+   <define name="rsw_date">
       <element name="date">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a date in any format. [3.5.4.  2.2.4.  2.5.  3.11.2.4.  15.2.3.  13.3.6. ]</a:documentation>
          <zeroOrMore>
             <choice>
                <text/>
-               <ref name="rswa_model.gLike"/>
-               <ref name="rswa_model.phrase"/>
-               <ref name="rswa_model.global"/>
+               <ref name="rsw_model.gLike"/>
+               <ref name="rsw_model.phrase"/>
+               <ref name="rsw_model.global"/>
             </choice>
          </zeroOrMore>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.datable.attributes"/>
-         <ref name="rswa_att.editLike.attributes"/>
-         <ref name="rswa_att.typed.attributes"/>
+         <ref name="rsw_att.global.attributes"/>
+         <ref name="rsw_att.datable.attributes"/>
+         <ref name="rsw_att.editLike.attributes"/>
+         <ref name="rsw_att.typed.attributes"/>
          <empty/>
       </element>
    </define>
-   <define name="rswa_list">
+   <define name="rsw_list">
       <element name="list">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains any sequence of items organized as a list. [3.7. ]</a:documentation>
          <group>
             <zeroOrMore>
                <choice>
                   <group>
-                     <ref name="rswa_model.divTop"/>
+                     <ref name="rsw_model.divTop"/>
                   </group>
                   <group>
-                     <ref name="rswa_model.global"/>
+                     <ref name="rsw_model.global"/>
                   </group>
                </choice>
             </zeroOrMore>
             <choice>
                <oneOrMore>
-                  <ref name="rswa_item"/>
+                  <ref name="rsw_item"/>
                   <zeroOrMore>
-                     <ref name="rswa_model.global"/>
+                     <ref name="rsw_model.global"/>
                   </zeroOrMore>
                </oneOrMore>
                <group>
                   <oneOrMore>
                      <zeroOrMore>
-                        <ref name="rswa_model.global"/>
+                        <ref name="rsw_model.global"/>
                      </zeroOrMore>
-                     <ref name="rswa_item"/>
+                     <ref name="rsw_item"/>
                      <zeroOrMore>
-                        <ref name="rswa_model.global"/>
+                        <ref name="rsw_model.global"/>
                      </zeroOrMore>
                   </oneOrMore>
                </group>
@@ -1637,17 +1637,17 @@ Empfohlene Werte sind: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] foreig
             <zeroOrMore>
                <group>
                   <group>
-                     <ref name="rswa_model.divBottom"/>
+                     <ref name="rsw_model.divBottom"/>
                   </group>
                   <zeroOrMore>
-                     <ref name="rswa_model.global"/>
+                     <ref name="rsw_model.global"/>
                   </zeroOrMore>
                </group>
             </zeroOrMore>
          </group>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.sortable.attributes"/>
-         <ref name="rswa_att.typed.attribute.subtype"/>
+         <ref name="rsw_att.global.attributes"/>
+         <ref name="rsw_att.sortable.attributes"/>
+         <ref name="rsw_att.typed.attribute.subtype"/>
          <optional>
             <attribute name="type">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes the nature of the items in the list.
@@ -1670,30 +1670,30 @@ Empfohlene Werte sind: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syllog
          <empty/>
       </element>
    </define>
-   <define name="rswa_item">
+   <define name="rsw_item">
       <element name="item">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains one component of a list. [3.7.  2.5. ]</a:documentation>
-         <ref name="rswa_macro.specialPara"/>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.sortable.attributes"/>
+         <ref name="rsw_macro.specialPara"/>
+         <ref name="rsw_att.global.attributes"/>
+         <ref name="rsw_att.sortable.attributes"/>
          <empty/>
       </element>
    </define>
-   <define name="rswa_note">
+   <define name="rsw_note">
       <element name="note">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a note or annotation. [3.8.1.  2.2.6.  3.11.2.8.  9.3.5.4. ]</a:documentation>
-         <ref name="rswa_macro.specialPara"/>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.placement.attributes"/>
-         <ref name="rswa_att.pointing.attributes"/>
-         <ref name="rswa_att.responsibility.attributes"/>
-         <ref name="rswa_att.typed.attributes"/>
+         <ref name="rsw_macro.specialPara"/>
+         <ref name="rsw_att.global.attributes"/>
+         <ref name="rsw_att.placement.attributes"/>
+         <ref name="rsw_att.pointing.attributes"/>
+         <ref name="rsw_att.responsibility.attributes"/>
+         <ref name="rsw_att.typed.attributes"/>
          <optional>
             <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
                        name="anchored"
                        a:defaultValue="true">
                <a:documentation>indicates whether the copy text shows the exact place of reference for the note.</a:documentation>
-               <ref name="rswa_data.truthValue"/>
+               <ref name="rsw_data.truthValue"/>
             </attribute>
          </optional>
          <optional>
@@ -1701,7 +1701,7 @@ Empfohlene Werte sind: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syllog
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to the end of the span to which the note is attached, if the note is not embedded in the text at that point.</a:documentation>
                <list>
                   <oneOrMore>
-                     <ref name="rswa_data.pointer"/>
+                     <ref name="rsw_data.pointer"/>
                   </oneOrMore>
                </list>
             </attribute>
@@ -1709,82 +1709,82 @@ Empfohlene Werte sind: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syllog
          <empty/>
       </element>
    </define>
-   <define name="rswa_lb">
+   <define name="rsw_lb">
       <element name="lb">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(line break) marks the start of a new (typographic) line in some edition or version of a text. [3.10.3.  7.2.5. ]</a:documentation>
          <empty/>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.typed.attributes"/>
-         <ref name="rswa_att.edition.attributes"/>
-         <ref name="rswa_att.spanning.attributes"/>
-         <ref name="rswa_att.breaking.attributes"/>
+         <ref name="rsw_att.global.attributes"/>
+         <ref name="rsw_att.typed.attributes"/>
+         <ref name="rsw_att.edition.attributes"/>
+         <ref name="rsw_att.spanning.attributes"/>
+         <ref name="rsw_att.breaking.attributes"/>
          <empty/>
       </element>
    </define>
-   <define name="rswa_listBibl">
+   <define name="rsw_listBibl">
       <element name="listBibl">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(citation list) contains a list of bibliographic citations of any kind. [3.11.1.  2.2.7.  15.3.2. ]</a:documentation>
          <group>
             <zeroOrMore>
-               <ref name="rswa_model.headLike"/>
+               <ref name="rsw_model.headLike"/>
             </zeroOrMore>
             <oneOrMore>
                <choice>
-                  <ref name="rswa_model.biblLike"/>
-                  <ref name="rswa_model.milestoneLike"/>
+                  <ref name="rsw_model.biblLike"/>
+                  <ref name="rsw_model.milestoneLike"/>
                </choice>
             </oneOrMore>
             <zeroOrMore>
                <empty/>
             </zeroOrMore>
          </group>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.sortable.attributes"/>
-         <ref name="rswa_att.declarable.attributes"/>
-         <ref name="rswa_att.typed.attributes"/>
+         <ref name="rsw_att.global.attributes"/>
+         <ref name="rsw_att.sortable.attributes"/>
+         <ref name="rsw_att.declarable.attributes"/>
+         <ref name="rsw_att.typed.attributes"/>
          <empty/>
       </element>
    </define>
-   <define name="rswa_l">
+   <define name="rsw_l">
       <element name="l">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(verse line) contains a single, possibly incomplete, line of verse. [3.12.1.  3.12.  7.2.5. ]</a:documentation>
-         <ref name="rswa_macro.paraContent"/>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.fragmentable.attributes"/>
+         <ref name="rsw_macro.paraContent"/>
+         <ref name="rsw_att.global.attributes"/>
+         <ref name="rsw_att.fragmentable.attributes"/>
          <empty/>
       </element>
    </define>
-   <define name="rswa_lg">
+   <define name="rsw_lg">
       <element name="lg">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(line group) contains one or more verse lines functioning as a formal unit, e.g. a stanza, refrain, verse paragraph, etc. [3.12.1.  3.12.  7.2.5. ]</a:documentation>
          <group>
             <zeroOrMore>
                <choice>
-                  <ref name="rswa_model.divTop"/>
-                  <ref name="rswa_model.global"/>
+                  <ref name="rsw_model.divTop"/>
+                  <ref name="rsw_model.global"/>
                </choice>
             </zeroOrMore>
             <choice>
-               <ref name="rswa_model.lLike"/>
-               <ref name="rswa_model.stageLike"/>
-               <ref name="rswa_model.labelLike"/>
-               <ref name="rswa_lg"/>
+               <ref name="rsw_model.lLike"/>
+               <ref name="rsw_model.stageLike"/>
+               <ref name="rsw_model.labelLike"/>
+               <ref name="rsw_lg"/>
             </choice>
             <zeroOrMore>
                <choice>
-                  <ref name="rswa_model.lLike"/>
-                  <ref name="rswa_model.stageLike"/>
-                  <ref name="rswa_model.labelLike"/>
-                  <ref name="rswa_model.global"/>
-                  <ref name="rswa_lg"/>
+                  <ref name="rsw_model.lLike"/>
+                  <ref name="rsw_model.stageLike"/>
+                  <ref name="rsw_model.labelLike"/>
+                  <ref name="rsw_model.global"/>
+                  <ref name="rsw_lg"/>
                </choice>
             </zeroOrMore>
             <zeroOrMore>
                <group>
-                  <ref name="rswa_model.divBottom"/>
+                  <ref name="rsw_model.divBottom"/>
                </group>
                <zeroOrMore>
-                  <ref name="rswa_model.global"/>
+                  <ref name="rsw_model.global"/>
                </zeroOrMore>
             </zeroOrMore>
          </group>
@@ -1801,24 +1801,24 @@ Empfohlene Werte sind: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syllog
         must contain at least one child l, lg or gap element.</sch:assert>
             </rule>
          </pattern>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.divLike.attributes"/>
-         <ref name="rswa_att.typed.attributes"/>
-         <ref name="rswa_att.declaring.attributes"/>
+         <ref name="rsw_att.global.attributes"/>
+         <ref name="rsw_att.divLike.attributes"/>
+         <ref name="rsw_att.typed.attributes"/>
+         <ref name="rsw_att.declaring.attributes"/>
          <empty/>
       </element>
    </define>
-   <define name="rswa_idno">
+   <define name="rsw_idno">
       <element name="idno">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Bezeichner) lieferte jegliche Form eines Bezeichners in einer standardisierten Form, der benutzt werden kann um Objekte zu identifiziert, wie etwa ein bibliographisches Element, eine Organisation, usw. [2.2.4.  2.2.5.  3.11.2.4. ]</a:documentation>
          <zeroOrMore>
             <choice>
                <text/>
-               <ref name="rswa_model.gLike"/>
-               <ref name="rswa_idno"/>
+               <ref name="rsw_model.gLike"/>
+               <ref name="rsw_idno"/>
             </choice>
          </zeroOrMore>
-         <ref name="rswa_att.global.attributes"/>
+         <ref name="rsw_att.global.attributes"/>
          <attribute name="type">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">charakterisiert das Element in einem gewissen Sinne, wobei irgendeine zweckmäßige Systematik oder Typologie angwendet wird.</a:documentation>
             <choice>
@@ -1831,161 +1831,161 @@ Empfohlene Werte sind: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syllog
          <empty/>
       </element>
    </define>
-   <define name="rswa_att.datable.custom.attributes">
-      <ref name="rswa_att.datable.custom.attribute.when-custom"/>
-      <ref name="rswa_att.datable.custom.attribute.notBefore-custom"/>
-      <ref name="rswa_att.datable.custom.attribute.notAfter-custom"/>
-      <ref name="rswa_att.datable.custom.attribute.from-custom"/>
-      <ref name="rswa_att.datable.custom.attribute.to-custom"/>
-      <ref name="rswa_att.datable.custom.attribute.datingPoint"/>
-      <ref name="rswa_att.datable.custom.attribute.datingMethod"/>
+   <define name="rsw_att.datable.custom.attributes">
+      <ref name="rsw_att.datable.custom.attribute.when-custom"/>
+      <ref name="rsw_att.datable.custom.attribute.notBefore-custom"/>
+      <ref name="rsw_att.datable.custom.attribute.notAfter-custom"/>
+      <ref name="rsw_att.datable.custom.attribute.from-custom"/>
+      <ref name="rsw_att.datable.custom.attribute.to-custom"/>
+      <ref name="rsw_att.datable.custom.attribute.datingPoint"/>
+      <ref name="rsw_att.datable.custom.attribute.datingMethod"/>
    </define>
-   <define name="rswa_att.datable.custom.attribute.when-custom">
+   <define name="rsw_att.datable.custom.attribute.when-custom">
       <optional>
          <attribute name="when-custom">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies the value of a date or time in some standard form.</a:documentation>
             <list>
                <oneOrMore>
-                  <ref name="rswa_data.word"/>
+                  <ref name="rsw_data.word"/>
                </oneOrMore>
             </list>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.datable.custom.attribute.notBefore-custom">
+   <define name="rsw_att.datable.custom.attribute.notBefore-custom">
       <optional>
          <attribute name="notBefore-custom">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the earliest possible date for the event in some custom standard form.</a:documentation>
             <list>
                <oneOrMore>
-                  <ref name="rswa_data.word"/>
+                  <ref name="rsw_data.word"/>
                </oneOrMore>
             </list>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.datable.custom.attribute.notAfter-custom">
+   <define name="rsw_att.datable.custom.attribute.notAfter-custom">
       <optional>
          <attribute name="notAfter-custom">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the latest possible date for the event in some custom standard form.</a:documentation>
             <list>
                <oneOrMore>
-                  <ref name="rswa_data.word"/>
+                  <ref name="rsw_data.word"/>
                </oneOrMore>
             </list>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.datable.custom.attribute.from-custom">
+   <define name="rsw_att.datable.custom.attribute.from-custom">
       <optional>
          <attribute name="from-custom">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the starting point of the period in some standard form.</a:documentation>
             <list>
                <oneOrMore>
-                  <ref name="rswa_data.word"/>
+                  <ref name="rsw_data.word"/>
                </oneOrMore>
             </list>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.datable.custom.attribute.to-custom">
+   <define name="rsw_att.datable.custom.attribute.to-custom">
       <optional>
          <attribute name="to-custom">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the ending point of the period in some standard form.</a:documentation>
             <list>
                <oneOrMore>
-                  <ref name="rswa_data.word"/>
+                  <ref name="rsw_data.word"/>
                </oneOrMore>
             </list>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.datable.custom.attribute.datingPoint">
+   <define name="rsw_att.datable.custom.attribute.datingPoint">
       <optional>
          <attribute name="datingPoint">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies a pointer to some location defining a named point in time with reference to which the datable item is understood to have occurred</a:documentation>
-            <ref name="rswa_data.pointer"/>
+            <ref name="rsw_data.pointer"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.datable.custom.attribute.datingMethod">
+   <define name="rsw_att.datable.custom.attribute.datingMethod">
       <optional>
          <attribute name="datingMethod">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies a pointer to a calendar element or other means of interpreting the values of the custom dating attributes.</a:documentation>
-            <ref name="rswa_data.pointer"/>
+            <ref name="rsw_data.pointer"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_model.persNamePart">
+   <define name="rsw_model.persNamePart">
       <notAllowed/>
    </define>
-   <define name="rswa_model.persNamePart_alternation">
+   <define name="rsw_model.persNamePart_alternation">
       <notAllowed/>
    </define>
-   <define name="rswa_model.persNamePart_sequence">
+   <define name="rsw_model.persNamePart_sequence">
       <empty/>
    </define>
-   <define name="rswa_model.persNamePart_sequenceOptional">
+   <define name="rsw_model.persNamePart_sequenceOptional">
       <empty/>
    </define>
-   <define name="rswa_model.persNamePart_sequenceOptionalRepeatable">
+   <define name="rsw_model.persNamePart_sequenceOptionalRepeatable">
       <empty/>
    </define>
-   <define name="rswa_model.persNamePart_sequenceRepeatable">
+   <define name="rsw_model.persNamePart_sequenceRepeatable">
       <notAllowed/>
    </define>
-   <define name="rswa_att.datable.iso.attributes">
-      <ref name="rswa_att.datable.iso.attribute.when-iso"/>
-      <ref name="rswa_att.datable.iso.attribute.notBefore-iso"/>
-      <ref name="rswa_att.datable.iso.attribute.notAfter-iso"/>
-      <ref name="rswa_att.datable.iso.attribute.from-iso"/>
-      <ref name="rswa_att.datable.iso.attribute.to-iso"/>
+   <define name="rsw_att.datable.iso.attributes">
+      <ref name="rsw_att.datable.iso.attribute.when-iso"/>
+      <ref name="rsw_att.datable.iso.attribute.notBefore-iso"/>
+      <ref name="rsw_att.datable.iso.attribute.notAfter-iso"/>
+      <ref name="rsw_att.datable.iso.attribute.from-iso"/>
+      <ref name="rsw_att.datable.iso.attribute.to-iso"/>
    </define>
-   <define name="rswa_att.datable.iso.attribute.when-iso">
+   <define name="rsw_att.datable.iso.attribute.when-iso">
       <optional>
          <attribute name="when-iso">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies the value of a date or time in a standard form.</a:documentation>
-            <ref name="rswa_data.temporal.iso"/>
+            <ref name="rsw_data.temporal.iso"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.datable.iso.attribute.notBefore-iso">
+   <define name="rsw_att.datable.iso.attribute.notBefore-iso">
       <optional>
          <attribute name="notBefore-iso">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the earliest possible date for the event in standard form, e.g. yyyy-mm-dd.</a:documentation>
-            <ref name="rswa_data.temporal.iso"/>
+            <ref name="rsw_data.temporal.iso"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.datable.iso.attribute.notAfter-iso">
+   <define name="rsw_att.datable.iso.attribute.notAfter-iso">
       <optional>
          <attribute name="notAfter-iso">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the latest possible date for the event in standard form, e.g. yyyy-mm-dd.</a:documentation>
-            <ref name="rswa_data.temporal.iso"/>
+            <ref name="rsw_data.temporal.iso"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.datable.iso.attribute.from-iso">
+   <define name="rsw_att.datable.iso.attribute.from-iso">
       <optional>
          <attribute name="from-iso">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the starting point of the period in standard form.</a:documentation>
-            <ref name="rswa_data.temporal.iso"/>
+            <ref name="rsw_data.temporal.iso"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.datable.iso.attribute.to-iso">
+   <define name="rsw_att.datable.iso.attribute.to-iso">
       <optional>
          <attribute name="to-iso">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the ending point of the period in standard form.</a:documentation>
-            <ref name="rswa_data.temporal.iso"/>
+            <ref name="rsw_data.temporal.iso"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_placeName">
+   <define name="rsw_placeName">
       <element name="placeName">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">enthält einen absoluten oder relativen Ortsnamen. [13.2.3. ]</a:documentation>
          <text/>
-         <ref name="rswa_att.global.attributes"/>
+         <ref name="rsw_att.global.attributes"/>
          <attribute name="type">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">charakterisiert das Element in einem gewissen Sinne, wobei irgendeine zweckmäßige Systematik oder Typologie angwendet wird.</a:documentation>
             <choice>
@@ -2002,229 +2002,229 @@ Empfohlene Werte sind: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syllog
          <empty/>
       </element>
    </define>
-   <define name="rswa_country">
+   <define name="rsw_country">
       <element name="country">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the name of a geo-political unit, such as a nation, country, colony, or commonwealth, larger than or administratively superior to a region and smaller than a bloc. [13.2.3. ]</a:documentation>
-         <ref name="rswa_macro.phraseSeq"/>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.naming.attributes"/>
-         <ref name="rswa_att.typed.attributes"/>
-         <ref name="rswa_att.datable.attributes"/>
+         <ref name="rsw_macro.phraseSeq"/>
+         <ref name="rsw_att.global.attributes"/>
+         <ref name="rsw_att.naming.attributes"/>
+         <ref name="rsw_att.typed.attributes"/>
+         <ref name="rsw_att.datable.attributes"/>
          <empty/>
       </element>
    </define>
-   <define name="rswa_region">
+   <define name="rsw_region">
       <element name="region">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the name of an administrative unit such as a state, province, or county, larger than a settlement, but smaller than a country. [13.2.3. ]</a:documentation>
-         <ref name="rswa_macro.phraseSeq"/>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.naming.attributes"/>
-         <ref name="rswa_att.typed.attributes"/>
-         <ref name="rswa_att.datable.attributes"/>
+         <ref name="rsw_macro.phraseSeq"/>
+         <ref name="rsw_att.global.attributes"/>
+         <ref name="rsw_att.naming.attributes"/>
+         <ref name="rsw_att.typed.attributes"/>
+         <ref name="rsw_att.datable.attributes"/>
          <empty/>
       </element>
    </define>
-   <define name="rswa_district">
+   <define name="rsw_district">
       <element name="district">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the name of any kind of subdivision of a settlement, such as a parish, ward, or other administrative or geographic unit. [13.2.3. ]</a:documentation>
-         <ref name="rswa_macro.phraseSeq"/>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.naming.attributes"/>
-         <ref name="rswa_att.typed.attributes"/>
-         <ref name="rswa_att.datable.attributes"/>
+         <ref name="rsw_macro.phraseSeq"/>
+         <ref name="rsw_att.global.attributes"/>
+         <ref name="rsw_att.naming.attributes"/>
+         <ref name="rsw_att.typed.attributes"/>
+         <ref name="rsw_att.datable.attributes"/>
          <empty/>
       </element>
    </define>
-   <define name="rswa_settlement">
+   <define name="rsw_settlement">
       <element name="settlement">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the name of a settlement such as a city, town, or village identified as a single geo-political or administrative unit. [13.2.3. ]</a:documentation>
-         <ref name="rswa_macro.phraseSeq"/>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.naming.attributes"/>
-         <ref name="rswa_att.typed.attributes"/>
-         <ref name="rswa_att.datable.attributes"/>
+         <ref name="rsw_macro.phraseSeq"/>
+         <ref name="rsw_att.global.attributes"/>
+         <ref name="rsw_att.naming.attributes"/>
+         <ref name="rsw_att.typed.attributes"/>
+         <ref name="rsw_att.datable.attributes"/>
          <empty/>
       </element>
    </define>
-   <define name="rswa_geo">
+   <define name="rsw_geo">
       <element name="geo">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(geographical coordinatesgeographische Koordinaten) enthält einen Terminus eines Sets von geographischen Koordinaten, die einen Punkt, eine Linie oder einen Bereich der Erde in einer bestimmten Schreibweise darstellen. [13.3.4.1. ]</a:documentation>
          <text/>
-         <ref name="rswa_att.global.attributes"/>
+         <ref name="rsw_att.global.attributes"/>
          <empty/>
       </element>
    </define>
-   <define name="rswa_location">
+   <define name="rsw_location">
       <element name="location">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">definiert die Lage eines Ortes in einer Reihe von geographischen Koordinaten, in Bezug auf die anderen genannten geo-politische Einheiten, oder als eine Adresse. [13.3.4. ]</a:documentation>
-         <ref name="rswa_geo"/>
+         <ref name="rsw_geo"/>
       </element>
    </define>
-   <define name="rswa_place">
+   <define name="rsw_place">
       <element name="place">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains data about a geographic location [13.3.4. ]</a:documentation>
          <group>
             <zeroOrMore>
-               <ref name="rswa_model.headLike"/>
+               <ref name="rsw_model.headLike"/>
             </zeroOrMore>
             <choice>
                <group>
                   <zeroOrMore>
-                     <ref name="rswa_model.pLike"/>
+                     <ref name="rsw_model.pLike"/>
                   </zeroOrMore>
                </group>
                <zeroOrMore>
                   <choice>
-                     <ref name="rswa_model.labelLike"/>
-                     <ref name="rswa_model.placeStateLike"/>
-                     <ref name="rswa_model.placeEventLike"/>
+                     <ref name="rsw_model.labelLike"/>
+                     <ref name="rsw_model.placeStateLike"/>
+                     <ref name="rsw_model.placeEventLike"/>
                   </choice>
                </zeroOrMore>
             </choice>
             <zeroOrMore>
                <choice>
-                  <ref name="rswa_model.noteLike"/>
-                  <ref name="rswa_model.biblLike"/>
-                  <ref name="rswa_idno"/>
+                  <ref name="rsw_model.noteLike"/>
+                  <ref name="rsw_model.biblLike"/>
+                  <ref name="rsw_idno"/>
                </choice>
             </zeroOrMore>
             <zeroOrMore>
                <choice>
-                  <ref name="rswa_model.placeLike"/>
+                  <ref name="rsw_model.placeLike"/>
                </choice>
             </zeroOrMore>
          </group>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.typed.attributes"/>
-         <ref name="rswa_att.editLike.attributes"/>
-         <ref name="rswa_att.sortable.attributes"/>
+         <ref name="rsw_att.global.attributes"/>
+         <ref name="rsw_att.typed.attributes"/>
+         <ref name="rsw_att.editLike.attributes"/>
+         <ref name="rsw_att.sortable.attributes"/>
          <empty/>
       </element>
    </define>
-   <define name="rswa_trait">
+   <define name="rsw_trait">
       <element name="trait">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a description of some status or quality attributed to a person, place, or organization typically, but not necessarily, independent of the volition or action of the holder and usually not at some specific time or for a specific date range. [13.3.1.  13.3.2.1. ]</a:documentation>
          <choice>
             <oneOrMore>
-               <ref name="rswa_trait"/>
+               <ref name="rsw_trait"/>
             </oneOrMore>
             <group>
                <zeroOrMore>
-                  <ref name="rswa_model.headLike"/>
+                  <ref name="rsw_model.headLike"/>
                </zeroOrMore>
                <oneOrMore>
-                  <ref name="rswa_model.pLike"/>
+                  <ref name="rsw_model.pLike"/>
                </oneOrMore>
                <zeroOrMore>
                   <choice>
-                     <ref name="rswa_model.noteLike"/>
-                     <ref name="rswa_model.biblLike"/>
+                     <ref name="rsw_model.noteLike"/>
+                     <ref name="rsw_model.biblLike"/>
                   </choice>
                </zeroOrMore>
             </group>
             <group>
                <zeroOrMore>
                   <choice>
-                     <ref name="rswa_model.labelLike"/>
-                     <ref name="rswa_model.noteLike"/>
-                     <ref name="rswa_model.biblLike"/>
+                     <ref name="rsw_model.labelLike"/>
+                     <ref name="rsw_model.noteLike"/>
+                     <ref name="rsw_model.biblLike"/>
                   </choice>
                </zeroOrMore>
             </group>
          </choice>
-         <ref name="rswa_att.global.attributes"/>
-         <ref name="rswa_att.datable.attributes"/>
-         <ref name="rswa_att.editLike.attributes"/>
-         <ref name="rswa_att.naming.attributes"/>
-         <ref name="rswa_att.typed.attributes"/>
+         <ref name="rsw_att.global.attributes"/>
+         <ref name="rsw_att.datable.attributes"/>
+         <ref name="rsw_att.editLike.attributes"/>
+         <ref name="rsw_att.naming.attributes"/>
+         <ref name="rsw_att.typed.attributes"/>
          <empty/>
       </element>
    </define>
-   <define name="rswa_att.global.linking.attributes">
-      <ref name="rswa_att.global.linking.attribute.corresp"/>
-      <ref name="rswa_att.global.linking.attribute.synch"/>
-      <ref name="rswa_att.global.linking.attribute.sameAs"/>
-      <ref name="rswa_att.global.linking.attribute.copyOf"/>
-      <ref name="rswa_att.global.linking.attribute.next"/>
-      <ref name="rswa_att.global.linking.attribute.prev"/>
-      <ref name="rswa_att.global.linking.attribute.exclude"/>
-      <ref name="rswa_att.global.linking.attribute.select"/>
+   <define name="rsw_att.global.linking.attributes">
+      <ref name="rsw_att.global.linking.attribute.corresp"/>
+      <ref name="rsw_att.global.linking.attribute.synch"/>
+      <ref name="rsw_att.global.linking.attribute.sameAs"/>
+      <ref name="rsw_att.global.linking.attribute.copyOf"/>
+      <ref name="rsw_att.global.linking.attribute.next"/>
+      <ref name="rsw_att.global.linking.attribute.prev"/>
+      <ref name="rsw_att.global.linking.attribute.exclude"/>
+      <ref name="rsw_att.global.linking.attribute.select"/>
    </define>
-   <define name="rswa_att.global.linking.attribute.corresp">
+   <define name="rsw_att.global.linking.attribute.corresp">
       <optional>
          <attribute name="corresp">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(corresponds) points to elements that correspond to the current element in some way.</a:documentation>
             <list>
                <oneOrMore>
-                  <ref name="rswa_data.pointer"/>
+                  <ref name="rsw_data.pointer"/>
                </oneOrMore>
             </list>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.global.linking.attribute.synch">
+   <define name="rsw_att.global.linking.attribute.synch">
       <optional>
          <attribute name="synch">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(synchronous) points to elements that are synchronous with the current element.</a:documentation>
             <list>
                <oneOrMore>
-                  <ref name="rswa_data.pointer"/>
+                  <ref name="rsw_data.pointer"/>
                </oneOrMore>
             </list>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.global.linking.attribute.sameAs">
+   <define name="rsw_att.global.linking.attribute.sameAs">
       <optional>
          <attribute name="sameAs">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to an element that is the same as the current element.</a:documentation>
-            <ref name="rswa_data.pointer"/>
+            <ref name="rsw_data.pointer"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.global.linking.attribute.copyOf">
+   <define name="rsw_att.global.linking.attribute.copyOf">
       <optional>
          <attribute name="copyOf">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to an element of which the current element is a copy.</a:documentation>
-            <ref name="rswa_data.pointer"/>
+            <ref name="rsw_data.pointer"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.global.linking.attribute.next">
+   <define name="rsw_att.global.linking.attribute.next">
       <optional>
          <attribute name="next">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to the next element of a virtual aggregate of which the current element is part.</a:documentation>
-            <ref name="rswa_data.pointer"/>
+            <ref name="rsw_data.pointer"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.global.linking.attribute.prev">
+   <define name="rsw_att.global.linking.attribute.prev">
       <optional>
          <attribute name="prev">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(previous) points to the previous element of a virtual aggregate of which the current element is part.</a:documentation>
-            <ref name="rswa_data.pointer"/>
+            <ref name="rsw_data.pointer"/>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.global.linking.attribute.exclude">
+   <define name="rsw_att.global.linking.attribute.exclude">
       <optional>
          <attribute name="exclude">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to elements that are in exclusive alternation with the current element.</a:documentation>
             <list>
                <oneOrMore>
-                  <ref name="rswa_data.pointer"/>
+                  <ref name="rsw_data.pointer"/>
                </oneOrMore>
             </list>
          </attribute>
       </optional>
    </define>
-   <define name="rswa_att.global.linking.attribute.select">
+   <define name="rsw_att.global.linking.attribute.select">
       <optional>
          <attribute name="select">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">selects one or more alternants; if one alternant is selected, the ambiguity or uncertainty is marked as resolved. If more than one alternant is selected, the degree of ambiguity or uncertainty is marked as reduced by the number of alternants not selected.</a:documentation>
             <list>
                <oneOrMore>
-                  <ref name="rswa_data.pointer"/>
+                  <ref name="rsw_data.pointer"/>
                </oneOrMore>
             </list>
          </attribute>
@@ -2232,7 +2232,7 @@ Empfohlene Werte sind: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syllog
    </define>
    <start>
       <choice>
-         <ref name="rswa_place"/>
+         <ref name="rsw_place"/>
       </choice>
    </start>
 </grammar>

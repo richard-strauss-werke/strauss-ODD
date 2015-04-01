@@ -18,7 +18,7 @@
 	</teiHeader>
 	<text>
 		<body>
-			<schemaSpec ident="schema.events" xml:lang="en" start="TEI" prefix="rswa_">
+			<schemaSpec ident="schema.events" xml:lang="en" start="TEI" prefix="rsw_">
 				<desc>Events related to Strauss</desc>
 				<moduleRef key="tei"/>
 				<moduleRef key="core"
@@ -61,11 +61,11 @@
 					</elementSpec>
 					
 					<elementSpec ident="titleStmt" module="header" mode="change">
-						<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandTitleStmtEvent"/>
+						<equiv filter="rsw.xsl" mimeType="text/xsl" name="expandTitleStmtEvent"/>
 					</elementSpec>
 					
 					<elementSpec ident="publicationStmt" mode="replace" module="header">
-						<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandPublicationStmt"/>
+						<equiv filter="rsw.xsl" mimeType="text/xsl" name="expandPublicationStmt"/>
 						<content>
 							<rng:ref name="macro.form.publicationStmt_event"/>
 						</content>

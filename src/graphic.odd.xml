@@ -18,7 +18,7 @@
 	</teiHeader>
 	<text>
 		<body>
-			<schemaSpec ident="schema.graphic" xml:lang="en" start="TEI" prefix="rswa_">
+			<schemaSpec ident="schema.graphic" xml:lang="en" start="TEI" prefix="rsw_">
 				<desc>Transcriptions of manuscript sources: Correspondence, notes, etc.</desc>
 				<moduleRef key="tei"/>
 				<moduleRef key="core"
@@ -64,7 +64,7 @@
 				<specGrp xml:id="edits.elements.graphic">
 					
 					<elementSpec ident="text" module="textstructure" mode="change">
-						<equiv filter="rswa.xsl" mimeType="text/xsl" name="replaceTextByGraphic"/>
+						<equiv filter="rsw.xsl" mimeType="text/xsl" name="replaceTextByGraphic"/>
 						<classes mode="change">
 							<memberOf key="att.typed" mode="delete"/>
 						</classes>
@@ -74,11 +74,11 @@
 					</elementSpec>
 					
 					<elementSpec ident="titleStmt" module="header" mode="change">
-						<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandTitleStmtGraphic"/>
+						<equiv filter="rsw.xsl" mimeType="text/xsl" name="expandTitleStmtGraphic"/>
 					</elementSpec>
 					
 					<elementSpec ident="publicationStmt" module="header" mode="replace">
-						<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandPublicationStmt"/>
+						<equiv filter="rsw.xsl" mimeType="text/xsl" name="expandPublicationStmt"/>
 						<content>
 							<rng:ref name="macro.form.publicationStmt_ms"/>
 						</content>
@@ -94,7 +94,7 @@
 						</content>
 					</elementSpec>
 					<elementSpec ident="term" module="core" mode="change">
-						<equiv filter="rswa.xsl" mimeType="text/xsl" name="addTermRef"/>
+						<equiv filter="rsw.xsl" mimeType="text/xsl" name="addTermRef"/>
 						<content>
 							<rng:optional>
 								<rng:ref name="data.keyword_ms"/>

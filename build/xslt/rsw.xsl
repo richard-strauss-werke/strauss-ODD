@@ -412,7 +412,7 @@
 		<xsl:copy>
 			<xsl:copy-of select="$publicationStmt"/>
 			<xsl:if test="$docID">
-				<idno type="RSWA">
+				<idno type="RSW">
 					<xsl:value-of select="$docID"/>
 				</idno>
 			</xsl:if>

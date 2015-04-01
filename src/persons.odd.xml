@@ -18,7 +18,7 @@
 	</teiHeader>
 	<text>
 		<body>
-			<schemaSpec ident="schema.persons" xml:lang="en" start="person" prefix="rswa_">
+			<schemaSpec ident="schema.persons" xml:lang="en" start="person" prefix="rsw_">
 				<desc>Persons</desc>
 				<moduleRef key="tei"/>
 				<moduleRef key="core"

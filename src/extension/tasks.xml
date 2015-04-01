@@ -8,7 +8,7 @@
 		<!-- the non-TEI task description element is always removed from the public version, assuming that documents will only be published when there are no more open tasks. -->
 		<elementSpec ident="taskDesc" mode="add"
 			ns="http://richard-strauss-ausgabe.de/ns/1.0">
-			<equiv filter="rswa.xsl" mimeType="text/xsl" name="warnIfHasChildOrRemove"/>
+			<equiv filter="rsw.xsl" mimeType="text/xsl" name="warnIfHasChildOrRemove"/>
 			<content>
 				<rng:zeroOrMore>
 					<rng:ref name="task"/>

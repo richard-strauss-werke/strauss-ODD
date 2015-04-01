@@ -18,7 +18,7 @@
 	</teiHeader>
 	<text>
 		<body>
-			<schemaSpec ident="schema.correspondence" xml:lang="en" start="TEI" prefix="rswa_">
+			<schemaSpec ident="schema.correspondence" xml:lang="en" start="TEI" prefix="rsw_">
 				<desc>Transcriptions of manuscript sources: Correspondence, notes, etc.</desc>
 				<moduleRef key="tei"/>
 				<moduleRef key="core"
@@ -73,11 +73,11 @@
 					</elementSpec>
 					
 					<elementSpec ident="titleStmt" module="header" mode="change">
-						<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandTitleStmtMs"/>
+						<equiv filter="rsw.xsl" mimeType="text/xsl" name="expandTitleStmtMs"/>
 					</elementSpec>
 					
 					<elementSpec ident="publicationStmt" module="header" mode="replace">
-						<equiv filter="rswa.xsl" mimeType="text/xsl" name="expandPublicationStmt"/>
+						<equiv filter="rsw.xsl" mimeType="text/xsl" name="expandPublicationStmt"/>
 						<content>
 							<rng:ref name="macro.form.publicationStmt_ms"/>
 						</content>
@@ -93,7 +93,7 @@
 						</content>
 					</elementSpec>
 					<elementSpec ident="term" module="core" mode="change">
-						<equiv filter="rswa.xsl" mimeType="text/xsl" name="addTermRef"/>
+						<equiv filter="rsw.xsl" mimeType="text/xsl" name="addTermRef"/>
 						<content>
 							<rng:optional>
 								<rng:ref name="data.keyword_ms"/>
