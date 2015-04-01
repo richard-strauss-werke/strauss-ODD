@@ -7,7 +7,7 @@
 	<xsl:key name="macro-parents" match="elementSpec/@ident|rng:element[not(.//rng:element)]/@name"
 		use="..//rng:ref/@name"/>
 
-	<xsl:variable name="common" select="document('../src/common.xml')"/>
+	<xsl:variable name="common" select="document('../odd/common.xml')"/>
 
 	<xsl:variable name="xmlDocsUrl">
 		<xsl:value-of select="$common/id('xmlDocsUrl')/@target"/>

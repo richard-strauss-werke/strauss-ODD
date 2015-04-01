@@ -1,9 +1,10 @@
 <project name="strauss-odd" default="rng" basedir=".">
 	<description> Strauss ODD build file </description>
-	<property name="project.version" value="0.6"/>
+	<property name="project.version" value="0.7"/>
 	<property file="build.properties"/>
 	
-	<property name="srcPath" location="src"/>
+	<property name="src.path.odd" location="src/odd"/>
+	<property name="src.path.xslt" location="src/xslt"/>
 	<property name="build.path" location="build"/>
 
 	<property name="name" value="correspondence"/>
@@ -24,7 +25,7 @@
 	</typedef>
 	
 	<target name="rng">
-		<ant antfile="${teiCStylesheetPath}/relaxng/build-to.xml" dir="${srcPath}"
+		<ant antfile="${teiCStylesheetPath}/relaxng/build-to.xml" dir="${src.path.odd}"
 			usenativebasedir="true">
 			<property name="defaultSource" value="${defaultSource}"/>
 			<property name="selectedSchema" value="schema.${name}"/>
@@ -36,7 +37,7 @@
 	</target>
 
 	<target name="odd">
-		<ant antfile="${teiCStylesheetPath}/odd/build-to.xml" dir="${srcPath}"
+		<ant antfile="${teiCStylesheetPath}/odd/build-to.xml" dir="${src.path.odd}"
 			usenativebasedir="true">
 			<property name="defaultSource" value="${defaultSource}"/>
 			<property name="selectedSchema" value="schema.${name}"/>
@@ -48,7 +49,7 @@
 	</target>
 	
 	<target name="html">
-		<ant antfile="${teiCStylesheetPath}/html/build-to.xml" dir="${srcPath}"
+		<ant antfile="${teiCStylesheetPath}/html/build-to.xml" dir="${src.path.odd}"
 			usenativebasedir="true">
 			<property name="defaultSource" value="${defaultSource}"/>
 			<property name="selectedSchema" value="schema.${name}"/>
@@ -69,10 +70,10 @@
 
 
 	<target name="xslt">
-		<xslt processor="trax" force="yes" style="xslt/make-acdc.xslt" in="${outputPath}\odd\${name}.odd.xml" out="${outputPath}\xslt\publish-${name}.xsl">
+		<xslt processor="trax" force="yes" style="${src.path.xslt}/make-acdc.xslt" in="${outputPath}\odd\${name}.odd.xml" out="${outputPath}\xslt\publish-${name}.xsl">
 			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
 		</xslt>
-		<copy file="xslt\rsw.xsl" tofile="${outputPath}\xslt\rsw.xsl"/>
+		<copy file="${src.path.xslt}\rsw.xsl" tofile="${outputPath}\xslt\rsw.xsl"/>
 	</target>
 
 	<target name="copy-rng-oxygen">

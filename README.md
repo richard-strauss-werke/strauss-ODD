@@ -14,9 +14,7 @@ Folders
 
 - `dependencies` - contains MEI files included when building the schemata
 
-- `src` - ODD source folder 
-
-- `xslt` - the xslt directory contains scripts to generate transformation sheets from production TEI files to publishable versions 
+- `src` - the source folder, containing the ODDS and XSLT scripts to generate transformation sheets from production TEI files to publishable versions 
 
 Build instructions
 ------------------
