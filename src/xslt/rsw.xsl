@@ -235,13 +235,13 @@
 						<xsl:when test="@type='UO'">Übertragung nach Original </xsl:when>
 						<xsl:when test="@type='UC'">Übertragung nach Entwurf </xsl:when>
 						<xsl:when test="@type='UA'">Übertragung nach Abschrift v.f.H. </xsl:when>
-						<xsl:when test="@type='UP'">Übertragung nach Xerokopie </xsl:when>
+						<xsl:when test="@type='UP'">Übertragung nach Papierkopie </xsl:when>
 						<xsl:when test="@type='UI'">Übertragung nach Mikroform </xsl:when>
 						<xsl:when test="@type='UM'">Übertragung nach autogr. Abschrift </xsl:when>
 						<xsl:when test="@type='UD'">Übertragung nach Original [Digitalisat] </xsl:when>
 						<xsl:when test="@type='UG'">Übertragung nach Entwurf [Digitalisat] </xsl:when>
 						<xsl:when test="@type='UH'">Übertragung nach Abschrift v.f.H. [Digitalisat] </xsl:when>
-						<xsl:when test="@type='UF'">Übertragung nach Xerokopie [Digitalisat] </xsl:when>
+						<xsl:when test="@type='UF'">Übertragung nach Papierkopie [Digitalisat] </xsl:when>
 						<xsl:when test="@type='UJ'">Übertragung nach Mikroform [Digitalisat] </xsl:when>
 						<xsl:when test="@type='UB'"
 							>Übertragung nach autogr. Abschrift [Digitalisat] </xsl:when>
@@ -251,13 +251,13 @@
 						<xsl:when test="@type='KO'">Korrektur nach Original </xsl:when>
 						<xsl:when test="@type='KC'">Korrektur nach Entwurf </xsl:when>
 						<xsl:when test="@type='KA'">Korrektur nach Abschrift v.f.H. </xsl:when>
-						<xsl:when test="@type='KP'">Korrektur nach Xerokopie </xsl:when>
+						<xsl:when test="@type='KP'">Korrektur nach Papierkopie </xsl:when>
 						<xsl:when test="@type='KI'">Korrektur nach Mikroform </xsl:when>
 						<xsl:when test="@type='KM'">Korrektur nach autogr. Abschrift </xsl:when>
 						<xsl:when test="@type='KD'">Korrektur nach Original [Digitalisat] </xsl:when>
 						<xsl:when test="@type='KG'">Korrektur nach Entwurf [Digitalisat] </xsl:when>
 						<xsl:when test="@type='KH'">Korrektur nach Abschrift v.f.H. [Digitalisat] </xsl:when>
-						<xsl:when test="@type='KF'">Korrektur nach Xerokopie [Digitalisat] </xsl:when>
+						<xsl:when test="@type='KF'">Korrektur nach Papierkopie [Digitalisat] </xsl:when>
 						<xsl:when test="@type='KJ'">Korrektur nach Mikroform [Digitalisat] </xsl:when>
 						<xsl:when test="@type='KB'">Korrektur nach autogr. Abschrift [Digitalisat] </xsl:when>
 						<xsl:when test="@type='KE'">Korrektur nach Edition </xsl:when>

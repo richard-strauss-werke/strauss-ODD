@@ -19,7 +19,7 @@
 	<text>
 		<body>
 			<schemaSpec ident="schema.performance" xml:lang="en" start="performance" prefix="rsw_">
-				<desc>Performances (currently only of Strauss's works)</desc>
+				<desc>Work performances</desc>
 				<moduleRef key="tei"/>
 				<moduleRef key="core"
 					include="abbr add author bibl choice cit corr date del desc expan gap graphic head hi item l lb lg list listBibl milestone name note p pb q quote ref rs sic sp speaker stage textLang time title unclear"/>

@@ -305,13 +305,94 @@
 				</rng:element>
 			</content>
 		</macroSpec>
+		
+		<macroSpec ident="macro.form.listBiblNote">
+			<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAnyAttOrAnyText"/>
+			<gloss versionDate="2015-04-02" xml:lang="en">Figures</gloss>
+			<gloss versionDate="2015-04-02" xml:lang="de">Abbildungen</gloss>
+			<desc versionDate="2015-04-02" xml:lang="en"
+				>Macro for a <gi>note</gi> element containing only <gi>bibl</gi> elements.</desc>
+			<desc versionDate="2015-04-02" xml:lang="de"
+				>Makro für ein <gi>note</gi>-Element, das nur <gi>bibl</gi>-Elemente enthält.</desc>
+			<content>
+				<rng:element name="note">
+					<rng:attribute name="type">
+						<rng:value>listBibl</rng:value>
+					</rng:attribute>
+					<rng:zeroOrMore>
+						<rng:ref name="macro.form.bibl"/>
+					</rng:zeroOrMore>
+				</rng:element>
+			</content>
+		</macroSpec>
+		
+		<macroSpec ident="macro.form.persNamePerformance">
+			<content>
+				<rng:element name="persName">
+					<rng:optional>
+						<rng:attribute name="role">
+							<rng:ref name="data.persNamePerformanceRole"/>
+						</rng:attribute>
+					</rng:optional>
+					<rng:optional>
+						<rng:attribute name="cert">
+							<rng:ref name="data.certainty"/>
+						</rng:attribute>
+					</rng:optional>
+					<rng:optional>
+						<rng:attribute name="key"/>
+					</rng:optional>
+					<rng:optional>
+						<rng:text/>
+					</rng:optional>
+				</rng:element>
+			</content>
+		</macroSpec>
+		
+		<macroSpec ident="macro.form.orgNamePerformance">
+			<content>
+				<rng:element name="orgName">
+					<rng:attribute name="role">
+						<rng:value>orchestra</rng:value>
+					</rng:attribute>
+					<rng:optional>
+						<rng:attribute name="cert">
+							<rng:ref name="data.certainty"/>
+						</rng:attribute>
+					</rng:optional>
+					<rng:optional>
+						<rng:attribute name="key"/>
+					</rng:optional>
+					<rng:optional>
+						<rng:attribute name="extent">
+							<rng:ref name="data.orgNameOrchestraExtent"/>
+						</rng:attribute>
+					</rng:optional>
+					<rng:optional>
+						<rng:attribute name="unit">
+							<rng:value>musicians</rng:value>
+						</rng:attribute>
+					</rng:optional>
+					<rng:attribute name="quantity">
+						<rng:ref name="data.numeric"/>
+					</rng:attribute>
+					<rng:optional>
+						<rng:text/>
+					</rng:optional>
+				</rng:element>
+			</content>
+		</macroSpec>
 
 		<macroSpec ident="macro.form.publicationStmt_ms">
 			<content>
 				<rng:group>
 					<rng:ref name="availability"/>
-					<rng:ref name="macro.form.uagIdno"/>
-					<rng:ref name="macro.form.rsqvIdno"/>
+					<rng:oneOrMore>
+						<rng:choice>
+							<rng:ref name="macro.form.uagIdno"/>
+							<rng:ref name="macro.form.rsqvIdno"/>
+						</rng:choice>
+					</rng:oneOrMore>
 				</rng:group>
 			</content>
 		</macroSpec>

@@ -3,11 +3,11 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2015-04-01T07:05:59Z. 
+Schema generated from ODD source 2015-04-02T13:51:57Z. 
 Edition: Version 2.7.0. Last updated on
 	16th September 2014, revision 13036
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
- Performances (currently only of Strauss's works) 
+ Work performances 
 --><!---->
    <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron"
            prefix="tei"
@@ -115,6 +115,30 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
    <define name="rsw_data.enumerated">
       <ref name="rsw_data.name"/>
    </define>
+   <define name="rsw_data.orgNameOrchestraExtent">
+      <choice>
+         <value>full-size</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">volle Besetzung</a:documentation>
+         <value>reduced-size</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">reduzierte Besetzung</a:documentation>
+      </choice>
+   </define>
+   <define name="rsw_data.persNamePerformanceRole">
+      <choice>
+         <value>conductor</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dirigent</a:documentation>
+         <value>stage-director</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Regisseur</a:documentation>
+         <value>scenery-designer</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Bühnenbild</a:documentation>
+         <value>costume-designer</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Kostüme</a:documentation>
+         <value>involved-in-preparation</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">bei den Vorbereitungen</a:documentation>
+         <value>visitor</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Besucher</a:documentation>
+      </choice>
+   </define>
    <define name="rsw_data.biblType">
       <choice>
          <value>e</value>
@@ -137,6 +161,107 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Sonstiges</a:documentation>
       </choice>
    </define>
+   <define name="rsw_macro.form.commentaryNote">
+      <element name="note">
+         <attribute name="type">
+            <value>commentary</value>
+         </attribute>
+         <zeroOrMore>
+            <element name="note">
+               <ref name="rsw_att.global.attribute.xmlid"/>
+               <ref name="rsw_rs"/>
+               <oneOrMore>
+                  <ref name="rsw_p"/>
+               </oneOrMore>
+            </element>
+         </zeroOrMore>
+      </element>
+   </define>
+   <define name="rsw_macro.form.summaryNote">
+      <element name="note">
+         <attribute name="type">
+            <value>summary</value>
+         </attribute>
+         <ref name="rsw_macro.form.noteParagraph"/>
+      </element>
+   </define>
+   <define name="rsw_macro.form.discussionNote">
+      <element name="note">
+         <attribute name="type">
+            <value>discussion</value>
+         </attribute>
+         <ref name="rsw_macro.form.noteParagraph"/>
+      </element>
+   </define>
+   <define name="rsw_macro.form.uncategorizedNote">
+      <element name="note">
+         <attribute name="type">
+            <value>uncategorized</value>
+         </attribute>
+         <ref name="rsw_macro.form.noteParagraph"/>
+      </element>
+   </define>
+   <define name="rsw_macro.form.listBiblNote">
+      <element name="note">
+         <attribute name="type">
+            <value>listBibl</value>
+         </attribute>
+         <zeroOrMore>
+            <ref name="rsw_macro.form.bibl"/>
+         </zeroOrMore>
+      </element>
+   </define>
+   <define name="rsw_macro.form.persNamePerformance">
+      <element name="persName">
+         <optional>
+            <attribute name="role">
+               <ref name="rsw_data.persNamePerformanceRole"/>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="cert">
+               <ref name="rsw_data.certainty"/>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="key"/>
+         </optional>
+         <optional>
+            <text/>
+         </optional>
+      </element>
+   </define>
+   <define name="rsw_macro.form.orgNamePerformance">
+      <element name="orgName">
+         <attribute name="role">
+            <value>orchestra</value>
+         </attribute>
+         <optional>
+            <attribute name="cert">
+               <ref name="rsw_data.certainty"/>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="key"/>
+         </optional>
+         <optional>
+            <attribute name="extent">
+               <ref name="rsw_data.orgNameOrchestraExtent"/>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="unit">
+               <value>musicians</value>
+            </attribute>
+         </optional>
+         <attribute name="quantity">
+            <ref name="rsw_data.numeric"/>
+         </attribute>
+         <optional>
+            <text/>
+         </optional>
+      </element>
+   </define>
    <define name="rsw_macro.form.bibl">
       <element name="bibl">
          <optional>
@@ -154,6 +279,17 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
             </oneOrMore>
          </element>
       </element>
+   </define>
+   <define name="rsw_macro.form.noteParagraph">
+      <zeroOrMore>
+         <choice>
+            <ref name="rsw_model.gLike"/>
+            <ref name="rsw_model.phrase"/>
+            <ref name="rsw_model.inter"/>
+            <ref name="rsw_model.divPart"/>
+            <ref name="rsw_model.global"/>
+         </choice>
+      </zeroOrMore>
    </define>
    <define name="rsw_att.ascribed.attributes">
       <ref name="rsw_att.ascribed.attribute.who"/>
@@ -2713,30 +2849,27 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_performance">
       <element name="performance">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a section of front or back matter describing how a dramatic piece is to be performed in general or how it was performed on some specific occasion. [7.1.3.  7.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Aufführung) enthält Beschreibungen wie ein dramatisches Werk bei einer bestimmten Gelegenheit aufgeführt worden ist. [7.1.3.  7.1. ]</a:documentation>
+         <ref name="rsw_macro.form.summaryNote"/>
+         <ref name="rsw_macro.form.commentaryNote"/>
+         <ref name="rsw_macro.form.discussionNote"/>
+         <ref name="rsw_macro.form.uncategorizedNote"/>
+         <ref name="rsw_macro.form.listBiblNote"/>
          <group>
-            <zeroOrMore>
-               <choice>
-                  <ref name="rsw_model.divTop"/>
-                  <ref name="rsw_model.global"/>
-               </choice>
-            </zeroOrMore>
-            <oneOrMore>
-               <group>
-                  <ref name="rsw_model.common"/>
-               </group>
-               <zeroOrMore>
-                  <ref name="rsw_model.global"/>
-               </zeroOrMore>
-            </oneOrMore>
-            <zeroOrMore>
-               <group>
-                  <ref name="rsw_model.divBottom"/>
-               </group>
-               <zeroOrMore>
-                  <ref name="rsw_model.global"/>
-               </zeroOrMore>
-            </zeroOrMore>
+            <element name="desc">
+               <oneOrMore>
+                  <ref name="rsw_date"/>
+               </oneOrMore>
+               <ref name="rsw_time"/>
+               <ref name="rsw_country"/>
+               <ref name="rsw_settlement"/>
+               <ref name="rsw_placeName"/>
+               <oneOrMore>
+                  <ref name="rsw_macro.form.persNamePerformance"/>
+               </oneOrMore>
+               <ref name="rsw_castList"/>
+               <ref name="rsw_macro.form.orgNamePerformance"/>
+            </element>
          </group>
          <ref name="rsw_att.global.attributes"/>
          <empty/>

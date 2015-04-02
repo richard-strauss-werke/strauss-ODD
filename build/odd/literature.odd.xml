@@ -11791,7 +11791,7 @@ manuscripts, not necessarily located within a single repository.</desc><desc ver
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.literature" ident="data.msDescRend">
 			<content>
-				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>unknown</value><a:documentation>unbekannt</a:documentation><value>original</value><a:documentation>Originalschreiben</a:documentation><value>draft</value><a:documentation>Entwurf</a:documentation><value>autograph-copy</value><a:documentation>autographe Kopie</a:documentation><value>foreign-copy</value><a:documentation>Kopie v.f.H.</a:documentation><value>xerocopy</value><a:documentation>Xerokopie</a:documentation><value>microform</value><a:documentation>Mikroform</a:documentation><value>other</value><a:documentation>andere Kategorie</a:documentation></choice>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>unknown</value><a:documentation>unbekannt</a:documentation><value>original</value><a:documentation>Original</a:documentation><value>draft</value><a:documentation>Entwurf</a:documentation><value>autograph-copy</value><a:documentation>autographe Abschrift</a:documentation><value>foreign-copy</value><a:documentation>Abschrift von fremder Hand</a:documentation><value>papercopy</value><a:documentation>Papierkopie</a:documentation><value>microform</value><a:documentation>Mikroform</a:documentation><value>other</value><a:documentation>sonstige Kategorie</a:documentation></choice>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.literature" ident="data.encoding-staff">
 			<content>

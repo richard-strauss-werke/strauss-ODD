@@ -5,6 +5,39 @@
 	xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron">
 	<head>Datatypes</head>
 	<specGrp xml:id="edits.datatypes">
+		
+		$valuesPerformanceRole:"conductor, stage-director, scenery-designer, costume-designer, involved-in-preparation, visitor";
+		$labelsPerformanceRole:"Dirigent, Regisseur, Bühnenbild, Kostüme, bei den Vorbereitungen, Besucher";
+
+		<macroSpec ident="data.orgNameOrchestraExtent">
+			<content>
+				<rng:choice>
+					<rng:value>full-size</rng:value>
+					<a:documentation>volle Besetzung</a:documentation>
+					<rng:value>reduced-size</rng:value>
+					<a:documentation>reduzierte Besetzung</a:documentation>
+				</rng:choice>
+			</content>
+		</macroSpec>
+		
+		<macroSpec ident="data.persNamePerformanceRole">
+			<content>
+				<rng:choice>
+					<rng:value>conductor</rng:value>
+					<a:documentation>Dirigent</a:documentation>
+					<rng:value>stage-director</rng:value>
+					<a:documentation>Regisseur</a:documentation>
+					<rng:value>scenery-designer</rng:value>
+					<a:documentation>Bühnenbild</a:documentation>
+					<rng:value>costume-designer</rng:value>
+					<a:documentation>Kostüme</a:documentation>
+					<rng:value>involved-in-preparation</rng:value>
+					<a:documentation>bei den Vorbereitungen</a:documentation>
+					<rng:value>visitor</rng:value>
+					<a:documentation>Besucher</a:documentation>
+				</rng:choice>
+			</content>
+		</macroSpec>
 
 		<macroSpec ident="data.supplPersNameType">
 			<content>
@@ -40,19 +73,19 @@
 					<rng:value>unknown</rng:value>
 					<a:documentation>unbekannt</a:documentation>
 					<rng:value>original</rng:value>
-					<a:documentation>Originalschreiben</a:documentation>
+					<a:documentation>Original</a:documentation>
 					<rng:value>draft</rng:value>
 					<a:documentation>Entwurf</a:documentation>
 					<rng:value>autograph-copy</rng:value>
-					<a:documentation>autographe Kopie</a:documentation>
+					<a:documentation>autographe Abschrift</a:documentation>
 					<rng:value>foreign-copy</rng:value>
-					<a:documentation>Kopie v.f.H.</a:documentation>
-					<rng:value>xerocopy</rng:value>
-					<a:documentation>Xerokopie</a:documentation>
+					<a:documentation>Abschrift von fremder Hand</a:documentation>
+					<rng:value>papercopy</rng:value>
+					<a:documentation>Papierkopie</a:documentation>
 					<rng:value>microform</rng:value>
 					<a:documentation>Mikroform</a:documentation>
 					<rng:value>other</rng:value>
-					<a:documentation>andere Kategorie</a:documentation>
+					<a:documentation>sonstige Kategorie</a:documentation>
 				</rng:choice>
 			</content>
 		</macroSpec>
@@ -61,8 +94,6 @@
 		<macroSpec ident="data.encoding-staff">
 			<content>
 				<rng:choice>
-					<rng:value>slm</rng:value>
-					<a:documentation>Salome Reiser</a:documentation>
 					<rng:value>alx</rng:value>
 					<a:documentation>Alexander Erhard</a:documentation>
 					<rng:value>sts</rng:value>
@@ -70,6 +101,8 @@
 					<rng:value>aap</rng:value>
 					<a:documentation>Andreas Pernpeintner</a:documentation>
 					<rng:value>mmm</rng:value>
+					<a:documentation>Claudia Heine</a:documentation>
+					<rng:value>afl</rng:value>
 					<a:documentation>Martina Mengele</a:documentation>
 					<rng:value>flr</rng:value>
 					<a:documentation>Florence Eller</a:documentation>
@@ -78,8 +111,6 @@
 					<rng:value>wwb</rng:value>
 					<a:documentation>Walter Werbeck</a:documentation>
 					<rng:value>clh</rng:value>
-					<a:documentation>Claudia Heine</a:documentation>
-					<rng:value>afl</rng:value>
 					<a:documentation>Florian Amort</a:documentation>
 					<rng:value>stk</rng:value>
 					<a:documentation>Steffi Kracht</a:documentation>
@@ -89,8 +120,6 @@
 					<a:documentation>Oliver Fraenske</a:documentation>
 					<rng:value>pfr</rng:value>
 					<a:documentation>Peter Fröhlich</a:documentation>
-					<rng:value>clh</rng:value>
-					<a:documentation>Claudia Heine</a:documentation>
 					<rng:value>dpl</rng:value>
 					<a:documentation>Dominik Leipold</a:documentation>
 				</rng:choice>
