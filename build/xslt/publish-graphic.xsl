@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:rsga="http://richard-strauss-ausgabe.de/ns/1.0"
+                xmlns:rsw="http://richard-strauss-ausgabe.de/ns/1.0"
                 version="2.0"
                 xpath-default-namespace="http://www.tei-c.org/ns/1.0">
    <xsl:import href="rsw.xsl"/>
@@ -41,39 +41,25 @@
    </xsl:variable>
    <xsl:variable name="edition">Digitale Ausgabe</xsl:variable>
    <xsl:variable name="staff">
-      <name xml:id="slm">Salome Reiser</name>
       <name xml:id="alx">Alexander Erhard</name>
       <name xml:id="sts">Stefan Schenk</name>
       <name xml:id="aap">Andreas Pernpeintner</name>
+      <name xml:id="clh">Claudia Heine</name>
       <name xml:id="mmm">Martina Mengele</name>
       <name xml:id="flr">Florence Eller</name>
       <name xml:id="sbb">Sebastian Bolz</name>
       <name xml:id="wwb">Walter Werbeck</name>
-      <name xml:id="clh">Claudia Heine</name>
       <name xml:id="afl">Florian Amort</name>
       <name xml:id="stk">Steffi Kracht</name>
       <name xml:id="oen">Ursula Welsch</name>
       <name xml:id="ofr">Oliver Fraenske</name>
       <name xml:id="pfr">Peter Fröhlich</name>
-      <name xml:id="clh">Claudia Heine</name>
       <name xml:id="dpl">Dominik Leipold</name>
    </xsl:variable>
    <xsl:variable name="sexes">
       <empty/>
    </xsl:variable>
    <xsl:variable name="keywords">
-      <term ref="http://d-nb.info/gnd/4008240-4">Brief</term>
-      <term ref="http://d-nb.info/gnd/4046902-5">Postkarte</term>
-      <term/>
-      <term ref="http://d-nb.info/gnd/4146614-7">Briefumschlag</term>
-      <term ref="http://d-nb.info/gnd/4184647-3">Telegramm</term>
-      <term ref="http://d-nb.info/gnd/4180011-4">schriftliche Mitteilung</term>
-      <term ref="http://d-nb.info/gnd/4188409-7">Visitenkarte</term>
-      <term ref="http://d-nb.info/gnd/4063270-2">Vertrag</term>
-      <term ref="http://d-nb.info/gnd/4206777-7">Notiz</term>
-      <term ref="http://d-nb.info/gnd/4225695-1">Notizbuch</term>
-      <term ref="http://d-nb.info/gnd/4040847-4">Musikhandschrift</term>
-      <term ref="http://d-nb.info/gnd/4180009-6">Schriftstück</term>
       <term ref="http://d-nb.info/gnd/4185060-9">Theaterzettel</term>
       <term ref="http://d-nb.info/gnd/4127900-1">Zeichnung</term>
       <term ref="http://d-nb.info/gnd/4152458-5">Entwurfszeichnung</term>
@@ -193,7 +179,7 @@
    <xsl:template match="additional">
       <xsl:call-template name="keepOnlyWithAnyAttOrAnyText"/>
    </xsl:template>
-   <xsl:template match="rsga:taskDesc">
+   <xsl:template match="rsw:taskDesc">
       <xsl:call-template name="warnIfHasChildOrRemove"/>
    </xsl:template>
    <xsl:template match="notesStmt/note[@type='commentary']">

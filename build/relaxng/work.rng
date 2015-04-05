@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.music-encoding.org/ns/mei"><!--
-Schema generated from ODD source 2015-04-01T20:35:46Z. 
+Schema generated from ODD source 2015-04-05T12:48:35Z. 
 Edition: Version 2.7.0. Last updated on
 	16th September 2014, revision 13036
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
@@ -192,6 +192,12 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
          <value>dotted</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">dotted</a:documentation>
       </choice>
+   </define>
+   <define name="mei_data.DEGREES">
+      <data type="decimal">
+         <param name="maxInclusive">360.0</param>
+         <param name="minInclusive">-360.0</param>
+      </data>
    </define>
    <define name="mei_data.DURATION">
       <choice>
@@ -417,6 +423,88 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
    <define name="mei_data.TEMPOVALUE">
       <data type="positiveInteger"/>
    </define>
+   <define name="mei_data.TEXTRENDITION">
+      <list>
+         <oneOrMore>
+            <choice>
+               <value>xx-small</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">relative font size</a:documentation>
+               <value>x-small</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">relative font size</a:documentation>
+               <value>small</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">relative font size</a:documentation>
+               <value>medium</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">relative font size</a:documentation>
+               <value>large</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">relative font size</a:documentation>
+               <value>x-large</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">relative font size</a:documentation>
+               <value>xx-large</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">relative font size</a:documentation>
+               <value>smaller</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">relative font size</a:documentation>
+               <value>larger</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">relative font size</a:documentation>
+               <value>italic</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">italicized (slanted to right)</a:documentation>
+               <value>oblique</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">oblique (slanted to left)</a:documentation>
+               <value>smcaps</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">small capitals</a:documentation>
+               <value>bold</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">relative font weight</a:documentation>
+               <value>bolder</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">relative font weight</a:documentation>
+               <value>lighter</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">relative font weight</a:documentation>
+               <value>box</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">enclosed in box</a:documentation>
+               <value>circle</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">enclosed in ellipse/circle</a:documentation>
+               <value>dbox</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">enclosed in diamond</a:documentation>
+               <value>tbox</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">enclosed in triangle</a:documentation>
+               <value>bslash</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">struck through by '\' (back slash)</a:documentation>
+               <value>fslash</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">struck through by '/' (forward slash)</a:documentation>
+               <value>line-through</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">struck through by '-'; may be qualified to indicate multiple lines,
+                e.g. line-through(2)</a:documentation>
+               <value>none</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">not rendered, invisible</a:documentation>
+               <value>overline</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">line above the text; may be qualified to indicate multiple lines,
+                e.g. overline(3)</a:documentation>
+               <value>strike</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">struck through by '-'; equivalent to line-through; may be qualified
+                to indicate multiple lines, e.g. strike(3)</a:documentation>
+               <value>sub</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">subscript</a:documentation>
+               <value>sup</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">superscript</a:documentation>
+               <value>underline</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">underlined; may be qualified to indicate multiple lines, e.g.
+                underline(2)</a:documentation>
+               <value>ltr</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">left-to-right (BIDI embed)</a:documentation>
+               <value>rtl</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">right-to-left (BIDI embed)</a:documentation>
+               <value>lro</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">eft-to-right (BIDI override)</a:documentation>
+               <value>rlo</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">right-to-left (BIDI override)</a:documentation>
+               <data type="string">
+                  <param name="pattern">(underline|overline|line-through|strike|letter-spacing|line-height)\(\d+\)</param>
+               </data>
+               <data type="string">
+                  <param name="pattern">(letter-spacing|line-height)\((\+|-)?\d+(\.\d+)?\)</param>
+               </data>
+            </choice>
+         </oneOrMore>
+      </list>
+   </define>
    <define name="mei_data.TSTAMPOFFSET">
       <data type="decimal"/>
    </define>
@@ -487,6 +575,41 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">1024th note</a:documentation>
          <value>2048</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">2048th note</a:documentation>
+      </choice>
+   </define>
+   <define name="mei_data.keyword_work">
+      <choice>
+         <value>Schauspiel</value>
+         <value>Roman</value>
+         <value>Gedicht(e)</value>
+         <value>Bühnenmusik</value>
+         <value>Orchestermusik</value>
+         <value>Kammermusik</value>
+         <value>Instrumental-Solo</value>
+         <value>Vokalmusik</value>
+         <value>Oratorium</value>
+         <value>Kantate</value>
+         <value>Liturgische Musik</value>
+      </choice>
+   </define>
+   <define name="mei_marcRelator.list">
+      <choice>
+         <value>arr</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Arrangeur) A person, family, or organization contributing to a musical work by rewriting the composition for a medium of performance different from that for which the work was originally intended, or modifying the work for the same medium of performance, etc., such that the musical substance of the original composition remains essentially unchanged. For extensive modification that effectively results in the creation of a new musical work, see composer.</a:documentation>
+         <value>aut</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Autor) Use for a person or organization chiefly responsible for the intellectual or artistic content of a work, usually printed text. This term may also be used when more than one person or body bears such responsibility.</a:documentation>
+         <value>cmp</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Komponist) Use for a person or organization who creates a musical work, usually a piece of music in manuscript or printed form.</a:documentation>
+         <value>dte</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Widmungsträger) Use for a person or organization to whom a book, manuscript, etc., is dedicated (not the recipient of a gift).</a:documentation>
+         <value>lbt</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Librettist) Use for a person or organization who is a writer of the text of an opera, oratorio, etc.</a:documentation>
+         <value>edt</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Herausgeber) Use for a person or organization who prepares for publication a work not primarily his/her own, such as by elucidating text, adding introductory or other critical matter, or technically directing an editorial staff.</a:documentation>
+         <value>lyr</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Dichter) Use for a person or organization who is a writer of the text of a song.</a:documentation>
+         <value>trl</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Übersetzer) Use for a person or organization who renders a text from one language into another, or from an older form of a language into the modern form.</a:documentation>
       </choice>
    </define>
    <define name="mei_model.expressionLike">
@@ -1120,6 +1243,26 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
          <attribute name="hand">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">signifies the hand responsible for an action. The value must be the ID of a &lt;hand&gt; element declared in the header.</a:documentation>
             <ref name="mei_data.URI"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="mei_att.horizontalalign.attributes">
+      <ref name="mei_att.horizontalalign.attribute.halign"/>
+   </define>
+   <define name="mei_att.horizontalalign.attribute.halign">
+      <optional>
+         <attribute name="halign">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">records horizontal alignment.</a:documentation>
+            <choice>
+               <value>left</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">left aligned.</a:documentation>
+               <value>right</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">right aligned.</a:documentation>
+               <value>center</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">centered.</a:documentation>
+               <value>justify</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">left and right aligned.</a:documentation>
+            </choice>
          </attribute>
       </optional>
    </define>
@@ -2617,6 +2760,22 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
          </attribute>
       </optional>
    </define>
+   <define name="mei_att.whitespace.attributes">
+      <ref name="mei_att.whitespace.attribute.xmlspace"/>
+   </define>
+   <define name="mei_att.whitespace.attribute.xmlspace">
+      <optional>
+         <attribute name="xml:space">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">allows one to signal to an application whether an element's white space is "significant". The behavior of xml:space cascades to all descendant elements, but it can be turned off locally by setting the xml:space attribute to the value "default".</a:documentation>
+            <choice>
+               <value>default</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">allows the application to handle white space as necessary. Not including an xml:space attribute produces the same result as using the default value.</a:documentation>
+               <value>preserve</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">instructs the application to maintain white space "as-is", suggesting that it might have meaning.</a:documentation>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
    <define name="mei_att.width.attributes">
       <ref name="mei_att.width.attribute.width"/>
    </define>
@@ -3465,20 +3624,32 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
       </element>
    </define>
    <define name="mei_identifier">
-      <element name="identifier">
+      <element name="identifier" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">An alpha-numeric string that establishes the identity of the described material. </a:documentation>
-         <zeroOrMore>
-            <choice>
-               <text/>
-               <ref name="mei_model.textphraseLike"/>
-               <ref name="mei_model.editLike"/>
-               <ref name="mei_model.transcriptionLike"/>
-            </choice>
-         </zeroOrMore>
+         <text/>
          <ref name="mei_att.authorized.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
-         <ref name="mei_att.common.attributes"/>
-         <ref name="mei_att.typed.attributes"/>
+         <ref name="mei_att.common.attribute.label"/>
+         <ref name="mei_att.common.attribute.n"/>
+         <ref name="mei_att.id.attribute.xmlid"/>
+         <ref name="mei_att.typed.attribute.subtype"/>
+         <attribute name="type">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.
+Empfohlene Werte sind: 1] gnd(Gemeinsame Normdatei) ; 2] RSQV; 3] ASOW; 4] TRENNER; 5] OP(Opus) </a:documentation>
+            <choice>
+               <value>gnd</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Gemeinsame Normdatei) Markiert Angaben (ID sowie Einheitssachtitel) nach der Gemeinsamen Normdatei.</a:documentation>
+               <value>RSQV</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Markiert einen Identifikator des Richard-Strauss-Quellenverzeichnisses.</a:documentation>
+               <value>ASOW</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Markiert eine Nummer des Asow-Verzeichnisses.</a:documentation>
+               <value>TRENNER</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Markiert eine Nummer des Trenner-Verzeichnisses.</a:documentation>
+               <value>OP</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Opus) Markiert eine Opuszahl.</a:documentation>
+               <data type="NMTOKEN"/>
+            </choice>
+         </attribute>
          <empty/>
       </element>
    </define>
@@ -3638,7 +3809,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
       </element>
    </define>
    <define name="mei_rend">
-      <element name="rend" ns="http://www.music-encoding.org/ns/mei">
+      <element name="rend">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(render) – A formatting element indicating special visual rendering, e.g., bold or italicized, of a text word or phrase. </a:documentation>
          <zeroOrMore>
             <choice>
@@ -3648,6 +3819,45 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
                <ref name="mei_model.transcriptionLike"/>
             </choice>
          </zeroOrMore>
+         <ref name="mei_att.color.attributes"/>
+         <ref name="mei_att.common.attributes"/>
+         <ref name="mei_att.horizontalalign.attributes"/>
+         <ref name="mei_att.lang.attributes"/>
+         <ref name="mei_att.typography.attributes"/>
+         <ref name="mei_att.whitespace.attributes"/>
+         <optional>
+            <attribute name="altrend">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">used to extend the values of the rend attribute.</a:documentation>
+               <text/>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="rend">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">captures the appearance of the element's contents using MEI-defined descriptors.</a:documentation>
+               <ref name="mei_data.TEXTRENDITION"/>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="rotation">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">A positive value for rotation rotates the text in a counter-clockwise fashion, while negative values produce clockwise rotation.</a:documentation>
+               <ref name="mei_data.DEGREES"/>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="valign">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the vertical position of the element content relative to the surrounding text.</a:documentation>
+               <choice>
+                  <value>top</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">aligns the top of the content with the top of the surrounding text.</a:documentation>
+                  <value>middle</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">aligns the middle of the content with the middle of the surrounding text.</a:documentation>
+                  <value>bottom</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">aligns the bottom of the content with the bottom of the surrounding text.</a:documentation>
+                  <value>baseline</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">aligns the baseline of the content with the baseline of the surrounding text.</a:documentation>
+               </choice>
+            </attribute>
+         </optional>
          <empty/>
       </element>
    </define>
@@ -3985,8 +4195,6 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Markiert einen Untertitel.</a:documentation>
                   <value>alt</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(alternativ) Markiert einen alternativen Titel, meist in Übersetzung (siehe xml:lang).</a:documentation>
-                  <value>div</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Nummer) Markiert einen Titel einer musikalischen Nummer (z.B. Szene, Arie).</a:documentation>
                   <value>original</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Original) Markiert den Originaltitel eines Werks</a:documentation>
                   <value>version</value>
@@ -4081,30 +4289,18 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
       </choice>
    </define>
    <define name="mei_altId">
-      <element name="altId" ns="http://www.music-encoding.org/ns/mei">
+      <element name="altId">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(alternative identifier) – May contain a bibliographic identifier that does not fit within the meiHead element's id attribute, for example because the id does not fit the definition of an XML id or because multiple identifiers are needed. </a:documentation>
-         <text/>
-         <ref name="mei_att.common.attribute.label"/>
-         <ref name="mei_att.common.attribute.n"/>
-         <ref name="mei_att.id.attribute.xmlid"/>
-         <ref name="mei_att.typed.attribute.subtype"/>
-         <attribute name="type">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.
-Empfohlene Werte sind: 1] gnd(Gemeinsame Normdatei) ; 2] JV(Jähns-Verzeichnis) ; 3] KS(Kaiser-Schriften) ; 4] opus; 5] WeV(Weber Werkverzeichnis) </a:documentation>
+         <zeroOrMore>
             <choice>
-               <value>gnd</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Gemeinsame Normdatei) Markiert Angaben (ID sowie Einheitssachtitel) nach der Gemeinsamen Normdatei.</a:documentation>
-               <value>JV</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Jähns-Verzeichnis) Markiert eine Verzeichnisnummer nach Jähns.</a:documentation>
-               <value>KS</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Kaiser-Schriften) Markiert eine Verzeichnisnummer nach Kaiser.</a:documentation>
-               <value>opus</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Markiert eine Opuszahl.</a:documentation>
-               <value>WeV</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Weber Werkverzeichnis) Markiert eine Verzeichnisnummer des WeV.</a:documentation>
-               <data type="NMTOKEN"/>
+               <text/>
+               <ref name="mei_model.lbLike"/>
+               <ref name="mei_model.rendLike"/>
             </choice>
-         </attribute>
+         </zeroOrMore>
+         <ref name="mei_att.bibl.attributes"/>
+         <ref name="mei_att.common.attributes"/>
+         <ref name="mei_att.typed.attributes"/>
          <empty/>
       </element>
    </define>
@@ -4581,15 +4777,11 @@ Empfohlene Werte sind: 1] gnd(Gemeinsame Normdatei) ; 2] JV(Jähns-Verzeichnis) 
       </element>
    </define>
    <define name="mei_term">
-      <element name="term">
+      <element name="term" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Keyword or phrase which describes a resource. </a:documentation>
-         <zeroOrMore>
-            <choice>
-               <text/>
-               <ref name="mei_term"/>
-               <ref name="mei_model.textphraseLike.limited"/>
-            </choice>
-         </zeroOrMore>
+         <optional>
+            <ref name="mei_data.keyword_work"/>
+         </optional>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
          <optional>
@@ -4918,6 +5110,7 @@ Empfohlene Werte sind: 1] gnd(Gemeinsame Normdatei) ; 2] JV(Jähns-Verzeichnis) 
          <optional>
             <attribute name="role">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Die Rolle oder Beziehung der Person mit dem Text/der Partitur. Werte werden von der MARC Code List for Relators genommen.</a:documentation>
+               <ref name="mei_marcRelator.list"/>
             </attribute>
          </optional>
          <optional>

@@ -43,6 +43,25 @@
 				<specGrpRef target="#edits.macros"/>
 				
 				<specGrpRef target="#edits.elements.ms"/>
+				
+				<macroSpec ident="data.biblType">
+					<content>
+						<rng:ref name="data.biblTypeCorrespondence"/>
+					</content>
+				</macroSpec>
+				
+				<macroSpec ident="data.divTypeCorresp">
+					<content>
+						<rng:choice>
+							<rng:value>main</rng:value>
+							<a:documentation>Haupttext</a:documentation>
+							<rng:value>accomp</rng:value>
+							<a:documentation>Beilage</a:documentation>
+							<rng:value>address</rng:value>
+							<a:documentation>Adressteil</a:documentation>
+						</rng:choice>
+					</content>
+				</macroSpec>
 			</schemaSpec>
 			
 			<div>
@@ -96,7 +115,7 @@
 						<equiv filter="rsw.xsl" mimeType="text/xsl" name="addTermRef"/>
 						<content>
 							<rng:optional>
-								<rng:ref name="data.keyword_ms"/>
+								<rng:ref name="data.keyword_corresp"/>
 							</rng:optional>
 						</content>
 					</elementSpec>

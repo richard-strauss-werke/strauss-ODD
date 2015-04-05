@@ -1,8 +1,8 @@
 <xsl:stylesheet xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns:rsga="http://richard-strauss-ausgabe.de/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0"
+	xmlns:rsw="http://richard-strauss-ausgabe.de/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0"
 	xmlns:functx="http://www.functx.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0"
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-	exclude-result-prefixes="rsga xs tei functx">
+	exclude-result-prefixes="rsw xs tei functx">
 
 	<!-- xslt version of the original xquery script, adjusted to tei-c usage; alpha -->
 
@@ -117,7 +117,7 @@
 		<xsl:if test="@*|node()">
 			<xsl:copy>
 				<xsl:apply-templates select="@*"/>
-				<xsl:value-of select="rsga:formatDateNode(.)"/>
+				<xsl:value-of select="rsw:formatDateNode(.)"/>
 			</xsl:copy>
 		</xsl:if>
 	</xsl:template>
@@ -126,7 +126,7 @@
 		<xsl:if test="node()">
 			<xsl:copy>
 				<xsl:apply-templates select="@*|node()"/>
-				<xsl:value-of select="rsga:certString(.)"/>
+				<xsl:value-of select="rsw:certString(.)"/>
 			</xsl:copy>
 		</xsl:if>
 	</xsl:template>
@@ -136,7 +136,7 @@
 			<xsl:copy>
 				<xsl:apply-templates select="@*|node()"/>
 				<xsl:if test="parent::change">
-					<xsl:value-of select="rsga:certString(.)"/>
+					<xsl:value-of select="rsw:certString(.)"/>
 				</xsl:if>
 			</xsl:copy>
 		</xsl:if>
@@ -156,7 +156,7 @@
 						<xsl:when test="local-name()='date'">
 							<xsl:copy>
 								<xsl:apply-templates select="@*"/>
-								<xsl:value-of select="rsga:formatDateNode(.)"/>
+								<xsl:value-of select="rsw:formatDateNode(.)"/>
 							</xsl:copy>
 						</xsl:when>
 						<xsl:when test="node()">
@@ -320,7 +320,7 @@
 			<xsl:for-each select="//@role[.='creator'][ancestor::listChange][../node()]/..">
 				<author>
 					<xsl:apply-templates select="@key|node()"/>
-					<xsl:value-of select="rsga:certString(./..)"/>
+					<xsl:value-of select="rsw:certString(./..)"/>
 				</author>
 			</xsl:for-each>
 			<xsl:copy-of select="$funder"/>
@@ -355,7 +355,7 @@
 			<xsl:for-each select="//@role[.='creator'][ancestor::listChange][../node()]/..">
 				<author>
 					<xsl:apply-templates select="@key|node()"/>
-					<xsl:value-of select="rsga:certString(./..)"/>
+					<xsl:value-of select="rsw:certString(./..)"/>
 				</author>
 			</xsl:for-each>
 			<xsl:copy-of select="$funder"/>
@@ -448,9 +448,9 @@
 
 	<xsl:template name="transformRespons">
 		<xsl:copy>
-			<xsl:apply-templates select="@*[not(name()='rsga:when')]"/>
+			<xsl:apply-templates select="@*[not(name()='rsw:when')]"/>
 			<desc>
-				<date when="{@rsga:when}"/>
+				<date when="{@rsw:when}"/>
 			</desc>
 		</xsl:copy>
 	</xsl:template>
@@ -591,14 +591,14 @@
 		</xsl:if>
 	</xsl:template>
 
-	<!-- @rsga:pdf and @rsga:seitepdf only refer to internal files and get removed from the public version -->
+	<!-- @rsw:pdf and @rsw:seitepdf only refer to internal files and get removed from the public version -->
 	<xsl:template name="processRs">
 		<xsl:if test="normalize-space()">
 			<xsl:copy>
-				<xsl:apply-templates select="@*[not(starts-with(name(), 'rsga:'))]"/>
-				<xsl:if test="@rsga:seite">
+				<xsl:apply-templates select="@*[not(starts-with(name(), 'rsw:'))]"/>
+				<xsl:if test="@rsw:seite">
 					<xsl:attribute name="n">
-						<xsl:value-of select="@rsga:seite"/>
+						<xsl:value-of select="@rsw:seite"/>
 					</xsl:attribute>
 				</xsl:if>
 				<xsl:apply-templates select="node()"/>
@@ -613,7 +613,7 @@
 					<xsl:if test="position() ne 1"> / </xsl:if>
 					<xsl:copy>
 						<xsl:apply-templates select="@*[not(name()='role')]"/>
-						<xsl:value-of select="rsga:reverseName(string())"/>
+						<xsl:value-of select="rsw:reverseName(string())"/>
 					</xsl:copy>
 				</xsl:for-each>
 			</xsl:variable>
@@ -629,7 +629,7 @@
 				</xsl:choose>
 				<xsl:copy>
 					<xsl:apply-templates select="@*[not(name()='role')]"/>
-					<xsl:value-of select="rsga:reverseName(string())"/>
+					<xsl:value-of select="rsw:reverseName(string())"/>
 				</xsl:copy>
 			</xsl:for-each>
 			<xsl:for-each select="placeName[element()|text()]">
@@ -650,7 +650,7 @@
 			<xsl:variable name="dates">
 				<xsl:for-each select="origDate[@*|text()]">
 					<xsl:if test="position() ne 1"> / </xsl:if>
-					<xsl:value-of select="rsga:formatDateNode(.)"/>
+					<xsl:value-of select="rsw:formatDateNode(.)"/>
 				</xsl:for-each>
 			</xsl:variable>
 			<xsl:value-of
@@ -671,18 +671,18 @@
 
 	<!-- functions -->
 
-	<xsl:function name="rsga:reverseName" as="xs:string">
+	<xsl:function name="rsw:reverseName" as="xs:string">
 		<xsl:param name="str" as="xs:string"/>
 		<xsl:value-of select="string-join(reverse(tokenize($str, ', ')), ' ')"/>
 	</xsl:function>
 
-	<xsl:function name="rsga:formatDateNode" as="xs:string*">
+	<xsl:function name="rsw:formatDateNode" as="xs:string*">
 		<xsl:param name="date" as="node()?"/>
-		<xsl:variable name="when" select="rsga:dateLong($date/@when, ())"/>
-		<xsl:variable name="notBefore" select="rsga:dateLong($date/@notBefore, 'fr. ')"/>
-		<xsl:variable name="notAfter" select="rsga:dateLong($date/@notAfter, 'sp. ')"/>
-		<xsl:variable name="from" select="rsga:dateLong($date/@from, ())"/>
-		<xsl:variable name="to" select="rsga:dateLong($date/@to, ())"/>
+		<xsl:variable name="when" select="rsw:dateLong($date/@when, ())"/>
+		<xsl:variable name="notBefore" select="rsw:dateLong($date/@notBefore, 'fr. ')"/>
+		<xsl:variable name="notAfter" select="rsw:dateLong($date/@notAfter, 'sp. ')"/>
+		<xsl:variable name="from" select="rsw:dateLong($date/@from, ())"/>
+		<xsl:variable name="to" select="rsw:dateLong($date/@to, ())"/>
 		<xsl:variable name="fromTo"
 			select="if ($from or $to) then concat($from, '&#160;–', (if ($to) then ' ' else ()), $to) else ()"/>
 		<xsl:variable name="dates">
@@ -692,7 +692,7 @@
 			<xsl:value-of select="$date/text()"/>
 			<xsl:value-of select="if ($dates) then ' ' else ()"/>
 		</xsl:if>
-		<xsl:value-of select="concat(rsga:precisionString($date), $dates, rsga:certString($date))"/>
+		<xsl:value-of select="concat(rsw:precisionString($date), $dates, rsw:certString($date))"/>
 	</xsl:function>
 
 
@@ -717,7 +717,7 @@
 		/>
 	</xsl:function>
 
-	<xsl:function name="rsga:dateLong" as="xs:string?">
+	<xsl:function name="rsw:dateLong" as="xs:string?">
 		<xsl:param name="date" as="xs:string?"/>
 		<xsl:param name="prefix" as="xs:string?"/>
 		<xsl:if test="$date">
@@ -745,12 +745,12 @@
 		</xsl:if>
 	</xsl:function>
 
-	<xsl:function name="rsga:precisionString" as="xs:string*">
+	<xsl:function name="rsw:precisionString" as="xs:string*">
 		<xsl:param name="node" as="node()?"/>
 		<xsl:value-of select="if (data($node/@precision)='medium') then 'ca. ' else ()"/>
 	</xsl:function>
 
-	<xsl:function name="rsga:certString" as="xs:string?">
+	<xsl:function name="rsw:certString" as="xs:string?">
 		<xsl:param name="node" as="node()?"/>
 		<xsl:variable name="cert">
 			<xsl:value-of select="$node/@cert"/>

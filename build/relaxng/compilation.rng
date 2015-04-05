@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2015-04-01T20:34:52Z. 
+Schema generated from ODD source 2015-04-05T12:46:44Z. 
 Edition: Version 2.7.0. Last updated on
 	16th September 2014, revision 13036
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
@@ -10782,9 +10782,11 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
    <define name="rsw_data.certainty">
       <choice>
          <value>high</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(ws.) wahrscheinlich / mit hoher Wahrscheinlichkeit</a:documentation>
          <value>medium</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(?) möglicherweise / mit mittlerer Wahrscheinlichkeit</a:documentation>
          <value>low</value>
-         <value>unknown</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(nicht) nicht / mit sehr geringer Wahrscheinlichkeit</a:documentation>
       </choice>
    </define>
    <define name="rsw_data.numeric">
@@ -11148,9 +11150,13 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
          <ref name="rsw_macro.form.detailsNote"/>
          <ref name="rsw_macro.form.discussionNote"/>
          <ref name="rsw_macro.form.figuresNote"/>
+         <ref name="rsw_macro.form.listBiblNote"/>
+         <ref name="rsw_macro.form.orgNamePerformance"/>
+         <ref name="rsw_macro.form.persNamePerformance"/>
          <ref name="rsw_macro.form.regularPersName"/>
          <ref name="rsw_macro.form.revisionDescChange"/>
          <ref name="rsw_macro.form.summaryNote"/>
+         <ref name="rsw_macro.form.supplementaryOrgName"/>
          <ref name="rsw_macro.form.supplementaryPersName"/>
          <ref name="rsw_macro.form.titles.full"/>
          <ref name="rsw_macro.form.titles.short"/>
@@ -11214,6 +11220,136 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
          <ref name="rsw_unclear"/>
       </choice>
    </define>
+   <define name="rsw_data.handFeaturesScope">
+      <choice>
+         <value>sole</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">einzige Hand</a:documentation>
+         <value>major</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Haupt-Hand</a:documentation>
+         <value>minor</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Neben-Hand</a:documentation>
+      </choice>
+   </define>
+   <define name="rsw_data.precision">
+      <choice>
+         <value>high</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">hoch</a:documentation>
+         <value>medium</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">mittel</a:documentation>
+         <value>low</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">niedrig</a:documentation>
+         <value>unknown</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">unbekannt</a:documentation>
+      </choice>
+   </define>
+   <define name="rsw_data.placeNamePrecision">
+      <choice>
+         <value>high</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">nahe</a:documentation>
+         <value>medium</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">bei</a:documentation>
+      </choice>
+   </define>
+   <define name="rsw_data.revisionDescChangeType">
+      <choice>
+         <value>UO</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Übertragen nach Original</a:documentation>
+         <value>UC</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Übertragen nach Entwurf</a:documentation>
+         <value>UA</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Übertragen nach Abschrift v.f.H.</a:documentation>
+         <value>UP</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Übertragen nach Papierkopie</a:documentation>
+         <value>UI</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Übertragen nach Mikroform</a:documentation>
+         <value>UM</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Übertragen nach autogr. Abschrift</a:documentation>
+         <value>UD</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Übertragen nach Original [Digitalisat]</a:documentation>
+         <value>UG</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Übertragen nach Entwurf [Digitalisat]</a:documentation>
+         <value>UH</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Übertragen nach Abschrift v.f.H. [Digitalisat]</a:documentation>
+         <value>UF</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Übertragen nach Papierkopie [Digitalisat]</a:documentation>
+         <value>UJ</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Übertragen nach Mikroform [Digitalisat]</a:documentation>
+         <value>UB</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Übertragen nach autogr. Abschrift [Digitalisat]</a:documentation>
+         <value>UE</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Übertragen nach Edition</a:documentation>
+         <value>UZ</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Übertragen nach Auszug</a:documentation>
+         <value>UW</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Übertragung</a:documentation>
+         <value>KO</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Korrigiert nach Original</a:documentation>
+         <value>KC</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Korrigiert nach Entwurf</a:documentation>
+         <value>KA</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Korrigiert nach Abschrift v.f.H.</a:documentation>
+         <value>KP</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Korrigiert nach Papierkopie</a:documentation>
+         <value>KI</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Korrigiert nach Mikroform</a:documentation>
+         <value>KM</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Korrigiert nach autogr. Abschrift</a:documentation>
+         <value>KD</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Korrigiert nach Original [Digitalisat]</a:documentation>
+         <value>KG</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Korrigiert nach Entwurf [Digitalisat]</a:documentation>
+         <value>KH</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Korrigiert nach Abschrift v.f.H. [Digitalisat]</a:documentation>
+         <value>KF</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Korrigiert nach Papierkopie [Digitalisat]</a:documentation>
+         <value>KJ</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Korrigiert nach Mikroform [Digitalisat]</a:documentation>
+         <value>KB</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Korrigiert nach autogr. Abschrift [Digitalisat]</a:documentation>
+         <value>KE</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Korrigiert nach Edition</a:documentation>
+         <value>KZ</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Korrektr nach Auszug</a:documentation>
+         <value>KW</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Korrektur</a:documentation>
+         <value>VQ</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Vollständigkeit der Quellenübertragung bestätigt</a:documentation>
+         <value>VT</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Vollständigkeit der Textauszeichnung bestätigt</a:documentation>
+         <value>VL</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Vollständigkeit der Verlinkung bestätigt</a:documentation>
+         <value>P</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Vorgeschlagen zur Publikation</a:documentation>
+         <value>C</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Als möglicherweise publikationsfertig gekennzeichnet</a:documentation>
+         <value>A</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Zur Publikation freigegeben</a:documentation>
+      </choice>
+   </define>
+   <define name="rsw_data.orgNameOrchestraExtent">
+      <choice>
+         <value>full-size</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">volle Besetzung</a:documentation>
+         <value>reduced-size</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">reduzierte Besetzung</a:documentation>
+      </choice>
+   </define>
+   <define name="rsw_data.persNamePerformanceRole">
+      <choice>
+         <value>conductor</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dirigent</a:documentation>
+         <value>stage-director</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Regisseur</a:documentation>
+         <value>scenery-designer</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Bühnenbild</a:documentation>
+         <value>costume-designer</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Kostüme</a:documentation>
+         <value>involved-in-preparation</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">bei den Vorbereitungen</a:documentation>
+         <value>visitor</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Besucher</a:documentation>
+      </choice>
+   </define>
    <define name="rsw_data.supplPersNameType">
       <choice>
          <value>unknown</value>
@@ -11238,10 +11374,28 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">sonstige Art</a:documentation>
       </choice>
    </define>
+   <define name="rsw_data.supplOrgNameType">
+      <choice>
+         <value>unknown</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">unbekannte Art</a:documentation>
+         <value>full</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">voller Name</a:documentation>
+         <value>former</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">früherer Name</a:documentation>
+         <value>later</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">späterer Name</a:documentation>
+         <value>real</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">wirklicher Name</a:documentation>
+         <value>variant</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Variante</a:documentation>
+         <value>other</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">sonstige Art</a:documentation>
+      </choice>
+   </define>
    <define name="rsw_data.msDescRend">
       <choice>
          <value>unknown</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">unbekannt</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">unbekannte Quellenart</a:documentation>
          <value>original</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Original</a:documentation>
          <value>draft</value>
@@ -11250,12 +11404,14 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">autographe Abschrift</a:documentation>
          <value>foreign-copy</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Abschrift von fremder Hand</a:documentation>
+         <value>carbon-copy</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Durchschlag</a:documentation>
          <value>papercopy</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Papierkopie</a:documentation>
          <value>microform</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Mikroform</a:documentation>
          <value>other</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">sonstige Kategorie</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">sonstige Quellenart</a:documentation>
       </choice>
    </define>
    <define name="rsw_data.encoding-staff">
@@ -11266,9 +11422,9 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Stefan Schenk</a:documentation>
          <value>aap</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Andreas Pernpeintner</a:documentation>
-         <value>mmm</value>
+         <value>clh</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Claudia Heine</a:documentation>
-         <value>afl</value>
+         <value>mmm</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Martina Mengele</a:documentation>
          <value>flr</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Florence Eller</a:documentation>
@@ -11276,7 +11432,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Sebastian Bolz</a:documentation>
          <value>wwb</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Walter Werbeck</a:documentation>
-         <value>clh</value>
+         <value>afl</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Florian Amort</a:documentation>
          <value>stk</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Steffi Kracht</a:documentation>
@@ -11305,28 +11461,6 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
          <param name="pattern">[a-z]\d{4,5}</param>
       </data>
    </define>
-   <define name="rsw_data.biblType">
-      <choice>
-         <value>e</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Edition in ...</a:documentation>
-         <value>a</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Auszug in ...</a:documentation>
-         <value>f</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Faksimile in ...</a:documentation>
-         <value>n</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Bezugnahme in ...</a:documentation>
-         <value>o</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Folgeauflage = </a:documentation>
-         <value>w</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Wiederabdruck = </a:documentation>
-         <value>t</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Übersetzung =</a:documentation>
-         <value>u</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">unbekannt</a:documentation>
-         <value>s</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Sonstiges</a:documentation>
-      </choice>
-   </define>
    <define name="rsw_macro.form.date">
       <ref name="rsw_date"/>
    </define>
@@ -11338,13 +11472,58 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
          <text/>
       </element>
    </define>
+   <define name="rsw_macro.form.optionalDating">
+      <optional>
+         <attribute name="when">
+            <ref name="rsw_data.temporal.w3c"/>
+         </attribute>
+      </optional>
+      <optional>
+         <attribute name="notBefore">
+            <ref name="rsw_data.temporal.w3c"/>
+         </attribute>
+      </optional>
+      <optional>
+         <attribute name="notAfter">
+            <ref name="rsw_data.temporal.w3c"/>
+         </attribute>
+      </optional>
+      <optional>
+         <attribute name="from">
+            <ref name="rsw_data.temporal.w3c"/>
+         </attribute>
+      </optional>
+      <optional>
+         <attribute name="to">
+            <ref name="rsw_data.temporal.w3c"/>
+         </attribute>
+      </optional>
+      <optional>
+         <attribute name="precision">
+            <ref name="rsw_data.precision"/>
+         </attribute>
+      </optional>
+      <optional>
+         <attribute name="cert">
+            <ref name="rsw_data.certainty"/>
+         </attribute>
+      </optional>
+   </define>
    <define name="rsw_macro.form.supplementaryPersName">
       <element name="persName">
-         <optional>
-            <attribute name="type">
-               <ref name="rsw_data.supplPersNameType"/>
-            </attribute>
-         </optional>
+         <attribute name="type">
+            <ref name="rsw_data.supplPersNameType"/>
+         </attribute>
+         <ref name="rsw_macro.form.optionalDating"/>
+         <text/>
+      </element>
+   </define>
+   <define name="rsw_macro.form.supplementaryOrgName">
+      <element name="orgName">
+         <attribute name="type">
+            <ref name="rsw_data.supplOrgNameType"/>
+         </attribute>
+         <ref name="rsw_macro.form.optionalDating"/>
          <text/>
       </element>
    </define>
@@ -11424,6 +11603,67 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
          </zeroOrMore>
       </element>
    </define>
+   <define name="rsw_macro.form.listBiblNote">
+      <element name="note">
+         <attribute name="type">
+            <value>listBibl</value>
+         </attribute>
+         <zeroOrMore>
+            <ref name="rsw_macro.form.bibl"/>
+         </zeroOrMore>
+      </element>
+   </define>
+   <define name="rsw_macro.form.persNamePerformance">
+      <element name="persName">
+         <optional>
+            <attribute name="role">
+               <ref name="rsw_data.persNamePerformanceRole"/>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="cert">
+               <ref name="rsw_data.certainty"/>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="key"/>
+         </optional>
+         <optional>
+            <text/>
+         </optional>
+      </element>
+   </define>
+   <define name="rsw_macro.form.orgNamePerformance">
+      <element name="orgName">
+         <attribute name="role">
+            <value>orchestra</value>
+         </attribute>
+         <optional>
+            <attribute name="cert">
+               <ref name="rsw_data.certainty"/>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="key"/>
+         </optional>
+         <optional>
+            <attribute name="extent">
+               <ref name="rsw_data.orgNameOrchestraExtent"/>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="unit">
+               <value>musicians</value>
+            </attribute>
+         </optional>
+         <attribute name="quantity">
+            <ref name="rsw_data.numeric"/>
+         </attribute>
+         <optional>
+            <text/>
+         </optional>
+      </element>
+   </define>
    <define name="rsw_macro.form.revisionDescChange">
       <element name="change">
          <optional>
@@ -11433,7 +11673,9 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
             </attribute>
          </optional>
          <optional>
-            <attribute name="type"/>
+            <attribute name="type">
+               <ref name="rsw_data.revisionDescChangeType"/>
+            </attribute>
          </optional>
          <oneOrMore>
             <ref name="rsw_p"/>
@@ -11444,7 +11686,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
       <element name="bibl">
          <optional>
             <attribute name="type">
-               <ref name="rsw_data.biblType"/>
+               <empty/>
             </attribute>
          </optional>
          <optional>
@@ -11605,11 +11847,19 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
       </optional>
    </define>
    <define name="rsw_att.dimensions.attributes">
+      <ref name="rsw_att.dimensions.attribute.precision"/>
       <ref name="rsw_att.dimensions.attribute.unit"/>
       <ref name="rsw_att.dimensions.attribute.quantity"/>
       <ref name="rsw_att.dimensions.attribute.extent"/>
-      <ref name="rsw_att.dimensions.attribute.precision"/>
       <ref name="rsw_att.dimensions.attribute.scope"/>
+   </define>
+   <define name="rsw_att.dimensions.attribute.precision">
+      <optional>
+         <attribute name="precision">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <ref name="rsw_data.precision"/>
+         </attribute>
+      </optional>
    </define>
    <define name="rsw_att.dimensions.attribute.unit">
       <optional>
@@ -11645,14 +11895,6 @@ Empfohlene Werte sind: 1] cm(centimetres) ; 2] mm(millimetres) ; 3] in(inches) ;
          <attribute name="extent">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the size of the object concerned using a project-specific vocabulary combining quantity and units in a single string of words.</a:documentation>
             <ref name="rsw_data.text"/>
-         </attribute>
-      </optional>
-   </define>
-   <define name="rsw_att.dimensions.attribute.precision">
-      <optional>
-         <attribute name="precision">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the precision of the values specified by the other attributes.</a:documentation>
-            <ref name="rsw_data.certainty"/>
          </attribute>
       </optional>
    </define>
@@ -11801,12 +12043,20 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
       </optional>
    </define>
    <define name="rsw_att.handFeatures.attributes">
+      <ref name="rsw_att.handFeatures.attribute.scope"/>
       <ref name="rsw_att.handFeatures.attribute.scribe"/>
       <ref name="rsw_att.handFeatures.attribute.scribeRef"/>
       <ref name="rsw_att.handFeatures.attribute.script"/>
       <ref name="rsw_att.handFeatures.attribute.scriptRef"/>
       <ref name="rsw_att.handFeatures.attribute.medium"/>
-      <ref name="rsw_att.handFeatures.attribute.scope"/>
+   </define>
+   <define name="rsw_att.handFeatures.attribute.scope">
+      <optional>
+         <attribute name="scope">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <ref name="rsw_data.handFeaturesScope"/>
+         </attribute>
+      </optional>
    </define>
    <define name="rsw_att.handFeatures.attribute.scribe">
       <optional>
@@ -11861,21 +12111,6 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
                   <ref name="rsw_data.enumerated"/>
                </oneOrMore>
             </list>
-         </attribute>
-      </optional>
-   </define>
-   <define name="rsw_att.handFeatures.attribute.scope">
-      <optional>
-         <attribute name="scope">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies how widely this hand is used in the manuscript.</a:documentation>
-            <choice>
-               <value>sole</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">only this hand is used throughout the manuscript</a:documentation>
-               <value>major</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">this hand is used through most of the manuscript</a:documentation>
-               <value>minor</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">this hand is used occasionally in the manuscript</a:documentation>
-            </choice>
          </attribute>
       </optional>
    </define>
@@ -11994,7 +12229,7 @@ Empfohlene Werte sind: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6] o
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="schema.compilations-att.typed-subtypeTyped-constraint-1">
+            id="schema.compilation-att.typed-subtypeTyped-constraint-1">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -13581,17 +13816,17 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">spezifiert wo das Element angebracht ist.</a:documentation>
             <choice>
                <value>above</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung über der Zeile.</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(über der Zeile) Einfügung über der Zeile</a:documentation>
                <value>below</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung unter der Zeile.</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(unter der Zeile) Einfügung unter der Zeile</a:documentation>
                <value>inline</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung in der Zeile.</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(in der Zeile) Einfügung in der Zeile</a:documentation>
                <value>margin</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung am Rand.</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(am Rand) Einfügung am Rand</a:documentation>
                <value>mixed</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung an mehreren Orten</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(an mehr. Orten) Einfügung an mehreren Orten</a:documentation>
                <value>unknown</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Der Ort der Einfügung ist unbekannt</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(unbekannt) Der Ort der Einfügung ist unbekannt</a:documentation>
             </choice>
          </attribute>
          <empty/>
@@ -13610,11 +13845,16 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
          <ref name="rsw_att.global.change.attribute.change"/>
          <attribute name="rend">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ausgabe) gibt an, wie das fragliche Element ausgegeben wurde oder im Quelltext präsentiert ist.</a:documentation>
-            <list>
-               <oneOrMore>
-                  <ref name="rsw_data.word"/>
-               </oneOrMore>
-            </list>
+            <choice>
+               <value>strikethrough</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(durchgestrichen) Das gelöschte Wort (bzw. das gelöschte Zeichen) ist durchgestrichen.</a:documentation>
+               <value>overwritten</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(überschrieben) Das gelöschte Wort (bzw. das gelöschte Zeichen) ist durch die Ersetzung überschrieben.</a:documentation>
+               <value>erased</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(getilgt) Das gelöschte Wort (bzw. das gelöschte Zeichen) ist durch Rasur oder sonstige Weise getilgt.</a:documentation>
+               <value>unknown</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(unknownunbekannt) Die Erscheinungsweise der Tilgung ist unbekannt.</a:documentation>
+            </choice>
          </attribute>
          <optional>
             <attribute name="hand">
@@ -13792,7 +14032,7 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Hinweis) definiert einen Hinweis auf einen anderen Ort. [3.6.  16.1. ]</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="schema.compilations-ptr-ptrAtts-constraint-1">
+                  id="schema.compilation-ptr-ptrAtts-constraint-1">
             <rule context="tei:ptr">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -13822,7 +14062,7 @@ attributes @target and @cRef may be supplied on <name/>.</report>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference) defines a reference to another location, possibly modified by additional text or comment. [3.6.  16.1. ]</a:documentation>
          <ref name="rsw_macro.paraContent"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="schema.compilations-ref-refAtts-constraint-2">
+                  id="schema.compilation-ref-refAtts-constraint-2">
             <rule context="tei:ref">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -14129,7 +14369,20 @@ Beispielwerte sind etwa: 1] main; 2] sub(subordinate) ; 3] alt(alternate) ; 4] s
          <ref name="rsw_publisher"/>
          <ref name="rsw_pubPlace"/>
          <oneOrMore>
-            <ref name="rsw_date"/>
+            <element name="date">
+               <optional>
+                  <attribute name="type">
+                     <choice>
+                        <value>copyright</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(©) Copyright</a:documentation>
+                        <value>inferred</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">([ ]) erschlossen</a:documentation>
+                     </choice>
+                  </attribute>
+               </optional>
+               <ref name="rsw_macro.form.optionalDating"/>
+               <text/>
+            </element>
          </oneOrMore>
          <ref name="rsw_note"/>
          <element name="biblScope">
@@ -14230,7 +14483,7 @@ Empfohlene Werte sind: 1] vol(volume) ; 2] issue; 3] pp(pages) ; 4] ll(lines) ; 
             </choice>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="schema.compilations-relatedItem-targetorcontent1-constraint-3">
+                  id="schema.compilation-relatedItem-targetorcontent1-constraint-3">
             <rule context="tei:relatedItem">
                <sch:report xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -14244,7 +14497,7 @@ relatedItem element must be empty</sch:report>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="schema.compilations-relatedItem-targetorcontent1-constraint-2">
+                  id="schema.compilation-relatedItem-targetorcontent1-constraint-2">
             <rule context="tei:relatedItem">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -14310,7 +14563,7 @@ relatedItem element must be empty</sch:report>
             </zeroOrMore>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="schema.compilations-lg-atleast1oflggapl-constraint-3">
+                  id="schema.compilation-lg-atleast1oflggapl-constraint-3">
             <rule context="tei:lg">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -14480,7 +14733,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
             <ref name="rsw_expan"/>
          </element>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="schema.compilations-handNote-require-content-in-handNote-constraint-4">
+                  id="schema.compilation-handNote-require-content-in-handNote-constraint-4">
             <rule context="tei:handNote">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -14543,10 +14796,22 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains an absolute or relative place name. [13.2.3. ]</a:documentation>
          <ref name="rsw_macro.phraseSeq"/>
          <ref name="rsw_att.datable.attributes"/>
-         <ref name="rsw_att.editLike.attributes"/>
+         <ref name="rsw_att.editLike.attribute.evidence"/>
+         <ref name="rsw_att.dimensions.attribute.unit"/>
+         <ref name="rsw_att.dimensions.attribute.quantity"/>
+         <ref name="rsw_att.dimensions.attribute.extent"/>
+         <ref name="rsw_att.dimensions.attribute.scope"/>
+         <ref name="rsw_att.responsibility.attribute.cert"/>
+         <ref name="rsw_att.responsibility.attribute.resp"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.personal.attributes"/>
          <ref name="rsw_att.typed.attributes"/>
+         <optional>
+            <attribute name="precision">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <ref name="rsw_data.placeNamePrecision"/>
+            </attribute>
+         </optional>
          <empty/>
       </element>
    </define>
@@ -15126,7 +15391,12 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
             </optional>
          </group>
          <ref name="rsw_att.global.attributes"/>
-         <ref name="rsw_att.typed.attributes"/>
+         <ref name="rsw_att.typed.attribute.subtype"/>
+         <optional>
+            <attribute name="type">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            </attribute>
+         </optional>
          <empty/>
       </element>
    </define>
@@ -15279,7 +15549,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">marks the beginning of a sequence of text written in a new hand, or the beginning of a scribal stint. [11.3.2.1. ]</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="schema.compilations-handShift-require-xml-id-target-constraint-5">
+                  id="schema.compilation-handShift-require-xml-id-target-constraint-5">
             <rule context="tei:handShift">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -15349,7 +15619,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
             </choice>
          </oneOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="schema.compilations-subst-substContents1-constraint-6">
+                  id="schema.compilation-subst-substContents1-constraint-6">
             <rule context="tei:subst">
                <assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -15453,8 +15723,20 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.naming.attributes"/>
          <ref name="rsw_att.datable.attributes"/>
-         <ref name="rsw_att.editLike.attributes"/>
+         <ref name="rsw_att.editLike.attribute.evidence"/>
+         <ref name="rsw_att.dimensions.attribute.unit"/>
+         <ref name="rsw_att.dimensions.attribute.quantity"/>
+         <ref name="rsw_att.dimensions.attribute.extent"/>
+         <ref name="rsw_att.dimensions.attribute.scope"/>
+         <ref name="rsw_att.responsibility.attribute.cert"/>
+         <ref name="rsw_att.responsibility.attribute.resp"/>
          <ref name="rsw_att.typed.attributes"/>
+         <optional>
+            <attribute name="precision">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <ref name="rsw_data.placeNamePrecision"/>
+            </attribute>
+         </optional>
          <empty/>
       </element>
    </define>

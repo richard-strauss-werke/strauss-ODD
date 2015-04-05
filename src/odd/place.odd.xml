@@ -27,8 +27,18 @@
 				<moduleRef key="namesdates"
 					include="country district geo location place placeName region settlement trait"/>
 				<moduleRef key="linking" include=""/>
+				
+				<specGrpRef target="#edits.datatypes"/>
 				<specGrpRef target="#edits.elements.place"/>
 			</schemaSpec>
+			
+			<div>
+				<head>Edits</head>
+<!--				<xi:include href="edits/classes.att.xml"/>-->
+				<xi:include href="edits/datatypes.xml"/>
+<!--				<xi:include href="edits/elements.xml"/>-->
+<!--				<xi:include href="edits/macros.xml"/>-->
+			</div>
 			
 			<div>
 				<head>Place</head>
@@ -119,19 +129,12 @@
 							<memberOf key="att.sortable" mode="delete"/>
 						</classes>
 						<attList>
-							<attDef ident="type" mode="change" usage="req">
+							<attDef ident="type" mode="replace" usage="req">
 								<desc versionDate="2014-01-08" xml:lang="en">characterizes the element in some sense, using any convenient classification scheme or typology.</desc>
 								<desc versionDate="2014-01-08" xml:lang="de">charakterisiert das Element in einem gewissen Sinne, wobei irgendeine zweckmäßige Systematik oder Typologie angwendet wird.</desc>
-								<valList type="closed" mode="replace">
-									<valItem ident="geonames">
-										<desc versionDate="2014-01-08" xml:lang="en">ID taken from http://www.geonames.org/</desc>
-										<desc versionDate="2014-01-08" xml:lang="de">ID von http://www.geonames.org/</desc>
-									</valItem>
-									<valItem ident="getty">
-										<desc versionDate="2014-01-08" xml:lang="en">ID taken from http://www.getty.edu/research/tools/vocabularies/tgn/</desc>
-										<desc versionDate="2014-01-08" xml:lang="de">ID von http://www.getty.edu/research/tools/vocabularies/tgn/</desc>
-									</valItem>
-								</valList>
+								<datatype>
+									<rng:ref name="data.idnoPlaceType"/>
+								</datatype>
 							</attDef>
 						</attList>
 					</elementSpec>

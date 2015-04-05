@@ -18,8 +18,8 @@
 	</teiHeader>
 	<text>
 		<body>
-			<schemaSpec ident="schema.persons" xml:lang="en" start="person" prefix="rsw_">
-				<desc>Persons</desc>
+			<schemaSpec ident="schema.person" xml:lang="en" start="person" prefix="rsw_">
+				<desc>Person</desc>
 				<moduleRef key="tei"/>
 				<moduleRef key="core"
 					include="abbr add author bibl choice cit corr date del desc expan gap gloss graphic head hi item l lb lg list listBibl milestone name note p pb q quote ref rs sic sp speaker stage textLang time title unclear"/>

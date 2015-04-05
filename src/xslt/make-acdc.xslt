@@ -22,7 +22,7 @@
 	<xsl:template match="/">
 		<XSL:stylesheet version="2.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0"
 			xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-			xmlns:rsga="http://richard-strauss-ausgabe.de/ns/1.0">
+			xmlns:rsw="http://richard-strauss-ausgabe.de/ns/1.0">
 
 			<xsl:for-each select="distinct-values(//equiv/@filter)">
 				<XSL:import href="{.}"/>
@@ -105,7 +105,7 @@
 				<empty/>
 			</XSL:variable>
 			<XSL:variable name="keywords">
-				<xsl:for-each select="//@ident[.=('data.keyword_ms', 'data.keyword_print')]/..//rng:value">
+				<xsl:for-each select="//@ident[.=('data.keyword_corresp', 'data.keyword_graphic', 'data.keyword_print')]/..//rng:value">
 					<term>
 						<xsl:if test="following-sibling::*[1]/text()">
 							<!-- only insert keywords with documentation -->
@@ -175,7 +175,7 @@
 							<xsl:attribute name="match">
 								<xsl:variable name="ns" select="ancestor::elementSpec/@ns"/>
 								<xsl:value-of
-									select="if ($ns='http://richard-strauss-ausgabe.de/ns/1.0') then 'rsga:' else ()"/>
+									select="if ($ns='http://richard-strauss-ausgabe.de/ns/1.0') then 'rsw:' else ()"/>
 								<xsl:value-of select="ancestor::elementSpec/@ident"/>
 							</xsl:attribute>
 							<XSL:call-template name="{@name}"/>

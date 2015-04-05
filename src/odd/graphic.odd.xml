@@ -43,6 +43,13 @@
 				<specGrpRef target="#edits.macros"/>
 				
 				<specGrpRef target="#edits.elements.graphic"/>
+				
+				<macroSpec ident="data.biblType">
+					<content>
+						<rng:ref name="data.biblTypeCorrespondence"/>
+					</content>
+				</macroSpec>
+				
 			</schemaSpec>
 			
 			<div>
@@ -97,7 +104,7 @@
 						<equiv filter="rsw.xsl" mimeType="text/xsl" name="addTermRef"/>
 						<content>
 							<rng:optional>
-								<rng:ref name="data.keyword_ms"/>
+								<rng:ref name="data.keyword_graphic"/>
 							</rng:optional>
 						</content>
 					</elementSpec>

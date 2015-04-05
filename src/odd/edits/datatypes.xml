@@ -6,8 +6,176 @@
 	<head>Datatypes</head>
 	<specGrp xml:id="edits.datatypes">
 		
-		$valuesPerformanceRole:"conductor, stage-director, scenery-designer, costume-designer, involved-in-preparation, visitor";
-		$labelsPerformanceRole:"Dirigent, Regisseur, Bühnenbild, Kostüme, bei den Vorbereitungen, Besucher";
+		<macroSpec ident="data.handFeaturesScope" module="tei" type="dt" mode="add">
+			<content>
+				<rng:choice>
+					<rng:value>sole</rng:value>
+					<a:documentation>einzige Hand</a:documentation>
+					<rng:value>major</rng:value>
+					<a:documentation>Haupt-Hand</a:documentation>
+					<rng:value>minor</rng:value>
+					<a:documentation>Neben-Hand</a:documentation>
+				</rng:choice>
+			</content>
+		</macroSpec>
+
+		<macroSpec ident="data.certainty" module="tei" type="dt" mode="replace">
+			<content>
+				<rng:choice>
+					<rng:value>high</rng:value>
+					<a:documentation>(ws.) wahrscheinlich / mit hoher Wahrscheinlichkeit</a:documentation>
+					<rng:value>medium</rng:value>
+					<a:documentation>(?) möglicherweise / mit mittlerer Wahrscheinlichkeit</a:documentation>
+					<rng:value>low</rng:value>
+					<a:documentation>(nicht) nicht / mit sehr geringer Wahrscheinlichkeit</a:documentation>
+				</rng:choice>
+			</content>
+		</macroSpec>
+		
+		<macroSpec ident="data.precision" module="tei" type="dt" mode="add">
+			<content>
+				<rng:choice>
+					<rng:value>high</rng:value>
+					<a:documentation>hoch</a:documentation>
+					<rng:value>medium</rng:value>
+					<a:documentation>mittel</a:documentation>
+					<rng:value>low</rng:value>
+					<a:documentation>niedrig</a:documentation>
+					<rng:value>unknown</rng:value>
+					<a:documentation>unbekannt</a:documentation>
+				</rng:choice>
+			</content>
+		</macroSpec>
+
+		<!-- TODO implement -->
+		<macroSpec ident="data.placeNamePrecision">
+			<content>
+				<rng:choice>
+					<rng:value>high</rng:value>
+					<a:documentation>nahe</a:documentation>
+					<rng:value>medium</rng:value>
+					<a:documentation>bei</a:documentation>
+				</rng:choice>
+			</content>
+		</macroSpec>
+
+		<macroSpec ident="data.revisionDescChangeType">
+			<content>
+				<rng:choice>
+					<rng:value>UO</rng:value>
+					<a:documentation>Übertragen nach Original</a:documentation>
+					<rng:value>UC</rng:value>
+					<a:documentation>Übertragen nach Entwurf</a:documentation>
+					<rng:value>UA</rng:value>
+					<a:documentation>Übertragen nach Abschrift v.f.H.</a:documentation>
+					<rng:value>UP</rng:value>
+					<a:documentation>Übertragen nach Papierkopie</a:documentation>
+					<rng:value>UI</rng:value>
+					<a:documentation>Übertragen nach Mikroform</a:documentation>
+					<rng:value>UM</rng:value>
+					<a:documentation>Übertragen nach autogr. Abschrift</a:documentation>
+					<rng:value>UD</rng:value>
+					<a:documentation>Übertragen nach Original [Digitalisat]</a:documentation>
+					<rng:value>UG</rng:value>
+					<a:documentation>Übertragen nach Entwurf [Digitalisat]</a:documentation>
+					<rng:value>UH</rng:value>
+					<a:documentation>Übertragen nach Abschrift v.f.H. [Digitalisat]</a:documentation>
+					<rng:value>UF</rng:value>
+					<a:documentation>Übertragen nach Papierkopie [Digitalisat]</a:documentation>
+					<rng:value>UJ</rng:value>
+					<a:documentation>Übertragen nach Mikroform [Digitalisat]</a:documentation>
+					<rng:value>UB</rng:value>
+					<a:documentation>Übertragen nach autogr. Abschrift [Digitalisat]</a:documentation>
+					<rng:value>UE</rng:value>
+					<a:documentation>Übertragen nach Edition</a:documentation>
+					<rng:value>UZ</rng:value>
+					<a:documentation>Übertragen nach Auszug</a:documentation>
+					<rng:value>UW</rng:value>
+					<a:documentation>Übertragung</a:documentation>
+					<rng:value>KO</rng:value>
+					<a:documentation>Korrigiert nach Original</a:documentation>
+					<rng:value>KC</rng:value>
+					<a:documentation>Korrigiert nach Entwurf</a:documentation>
+					<rng:value>KA</rng:value>
+					<a:documentation>Korrigiert nach Abschrift v.f.H.</a:documentation>
+					<rng:value>KP</rng:value>
+					<a:documentation>Korrigiert nach Papierkopie</a:documentation>
+					<rng:value>KI</rng:value>
+					<a:documentation>Korrigiert nach Mikroform</a:documentation>
+					<rng:value>KM</rng:value>
+					<a:documentation>Korrigiert nach autogr. Abschrift</a:documentation>
+					<rng:value>KD</rng:value>
+					<a:documentation>Korrigiert nach Original [Digitalisat]</a:documentation>
+					<rng:value>KG</rng:value>
+					<a:documentation>Korrigiert nach Entwurf [Digitalisat]</a:documentation>
+					<rng:value>KH</rng:value>
+					<a:documentation>Korrigiert nach Abschrift v.f.H. [Digitalisat]</a:documentation>
+					<rng:value>KF</rng:value>
+					<a:documentation>Korrigiert nach Papierkopie [Digitalisat]</a:documentation>
+					<rng:value>KJ</rng:value>
+					<a:documentation>Korrigiert nach Mikroform [Digitalisat]</a:documentation>
+					<rng:value>KB</rng:value>
+					<a:documentation>Korrigiert nach autogr. Abschrift [Digitalisat]</a:documentation>
+					<rng:value>KE</rng:value>
+					<a:documentation>Korrigiert nach Edition</a:documentation>
+					<rng:value>KZ</rng:value>
+					<a:documentation>Korrektr nach Auszug</a:documentation>
+					<rng:value>KW</rng:value>
+					<a:documentation>Korrektur</a:documentation>
+					<rng:value>VQ</rng:value>
+					<a:documentation>Vollständigkeit der Quellenübertragung bestätigt</a:documentation>
+					<rng:value>VT</rng:value>
+					<a:documentation>Vollständigkeit der Textauszeichnung bestätigt</a:documentation>
+					<rng:value>VL</rng:value>
+					<a:documentation>Vollständigkeit der Verlinkung bestätigt</a:documentation>
+					<rng:value>P</rng:value>
+					<a:documentation>Vorgeschlagen zur Publikation</a:documentation>
+					<rng:value>C</rng:value>
+					<a:documentation>Als möglicherweise publikationsfertig gekennzeichnet</a:documentation>
+					<rng:value>A</rng:value>
+					<a:documentation>Zur Publikation freigegeben</a:documentation>
+				</rng:choice>
+			</content>
+		</macroSpec>
+		
+		
+		<macroSpec ident="data.changeEventType">
+			<content>
+				<rng:choice>
+					<rng:value>unknown</rng:value>
+					<a:documentation>unbekannte Kategorie</a:documentation>
+					<rng:value>T</rng:value>
+					<a:documentation>Treffen</a:documentation>
+					<rng:value>S</rng:value>
+					<a:documentation>schöpf. Tätigkeit</a:documentation>
+					<rng:value>M</rng:value>
+					<a:documentation>häusl. Musizieren</a:documentation>
+					<rng:value>P</rng:value>
+					<a:documentation>Probe</a:documentation>
+					<rng:value>D</rng:value>
+					<a:documentation>öff. Dirigat</a:documentation>
+					<rng:value>A</rng:value>
+					<a:documentation>Aufführungsbesuch</a:documentation>
+					<rng:value>B</rng:value>
+					<a:documentation>Geschäftstätigkeit</a:documentation>
+					<rng:value>R</rng:value>
+					<a:documentation>Reise</a:documentation>
+					<rng:value>other</rng:value>
+					<a:documentation>andere Kategorie</a:documentation>
+				</rng:choice>
+			</content>
+		</macroSpec>
+		
+		<macroSpec ident="data.idnoPlaceType">
+			<content>
+				<rng:choice>
+					<rng:value>geonames</rng:value>
+					<a:documentation>ID von http://www.geonames.org/</a:documentation>
+					<rng:value>getty</rng:value>
+					<a:documentation>ID von http://www.getty.edu/research/tools/vocabularies/tgn/</a:documentation>
+				</rng:choice>
+			</content>
+		</macroSpec>
 
 		<macroSpec ident="data.orgNameOrchestraExtent">
 			<content>
@@ -66,12 +234,33 @@
 			</content>
 		</macroSpec>
 
+		<macroSpec ident="data.supplOrgNameType">
+			<content>
+				<rng:choice>
+					<rng:value>unknown</rng:value>
+					<a:documentation>unbekannte Art</a:documentation>
+					<rng:value>full</rng:value>
+					<a:documentation>voller Name</a:documentation>
+					<rng:value>former</rng:value>
+					<a:documentation>früherer Name</a:documentation>
+					<rng:value>later</rng:value>
+					<a:documentation>späterer Name</a:documentation>
+					<rng:value>real</rng:value>
+					<a:documentation>wirklicher Name</a:documentation>
+					<rng:value>variant</rng:value>
+					<a:documentation>Variante</a:documentation>
+					<rng:value>other</rng:value>
+					<a:documentation>sonstige Art</a:documentation>
+				</rng:choice>
+			</content>
+		</macroSpec>
+
 		<!-- based on WeGA_common.odd.xml -->
 		<macroSpec ident="data.msDescRend">
 			<content>
 				<rng:choice>
 					<rng:value>unknown</rng:value>
-					<a:documentation>unbekannt</a:documentation>
+					<a:documentation>unbekannte Quellenart</a:documentation>
 					<rng:value>original</rng:value>
 					<a:documentation>Original</a:documentation>
 					<rng:value>draft</rng:value>
@@ -80,12 +269,14 @@
 					<a:documentation>autographe Abschrift</a:documentation>
 					<rng:value>foreign-copy</rng:value>
 					<a:documentation>Abschrift von fremder Hand</a:documentation>
+					<rng:value>carbon-copy</rng:value>
+					<a:documentation>Durchschlag</a:documentation>
 					<rng:value>papercopy</rng:value>
 					<a:documentation>Papierkopie</a:documentation>
 					<rng:value>microform</rng:value>
 					<a:documentation>Mikroform</a:documentation>
 					<rng:value>other</rng:value>
-					<a:documentation>sonstige Kategorie</a:documentation>
+					<a:documentation>sonstige Quellenart</a:documentation>
 				</rng:choice>
 			</content>
 		</macroSpec>
@@ -100,9 +291,9 @@
 					<a:documentation>Stefan Schenk</a:documentation>
 					<rng:value>aap</rng:value>
 					<a:documentation>Andreas Pernpeintner</a:documentation>
-					<rng:value>mmm</rng:value>
+					<rng:value>clh</rng:value>
 					<a:documentation>Claudia Heine</a:documentation>
-					<rng:value>afl</rng:value>
+					<rng:value>mmm</rng:value>
 					<a:documentation>Martina Mengele</a:documentation>
 					<rng:value>flr</rng:value>
 					<a:documentation>Florence Eller</a:documentation>
@@ -110,7 +301,7 @@
 					<a:documentation>Sebastian Bolz</a:documentation>
 					<rng:value>wwb</rng:value>
 					<a:documentation>Walter Werbeck</a:documentation>
-					<rng:value>clh</rng:value>
+					<rng:value>afl</rng:value>
 					<a:documentation>Florian Amort</a:documentation>
 					<rng:value>stk</rng:value>
 					<a:documentation>Steffi Kracht</a:documentation>
@@ -125,6 +316,22 @@
 				</rng:choice>
 			</content>
 		</macroSpec>
+
+		<macroSpec ident="data.editorial-staff">
+			<content>
+				<rng:choice>
+					<rng:value>alx</rng:value>
+					<a:documentation>Alexander Erhard</a:documentation>
+					<rng:value>sts</rng:value>
+					<a:documentation>Stefan Schenk</a:documentation>
+					<rng:value>aap</rng:value>
+					<a:documentation>Andreas Pernpeintner</a:documentation>
+					<rng:value>clh</rng:value>
+					<a:documentation>Claudia Heine</a:documentation>
+				</rng:choice>
+			</content>
+		</macroSpec>
+		
 
 		<macroSpec ident="data.digit">
 			<content>
@@ -150,10 +357,9 @@
 			</content>
 		</macroSpec>
 
-		<macroSpec ident="data.keyword_ms">
+		<macroSpec ident="data.keyword_corresp">
 			<content>
 				<rng:choice>
-					<!-- ms sources -->
 					<rng:value>Brief</rng:value>
 					<a:documentation>http://d-nb.info/gnd/4008240-4</a:documentation>
 					<rng:value>Postkarte</rng:value>
@@ -179,8 +385,13 @@
 					<a:documentation>http://d-nb.info/gnd/4040847-4</a:documentation>
 					<rng:value>Schriftstück</rng:value>
 					<a:documentation>http://d-nb.info/gnd/4180009-6</a:documentation>
-					<!-- graphics -->
-					<!-- TODO: separate -->
+				</rng:choice>
+			</content>
+		</macroSpec>
+
+		<macroSpec ident="data.keyword_graphic">
+			<content>
+				<rng:choice>
 					<rng:value>Theaterzettel</rng:value>
 					<a:documentation>http://d-nb.info/gnd/4185060-9</a:documentation>
 					<rng:value>Zeichnung</rng:value>
@@ -194,10 +405,8 @@
 					<rng:value>Photographie</rng:value>
 					<a:documentation>http://d-nb.info/gnd/4045895-7</a:documentation>
 				</rng:choice>
-
 			</content>
 		</macroSpec>
-
 
 		<macroSpec ident="data.keyword_print">
 			<content>
@@ -240,114 +449,99 @@
 			</content>
 		</macroSpec>
 
-
-		<!-- TODO: substitute initials by words -->
-		<macroSpec ident="data.biblType">
+		<macroSpec ident="data.keyword_work">
 			<content>
 				<rng:choice>
-					<rng:value>e</rng:value>
-					<a:documentation>Edition in ...</a:documentation>
-					<rng:value>a</rng:value>
-					<a:documentation>Auszug in ...</a:documentation>
-					<rng:value>f</rng:value>
-					<a:documentation>Faksimile in ...</a:documentation>
-					<rng:value>n</rng:value>
-					<a:documentation>Bezugnahme in ...</a:documentation>
-					<rng:value>o</rng:value>
-					<a:documentation>Folgeauflage = </a:documentation>
-					<rng:value>w</rng:value>
-					<a:documentation>Wiederabdruck = </a:documentation>
-					<rng:value>t</rng:value>
-					<a:documentation>Übersetzung =</a:documentation>
-					<rng:value>u</rng:value>
-					<a:documentation>unbekannt</a:documentation>
-					<rng:value>s</rng:value>
-					<a:documentation>Sonstiges</a:documentation>
+					<rng:value>Schauspiel</rng:value>
+					<rng:value>Roman</rng:value>
+					<rng:value>Gedicht(e)</rng:value>
+					<rng:value>Bühnenmusik</rng:value>
+					<rng:value>Orchestermusik</rng:value>
+					<rng:value>Kammermusik</rng:value>
+					<rng:value>Instrumental-Solo</rng:value>
+					<rng:value>Vokalmusik</rng:value>
+					<rng:value>Oratorium</rng:value>
+					<rng:value>Kantate</rng:value>
+					<rng:value>Liturgische Musik</rng:value>
 				</rng:choice>
 			</content>
 		</macroSpec>
+
+		<!-- TODO: substitute initials with words -->
+		<macroSpec ident="data.biblTypeCorrespondence">
+			<content>
+				<rng:choice>
+					<rng:value>u</rng:value>
+					<a:documentation>Unbekannter Bezug</a:documentation>
+					<rng:value>e</rng:value>
+					<a:documentation>Edition in</a:documentation>
+					<rng:value>a</rng:value>
+					<a:documentation>Auszug in</a:documentation>
+					<rng:value>f</rng:value>
+					<a:documentation>Faksimile in</a:documentation>
+					<rng:value>n</rng:value>
+					<a:documentation>Nennung in</a:documentation>
+					<rng:value>s</rng:value>
+					<a:documentation>Sonstiger Bezug</a:documentation>
+				</rng:choice>
+			</content>
+		</macroSpec>
+
+		<macroSpec ident="data.biblTypeLiterature">
+			<content>
+				<rng:choice>
+					<rng:value>u</rng:value>
+					<a:documentation>Unbekannter Bezug</a:documentation>
+					<rng:value>o</rng:value>
+					<a:documentation>Folgeauflage</a:documentation>
+					<rng:value>w</rng:value>
+					<a:documentation>Wiederabdruck</a:documentation>
+					<rng:value>t</rng:value>
+					<a:documentation>Übersetzung</a:documentation>
+					<rng:value>e</rng:value>
+					<a:documentation>Edition in</a:documentation>
+					<rng:value>a</rng:value>
+					<a:documentation>Auszug in</a:documentation>
+					<rng:value>n</rng:value>
+					<a:documentation>Nennung in</a:documentation>
+					<rng:value>s</rng:value>
+					<a:documentation>Sonstiger Bezug</a:documentation>
+				</rng:choice>
+			</content>
+		</macroSpec>
+
+		<!-- based on WeGA_common.odd.xml -->
+		<macroSpec ident="marcRelator.list" mode="add">
+			<desc><ref target="http://www.loc.gov/marc/relators/relaterm.html">MARC Code List for Relators</ref>, constrained for use in the WeGA.</desc>
+			<content>
+				<rng:choice>
+					<rng:value>arr</rng:value>
+					<a:documentation>(Arrangeur) A person, family, or organization contributing to a musical work by rewriting the composition for a medium of performance different from that for which the work was originally intended, or modifying the work for the same medium of performance, etc., such that the musical substance of the original composition remains essentially unchanged. For extensive modification that effectively results in the creation of a new musical work, see composer.</a:documentation>
+					<rng:value>aut</rng:value>
+					<a:documentation>(Autor) Use for a person or organization chiefly responsible for the intellectual or artistic content of a work, usually printed text. This term may also be used when more than one person or body bears such responsibility.</a:documentation>
+					<rng:value>cmp</rng:value>
+					<a:documentation>(Komponist) Use for a person or organization who creates a musical work, usually a piece of music in manuscript or printed form.</a:documentation>
+					<rng:value>dte</rng:value>
+					<a:documentation>(Widmungsträger) Use for a person or organization to whom a book, manuscript, etc., is dedicated (not the recipient of a gift).</a:documentation>
+					<!--<rng:value>egr</rng:value>
+					<a:documentation>(Engraver) A person or organization who cuts letters, figures, etc. on a surface, such as a wooden or metal plate used for printing.</a:documentation>-->
+					<rng:value>lbt</rng:value>
+					<a:documentation>(Librettist) Use for a person or organization who is a writer of the text of an opera, oratorio, etc.</a:documentation>
+					<rng:value>edt</rng:value>
+					<a:documentation>(Herausgeber) Use for a person or organization who prepares for publication a work not primarily his/her own, such as by elucidating text, adding introductory or other critical matter, or technically directing an editorial staff.</a:documentation>
+					<!--<rng:value>editorial_assistant</rng:value>
+					<a:documentation>(Editorial Assistant) Use for a person who assisted in editing the text/score.</a:documentation>-->
+					<rng:value>lyr</rng:value>
+					<a:documentation>(Dichter) Use for a person or organization who is a writer of the text of a song.</a:documentation>
+					<!--<rng:value>mcp</rng:value>
+					<a:documentation>(Music copyist) A person who transcribes or copies musical notation.</a:documentation>
+					<rng:value>scr</rng:value>
+					<a:documentation>(Scribe) A person who is an amanuensis and for a writer of manuscripts proper.</a:documentation>-->
+					<rng:value>trl</rng:value>
+					<a:documentation>(Übersetzer) Use for a person or organization who renders a text from one language into another, or from an older form of a language into the modern form.</a:documentation>
+				</rng:choice>
+			</content>
+		</macroSpec>
+	
 	</specGrp>
 </div>
-
-<!-- currently not in use -->
-<!--<macroSpec ident="data.compilationKey">
-			<content>
-				<rng:data type="string">
-					<rng:param name="pattern">m\d{5}</rng:param>
-				</rng:data>
-			</content>
-		</macroSpec>
-		
-		<macroSpec ident="data.correspKey">
-			<content>
-				<rng:data type="string">
-					<rng:param name="pattern">c\d{5}</rng:param>
-				</rng:data>
-			</content>
-		</macroSpec>
-		
-		<macroSpec ident="data.personKey">
-			<content>
-				<rng:data type="string">
-					<rng:param name="pattern">p\d{5}</rng:param>
-				</rng:data>
-			</content>
-		</macroSpec>
-		
-		<macroSpec ident="data.orgKey">
-			<content>
-				<rng:data type="string">
-					<!-\- sic: p... -\->
-					<rng:param name="pattern">p\d{5}</rng:param>
-				</rng:data>
-			</content>
-		</macroSpec>
-		
-		<macroSpec ident="data.eventKey">
-			<content>
-				<rng:data type="string">
-					<rng:param name="pattern">e0\d{5}</rng:param>
-				</rng:data>
-			</content>
-		</macroSpec>
-		
-		<macroSpec ident="data.literatureKey">
-			<content>
-				<rng:data type="string">
-					<rng:param name="pattern">b\d{5}</rng:param>
-				</rng:data>
-			</content>
-		</macroSpec>
-		
-		<macroSpec ident="data.receptionKey">
-			<content>
-				<rng:data type="string">
-					<rng:param name="pattern">r\d{5}</rng:param>
-				</rng:data>
-			</content>
-		</macroSpec>
-		
-		<macroSpec ident="data.graphicKey">
-			<content>
-				<rng:data type="string">
-					<rng:param name="pattern">g\d{5}</rng:param>
-				</rng:data>
-			</content>
-		</macroSpec>
-		
-		<macroSpec ident="data.workKey">
-			<content>
-				<rng:data type="string">
-					<rng:param name="pattern">w\d{4}</rng:param>
-				</rng:data>
-			</content>
-		</macroSpec>
-		
-		<macroSpec ident="data.performanceKey">
-			<content>
-				<rng:data type="string">
-					<rng:param name="pattern">a\d{5}</rng:param>
-				</rng:data>
-			</content>
-		</macroSpec>
--->

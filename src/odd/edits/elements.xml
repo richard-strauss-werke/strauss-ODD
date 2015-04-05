@@ -218,7 +218,7 @@
 					<attDef ident="age" usage="opt" mode="delete"/>
 				</attList>
 				<listRef>
-					<!--					<ptr target="#persons"/>-->
+					<!--					<ptr target="#person"/>-->
 					<ptr target="#NDPERSE"/>
 					<!-- @removed (about particDesc, which is not in use here)
 								<ptr target="#CCAHPA"/>
@@ -525,6 +525,13 @@
 
 			<elementSpec ident="origPlace" module="msdescription" mode="change">
 				<equiv filter="rsw.xsl" mimeType="text/xsl" name="expandOrRemoveOrigPlace"/>
+				<attList>
+					<attDef ident="precision" mode="replace">
+						<datatype>
+							<rng:ref name="data.placeNamePrecision"/>
+						</datatype>
+					</attDef>
+				</attList>
 			</elementSpec>
 
 
@@ -549,7 +556,7 @@
 							<rng:element name="name">
 								<rng:optional>
 									<rng:attribute name="key">
-										<rng:ref name="data.encoding-staff"/>
+										<rng:ref name="data.editorial-staff"/>
 									</rng:attribute>
 								</rng:optional>
 							</rng:element>
@@ -601,7 +608,7 @@
 							<rng:text/>
 						</rng:element>
 						<rng:oneOrMore>
-							<rng:ref name="orgName"/>
+							<rng:ref name="macro.form.supplementaryOrgName"/>
 						</rng:oneOrMore>
 						<rng:ref name="desc"/>
 						<rng:oneOrMore>
@@ -810,67 +817,56 @@
 				<gloss versionDate="2013-11-11" xml:lang="de">Ergänzung</gloss>
 				<desc versionDate="2013-11-11" xml:lang="de"
 					>enthält Buchstaben, Wörter oder Sätze im Quelltext, die von einem Autor, Schreiber, Kommentator oder Korrektor eingesetzt wurden.</desc>
-				<classes mode="change">
-					<!--              <memberOf key="att.global" mode="delete"/>-->
-					<memberOf key="att.dimensions" mode="delete"/>
-					<memberOf key="att.ranging" mode="delete"/>
-					<memberOf key="att.transcriptional" mode="delete"/>
-					<memberOf key="att.placement" mode="delete"/>
-					<memberOf key="att.editLike" mode="delete"/>
-					<memberOf key="att.responsibility" mode="delete"/>
-					<memberOf key="att.typed" mode="delete"/>
-				</classes>
-				<attList>
-					<attDef ident="hand" mode="add" usage="rec">
-						<desc versionDate="2013-11-11" xml:lang="en"
-							>signifies the hand of the agent which made the intervention.</desc>
-						<desc versionDate="2013-11-11" xml:lang="de"
-							>bezeichnet die Schreiberhand, welche den Eingriff vorgenommen hat.</desc>
-						<datatype>
-							<rng:ref name="data.pointer"/>
-						</datatype>
-					</attDef>
-					<attDef ident="place" mode="add" usage="req">
-						<desc versionDate="2013-11-11" xml:lang="en"
-							>specifies where this item is placed.</desc>
-						<desc versionDate="2013-11-11" xml:lang="de"
-							>spezifiert wo das Element angebracht ist.</desc>
-						<valList type="closed">
-							<valItem ident="above">
-								<desc versionDate="2013-11-11" xml:lang="en"
-									>insertion above the line.</desc>
-								<desc versionDate="2013-11-11" xml:lang="de"
-									>Einfügung über der Zeile.</desc>
-							</valItem>
-							<valItem ident="below">
-								<desc versionDate="2013-11-11" xml:lang="en"
-									>insertion below the line.</desc>
-								<desc versionDate="2013-11-11" xml:lang="de"
-									>Einfügung unter der Zeile.</desc>
-							</valItem>
-							<valItem ident="inline">
-								<desc versionDate="2013-11-11" xml:lang="en">insertion inline.</desc>
-								<desc versionDate="2013-11-11" xml:lang="de">Einfügung in der Zeile.</desc>
-							</valItem>
-							<valItem ident="margin">
-								<desc versionDate="2013-11-11" xml:lang="en">insertion at margin.</desc>
-								<desc versionDate="2013-11-11" xml:lang="de">Einfügung am Rand.</desc>
-							</valItem>
-							<valItem ident="mixed">
-								<desc versionDate="2014-02-04" xml:lang="en"
-									>insertion in multiple places</desc>
-								<desc versionDate="2014-02-04" xml:lang="de"
-									>Einfügung an mehreren Orten</desc>
-							</valItem>
-							<valItem ident="unknown">
-								<desc versionDate="2014-02-04" xml:lang="en"
-									>the place of the addition is unknown</desc>
-								<desc versionDate="2014-02-04" xml:lang="de"
-									>Der Ort der Einfügung ist unbekannt</desc>
-							</valItem>
-						</valList>
-					</attDef>
-				</attList>
+			<classes mode="change">
+				<!--              <memberOf key="att.global" mode="delete"/>-->
+				<memberOf key="att.dimensions" mode="delete"/>
+				<memberOf key="att.ranging" mode="delete"/>
+				<memberOf key="att.transcriptional" mode="delete"/>
+				<memberOf key="att.placement" mode="delete"/>
+				<memberOf key="att.editLike" mode="delete"/>
+				<memberOf key="att.responsibility" mode="delete"/>
+				<memberOf key="att.typed" mode="delete"/>
+			</classes>
+			<attList>
+				<attDef ident="hand" mode="add" usage="rec">
+					<desc versionDate="2013-11-11" xml:lang="en"
+						>signifies the hand of the agent which made the intervention.</desc>
+					<desc versionDate="2013-11-11" xml:lang="de"
+						>bezeichnet die Schreiberhand, welche den Eingriff vorgenommen hat.</desc>
+					<datatype> <rng:ref name="data.pointer"/> </datatype>
+				</attDef>
+				<attDef ident="place" mode="add" usage="req">
+					<desc versionDate="2013-11-11" xml:lang="en">specifies where this item is placed.</desc>
+					<desc versionDate="2015-04-02" xml:lang="de"
+						>spezifiert wo das Element angebracht ist.</desc>
+					<valList type="closed">
+						<valItem ident="above">
+							<desc versionDate="2015-04-02" xml:lang="en">insertion above the line</desc>
+							<desc versionDate="2015-04-02" xml:lang="de">(über der Zeile) Einfügung über der Zeile</desc>
+						</valItem>
+						<valItem ident="below">
+							<desc versionDate="2015-04-02" xml:lang="en">insertion below the line</desc>
+							<desc versionDate="2015-04-02" xml:lang="de">(unter der Zeile) Einfügung unter der Zeile</desc>
+						</valItem>
+						<valItem ident="inline">
+							<desc versionDate="2015-04-02" xml:lang="en">insertion inline</desc>
+							<desc versionDate="2015-04-02" xml:lang="de">(in der Zeile) Einfügung in der Zeile</desc>
+						</valItem>
+						<valItem ident="margin">
+							<desc versionDate="2015-04-02" xml:lang="en">insertion at margin</desc>
+							<desc versionDate="2015-04-02" xml:lang="de">(am Rand) Einfügung am Rand</desc>
+						</valItem>
+						<valItem ident="mixed">
+							<desc versionDate="2015-04-02" xml:lang="en">insertion in multiple places</desc>
+							<desc versionDate="2015-04-02" xml:lang="de">(an mehr. Orten) Einfügung an mehreren Orten</desc>
+						</valItem>
+						<valItem ident="unknown">
+							<desc versionDate="2015-04-02" xml:lang="en">the place of the addition is unknown</desc>
+							<desc versionDate="2015-04-02" xml:lang="de">(unbekannt) Der Ort der Einfügung ist unbekannt</desc>
+						</valItem>
+					</valList>
+				</attDef>
+			</attList>
 			</elementSpec>
 
 			<!-- based on WeGA_common.odd.xml, modified -->
@@ -890,57 +886,49 @@
 					<memberOf key="att.responsibility" mode="delete"/>
 					<memberOf key="att.typed" mode="delete"/>
 				</classes>
-				<attList>
-					<attDef ident="rend" mode="change" usage="req">
-						<gloss versionDate="2013-11-11" xml:lang="en">rendition</gloss>
-						<desc versionDate="2013-11-11" xml:lang="en"
-							>indicates how the element in question was rendered or presented in the source text.</desc>
-						<gloss versionDate="2013-11-11" xml:lang="de">Ausgabe</gloss>
-						<desc versionDate="2013-11-11" xml:lang="de"
-							>gibt an, wie das fragliche Element ausgegeben wurde oder im Quelltext präsentiert ist.</desc>
-						<valList type="closed">
-							<valItem ident="strikethrough">
-								<gloss versionDate="2013-11-11" xml:lang="en">crossed out</gloss>
-								<desc versionDate="2013-11-11" xml:lang="en"
-									>The deleted word (or the deleted character) is crossed out.</desc>
-								<gloss versionDate="2013-11-11" xml:lang="de">durchgestrichen</gloss>
-								<desc versionDate="2013-11-11" xml:lang="de"
-									>Das gelöschte Wort (bzw. das gelöschte Zeichen) ist durchgestrichen.</desc>
-							</valItem>
-							<valItem ident="overwritten">
-								<gloss versionDate="2013-11-11" xml:lang="en">overwritten</gloss>
-								<desc versionDate="2013-11-11" xml:lang="en"
-									>The deleted word (or the deleted character) is overwritten by the substitution.</desc>
-								<gloss versionDate="2013-11-11" xml:lang="de">überschrieben</gloss>
-								<desc versionDate="2013-11-11" xml:lang="de"
-									>Das gelöschte Wort (bzw. das gelöschte Zeichen) ist durch die Ersetzung überschrieben.</desc>
-							</valItem>
-							<valItem ident="erased">
-								<gloss versionDate="2013-11-11" xml:lang="en">covered</gloss>
-								<desc versionDate="2013-11-11" xml:lang="en"
-									>The deleted word (or the deleted character) is repaid by shaving or other means.</desc>
-								<gloss versionDate="2013-11-11" xml:lang="de">getilgt</gloss>
-								<desc versionDate="2013-11-11" xml:lang="de"
-									>Das gelöschte Wort (bzw. das gelöschte Zeichen) ist durch Rasur oder sonstige Weise getilgt.</desc>
-							</valItem>
-							<valItem ident="unknown">
-								<desc versionDate="2014-02-04" xml:lang="en"
-									>The rendition of the deletion is unknown.</desc>
-								<desc versionDate="2014-02-04" xml:lang="de"
-									>Die Erscheinungsweise der Tilgung ist unbekannt.</desc>
-							</valItem>
-						</valList>
-					</attDef>
-					<attDef ident="hand" mode="add" usage="rec">
-						<desc versionDate="2013-11-11" xml:lang="en"
-							>signifies the hand of the agent which made the intervention.</desc>
-						<desc versionDate="2013-11-11" xml:lang="de"
-							>bezeichnet die Schreiberhand, welche den Eingriff vorgenommen hat.</desc>
-						<datatype>
-							<rng:ref name="data.pointer"/>
-						</datatype>
-					</attDef>
-				</attList>
+			<attList>
+				<attDef ident="rend" mode="replace" usage="req">
+					<gloss versionDate="2013-11-11" xml:lang="en">rendition</gloss>
+					<desc versionDate="2013-11-11" xml:lang="en"
+						>indicates how the element in question was rendered or presented in the source text.</desc>
+					<gloss versionDate="2013-11-11" xml:lang="de">Ausgabe</gloss>
+					<desc versionDate="2013-11-11" xml:lang="de"
+						>gibt an, wie das fragliche Element ausgegeben wurde oder im Quelltext präsentiert ist.</desc>
+					<valList type="closed">
+						<valItem ident="strikethrough">
+							<gloss versionDate="2013-11-11" xml:lang="en">crossed out</gloss>
+							<desc versionDate="2013-11-11" xml:lang="en">The deleted word (or the deleted character) is crossed out.</desc>
+							<gloss versionDate="2013-11-11" xml:lang="de">durchgestrichen</gloss>
+							<desc versionDate="2013-11-11" xml:lang="de">Das gelöschte Wort (bzw. das gelöschte Zeichen) ist durchgestrichen.</desc>
+						</valItem>
+						<valItem ident="overwritten">
+							<gloss versionDate="2013-11-11" xml:lang="en">overwritten</gloss>
+							<desc versionDate="2013-11-11" xml:lang="en">The deleted word (or the deleted character) is overwritten by the substitution.</desc>
+							<gloss versionDate="2013-11-11" xml:lang="de">überschrieben</gloss>
+							<desc versionDate="2013-11-11" xml:lang="de">Das gelöschte Wort (bzw. das gelöschte Zeichen) ist durch die Ersetzung überschrieben.</desc>
+						</valItem>
+						<valItem ident="erased">
+							<gloss versionDate="2013-11-11" xml:lang="en">covered</gloss>
+							<desc versionDate="2013-11-11" xml:lang="en">The deleted word (or the deleted character) is repaid by shaving or other means.</desc>
+							<gloss versionDate="2013-11-11" xml:lang="de">getilgt</gloss>
+							<desc versionDate="2013-11-11" xml:lang="de">Das gelöschte Wort (bzw. das gelöschte Zeichen) ist durch Rasur oder sonstige Weise getilgt.</desc>
+						</valItem>
+						<valItem ident="unknown">
+							<gloss versionDate="2015-04-02" xml:lang="de">unknown</gloss>
+							<desc versionDate="2014-02-04" xml:lang="en">The rendition of the deletion is unknown.</desc>
+							<gloss versionDate="2015-04-02" xml:lang="de">unbekannt</gloss>
+							<desc versionDate="2014-02-04" xml:lang="de">Die Erscheinungsweise der Tilgung ist unbekannt.</desc>
+						</valItem>
+					</valList>
+				</attDef>
+				
+				<attDef ident="hand" mode="add" usage="rec">
+					<desc versionDate="2013-11-11" xml:lang="en">signifies the hand of the agent which made the intervention.</desc>
+					<desc versionDate="2013-11-11" xml:lang="de"
+						>bezeichnet die Schreiberhand, welche den Eingriff vorgenommen hat.</desc>
+					<datatype> <rng:ref name="data.pointer"/> </datatype>
+				</attDef>
+			</attList>
 			</elementSpec>
 
 			<elementSpec ident="extent" mode="change" module="header">
@@ -1022,7 +1010,20 @@
 					<rng:ref name="publisher"/>
 					<rng:ref name="pubPlace"/>
 					<rng:oneOrMore>
-						<rng:ref name="date"/>
+						<rng:element name="date">
+							<rng:optional>
+								<rng:attribute name="type">
+									<rng:choice>
+										<rng:value>copyright</rng:value>
+										<a:documentation>(©) Copyright</a:documentation>
+										<rng:value>inferred</rng:value>
+										<a:documentation>([ ]) erschlossen</a:documentation>
+									</rng:choice>
+								</rng:attribute>
+							</rng:optional>
+							<rng:ref name="macro.form.optionalDating"/>
+							<rng:text/>
+						</rng:element>
 					</rng:oneOrMore>
 					<rng:ref name="note"/>
 					<rng:element name="biblScope">
@@ -1168,6 +1169,13 @@
 
 			<elementSpec ident="div" module="textstructure" mode="change">
 				<equiv filter="rsw.xsl" mimeType="text/xsl" name="processDiv"/>
+				<attList>
+					<attDef ident="type" mode="replace">
+						<datatype>
+							<rng:ref name="data.divTypeCorresp"/>
+						</datatype>
+					</attDef>
+				</attList>
 			</elementSpec>
 
 
@@ -1236,6 +1244,13 @@
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="placeName" module="namesdates" mode="change">
 				<equiv filter="rsw.xsl" mimeType="text/xsl" name="onlyWithContentAddCert"/>
+				<attList>
+					<attDef ident="precision" mode="replace">
+						<datatype>
+							<rng:ref name="data.placeNamePrecision"/>
+						</datatype>
+					</attDef>
+				</attList>
 			</elementSpec>
 			
 			<!-- filter can be applied universally; no xpath look-up is needed -->

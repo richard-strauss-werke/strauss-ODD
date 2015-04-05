@@ -95,7 +95,15 @@
 					<specGrpRef target="#edits.macros"/>
 					
 					<specGrpRef target="#edits.elements.print"/>
+					
+					<macroSpec ident="data.biblType">
+						<content>
+							<rng:ref name="data.biblTypeLiterature"/>
+						</content>
+					</macroSpec>
+					
 				</schemaSpec>
+				
 			</div>
 			
 			

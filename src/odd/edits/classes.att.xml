@@ -19,6 +19,15 @@
 		<classSpec type="atts" module="tei" ident="att.datcat" mode="delete"/>
 		<classSpec type="atts" module="tei" ident="att.declarable" mode="delete"/>
 		<classSpec type="atts" module="tei" ident="att.declaring" mode="delete"/>
+		<classSpec type="atts" module="tei" ident="att.dimensions" mode="change">
+			<attList>
+				<attDef ident="precision" mode="replace">
+					<datatype>
+						<rng:ref name="data.precision"/>
+					</datatype>
+				</attDef>
+			</attList>			
+		</classSpec>
 		<classSpec type="atts" module="tei" ident="att.divLike" mode="delete"/>
 		<classSpec type="atts" module="tei" ident="att.edition" mode="delete"/>
 		<classSpec type="atts" module="tei" ident="att.editLike" mode="change">
@@ -45,6 +54,17 @@
 				<attDef ident="select" mode="delete"/>
 			</attList>
 		</classSpec>
+		
+		<classSpec type="atts" module="tei" ident="att.handFeatures" mode="change">
+			<attList>
+				<attDef ident="scope" mode="replace">
+					<datatype>
+						<rng:ref name="data.handFeaturesScope"/>
+					</datatype>
+				</attDef>
+			</attList>			
+		</classSpec>
+		
 		<classSpec type="atts" module="tei" ident="att.internetMedia" mode="delete"/>
 		<classSpec type="atts" module="tei" ident="att.interpLike" mode="delete"/>
 		<classSpec type="atts" module="tei" ident="att.naming" mode="change">

@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2015-04-02T13:51:57Z. 
+Schema generated from ODD source 2015-04-05T12:47:58Z. 
 Edition: Version 2.7.0. Last updated on
 	16th September 2014, revision 13036
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
@@ -58,9 +58,11 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
    <define name="rsw_data.certainty">
       <choice>
          <value>high</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(ws.) wahrscheinlich / mit hoher Wahrscheinlichkeit</a:documentation>
          <value>medium</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(?) möglicherweise / mit mittlerer Wahrscheinlichkeit</a:documentation>
          <value>low</value>
-         <value>unknown</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(nicht) nicht / mit sehr geringer Wahrscheinlichkeit</a:documentation>
       </choice>
    </define>
    <define name="rsw_data.numeric">
@@ -115,6 +117,26 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
    <define name="rsw_data.enumerated">
       <ref name="rsw_data.name"/>
    </define>
+   <define name="rsw_data.precision">
+      <choice>
+         <value>high</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">hoch</a:documentation>
+         <value>medium</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">mittel</a:documentation>
+         <value>low</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">niedrig</a:documentation>
+         <value>unknown</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">unbekannt</a:documentation>
+      </choice>
+   </define>
+   <define name="rsw_data.placeNamePrecision">
+      <choice>
+         <value>high</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">nahe</a:documentation>
+         <value>medium</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">bei</a:documentation>
+      </choice>
+   </define>
    <define name="rsw_data.orgNameOrchestraExtent">
       <choice>
          <value>full-size</value>
@@ -137,28 +159,6 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">bei den Vorbereitungen</a:documentation>
          <value>visitor</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Besucher</a:documentation>
-      </choice>
-   </define>
-   <define name="rsw_data.biblType">
-      <choice>
-         <value>e</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Edition in ...</a:documentation>
-         <value>a</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Auszug in ...</a:documentation>
-         <value>f</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Faksimile in ...</a:documentation>
-         <value>n</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Bezugnahme in ...</a:documentation>
-         <value>o</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Folgeauflage = </a:documentation>
-         <value>w</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Wiederabdruck = </a:documentation>
-         <value>t</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Übersetzung =</a:documentation>
-         <value>u</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">unbekannt</a:documentation>
-         <value>s</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Sonstiges</a:documentation>
       </choice>
    </define>
    <define name="rsw_macro.form.commentaryNote">
@@ -266,7 +266,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
       <element name="bibl">
          <optional>
             <attribute name="type">
-               <ref name="rsw_data.biblType"/>
+               <empty/>
             </attribute>
          </optional>
          <optional>
@@ -331,11 +331,19 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
       </optional>
    </define>
    <define name="rsw_att.dimensions.attributes">
+      <ref name="rsw_att.dimensions.attribute.precision"/>
       <ref name="rsw_att.dimensions.attribute.unit"/>
       <ref name="rsw_att.dimensions.attribute.quantity"/>
       <ref name="rsw_att.dimensions.attribute.extent"/>
-      <ref name="rsw_att.dimensions.attribute.precision"/>
       <ref name="rsw_att.dimensions.attribute.scope"/>
+   </define>
+   <define name="rsw_att.dimensions.attribute.precision">
+      <optional>
+         <attribute name="precision">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <ref name="rsw_data.precision"/>
+         </attribute>
+      </optional>
    </define>
    <define name="rsw_att.dimensions.attribute.unit">
       <optional>
@@ -371,14 +379,6 @@ Empfohlene Werte sind: 1] cm(centimetres) ; 2] mm(millimetres) ; 3] in(inches) ;
          <attribute name="extent">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the size of the object concerned using a project-specific vocabulary combining quantity and units in a single string of words.</a:documentation>
             <ref name="rsw_data.text"/>
-         </attribute>
-      </optional>
-   </define>
-   <define name="rsw_att.dimensions.attribute.precision">
-      <optional>
-         <attribute name="precision">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the precision of the values specified by the other attributes.</a:documentation>
-            <ref name="rsw_data.certainty"/>
          </attribute>
       </optional>
    </define>
@@ -1958,17 +1958,17 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">spezifiert wo das Element angebracht ist.</a:documentation>
             <choice>
                <value>above</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung über der Zeile.</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(über der Zeile) Einfügung über der Zeile</a:documentation>
                <value>below</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung unter der Zeile.</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(unter der Zeile) Einfügung unter der Zeile</a:documentation>
                <value>inline</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung in der Zeile.</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(in der Zeile) Einfügung in der Zeile</a:documentation>
                <value>margin</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung am Rand.</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(am Rand) Einfügung am Rand</a:documentation>
                <value>mixed</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Einfügung an mehreren Orten</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(an mehr. Orten) Einfügung an mehreren Orten</a:documentation>
                <value>unknown</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Der Ort der Einfügung ist unbekannt</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(unbekannt) Der Ort der Einfügung ist unbekannt</a:documentation>
             </choice>
          </attribute>
          <empty/>
@@ -1986,11 +1986,16 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
          <ref name="rsw_att.global.linking.attribute.exclude"/>
          <attribute name="rend">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ausgabe) gibt an, wie das fragliche Element ausgegeben wurde oder im Quelltext präsentiert ist.</a:documentation>
-            <list>
-               <oneOrMore>
-                  <ref name="rsw_data.word"/>
-               </oneOrMore>
-            </list>
+            <choice>
+               <value>strikethrough</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(durchgestrichen) Das gelöschte Wort (bzw. das gelöschte Zeichen) ist durchgestrichen.</a:documentation>
+               <value>overwritten</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(überschrieben) Das gelöschte Wort (bzw. das gelöschte Zeichen) ist durch die Ersetzung überschrieben.</a:documentation>
+               <value>erased</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(getilgt) Das gelöschte Wort (bzw. das gelöschte Zeichen) ist durch Rasur oder sonstige Weise getilgt.</a:documentation>
+               <value>unknown</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(unknownunbekannt) Die Erscheinungsweise der Tilgung ist unbekannt.</a:documentation>
+            </choice>
          </attribute>
          <optional>
             <attribute name="hand">
@@ -2607,10 +2612,22 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains an absolute or relative place name. [13.2.3. ]</a:documentation>
          <ref name="rsw_macro.phraseSeq"/>
          <ref name="rsw_att.datable.attributes"/>
-         <ref name="rsw_att.editLike.attributes"/>
+         <ref name="rsw_att.editLike.attribute.evidence"/>
+         <ref name="rsw_att.dimensions.attribute.unit"/>
+         <ref name="rsw_att.dimensions.attribute.quantity"/>
+         <ref name="rsw_att.dimensions.attribute.extent"/>
+         <ref name="rsw_att.dimensions.attribute.scope"/>
+         <ref name="rsw_att.responsibility.attribute.cert"/>
+         <ref name="rsw_att.responsibility.attribute.resp"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.personal.attributes"/>
          <ref name="rsw_att.typed.attributes"/>
+         <optional>
+            <attribute name="precision">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <ref name="rsw_data.placeNamePrecision"/>
+            </attribute>
+         </optional>
          <empty/>
       </element>
    </define>

@@ -139,20 +139,77 @@
 			</content>
 		</macroSpec>
 
+		<macroSpec ident="macro.form.optionalDating">
+			<content>
+				<rng:optional>
+					<rng:attribute name="when">
+						<rng:ref name="data.temporal.w3c"/>
+					</rng:attribute>
+				</rng:optional>
+				<rng:optional>
+					<rng:attribute name="notBefore">
+						<rng:ref name="data.temporal.w3c"/>
+					</rng:attribute>
+				</rng:optional>
+				<rng:optional>
+					<rng:attribute name="notAfter">
+						<rng:ref name="data.temporal.w3c"/>
+					</rng:attribute>
+				</rng:optional>
+				<rng:optional>
+					<rng:attribute name="from">
+						<rng:ref name="data.temporal.w3c"/>
+					</rng:attribute>
+				</rng:optional>
+				<rng:optional>
+					<rng:attribute name="to">
+						<rng:ref name="data.temporal.w3c"/>
+					</rng:attribute>
+				</rng:optional>
+				<rng:optional>
+					<rng:attribute name="precision">
+						<rng:ref name="data.precision"/>
+					</rng:attribute>
+				</rng:optional>
+				<rng:optional>
+					<rng:attribute name="cert">
+						<rng:ref name="data.certainty"/>
+					</rng:attribute>
+				</rng:optional>
+			</content>
+		</macroSpec>
+
 		<macroSpec ident="macro.form.supplementaryPersName">
 			<gloss versionDate="2014-01-26" xml:lang="en">supplementary person name</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">zusätzlicher Personenname</gloss>
 			<desc versionDate="2014-01-26" xml:lang="en"
-				>Macro for a <gi>persName</gi> element in which a <att>type</att> attribute can can occur.</desc>
+				>Macro for a <gi>persName</gi> element with a type attribute of type data.supplPersNameType.</desc>
 			<desc versionDate="2014-01-26" xml:lang="de"
-				>Makro für ein <gi>persName</gi>-Element, in dem ein <att>type</att>-Attribut vorkommen kann.</desc>
+				>Makro für ein <gi>persName</gi>-Element mit <att>type</att>-Attribut vom Type data.supplPersNameType.</desc>
 			<content>
 				<rng:element name="persName">
-					<rng:optional>
-						<rng:attribute name="type">
-							<rng:ref name="data.supplPersNameType"/>
-						</rng:attribute>
-					</rng:optional>
+					<rng:attribute name="type">
+						<rng:ref name="data.supplPersNameType"/>
+					</rng:attribute>
+					<rng:ref name="macro.form.optionalDating"/>
+					<rng:text/>
+				</rng:element>
+			</content>
+		</macroSpec>
+		
+		<macroSpec ident="macro.form.supplementaryOrgName">
+			<gloss versionDate="2015-04-02" xml:lang="en">supplementary name of an organization</gloss>
+			<gloss versionDate="2015-04-02" xml:lang="de">zusätzlicher Name einer Organisation</gloss>
+			<desc versionDate="2015-04-02" xml:lang="en"
+				>Macro for a <gi>orgName</gi> element with a type attribute of type data.supplOrgNameType.</desc>
+			<desc versionDate="2015-04-02" xml:lang="de"
+				>Makro für ein <gi>orgName</gi>-Element mit <att>type</att>-Attribut vom Type data.supplOrgNameType.</desc>
+			<content>
+				<rng:element name="orgName">
+					<rng:attribute name="type">
+						<rng:ref name="data.supplOrgNameType"/>
+					</rng:attribute>
+					<rng:ref name="macro.form.optionalDating"/>
 					<rng:text/>
 				</rng:element>
 			</content>
@@ -283,7 +340,7 @@
 			<gloss versionDate="2014-01-26" xml:lang="en">Figures</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">Abbildungen</gloss>
 			<desc versionDate="2014-01-26" xml:lang="en"
-				>Macro for a <gi>note</gi> element in which pictures of a person or the persons's script are presented oder discussed.</desc>
+				>Macro for a <gi>note</gi> element in which pictures of a person or the person's script are presented oder discussed.</desc>
 			<desc versionDate="2014-01-26" xml:lang="de"
 				>Makro für ein <gi>note</gi>-Element, in dem Abbildungen einer Person oder ihrer Schrift dargestellt oder besprochen werden.</desc>
 			<content>
@@ -563,6 +620,11 @@
 										<rng:ref name="data.certainty"/>
 									</rng:attribute>
 								</rng:optional>
+								<rng:optional>
+									<rng:attribute name="precision">
+										<rng:ref name="data.placeNamePrecision"/>
+									</rng:attribute>
+								</rng:optional>
 								<rng:text/>
 							</rng:group>
 						</rng:element>
@@ -576,7 +638,9 @@
 				<rng:element name="listChange">
 					<rng:group>
 						<rng:element name="change">
-							<rng:attribute name="type"/>
+							<rng:attribute name="type">
+								<rng:ref name="data.changeEventType"/>
+							</rng:attribute>
 							<rng:ref name="macro.form.summaryNote"/>
 							<rng:ref name="macro.form.commentaryNote"/>
 							<rng:ref name="macro.form.discussionNote"/>
@@ -604,7 +668,9 @@
 						</rng:attribute>
 					</rng:optional>
 					<rng:optional>
-						<rng:attribute name="type"/>
+						<rng:attribute name="type">
+							<rng:ref name="data.revisionDescChangeType"/>
+						</rng:attribute>
 					</rng:optional>
 					<rng:oneOrMore>
 						<rng:ref name="p"/>

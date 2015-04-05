@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2015-04-01T20:35:37Z. 
+Schema generated from ODD source 2015-04-05T12:48:16Z. 
 Edition: Version 2.7.0. Last updated on
 	16th September 2014, revision 13036
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
@@ -49,9 +49,11 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
    <define name="rsw_data.certainty">
       <choice>
          <value>high</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(ws.) wahrscheinlich / mit hoher Wahrscheinlichkeit</a:documentation>
          <value>medium</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(?) möglicherweise / mit mittlerer Wahrscheinlichkeit</a:documentation>
          <value>low</value>
-         <value>unknown</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(nicht) nicht / mit sehr geringer Wahrscheinlichkeit</a:documentation>
       </choice>
    </define>
    <define name="rsw_data.probability">
@@ -127,6 +129,14 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
          <data type="token">
             <param name="pattern">[0-9.,DHMPRSTWYZ/:+\-]+</param>
          </data>
+      </choice>
+   </define>
+   <define name="rsw_data.idnoPlaceType">
+      <choice>
+         <value>geonames</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">ID von http://www.geonames.org/</a:documentation>
+         <value>getty</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">ID von http://www.getty.edu/research/tools/vocabularies/tgn/</a:documentation>
       </choice>
    </define>
    <define name="rsw_att.ascribed.attributes">
@@ -1821,12 +1831,7 @@ Empfohlene Werte sind: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syllog
          <ref name="rsw_att.global.attributes"/>
          <attribute name="type">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">charakterisiert das Element in einem gewissen Sinne, wobei irgendeine zweckmäßige Systematik oder Typologie angwendet wird.</a:documentation>
-            <choice>
-               <value>geonames</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">ID von http://www.geonames.org/</a:documentation>
-               <value>getty</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">ID von http://www.getty.edu/research/tools/vocabularies/tgn/</a:documentation>
-            </choice>
+            <ref name="rsw_data.idnoPlaceType"/>
          </attribute>
          <empty/>
       </element>

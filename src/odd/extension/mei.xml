@@ -14,6 +14,14 @@
 		<!-- change this path according to your folder structure -->
 		<moduleRef url="/current/strauss-ODD/strauss-ODD/dependencies/mei2vexflow-modified.rng" prefix="mei_"/>
 		
+		<elementSpec ident="term" module="MEI.header" mode="change" ns="http://www.music-encoding.org/ns/mei">
+			<content>
+				<rng:optional>
+					<rng:ref name="data.keyword_work"/>
+				</rng:optional>
+			</content>
+		</elementSpec>
+		
 		<!-- from https://github.com/TEI-Music-SIG/tei-mei/blob/master/tei-lite_mei-cmn.xml by Raffaele Viglianti -->
 		<elementSpec xmlns="http://www.tei-c.org/ns/1.0" module="figures" ident="notatedMusic"
 			mode="change">
