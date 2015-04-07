@@ -430,9 +430,11 @@
 							<rng:value>musicians</rng:value>
 						</rng:attribute>
 					</rng:optional>
-					<rng:attribute name="quantity">
-						<rng:ref name="data.numeric"/>
-					</rng:attribute>
+					<rng:optional>
+						<rng:attribute name="quantity">
+							<rng:ref name="data.numeric"/>
+						</rng:attribute>
+					</rng:optional>
 					<rng:optional>
 						<rng:text/>
 					</rng:optional>
@@ -513,7 +515,6 @@
 		</macroSpec>
 		
 		<macroSpec ident="macro.form.creation.change_ms">
-		<equiv filter="rsw.xsl" mimeType="text/xsl" name="processCreationChangeMs"/>
 			<content>
 				<rng:element name="change">
 					<rng:optional>
@@ -661,6 +662,11 @@
 			<equiv filter="rsw.xsl" mimeType="text/xsl" name="processRevisionDescChange"/>
 			<content>
 				<rng:element name="change">
+					<rng:optional>
+						<rng:attribute name="id" ns="http://www.w3.org/XML/1998/namespace">
+							<rng:data type="ID"/>
+						</rng:attribute>
+					</rng:optional>
 					<rng:optional>
 						<rng:attribute name="when"/>
 						<rng:attribute name="who">

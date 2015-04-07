@@ -50,7 +50,6 @@
 				</classes>
 				<content>
 					<rng:ref name="titleStmt"/>
-					<rng:ref name="editionStmt"/>
 					<rng:ref name="publicationStmt"/>
 					<rng:ref name="notesStmt"/>
 					<rng:ref name="sourceDesc"/>
@@ -109,7 +108,36 @@
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="respStmt" module="core" mode="change">
 				<equiv filter="rsw.xsl" mimeType="text/xsl" name="expandRespStmt"/>
+				<content>
+					<rng:group>
+						<rng:ref name="resp"/>
+						<rng:zeroOrMore>
+							<rng:element name="name">
+								<rng:optional>
+									<rng:attribute name="ref">
+										<rng:ref name="data.editorial-staff"/>
+									</rng:attribute>
+								</rng:optional>
+							</rng:element>
+						</rng:zeroOrMore>
+					</rng:group>
+				</content>
 			</elementSpec>
+			
+			<!--			<elementSpec ident="editionStmt" mode="replace" module="header">
+				<content>
+						<rng:group>
+							<rng:ref name="resp"/>
+							<rng:element name="name">
+								<rng:optional>
+									<rng:attribute name="ref">
+										<rng:ref name="data.editorial-staff"/>
+									</rng:attribute>
+								</rng:optional>
+							</rng:element>
+						</rng:group>
+				</content>
+			</elementSpec>-->
 
 			<elementSpec ident="state" module="namesdates" mode="change">
 				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAttOrChildContent"/>
@@ -547,24 +575,6 @@
 				</content>
 			</elementSpec>
 
-			<elementSpec ident="editionStmt" mode="replace" module="header">
-				<content>
-					<rng:ref name="edition"/>
-					<rng:element name="respStmt">
-						<rng:group>
-							<rng:ref name="resp"/>
-							<rng:element name="name">
-								<rng:optional>
-									<rng:attribute name="key">
-										<rng:ref name="data.editorial-staff"/>
-									</rng:attribute>
-								</rng:optional>
-							</rng:element>
-						</rng:group>
-					</rng:element>
-				</content>
-			</elementSpec>
-
 			<elementSpec ident="availability" module="header" mode="replace">
 				<content>
 					<rng:attribute name="status"/>
@@ -700,6 +710,7 @@
 			
 
 			<elementSpec ident="encodingDesc" mode="replace" module="core">
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="expandEncodingDesc"/>
 				<content>
 					<rng:ref name="editorialDecl"/>
 				</content>
@@ -803,7 +814,7 @@
 				<constraintSpec ident="require-xml-id-target" scheme="isoschematron">
 					<constraint>
 						<sch:assert
-							test="/*[@xml:id='compilation'] or not(@new) or @new='pre-printed' or (@new = //@xml:id)"
+							test="/*[@xml:id='compilation'] or not(@new) or @new='#pre-printed' or (substring(@new, 2) = //@xml:id)"
 							>Es gibt Schreiberhand-Wechsel, die auf eine nicht existente Schreiber-Definition verweisen.</sch:assert>
 					</constraint>
 				</constraintSpec>
@@ -914,7 +925,7 @@
 							<desc versionDate="2013-11-11" xml:lang="de">Das gelöschte Wort (bzw. das gelöschte Zeichen) ist durch Rasur oder sonstige Weise getilgt.</desc>
 						</valItem>
 						<valItem ident="unknown">
-							<gloss versionDate="2015-04-02" xml:lang="de">unknown</gloss>
+							<gloss versionDate="2015-04-02" xml:lang="en">unknown</gloss>
 							<desc versionDate="2014-02-04" xml:lang="en">The rendition of the deletion is unknown.</desc>
 							<gloss versionDate="2015-04-02" xml:lang="de">unbekannt</gloss>
 							<desc versionDate="2014-02-04" xml:lang="de">Die Erscheinungsweise der Tilgung ist unbekannt.</desc>
@@ -1188,7 +1199,7 @@
 
 			<!-- filter can be applied universally; no xpath look-up is needed -->
 			<elementSpec ident="edition" module="header" mode="change">
-				<equiv filter="rsw.xsl" mimeType="text/xsl" name="expandEdition"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/>
 			</elementSpec>
 			
 			<!-- filter can be applied universally; no xpath look-up is needed -->

@@ -7,7 +7,7 @@
    <xsl:import href="rsw.xsl"/>
    <xsl:param name="docIDParam" required="no"/>
    <xsl:output method="xml" indent="no" encoding="utf-8"/>
-   <xsl:strip-space elements="additional additions address analytic app availability biblStruct body castList choice cit creation div editionStmt editorialDecl encodingDesc epigraph event facsimile figure fileDesc floatingText front graphic handDesc handNote imprint index lg listBibl listChange listEvent monogr msDesc msIdentifier notatedMusic notesStmt objectDesc org performance person physDesc postscript profileDesc projectDesc publicationStmt relatedItem respons respStmt revisionDesc row seriesStmt sourceDesc sp space state subst supportDesc table teiHeader text textClass titleStmt"/>
+   <xsl:strip-space elements="additional additions address analytic app availability biblStruct body castList choice cit creation div editorialDecl encodingDesc epigraph event facsimile figure fileDesc floatingText front graphic handDesc handNote imprint index lg listBibl listChange listEvent monogr msDesc msIdentifier notatedMusic notesStmt objectDesc org performance person physDesc postscript profileDesc projectDesc publicationStmt relatedItem respons respStmt revisionDesc row seriesStmt sourceDesc sp space state subst supportDesc table teiHeader text textClass titleStmt"/>
    <xsl:key name="who" match="//@who" use="."/>
    <xsl:variable name="docID"
                  select="     if (base-uri()) then     replace(base-uri(), '^(.*/)?(.*)\..*$','$2')     else $docIDParam    "/>
@@ -39,22 +39,22 @@
 				     <title>Richard Strauss: Werke. Kritische Ausgabe. Digitale Dokumentensammlung</title>
 			   </seriesStmt>
    </xsl:variable>
-   <xsl:variable name="edition">Digitale Ausgabe</xsl:variable>
+   <xsl:variable name="edition"/>
    <xsl:variable name="staff">
-      <name xml:id="alx">Alexander Erhard</name>
-      <name xml:id="sts">Stefan Schenk</name>
-      <name xml:id="aap">Andreas Pernpeintner</name>
-      <name xml:id="clh">Claudia Heine</name>
-      <name xml:id="mmm">Martina Mengele</name>
-      <name xml:id="flr">Florence Eller</name>
-      <name xml:id="sbb">Sebastian Bolz</name>
-      <name xml:id="wwb">Walter Werbeck</name>
-      <name xml:id="afl">Florian Amort</name>
-      <name xml:id="stk">Steffi Kracht</name>
-      <name xml:id="oen">Ursula Welsch</name>
-      <name xml:id="ofr">Oliver Fraenske</name>
-      <name xml:id="pfr">Peter Fröhlich</name>
-      <name xml:id="dpl">Dominik Leipold</name>
+      <name ref="s:alx">Alexander Erhard</name>
+      <name ref="s:sts">Stefan Schenk</name>
+      <name ref="s:aap">Andreas Pernpeintner</name>
+      <name ref="s:clh">Claudia Heine</name>
+      <name ref="s:mmm">Martina Mengele</name>
+      <name ref="s:flr">Florence Eller</name>
+      <name ref="s:sbb">Sebastian Bolz</name>
+      <name ref="s:wwb">Walter Werbeck</name>
+      <name ref="s:afl">Florian Amort</name>
+      <name ref="s:stk">Steffi Kracht</name>
+      <name ref="s:oen">Ursula Welsch</name>
+      <name ref="s:ofr">Oliver Fraenske</name>
+      <name ref="s:pfr">Peter Fröhlich</name>
+      <name ref="s:dpl">Dominik Leipold</name>
    </xsl:variable>
    <xsl:variable name="sexes">
       <sex value="M">männlich</sex>
@@ -63,6 +63,44 @@
       <sex value="N">keines</sex>
       <sex value="U">unbekannt</sex>
       <empty/>
+   </xsl:variable>
+   <xsl:variable name="changeTypes">
+      <change type="UO">Übertragen nach Original</change>
+      <change type="UC">Übertragen nach Entwurf</change>
+      <change type="UA">Übertragen nach Abschrift v.f.H.</change>
+      <change type="UP">Übertragen nach Papierkopie</change>
+      <change type="UI">Übertragen nach Mikroform</change>
+      <change type="UM">Übertragen nach autogr. Abschrift</change>
+      <change type="UD">Übertragen nach Original [Digitalisat]</change>
+      <change type="UG">Übertragen nach Entwurf [Digitalisat]</change>
+      <change type="UH">Übertragen nach Abschrift v.f.H. [Digitalisat]</change>
+      <change type="UF">Übertragen nach Papierkopie [Digitalisat]</change>
+      <change type="UJ">Übertragen nach Mikroform [Digitalisat]</change>
+      <change type="UB">Übertragen nach autogr. Abschrift [Digitalisat]</change>
+      <change type="UE">Übertragen nach Edition</change>
+      <change type="UZ">Übertragen nach Auszug</change>
+      <change type="UW">Übertragung</change>
+      <change type="KO">Korrigiert nach Original</change>
+      <change type="KC">Korrigiert nach Entwurf</change>
+      <change type="KA">Korrigiert nach Abschrift v.f.H.</change>
+      <change type="KP">Korrigiert nach Papierkopie</change>
+      <change type="KI">Korrigiert nach Mikroform</change>
+      <change type="KM">Korrigiert nach autogr. Abschrift</change>
+      <change type="KD">Korrigiert nach Original [Digitalisat]</change>
+      <change type="KG">Korrigiert nach Entwurf [Digitalisat]</change>
+      <change type="KH">Korrigiert nach Abschrift v.f.H. [Digitalisat]</change>
+      <change type="KF">Korrigiert nach Papierkopie [Digitalisat]</change>
+      <change type="KJ">Korrigiert nach Mikroform [Digitalisat]</change>
+      <change type="KB">Korrigiert nach autogr. Abschrift [Digitalisat]</change>
+      <change type="KE">Korrigiert nach Edition</change>
+      <change type="KZ">Korrigiert nach Auszug</change>
+      <change type="KW">Korrigiert</change>
+      <change type="VQ">Vollständigkeit der Quellenübertragung bestätigt</change>
+      <change type="VT">Vollständigkeit der Textauszeichnung bestätigt</change>
+      <change type="VL">Vollständigkeit der Verlinkung bestätigt</change>
+      <change type="P">Vorgeschlagen zur Publikation</change>
+      <change type="C">Als möglicherweise publikationsfertig gekennzeichnet</change>
+      <change type="A">Zur Publikation freigegeben</change>
    </xsl:variable>
    <xsl:variable name="keywords">
       <empty/>
@@ -191,16 +229,8 @@
       <xsl:call-template name="transformOrRemoveBibl"/>
    </xsl:template>
    <xsl:template match="@key">
-      <xsl:attribute name="ref">http://richard-strauss-ausgabe.de/documents/view/<xsl:value-of select="."/>
+      <xsl:attribute name="ref">d:<xsl:value-of select="."/>
       </xsl:attribute>
    </xsl:template>
    <xsl:template match="change/text()|div/text()"/>
-   <xsl:template match="@who|@resp|@new">
-      <xsl:attribute name="{name()}">#<xsl:value-of select="."/>
-      </xsl:attribute>
-   </xsl:template>
-   <xsl:template match="@change">
-      <xsl:attribute name="change">#change-<xsl:value-of select="."/>
-      </xsl:attribute>
-   </xsl:template>
 </xsl:stylesheet>

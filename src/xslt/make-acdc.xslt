@@ -10,9 +10,11 @@
 	<xsl:variable name="common" select="document('../odd/common.xml')"/>
 
 	<xsl:variable name="xmlDocsUrl">
-		<xsl:value-of select="$common/id('xmlDocsUrl')/@target"/>
+		<!-- use prefix instead of full url -->
+		<xsl:value-of select="'d:'"/>
+		<!--		<xsl:value-of select="$common/id('xmlDocsUrl')/@target"/>-->
 	</xsl:variable>
-
+	
 
 	<xsl:output method="xml" indent="yes" encoding="utf-8"/>
 
@@ -38,7 +40,7 @@
 				biblStruct body 
 				castList choice cit creation 
 				div 
-				editionStmt editorialDecl encodingDesc epigraph event 
+				editorialDecl encodingDesc epigraph event 
 				facsimile figure fileDesc floatingText front 
 				graphic 
 				handDesc handNote 
@@ -90,7 +92,7 @@
 			</XSL:variable>
 			<XSL:variable name="staff">
 				<xsl:for-each select="//@ident[.='data.encoding-staff']/..//rng:value">
-					<name xml:id="{text()}">
+					<name ref="{text()}">
 						<xsl:value-of select="following-sibling::*[1]"/>
 					</name>
 				</xsl:for-each>
@@ -104,6 +106,15 @@
 				<!-- maintain a node datatype even if there are no matches: -->
 				<empty/>
 			</XSL:variable>
+			
+			<XSL:variable name="changeTypes">
+				<xsl:for-each select="//@ident[.='data.revisionDescChangeType']/..//rng:value">
+					<change type="{.}">
+						<xsl:value-of select="following-sibling::*[1]/text()"/>
+					</change>
+				</xsl:for-each>
+			</XSL:variable>
+			
 			<XSL:variable name="keywords">
 				<xsl:for-each select="//@ident[.=('data.keyword_corresp', 'data.keyword_graphic', 'data.keyword_print')]/..//rng:value">
 					<term>
@@ -196,15 +207,6 @@
 			<!-- remove tabs -->
 			<XSL:template match="change/text()|div/text()"/>
 
-			<!-- temporary (TODO: change encoding practice) -->
-			<XSL:template match="@who|@resp|@new">
-				<XSL:attribute><xsl:attribute name="name">{name()}</xsl:attribute>#<XSL:value-of
-					select="."/></XSL:attribute>
-			</XSL:template>
-
-			<XSL:template match="@change">
-				<XSL:attribute name="change">#change-<XSL:value-of select="."/></XSL:attribute>
-			</XSL:template>
 
 		</XSL:stylesheet>
 

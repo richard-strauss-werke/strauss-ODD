@@ -119,9 +119,9 @@
 					<rng:value>KE</rng:value>
 					<a:documentation>Korrigiert nach Edition</a:documentation>
 					<rng:value>KZ</rng:value>
-					<a:documentation>Korrektr nach Auszug</a:documentation>
+					<a:documentation>Korrigiert nach Auszug</a:documentation>
 					<rng:value>KW</rng:value>
-					<a:documentation>Korrektur</a:documentation>
+					<a:documentation>Korrigiert</a:documentation>
 					<rng:value>VQ</rng:value>
 					<a:documentation>Vollständigkeit der Quellenübertragung bestätigt</a:documentation>
 					<rng:value>VT</rng:value>
@@ -285,33 +285,33 @@
 		<macroSpec ident="data.encoding-staff">
 			<content>
 				<rng:choice>
-					<rng:value>alx</rng:value>
+					<rng:value>s:alx</rng:value>
 					<a:documentation>Alexander Erhard</a:documentation>
-					<rng:value>sts</rng:value>
+					<rng:value>s:sts</rng:value>
 					<a:documentation>Stefan Schenk</a:documentation>
-					<rng:value>aap</rng:value>
+					<rng:value>s:aap</rng:value>
 					<a:documentation>Andreas Pernpeintner</a:documentation>
-					<rng:value>clh</rng:value>
+					<rng:value>s:clh</rng:value>
 					<a:documentation>Claudia Heine</a:documentation>
-					<rng:value>mmm</rng:value>
+					<rng:value>s:mmm</rng:value>
 					<a:documentation>Martina Mengele</a:documentation>
-					<rng:value>flr</rng:value>
+					<rng:value>s:flr</rng:value>
 					<a:documentation>Florence Eller</a:documentation>
-					<rng:value>sbb</rng:value>
+					<rng:value>s:sbb</rng:value>
 					<a:documentation>Sebastian Bolz</a:documentation>
-					<rng:value>wwb</rng:value>
+					<rng:value>s:wwb</rng:value>
 					<a:documentation>Walter Werbeck</a:documentation>
-					<rng:value>afl</rng:value>
+					<rng:value>s:afl</rng:value>
 					<a:documentation>Florian Amort</a:documentation>
-					<rng:value>stk</rng:value>
+					<rng:value>s:stk</rng:value>
 					<a:documentation>Steffi Kracht</a:documentation>
-					<rng:value>oen</rng:value>
+					<rng:value>s:oen</rng:value>
 					<a:documentation>Ursula Welsch</a:documentation>
-					<rng:value>ofr</rng:value>
+					<rng:value>s:ofr</rng:value>
 					<a:documentation>Oliver Fraenske</a:documentation>
-					<rng:value>pfr</rng:value>
+					<rng:value>s:pfr</rng:value>
 					<a:documentation>Peter Fröhlich</a:documentation>
-					<rng:value>dpl</rng:value>
+					<rng:value>s:dpl</rng:value>
 					<a:documentation>Dominik Leipold</a:documentation>
 				</rng:choice>
 			</content>
@@ -320,14 +320,16 @@
 		<macroSpec ident="data.editorial-staff">
 			<content>
 				<rng:choice>
-					<rng:value>alx</rng:value>
+					<rng:value>s:alx</rng:value>
 					<a:documentation>Alexander Erhard</a:documentation>
-					<rng:value>sts</rng:value>
+					<rng:value>s:sts</rng:value>
 					<a:documentation>Stefan Schenk</a:documentation>
-					<rng:value>aap</rng:value>
+					<rng:value>s:aap</rng:value>
 					<a:documentation>Andreas Pernpeintner</a:documentation>
-					<rng:value>clh</rng:value>
+					<rng:value>s:clh</rng:value>
 					<a:documentation>Claudia Heine</a:documentation>
+					<rng:value>s:wwb</rng:value>
+					<a:documentation>Walter Werbeck</a:documentation>
 				</rng:choice>
 			</content>
 		</macroSpec>

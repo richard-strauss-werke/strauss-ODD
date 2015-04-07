@@ -1,8 +1,4 @@
-<xsl:stylesheet xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns:rsw="http://richard-strauss-ausgabe.de/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0"
-	xmlns:functx="http://www.functx.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0"
-	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-	exclude-result-prefixes="rsw xs tei functx">
+<xsl:stylesheet xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:rsw="http://richard-strauss-ausgabe.de/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:functx="http://www.functx.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="rsw xs tei functx">
 
 	<!-- xslt version of the original xquery script, adjusted to tei-c usage; alpha -->
 
@@ -17,6 +13,7 @@
 	<xsl:variable name="edition" select="/null"/>
 	<xsl:variable name="guidelinesTitleRef" select="/null"/>
 	<xsl:variable name="specificFeaturesTitle" select="/null"/>
+	<xsl:variable name="changeTypes" select="/null"/>
 	<xsl:variable name="sexes" select="/null"/>
 	<xsl:variable name="keywords" select="/null"/>
 
@@ -28,8 +25,7 @@
 			<xsl:attribute name="xml:id">
 				<xsl:value-of select="$docID"/>
 			</xsl:attribute>
-			<xsl:apply-templates
-				select="@*[not(name()='xml:id')]|node()[local-name()!='note']|comment()|processing-instruction()|text()"/>
+			<xsl:apply-templates select="@*[not(name()='xml:id')]|node()[local-name()!='note']|comment()|processing-instruction()|text()"/>
 			<xsl:apply-templates select="note"/>
 		</xsl:copy>
 	</xsl:template>
@@ -178,31 +174,27 @@
 		</xsl:copy>
 	</xsl:template>
 
+	<!-- TODO flatten in source files: remove parent there -->
 	<xsl:template name="tightenCommentary">
-		<xsl:if test="normalize-space()">
-			<xsl:copy>
-				<!-- note/@type="commentary" -->
-				<xsl:apply-templates select="@*"/>
-				<xsl:for-each select="node()">
-					<xsl:if test="normalize-space()">
-						<xsl:copy>
-							<!-- child notes -->
-							<xsl:for-each select="rs">
-								<xsl:call-template name="processRs"/>
-							</xsl:for-each>
-							<xsl:for-each select="p">
-								<xsl:if test="normalize-space()">
-									<xsl:copy>
-										<!-- rs or p -->
-										<xsl:apply-templates select="@*|node()"/>
-									</xsl:copy>
-								</xsl:if>
-							</xsl:for-each>
-						</xsl:copy>
-					</xsl:if>
-				</xsl:for-each>
-			</xsl:copy>
-		</xsl:if>
+		<!-- note/@type="commentary" -->
+		<xsl:for-each select="*">
+			<xsl:if test="normalize-space()">
+				<note type="commentary">
+					<!-- child notes -->
+					<xsl:for-each select="rs">
+						<xsl:call-template name="processRs"/>
+					</xsl:for-each>
+					<xsl:for-each select="p">
+						<xsl:if test="normalize-space()">
+							<xsl:copy>
+								<!-- rs or p -->
+								<xsl:apply-templates select="@*|node()"/>
+							</xsl:copy>
+						</xsl:if>
+					</xsl:for-each>
+				</note>
+			</xsl:if>
+		</xsl:for-each>
 	</xsl:template>
 
 	<xsl:template name="transformOrRemoveBibl">
@@ -213,13 +205,6 @@
 		</xsl:if>
 	</xsl:template>
 
-	<xsl:template name="processCreationChangeMs">
-		<xsl:copy>
-			<xsl:attribute name="xml:id">change-<xsl:value-of select="count(preceding-sibling::*) + 1"
-				/></xsl:attribute>
-			<xsl:apply-templates select="@*|node()"/>
-		</xsl:copy>
-	</xsl:template>
 
 
 	<!-- TODO dies noch ins ODD einbetten, eleganter machen + noch verbinden mit erstem Paragraphen! -->
@@ -230,55 +215,18 @@
 			<xsl:choose>
 				<xsl:when test="@type">
 					<p>
-						<xsl:apply-templates select="element()[1]/@*"/>
-					<xsl:choose>
-						<xsl:when test="@type='UO'">Übertragung nach Original </xsl:when>
-						<xsl:when test="@type='UC'">Übertragung nach Entwurf </xsl:when>
-						<xsl:when test="@type='UA'">Übertragung nach Abschrift v.f.H. </xsl:when>
-						<xsl:when test="@type='UP'">Übertragung nach Papierkopie </xsl:when>
-						<xsl:when test="@type='UI'">Übertragung nach Mikroform </xsl:when>
-						<xsl:when test="@type='UM'">Übertragung nach autogr. Abschrift </xsl:when>
-						<xsl:when test="@type='UD'">Übertragung nach Original [Digitalisat] </xsl:when>
-						<xsl:when test="@type='UG'">Übertragung nach Entwurf [Digitalisat] </xsl:when>
-						<xsl:when test="@type='UH'">Übertragung nach Abschrift v.f.H. [Digitalisat] </xsl:when>
-						<xsl:when test="@type='UF'">Übertragung nach Papierkopie [Digitalisat] </xsl:when>
-						<xsl:when test="@type='UJ'">Übertragung nach Mikroform [Digitalisat] </xsl:when>
-						<xsl:when test="@type='UB'"
-							>Übertragung nach autogr. Abschrift [Digitalisat] </xsl:when>
-						<xsl:when test="@type='UE'">Übertragung nach Edition </xsl:when>
-						<xsl:when test="@type='UZ'">Übertragung nach Auszug </xsl:when>
-						<xsl:when test="@type='UW'">Übertragung </xsl:when>
-						<xsl:when test="@type='KO'">Korrektur nach Original </xsl:when>
-						<xsl:when test="@type='KC'">Korrektur nach Entwurf </xsl:when>
-						<xsl:when test="@type='KA'">Korrektur nach Abschrift v.f.H. </xsl:when>
-						<xsl:when test="@type='KP'">Korrektur nach Papierkopie </xsl:when>
-						<xsl:when test="@type='KI'">Korrektur nach Mikroform </xsl:when>
-						<xsl:when test="@type='KM'">Korrektur nach autogr. Abschrift </xsl:when>
-						<xsl:when test="@type='KD'">Korrektur nach Original [Digitalisat] </xsl:when>
-						<xsl:when test="@type='KG'">Korrektur nach Entwurf [Digitalisat] </xsl:when>
-						<xsl:when test="@type='KH'">Korrektur nach Abschrift v.f.H. [Digitalisat] </xsl:when>
-						<xsl:when test="@type='KF'">Korrektur nach Papierkopie [Digitalisat] </xsl:when>
-						<xsl:when test="@type='KJ'">Korrektur nach Mikroform [Digitalisat] </xsl:when>
-						<xsl:when test="@type='KB'">Korrektur nach autogr. Abschrift [Digitalisat] </xsl:when>
-						<xsl:when test="@type='KE'">Korrektur nach Edition </xsl:when>
-						<xsl:when test="@type='KZ'">Korrektur nach Auszug </xsl:when>
-						<xsl:when test="@type='KW'">Korrektur </xsl:when>
-						<xsl:when test="@type='VQ'"
-							>, Vollständigkeit der Quellenübertragung bestätigt</xsl:when>
-						<xsl:when test="@type='VT'">Vollständigkeit der Textauszeichnung bestätigt </xsl:when>
-						<xsl:when test="@type='VL'">Vollständigkeit der Verlinkung bestätigt </xsl:when>
-						<xsl:when test="@type='P'">vorgeschlagen zur Publikation </xsl:when>
-						<xsl:when test="@type='C'"
-							>als möglicherweise publikationsfertig gekennzeichnet </xsl:when>
-						<xsl:when test="@type='A'">zur Publikation freigegeben </xsl:when>
-						<xsl:otherwise/>
-					</xsl:choose>
-						<xsl:apply-templates select="element()[1]/node()"/>
+						<xsl:apply-templates select="*[1]/@*"/>
+						
+						<xsl:value-of select="$changeTypes/*[@type=current()/@type]/text()"/>
+						<xsl:if test="*/node()">
+							<xsl:text>: </xsl:text>
+							<xsl:apply-templates select="*[1]/node()"/>
+						</xsl:if> 
 					</p>
-					<xsl:apply-templates select="element()[not(position()=1)][node()]"/>
+					<xsl:apply-templates select="*[not(position()=1)][node()]"/>
 				</xsl:when>
 				<xsl:otherwise>
-					<xsl:apply-templates select="element()[node()]"/>
+					<xsl:apply-templates select="*[node()]"/>
 				</xsl:otherwise>
 			</xsl:choose>
 
@@ -323,6 +271,7 @@
 					<xsl:value-of select="rsw:certString(./..)"/>
 				</author>
 			</xsl:for-each>
+			<xsl:apply-templates select="respStmt"/>
 			<xsl:copy-of select="$funder"/>
 		</xsl:copy>
 	</xsl:template>
@@ -358,6 +307,7 @@
 					<xsl:value-of select="rsw:certString(./..)"/>
 				</author>
 			</xsl:for-each>
+			<xsl:apply-templates select="respStmt"/>
 			<xsl:copy-of select="$funder"/>
 		</xsl:copy>
 	</xsl:template>
@@ -365,13 +315,12 @@
 	<xsl:template name="expandTitleStmtPrint">
 		<xsl:copy>
 			<title>
-				<xsl:copy-of
-					select="(//biblStruct//title[@type='main'])[1]/node()|@*[not(name()='type')]"/>
+				<xsl:copy-of select="(//biblStruct//title[@type='main'])[1]/node()|@*[not(name()='type')]"/>
 			</title>
 
 			<xsl:copy-of select="//biblStruct/element()[1]//author|editor"/>
 
-
+			<xsl:apply-templates select="respStmt"/>
 			<xsl:copy-of select="$funder"/>
 		</xsl:copy>
 	</xsl:template>
@@ -381,6 +330,7 @@
 			<xsl:element name="title">
 				<xsl:comment>TODO Title statement event</xsl:comment>
 			</xsl:element>
+			<xsl:apply-templates select="respStmt"/>
 		</xsl:copy>
 	</xsl:template>
 
@@ -392,20 +342,6 @@
 				</xsl:attribute>
 			</xsl:element>
 		</xsl:element>
-	</xsl:template>
-
-
-	<xsl:template name="expandEdition">
-		<xsl:choose>
-			<xsl:when test="parent::editionStmt">
-				<xsl:copy>
-					<xsl:value-of select="$edition"/>
-				</xsl:copy>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:call-template name="keepOnlyWithAnyText"/>
-			</xsl:otherwise>
-		</xsl:choose>
 	</xsl:template>
 
 	<xsl:template name="expandPublicationStmt">
@@ -421,6 +357,34 @@
 		<xsl:copy-of select="$seriesStmt"/>
 	</xsl:template>
 
+
+	<xsl:template name="addPrefixDef">
+		<listPrefixDef>
+			<prefixDef ident="doc" matchPattern="([a-z][0-9]+)" replacementPattern="http://richard-strauss-ausgabe.de/documents/view/$1">
+				<p>Private URIs using the <code>d</code>
+			     prefix are pointers to XML documents
+			     of the RSW project.
+			     For example, <code>d:p10000</code>
+			     dereferences to <code>http://richard-strauss-ausgabe.de/documents/view/p10000</code>.</p>
+			</prefixDef>
+			<prefixDef ident="s" matchPattern="([a-z]+)" replacementPattern="http://richard-strauss-ausgabe.de/staff.xml#$1">
+				<p>Private URIs using the <code>s</code>
+			     prefix are pointers to <gi>person</gi>
+			     elements in the staff.xml file.
+			     For example, <code>s:mmm</code>
+			     dereferences to <code>http://richard-strauss-ausgabe.de/staff.xml#mmm</code>.</p>
+			</prefixDef>
+		</listPrefixDef>
+	</xsl:template>
+	
+	<xsl:template name="expandEncodingDesc">
+		<xsl:copy>
+			<xsl:apply-templates select="@*"/>
+			<xsl:call-template name="addPrefixDef"/>
+			<xsl:apply-templates select="@*|node()"/>
+		</xsl:copy>
+	</xsl:template>
+
 	<xsl:template name="expandEditorialDecl">
 		<xsl:copy>
 			<p><xsl:value-of select="$guidelinesTitleRef"/></p>
@@ -433,16 +397,31 @@
 
 	<xsl:template name="expandRespStmt">
 		<xsl:variable name="whoResp" select="//@who|//@resp"/>
+		<xsl:choose>
+			<xsl:when test="name/@ref">
+				<respStmt>
+					<xsl:copy-of select="resp"/>
+					<xsl:for-each select="name[@ref]">
+						<xsl:copy>
+							<xsl:copy-of select="@*"/>
+							<xsl:value-of select="$staff/*[@ref=current()/@ref]/text()"/>
+						</xsl:copy>
+					</xsl:for-each>
+				</respStmt>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:comment>Name der Herausgeber muss noch zur Publikation ergänzt werden.</xsl:comment>
+			</xsl:otherwise>
+		</xsl:choose>
 		<xsl:if test="$whoResp">
-			<xsl:copy>
+			<respStmt>
 				<resp>
 					<xsl:value-of select="$contributorsResp"/>
 				</resp>
 				<xsl:for-each select="distinct-values($whoResp)">
-					<xsl:variable name="who" select="."/>
-					<xsl:copy-of select="$staff/id($who)"/>
+					<xsl:copy-of select="$staff/*[@ref=current()]"/>
 				</xsl:for-each>
-			</xsl:copy>
+			</respStmt>
 		</xsl:if>
 	</xsl:template>
 
@@ -517,14 +496,12 @@
 						<xsl:choose>
 							<xsl:when test="./name()='opener' and $this//seg[@type='initial-salute']">
 								<xsl:call-template name="processOpenerWP">
-									<xsl:with-param name="typedSegsI"
-										select="$this//seg[@type='initial-salute']" tunnel="yes"/>
+									<xsl:with-param name="typedSegsI" select="$this//seg[@type='initial-salute']" tunnel="yes"/>
 								</xsl:call-template>
 							</xsl:when>
 							<xsl:when test="./name()='closer' and $this//seg[@type='concluding-salute']">
 								<xsl:call-template name="processCloserWP">
-									<xsl:with-param name="typedSegsC"
-										select="$this//seg[@type='concluding-salute']" tunnel="yes"/>
+									<xsl:with-param name="typedSegsC" select="$this//seg[@type='concluding-salute']" tunnel="yes"/>
 								</xsl:call-template>
 							</xsl:when>
 							<xsl:otherwise>
@@ -653,9 +630,7 @@
 					<xsl:value-of select="rsw:formatDateNode(.)"/>
 				</xsl:for-each>
 			</xsl:variable>
-			<xsl:value-of
-				select="normalize-space(string-join(($placesCreator[normalize-space()], $dates[normalize-space()]), ', '))"
-			/>
+			<xsl:value-of select="normalize-space(string-join(($placesCreator[normalize-space()], $dates[normalize-space()]), ', '))"/>
 		</xsl:variable>
 		<xsl:value-of select="$firstPart"/>
 		<xsl:if test="$secondPart">
@@ -683,8 +658,7 @@
 		<xsl:variable name="notAfter" select="rsw:dateLong($date/@notAfter, 'sp. ')"/>
 		<xsl:variable name="from" select="rsw:dateLong($date/@from, ())"/>
 		<xsl:variable name="to" select="rsw:dateLong($date/@to, ())"/>
-		<xsl:variable name="fromTo"
-			select="if ($from or $to) then concat($from, '&#160;–', (if ($to) then ' ' else ()), $to) else ()"/>
+		<xsl:variable name="fromTo" select="if ($from or $to) then concat($from, '&#160;–', (if ($to) then ' ' else ()), $to) else ()"/>
 		<xsl:variable name="dates">
 			<xsl:value-of select="string-join(($when, $notBefore, $notAfter, $fromTo), ', ')"/>
 		</xsl:variable>
@@ -699,22 +673,13 @@
 	<!-- modified functx function to work with earlier dates, too -->
 	<xsl:function name="functx:day-of-week" as="xs:integer?">
 		<xsl:param name="date" as="xs:anyAtomicType?"/>
-		<xsl:sequence
-			select="
-			if (empty($date))
-			then ()
-			else xs:integer((xs:date($date) - xs:date('1801-01-06'))
-			div xs:dayTimeDuration('P1D')) mod 7
-			"
-		/>
+		<xsl:sequence select="    if (empty($date))    then ()    else xs:integer((xs:date($date) - xs:date('1801-01-06'))    div xs:dayTimeDuration('P1D')) mod 7    "/>
 	</xsl:function>
 
 	<!-- modified functx function with German dates -->
 	<xsl:function name="functx:day-of-week-name-de" as="xs:string?">
 		<xsl:param name="date" as="xs:anyAtomicType?"/>
-		<xsl:sequence
-			select="('Dienstag', 'Mittwoch','Donnerstag', 'Freitag', 'Samstag','Sonntag', 'Montag')[functx:day-of-week($date)+1]"
-		/>
+		<xsl:sequence select="('Dienstag', 'Mittwoch','Donnerstag', 'Freitag', 'Samstag','Sonntag', 'Montag')[functx:day-of-week($date)+1]"/>
 	</xsl:function>
 
 	<xsl:function name="rsw:dateLong" as="xs:string?">
@@ -726,15 +691,10 @@
 					<xsl:when test="matches($date, '[\d]{4}-[\d]{2}-[\d]{2}')">
 						<!-- replaced, since German dates don't work in eXist out of the box -->
 						<!--<xsl:value-of select="format-date(xs:date($date), '[FNn], [D]. [MNn] [Y]', 'de', (), ())"/>-->
-						<xsl:value-of
-							select="concat(
-							functx:day-of-week-name-de($date), ', ', substring($date,9,2), '. ',        ('Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember')[xs:integer(substring($date,6,2))], ' ', substring($date,1,4))"
-						/>
+						<xsl:value-of select="concat(        functx:day-of-week-name-de($date), ', ', substring($date,9,2), '. ',        ('Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember')[xs:integer(substring($date,6,2))], ' ', substring($date,1,4))"/>
 					</xsl:when>
 					<xsl:when test="matches($date, '[\d]{4}-[\d]{2}')">
-						<xsl:value-of
-							select="concat(('Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli',         'August', 'September', 'Oktober', 'November', 'Dezember')[xs:integer(substring($date,6,2))], ' ', substring($date,1,4))"
-						/>
+						<xsl:value-of select="concat(('Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli',         'August', 'September', 'Oktober', 'November', 'Dezember')[xs:integer(substring($date,6,2))], ' ', substring($date,1,4))"/>
 					</xsl:when>
 					<xsl:otherwise>
 						<xsl:value-of select="$date"/>

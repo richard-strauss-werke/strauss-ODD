@@ -23,9 +23,6 @@
 					</address>
 				</funder>
 			</titleStmt>
-			<editionStmt>
-				<edition>Digitale Ausgabe</edition>
-			</editionStmt>
 			<!-- template for the final version of the TEI files:-->
 			<publicationStmt>
 				<distributor>Forschungsstelle Richard-Strauss-Ausgabe</distributor>

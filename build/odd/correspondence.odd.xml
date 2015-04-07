@@ -4845,7 +4845,7 @@ en-tête et un texte, constitue un document TEI.</desc>
 							<desc versionDate="2013-11-11" xml:lang="de">Das gelöschte Wort (bzw. das gelöschte Zeichen) ist durch Rasur oder sonstige Weise getilgt.</desc>
 						</valItem>
 						<valItem ident="unknown">
-							<gloss versionDate="2015-04-02" xml:lang="de">unknown</gloss>
+							<gloss versionDate="2015-04-02" xml:lang="en">unknown</gloss>
 							<desc versionDate="2014-02-04" xml:lang="en">The rendition of the deletion is unknown.</desc>
 							<gloss versionDate="2015-04-02" xml:lang="de">unbekannt</gloss>
 							<desc versionDate="2014-02-04" xml:lang="de">Die Erscheinungsweise der Tilgung ist unbekannt.</desc>
@@ -6944,7 +6944,11 @@ places, in particular where  multiple names are given.</p>
     contenido intelectual de un texto, edición, grabación o serie, donde no basten o no se apliquen
     los elementos especializados para autores, editores, etc.</desc><desc versionDate="2007-01-21" xml:lang="it">fornisce una dichiarazione di responsabilità per qualcuno
     responsabile del contenuto intelletuale di un testo, curatela, registrazione o collana, nel caso
-    in cui gli elementi specifici per autore, curatore ecc. non sono sufficienti o non applicabili.</desc><classes><memberOf key="att.global"/><memberOf key="att.canonical"/><memberOf key="model.respLike"/></classes><content><choice xmlns="http://relaxng.org/ns/structure/1.0"><group><oneOrMore><ref name="resp"/></oneOrMore><oneOrMore><ref name="model.nameLike.agent"/></oneOrMore></group><group><oneOrMore><ref name="model.nameLike.agent"/></oneOrMore><oneOrMore><ref name="resp"/></oneOrMore></group></choice></content><attList/><exemplum xml:lang="en">
+    in cui gli elementi specifici per autore, curatore ecc. non sono sufficienti o non applicabili.</desc><classes><memberOf key="att.global"/><memberOf key="att.canonical"/><memberOf key="model.respLike"/></classes><content><group xmlns="http://relaxng.org/ns/structure/1.0"><ref name="resp"/><zeroOrMore><element name="name">
+								<optional><attribute name="ref">
+										<ref name="data.editorial-staff"/>
+									</attribute></optional>
+							</element></zeroOrMore></group></content><attList/><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <respStmt>
         <resp>transcribed from original ms</resp>
@@ -8253,7 +8257,7 @@ element in the TEI Header.
   </listRef></elementSpec><elementSpec ident="teiHeader" module="header" mode="replace"><content>
 					<group xmlns="http://relaxng.org/ns/structure/1.0"><ref name="fileDesc"/><ref name="encodingDesc"/><ref name="profileDesc"/><ref name="taskDesc"/><ref name="revisionDesc"/></group>
 				</content><attList/></elementSpec><elementSpec rend="change" module="header" ident="fileDesc"><gloss rend="replace" versionDate="2007-07-05" xml:lang="en">file description</gloss><gloss rend="replace" versionDate="2006-10-18" xml:lang="de">Dateibeschreibung</gloss><desc rend="replace" versionDate="2005-01-14" xml:lang="en">contains a full bibliographic description of an electronic file.</desc><desc rend="replace" versionDate="2006-10-18" xml:lang="de">enthält die detaillierte bibliografische Beschreibung
-							einer elektronischen Datei.</desc><classes/><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="titleStmt"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="editionStmt"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="publicationStmt"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="notesStmt"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="sourceDesc"/></content><attList/><exemplum xml:lang="en">
+							einer elektronischen Datei.</desc><classes/><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="titleStmt"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="publicationStmt"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="notesStmt"/><ref xmlns="http://relaxng.org/ns/structure/1.0" name="sourceDesc"/></content><attList/><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <fileDesc>
         <titleStmt>
@@ -8342,16 +8346,7 @@ element in the TEI Header.
   </exemplum><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD21">2.2.1. </ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD2">2.2. </ref>
-  </listRef></elementSpec><elementSpec ident="editionStmt" mode="replace" module="header"><content>
-					<ref xmlns="http://relaxng.org/ns/structure/1.0" name="edition"/>
-					<rng:element name="respStmt">
-						<group xmlns="http://relaxng.org/ns/structure/1.0"><ref name="resp"/><element name="name">
-								<optional><attribute name="key">
-										<ref name="data.editorial-staff"/>
-									</attribute></optional>
-							</element></group>
-					</rng:element>
-				</content><attList/></elementSpec><elementSpec rend="change" module="header" ident="edition"><equiv rend="replace" filter="rsw.xsl" mimeType="text/xsl" name="expandEdition"/><gloss versionDate="2009-01-05" xml:lang="fr">édition</gloss><gloss versionDate="2007-12-20" xml:lang="ko">편집, 판</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">版本</gloss><gloss versionDate="2006-10-18" xml:lang="de">Edition</gloss><gloss versionDate="2007-05-04" xml:lang="es">edición</gloss><gloss versionDate="2007-01-21" xml:lang="it">Edizione</gloss><desc versionDate="2005-01-14" xml:lang="en">describes the particularities of one edition of a text.</desc><desc versionDate="2009-01-05" xml:lang="fr">décrit les particularités de l’édition d’un texte.</desc><desc versionDate="2007-12-20" xml:lang="ko">텍스트의 한 판의 특성을 기술한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">描述文件某一版本的特質。</desc><desc versionDate="2008-04-05" xml:lang="ja">テキストの版の詳細を示す．</desc><desc versionDate="2006-10-18" xml:lang="de">beschreibt die
+  </listRef></elementSpec><elementSpec rend="change" module="header" ident="edition"><equiv rend="replace" filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/><gloss versionDate="2009-01-05" xml:lang="fr">édition</gloss><gloss versionDate="2007-12-20" xml:lang="ko">편집, 판</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">版本</gloss><gloss versionDate="2006-10-18" xml:lang="de">Edition</gloss><gloss versionDate="2007-05-04" xml:lang="es">edición</gloss><gloss versionDate="2007-01-21" xml:lang="it">Edizione</gloss><desc versionDate="2005-01-14" xml:lang="en">describes the particularities of one edition of a text.</desc><desc versionDate="2009-01-05" xml:lang="fr">décrit les particularités de l’édition d’un texte.</desc><desc versionDate="2007-12-20" xml:lang="ko">텍스트의 한 판의 특성을 기술한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">描述文件某一版本的特質。</desc><desc versionDate="2008-04-05" xml:lang="ja">テキストの版の詳細を示す．</desc><desc versionDate="2006-10-18" xml:lang="de">beschreibt die
   Besonderheiten einer Edition eines Textes.</desc><desc versionDate="2007-05-04" xml:lang="es">describe las particularidades de la edición de un texto.</desc><desc versionDate="2007-01-21" xml:lang="it">descrive le peculiarità di una edizione del testo.</desc><classes><memberOf key="att.global"/><memberOf key="model.biblPart"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/></content><attList/><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <edition>First edition <date>Oct 1990</date>
@@ -8467,7 +8462,7 @@ means of a <gi>glyph</gi> or <gi>char</gi> element referenced here as <code>#sym
 					<group xmlns="http://relaxng.org/ns/structure/1.0"><ref name="macro.form.summaryNote"/><ref name="macro.form.commentaryNote"/><ref name="macro.form.discussionNote"/><ref name="macro.form.uncategorizedNote"/></group>
 				</content><attList/></elementSpec><elementSpec ident="sourceDesc" module="header" mode="replace"><content>
 							<ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.sourceDesc_ms"/>
-						</content><attList/></elementSpec><elementSpec ident="encodingDesc" mode="replace" module="core"><content>
+						</content><attList/></elementSpec><elementSpec ident="encodingDesc" mode="replace" module="core"><equiv filter="rsw.xsl" mimeType="text/xsl" name="expandEncodingDesc"/><content>
 					<ref xmlns="http://relaxng.org/ns/structure/1.0" name="editorialDecl"/>
 				</content><attList/></elementSpec><elementSpec ident="editorialDecl" mode="replace" module="header"><equiv filter="rsw.xsl" mimeType="text/xsl" name="expandEditorialDecl"/><content>
 					<oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="p"/></oneOrMore>
@@ -11026,7 +11021,7 @@ associated.</desc>
 </classSpec><elementSpec rend="change" module="transcr" ident="handShift"><gloss versionDate="2007-06-12" xml:lang="fr">reprise de main</gloss><desc versionDate="2007-04-26" xml:lang="en">marks the beginning of a sequence of text written in a new
 hand, or the beginning of a scribal stint.</desc><desc versionDate="2007-12-20" xml:lang="ko">새로운 필적으로 기록된 텍스트 연쇄의 시작 또는 필기 부분의 시작을 표시한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">標記連續文字中轉換書寫者的開始，或是一個抄寫工作的開始。</desc><desc versionDate="2008-04-05" xml:lang="ja">テキストにおける新しい筆致の始まり，または筆写者の仕事の開始を示す．</desc><desc versionDate="2007-06-12" xml:lang="fr">marque le début d'une section du texte écrite par une nouvelle main ou le début d'une nouvelle séance d'écriture.</desc><desc versionDate="2007-05-04" xml:lang="es">marca el principio de un fragmento de texto atribuible a otra mano distinta o a un cambio de redactor, estilo de escritura, tinta o letra.</desc><desc versionDate="2007-01-21" xml:lang="it">segnala l'inizio di una porzione di testo attribuibile ad un'altra mano o riconducibile a un cambio di redattore, stile di scrittura, inchiostro o carattere</desc><classes><memberOf key="att.global"/><memberOf key="model.pPart.transcriptional"/><memberOf key="att.handFeatures"/><memberOf key="att.responsibility"/></classes><content><rng:empty/></content><constraintSpec ident="require-xml-id-target" scheme="isoschematron">
 					<constraint>
-						<sch:assert test="/*[@xml:id='compilation'] or not(@new) or @new='pre-printed' or (@new = //@xml:id)">Es gibt Schreiberhand-Wechsel, die auf eine nicht existente Schreiber-Definition verweisen.</sch:assert>
+						<sch:assert test="/*[@xml:id='compilation'] or not(@new) or @new='#pre-printed' or (substring(@new, 2) = //@xml:id)">Es gibt Schreiberhand-Wechsel, die auf eine nicht existente Schreiber-Definition verweisen.</sch:assert>
 					</constraint>
 				</constraintSpec><attList><attDef ident="new" usage="rec">
       <desc versionDate="2013-12-21" xml:lang="en">indicates a
@@ -11865,7 +11860,7 @@ with the letter. It is not catalogued separately.</accMat>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.correspondence" ident="data.revisionDescChangeType">
 			<content>
-				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>UO</value><a:documentation>Übertragen nach Original</a:documentation><value>UC</value><a:documentation>Übertragen nach Entwurf</a:documentation><value>UA</value><a:documentation>Übertragen nach Abschrift v.f.H.</a:documentation><value>UP</value><a:documentation>Übertragen nach Papierkopie</a:documentation><value>UI</value><a:documentation>Übertragen nach Mikroform</a:documentation><value>UM</value><a:documentation>Übertragen nach autogr. Abschrift</a:documentation><value>UD</value><a:documentation>Übertragen nach Original [Digitalisat]</a:documentation><value>UG</value><a:documentation>Übertragen nach Entwurf [Digitalisat]</a:documentation><value>UH</value><a:documentation>Übertragen nach Abschrift v.f.H. [Digitalisat]</a:documentation><value>UF</value><a:documentation>Übertragen nach Papierkopie [Digitalisat]</a:documentation><value>UJ</value><a:documentation>Übertragen nach Mikroform [Digitalisat]</a:documentation><value>UB</value><a:documentation>Übertragen nach autogr. Abschrift [Digitalisat]</a:documentation><value>UE</value><a:documentation>Übertragen nach Edition</a:documentation><value>UZ</value><a:documentation>Übertragen nach Auszug</a:documentation><value>UW</value><a:documentation>Übertragung</a:documentation><value>KO</value><a:documentation>Korrigiert nach Original</a:documentation><value>KC</value><a:documentation>Korrigiert nach Entwurf</a:documentation><value>KA</value><a:documentation>Korrigiert nach Abschrift v.f.H.</a:documentation><value>KP</value><a:documentation>Korrigiert nach Papierkopie</a:documentation><value>KI</value><a:documentation>Korrigiert nach Mikroform</a:documentation><value>KM</value><a:documentation>Korrigiert nach autogr. Abschrift</a:documentation><value>KD</value><a:documentation>Korrigiert nach Original [Digitalisat]</a:documentation><value>KG</value><a:documentation>Korrigiert nach Entwurf [Digitalisat]</a:documentation><value>KH</value><a:documentation>Korrigiert nach Abschrift v.f.H. [Digitalisat]</a:documentation><value>KF</value><a:documentation>Korrigiert nach Papierkopie [Digitalisat]</a:documentation><value>KJ</value><a:documentation>Korrigiert nach Mikroform [Digitalisat]</a:documentation><value>KB</value><a:documentation>Korrigiert nach autogr. Abschrift [Digitalisat]</a:documentation><value>KE</value><a:documentation>Korrigiert nach Edition</a:documentation><value>KZ</value><a:documentation>Korrektr nach Auszug</a:documentation><value>KW</value><a:documentation>Korrektur</a:documentation><value>VQ</value><a:documentation>Vollständigkeit der Quellenübertragung bestätigt</a:documentation><value>VT</value><a:documentation>Vollständigkeit der Textauszeichnung bestätigt</a:documentation><value>VL</value><a:documentation>Vollständigkeit der Verlinkung bestätigt</a:documentation><value>P</value><a:documentation>Vorgeschlagen zur Publikation</a:documentation><value>C</value><a:documentation>Als möglicherweise publikationsfertig gekennzeichnet</a:documentation><value>A</value><a:documentation>Zur Publikation freigegeben</a:documentation></choice>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>UO</value><a:documentation>Übertragen nach Original</a:documentation><value>UC</value><a:documentation>Übertragen nach Entwurf</a:documentation><value>UA</value><a:documentation>Übertragen nach Abschrift v.f.H.</a:documentation><value>UP</value><a:documentation>Übertragen nach Papierkopie</a:documentation><value>UI</value><a:documentation>Übertragen nach Mikroform</a:documentation><value>UM</value><a:documentation>Übertragen nach autogr. Abschrift</a:documentation><value>UD</value><a:documentation>Übertragen nach Original [Digitalisat]</a:documentation><value>UG</value><a:documentation>Übertragen nach Entwurf [Digitalisat]</a:documentation><value>UH</value><a:documentation>Übertragen nach Abschrift v.f.H. [Digitalisat]</a:documentation><value>UF</value><a:documentation>Übertragen nach Papierkopie [Digitalisat]</a:documentation><value>UJ</value><a:documentation>Übertragen nach Mikroform [Digitalisat]</a:documentation><value>UB</value><a:documentation>Übertragen nach autogr. Abschrift [Digitalisat]</a:documentation><value>UE</value><a:documentation>Übertragen nach Edition</a:documentation><value>UZ</value><a:documentation>Übertragen nach Auszug</a:documentation><value>UW</value><a:documentation>Übertragung</a:documentation><value>KO</value><a:documentation>Korrigiert nach Original</a:documentation><value>KC</value><a:documentation>Korrigiert nach Entwurf</a:documentation><value>KA</value><a:documentation>Korrigiert nach Abschrift v.f.H.</a:documentation><value>KP</value><a:documentation>Korrigiert nach Papierkopie</a:documentation><value>KI</value><a:documentation>Korrigiert nach Mikroform</a:documentation><value>KM</value><a:documentation>Korrigiert nach autogr. Abschrift</a:documentation><value>KD</value><a:documentation>Korrigiert nach Original [Digitalisat]</a:documentation><value>KG</value><a:documentation>Korrigiert nach Entwurf [Digitalisat]</a:documentation><value>KH</value><a:documentation>Korrigiert nach Abschrift v.f.H. [Digitalisat]</a:documentation><value>KF</value><a:documentation>Korrigiert nach Papierkopie [Digitalisat]</a:documentation><value>KJ</value><a:documentation>Korrigiert nach Mikroform [Digitalisat]</a:documentation><value>KB</value><a:documentation>Korrigiert nach autogr. Abschrift [Digitalisat]</a:documentation><value>KE</value><a:documentation>Korrigiert nach Edition</a:documentation><value>KZ</value><a:documentation>Korrigiert nach Auszug</a:documentation><value>KW</value><a:documentation>Korrigiert</a:documentation><value>VQ</value><a:documentation>Vollständigkeit der Quellenübertragung bestätigt</a:documentation><value>VT</value><a:documentation>Vollständigkeit der Textauszeichnung bestätigt</a:documentation><value>VL</value><a:documentation>Vollständigkeit der Verlinkung bestätigt</a:documentation><value>P</value><a:documentation>Vorgeschlagen zur Publikation</a:documentation><value>C</value><a:documentation>Als möglicherweise publikationsfertig gekennzeichnet</a:documentation><value>A</value><a:documentation>Zur Publikation freigegeben</a:documentation></choice>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.correspondence" ident="data.changeEventType">
 			<content>
@@ -11893,11 +11888,11 @@ with the letter. It is not catalogued separately.</accMat>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.correspondence" ident="data.encoding-staff">
 			<content>
-				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>alx</value><a:documentation>Alexander Erhard</a:documentation><value>sts</value><a:documentation>Stefan Schenk</a:documentation><value>aap</value><a:documentation>Andreas Pernpeintner</a:documentation><value>clh</value><a:documentation>Claudia Heine</a:documentation><value>mmm</value><a:documentation>Martina Mengele</a:documentation><value>flr</value><a:documentation>Florence Eller</a:documentation><value>sbb</value><a:documentation>Sebastian Bolz</a:documentation><value>wwb</value><a:documentation>Walter Werbeck</a:documentation><value>afl</value><a:documentation>Florian Amort</a:documentation><value>stk</value><a:documentation>Steffi Kracht</a:documentation><value>oen</value><a:documentation>Ursula Welsch</a:documentation><value>ofr</value><a:documentation>Oliver Fraenske</a:documentation><value>pfr</value><a:documentation>Peter Fröhlich</a:documentation><value>dpl</value><a:documentation>Dominik Leipold</a:documentation></choice>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>s:alx</value><a:documentation>Alexander Erhard</a:documentation><value>s:sts</value><a:documentation>Stefan Schenk</a:documentation><value>s:aap</value><a:documentation>Andreas Pernpeintner</a:documentation><value>s:clh</value><a:documentation>Claudia Heine</a:documentation><value>s:mmm</value><a:documentation>Martina Mengele</a:documentation><value>s:flr</value><a:documentation>Florence Eller</a:documentation><value>s:sbb</value><a:documentation>Sebastian Bolz</a:documentation><value>s:wwb</value><a:documentation>Walter Werbeck</a:documentation><value>s:afl</value><a:documentation>Florian Amort</a:documentation><value>s:stk</value><a:documentation>Steffi Kracht</a:documentation><value>s:oen</value><a:documentation>Ursula Welsch</a:documentation><value>s:ofr</value><a:documentation>Oliver Fraenske</a:documentation><value>s:pfr</value><a:documentation>Peter Fröhlich</a:documentation><value>s:dpl</value><a:documentation>Dominik Leipold</a:documentation></choice>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.correspondence" ident="data.editorial-staff">
 			<content>
-				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>alx</value><a:documentation>Alexander Erhard</a:documentation><value>sts</value><a:documentation>Stefan Schenk</a:documentation><value>aap</value><a:documentation>Andreas Pernpeintner</a:documentation><value>clh</value><a:documentation>Claudia Heine</a:documentation></choice>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>s:alx</value><a:documentation>Alexander Erhard</a:documentation><value>s:sts</value><a:documentation>Stefan Schenk</a:documentation><value>s:aap</value><a:documentation>Andreas Pernpeintner</a:documentation><value>s:clh</value><a:documentation>Claudia Heine</a:documentation><value>s:wwb</value><a:documentation>Walter Werbeck</a:documentation></choice>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.correspondence" ident="data.digit">
 			<content>
@@ -12066,7 +12061,6 @@ with the letter. It is not catalogued separately.</accMat>
 				</element>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.correspondence" ident="macro.form.creation.change_ms">
-		<equiv filter="rsw.xsl" mimeType="text/xsl" name="processCreationChangeMs"/>
 			<content>
 				<element xmlns="http://relaxng.org/ns/structure/1.0" name="change">
 					<optional><attribute name="type"/></optional>
@@ -12134,6 +12128,9 @@ with the letter. It is not catalogued separately.</accMat>
 			<equiv filter="rsw.xsl" mimeType="text/xsl" name="processRevisionDescChange"/>
 			<content>
 				<element xmlns="http://relaxng.org/ns/structure/1.0" name="change">
+					<optional><attribute name="id" ns="http://www.w3.org/XML/1998/namespace">
+							<data type="ID"/>
+						</attribute></optional>
 					<optional><attribute name="when"/><attribute name="who">
 							<ref name="data.encoding-staff"/>
 						</attribute></optional>
@@ -12288,7 +12285,6 @@ with the letter. It is not catalogued separately.</accMat>
 		Element <gi>origDate</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>origPlace</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>notesStmt</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>editionStmt</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>availability</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>bibl</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>org</gi></cell><cell>change</cell></row><row><cell>
