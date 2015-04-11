@@ -11,6 +11,8 @@
    <xsl:key name="who" match="//@who" use="."/>
    <xsl:variable name="docID"
                  select="     if (base-uri()) then     replace(base-uri(), '^(.*/)?(.*)\..*$','$2')     else $docIDParam    "/>
+   <xsl:variable name="rswDocumentPrefix">d</xsl:variable>
+   <xsl:variable name="rswStaffPrefix">s</xsl:variable>
    <xsl:variable name="guidelinesTitleRef">Die vorliegende Ausgabe folgt den <ref target="http://richard-strauss-ausgabe.de/guidelines/xml">Editionsrichtlinien der Kritischen Ausgabe der Werke von Richard Strauss</ref>.</xsl:variable>
    <xsl:variable name="specificFeaturesTitle">Besonderheiten der Edition des vorliegenden Dokuments:</xsl:variable>
    <xsl:variable name="funder">
@@ -36,7 +38,9 @@
 			</xsl:variable>
    <xsl:variable name="seriesStmt">
       <seriesStmt>
-				     <title>Richard Strauss: Werke. Kritische Ausgabe. Digitale Dokumentensammlung</title>
+				     <title type="main">Richard Strauss: Werke</title>
+				     <title type="sub">Kritische Ausgabe</title>
+				     <title type="sub">Digitale Dokumentensammlung</title>
 			   </seriesStmt>
    </xsl:variable>
    <xsl:variable name="edition"/>
@@ -98,31 +102,17 @@
       <change type="A">Zur Publikation freigegeben</change>
    </xsl:variable>
    <xsl:variable name="keywords">
-      <term ref="http://d-nb.info/gnd/4049712-4">Rezension</term>
-      <term ref="http://d-nb.info/gnd/4027503-6">Interview</term>
-      <term ref="http://d-nb.info/gnd/4125430-2">Zeitungsaufsatz</term>
-      <term ref="http://d-nb.info/gnd/4125424-7">Zeitschriftenaufsatz</term>
-      <term/>
-      <term ref="http://d-nb.info/gnd/4290552-7">Kapitel</term>
-      <term ref="http://d-nb.info/gnd/4202533-3">Sammelwerk</term>
-      <term ref="http://d-nb.info/gnd/4454906-4">Monographie</term>
-      <term ref="http://d-nb.info/gnd/4035588-3">Libretto</term>
-      <term ref="http://d-nb.info/gnd/4012494-0">Dissertation</term>
-      <term ref="http://d-nb.info/gnd/4168514-3">Magisterarbeit</term>
-      <term ref="http://d-nb.info/gnd/4075121-1">Musikdruck</term>
-      <term ref="http://d-nb.info/gnd/4013134-8">Druckwerk</term>
-      <term ref="http://d-nb.info/gnd/4511937-5">Online-Publikation</term>
       <empty/>
    </xsl:variable>
    <xsl:template match="@*|node()|comment()|processing-instruction()|text()"
                  priority="-2">
-      <xsl:copy>
+      <xsl:copy copy-namespaces="no">
          <xsl:apply-templates select="@*|node()|comment()|processing-instruction()|text()"/>
       </xsl:copy>
    </xsl:template>
    <xsl:template match="/processing-instruction()" priority="100"/>
    <xsl:template match="/*" priority="-1">
-      <xsl:copy>
+      <xsl:copy copy-namespaces="no">
          <xsl:attribute name="xml:id">
             <xsl:value-of select="$docID"/>
          </xsl:attribute>
@@ -132,34 +122,16 @@
    <xsl:template match="desc">
       <xsl:call-template name="keepOnlyWithAnyText"/>
    </xsl:template>
-   <xsl:template match="term">
-      <xsl:call-template name="addTermRef"/>
-   </xsl:template>
    <xsl:template match="rs">
       <xsl:call-template name="processRs"/>
    </xsl:template>
    <xsl:template match="graphic">
       <xsl:call-template name="keepOnlyWithAtt"/>
    </xsl:template>
-   <xsl:template match="series">
-      <xsl:call-template name="keepOnlyWithAnyText"/>
-   </xsl:template>
    <xsl:template match="respStmt">
       <xsl:call-template name="expandRespStmt"/>
    </xsl:template>
    <xsl:template match="title">
-      <xsl:call-template name="keepOnlyWithAnyText"/>
-   </xsl:template>
-   <xsl:template match="imprint">
-      <xsl:call-template name="processImprint"/>
-   </xsl:template>
-   <xsl:template match="publisher">
-      <xsl:call-template name="keepOnlyWithAnyText"/>
-   </xsl:template>
-   <xsl:template match="biblScope">
-      <xsl:call-template name="keepOnlyWithAnyText"/>
-   </xsl:template>
-   <xsl:template match="pubPlace">
       <xsl:call-template name="keepOnlyWithAnyText"/>
    </xsl:template>
    <xsl:template match="listBibl">
@@ -169,10 +141,7 @@
       <xsl:call-template name="keepOnlyWithAnyText"/>
    </xsl:template>
    <xsl:template match="titleStmt">
-      <xsl:call-template name="expandTitleStmtPrint"/>
-   </xsl:template>
-   <xsl:template match="edition">
-      <xsl:call-template name="keepOnlyWithAnyText"/>
+      <xsl:call-template name="expandTitleStmtEvent"/>
    </xsl:template>
    <xsl:template match="publicationStmt">
       <xsl:call-template name="expandPublicationStmt"/>
@@ -180,23 +149,8 @@
    <xsl:template match="idno">
       <xsl:call-template name="keepOnlyWithContent"/>
    </xsl:template>
-   <xsl:template match="notesStmt">
-      <xsl:call-template name="keepOnlyWithGrandChildContent"/>
-   </xsl:template>
-   <xsl:template match="encodingDesc">
-      <xsl:call-template name="expandEncodingDesc"/>
-   </xsl:template>
-   <xsl:template match="editorialDecl">
-      <xsl:call-template name="expandEditorialDecl"/>
-   </xsl:template>
    <xsl:template match="profileDesc">
       <xsl:call-template name="keepOnlyWithAnyText"/>
-   </xsl:template>
-   <xsl:template match="textClass">
-      <xsl:call-template name="keepOnlyWithAnyText"/>
-   </xsl:template>
-   <xsl:template match="revisionDesc">
-      <xsl:call-template name="keepOnlyWithContent"/>
    </xsl:template>
    <xsl:template match="orgName">
       <xsl:call-template name="onlyWithContentAddCert"/>
@@ -216,39 +170,30 @@
    <xsl:template match="div">
       <xsl:call-template name="processDiv"/>
    </xsl:template>
-   <xsl:template match="repository">
-      <xsl:call-template name="transformOrRemoveRepository"/>
-   </xsl:template>
-   <xsl:template match="collection">
-      <xsl:call-template name="keepOnlyWithContent"/>
-   </xsl:template>
-   <xsl:template match="additional">
-      <xsl:call-template name="keepOnlyWithAnyAttOrAnyText"/>
-   </xsl:template>
-   <xsl:template match="rsw:taskDesc">
-      <xsl:call-template name="warnIfHasChildOrRemove"/>
-   </xsl:template>
-   <xsl:template match="notesStmt/note[@type='commentary']">
+   <xsl:template match="change/note[@type='commentary']">
       <xsl:call-template name="tightenCommentary"/>
    </xsl:template>
-   <xsl:template match="notesStmt/note[@type='summary']">
+   <xsl:template match="change/note[@type='summary']">
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
    </xsl:template>
-   <xsl:template match="notesStmt/note[@type='discussion']">
+   <xsl:template match="change/note[@type='discussion']">
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
    </xsl:template>
-   <xsl:template match="notesStmt/note[@type='uncategorized']">
+   <xsl:template match="change/note[@type='uncategorized']">
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
-   </xsl:template>
-   <xsl:template match="revisionDesc/change">
-      <xsl:call-template name="processRevisionDescChange"/>
    </xsl:template>
    <xsl:template match="listBibl/bibl">
       <xsl:call-template name="transformOrRemoveBibl"/>
    </xsl:template>
    <xsl:template match="@key">
-      <xsl:attribute name="ref">d:<xsl:value-of select="."/>
+      <xsl:attribute name="ref">
+         <xsl:value-of select="concat($rswDocumentPrefix, ':', .)"/>
       </xsl:attribute>
+   </xsl:template>
+   <xsl:template match="@scribe">
+      <xsl:copy copy-namespaces="no">
+         <xsl:value-of select="concat($rswDocumentPrefix, ':', .)"/>
+      </xsl:copy>
    </xsl:template>
    <xsl:template match="change/text()|div/text()"/>
 </xsl:stylesheet>

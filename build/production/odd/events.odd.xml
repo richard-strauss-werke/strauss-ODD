@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" xml:base="file:/d:/current/strauss-ODD/strauss-ODD/src/odd/graphic.odd.xml" xml:lang="en"><?TEIVERSION Version 2.7.0. Last updated on
+<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" xml:base="file:/d:/current/strauss-ODD/strauss-ODD/src/odd/events.odd.xml" xml:lang="en"><?TEIVERSION Version 2.7.0. Last updated on
 	16th September 2014, revision 13036?>
 	<teiHeader>
 		<fileDesc>
@@ -15,7 +15,7 @@
 	</teiHeader>
 	<text>
 		<body>
-			<schemaSpec ident="schema.graphic" xml:lang="en" start="TEI" prefix="rsw_" source="/current/strauss-ODD/strauss-ODD/dependencies/p5subset.xml"><classSpec module="tei" type="atts" ident="att.ascribed">
+			<schemaSpec ident="schema.events" xml:lang="en" start="TEI" prefix="rsw_" source="/current/strauss-ODD/strauss-ODD/dependencies/p5subset.xml"><classSpec module="tei" type="atts" ident="att.ascribed">
   <desc versionDate="2006-01-05" xml:lang="en">provides attributes for elements representing speech or action that can be ascribed to a
     specific individual.</desc>
   <desc versionDate="2007-12-20" xml:lang="ko">특정 개인의 대화 또는 행위를 표시하는 요소에 대한 속성을 제공한다.</desc>
@@ -676,7 +676,7 @@ associated with a dated element, at the time indicated.</desc>
     </attDef></attList></classSpec><classSpec rend="change" module="tei" xml:id="GLOBAL" type="atts" ident="att.global"><desc versionDate="2007-10-02" xml:lang="en">provides attributes common to all elements in the TEI encoding scheme.</desc><desc versionDate="2007-12-20" xml:lang="ko">TEI 부호화 스키마의 모든 요소에 공통 속성을 제공한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">提供一組屬性，通用於TEI編碼標準中的所有元素。</desc><desc versionDate="2008-04-05" xml:lang="ja">TEI符号化スキーム中の全要素に共通する属性を示す． </desc><desc versionDate="2007-06-12" xml:lang="fr">fournit un jeu d'attributs communs à tous les éléments
     dans le système de codage TEI.</desc><desc versionDate="2007-05-04" xml:lang="es">proporciona un conjunto de atributos común a todos los
     elementos del esquema de codificación TEI.</desc><desc versionDate="2007-01-21" xml:lang="it">stabilisce un insieme di attributi comuni a tutti gli
-    elementi dello schema di codifica TEI</desc><classes><memberOf key="att.global.linking"/><memberOf key="att.global.change"/></classes><attList><attDef ident="xml:id" usage="opt">
+    elementi dello schema di codifica TEI</desc><classes><memberOf key="att.global.linking"/></classes><attList><attDef ident="xml:id" usage="opt">
       <gloss versionDate="2007-07-02" xml:lang="en">identifier</gloss>
       <gloss versionDate="2007-12-20" xml:lang="ko">확인소</gloss>
       <gloss versionDate="2008-04-06" xml:lang="es">identificador</gloss>
@@ -807,81 +807,6 @@ associated with a dated element, at the time indicated.</desc>
         <p> 本ガイドラインでは，当該属性<att>rend</att>の値として推奨するも のはない．活字表現の特徴は様々であり，それらのどれを採用するかは
           プロジェクトごとで異なるからである．当ガイドラインでは，有用な記 述法があれば，その都度示すことになっている． </p>
       </remarks>
-    </attDef></attList></classSpec><classSpec rend="change" module="tei" type="atts" ident="att.handFeatures"><desc versionDate="2007-09-27" xml:lang="en">provides attributes describing aspects of the hand in which a
-  manuscript is written.</desc><desc versionDate="2007-12-20" xml:lang="ko">원고가 쓰여진 필적의 측면을 기술하는 속성을 제공한다.</desc><desc versionDate="2008-04-06" xml:lang="es">proporciona atributos que describen los aspectos de la mano que ha escrito un manuscrito. </desc><desc versionDate="2008-04-05" xml:lang="ja">
-  手書き資料の筆致に関する情報を表す情報を示す．
-</desc><desc versionDate="2008-03-30" xml:lang="fr">fournit des attributs décrivant les caractéristiques
-de la main par laquelle un manuscrit est écrit.</desc><desc versionDate="2007-11-06" xml:lang="it">indica degli attributi che descrivono aspetti delle mano utilizzata per la scrittura del manoscritto</desc><classes/><attList><attDef ident="scope" mode="replace">
-					<datatype>
-						<ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.handFeaturesScope"/>
-					</datatype>
-				</attDef><attDef ident="scribe">
-      <desc versionDate="2010-09-28" xml:lang="en">gives a name or other identifier for the scribe
-believed to be responsible for this hand.</desc>
-      <desc versionDate="2007-12-20" xml:lang="ko">이 필적에 대한 책임이 있다고 간주되는 필기사에 대한 표준명 또는 다른 확인소를 제시한다.</desc>
-      <desc versionDate="2008-04-05" xml:lang="ja">
-      当該筆致に対応すると十分に信じられる筆写者の一般的な名前または識
-      別子を示す．
-</desc>
-      <desc versionDate="2009-05-27" xml:lang="fr">donne un nom normalisé ou un autre
-identifiant pour le scribe reconnu comme responsable de cette main.</desc>
-      <desc versionDate="2007-01-21" xml:lang="it">assegna un nome o altro identificatore standard al trascrittore che si ritiene corrisponda alla mano in questione</desc>
-      <desc versionDate="2007-05-04" xml:lang="es">asigna un nombre u otro identificador estándard para el transcriptor que se identifica con la mano en cuestión.</desc>
-      <datatype>
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.name"/>
-      </datatype>
-      <!-- valDesc xml:lang="fr">Un nom quelconque.</valDesc -->
-    </attDef><attDef ident="scribeRef">
-      <desc versionDate="2010-09-28" xml:lang="en">points to a full description of the scribe concerned, typically supplied by a <gi>person</gi> element
-      elsewhere in the description.</desc>
-      <datatype minOccurs="1" maxOccurs="unbounded">
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.pointer"/>
-      </datatype>
-    </attDef><attDef ident="script">
-      <desc versionDate="2008-02-01" xml:lang="en">characterizes the particular script or writing style used by
-this hand, for example <mentioned>secretary</mentioned>, <mentioned>copperplate</mentioned>, <mentioned>Chancery</mentioned>, <mentioned>Italian</mentioned>, etc.</desc>
-      <desc versionDate="2007-12-20" xml:lang="ko"><mentioned>secretary</mentioned>, <mentioned>copperplate</mentioned>, <mentioned>Chancery</mentioned>, <mentioned>Italian</mentioned> 등과 같이 이 필적으로 사용된 특별한 필사본 또는 글쓰기 스타일의 특성을 기술한다.</desc>
-      <desc versionDate="2008-04-05" xml:lang="ja">
-      当該筆致で使用されている特定の筆体や書記スタイルの特徴を示す．例
-      えば，<mentioned>secretary(書記官スタイル)</mentioned>,　
-      <mentioned>copperplate(銅板スタイル)</mentioned>,　
-      <mentioned>Chancery(公文書スタイル)</mentioned>,
-       <mentioned>Italian(イタリアスタイル)</mentioned>など．
-	</desc>
-      <desc versionDate="2009-05-27" xml:lang="fr">caractérise la calligraphie ou le style
-        d'écriture particuliers utilisés par cette main, par exemple <mentioned>écriture anglaise</mentioned>,
-        <mentioned>de chancellerie</mentioned>, <mentioned>italienne</mentioned>, etc.</desc>
-      <desc versionDate="2007-01-21" xml:lang="it">caratterizza un determinato stile di scrittura utilizzato dalla mano in questione, per esempio
-<mentioned>segretario</mentioned>, <mentioned>incisione su rame</mentioned>, <mentioned>Chancery</mentioned>, <mentioned>italiano</mentioned>, ecc.</desc>
-      <desc versionDate="2007-05-04" xml:lang="es">caracteriza un determinado estilo de escritura utilizado por la mano en cuestión, p.ej.
-<mentioned>secretario</mentioned>, <mentioned>grabado sobre cobre</mentioned>, <mentioned>cancelleresco</mentioned>, <mentioned>italiano</mentioned>, etc.</desc>
-      <datatype minOccurs="1" maxOccurs="unbounded">
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.name"/>
-      </datatype>
-    </attDef><attDef ident="scriptRef">
-      <desc versionDate="2010-09-28" xml:lang="en">points to a full description of the script or writing style used by
-this hand, typically supplied by a <gi>scriptNote</gi> element
-      elsewhere in the description.</desc>
-      <datatype minOccurs="1" maxOccurs="unbounded">
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.pointer"/>
-      </datatype>
-    </attDef><attDef ident="medium">
-      <desc versionDate="2007-09-27" xml:lang="en">describes the tint or type of ink, e.g. <mentioned>brown</mentioned>, or other
-writing medium, e.g. <mentioned>pencil</mentioned>
-         </desc>
-      <desc versionDate="2007-12-20" xml:lang="ko"><mentioned>brown</mentioned>와 같이 잉크의 색 또는 유형, 또는 <mentioned>pencil</mentioned>와 같이 글쓰기 방식 기술한다.</desc>
-      <desc versionDate="2008-04-05" xml:lang="ja">
-      インクの種類や色合い，例えば，<mentioned>茶色</mentioned>
-      や，筆記具の種類，例えば，<mentioned>鉛筆</mentioned>など．
-</desc>
-      <desc versionDate="2009-05-29" xml:lang="fr">décrit la teinte ou le type d'encre, par
-        exemple <mentioned>brune</mentioned>, ou un autre outil d'écriture, par exemple un <mentioned>crayon</mentioned>.</desc>
-      <desc versionDate="2007-01-21" xml:lang="it">descrive la tinta o il tipo di inchiostro, per esempio <mentioned>marrone</mentioned>, o altri strumenti di scrittura, per esempio <mentioned>matita</mentioned>
-         </desc>
-      <desc versionDate="2007-05-04" xml:lang="es">describe la tinta o el tipo de tinta, p.ej. <mentioned>marrón</mentioned>, u otros instrumentos de escritura, p.ej. <mentioned>lápiz</mentioned>.</desc>
-       <datatype minOccurs="1" maxOccurs="unbounded">
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.enumerated"/>
-       </datatype>
     </attDef></attList></classSpec><classSpec module="tei" type="atts" ident="att.media">
   <desc versionDate="2013-01-11" xml:lang="en">provides attributes for specifying display and related properties of
   external media.</desc>
@@ -1327,240 +1252,6 @@ to use nested tables.</p>
   </attList>
   <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/FT.html#FT">14. </ref>
-  </listRef>
-</classSpec><classSpec module="tei" type="atts" ident="att.transcriptional">
-  <desc versionDate="2007-09-03" xml:lang="en">provides attributes specific to elements encoding authorial or
-  scribal intervention in a text when
-  transcribing manuscript or similar sources.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">원고 또는 유사 원본을 전사할 때 텍스트의 저작 또는 필사 간섭을 부호화하는 요소에 특징적으로 사용되는 속성을 제시한다.</desc>
-  <desc versionDate="2008-04-06" xml:lang="es">proporciona a los atributos específicos a los elementos que codifican la intervención authorial o scribal en un texto al transcribir el manuscrito o las fuentes similares.</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">
-  手書き資料や同様の資料を転記する場合，著者や筆写者に関する調整を記録
-  する要素に付与される属性を示す．
-</desc>
-  <desc versionDate="2008-03-30" xml:lang="fr">fournit des attributs spécifiques au codage d'éléments
-relatifs à l'intervention de l'auteur ou du copiste dans un texte lors de la
-transcription de sources manuscrites ou assimilées.</desc>
-  <desc versionDate="2007-11-06" xml:lang="it">assegna degli attributi propri degli elementi che descrivono il carattere di un intervento dell'autore o del trascrittore di un testo nella redazione di un manoscritto o di altra fonte simile</desc>
-  <classes>
-    <memberOf key="att.editLike"/>
-  </classes>
-  <attList>
-    <attDef ident="hand" usage="opt">
-      <desc versionDate="2007-09-03" xml:lang="en">indicates the hand of the agent which made the intervention.</desc>
-      <desc versionDate="2007-12-20" xml:lang="ko">간섭을 만든 당사자의 필적을 나타낸다.</desc>
-      <desc versionDate="2008-04-05" xml:lang="ja">
-      当該調整を行った主体の筆致を特定する．
-</desc>
-      <desc versionDate="2008-03-30" xml:lang="fr">signale la main de celui qui est intervenue.</desc>
-      <desc versionDate="2007-01-21" xml:lang="it">indica il responsabile dell'aggiunta o della cancellazione</desc>
-      <desc versionDate="2007-05-04" xml:lang="es">indica el responsable de la adición o de la omisión.</desc>
-      <datatype>
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.pointer"/>
-      </datatype>
-
-
-    </attDef>
-    <attDef ident="status" usage="opt">
-      <desc versionDate="2007-09-03" xml:lang="en">indicates the effect of the intervention, for example in
-      the case of a deletion, strikeouts
-      which include too much or too little text, or in the case of an
-      addition, an insertion which duplicates some of the text
-      already present.</desc>
-      <desc versionDate="2007-12-20" xml:lang="ko">간섭의 효과를 나타낸다. 예를 들어, 삭제의 경우 너무 많은 또는 너무 적은 텍스트를 포함한 지우기, 또는 추가의 경우, 이미 존재하는 텍스트 일부의 중복 삽입 등.</desc>
-      <desc versionDate="2008-04-06" xml:lang="es">indica el resultado de una intervención, por ejemplo en el caso de una cancelación, una tachadura que incluyen demasiado o demasiado poco texto, o en el caso de una adición o una inserción que duplica información ya presente en el texto.</desc>
-      <desc versionDate="2008-04-05" xml:lang="ja">
-      当該調整の影響を示す．例えば，削除の際，取消線の範囲が多すぎた
-      り少なすぎたりする場合や，追加の際，既にあるテキストの部分をコピー
-      して挿入したりする場合．
-</desc>
-      <desc versionDate="2008-03-30" xml:lang="fr">indique la conséquence de l'intervention, par
-exemple dans le cas d'un effacement, une biffure, qui inclut trop ou pas assez de
-texte, ou dans le cas d'un ajout, une insertion, qui reproduit une portion du
-texte déjà présent.</desc>
-      <desc versionDate="2007-11-06" xml:lang="it">indica l'effetto dell'intervento, per esempio in caso di cancellazione, quando questa comprenda troppo testo o troppo poco, o in caso di aggiunta, quando questa riproduce parte del testo già presente</desc>
-      <datatype>
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.enumerated"/>
-      </datatype>
-      <defaultVal>unremarkable</defaultVal>
-      
-      <valList type="open">
-        <valItem ident="duplicate">
-          <desc versionDate="2007-09-03" xml:lang="en">all of the text indicated as an addition duplicates
-	  some text that is in the original, whether the duplication
-	  is word-for-word or less exact.</desc>
-          <desc versionDate="2007-12-20" xml:lang="ko">중복이 단어 대 단어로 된 것이지, 아니면 중복이 비교적 덜 정확하게 된 것인지 간에, 삽입으로 표시된 모든 텍스트는 원본의 일부 텍스트를 중복한 것임.</desc>
-          <desc versionDate="2008-04-06" xml:lang="es">todo el texto indicado como adición duplica un fragmento de texto presente en el original, siendo la duplicación palabra por palabra o algo menos exacta.</desc>
-          <desc versionDate="2008-04-05" xml:lang="ja">
-	  当該テキストは全て，元資料にあるテキストのコピーを追加するも
-      のである．その程度は，語単位であったりそれより小さいこともある．
-</desc>
-          <desc versionDate="2009-05-28" xml:lang="fr">tout le texte indiqué comme étant une addition reprend le texte de l'original, que la duplication soit identique mot pour mot ou moins exacte.</desc>
-          <desc versionDate="2007-11-06" xml:lang="it">l'intero testo identificato come aggiunta riproduce parte del testo già presente nell'originale, indipendentemente dal fatto che la riproduzione sia esatta (parola per parola) o meno</desc>
-        </valItem>
-        <valItem ident="duplicate-partial">
-          <desc versionDate="2007-09-03" xml:lang="en">part of the text indicated as an addition duplicates
-	  some text that is in the original</desc>
-          <desc versionDate="2007-12-20" xml:lang="ko">일부 텍스트가 원본의 일부 텍스트를 중복</desc>
-          <desc versionDate="2008-04-06" xml:lang="es">la parte del texto marcado como adición duplica un fragmento de texto presente en el original</desc>
-          <desc versionDate="2008-04-05" xml:lang="ja">
-	  当該テキストの部分は，元資料にあるテキストのコピーを追加する
-      ものである．
-</desc>
-          <desc versionDate="2008-03-30" xml:lang="fr">la partie du texte indiquée comme
-étant un ajout est redondante avec un texte présent dans l'original.</desc>
-          <desc versionDate="2007-11-06" xml:lang="it">una parte del testo identificato come aggiunta riproduce parte del testo già presente nell'originale</desc>
-        </valItem>
-        <valItem ident="excessStart">
-          <desc versionDate="2007-09-03" xml:lang="en">some text at the beginning of the deletion is marked
-          as deleted even though it clearly should not be
-          deleted.</desc>
-          <desc versionDate="2007-12-20" xml:lang="ko">분명히 그렇게 되어 있지 않았어야 하는데도, 삭제부의 시작에 있는 어떤 텍스트가 삭제된 것으로 표지되어 있다.</desc>
-          <desc versionDate="2008-04-06" xml:lang="es">un fragmento de texto del principio de una cancelación se marca como suprimido aunque este no lo haya sido claramente.</desc>
-          <desc versionDate="2008-04-05" xml:lang="ja">
-	  当該削除部分の始点は，例えそれが明白な削除ではなくとも，マー
-      クされている．
-</desc>
-          <desc versionDate="2009-05-28" xml:lang="fr">un passage du texte situé au début de la supression est indiqué comme supprimé bien qu'à l'évidence il ne devrait pas l'être.</desc>
-          <desc versionDate="2007-11-06" xml:lang="it">una parte del testo all'inizio della cancellazione è identificata come cancellata anche se chiaramente non dovrebbe esserlo</desc>
-        </valItem>
-        <valItem ident="excessEnd">
-          <desc versionDate="2007-09-03" xml:lang="en">some text at the end of the deletion is marked as
-          deleted even though it clearly should not be
-          deleted.</desc>
-          <desc versionDate="2007-12-20" xml:lang="ko">분명히 그렇게 되어 있지 않았어야 하는데도, 삭제부의 끝에 있는 어떤 텍스트가 삭제된 것으로 표지되어 있다.</desc>
-          <desc versionDate="2008-04-06" xml:lang="es">un fragmento de texto del final de una cancelación se marca como suprimido aunque este no lo haya sido claramente.</desc>
-          <desc versionDate="2008-04-05" xml:lang="ja">
-	  当該削除部分の終点は，例えそれが明白な削除ではなくとも，マー
-      クされている．
-</desc>
-          <desc versionDate="2009-05-28" xml:lang="fr">un passage du texte situé à la fin de la supression est indiqué comme supprimé bien qu'à l'évidence il ne devrait pas l'être.</desc>
-          <desc versionDate="2007-11-06" xml:lang="it">una parte del testo alla fine della cancellazione è identificata come cancellata anche se chiaramente non dovrebbe esserlo</desc>
-        </valItem>
-        <valItem ident="shortStart">
-          <desc versionDate="2007-09-03" xml:lang="en">some text at the beginning of the deletion is not
-          marked as deleted even though it clearly should be.</desc>
-          <desc versionDate="2007-12-20" xml:lang="ko">분명히 그렇게 되어 있어야 하는데도, 삭제부의 시작에 있는 어떤 텍스트가 삭제된 것으로 표지되어 있지 않다.</desc>
-          <desc versionDate="2008-04-06" xml:lang="es">un fragmento de texto del inicio de la cancelación no se marca como suprimido aunque claramente haya sido suprimido.</desc>
-          <desc versionDate="2008-04-05" xml:lang="ja">
-	  当該削除部分の始点は，例えそれが明白な削除ではなくとも，マー
-      クされていない．
-</desc>
-          <desc versionDate="2009-05-28" xml:lang="fr">un passage du texte situé au début de la supression n'est pas indiqué comme supprimé bien qu'à l'évidence il devrait l'être.</desc>
-          <desc versionDate="2007-11-06" xml:lang="it">una parte del testo all'inizio della cancellazione non è identificata come cancellata anche se chiaramente dovrebbe esserlo</desc>
-        </valItem>
-        <valItem ident="shortEnd">
-          <desc versionDate="2007-09-03" xml:lang="en">some text at the end of the deletion is not marked as
-          deleted even though it clearly should be.</desc>
-          <desc versionDate="2007-12-20" xml:lang="ko">분명히 그렇게 되어 있어야 하는데도, 삭제부의 끝에 있는 어떤 텍스트가 삭제된 것으로 표지되어 있지 않다.</desc>
-          <desc versionDate="2008-04-06" xml:lang="es">un fragmento de texto del final de la cancelación no se marca como suprimido aunque claramente haya sido suprimido.</desc>
-          <desc versionDate="2008-04-05" xml:lang="ja">
-	  当該削除部分の終点は，例えそれが明白な削除ではなくとも，マー
-      クされていない．
-</desc>
-          <desc versionDate="2009-05-28" xml:lang="fr">un passage du texte situé à la fin de la supression n'est pas indiqué comme supprimé bien qu'à l'évidence il devrait l'être.</desc>
-          <desc versionDate="2007-11-06" xml:lang="it">una parte del testo alla fine della cancellazione non è identificata come cancellata anche se chiaramente dovrebbe esserlo</desc>
-        </valItem>
-        <valItem ident="partial">
-          <desc versionDate="2007-09-03" xml:lang="en">some text in the deletion is not marked as deleted
-	  even though it clearly should be.</desc>
-          <desc versionDate="2007-12-20" xml:lang="ko">분명히 그렇게 되어 있어야 하는데도, 삭제부에 있는 어떤 텍스트가 삭제된 것으로 표지되어 있지 않다.</desc>
-          <desc versionDate="2008-04-06" xml:lang="es">un fragmento de texto de la cancelación no se marca como suprimido aunque claramente haya sido suprimido.</desc>
-          <desc versionDate="2008-04-05" xml:lang="ja">
-	  当該削除部分は，例えそれが明白な削除ではなくとも，マークされ
-      ていない．
-</desc>
-          <desc versionDate="2009-05-28" xml:lang="fr">un passage du texte dans la supression n'est pas indiqué comme disparu bien qu'à l'évidence il devrait l'être.</desc>
-          <desc versionDate="2007-11-06" xml:lang="it">una parte del testo all'interno della cancellazione non è identificata come cancellata anche se chiaramente dovrebbe esserlo</desc>
-        </valItem>
-        <valItem ident="unremarkable">
-          <desc versionDate="2007-09-03" xml:lang="en">the deletion is not faulty.</desc>
-          <desc versionDate="2007-12-20" xml:lang="ko">삭제가 잘못된 것이 아니다.</desc>
-          <desc versionDate="2008-04-06" xml:lang="es">la cancelación no es defectuosa.</desc>
-          <desc versionDate="2008-04-05" xml:lang="ja">
-	  当該削除部分は，間違いではない．
-	</desc>
-          <desc versionDate="2008-03-30" xml:lang="fr">l'indication de suppression n'est pas
-erronée.</desc>
-          <desc versionDate="2007-11-06" xml:lang="it">la cancellazione non è erronea</desc>
-        </valItem>
-      </valList>
-      <remarks versionDate="2007-09-03" xml:lang="en">
-        <p>Status information on each deletion is needed rather rarely
-	except in critical editions from authorial manuscripts; status
-	information on additions is even less common.</p>
-        <p>Marking a deletion or addition as faulty is inescapably an
-        interpretive act; the usual test applied in practice is the
-	linguistic acceptability of the text with and without the
-        letters or words in question.</p>
-      </remarks>
-      <remarks xml:lang="fr" versionDate="2007-06-12">
-        <p>Il est rarement nécessaire de donner de l'information sur le statut de chaque
-                        suppression sauf dans le cas des éditions critiques de manuscrits d'auteur,
-                        l'information sur le statut des additions étant encore plus rare.</p>
-        <p>L'indication d'une suppression ou d'une addition comme erronée est indéniablement un acte
-                        d'interprétation ; le test habituel appliqué dans la pratique est
-                        l'acceptabilité linguistique du texte avec et sans les lettres ou mots en
-                        question. </p>
-      </remarks>
-      <remarks xml:lang="es" versionDate="2008-04-06">
-        <p>La información del estado de cada cancelación se necesita raramente, excepto en las ediciones críticas de los manuscritos de autor; la información del estado sobre las adiciones es incluso menos común.</p>
-        <p>El marcaje de una cancelación o una adición como defectuoso es ineludible en un acto interpretativo; el test generalmente aplicado en la práctica es la aceptabilidad lingüística del texto con y sin las letras o las palabras en cuestión.</p>
-      </remarks>
-      <remarks xml:lang="ja" versionDate="2008-04-05">
-        <p>
-	各削除部分に関する状態情報は，著者の自筆原稿からの校勘版を除い
-      て，滅多に必要にはならない．追加に関する状態情報も，一般的ではな
-      い．
-      </p>
-        <p>
-	削除部分や追加を間違いとして記録することは，必然的に解釈が含ま
-      れてしまう．実際には，問題となる文字や単語の有無によって，当該テ
-      キストが言語学的に問題ないかどうかで判断される．
-      </p>
-      </remarks>
-    </attDef>
-    <attDef ident="cause">
-      <desc versionDate="2011-10-31" xml:lang="en">documents the presumed cause for the intervention.</desc>
-      <datatype>
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.enumerated"/>
-      </datatype>
-      <valList type="closed">
-        <valItem ident="fix">
-          <desc versionDate="2011-10-31" xml:lang="en">repeated for the purpose of fixation</desc>
-        </valItem>
-        <valItem ident="unclear">
-          <desc versionDate="2011-10-31" xml:lang="en">repeated to clarify a previously illegible or badly written text
-   or mark</desc>
-        </valItem>
-      </valList>
-    </attDef>
-    
-    <attDef ident="seq">
-      <gloss versionDate="2007-09-03" xml:lang="en">sequence</gloss>
-      <gloss versionDate="2007-12-20" xml:lang="ko">연쇄</gloss>
-      <gloss versionDate="2008-04-06" xml:lang="es">secuencia</gloss>
-      <gloss versionDate="2008-03-30" xml:lang="fr">séquence</gloss>
-      <gloss versionDate="2007-11-06" xml:lang="it">sequenza</gloss>
-      <desc versionDate="2007-09-03" xml:lang="en">assigns a sequence number related to the order in which
-      the encoded features carrying this attribute are believed to have occurred.</desc>
-      <desc versionDate="2007-12-20" xml:lang="ko">이 속성을 포함하는 부호화된 자질이 발생했다고 가정되는 순서와 관련된 번호를 할당한다.</desc>
-      <desc versionDate="2008-04-06" xml:lang="es">asigna un número de serie relacionado con el orden en el cual se cree que se han sucedido las características codificadas que llevan este atributo.</desc>
-      <desc versionDate="2008-04-05" xml:lang="ja">
-      当該属性が示す素性が出現すると想定されている順番の，番号を示す．
-</desc>
-      <desc versionDate="2008-03-30" xml:lang="fr">assigne un numéro séquentiel relatif à l'ordre
-dans lequel les traits encodés portant cet attribut sont supposés être apparus.</desc>
-      <desc versionDate="2007-11-06" xml:lang="it">stabilisce un numero sequenziale relativo all'ordine in cui si ritiene che ricorrano i tratti codificati ai quali è assegnato tale attributo</desc>
-      <datatype maxOccurs="1">
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.count"/>
-      </datatype>
-    </attDef>
-  </attList>
-  <listRef>
-
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHAD">11.3.1.4. </ref>
-
   </listRef>
 </classSpec><classSpec module="tei" xml:id="AGENT" type="model" ident="model.nameLike.agent">
   <desc versionDate="2005-10-10" xml:lang="en">groups elements which contain names of individuals
@@ -2427,7 +2118,7 @@ fin d'une division de texte.</desc>
   <desc versionDate="2007-01-21" xml:lang="it">raggruppa gli elementi che nominano o indicano una
     persona, un luogo (costruito dall'uomo o geografico), o un'organizzazione</desc>
   <classes>
-    <memberOf key="model.addrPart"/>
+    
     <memberOf key="model.pPart.data"/>
   </classes>
   <remarks versionDate="2005-11-26" xml:lang="en">
@@ -2471,21 +2162,6 @@ fin d'une division de texte.</desc>
     di elementi di citazioni bibliografiche</desc>
   <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBI">3.11. </ref>
-  </listRef>
-</classSpec><classSpec module="tei" xml:id="ADDRPART" type="model" ident="model.addrPart">
-  <desc versionDate="2007-10-02" xml:lang="en">groups elements such as names or postal codes which may appear as part of a
-    postal address.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">우편 주소의 부분으로 나타날 수 있는 이름 또는 우편 번호와 같은 요소를 모아 놓는다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">可能出現於郵寄地址部份的元素，如名稱或郵遞區號。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">郵便情報としてある名前や郵便番号等の要素をまとめる．</desc>
-  <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments comme des noms ou des codes postaux
-    qui peuvent apparaître dans une adresse postale</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">agrupa los elementos que constituyen una dirección postal
-    o de cualquier otro tipo.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi che costituiscono un indirizzo postale
-    o altro tipo di indirizzo</desc>
-  <listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONAAD">3.5.2. </ref>
   </listRef>
 </classSpec><classSpec module="tei" xml:id="DATA" type="model" ident="model.pPart.data">
   <desc versionDate="2005-10-10" xml:lang="en">groups phrase-level elements containing names, dates, numbers, measures, and similar data.</desc>
@@ -2789,29 +2465,6 @@ used for transcribing extant documents.</desc>
   <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STEC">1.3. </ref>
   </listRef>
-</macroSpec><macroSpec module="tei" type="pe" ident="macro.xtext">
-  <gloss versionDate="2005-10-05" xml:lang="en">extended text</gloss>
-  <gloss versionDate="2007-12-20" xml:lang="ko">확장 텍스트</gloss>
-  <gloss versionDate="2007-05-02" xml:lang="zh-TW">擴充文件</gloss>
-  <gloss versionDate="2007-06-12" xml:lang="fr">texte étendu</gloss>
-  <gloss versionDate="2007-05-04" xml:lang="es">el texto</gloss>
-  <gloss versionDate="2007-01-21" xml:lang="it">testo esteso</gloss>
-  <desc versionDate="2005-10-05" xml:lang="en">defines a sequence of character data and gaiji elements.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">문자 데이터 및 외부 문자 요소의 연쇄를 정의한다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">定義一連串文字資料與缺字元素。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">一連の文字列や外字要素を定義する．</desc>
-  <desc versionDate="2007-06-12" xml:lang="fr">définit une suite de caractères et d'éléments
-    gaiji</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">define una secuencia de caracteres y elementos gaiji.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">definisce una sequenza di caratteri ed elementi gaiji</desc>
-  <content>
-    <zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0">
-      <choice>
-        <text/>
-        <ref name="model.gLike"/>
-      </choice>
-    </zeroOrMore>
-  </content>
 </macroSpec><macroSpec ident="data.certainty" module="tei" type="dt" mode="replace">
 			<content>
 				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>high</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">(ws.) wahrscheinlich / mit hoher Wahrscheinlichkeit</a:documentation><value>medium</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">(?) möglicherweise / mit mittlerer Wahrscheinlichkeit</a:documentation><value>low</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">(nicht) nicht / mit sehr geringer Wahrscheinlichkeit</a:documentation></choice>
@@ -3033,42 +2686,6 @@ integer value used as a count.</desc>
       <soCalled>time</soCalled>.</p>
     <p>Pour des détails complets, voir <ref target="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/#duration">W3C
       specification</ref>.</p>
-  </remarks>
-</macroSpec><macroSpec module="tei" type="dt" ident="data.truthValue">
-  <desc versionDate="2007-10-22" xml:lang="en">defines the range of attribute values used to express a truth
-value.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">진리값을 표현하는 속성 값 범위를 정의한다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">定義的屬性值範圍表示一個可能未知的真實值</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">真偽値を示す属性値の範囲を定義する．</desc>
-  <desc versionDate="2007-06-12" xml:lang="fr">définit la gamme des
-  valeurs d'attributs exprimant la vérité d'une proposition.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">define la gama de valores de atributos usados para expresar un valor cierto.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">definisce la gamma di valori di attributi usati per esprimere un valore di verità</desc>
-  <content>
-    <data xmlns="http://relaxng.org/ns/structure/1.0" type="boolean"/>
-  </content>
-  <remarks versionDate="2013-11-01" xml:lang="en">
-    <p>The possible values of this datatype are <val>1</val> or
-    <val>true</val>, or <val>0</val> or <val>false</val>.</p>
-    <p>This datatype applies only for cases where uncertainty is
-    inappropriate; if the attribute concerned may have a value other
-    than true or false, e.g. <val>unknown</val>, or
-    <val>inapplicable</val>, it should have the extended version of
-    this datatype: <ident type="datatype">data.xTruthValue</ident>.</p>
-  </remarks>
-  <remarks xml:lang="ja" versionDate="2008-04-05">
-    <p>
-    曖昧な値が許されない場合に使われるデータ型になる．属性値が真偽値で
-    ない場合，例えば"unknown"や"inapplicable"の場合には，当該データ型
-    の拡張版であるdata.xTruthValueを使うべきである．
-    </p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2007-06-12">
-    <p>Ce type de données ne s'applique que dans les cas où l'incertitude est 
-      inappropriée ; c’est-à-dire si l'attribut concerné peut avoir une valeur autre 
-      que vrai ou faux, par ex. <val>inconnu</val>, ou <val>inapplicable</val>, il devrait  alors y
-      avoir la version étendue de ce  type de données : data.xTruthValue.
-    </p>
   </remarks>
 </macroSpec><macroSpec module="tei" type="dt" ident="data.language">
   <desc versionDate="2007-10-18" xml:lang="en">defines the range of attribute values used to identify a particular combination of human
@@ -4248,56 +3865,6 @@ en-tête et un texte, constitue un document TEI.</desc>
     <p rend="dataDesc"> TEIの慣習では，動詞を先頭にした文で表現される(訳注：英語で表現する 場合のこと)． </p>
   </remarks><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TD.html#TDcrystalsCEdc">22.4.1. </ref>
-  </listRef></elementSpec><elementSpec rend="change" module="core" ident="term"><equiv rend="replace" filter="rsw.xsl" mimeType="text/xsl" name="addTermRef"/><gloss versionDate="2009-01-06" xml:lang="fr">terme</gloss><desc versionDate="2005-01-14" xml:lang="en">contains a single-word, multi-word, or symbolic designation which is regarded as a technical
-    term.</desc><desc versionDate="2007-12-20" xml:lang="ko">전문용어로 간주되는 단일어, 복합어, 기호적 명칭을 포함한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含作為專有名詞的一個單字、詞彙、或是表示符號。</desc><desc versionDate="2008-04-05" xml:lang="ja">技術用語とされる単一語，複数語，記号表示を示す．</desc><desc versionDate="2009-01-06" xml:lang="fr">contient un mot simple, un mot composé ou un symbole, qui est
-    considéré comme un terme technique.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene una palabra simple, multipalabra o designación
-    simbólica que se considera como un término técnico.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene una parola singola, un'unità formata da più
-    parole, o una designazione simbolica che è considerata come un termine tecnico</desc><classes><memberOf key="att.global"/><memberOf key="model.emphLike"/><memberOf key="att.pointing"/><memberOf key="att.typed"/><memberOf key="att.canonical"/></classes><content><optional xmlns="http://relaxng.org/ns/structure/1.0"><ref name="data.keyword_graphic"/></optional></content><attList/><exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">A computational device that infers structure
-      from grammatical strings of words is known as a <term>parser</term>, and much of the history
-      of NLP over the last 20 years has been occupied with the design of parsers.</egXML>
-  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Moliere_Med">
-      <p>SGANARELLE.</p>
-      <p>Qui est causée par l'âcreté des <term>humeurs</term> engendrées dans la concavité du
-            <term>diaphragme</term>, il arrive que ces <term>vapeurs</term>... Ossabandus, nequeys,
-          nequer, potarinum, quipsa milus. Voilà justement ce qui fait que votre fille est
-        muette.</p>
-    </egXML>
-  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Greimas_Courtes"> D'après la
-        théorie d'Austin, les<term> verbes performatifs</term> seraient ceux qui non seulement
-        décrivent l'action de celui qui les utilise, mais aussi, et en même temps, qui
-        impliqueraient cette action elle-même. </egXML>
-  </exemplum><exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples"> 蜀漢後主<index indexName="NAMES"><term sortKey="LIU_CHAN">劉禪</term></index> ，初名斗，字升之，後改名禪，字<index indexName="NAMES"><term sortKey="LIU_CHAN">公嗣</term></index>，蜀漢昭烈帝劉備之子，蜀漢末代皇帝，也是漢朝末代皇帝。</egXML>
-  </exemplum><exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples"> 在可攜式的裝置如數位相機、手持式電腦，及MP3播放機上，<term>快閃記憶體(Flash
-        Memory)</term>可以說是最普遍的儲存類型。</egXML>
-  </exemplum><exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">賣空的對稱，<term xml:id="zh-tw_TMK" rend="sc">買空</term>亦稱<gloss target="#zh-tw_TMK">多頭交易，是指交易者利用借入資金，在市場上買入期貨，以期將來價格上漲時，再高價拋出，從中獲利的投票活動。</gloss>
-      </egXML>
-  </exemplum><exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">We may define <term xml:id="TDPV" rend="sc">discoursal point of view</term> as <gloss target="#TDPV">the relationship, expressed
-        through discourse structure, between the implied author or some other addresser, and the
-        fiction.</gloss>
-      </egXML>
-  </exemplum><remarks versionDate="2009-01-23" xml:lang="en">
-    <p>This element is used to supply the form under which an index entry is to be made for the
-      location of a parent <gi>index</gi> element. </p>
-    <p>In formal terminological work, there is frequently discussion over whether terms must be
-      atomic or may include multi-word lexical items, symbolic designations, or phraseological
-      units. The <gi>term</gi> element may be used to mark any of these. No position is taken on the
-      philosophical issue of what a term can be; the looser definition simply allows the
-      <gi>term</gi> element to be used by practitioners of any persuasion.</p>
-    <p>As with other members of the <ident type="class">att.canonical</ident> class, instances of
-      this element occuring in a text may be associated with a canonical definition, either by means
-      of a URI (using the <att>ref</att> attribute), or by means of some system-specific code value
-      (using the <att>key</att> attribute). Because the mutually exclusive <att>target</att> and
-        <att>cRef</att> attributes overlap with the function of the <att>ref</att> attribute, they
-      are deprecated and may be removed at a subsequent release. </p>
-  </remarks><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COHQU">3.3.4. </ref>
   </listRef></elementSpec><elementSpec module="core" ident="sic">
   <gloss versionDate="2012-03-15" xml:lang="en">Latin for <gloss>thus</gloss> or <gloss>so</gloss>
    </gloss>
@@ -5193,204 +4760,7 @@ concerned, as further discussed in section <ref target="http://www.tei-c.org/rel
   </exemplum><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPER">13.2.1. </ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONARS">3.5.1. </ref>
-  </listRef></elementSpec><elementSpec module="core" ident="address">
-  <desc versionDate="2007-02-15" xml:lang="en">contains a postal  address, for example of a
-        publisher, an organization, or an individual.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">예를 들어, 출판사, 기관, 개인의 우편 주소를 포함한다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含出版者、機構、或是個人的郵寄地址或其他地址。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">郵便配達情報を示す．例えば，出版者，組織，個人の住所など．</desc>
-  <desc versionDate="2009-01-06" xml:lang="fr">contient une adresse postale ou d'un autre type, par
-        exemple l'adresse d'un éditeur, d'un organisme ou d'une personne.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">contiene una dirección postal, por ejemplo de un editor, una institución, etc.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">contiene un indirizzo (postale), ad esempio di un editore, di un'organizzazione, di un individuo.</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.addressLike"/>
-    
-  </classes>
-  <content>
-    <group xmlns="http://relaxng.org/ns/structure/1.0">
-      <zeroOrMore>
-        <ref name="model.global"/>
-      </zeroOrMore>
-      <oneOrMore>
-        <group>
-          <ref name="model.addrPart"/>
-        </group>
-        <zeroOrMore>
-          <ref name="model.global"/>
-        </zeroOrMore>
-      </oneOrMore>
-    </group>
-  </content>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <address>
-        <street>via Marsala 24</street>
-        <postCode>40126</postCode>
-        <name>Bologna</name>
-        <name n="I">Italy</name>
-      </address>
-    </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <address>
-        <addrLine>Centre d'Études Supérieures de la Renaissance</addrLine>
-        <addrLine>59, rue Néricault-Destouches</addrLine>
-        <addrLine> 37013
-TOURS</addrLine>
-        <addrLine>France</addrLine>
-      </address>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <address>
-        <street>邯郸路220号</street>
-        <postCode>200433</postCode>
-        <name>上海市</name>
-        <name n="I">中華人民共和國</name>
-      </address>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <address>
-        <addrLine>沙田</addrLine>
-        <addrLine>新界</addrLine>
-        <addrLine>香港特別行政區</addrLine>
-        <addrLine>中華人民共和國</addrLine>
-      </address>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <address>
-        <addrLine>Computing Center, MC 135</addrLine>
-        <addrLine>P.O. Box 6998</addrLine>
-        <addrLine>Chicago, IL  60680</addrLine>
-        <addrLine>USA</addrLine>
-      </address>
-    </egXML>
-  </exemplum>
-  <remarks versionDate="2007-12-16" xml:lang="en">
-    <p rend="dataDesc">This element should be used for postal
-    addresses only. Within it, the generic element <gi>addrLine</gi>
-    may be used as an alternative to any of the more specialized
-    elements available from the <ident type="class">model.addrPart</ident> class, such as
-    <gi>street</gi>, <gi>postCode</gi> etc.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2007-06-12">
-    <p rend="dataDesc">Cet élément ne doit être utilisé que pour donner une adresse
-            postale. A l'intérieur de cet élément, l'élément générique <gi>addrLine</gi> peut
-            être utilisé comme élément alternatif aux éléments plus spécialisés de la classe
-            <ident type="class">model.addrPart</ident> class, tels que <gi>street</gi>, <gi>postCode</gi> etc.</p>
-  </remarks>
-  <remarks xml:lang="ja" versionDate="2008-04-05">
-    <p rend="dataDesc">
-            当該要素は，郵便配達情報にのみ使用されるべきである．
-            子要素として要素<gi>addrLine</gi>は，クラスmodel.addrPartにある要
-            素の代わりとして，例えば，要素<gi>street</gi>や要素
-            <gi>postcode</gi>として使用することができる．
-        </p>
-  </remarks>
-  <listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONAAD">3.5.2. </ref>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD24">2.2.4. </ref>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBICOI">3.11.2.4. </ref>
-  </listRef>
-</elementSpec><elementSpec module="core" ident="addrLine">
-  <gloss versionDate="2007-07-04" xml:lang="en">address line</gloss>
-  <gloss versionDate="2007-12-20" xml:lang="ko">주소 행</gloss>
-  <gloss versionDate="2007-05-02" xml:lang="zh-TW"/>
-  <gloss versionDate="2008-04-06" xml:lang="es">dirección</gloss>
-  <gloss versionDate="2009-01-06" xml:lang="fr">ligne d'adresse</gloss>
-  <gloss versionDate="2007-11-06" xml:lang="it">riga dell'indirizzo</gloss>
-  <desc versionDate="2007-02-27" xml:lang="en">contains one line of a postal address.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">우편 주소의 한 행을 포함한다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含郵寄地址或其他地址其的一行。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">住所情報を記述する行を示す．</desc>
-  <desc versionDate="2009-01-06" xml:lang="fr">contient une ligne d'adresse postale.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">contiene una línea de la dirección postal.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">contiene una riga di un indirizzo (postale).</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.addrPart"/>
-  </classes>
-  <content>
-    <ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/>
-  </content>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <address>
-        <addrLine>Computing Center, MC 135</addrLine>
-        <addrLine>P.O. Box 6998</addrLine>
-        <addrLine>Chicago, IL</addrLine>
-        <addrLine>60680 USA</addrLine>
-      </address>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <addrLine>
-        <ref target="tel:+1-201-555-0123">(201) 555 0123</ref>
-      </addrLine>
-    </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <address>
-        <addrLine>44, avenue de la Libération</addrLine>
-        <addrLine>B.P. 30687</addrLine>
-        <addrLine>F 54063 NANCY CEDEX</addrLine>
-        <addrLine>FRANCE</addrLine>
-      </address>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#biblzh-tw_n2">
-      <address>
-        <addrLine> 276號4樓</addrLine>
-        <addrLine>光明路</addrLine>
-        <addrLine>北投區，台北市11246</addrLine>
-        <addrLine>台灣，中華民國</addrLine>
-      </address>
-    </egXML>
-  </exemplum>
-  <remarks versionDate="2007-02-27" xml:lang="en">
-    <p>Addresses may be encoded either as a sequence of lines, or
-    using any sequence of component elements from the <ident type="class">model.addrPart</ident> class. Other non-postal forms
-    of address, such as telephone numbers or email, should not be
-    included within an <gi>address</gi> element directly but may be
-    wrapped within an <gi>addrLine</gi> if they form part of the
-    printed address in some source text. </p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2007-06-12">
-    <p>Les adresses peuvent être encodées soit comme une suite de
-    lignes, soit en utilisant un jeu d'éléments de la classe <ident type="class">model.addrPart</ident>. Les types d'adresses autres
-    que l'adresse postale, tels que les numéros de téléphone, les
-    courriels, ne doivent pas être inclus directement à l'intérieur
-    d'un élément <gi>address</gi> mais peuvent être contenus dans un
-    élément <gi>addrLine</gi> s'ils font partie de l'adresse imprimée
-    dans un texte source.</p>
-  </remarks>
-  <remarks xml:lang="ja" versionDate="2008-04-05">
-    <p>
-            住所情報は，複数の行から構成されるか，クラス<ident type="class">model.addrPart</ident>にある要
-            素から構成されているかもしれない．
-            住所情報で，郵便配達には関連しない，例えば電話番号や電子メールアド
-            レスについては，ここに直接は記述すべきではない．しかし，印刷物にこ
-            れらが住所情報として含まれている場合には，要素<gi>addrLine</gi>を
-            使い記述することはできる．
-        </p>
-  </remarks>
-  <listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONAAD">3.5.2. </ref>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD24">2.2.4. </ref>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBICOI">3.11.2.4. </ref>
-  </listRef>
-</elementSpec><elementSpec module="core" ident="date">
+  </listRef></elementSpec><elementSpec module="core" ident="date">
   <gloss versionDate="2009-01-06" xml:lang="fr">date</gloss>
   <desc versionDate="2005-01-14" xml:lang="en">contains a date in any format.</desc>
   <desc versionDate="2007-12-20" xml:lang="ko">다양한 형식의 날짜를 포함한다.</desc>
@@ -5825,26 +5195,7 @@ TOURS</addrLine>
   <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONAAB">3.5.5. </ref>
   </listRef>
-</elementSpec><elementSpec rend="change" module="core" ident="ptr"><gloss rend="replace" versionDate="2007-07-04" xml:lang="en">pointer</gloss><gloss rend="replace" versionDate="2014-02-17" xml:lang="de">Hinweis</gloss><desc rend="replace" versionDate="2006-01-11" xml:lang="en">defines a pointer to another location.</desc><desc rend="replace" versionDate="2014-02-17" xml:lang="de">definiert einen Hinweis auf einen anderen Ort.</desc><classes><memberOf key="att.global"/><memberOf key="model.ptrLike"/><memberOf key="att.pointing"/></classes><content><empty xmlns="http://relaxng.org/ns/structure/1.0"/></content><constraintSpec scheme="isoschematron" ident="ptrAtts">
-    <constraint>
-      <report xmlns="http://purl.oclc.org/dsdl/schematron" test="@target and @cRef">Only one of the
-attributes @target and @cRef may be supplied on <name/>.</report>
-    </constraint>
-  </constraintSpec><attList><attDef ident="type" usage="req">
-						<valList type="closed">
-							<valItem ident="pdf"/>
-							<valItem ident="image"/>
-						</valList>
-					</attDef></attList><exemplum xml:lang="und">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <ptr target="#p143 #p144"/>
-      <ptr target="http://www.tei-c.org"/>
-      <ptr cRef="1.3.4"/>
-    </egXML>
-  </exemplum><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COXR">3.6. </ref>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SAPT">16.1. </ref>
-  </listRef></elementSpec><elementSpec module="core" ident="ref">
+</elementSpec><elementSpec module="core" ident="ref">
   <gloss versionDate="2007-07-04" xml:lang="en">reference</gloss>
   <gloss versionDate="2007-12-20" xml:lang="ko">참조</gloss>
   <gloss versionDate="2007-05-02" xml:lang="zh-TW"/>
@@ -8292,7 +7643,7 @@ element in the TEI Header.
 				</remarks><listRef>
 					<ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD2">2.2. </ref>
 					<ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD11">2.1.1. </ref>
-				</listRef></elementSpec><elementSpec rend="change" module="header" ident="titleStmt"><equiv rend="replace" filter="rsw.xsl" mimeType="text/xsl" name="expandTitleStmtGraphic"/><gloss versionDate="2005-01-14" xml:lang="en">title statement</gloss><gloss versionDate="2009-01-05" xml:lang="fr">mention de titre</gloss><gloss versionDate="2007-12-20" xml:lang="ko">제목 진술</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">題名陳述</gloss><gloss versionDate="2006-10-18" xml:lang="de"> Titelinformation</gloss><gloss versionDate="2007-05-04" xml:lang="es">declaración del título</gloss><gloss versionDate="2007-01-21" xml:lang="it">dichiarazione sul titolo</gloss><desc versionDate="2012-04-17" xml:lang="en">groups information about the title of a work and those responsible for its content.</desc><desc versionDate="2009-01-05" xml:lang="fr"> regroupe les informations sur le titre d’une œuvre et
+				</listRef></elementSpec><elementSpec rend="change" module="header" ident="titleStmt"><equiv rend="replace" filter="rsw.xsl" mimeType="text/xsl" name="expandTitleStmtEvent"/><gloss versionDate="2005-01-14" xml:lang="en">title statement</gloss><gloss versionDate="2009-01-05" xml:lang="fr">mention de titre</gloss><gloss versionDate="2007-12-20" xml:lang="ko">제목 진술</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">題名陳述</gloss><gloss versionDate="2006-10-18" xml:lang="de"> Titelinformation</gloss><gloss versionDate="2007-05-04" xml:lang="es">declaración del título</gloss><gloss versionDate="2007-01-21" xml:lang="it">dichiarazione sul titolo</gloss><desc versionDate="2012-04-17" xml:lang="en">groups information about the title of a work and those responsible for its content.</desc><desc versionDate="2009-01-05" xml:lang="fr"> regroupe les informations sur le titre d’une œuvre et
     les personnes ou institutions responsables de son contenu intellectuel.</desc><desc versionDate="2007-12-20" xml:lang="ko">저작의 제목 그리고 지적 내용에 대한 책임에 관한 정보를 모아 놓는다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">匯集關於作品標題與作品智慧內容責任歸屬的資訊。</desc><desc versionDate="2008-04-05" xml:lang="ja">作品や知的内容に責任のあるもののタイトルに関する情報をまとめる．</desc><desc versionDate="2006-10-18" xml:lang="de">umfasst Angaben zum Titel eines Werks und zu den für
     seinen Inhalt Verantwortlichen</desc><desc versionDate="2007-05-04" xml:lang="es">agrupa la información referente al título de una obra y a
     los responsables de su contenido intelectual.</desc><desc versionDate="2007-01-21" xml:lang="it">raggruppa le informazioni sul titolo di un'opera e sulle
@@ -8346,61 +7697,8 @@ element in the TEI Header.
   </exemplum><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD21">2.2.1. </ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD2">2.2. </ref>
-  </listRef></elementSpec><elementSpec rend="change" module="header" ident="edition"><equiv rend="replace" filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/><gloss versionDate="2009-01-05" xml:lang="fr">édition</gloss><gloss versionDate="2007-12-20" xml:lang="ko">편집, 판</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">版本</gloss><gloss versionDate="2006-10-18" xml:lang="de">Edition</gloss><gloss versionDate="2007-05-04" xml:lang="es">edición</gloss><gloss versionDate="2007-01-21" xml:lang="it">Edizione</gloss><desc versionDate="2005-01-14" xml:lang="en">describes the particularities of one edition of a text.</desc><desc versionDate="2009-01-05" xml:lang="fr">décrit les particularités de l’édition d’un texte.</desc><desc versionDate="2007-12-20" xml:lang="ko">텍스트의 한 판의 특성을 기술한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">描述文件某一版本的特質。</desc><desc versionDate="2008-04-05" xml:lang="ja">テキストの版の詳細を示す．</desc><desc versionDate="2006-10-18" xml:lang="de">beschreibt die
-  Besonderheiten einer Edition eines Textes.</desc><desc versionDate="2007-05-04" xml:lang="es">describe las particularidades de la edición de un texto.</desc><desc versionDate="2007-01-21" xml:lang="it">descrive le peculiarità di una edizione del testo.</desc><classes><memberOf key="att.global"/><memberOf key="model.biblPart"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/></content><attList/><exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <edition>First edition <date>Oct 1990</date>
-         </edition>
-      <edition n="S2">Students' edition</edition>
-    </egXML>
-  </exemplum><exemplum versionDate="2010-02-26" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <edition>Première édition électronique, Nancy <date>2002</date>
-         </edition>
-    </egXML>
-  </exemplum><exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <edition>初版<date>1990年10月</date>
-         </edition>
-      <edition n="S2">學生版</edition>
-    </egXML>
-  </exemplum><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD22">2.2.2. </ref>
-  </listRef></elementSpec><elementSpec rend="change" module="header" ident="extent"><gloss versionDate="2007-06-12" xml:lang="fr">étendue</gloss><desc rend="replace" versionDate="2014-02-04" xml:lang="de">Gibt den physischen Umfang der Quelle (Blattzählung) sowie in Klammern den beschriebenen Umfang (Seitenzählung) an, sowie ggf. das Vorhandensein einer Adressangabe. Beispiele: 1 Bl. (1 b.S.) m. Umschl. u. Addr.; 1 Dbl. (3 b.S.); 1 Umschl.; 1 Kt. (1 b.S.)</desc><classes><memberOf key="att.global"/><memberOf key="model.biblPart"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/></content><attList/><exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <extent>3200 sentences</extent>
-      <extent>between 10 and 20 Mb</extent>
-      <extent>ten 3.5 inch high density diskettes</extent>
-    </egXML>
-  </exemplum><exemplum xml:lang="en">
-    <p>The  <gi>measure</gi> element may be used to supplied normalised
-or machine tractable versions of the size or sizes concerned.</p>
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <extent>
-        <measure unit="MiB" quantity="4.2">About four megabytes</measure>
-        <measure unit="pages" quantity="245">245 pages of source
-material</measure>
-      </extent>
-    </egXML>
-  </exemplum><exemplum versionDate="2010-02-26" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <extent>198 pages</extent>
-      <extent>90 195 mots</extent>
-      <extent>1 Mo</extent>
-    </egXML>
-  </exemplum><exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <extent>3200個句子</extent>
-      <extent>介於10 到20 Mb</extent>
-      <extent>10片3.5吋磁碟片</extent>
-    </egXML>
-  </exemplum><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD23">2.2.3. </ref>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD2">2.2. </ref>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBICOI">3.11.2.4. </ref>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ms.html#msph1">10.7.1. </ref>
-  </listRef></elementSpec><elementSpec ident="publicationStmt" module="header" mode="replace"><equiv filter="rsw.xsl" mimeType="text/xsl" name="expandPublicationStmt"/><content>
-							<ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.publicationStmt_ms"/>
+  </listRef></elementSpec><elementSpec ident="publicationStmt" mode="replace" module="header"><equiv filter="rsw.xsl" mimeType="text/xsl" name="expandPublicationStmt"/><content>
+							<ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.publicationStmt_event"/>
 						</content><attList/></elementSpec><elementSpec rend="change" module="header" ident="idno"><equiv rend="replace" filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/><gloss versionDate="2010-04-30" xml:lang="en">identifier</gloss><gloss versionDate="2009-01-05" xml:lang="fr">identifiant</gloss><gloss versionDate="2007-12-20" xml:lang="ko">식별 숫자</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">識別代碼</gloss><gloss versionDate="2006-10-18" xml:lang="de">Identifikationsnummer</gloss><gloss versionDate="2007-05-04" xml:lang="es">número identificativo</gloss><gloss versionDate="2007-01-21" xml:lang="it">numero identificatore</gloss><desc versionDate="2010-04-30" xml:lang="en">supplies any form of identifier used to identify some object,
   such as a bibliographic item, a person, a title, an organization,
   etc. in a standardized way.</desc><desc versionDate="2009-01-05" xml:lang="fr">donne un numéro normalisé ou non qui peut être utilisé
@@ -8458,135 +7756,13 @@ means of a <gi>glyph</gi> or <gi>char</gi> element referenced here as <code>#sym
   </listRef></elementSpec><elementSpec ident="availability" module="header" mode="replace"><content>
 					<rng:attribute name="status"/>
 					<oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="p"/></oneOrMore>
-				</content><attList/></elementSpec><elementSpec ident="notesStmt" mode="replace" module="header"><equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithGrandChildContent"/><content>
-					<group xmlns="http://relaxng.org/ns/structure/1.0"><ref name="macro.form.summaryNote"/><ref name="macro.form.commentaryNote"/><ref name="macro.form.discussionNote"/><ref name="macro.form.uncategorizedNote"/></group>
 				</content><attList/></elementSpec><elementSpec ident="sourceDesc" module="header" mode="replace"><content>
-							<ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.sourceDesc_ms"/>
-						</content><attList/></elementSpec><elementSpec ident="encodingDesc" mode="replace" module="core"><equiv filter="rsw.xsl" mimeType="text/xsl" name="expandEncodingDesc"/><content>
-					<ref xmlns="http://relaxng.org/ns/structure/1.0" name="editorialDecl"/>
-				</content><attList/></elementSpec><elementSpec ident="editorialDecl" mode="replace" module="header"><equiv filter="rsw.xsl" mimeType="text/xsl" name="expandEditorialDecl"/><content>
-					<oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="p"/></oneOrMore>
-				</content><attList/></elementSpec><elementSpec ident="profileDesc" module="header" mode="replace"><equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/><content>
+							<ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.sourceDesc_event"/>
+						</content><attList/></elementSpec><elementSpec ident="profileDesc" module="header" mode="replace"><equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/><content>
 					<group xmlns="http://relaxng.org/ns/structure/1.0"><ref name="textClass"/><ref name="creation"/></group>
-				</content><attList/></elementSpec><elementSpec rend="change" module="header" xml:id="HANDNOTE" ident="handNote"><gloss versionDate="2005-01-14" xml:lang="en">note on hand</gloss><gloss versionDate="2007-12-20" xml:lang="ko">기법에 관한 설명</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">書寫特徵</gloss><gloss versionDate="2007-06-12" xml:lang="fr">note sur une main</gloss><gloss versionDate="2007-05-04" xml:lang="es">notas sobre la mano</gloss><gloss versionDate="2007-01-21" xml:lang="it">nota sulla mano</gloss><desc versionDate="2005-01-14" xml:lang="en">describes a particular style or hand distinguished within a manuscript.</desc><desc versionDate="2007-12-20" xml:lang="ko">원고 내에서 구분되는 특별한 문체 또는 기법을 기술한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">描述在手稿中可明顯辨識出的特殊風格或書寫手法。</desc><desc versionDate="2008-04-05" xml:lang="ja">手書き資料中にある特定のスタイルまたは筆致を示す．</desc><desc versionDate="2007-06-12" xml:lang="fr">décrit un style d'écriture ou une main qui sont
-    reconnus dans un manuscrit.</desc><desc versionDate="2007-05-04" xml:lang="es">describe un determinado estilo o una determinada mano
-    al interno de un manuscrito.</desc><desc versionDate="2007-01-21" xml:lang="it">descrive un determinato stile o una determinata mano
-    all'interno di un manoscritto</desc><classes><memberOf key="att.global"/><memberOf key="att.handFeatures"/></classes><content><rng:element name="choice">
-						<ref xmlns="http://relaxng.org/ns/structure/1.0" name="abbr"/>
-						<ref xmlns="http://relaxng.org/ns/structure/1.0" name="expan"/>
-					</rng:element></content><constraintSpec ident="require-content-in-handNote" scheme="isoschematron">
-					<constraint>
-						<sch:assert test=".//tei:abbr/node()">Schreiberhand-Einträge müssen eine Beschreibung enthalten.</sch:assert>
-					</constraint>
-				</constraintSpec><attList/><exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <handNote scope="sole">
-        <p>Written in insular
-      phase II half-uncial with interlinear Old English gloss in an Anglo-Saxon pointed
-      minuscule.</p>
-      </handNote>
-    </egXML>
-  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Lavrentev-TEI-BFM">
-      <handNote xml:id="fr_scribe1">Premier scribe : <name type="person">inconnu</name> 
-         </handNote>
-      <handNote xml:id="fr_rubricateur1">Premier rubricateur : <name type="person">inconnu</name> 
-         </handNote>
-    </egXML>
-  </exemplum><exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <handNote scope="sole">
-        <p>以類似小篆字體書寫，行間有以隸書寫成的古文字。</p>
-      </handNote>
-    </egXML>
-  </exemplum><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ms.html#msph2">10.7.2. </ref>
-  </listRef></elementSpec><elementSpec ident="creation" module="header" mode="replace"><content>
-							<ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.creation_ms"/>
-						</content><attList/></elementSpec><elementSpec rend="change" module="header" ident="textClass"><equiv rend="replace" filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/><gloss rend="replace" versionDate="2005-01-14" xml:lang="en">text classification</gloss><gloss rend="replace" versionDate="2006-10-18" xml:lang="de">Textklassifikation</gloss><desc versionDate="2005-01-14" xml:lang="en">groups information which describes the nature or topic of a text in terms of a standard
-    classification scheme, thesaurus, etc.</desc><desc versionDate="2009-01-05" xml:lang="fr">regroupe des informations décrivant la nature ou le sujet
-    d’un texte selon des termes issus d’un système de classification standardisé, d’un thésaurus,
-    etc.</desc><desc versionDate="2007-12-20" xml:lang="ko">표준 분류 스키마, 시소러스 등을 통해서 텍스트의 특성 또는 주제를 기술하는 정보를 모아 놓는다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">匯集以標準分類架構、索引典等來描述文件性質或主題的資訊。</desc><desc versionDate="2008-04-05" xml:lang="ja">標準的な分類スキーム，分類語彙などにより，テキストの性格や話題を示す 情報をまとめる．</desc><desc versionDate="2006-10-18" xml:lang="de">umfasst Informationen über Art oder Thematik eines Texts
-    unter Bezug auf ein Standard-Klassifikationsschema, einen Thesaurus, usw.</desc><desc versionDate="2007-05-04" xml:lang="es">agrupa información que describe la naturaleza o la
-    temática de un texto en términos de un esquema de clasificación estándard.</desc><desc versionDate="2007-01-21" xml:lang="it">raggruppa le informazioni che descrivono la natura o
-    l'argomento di un testo secondo uno schema di classificazione standard, un dizionario i
-    sinonimi, ecc.</desc><classes/><content><rng:element name="keywords">
-						<oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="term"/></oneOrMore>
-					</rng:element></content><attList/><exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <taxonomy>
-        <category xml:id="acprose">
-          <catDesc>Academic prose</catDesc>
-        </category>
-        <!-- other categories here -->
-      </taxonomy>
-      <!-- ... -->
-      <textClass>
-        <catRef target="#acprose"/>
-        <classCode scheme="http://www.udcc.org">001.9</classCode>
-        <keywords scheme="http://authorities.loc.gov">
-          <list>
-            <item>End of the world</item>
-            <item>History - philosophy</item>
-          </list>
-        </keywords>
-      </textClass>
-    </egXML>
-  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <textClass>
-        <keywords scheme="#fr_RAMEAU">
-          <list>
-            <item>Littérature française -- 20ème siècle -- Histoire et critique</item>
-            <item>Littérature française -- Histoire et critique -- Théorie, etc.</item>
-            <item>Français (langue) -- Style -- Bases de données.</item>
-          </list>
-        </keywords>
-      </textClass>
-    </egXML>
-  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <textClass>
-        <catRef target="#fr_forme_prose"/>
-      </textClass>
-    </egXML>
-  </exemplum><exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <taxonomy>
-        <category xml:id="zh-tw_chineseliterature">
-          <catDesc>中國文學</catDesc>
-        </category>
-        <!-- 其他文類 -->
-      </taxonomy>
-      <!-- ... -->
-      <textClass>
-        <catRef target="#zh-tw_chineseliterature"/>
-        <classCode scheme="http://www.ncl.edu.tw/">820</classCode>
-        <keywords scheme="http://authorities.loc.gov">
-          <list>
-            <item>傷痕文學</item>
-            <item>語文類</item>
-          </list>
-        </keywords>
-      </textClass>
-    </egXML>
-  </exemplum><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD43">2.4.3. </ref>
-  </listRef></elementSpec><elementSpec ident="revisionDesc" mode="replace" module="header"><equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/><content>
-					<zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="macro.form.revisionDescChange"/></zeroOrMore>
-				</content><attList><attDef ident="status">
-						<valList type="closed">
-							<valItem ident="proposed">
-								<desc versionDate="2015-04-01" xml:lang="de">Publikationsvorschlag</desc>
-							</valItem>
-							<valItem ident="candidate">
-								<desc versionDate="2015-04-01" xml:lang="de">Publikationskandidat</desc>
-							</valItem>
-							<valItem ident="approved">
-								<desc versionDate="2015-04-01" xml:lang="de">freigegeben zur Publikation</desc>
-							</valItem>
-						</valList>
-					</attDef></attList></elementSpec><elementSpec module="header" ident="change">
+				</content><attList/></elementSpec><elementSpec ident="creation" module="header" mode="replace"><content>
+							<ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.form.creation_event"/>
+						</content><attList/></elementSpec><elementSpec module="header" ident="change">
   <desc versionDate="2011-10-31" xml:lang="en">documents a change or set of changes made during the production
   of a source document, or during the revision of an electronic file.</desc>
   <desc versionDate="2009-01-05" xml:lang="fr">résume une modification ou une correction apportée à une
@@ -9903,7 +9079,7 @@ P5. </p>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DS">4. </ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CC.html#CCDEF">15.1. </ref>
   </listRef>
-</elementSpec><elementSpec rend="change" module="textstructure" ident="text"><equiv rend="replace" filter="rsw.xsl" mimeType="text/xsl" name="replaceTextByGraphic"/><gloss versionDate="2007-06-12" xml:lang="fr">texte</gloss><desc versionDate="2005-01-14" xml:lang="en">contains a single text of any kind, whether unitary or composite, for example a poem or
+</elementSpec><elementSpec rend="change" module="textstructure" ident="text"><gloss versionDate="2007-06-12" xml:lang="fr">texte</gloss><desc versionDate="2005-01-14" xml:lang="en">contains a single text of any kind, whether unitary or composite, for example a poem or
     drama, a collection of essays, a novel, a dictionary, or a corpus sample.</desc><desc versionDate="2007-12-20" xml:lang="ko">어떤 종류의 단일 텍스트를 포함한다. 예를 들어, 시 또는 드라마, 수필선, 소설, 사전 또는 코퍼스
     표본과 같은 단일 텍스트 또는 혼합 텍스트.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含一份任何種類的文本，無論是單一或複合的，例如詩詞或戲劇、散文集、小說、字典、或是文集範例。</desc><desc versionDate="2008-04-05" xml:lang="ja">ひとつのテキストを示す．単体でも複合体でもよい．例えば，詩，舞台芸術， 随筆，小説，辞書，コーパスなど．</desc><desc versionDate="2007-06-12" xml:lang="fr">contient un seul texte quelconque, simple ou composite,
     par exemple un poème ou une pièce de théâtre, un recueil d’essais, un roman, un dictionnaire ou
@@ -10280,1549 +9456,7 @@ P5. </p>
     </egXML>
   </exemplum><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSDIV">4.1. </ref>
-  </listRef></elementSpec><elementSpec module="textstructure" ident="byline">
-  <gloss versionDate="2007-06-12" xml:lang="fr">mention de responsabilité</gloss>
-  <desc versionDate="2005-01-14" xml:lang="en">contains the primary statement of responsibility given for a work
-on its title page or at the head or end of the work.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">제목 페이지 또는 작품의 시작부 또는 종료부에서 작품 책임성에 대한 주요 진술을 포함한다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含作品的主要責任陳述，出現在題名頁或作品開頭或結尾處。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">タイトルページや作品の冒頭や最後にある，作品の責任者を表す第一位の記
-  述．</desc>
-  <desc versionDate="2007-06-12" xml:lang="fr">indique la responsabilité principale
-            pour une œuvre donnée sur la page de titre ou au début ou à la fin de
-        l’œuvre.</desc>
-  <desc versionDate="2006-10-18" xml:lang="de">enthält Angaben zur Autorisation eines Werks, entweder auf der Titelseite oder am Anfang oder Ende des Werks.
-</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">contiene la declaración principal de responsabilidad para una obra, así como aparece en su título correspondiente, o al inicio o fin de la obra.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">contiene la principale dichiarazione di responsabilità per un'opera così come appare sul corrispondente frontespizio oppure all'inizio o alla fine dell'opera stessa</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.divWrapper"/>
-    
-    
-  </classes>
-  <content>
-    <zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0">
-      <choice>
-        <text/>
-        <ref name="model.gLike"/>
-        <ref name="model.phrase"/>
-        <ref name="docAuthor"/>
-        <ref name="model.global"/>
-      </choice>
-    </zeroOrMore>
-  </content>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <byline>Written by a CITIZEN who continued all the
-while in London. Never made publick before.</byline>
-    </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Montherlant-Pitie">
-      <byline>écrit par Costals sur le feuillet blanc de cette lettre : " cette correspondance n'
-          était pour vous qu' un jeu. "</byline>
-    </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Constant-Journal">
-      <byline>extraits de Villoison et de Schlegel. Commencé la rédaction du quatrième
-        livre.</byline>
-    </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <byline>Reportage céleste de notre envoyé spécial au paradis</byline>
-    </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <dateline>Zagreb :</dateline>
-      <byline>de notre envoyé spécial.</byline>
-    </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <byline>Par le docteur<docAuthor>Martin Becanus,</docAuthor> au tome troisiesme de ses
-          opuscules</byline>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <byline>由一個倫敦土生土長的市民撰寫，先前未曾出版過。</byline>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <byline>錄自她自己的回憶錄</byline>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <byline>來自華盛頓的政治編輯喬治．瓊斯</byline>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <dateline>重慶:</dateline>
-      <byline>外交使節專用</byline>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <byline>源自美國哥倫比亞大學博士<docAuthor>胡適</docAuthor>
-         </byline>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <byline>Written from her own MEMORANDUMS</byline>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <byline>By George Jones, Political Editor, in Washington</byline>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <byline>BY
-<docAuthor>THOMAS PHILIPOTT,</docAuthor>
-Master of Arts,
-(Somtimes)
-Of Clare-Hall in Cambridge.</byline>
-    </egXML>
-  </exemplum>
-  <remarks versionDate="2005-01-14" xml:lang="en">
-    <p>The byline on a title page may include either the name
-or a description for the document's author. Where the name is included,
-it may optionally be tagged using the <gi>docAuthor</gi> element.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2007-06-12">
-    <p>La mention de reponsabilité sur une page de titre peut inclure, soit le nom, soit la description de
-                l'auteur d'un document. Lorsque le nom y est donné, on peut éventuellement l'encoder
-                au moyen de l'élément <gi>docAuthor</gi>.</p>
-  </remarks>
-  <remarks xml:lang="ja" versionDate="2008-04-05">
-    <p>
-    タイトルページにある署名欄には，当該文書の作者名や説明があるかもし
-    れない．作者名がある場合，要素<gi>docAuthor</gi>を使い符号化しても
-    よい．
-    </p>
-  </remarks>
-  <listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSOC">4.2.2. </ref>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSFRONT">4.5. </ref>
-  </listRef>
-</elementSpec><elementSpec module="textstructure" ident="dateline">
-  <gloss versionDate="2007-06-12" xml:lang="fr">mention de date</gloss>
-  <desc versionDate="2005-01-14" xml:lang="en">contains a brief description of the place, date, time, etc. of production of a letter,
-    newspaper story, or other work, prefixed or suffixed to it as a kind of heading or trailer.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">편지, 신문 기사 또는 다른 작품에 제목부 또는 종료 요약부로서, 앞에 또는 뒤에 부착되어 있는,
-    그것이 생성된 장소, 날짜, 시간 등의 간단한 기술.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含簡短的地點、日期及時間等的描述，通常出現在信件、報紙文章、或其他作品中的開頭或結尾，作為一種標頭或結尾。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">手紙や新聞記事などの前後に付加されている，場所，日付，時間などを簡易 に示す．</desc>
-  <desc versionDate="2007-06-12" xml:lang="fr">contient une brève description des lieux, date, heure,
-    etc. concernant la production d’une lettre, d’un article de journal ou d’un autre texte qui,
-    placée au début ou à la fin, lui est associée comme en-tête ou annonce de fin.</desc>
-  <desc versionDate="2006-10-18" xml:lang="de">enthält Angaben zu Entstehungsort, -datum, -zeit, usw.
-    eines Briefs, Zeitungsartikels, oder anderen Werks, die als Überschrift oder Teil des Nachspanns
-    dem Text voran- bzw. nachgestellt sind.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">contiene una breve descripción de lugar, fecha, hora,
-    etc. de producción de una carta, un artículo periodístico u otro tipo de texto; viene antepuesto
-    o pospuesto a este como elemento de abertura o clausura.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">contiene una breve descrizione di luogo, data, ora, ecc.
-    di produzione di una lettera, un articolo di giornale o altro tipo di testo; viene anteposto o
-    posposto a mo' di elemento di apertura o chiusura</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.divWrapper"/>
-  </classes>
-  <content>
-    
-    
-    <zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0">
-      <choice>
-        <text/>
-        <ref name="model.gLike"/>
-        <ref name="model.phrase"/>
-        <ref name="model.global"/>
-        <ref name="docDate"/>
-      </choice>
-    </zeroOrMore>
-  </content>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <dateline>Walden, this 29. of August 1592</dateline>
-    </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <dateline>Avignon, le 11 février. </dateline>
-    </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Constant-Journal">
-      <div type="chapter">
-        <p>Et, sur cet océan bourdonnant de mille vaguelettes, se leva l'armée caressante et si
-            tendre des merveilleuses sirènes blondes aux seins durs comme ça. </p>
-        <closer>
-          <dateline><name type="place">Thionne-Paris</name>, <date>1950-1951.</date></dateline>
-        </closer>
-      </div>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <dateline>2008年7月3日，香港。</dateline>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <div type="chapter">
-        <p> 自己想吃人，又怕被別人吃了，都用著疑心极深的眼光，面面相覷。…… </p>
-        <closer>
-          <dateline>
-            <name type="place">南京</name>
-            <date>1918–1919</date>
-          </dateline>
-        </closer>
-      </div>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#DSCO-eg-53">
-      <div type="chapter">
-        <p><!-- ... --> and his heart was going like mad and yes I said yes I will Yes.</p>
-        <closer>
-          <dateline>
-            <name type="place">Trieste-Zürich-Paris,</name>
-            <date>1914–1921</date>
-          </dateline>
-        </closer>
-      </div>
-    </egXML>
-    
-  </exemplum>
-  <listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSOC">4.2.2. </ref>
-  </listRef>
-</elementSpec><elementSpec module="textstructure" ident="epigraph">
-  <desc versionDate="2011-11-05" xml:lang="en">contains a quotation, anonymous or attributed, appearing at
-  the start or end of a section or on a title page.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">절 또는 장의 시작, 또는 제목 페이지에 나타나는 인용, 작자미상, 또는 추정을 포함한다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含一段匿名或署名引文，出現在段落或章節的開頭，或在題名頁中。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">章や節の始め，タイトルページなどにある引用(題辞)を示す． </desc>
-  <desc versionDate="2007-06-12" xml:lang="fr">contient une citation, anonyme ou attribuée et qui apparaît au
-    début d’une section ou d’un chapitre ou sur une page de titre.</desc>
-  <desc versionDate="2006-10-18" xml:lang="de">enthält ein anonymes oder jemandem zugeschriebenes Zitat,
-    das am Beginn eines Abschnitts, Kapitels oder auf einer Titelseite steht.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">contiene una cita, anónima o atribuida, que aparece al
-    inicio de una sección o capítulo, o en el frontispicio.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">contiene una citazione, anonima o attribuita, che appare
-    all'inizio di una sezione o capitolo, o sul frontespizio</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.divWrapper"/>
-    
-    
-  </classes>
-  <content>
-    <zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0">
-      <choice>
-        <ref name="model.common"/>
-        <ref name="model.global"/>
-      </choice>
-    </zeroOrMore>
-  </content>
-  <exemplum xml:lang="mul">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="la">
-      <epigraph xml:lang="la">
-        <cit>
-          <bibl>Lucret.</bibl>
-          <quote>
-            <l part="F">petere inde coronam,</l>
-            <l>Vnde prius nulli velarint tempora Musae.</l>
-          </quote>
-        </cit>
-      </epigraph>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#biblzh-tw_n56">
-      <epigraph xml:lang="zh">
-        <cit>
-          <bibl>俞平伯</bibl>
-          <quote>
-            <l part="N">小燕子其實也無所愛，</l>
-            <l>只是沉浸在朦朧而飄忽的夏夜夢里罷了。</l>
-          </quote>
-        </cit>
-      </epigraph>
-    </egXML>
-  </exemplum>
-  <listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSAE">4.2.3. </ref>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSDTB">4.2. </ref>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSTITL">4.6. </ref>
-  </listRef>
-</elementSpec><elementSpec module="textstructure" ident="opener">
-  <gloss versionDate="2007-06-12" xml:lang="fr">formule de début</gloss>
-  <desc versionDate="2005-01-14" xml:lang="en">groups together dateline, byline, salutation, and similar phrases appearing as a preliminary
-    group at the start of a division, especially of a letter.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">구역, 특히 편지의 시작부에 서문군으로 나타나는 날짜 표시란, 필자명 행, 인사말, 그리고 유사 구를
-    합하여 모아 놓는다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">匯集日期地點、署名、稱呼語及其他在區段開端出現的類似措辭，尤指信件開頭。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">テキスト部分の始まりに，日付欄，署名欄，挨拶文言など，前置き的な部分
-    としてあるものをまとめる．典型例は，手紙の場合である．</desc>
-  <desc versionDate="2007-06-12" xml:lang="fr">regroupe la date, la mention de responsabilité, la
-    formule de politesse et d'autres expressions de ce type dans un groupe préliminaire au début
-    d’une division, en particulier au commencement d’une lettre.</desc>
-  <desc versionDate="2006-10-18" xml:lang="de">fasst Datumszeile, Verfasserangabe, Anredeformeln und
-    ähnliche Angaben zusammen, die einleitend zu Beginn eines Abschnitts stehen, vor allem bei
-    Briefen.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">agrupa la fecha, autoria, fórmula introductiva o de
-    saludo o expresiones similares utilizades al inicio de una división textual, especialmente en
-    una carta.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">raggruppa dateline, byline, formule introduttive o di
-    saluto ed espressioni simili utilizzate all'inizio di una partizione testuale, soprattutto in
-    una lettera</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.divTopPart"/>
-  </classes>
-  <content>
-    <zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0">
-      <choice>
-        <text/>
-        <ref name="model.gLike"/>
-        <ref name="model.phrase"/>
-        
-        <ref name="argument"/>
-        <ref name="byline"/>
-        <ref name="dateline"/>
-        <ref name="epigraph"/>
-        <ref name="salute"/>
-        <ref name="signed"/>
-        <ref name="model.global"/>
-      </choice>
-    </zeroOrMore>
-  </content>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <opener>
-        <dateline>Walden, this 29. of August 1592</dateline>
-      </opener>
-    </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <opener>
-        <dateline>Avignon, le 11 février.</dateline>
-      </opener>
-    </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Diderot-Corresp_SV">
-      <opener>
-        <dateline><name type="place"> à Paris </name>, <date>le 2 septembre 1769</date></dateline>
-      </opener>
-      <p>Mais non, ma bonne amie, vous n' aviez pas raison de vous plaindre... </p>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <opener>
-        <dateline>1983年7月3日</dateline>
-      </opener>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <opener>
-        <dateline>
-          <name type="place">杭州西湖</name>
-          <date>2008年4月1日</date>
-        </dateline>
-        <salute>親愛的小張：</salute>
-      </opener>
-      <p>很抱歉，我今天有事無法赴約，希望您能諒解...</p>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#DSCO-eg-51">
-      <opener>
-        <dateline>
-          <name type="place">Great Marlborough Street</name>
-          <date>November 11, 1848</date>
-        </dateline>
-        <salute>My dear Sir,</salute>
-      </opener>
-      <p>I am sorry to say that absence from town and other circumstances have prevented me from
-        earlier enquiring...</p>
-    </egXML>
-    
-  </exemplum>
-  <listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSDTB">4.2. </ref>
-  </listRef>
-</elementSpec><elementSpec module="textstructure" ident="closer">
-  <gloss versionDate="2007-06-12" xml:lang="fr">formule finale</gloss>
-  <desc versionDate="2007-04-06" xml:lang="en">groups together salutations, datelines, and similar phrases appearing as a final group at
-    the end of a division, especially of a letter.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">구역의 마지막, 특히 편지의 종료부에 발문으로 나타나는 인사말, 날짜 표시란, 그리고 유사 구를 합하여
-    모아 놓는다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">匯集日期地點、署名、稱呼語、及其他在區段結尾出現的類似措辭，尤指信件結尾。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">挨拶文言，日付欄など，ある区分の終わり，特に手紙の終わりにある一連の 文言をまとめる．</desc>
-  <desc versionDate="2007-06-12" xml:lang="fr">regroupe une formule de politesse, une indication d'une
-    date et d'autres expressions semblables figurant comme expression à la fin d’une division, en
-    particulier à la fin d’une lettre.</desc>
-  <desc versionDate="2006-10-18" xml:lang="de"> fasst Datumszeile, Verfasserangabe, Grußformeln und
-    ähnliche Angaben zusammen, die abschließend am Ende eines Abschnitts stehen, vor allem bei
-    Briefen.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">agrupa saludos, fechas, y expresiones similares que
-    aparecen al final de una división textual, especialmente en una letra.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">raggruppa dateline, byline, formule conclusive o di
-    saluto ed espressioni simili utilizzate alla fine di una partizione, soprattutto in una lettera</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.divBottomPart"/>
-  </classes>
-  <content>
-    <zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0">
-      <choice>
-        <text/>
-        <ref name="model.gLike"/>
-        <ref name="signed"/>
-        <ref name="dateline"/>
-        <ref name="salute"/>
-        <ref name="model.phrase"/>
-        <ref name="model.global"/>
-      </choice>
-    </zeroOrMore>
-  </content>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <div type="letter">
-        <p> perhaps you will favour me with a sight of it when convenient.</p>
-        <closer>
-          <salute>I remain, &amp;c. &amp;c.</salute>
-          <signed>H. Colburn</signed>
-        </closer>
-      </div>
-    </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Billetdoux">
-      <div type="letter">
-        <p> N'y voyez que le signe de l'intérêt que je que je porte à une profession qui fut la
-            mienne. Je désire en effet, insérer votre article dans un ouvrage sur la presse
-            française contemporaine. </p>
-        <closer>
-          <salute>Veuillez agréer, je vous prie, Monsieur, l'assurance de mes sentiments les
-              meilleurs. </salute>
-          <signed> Françoise Giroud</signed>
-        </closer>
-      </div>
-    </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Montesquieu">
-      <div type="chapter">
-        <p>Voilà, cher Rhedi, ce que j' appelle le droit public. Voilà le droit des gens, ou
-            plutôt celui de la raison. </p>
-        <closer>
-          <dateline><name type="place">à Paris </name>, <date>le 4 de la lune de Zilhagé, 1716. </date></dateline>
-        </closer>
-      </div>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <div type="letter">
-        <p> 不久，我們就能再見面。</p>
-        <closer>
-          <salute>祝事事順心</salute>
-          <signed>謝甯</signed>
-        </closer>
-      </div>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <div type="chapter">
-        <p> 自己想吃人，又怕被別人吃了，都用著疑心极深的眼光，面面相覷。…… </p>
-        <closer>
-          <dateline>
-            <name type="place">南京</name>
-            <date>1918–1919</date>
-          </dateline>
-        </closer>
-      </div>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#DSCO-eg-53">
-      <div type="chapter">
-        <p><!-- .... --> and his heart was going like mad and yes I said yes I will Yes.</p>
-        <closer>
-          <dateline>
-            <name type="place">Trieste-Zürich-Paris,</name>
-            <date>1914–1921</date>
-          </dateline>
-        </closer>
-      </div>
-    </egXML>
-    
-  </exemplum>
-  <listRef>
-    
-    
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSOC">4.2.2. </ref>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSDTB">4.2. </ref>
-  </listRef>
-</elementSpec><elementSpec module="textstructure" ident="salute">
-  <gloss versionDate="2005-01-14" xml:lang="en">salutation</gloss>
-  <gloss versionDate="2007-12-20" xml:lang="ko">인사말</gloss>
-  <gloss versionDate="2007-05-02" xml:lang="zh-TW">稱呼語</gloss>
-  <gloss versionDate="2007-06-12" xml:lang="fr">formule de politesse</gloss>
-  <gloss versionDate="2006-10-18" xml:lang="de">Anrede- / Grußformel</gloss>
-  <gloss versionDate="2007-05-04" xml:lang="es">saludo</gloss>
-  <gloss versionDate="2007-01-21" xml:lang="it">formula di saluto</gloss>
-  <desc versionDate="2005-01-14" xml:lang="en">contains a salutation or greeting prefixed to a foreword, dedicatory epistle, or other
-    division of a text, or the salutation in the closing of a letter, preface, etc.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">머리말, 헌정 서한, 또는 텍스트의 다른 구역 앞에 첨부되는 인사말 또는 환영사, 아니면 편지, 서문
-    등의 결문의 인사말.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含在序言、獻詞、或其他文本區段開頭的稱呼語或問候語，或是信件、引言等結尾處的致意詞。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">(著者以外の)序文や献呈書簡などのテキスト部分に附属する挨拶文言または
-    挨拶，または書簡や(著者による)序文の大和にある挨拶文言を示す．</desc>
-  <desc versionDate="2007-06-12" xml:lang="fr">contient un dédicace ou une formule de salut qui précède
-    un avant-propos ou autre division du texte;  ou bien encore la formule de
-    politesse qui conclut une lettre, une préface, etc.</desc>
-  <desc versionDate="2006-10-18" xml:lang="de">enthält eine Anrede oder Grußformel, die einem Vorwort,
-    einer Widmung oder einem anderen Abschnitt des Textes vorangestellt ist oder die Grußformel am
-    Ende eines Briefes, eines Vorworts, usw.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">contiene una fórmula introductiva o de saludo previa a un
-    prefacio, a una dedicatoria o a atra división textual, o bien una fórmula conclusiva o de saludo
-    al final de una carta, prefacio, etc.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">contiene una formula introduttiva o di saluto anteposta
-    rispetto a una prefazione, una lettera di dedica o altra partizione testuale, oppure una formula
-    conclusiva o di saluto alla fine di una lettera, prefazione, ecc</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.divWrapper"/>
-  </classes>
-  <content>
-    <ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.paraContent"/>
-  </content>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <salute>To all courteous mindes, that will voutchsafe the readinge.</salute>
-    </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Mendes-France">
-      <salute>Faites toutes mes amitiés à votre femme et recevez, mon cher ami, l'expression de
-          mes sentiments affectueux et dévoués. </salute>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <salute>致敬啟者</salute>
-    </egXML>
-  </exemplum>
-  <listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSOC">4.2.2. </ref>
-  </listRef>
-</elementSpec><elementSpec module="textstructure" ident="signed">
-  <gloss versionDate="2005-01-14" xml:lang="en">signature</gloss>
-  <gloss versionDate="2007-12-20" xml:lang="ko">서명</gloss>
-  <gloss versionDate="2007-05-02" xml:lang="zh-TW">簽名</gloss>
-  <gloss versionDate="2006-10-18" xml:lang="de">Signatur</gloss>
-  <gloss versionDate="2007-05-04" xml:lang="es">firma</gloss>
-  <gloss versionDate="2007-01-21" xml:lang="it">firma</gloss>
-  <desc versionDate="2005-01-14" xml:lang="en">contains the closing salutation, etc., appended to a foreword,
-dedicatory epistle, or other division of a text.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">머리말, 헌정 서한 또는 텍스트의 다른 구역에 첨부되는 결문 인사.</desc>
-  <desc versionDate="2008-10-02" xml:lang="fr">contient la dernière salutation,  ajoutée à un avant-propos,
-    à une  dédicace ou à une autre division du texte.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含結尾致意詞等，附加在序言、獻詞、或其他文本區段中。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">(著者以外の)序文や献呈書簡などのテキスト部分にある，結びの挨拶などを
-  示す．</desc>
-  <desc versionDate="2006-10-18" xml:lang="de">enthält die abschließende Grußformel o.Ä. die ein Vorwort, eine Widmung oder einen anderen Abschnitt des Textes beendet.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">contiene una fórmula conclusiva o de saludo pospuesta a un prefacio, dedicatoria, u otro tipo de división textual.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">contiene una formula conclusiva o di saluto posposta rispetto a una prefazione, lettera di dedica, o altra partizione testuale.</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.divBottomPart"/>
-    <memberOf key="model.divTopPart"/>
-  </classes>
-  <content>
-    <ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.paraContent"/>
-  </content>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <signed>Thine to command <name>Humph. Moseley</name>
-         </signed>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <closer>
-        <signed>Sign'd and Seal'd,
-	<list><item>John Bull,</item><item>Nic. Frog.</item></list>
-	           </signed>
-      </closer>
-    </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Mauriac-Marquise">
-      <signed>votre fidèle amante, <name>Manon Lescaut.</name>
-        </signed>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <signed><name>李敖</name>，于台北。
-      </signed>
-    </egXML>
-  </exemplum>
-  <listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSOC">4.2.2. </ref>
-  </listRef>
-</elementSpec><elementSpec module="textstructure" ident="postscript">
-  <desc versionDate="2007-08-04" xml:lang="en">contains a postscript, e.g. to a letter.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">예를 들어 편지의, 추신.</desc>
-  <desc versionDate="2008-04-06" xml:lang="es">contiene una posdata, p.ej. en una carta.</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">追伸を示す．例えば，手紙の場合など．</desc>
-  <desc versionDate="2008-03-30" xml:lang="fr">contient un post-scriptum,  par exemple au bas d' une
-lettre.</desc>
-  <desc versionDate="2007-11-06" xml:lang="it">contiene un post scriptum, come nel caso di una lettera</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.divBottomPart"/>
-  </classes>
-  <content>
-    <group xmlns="http://relaxng.org/ns/structure/1.0">
-      <zeroOrMore>
-        <choice>
-          <ref name="model.global"/>
-          <ref name="model.divTopPart"/>
-        </choice>
-      </zeroOrMore>
-      <group>
-        <ref name="model.common"/>
-      </group>
-      <zeroOrMore>
-        <choice>
-          <ref name="model.global"/>
-          <ref name="model.common"/>
-        </choice>
-      </zeroOrMore>
-      <zeroOrMore>
-        <group>
-          <ref name="model.divBottomPart"/>
-        </group>
-        <zeroOrMore>
-          <ref name="model.global"/>
-        </zeroOrMore>
-      </zeroOrMore>
-    </group>
-  </content>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <div type="letter">
-        <opener>
-          <dateline>
-            <placeName>Rimaone</placeName>
-            <date when="2006-11-21">21 Nov 06</date>
-          </dateline>
-          <salute>Dear Susan,</salute>
-        </opener>
-        <p>Thank you very much for the assistance splitting those
-	logs. I'm sorry about the misunderstanding as to the size of
-	the task. I really was not asking for help, only to borrow the
-	axe. Hope you had fun in any case.</p>
-        <closer>
-          <salute>Sincerely yours,</salute>
-          <signed>Seymour</signed>
-        </closer>
-        <postscript>
-          <label>P.S.</label>
-          <p>The collision occured on <date when="2001-07-06">06 Jul 01</date>.</p>
-        </postscript>
-      </div>
-    </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Weil-Atares">
-      <div type="letter">
-        <opener>
-          <dateline>
-            <date when="1942">Printemps 1942 </date>
-          </dateline>
-          <salute>Cher ami, </salute>
-        </opener>
-        <p>Le printemps vient maintenant. J'espère que là où tu es le climat à cette saison n'est
-            pas encore pénible. C'est le moment des travaux des champs ; peut-être arrivera-t-on à
-            quelque chose pour toi. S'il n'y a pas moyen de te faire venir en France, faut-il faire
-            des démarches pour essayer de te faire quitter l'Europe ? Écris-le-moi. </p>
-        <p>[...] </p>
-        <closer>
-          <salute> Crois à mon amitié fraternelle. </salute>
-          <signed>Simone Weil </signed>
-        </closer>
-        <postscript>
-          <label>P.S.</label>
-          <p>Voici la traduction de quelques vers grecs d'Eschyle. Ils sont prononcés par
-              Prométhée, le dieu qui, d'après les croyances des Grecs, avait sauvé les hommes de la
-              destruction, avait volé le feu pour le leur donner et leur avait appris le langage, le
-              nombre, l'astronomie, les métiers et les arts. Il en fut puni et fut cloué sur un
-              rocher. La tragédie d'Eschyle commence par la scène où on le cloue ; il se tait
-              pendant ce temps, puis, quand ses bourreaux sont partis, il dit : [...]</p>
-        </postscript>
-      </div>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#biblzh-tw_n58">
-      <div type="letter">
-        <opener>
-          <dateline>
-            <date when="1911-03-26">辛亥三月二十六</date>
-          </dateline>
-          <salute>意映卿卿如晤：</salute>
-        </opener>
-        <p>吾今以此書與汝永別矣！吾作此書，淚珠和筆墨齊下，不能竟書，而欲擱筆！又恐汝不察吾衷，謂吾忍舍汝而死，謂吾不知汝之不欲吾死也，故遂忍悲為汝言之。...</p>
-        <closer>
-          <signed>夜四鼓<name>意洞</name>手書</signed>
-        </closer>
-      </div>
-    </egXML>
-  </exemplum>
-  <listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSDTB">4.2. </ref>
-  </listRef>
-</elementSpec><classSpec ident="att.global.change" predeclare="true" module="transcr" type="atts">
-  <desc versionDate="2011-10-31" xml:lang="en">supplies the <att>change</att> attribute, allowing its member
-elements to specify one or more states or revision campaigns with which they are
-associated.</desc>
-  <attList>
-    <attDef ident="change">
-      <desc versionDate="2011-10-31" xml:lang="en">points to one or more <gi>change</gi> elements documenting
-      a state or revision campaign to which the element bearing this
-      attribute and its children have been assigned by the encoder.</desc>
-      <datatype minOccurs="1" maxOccurs="unbounded">
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.pointer"/>
-      </datatype>
-    </attDef>
-  </attList>
-  
-</classSpec><elementSpec rend="change" module="transcr" ident="handShift"><gloss versionDate="2007-06-12" xml:lang="fr">reprise de main</gloss><desc versionDate="2007-04-26" xml:lang="en">marks the beginning of a sequence of text written in a new
-hand, or the beginning of a scribal stint.</desc><desc versionDate="2007-12-20" xml:lang="ko">새로운 필적으로 기록된 텍스트 연쇄의 시작 또는 필기 부분의 시작을 표시한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">標記連續文字中轉換書寫者的開始，或是一個抄寫工作的開始。</desc><desc versionDate="2008-04-05" xml:lang="ja">テキストにおける新しい筆致の始まり，または筆写者の仕事の開始を示す．</desc><desc versionDate="2007-06-12" xml:lang="fr">marque le début d'une section du texte écrite par une nouvelle main ou le début d'une nouvelle séance d'écriture.</desc><desc versionDate="2007-05-04" xml:lang="es">marca el principio de un fragmento de texto atribuible a otra mano distinta o a un cambio de redactor, estilo de escritura, tinta o letra.</desc><desc versionDate="2007-01-21" xml:lang="it">segnala l'inizio di una porzione di testo attribuibile ad un'altra mano o riconducibile a un cambio di redattore, stile di scrittura, inchiostro o carattere</desc><classes><memberOf key="att.global"/><memberOf key="model.pPart.transcriptional"/><memberOf key="att.handFeatures"/><memberOf key="att.responsibility"/></classes><content><rng:empty/></content><constraintSpec ident="require-xml-id-target" scheme="isoschematron">
-					<constraint>
-						<sch:assert test="/*[@xml:id='compilation'] or not(@new) or @new='#pre-printed' or (substring(@new, 2) = //@xml:id)">Es gibt Schreiberhand-Wechsel, die auf eine nicht existente Schreiber-Definition verweisen.</sch:assert>
-					</constraint>
-				</constraintSpec><attList><attDef ident="new" usage="rec">
-      <desc versionDate="2013-12-21" xml:lang="en">indicates a
-      <gi>handNote</gi> element describing the hand
-      concerned.</desc>
-      <desc versionDate="2007-12-20" xml:lang="ko">새 필적을 식별한다.</desc>
-      <desc versionDate="2007-05-02" xml:lang="zh-TW">表示新的書寫者。</desc>
-      <desc versionDate="2008-04-05" xml:lang="ja">当該新しい筆致を特定する．</desc>
-      <desc versionDate="2007-06-12" xml:lang="fr">donne l'identifiant de la nouvelle main.</desc>
-      <desc versionDate="2007-05-04" xml:lang="es">identifica una nueva mano.</desc>
-      <desc versionDate="2007-01-21" xml:lang="it">indica la nuova mano</desc>
-      <datatype>
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.pointer"/>
-      </datatype>
-      <remarks versionDate="2010-07-06" xml:lang="en">
-        <p>This attribute serves the same function as the
-<att>hand</att> attribute provided for those elements which are members of the
-<ident type="class">att.transcriptional</ident> class. It may be
-renamed at a subsequent major release. </p>
-      </remarks>
-    </attDef></attList><exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <l>When wolde the cat dwelle in his ynne</l>
-      <handShift medium="greenish-ink"/>
-      <l>And if the cattes skynne be slyk <handShift medium="black-ink"/> and gaye</l>
-    </egXML>
-  </exemplum><remarks versionDate="2010-07-06" xml:lang="en">
-    <p>The <gi>handShift</gi> element may be used either to
-denote a shift in the document hand (as from one scribe to another,
-on one writing style to another).  Or, it may indicate a shift within
-a document hand, as a change of writing style, character or ink. Like
-    other milestone elements, it should appear at the point of
-    transition from some other state to the state which it describes.</p>
-  </remarks><remarks xml:lang="fr" versionDate="2007-06-12">
-    <p>L'élément <gi>handShift</gi>peut être utilisé soit pour noter un changement de main
-dans le document (comme le passage d'un scribe à un autre, d'un style d'écriture à un
-autre), soit pour indiquer un changement dans la main, comme un changement d'écriture, de caractère ou d'encre.</p>
-  </remarks><remarks xml:lang="ja" versionDate="2008-04-05">
-    <p>
-    当該<gi>handShift</gi>要素は，文書中における筆致の変わり目(ある筆
-      写者から別の筆写者，または，ある書記スタイルから別の書記スタイル
-      への変化)を示すために使われるかもしれない．または，同じ筆致にお
-      いても，書記スタイルや，文字，インクの変わり目を示すために使われ
-      るかもしれない．
-      </p>
-  </remarks><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHDH">11.3.2.1. </ref>
-  </listRef></elementSpec><elementSpec module="transcr" ident="space">
-  <gloss versionDate="2007-06-12" xml:lang="fr">espace</gloss>
-  <desc versionDate="2005-01-14" xml:lang="en">indicates the location of a significant space in the copy text.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">복사본에서 중요한 공간의 위치를 표시한다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">指出來源文件中出現大片空白的位置。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">元資料にある重要な空白の場所を示す．</desc>
-  <desc versionDate="2009-11-16" xml:lang="fr">permet de situer un espace significatif dans le texte édité.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">indica la localización de un espacio significativo en el texto de copia.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">indica la posizione di uno spazio significativo nel testo copia</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.global.edit"/>
-    <memberOf key="att.dimensions"/>
-    <memberOf key="att.responsibility"/>
-  </classes>
-  <content>
-    <zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0">
-      <choice>
-        <ref name="model.descLike"/>
-        <ref name="model.certLike"/>
-      </choice>
-    </zeroOrMore>
-  </content>
-  <attList>
-    <attDef ident="dim" usage="rec">
-      <gloss versionDate="2007-07-04" xml:lang="en">dimension</gloss>
-      <gloss versionDate="2007-12-20" xml:lang="ko">차원</gloss>
-      <gloss versionDate="2008-04-06" xml:lang="es">dimensión</gloss>
-      <gloss versionDate="2007-11-06" xml:lang="it">dimensione</gloss>
-      <gloss versionDate="2009-11-16" xml:lang="fr">dimension</gloss>
-      <desc versionDate="2005-01-14" xml:lang="en">indicates whether the space is horizontal or vertical.</desc>
-      <desc versionDate="2007-12-20" xml:lang="ko">공간의 수직 또는 수평에 대한 정보를 제시한다.</desc>
-      <desc versionDate="2007-05-02" xml:lang="zh-TW">指出該空白是水平的或垂直的。</desc>
-      <desc versionDate="2008-04-05" xml:lang="ja">当該空白は，縦長か横長かを示す．</desc>
-      <desc versionDate="2009-11-16" xml:lang="fr">indique si l'espace est vertical ou horizontal.</desc>
-      <desc versionDate="2007-05-04" xml:lang="es">indica si el espacio es vertical u horizontal.</desc>
-      <desc versionDate="2007-01-21" xml:lang="it">indica se lo spazio è orizzontale o verticale</desc>
-      <datatype>
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.enumerated"/>
-      </datatype>
-      <valList type="closed">
-        <valItem ident="horizontal">
-          <desc versionDate="2007-06-27" xml:lang="en">the space is horizontal.</desc>
-          <desc versionDate="2007-12-20" xml:lang="ko">공간이 수평이다.</desc>
-          <desc versionDate="2007-05-02" xml:lang="zh-TW">空白是水平的。</desc>
-          <desc versionDate="2008-04-06" xml:lang="es">el espacio es horizontal.</desc>
-          <desc versionDate="2008-04-05" xml:lang="ja">当該空白は，横長．</desc>
-          <desc versionDate="2009-11-16" xml:lang="fr">l'espace est horizontal.</desc>
-          <desc versionDate="2007-01-21" xml:lang="it">spazio orizzontale</desc>
-        </valItem>
-        <valItem ident="vertical">
-          <desc versionDate="2007-06-27" xml:lang="en">the space is vertical.</desc>
-          <desc versionDate="2007-12-20" xml:lang="ko">공간이 수직이다.</desc>
-          <desc versionDate="2009-11-16" xml:lang="fr"> l'espace est vertical.</desc>
-          <desc versionDate="2007-05-02" xml:lang="zh-TW">空白是垂直的。</desc>
-          <desc versionDate="2008-04-06" xml:lang="es">el espacio es vertical.</desc>
-          <desc versionDate="2008-04-05" xml:lang="ja">当該空白は，縦長．</desc>
-          <desc versionDate="2007-01-21" xml:lang="it">spazio verticale</desc>
-        </valItem>
-      </valList>
-      <remarks versionDate="2005-01-14" xml:lang="en">
-        <p>For irregular shapes in two dimensions, the value for
-this attribute should reflect the more important of the two dimensions.
-In conventional left-right scripts, a space with both vertical and
-horizontal components should be classed as <val>vertical</val>.</p>
-      </remarks>
-      <remarks versionDate="2009-11-17" xml:lang="fr">
-        <p>Pour des formes irrégulières à deux dimensions, la valeur de cet attribut doit refléter la plus importante des deux dimensions. Dans les textes
-écrits conventionnellement de gauche à droite, un espace composé de parties horizontales et verticales doit être considéré comme <val>vertical</val>.</p>
-      </remarks>
-      <remarks xml:lang="ja" versionDate="2008-04-05">
-        <p>
-        一般的でない形の場合，当該属性値は，より重要な2次元情報を反映
-        すべきである．左から右に書く場合，縦長でもあり横長でもある空白
-        は，属性値<val>vertical</val>で分類されるべきである．
-        </p>
-      </remarks>
-    </attDef>
-    <attDef ident="resp" mode="change">
-      <desc versionDate="2013-12-10" xml:lang="en">(responsible party) indicates the individual responsible for identifying and measuring the space</desc>
-    </attDef>
-  </attList>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">By god if wommen had writen storyes
-      As <space quantity="7" unit="minims"/> han within her oratoryes</egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">στρατηλάτ<space quantity="1" unit="chars"/>ου</egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Perec-vie"> Lettre à lettre,
-        un texte se forme, s'affirme, s'affermit, se fixe, se fige : une ligne assez strictement
-        horizontale se dépose sur la <space quantity="3" unit="lignes"/>feuille blanche.</egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#biblzh-tw_n62">
-      夕陽西下<space quantity="1" unit="minims"/>斷腸人在天涯</egXML>
-  </exemplum>
-  <remarks versionDate="2005-01-14" xml:lang="en">
-    <p>This element should be used wherever it is desired to record
-an unusual space in the source text, e.g. space left for a word to be
-filled in later, for later rubrication, etc.  It is not intended to be
-used to mark normal inter-word space or the like.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2009-11-16">
-    <p>Cet élément devrait être utilisé partout où l'on désire signaler un espace inhabituel dans le texte source, par exemple un espace réservé pour un mot à écrire plus tard, pour une rubrication ultérieure, etc. Il n'est pas destiné à être utilisé pour marquer l'espace normal entre des mots par exemple.</p>
-  </remarks>
-  <remarks xml:lang="ja" versionDate="2008-04-05">
-    <p>
-    当該要素は，元テキストにある普通でない空白を記録するために使われる
-    べきである．例えば，単語の後に多くある空白や，続く朱書きのためにあ
-    る空白など．当該要素は，一般的な単語間や行間の空白を示すために使わ
-    れるものではない．
-    </p>
-  </remarks>
-  <listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHSP">11.5.1. </ref>
-  </listRef>
-</elementSpec><elementSpec module="transcr" ident="subst">
-  <gloss versionDate="2007-09-02" xml:lang="en">substitution</gloss>
-  <gloss versionDate="2007-12-20" xml:lang="ko">대체</gloss>
-  <gloss versionDate="2008-04-06" xml:lang="es">substitución</gloss>
-  <gloss versionDate="2007-11-06" xml:lang="it">sostituzione</gloss>
-  <gloss versionDate="2008-10-02" xml:lang="fr"> substitution</gloss>
-  <desc versionDate="2007-09-02" xml:lang="en">groups one or more deletions with one or more additions when
-  the combination is to be regarded as a single intervention in the text.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">결합이 텍스트에서 단일 조작으로 간주될 때 하나 이상의 삭제를 하나 이상의 추가 사항으로 대체한다.</desc>
-  <desc xml:lang="fr" versionDate="2009-11-16">regroupe une ou plusieurs parties de texte supprimées et une ou plusieurs parties de texte ajoutées, lorsque cette combinaison peut être considérée comme une intervention unique sur le texte.</desc>
-  <desc versionDate="2008-04-06" xml:lang="es">agrupa una o más cancelaciones con una o más adiciones cuando la combinación riguarda a una sola intervención en el texto.</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">追加と削除が一連の調整と考えられる場合，そのひとつ以上の追加部分や削
-  除部分をまとめる．</desc>
-  <desc versionDate="2007-11-06" xml:lang="it">raggruppa ona o più cancellazioni insieme a una o più aggiunte quando la combinazione va considerata come singolo intervento sul testo</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.pPart.editorial"/>
-    <memberOf key="att.transcriptional"/>
-  </classes>
-  <content>
-    <oneOrMore xmlns="http://relaxng.org/ns/structure/1.0">
-      <choice>
-        <ref name="add"/>
-        <ref name="del"/>
-        <ref name="model.milestoneLike"/>
-      </choice>
-    </oneOrMore>
-  </content>
-  <constraintSpec ident="substContents1" scheme="isoschematron">
-    <constraint>
-      <assert xmlns="http://purl.oclc.org/dsdl/schematron" test="child::tei:add and child::tei:del"><name/> must have at least one child add and at least one child del</assert>
-    </constraint>
-  </constraintSpec>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-... are all included. <del hand="#RG">It is</del>
-         <subst><add>T</add><del>t</del></subst>he expressed
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      that he and his Sister Miſs D — <lb/>who always lived with him, wd. be <subst><del>very</del><lb/><add>principally</add></subst> remembered in her Will.
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <ab>τ<subst><add place="above">ῶν</add><del>α</del></subst>
-        συνκυρόντ<subst><add place="above">ων</add><del>α</del></subst>
-        ἐργαστηρί<subst><add place="above">ων</add><del>α</del></subst>
-         </ab>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <subst>
-        <del>
-          <gap reason="illegible" quantity="5" unit="character"/>
-        </del>
-        <add>apple</add>
-      </subst>
-    </egXML>
-  </exemplum>
-  <listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHSU">11.3.1.5. </ref>
-  </listRef>
-</elementSpec><elementSpec module="transcr" ident="supplied">
-  <gloss versionDate="2009-11-16" xml:lang="fr">texte restitué</gloss>
-  <desc versionDate="2007-08-29" xml:lang="en">signifies text supplied by the transcriber or editor for any
-  reason, typically because the original cannot be read because of
-  physical damage or loss to the original.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">일반적으로 원본은 물리적 손상 또는 손실로 인해 읽을 수 없기 때문에 전사자 또는 편집자에 의해 제공된 텍스트를 표시한다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">指出一段由轉錄者或編者添加的補充文字，添加的原因是該位置的文字無法被辨認，也許是因為來源文件的損壞或內容遺失、或是任何其他原因導致難以辨認。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">転記者や編集者にひょって付加されたテキストを示す．例えば，元のテキス
-  トが物理的損傷や欠損から判読できない場合などに付加されるもの．</desc>
-  <desc versionDate="2009-11-16" xml:lang="fr">permet d'encoder du texte restitué par l'auteur de la transcription ou par l'éditeur pour une raison quelconque, le plus souvent parce que le texte du document original ne peut être lu, par suite de dommages matériels ou de lacunes.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">indica fragmentos de texto añadidos por el transcriptor o por el revisor en el lugar donde el original es ilegible, porqué presenta daños físicos, lagunas o por otros motivos.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">indica porzioni di testo inserite dal trascrittore o dal revisore al posto di porzioni di testo illegibili per danneggiamento, lacune nell'originale o altri motivi</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.pPart.transcriptional"/>
-    <memberOf key="att.editLike"/>
-  </classes>
-  <content>
-    <ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.paraContent"/>
-  </content>
-  <attList>
-    <attDef ident="reason" usage="opt">
-      <desc versionDate="2013-12-06" xml:lang="en">one or more words indicating why the text has had to be supplied, e.g.
-      <mentioned>overbinding</mentioned>, <mentioned>faded-ink</mentioned>, <mentioned>lost-folio</mentioned>, <mentioned>omitted-in-original</mentioned>.</desc>
-      <desc versionDate="2007-12-20" xml:lang="ko">그 텍스트가 제시된 이유를 표시한다.</desc>
-      <desc versionDate="2007-05-02" xml:lang="zh-TW">說明該文件當時必須補充的原因。</desc>
-      <desc versionDate="2008-04-05" xml:lang="ja">該テキストが付加された理由を示す．</desc>
-      <desc versionDate="2007-06-12" xml:lang="fr">donne la raison pour laquelle on a dû restituer le texte.</desc>
-
-      <desc versionDate="2007-05-04" xml:lang="es">explica los motivos de dicha inserción.</desc>
-      <desc versionDate="2007-01-21" xml:lang="it">spiega i motivi di tale inserimento</desc>
-      <datatype maxOccurs="unbounded">
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.word"/>
-      </datatype>
-    </attDef>
-  </attList>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">I am dr Sr yr
-<supplied reason="illegible" source="#amanuensis_copy">very humble Servt</supplied>
-Sydney Smith</egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">Je reste votre ts he de svt <supplied reason="illegible" source="#amanuensis_copy">très humble et très dévoué serviteur
-        </supplied>Jean Martin </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#biblzh-tw_n63">
-       回首向來蕭瑟處，歸<supplied reason="faded-ink" source="amanuensis copy">去，</supplied>
-       也無風雨也無晴。</egXML>
-  </exemplum>
-  <remarks versionDate="2005-01-14" xml:lang="en">
-    <p>The <gi>damage</gi>, <gi>gap</gi>, <gi>del</gi>,
-<gi>unclear</gi> and <gi>supplied</gi> elements may be closely allied
-in use.  See section <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHCOMB">11.3.3.2. </ref> for discussion of which
-element is appropriate for which circumstance.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2009-11-16">
-    <p>Les éléments <gi>damage</gi>, <gi>gap</gi>, <gi>del</gi>, <gi>unclear</gi> et <gi>supplied</gi> peuvent être étroitement associés. Voir la section <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHCOMB">11.3.3.2. </ref> pour savoir quel élément est approprié à chaque circonstance.</p>
-  </remarks>
-  <remarks xml:lang="ja" versionDate="2008-04-05">
-    <p>
-    要素<gi>damage</gi>, <gi>gap</gi>, <gi>del</gi>, <gi>unclear</gi>,
-    <gi>supplied</gi>と共に使用されるかもしれない．これらのどの要素を
-    使用するかについての詳細は，<ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHCOMB">11.3.3.2. </ref>を参照のこと．
-    </p>
-  </remarks>
-  <listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHDA">11.3.3.1. </ref>
-  </listRef>
-</elementSpec><elementSpec module="transcr" ident="surplus">
-  <gloss xml:lang="fr" versionDate="2007-06-12">Texte superflu</gloss>
-  <desc versionDate="2009-11-06" xml:lang="en">marks text present in the source which the editor believes to
-  be superfluous or redundant.</desc>
-  <desc xml:lang="fr" versionDate="2009-11-16">permet d'encoder une partie de texte présente dans la source lorsque l'éditeur la considère superflue ou redondante.</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.pPart.transcriptional"/>
-    <memberOf key="att.editLike"/>
-  </classes>
-  <content>
-    <ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.paraContent"/>
-  </content>
-  <attList>
-    <attDef ident="reason" usage="opt">
-      <desc versionDate="2013-12-06" xml:lang="en">one or more words indicating why this text is believed to be superfluous, e.g.
-<mentioned>repeated</mentioned>,
-      <mentioned>interpolated</mentioned> etc.</desc>
-      <desc versionDate="2009-11-16" xml:lang="fr">indique les raisons pour lesquelles on considère cette partie de texte comme superflue.</desc>
-      <datatype maxOccurs="unbounded">
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.word"/>
-      </datatype>
-    </attDef>
-  </attList>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">I am dr Sr yrs
-<surplus reason="repeated">yrs</surplus>
-Sydney Smith</egXML>
-  </exemplum>
-  <listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHDA">11.3.3.1. </ref>
-  </listRef>
-</elementSpec><elementSpec ident="mod" module="transcr">
-  <desc versionDate="2013-04-16" xml:lang="en">represents any kind of modification identified within a single document.</desc>
-  <classes>
-    <memberOf key="model.pPart.transcriptional"/>
-    
-    <memberOf key="att.global"/>
-    <memberOf key="att.transcriptional"/>
-    <memberOf key="att.typed"/>
-    
-  </classes>
-  <content>
-    <ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.paraContent"/>
-    
-  </content>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <mod type="subst">
-        <add>pleasing</add>
-        <del>agreable</del>
-      </mod>
-    </egXML>
-  </exemplum>
-  <listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PH-mod">11.3.4.1. </ref>
-  </listRef>
-</elementSpec><elementSpec ident="msDesc" mode="replace" module="msdescription"><content>
-					<ref xmlns="http://relaxng.org/ns/structure/1.0" name="msIdentifier"/>
-					
-					<ref xmlns="http://relaxng.org/ns/structure/1.0" name="physDesc"/>
-					<ref xmlns="http://relaxng.org/ns/structure/1.0" name="additional"/>
-				</content><attList><attDef ident="rend" mode="add" usage="opt">
-						<datatype>
-							<ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.msDescRend"/>
-						</datatype>
-					</attDef></attList></elementSpec><elementSpec rend="change" module="msdescription" xml:id="ORIGDATE" ident="origDate"><equiv rend="replace" filter="rsw.xsl" mimeType="text/xsl" name="expandOrRemoveDate"/><gloss versionDate="2007-07-04" xml:lang="en">origin date</gloss><gloss versionDate="2007-12-20" xml:lang="ko">생성 날짜</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW"/><gloss versionDate="2008-04-06" xml:lang="es">fecha origen</gloss><gloss versionDate="2007-06-12" xml:lang="fr">date de la création</gloss><gloss versionDate="2007-11-06" xml:lang="it">data di origine</gloss><desc versionDate="2005-01-14" xml:lang="en" xml:id="origdate.desc">contains any form of date, used to
-  identify the date of origin for a manuscript or manuscript part.</desc><desc versionDate="2007-12-20" xml:lang="ko">원고 또는 원고의 일부의 생산 날짜를 식별하는 날짜 형식을 포함한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含任何格式的日期，用以確認手稿或手稿部分的來源日期。</desc><desc versionDate="2008-04-05" xml:lang="ja">手書き資料が生まれた日付を特定するたための日付を示す．</desc><desc versionDate="2007-06-12" xml:lang="fr">Contient une date, dans une forme libre, utilisée
-      pour dater la création d'un manuscrit ou d'une partie d'un manuscrit.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene cualquier tipo de fecha utilizada para indicar la fecha de origen de un manuscrito o de una de sus partes.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene una data espressa in una forma qualsiasi utilizzata per indicare la data di origine di un manoscritto o di una sua parte</desc><classes><memberOf key="att.global"/><memberOf key="att.datable"/><memberOf key="att.editLike"/><memberOf key="att.typed"/><memberOf key="model.pPart.msdesc"/></classes><content><zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><choice><text/><ref name="model.gLike"/><ref name="model.phrase"/><ref name="model.global"/></choice></zeroOrMore></content><attList/><exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <origDate notBefore="-0300" notAfter="-0200">3rd century BCE</origDate>
-    </egXML>
-  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <origDate notBefore="-0300" notAfter="-0200">3rd century BCE</origDate>
-    </egXML>
-  </exemplum><exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <origDate notBefore="-0300" notAfter="-0200">西元前三世紀</origDate>
-    </egXML>
-  </exemplum><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ms.html#msdates">10.3.1. </ref>
-  </listRef></elementSpec><elementSpec rend="change" module="msdescription" xml:id="ORIGPLACE" ident="origPlace"><equiv rend="replace" filter="rsw.xsl" mimeType="text/xsl" name="expandOrRemoveOrigPlace"/><gloss versionDate="2007-07-04" xml:lang="en">origin place</gloss><gloss versionDate="2007-12-20" xml:lang="ko">생산 장소</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW"/><gloss versionDate="2008-04-06" xml:lang="es">lugar de origen</gloss><gloss versionDate="2007-06-12" xml:lang="fr">lieu de création</gloss><gloss versionDate="2007-11-06" xml:lang="it">luogo di origine</gloss><desc versionDate="2005-01-14" xml:lang="en" xml:id="origplace.desc">contains any form of place name, used to identify the
-place of origin for a manuscript or manuscript part.</desc><desc versionDate="2007-12-20" xml:lang="ko">원고 또는 원고의 일부를 생산한 장소를 식별하는 장소 이름 형식을 포함한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含任何格式的地名，用以確認手稿或手稿部分的來源地點。</desc><desc versionDate="2008-04-05" xml:lang="ja">手書き資料が生まれた場所を特定するための場所を示す．</desc><desc versionDate="2007-06-12" xml:lang="fr">Contient un nom de lieu, dans une forme libre,
-      utilisé pour désigner l'endroit où a été produit un manuscrit ou une partie d'un
-    manuscrit.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene cualquier tipo de nombre de lugar utilizado para indicar el lugar de origen de un manuscrito o de una de sus partes.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene un qualsiasi nome di luogo utilizzato per indicare il luogo di origine di un manoscritto o di una sua parte</desc><classes><memberOf key="att.global"/><memberOf key="att.naming"/><memberOf key="att.datable"/><memberOf key="att.editLike"/><memberOf key="att.typed"/><memberOf key="model.pPart.msdesc"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/></content><attList><attDef ident="precision" mode="replace">
-						<datatype>
-							<ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.placeNamePrecision"/>
-						</datatype>
-					</attDef></attList><exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <origPlace>Birmingham</origPlace>
-    </egXML>
-  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <origPlace>Birmingham</origPlace>
-    </egXML>
-  </exemplum><exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <origPlace>伯明罕</origPlace>
-    </egXML>
-  </exemplum><remarks versionDate="2008-09-08" xml:lang="en">
-    <p>The <att>type</att> attribute may be used to distinguish
-different kinds of <soCalled>origin</soCalled>, for example original
-place of publication, as opposed to original place of
-printing.</p>
-  </remarks><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ms.html#msdates">10.3.1. </ref>
-  </listRef></elementSpec><elementSpec ident="msIdentifier" module="msdescription" mode="replace"><content>
-					<ref xmlns="http://relaxng.org/ns/structure/1.0" name="repository"/>
-					<ref xmlns="http://relaxng.org/ns/structure/1.0" name="collection"/>
-					<ref xmlns="http://relaxng.org/ns/structure/1.0" name="idno"/>
-				</content><attList/></elementSpec><elementSpec rend="change" module="msdescription" xml:id="REPOSITORY" ident="repository"><equiv rend="replace" filter="rsw.xsl" mimeType="text/xsl" name="transformOrRemoveRepository"/><gloss versionDate="2007-06-12" xml:lang="fr">lieu de conservation</gloss><desc versionDate="2005-05-28" xml:lang="en" xml:id="repository.desc">contains the name of a repository within which manuscripts are stored, possibly forming part of an institution.</desc><desc versionDate="2007-12-20" xml:lang="ko">기관의 부분을 형성하며, 원고를 보유하고 있는 보유 서고명을 포함한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含該手稿收藏所在地的名稱，可能是某機構的一部分。</desc><desc versionDate="2008-04-05" xml:lang="ja">手書き資料が収められている収蔵館の名前を示す．恐らく，団体の名前の一
-  部である．</desc><desc versionDate="2007-06-12" xml:lang="fr">Contient le nom d'un dépôt dans lequel des manuscrits
-      sont entreposés, et qui peut faire partie d'une institution.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene el nombre de un depósito, parte o no de una institución, en el que se conservan los manuscritos.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene il nome di un deposito, parte o meno di un'istituzione, nel quale sono conservati i manoscritti</desc><classes><memberOf key="att.global"/><memberOf key="att.naming"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.xtext"/></content><attList/><exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <msIdentifier>
-        <settlement>Oxford</settlement>
-        <institution>University of Oxford</institution>
-        <repository>Bodleian Library</repository>
-        <idno>MS. Bodley 406</idno>
-      </msIdentifier>
-    </egXML>
-  </exemplum><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ms.html#msid">10.4. </ref>
-  </listRef></elementSpec><elementSpec rend="change" module="msdescription" xml:id="COLLECTION" ident="collection"><equiv rend="replace" filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/><gloss versionDate="2007-06-12" xml:lang="fr">collection</gloss><desc versionDate="2005-01-14" xml:lang="en" xml:id="collection.desc">contains the name of a collection of
-manuscripts, not necessarily located within a single repository.</desc><desc versionDate="2007-12-20" xml:lang="ko">하나의 장서고 내에 반드시 위치할 필요는 없지만 원고의 모음집 이름을 포함한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含手稿集合的名稱，手稿未必皆位於單一收藏點。</desc><desc versionDate="2008-04-05" xml:lang="ja">手書き資料のコレクション名を示す．必ずしも一ヶ所に保管されている必要
-  はない．</desc><desc versionDate="2007-06-12" xml:lang="fr">Contient le nom d'une collection de manuscrits,
-      ceux-ci ne se trouvant pas nécessairement dans le même lieu de conservation.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene el nombre de una colección de manuscritos, no necesariamente colocados en un único depósito.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene il nome di una raccolta di manoscritti non necessariamente collocati in un unico deposito</desc><classes><memberOf key="att.global"/><memberOf key="att.naming"/><memberOf key="att.typed"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.xtext"/></content><attList/><exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <msIdentifier>
-        <country>USA</country>
-        <region>California</region>
-        <settlement>San Marino</settlement>
-        <repository>Huntington Library</repository>
-        <collection>Ellesmere</collection>
-        <idno>El 26 C 9</idno>
-        <msName>The Ellesmere Chaucer</msName>
-      </msIdentifier>
-    </egXML>
-  </exemplum><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ms.html#msid">10.4. </ref>
-  </listRef></elementSpec><elementSpec ident="physDesc" module="msdescription" mode="replace"><equiv filter="rsw.xsl" mimeType="text/xsl" name="processPhysDesc"/><content>
-					<group xmlns="http://relaxng.org/ns/structure/1.0"><oneOrMore><ref name="p"/></oneOrMore><element name="objectDesc">
-							<group><element name="supportDesc">
-									<ref name="extent"/>
-								</element></group>
-						</element><optional><ref name="handDesc"/></optional><element name="additions">
-							<oneOrMore><ref name="p"/></oneOrMore>
-						</element><ref name="accMat"/></group>
-				</content><attList/></elementSpec><elementSpec rend="change" module="msdescription" xml:id="OBJECTDESC" ident="objectDesc"><equiv rend="replace" filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAnyText"/><gloss versionDate="2007-06-12" xml:lang="fr">description d'objet</gloss><desc versionDate="2005-01-14" xml:lang="en">contains a description of the physical
-  components making up the object which is being described.</desc><desc versionDate="2007-12-20" xml:lang="ko">기술되고 있는 대상을 구성하는 물리적 성분에 대한 기술을 포함한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含討論中物件的材質組成成分描述。</desc><desc versionDate="2008-04-05" xml:lang="ja">当該対象の物理的構成要素の解説を示す．</desc><desc versionDate="2007-06-12" xml:lang="fr">contient la description des composants matériels de
-      l'objet en cours de traitement</desc><desc versionDate="2007-05-04" xml:lang="es">contiene una descripción de los componentes físicos que constituyen el objeto descrito.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene una descrizione delle componenti fisiche che costituiscono l'oggetto descritto</desc><classes><memberOf key="att.global"/></classes><content><choice xmlns="http://relaxng.org/ns/structure/1.0"><oneOrMore><ref name="model.pLike"/></oneOrMore><group><optional><ref name="supportDesc"/></optional><optional><ref name="layoutDesc"/></optional></group></choice></content><attList><attDef ident="form">
-      <gloss versionDate="2007-06-12" xml:lang="fr">forme</gloss>
-      <desc versionDate="2005-01-14" xml:lang="en">a short  project-specific name identifying the physical form of
-      the carrier, for example as a codex, roll, fragment, partial leaf,
-      cutting etc.</desc>
-      <desc versionDate="2007-12-20" xml:lang="ko">미제본 원고, 명부, 부분, 부분적 장, 잘라낸 것 등과 같이 물리적 형태를 식별하는,  프로젝트에서 사용하는 간단한 이름</desc>
-      <desc versionDate="2007-05-02" xml:lang="zh-TW">一個簡短的用途專用名稱，表示該媒介的物質外形，例如手抄本、名冊、斷片、部分頁面、剪報等。</desc>
-      <desc versionDate="2008-04-05" xml:lang="ja">当該キャリアの物理的な形を示す，プロジェクト固有の短い名前．例え
-      ば，冊子，巻子，断片，切れ端など．</desc>
-      <desc versionDate="2007-06-12" xml:lang="fr">contient un nom abrégé spécifique au projet,
-          désignant la forme physique du support, par exemple : codex, rouleau, fragment, fragment
-          de feuillet, découpe, etc.</desc>
-      <desc versionDate="2007-05-04" xml:lang="es">un nombre breve específico de un proyecto que identifica la forma física del documento, por ejemplo códex, rollo, fragmento, folio parcial, recorte, etc.</desc>
-      <desc versionDate="2007-01-21" xml:lang="it">un nome breve specifico di un progetto che identifica la forma fisica del documento, per esempio codice, rotolo, frammento, foglio parziale, ritaglio, ecc.</desc>
-      <datatype>
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.enumerated"/>
-      </datatype>
-<remarks versionDate="2013-12-21" xml:lang="en"><p>Definitions for the
-terms used may typically be provided by a
-	<gi>valList</gi> element in the project schema
-specification.</p></remarks>
-    </attDef></attList><exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <objectDesc form="codex">
-        <supportDesc material="mixed">
-          <p>Early modern
-<material>parchment</material> and
-<material>paper</material>.</p>
-        </supportDesc>
-        <layoutDesc>
-          <layout ruledLines="25 32"/>
-        </layoutDesc>
-      </objectDesc>
-    </egXML>
-  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-BnF-Reliures">
-      <objectDesc>
-        <supportDesc>
-          <extent>
-            <dimensions type="binding">
-              <height unit="mm">168</height>
-              <width unit="mm">106</width>
-              <depth unit="mm">22</depth>
-            </dimensions>
-          </extent>
-        </supportDesc>
-      </objectDesc>
-    </egXML>
-  </exemplum><exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <objectDesc form="codex">
-        <supportDesc material="mixed">
-          <p>現代早期 <material>羊皮紙</material>與<material>白紙</material>。</p>
-        </supportDesc>
-        <layoutDesc>
-          <layout ruledLines="25 32"/>
-        </layoutDesc>
-      </objectDesc>
-    </egXML>
-  </exemplum><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ms.html#msph1">10.7.1. </ref>
-  </listRef></elementSpec><elementSpec module="msdescription" xml:id="HANDDESC" ident="handDesc">
-  <gloss versionDate="2007-08-01" xml:lang="en">description of hands</gloss>
-  <gloss versionDate="2007-12-20" xml:lang="ko">기법 기술</gloss>
-  <gloss versionDate="2007-05-02" xml:lang="zh-TW"/>
-  <gloss versionDate="2008-04-06" xml:lang="es">descripción de las manos</gloss>
-  <gloss versionDate="2007-06-12" xml:lang="fr">description des écritures</gloss>
-  <gloss versionDate="2007-11-06" xml:lang="it">descrizione delle mani</gloss>
-  <desc versionDate="2005-01-14" xml:lang="en" xml:id="script.desc">contains a description of all the different kinds of writing  used in a manuscript.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">원고에 사용된 모든 종류의 기법 기술을 포함한다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">手稿中使用的所有不同書寫種類的描述。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">手書き資料にある異なる書記全てについての解説を示す．</desc>
-  <desc versionDate="2007-06-12" xml:lang="fr">contient la description des différents types
-      d'écriture utilisés dans un manuscrit.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">contiene una descripción de todos los diferentes tipos de escritura usados en un manuscrito.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">contiene una descrizione dei diversi tipi di scrittura usati in un manoscritto</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    
-  </classes>
-  <content>
-    <choice xmlns="http://relaxng.org/ns/structure/1.0">
-      <oneOrMore>
-        <ref name="model.pLike"/>
-      </oneOrMore>
-      <group>
-        <optional>
-          <ref name="summary"/>
-        </optional>
-        <oneOrMore>
-          <ref name="handNote"/>
-        </oneOrMore>
-      </group>
-    </choice>
-  </content>
-  <attList>
-    <attDef ident="hands">
-      <gloss versionDate="2007-06-12" xml:lang="fr">mains</gloss>
-      <desc versionDate="2005-01-14" xml:lang="en">specifies the number of distinct hands identified within the manuscript</desc>
-      <desc versionDate="2007-12-20" xml:lang="ko">원고 내에서 식별되는 필적 수를 명시한다.</desc>
-      <desc versionDate="2007-05-02" xml:lang="zh-TW">說明在手稿中可清楚識別的書寫者人數。</desc>
-      <desc versionDate="2008-04-05" xml:lang="ja">当該手書き資料中で特定可能な筆致の数を示す．</desc>
-      <desc versionDate="2007-06-12" xml:lang="fr">spécifie le nombre de mains différentes qui ont
-          pu être identifiées dans le manuscrit</desc>
-      <desc versionDate="2007-05-04" xml:lang="es">especifica el número de manos distintas identificadas al interno de un manuscrito.</desc>
-      <desc versionDate="2007-01-21" xml:lang="it">specifica il numero delle diverse mani identificate all'interno del manoscritto</desc>
-      <datatype>
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.count"/>
-      </datatype>
-    </attDef>
-  </attList>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <handDesc>
-        <handNote scope="major">Written throughout in <term>angelicana formata</term>.</handNote>
-      </handDesc>
-    </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <handDesc>
-        <handNote scope="major">Written throughout in <term>angelicana formata</term>.</handNote>
-      </handDesc>
-    </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <handDesc hands="2">
-        <p>The manuscript is written in two contemporary hands, otherwise unknown, but clearly
-            those of practised scribes. Hand I writes ff. 1r-22v and hand II ff. 23 and 24. Some
-            scholars, notably Verner Dahlerup and Hreinn Benediktsson, have argued for a third hand
-            on f. 24, but the evidence for this is insubstantial.</p>
-      </handDesc>
-    </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <handDesc hands="2">
-        <handNote xml:id="fr_TSE" medium="typescript">Authorial typescript </handNote>
-        <handNote xml:id="fr_EP" medium="red-ink">Ezra Pound's annotations</handNote>
-      </handDesc>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#biblzh-tw_n43">
-      <handDesc hands="1">
-        <p>手稿由田代安定一人控稿，同行者包括鳥居龍藏（帝國大學人類學調查員）；上領小太郎（舊民政局殖產課員）；三宅驥（帝國大學職務調查員）；小笠原富次郎（總統府技手殖產課員）。</p>
-      </handDesc>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <handDesc hands="2">
-        <handNote xml:id="zh-tw_TSE" medium="typescript">作者打字稿</handNote>
-        <handNote xml:id="zh-tw_SM" medium="red-ink">三毛的註解</handNote>
-      </handDesc>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <handDesc hands="2">
-        <p>The manuscript is written in two contemporary hands, otherwise
-unknown, but clearly those of practised scribes.  Hand I writes
-ff. 1r-22v and hand II ff. 23 and 24. Some scholars, notably
-Verner Dahlerup and Hreinn Benediktsson, have argued for a third hand
-on f. 24, but the evidence for this is insubstantial.</p>
-      </handDesc>
-    </egXML>
-  </exemplum>
-  <listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ms.html#msph2">10.7.2. </ref>
-  </listRef>
-</elementSpec><elementSpec rend="change" module="msdescription" xml:id="ADDITIONS" ident="additions"><equiv rend="replace" filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/><gloss versionDate="2007-06-12" xml:lang="fr">ajouts</gloss><desc versionDate="2005-01-14" xml:lang="en" xml:id="additions.desc">contains a description of any significant additions found
-within a manuscript, such as marginalia or other annotations.</desc><desc versionDate="2007-12-20" xml:lang="ko">방주 또는 기타 주석과 같이 원고 내의 중요한 부가정보의 기술을 포함한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含手稿中任何重要增添文字的描述，例如旁註或其他註釋。</desc><desc versionDate="2008-04-05" xml:lang="ja">当該手書き資料中にある，重要な付加物を示す．例えば，欄外の書き込みや
-  注釈など．</desc><desc versionDate="2007-06-12" xml:lang="fr">contient la description des ajouts significatifs
-      trouvés dans un manuscrit, tels que gloses marginales ou autres annotations.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene una descripción de cualquier adición significativa encontrada al interno de un manuscrito como notas al márgen u otras anotaciones.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene un descrizione di qualsiasi aggiunta significativa trovata all'interno di un manoscritto come note a margine o altre annotazioni</desc><classes><memberOf key="att.global"/></classes><content><ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.specialPara"/></content><attList/><exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <additions>
-        <p>There are several marginalia in this manuscript. Some consist of
-single characters and others are figurative. On 8v is to be found a drawing of
-a mans head wearing a hat. At times sentences occurs: On 5v: 
-<q xml:lang="is">Her er skrif andres isslendin</q>, 
-on 19r: <q xml:lang="is">þeim go</q>, 
-on 21r: <q xml:lang="is">amen med aund ok munn halla rei knar hofud summu all huad
-batar þad mælgi ok mal</q>, 
-On 21v: some runic letters and the sentence  <q xml:lang="la">aue maria gracia plena dominus</q>.</p>
-      </additions>
-    </egXML>
-  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <additions>
-        <p>There are several marginalia in this manuscript. Some consist of single characters and
-            others are figurative. On 8v is to be found a drawing of a mans head wearing a hat. At
-            times sentences occurs: On 5v:<q xml:lang="is">Her er skrif andres isslendin</q>, on
-            19r: <q xml:lang="is">þeim go</q>, on 21r: <q xml:lang="is">amen med aund ok munn halla
-              rei knar hofud summu all huad batar þad mælgi ok mal</q>, On 21v: some runic letters
-            and the sentence <q xml:lang="la">aue maria gracia plena dominus</q>.</p>
-      </additions>
-    </egXML>
-  </exemplum><listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ms.html#msph2">10.7.2. </ref>
-  </listRef></elementSpec><elementSpec module="msdescription" xml:id="ACCMAT" ident="accMat">
-  <gloss versionDate="2005-01-14" xml:lang="en">accompanying material</gloss>
-  <gloss versionDate="2007-12-20" xml:lang="ko">동봉 자료</gloss>
-  <gloss versionDate="2007-05-02" xml:lang="zh-TW">伴隨資料</gloss>
-  <gloss versionDate="2007-06-12" xml:lang="fr">matériel d'accompagnement</gloss>
-  <gloss versionDate="2007-05-04" xml:lang="es">material adicional</gloss>
-  <gloss versionDate="2007-01-21" xml:lang="it">materiale allegato</gloss>
-  <desc versionDate="2005-01-14" xml:lang="en" xml:id="accmat.desc">contains details of any significant additional
-material which may be closely associated with the manuscript being
-described, such as non-contemporaneous documents or fragments bound in
-with the manuscript at some earlier historical period.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">기술하고 있는 원고와 밀접히 관련된 중요한 부가적 자료를 세밀하게 기술한다. 예를 들어, 어떤 이전 시기에 원고와 함께 제본된 비동시대의 문서  또는 문서 일부.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含可能與該手稿關係密切的重要附加資料之細節，例如非同時期的文件或是在早期與手稿裝訂一起的片段。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">当該手書き資料と関連する情
-  報の詳細を記述するための要素．例えば，当該手書き資料が書かれた時代と
-  は異なる時期の文書や断片についてについての詳細を示す．例えば，当該手
-  書き資料が作成された以前に書かれた文書やその断片であったりするものに
-  ついて．
-</desc>
-  <desc versionDate="2007-06-12" xml:lang="fr">donne des détails sur tout matériel d'accompagnement
-      étroitement associé au manuscrit, tel que documents non contemporains ou fragments reliés avec
-      le manuscrit à une époque antérieure.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">contiene eventuales detalles que conciernen a materiales añadidos estrechamente relacionados con el manuscrito examinado, p.ej. documentos no actuales o fragmentos cosidos junto al manuscrito en un período histórico precedente al actual.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">contiene eventuali dettagli riguardanti maeriale aggiuntivo strettamente collegato al manoscritto in esame, per esempio documenti non attali o frammenti rilegati insieme al manoscritto in un periodo storico precedente a quello attuale</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="att.typed"/>
-    
-  </classes>
-  <content>
-    <ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.specialPara"/>
-  </content>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <accMat>A copy of a tax form from 1947 is included in the envelope
-with the letter. It is not catalogued separately.</accMat>
-    </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <accMat>A copy of a tax form from 1947 is included in the envelope with the letter. It is
-          not catalogued separately.</accMat>
-    </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <accMat>有張1947年的稅單一同與此信件放於信封裡，不單獨分類。</accMat>
-    </egXML>
-  </exemplum>
-  <listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ms.html#msadac">10.7.3.3. </ref>
-  </listRef>
-</elementSpec><elementSpec ident="additional" module="msdescription" mode="replace"><equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAnyAttOrAnyText"/><content>
-					<group xmlns="http://relaxng.org/ns/structure/1.0"><element name="surrogates">
-							<group><zeroOrMore><ref name="ptr"/></zeroOrMore><zeroOrMore><ref name="msDesc"/></zeroOrMore></group>
-						</element></group>
-				</content><attList/></elementSpec><elementSpec module="analysis" ident="pc">
-  <gloss versionDate="2009-06-10" xml:lang="en">punctuation character</gloss>
-  <desc versionDate="2012-12-27" xml:lang="en">contains a character or string of characters regarded as constituting a
-  single punctuation mark.</desc>
-  <desc xml:lang="fr" versionDate="2007-06-12">contient un caractère ou une chaîne de caractères  considérés comme un signe de ponctuation unique.</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.segLike"/>
-    
-    <memberOf key="att.typed"/>
-  </classes>
-  <content>
-    <zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0">
-      <choice>
-        <text/>
-        <ref name="model.gLike"/>
-        <ref name="c"/>
-        <ref name="model.pPart.edit"/>
-      </choice>
-    </zeroOrMore>
-  </content>
-  <attList>
-    <attDef ident="force" usage="opt">
-      <desc versionDate="2009-06-18" xml:lang="en">indicates the extent to which this punctuation mark
-      conventionally separates words or phrases</desc>
-      <datatype>
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.enumerated"/>
-      </datatype>
-      <valList type="closed">
-        <valItem ident="strong">
-          <desc versionDate="2009-06-18" xml:lang="en">the punctuation mark is a word separator</desc>
-        </valItem>
-        <valItem ident="weak">
-          <desc versionDate="2009-06-18" xml:lang="en">the punctuation mark is not a word separator</desc>
-        </valItem>
-        <valItem ident="inter">
-          <desc versionDate="2009-06-18" xml:lang="en">the punctuation mark may or may not be a word separator</desc>
-        </valItem>
-      </valList>
-    </attDef>
-    <attDef ident="unit" usage="opt">
-      <desc versionDate="2009-06-18" xml:lang="en">provides a name for the kind of unit delimited by  this punctuation mark.</desc>
-      <datatype>
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.enumerated"/>
-      </datatype>
-    </attDef>
-    <attDef ident="pre" usage="opt">
-      <desc versionDate="2009-06-18" xml:lang="en">indicates whether this punctuation mark precedes or
-      follows the unit it delimits.</desc>
-      <datatype>
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.truthValue"/>
-      </datatype>
-    </attDef>
-  </attList>
-  <exemplum xml:lang="en">
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-      <phr>
-        <w>do</w>
-        <w>you</w>
-        <w>understand</w>
-        <pc type="interrogative">?</pc>
-      </phr>
-    </egXML>
-  </exemplum>
-  
-  <listRef>
-    <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html#AILC">17.1. </ref>
-  </listRef>
-</elementSpec><desc>Transcriptions of manuscript sources: Correspondence, notes, etc.</desc><elementSpec rend="add" module="derived-module-schema.graphic" ident="taskDesc" mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0"><equiv filter="rsw.xsl" mimeType="text/xsl" name="warnIfHasChildOrRemove"/><content>
-				<zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="task"/></zeroOrMore>
-			</content><attList/></elementSpec><elementSpec rend="add" module="derived-module-schema.graphic" ident="task" mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0"><content>
-				<oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="p"/></oneOrMore>
-			</content><attList><attDef mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0" ident="pwho">
-					<datatype>
-						<ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.encoding-staff"/>
-					</datatype>
-				</attDef><attDef mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0" ident="pwhen">
-					<datatype>
-						<data xmlns="http://relaxng.org/ns/structure/1.0" type="string"/>
-					</datatype>
-				</attDef><attDef mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0" ident="priority">
-					<datatype>
-						<ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.digit"/>
-					</datatype>
-				</attDef><attDef ident="when" mode="add">
-					<datatype>
-						<data xmlns="http://relaxng.org/ns/structure/1.0" type="string"/>
-					</datatype>
-				</attDef><attDef ident="who" mode="add">
-					<datatype>
-						<ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.encoding-staff"/>
-					</datatype>
-				</attDef></attList></elementSpec><macroSpec rend="add" ident="data.handFeaturesScope" module="tei" type="dt" mode="add">
+  </listRef></elementSpec><desc>Events related to Strauss</desc><macroSpec rend="add" ident="data.handFeaturesScope" module="tei" type="dt" mode="add">
 			<content>
 				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>sole</value><a:documentation>einzige Hand</a:documentation><value>major</value><a:documentation>Haupt-Hand</a:documentation><value>minor</value><a:documentation>Neben-Hand</a:documentation></choice>
 			</content>
@@ -11830,73 +9464,55 @@ with the letter. It is not catalogued separately.</accMat>
 			<content>
 				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>high</value><a:documentation>hoch</a:documentation><value>medium</value><a:documentation>mittel</a:documentation><value>low</value><a:documentation>niedrig</a:documentation><value>unknown</value><a:documentation>unbekannt</a:documentation></choice>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="data.placeNamePrecision">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="data.placeNamePrecision">
 			<content>
 				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>high</value><a:documentation>nahe</a:documentation><value>medium</value><a:documentation>bei</a:documentation></choice>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="data.revisionDescChangeType">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="data.revisionDescChangeType">
 			<content>
 				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>UO</value><a:documentation>Übertragen nach Original</a:documentation><value>UC</value><a:documentation>Übertragen nach Entwurf</a:documentation><value>UA</value><a:documentation>Übertragen nach Abschrift v.f.H.</a:documentation><value>UP</value><a:documentation>Übertragen nach Papierkopie</a:documentation><value>UI</value><a:documentation>Übertragen nach Mikroform</a:documentation><value>UM</value><a:documentation>Übertragen nach autogr. Abschrift</a:documentation><value>UD</value><a:documentation>Übertragen nach Original [Digitalisat]</a:documentation><value>UG</value><a:documentation>Übertragen nach Entwurf [Digitalisat]</a:documentation><value>UH</value><a:documentation>Übertragen nach Abschrift v.f.H. [Digitalisat]</a:documentation><value>UF</value><a:documentation>Übertragen nach Papierkopie [Digitalisat]</a:documentation><value>UJ</value><a:documentation>Übertragen nach Mikroform [Digitalisat]</a:documentation><value>UB</value><a:documentation>Übertragen nach autogr. Abschrift [Digitalisat]</a:documentation><value>UE</value><a:documentation>Übertragen nach Edition</a:documentation><value>UZ</value><a:documentation>Übertragen nach Auszug</a:documentation><value>UW</value><a:documentation>Übertragung</a:documentation><value>KO</value><a:documentation>Korrigiert nach Original</a:documentation><value>KC</value><a:documentation>Korrigiert nach Entwurf</a:documentation><value>KA</value><a:documentation>Korrigiert nach Abschrift v.f.H.</a:documentation><value>KP</value><a:documentation>Korrigiert nach Papierkopie</a:documentation><value>KI</value><a:documentation>Korrigiert nach Mikroform</a:documentation><value>KM</value><a:documentation>Korrigiert nach autogr. Abschrift</a:documentation><value>KD</value><a:documentation>Korrigiert nach Original [Digitalisat]</a:documentation><value>KG</value><a:documentation>Korrigiert nach Entwurf [Digitalisat]</a:documentation><value>KH</value><a:documentation>Korrigiert nach Abschrift v.f.H. [Digitalisat]</a:documentation><value>KF</value><a:documentation>Korrigiert nach Papierkopie [Digitalisat]</a:documentation><value>KJ</value><a:documentation>Korrigiert nach Mikroform [Digitalisat]</a:documentation><value>KB</value><a:documentation>Korrigiert nach autogr. Abschrift [Digitalisat]</a:documentation><value>KE</value><a:documentation>Korrigiert nach Edition</a:documentation><value>KZ</value><a:documentation>Korrigiert nach Auszug</a:documentation><value>KW</value><a:documentation>Korrigiert</a:documentation><value>VQ</value><a:documentation>Vollständigkeit der Quellenübertragung bestätigt</a:documentation><value>VT</value><a:documentation>Vollständigkeit der Textauszeichnung bestätigt</a:documentation><value>VL</value><a:documentation>Vollständigkeit der Verlinkung bestätigt</a:documentation><value>P</value><a:documentation>Vorgeschlagen zur Publikation</a:documentation><value>C</value><a:documentation>Als möglicherweise publikationsfertig gekennzeichnet</a:documentation><value>A</value><a:documentation>Zur Publikation freigegeben</a:documentation></choice>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="data.changeEventType">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="data.changeEventType">
 			<content>
-				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>unknown</value><a:documentation>unbekannte Kategorie</a:documentation><value>T</value><a:documentation>Treffen</a:documentation><value>S</value><a:documentation>schöpf. Tätigkeit</a:documentation><value>M</value><a:documentation>häusl. Musizieren</a:documentation><value>P</value><a:documentation>Probe</a:documentation><value>D</value><a:documentation>öff. Dirigat</a:documentation><value>A</value><a:documentation>Aufführungsbesuch</a:documentation><value>B</value><a:documentation>Geschäftstätigkeit</a:documentation><value>R</value><a:documentation>Reise</a:documentation><value>other</value><a:documentation>andere Kategorie</a:documentation></choice>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>unknown</value><a:documentation>unbekannte Kategorie</a:documentation><value>T</value><a:documentation>Treffen</a:documentation><value>S</value><a:documentation>schöpf. Tätigkeit</a:documentation><value>M</value><a:documentation>häusl. Musizieren</a:documentation><value>P</value><a:documentation>Probe</a:documentation><value>B</value><a:documentation>Geschäftstätigkeit</a:documentation><value>R</value><a:documentation>Reise</a:documentation><value>other</value><a:documentation>andere Kategorie</a:documentation></choice>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="data.orgNameOrchestraExtent">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="data.orgNameOrchestraExtent">
 			<content>
 				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>full-size</value><a:documentation>volle Besetzung</a:documentation><value>reduced-size</value><a:documentation>reduzierte Besetzung</a:documentation></choice>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="data.persNamePerformanceRole">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="data.persNamePerformanceRole">
 			<content>
 				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>conductor</value><a:documentation>Dirigent</a:documentation><value>stage-director</value><a:documentation>Regisseur</a:documentation><value>scenery-designer</value><a:documentation>Bühnenbild</a:documentation><value>costume-designer</value><a:documentation>Kostüme</a:documentation><value>involved-in-preparation</value><a:documentation>bei den Vorbereitungen</a:documentation><value>visitor</value><a:documentation>Besucher</a:documentation></choice>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="data.supplPersNameType">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="data.supplPersNameType">
 			<content>
 				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>unknown</value><a:documentation>unbekannte Art</a:documentation><value>full</value><a:documentation>voller Name</a:documentation><value>former</value><a:documentation>früherer Name</a:documentation><value>later</value><a:documentation>späterer Name</a:documentation><value>birth</value><a:documentation>Geburtsname</a:documentation><value>real</value><a:documentation>wirklicher Name</a:documentation><value>pseud</value><a:documentation>Pseudonym</a:documentation><value>nickname</value><a:documentation>Kosename</a:documentation><value>variant</value><a:documentation>Variante</a:documentation><value>other</value><a:documentation>sonstige Art</a:documentation></choice>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="data.supplOrgNameType">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="data.supplOrgNameType">
 			<content>
 				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>unknown</value><a:documentation>unbekannte Art</a:documentation><value>full</value><a:documentation>voller Name</a:documentation><value>former</value><a:documentation>früherer Name</a:documentation><value>later</value><a:documentation>späterer Name</a:documentation><value>real</value><a:documentation>wirklicher Name</a:documentation><value>variant</value><a:documentation>Variante</a:documentation><value>other</value><a:documentation>sonstige Art</a:documentation></choice>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="data.msDescRend">
-			<content>
-				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>unknown</value><a:documentation>unbekannte Quellenart</a:documentation><value>original</value><a:documentation>Original</a:documentation><value>draft</value><a:documentation>Entwurf</a:documentation><value>autograph-copy</value><a:documentation>autographe Abschrift</a:documentation><value>foreign-copy</value><a:documentation>Abschrift von fremder Hand</a:documentation><value>carbon-copy</value><a:documentation>Durchschlag</a:documentation><value>papercopy</value><a:documentation>Papierkopie</a:documentation><value>microform</value><a:documentation>Mikroform</a:documentation><value>other</value><a:documentation>sonstige Quellenart</a:documentation></choice>
-			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="data.encoding-staff">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="data.encoding-staff">
 			<content>
 				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>s:alx</value><a:documentation>Alexander Erhard</a:documentation><value>s:sts</value><a:documentation>Stefan Schenk</a:documentation><value>s:aap</value><a:documentation>Andreas Pernpeintner</a:documentation><value>s:clh</value><a:documentation>Claudia Heine</a:documentation><value>s:mmm</value><a:documentation>Martina Mengele</a:documentation><value>s:flr</value><a:documentation>Florence Eller</a:documentation><value>s:sbb</value><a:documentation>Sebastian Bolz</a:documentation><value>s:wwb</value><a:documentation>Walter Werbeck</a:documentation><value>s:afl</value><a:documentation>Florian Amort</a:documentation><value>s:stk</value><a:documentation>Steffi Kracht</a:documentation><value>s:oen</value><a:documentation>Ursula Welsch</a:documentation><value>s:ofr</value><a:documentation>Oliver Fraenske</a:documentation><value>s:pfr</value><a:documentation>Peter Fröhlich</a:documentation><value>s:dpl</value><a:documentation>Dominik Leipold</a:documentation></choice>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="data.editorial-staff">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="data.editorial-staff">
 			<content>
 				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>s:alx</value><a:documentation>Alexander Erhard</a:documentation><value>s:sts</value><a:documentation>Stefan Schenk</a:documentation><value>s:aap</value><a:documentation>Andreas Pernpeintner</a:documentation><value>s:clh</value><a:documentation>Claudia Heine</a:documentation><value>s:wwb</value><a:documentation>Walter Werbeck</a:documentation></choice>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="data.digit">
-			<content>
-				<data xmlns="http://relaxng.org/ns/structure/1.0" type="string">
-					<param name="pattern">\d</param>
-				</data>
-			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="data.gndIdno">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="data.gndIdno">
 			<content>
 				<data xmlns="http://relaxng.org/ns/structure/1.0" type="string">
 					<param name="pattern">\d{1,9}\-?[\dX]</param>
 				</data>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="data.rsqvIdno">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="data.rsqvIdno">
 			<content>
 				<data xmlns="http://relaxng.org/ns/structure/1.0" type="string">
 					<param name="pattern">[a-z]\d{4,5}</param>
 				</data>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="data.keyword_graphic">
-			<content>
-				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>Theaterzettel</value><a:documentation>http://d-nb.info/gnd/4185060-9</a:documentation><value>Zeichnung</value><a:documentation>http://d-nb.info/gnd/4127900-1</a:documentation><value>Entwurfszeichnung</value><a:documentation>http://d-nb.info/gnd/4152458-5</a:documentation><value>Druckgraphik</value><a:documentation>http://d-nb.info/gnd/4113357-2</a:documentation><value>Gemälde</value><a:documentation>http://d-nb.info/gnd/4122164-3</a:documentation><value>Photographie</value><a:documentation>http://d-nb.info/gnd/4045895-7</a:documentation></choice>
-			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="data.biblTypeCorrespondence">
-			<content>
-				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>u</value><a:documentation>Unbekannter Bezug</a:documentation><value>e</value><a:documentation>Edition in</a:documentation><value>a</value><a:documentation>Auszug in</a:documentation><value>f</value><a:documentation>Faksimile in</a:documentation><value>n</value><a:documentation>Nennung in</a:documentation><value>s</value><a:documentation>Sonstiger Bezug</a:documentation></choice>
-			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="macro.form.date">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="macro.form.date">
 			<equiv filter="rsw.xsl" mimeType="text/xsl" name="expandOrRemoveDate"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">date (form)</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">Datum (Formular)</gloss>
@@ -11905,7 +9521,7 @@ with the letter. It is not catalogued separately.</accMat>
 			<content>
 				<ref xmlns="http://relaxng.org/ns/structure/1.0" name="date"/>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="macro.form.rsqvIdno">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="macro.form.rsqvIdno">
 			<gloss versionDate="2014-01-26" xml:lang="en">RSQV idno</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">RSQV-idno</gloss>
 			<desc versionDate="2014-01-26" xml:lang="en">Macro for a <gi>idno</gi> element in which a <att>type</att> attribute with the value <val>RSQV</val> must be present.</desc>
@@ -11924,7 +9540,7 @@ with the letter. It is not catalogued separately.</accMat>
 			<remarks versionDate="2014-02-04" xml:lang="de">
 				<p>Der Textinhalt dieses Elements bezieht sich auf eine ID-Nummer des Richard Strauss Quellenverzeichnis (RSQV) <ptr target="http://rsqv.de"/>.</p>
 			</remarks>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="macro.form.uagIdno">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="macro.form.uagIdno">
 			<gloss versionDate="2014-01-26" xml:lang="en">UAG idno</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">UAG-idno</gloss>
 			<desc versionDate="2014-01-26" xml:lang="en">Macro for a <gi>idno</gi> element in which a <att>type</att> attribute with the value <val>UAG</val> must be present.</desc>
@@ -11938,7 +9554,7 @@ with the letter. It is not catalogued separately.</accMat>
 						<optional><ref name="data.word"/></optional>
 					</element></zeroOrMore>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="macro.form.optionalDating">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="macro.form.optionalDating">
 			<content>
 				<optional xmlns="http://relaxng.org/ns/structure/1.0"><attribute name="when">
 						<ref name="data.temporal.w3c"/>
@@ -11962,7 +9578,7 @@ with the letter. It is not catalogued separately.</accMat>
 						<ref name="data.certainty"/>
 					</attribute></optional>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="macro.form.commentaryNote">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="macro.form.commentaryNote">
 			<equiv filter="rsw.xsl" mimeType="text/xsl" name="tightenCommentary"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">Commentary note</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">Kommentar-Anmerkung</gloss>
@@ -11980,7 +9596,7 @@ with the letter. It is not catalogued separately.</accMat>
 						</element></zeroOrMore>
 				</element>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="macro.form.summaryNote">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="macro.form.summaryNote">
 			<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">Details note</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">Detail-Anmerkung</gloss>
@@ -11994,7 +9610,7 @@ with the letter. It is not catalogued separately.</accMat>
 					<ref name="macro.form.noteParagraph"/>
 				</element>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="macro.form.discussionNote">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="macro.form.discussionNote">
 			<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">discussion note</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">Diskussions-Anmerkung</gloss>
@@ -12008,7 +9624,7 @@ with the letter. It is not catalogued separately.</accMat>
 					<ref name="macro.form.noteParagraph"/>
 				</element>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="macro.form.uncategorizedNote">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="macro.form.uncategorizedNote">
 			<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">uncategorized note</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">Anmerkung ohne Kategorie</gloss>
@@ -12022,21 +9638,15 @@ with the letter. It is not catalogued separately.</accMat>
 					<ref name="macro.form.noteParagraph"/>
 				</element>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="macro.form.publicationStmt_ms">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="macro.form.publicationStmt_event">
 			<content>
-				<group xmlns="http://relaxng.org/ns/structure/1.0"><ref name="availability"/><oneOrMore><choice><ref name="macro.form.uagIdno"/><ref name="macro.form.rsqvIdno"/></choice></oneOrMore></group>
+				<group xmlns="http://relaxng.org/ns/structure/1.0"><ref name="macro.form.rsqvIdno"/></group>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="macro.form.sourceDesc_ms">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="macro.form.sourceDesc_event">
 			<content>
-				<group xmlns="http://relaxng.org/ns/structure/1.0"><oneOrMore><ref name="msDesc"/></oneOrMore><ref name="listBibl"/></group>
+				<ref xmlns="http://relaxng.org/ns/structure/1.0" name="listBibl"/>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="macro.form.creation_ms">
-			<content>
-				<element xmlns="http://relaxng.org/ns/structure/1.0" name="listChange">
-					<oneOrMore><ref name="macro.form.creation.change_ms"/></oneOrMore>
-				</element>
-			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="macro.form.creation.change_ms">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="macro.form.creation.change_ms">
 			<content>
 				<element xmlns="http://relaxng.org/ns/structure/1.0" name="change">
 					<optional><attribute name="type"/></optional>
@@ -12100,23 +9710,23 @@ with the letter. It is not catalogued separately.</accMat>
 						</element></oneOrMore>
 				</element>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="macro.form.revisionDescChange">
-			<equiv filter="rsw.xsl" mimeType="text/xsl" name="processRevisionDescChange"/>
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="macro.form.creation_event">
 			<content>
-				<element xmlns="http://relaxng.org/ns/structure/1.0" name="change">
-					<optional><attribute name="id" ns="http://www.w3.org/XML/1998/namespace">
-							<data type="ID"/>
-						</attribute></optional>
-					<optional><attribute name="when"/><attribute name="who">
-							<ref name="data.encoding-staff"/>
-						</attribute></optional>
-					<optional><attribute name="type">
-							<ref name="data.revisionDescChangeType"/>
-						</attribute></optional>
-					<oneOrMore><ref name="p"/></oneOrMore>
-				</element>				
+				<element xmlns="http://relaxng.org/ns/structure/1.0" name="listChange">
+					<group><element name="change">
+							<attribute name="type">
+								<ref name="data.changeEventType"/>
+							</attribute>
+							<ref name="macro.form.summaryNote"/>
+							<ref name="macro.form.commentaryNote"/>
+							<ref name="macro.form.discussionNote"/>
+							<ref name="macro.form.uncategorizedNote"/>
+							<oneOrMore><ref name="date"/></oneOrMore>
+							<oneOrMore><ref name="placeName"/></oneOrMore>
+						</element></group>
+				</element>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="macro.form.bibl">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="macro.form.bibl">
 			<equiv filter="rsw.xsl" mimeType="text/xsl" name="transformOrRemoveBibl"/>
 			<content>
 				<element xmlns="http://relaxng.org/ns/structure/1.0" name="bibl">
@@ -12130,34 +9740,13 @@ with the letter. It is not catalogued separately.</accMat>
 					</element>
 				</element>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="macro.form.noteParagraph">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="macro.form.noteParagraph">
 			<desc versionDate="2014-02-07" xml:lang="en">Defines the content allowed in a metadata form note.</desc>
 			<content>
 				<zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><choice><ref name="model.gLike"/><ref name="model.phrase"/><ref name="model.inter"/><ref name="model.divPart"/><ref name="model.global"/></choice></zeroOrMore>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.graphic" ident="data.biblType">
-					<content>
-						<ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.biblTypeCorrespondence"/>
-					</content>
-				</macroSpec><moduleSpec n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec n="CO" xml:id="DCO" ident="core"/><moduleSpec n="HD" xml:id="DHD" ident="header"/><moduleSpec n="ND" xml:id="DND" ident="namesdates"/><moduleSpec n="SA" xml:id="DSA" ident="linking"/><moduleSpec n="CE" xml:id="DCE" ident="certainty"/><moduleSpec n="FT" xml:id="DFTFF" ident="figures"/><moduleSpec n="DS" xml:id="DDS" ident="textstructure"/><moduleSpec n="PH" xml:id="DPH" ident="transcr"/><moduleSpec n="MS" xml:id="DMSD2" ident="msdescription"/><moduleSpec n="AI" xml:id="DAI" ident="analysis"/></schemaSpec>
+		</macroSpec><moduleSpec n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec n="CO" xml:id="DCO" ident="core"/><moduleSpec n="HD" xml:id="DHD" ident="header"/><moduleSpec n="ND" xml:id="DND" ident="namesdates"/><moduleSpec n="SA" xml:id="DSA" ident="linking"/><moduleSpec n="CE" xml:id="DCE" ident="certainty"/><moduleSpec n="FT" xml:id="DFTFF" ident="figures"/><moduleSpec n="DS" xml:id="DDS" ident="textstructure"/></schemaSpec>
 			
-			<div>
-				<head>TEI Extensions</head>
-				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="extension/tasks.xml" xml:lang="">
-	<head>taskDescr extension</head>
-	<table><row><cell>
-		Element <gi>taskDesc</gi></cell><cell>add</cell></row><row><cell>
-		Element <gi>task</gi></cell><cell>add</cell></row></table>
-</div>
-				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="extension/mei.xml" xml:lang="">
-	<head>MEI music extension</head>
-	<desc>Includes the MEI RNG and modifies the content model of notatedMusic to include MEI elements.</desc>
-	<table><row/><row><cell>
-		Module </cell><cell/></row><row><cell>
-		Element <gi>term</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>notatedMusic</gi></cell><cell>change</cell></row></table>
-</div>
-			</div>
 			<div>
 				<head>Edits</head>
 				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="edits/classes.att.xml" xml:lang="">
@@ -12341,16 +9930,16 @@ with the letter. It is not catalogued separately.</accMat>
 			</div>
 			
 			<div>
-				<head>Images</head>
-				<desc>Contains specifications for images</desc>
+				<head>Events</head>
+				<desc>Contains specifications for documents describing an event</desc>
 				<table><row><cell>
 		Element <gi>text</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>titleStmt</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>publicationStmt</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>sourceDesc</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>creation</gi></cell><cell>replace</cell></row><row><cell>
-		Element <gi>term</gi></cell><cell>change</cell></row></table>
+		Element <gi>creation</gi></cell><cell>replace</cell></row></table>
 			</div>
+			
 
 		</body>
 	</text>

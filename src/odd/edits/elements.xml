@@ -346,7 +346,7 @@
 			</elementSpec>
 
 			<elementSpec ident="listEvent" module="namesdates" mode="change">
-				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAnyAttOrAnyText"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="processListEvent"/>
 				<gloss versionDate="2014-01-26" xml:lang="en">list of events</gloss>
 				<gloss versionDate="2014-01-26" xml:lang="de">Ereignisliste</gloss>
 				<desc versionDate="2014-01-26" xml:lang="en"
@@ -564,7 +564,7 @@
 
 
 			<elementSpec ident="notesStmt" mode="replace" module="header">
-				<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithGrandChildContent"/>
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="processNotesStmt"/>
 				<content>
 					<rng:group>
 						<rng:ref name="macro.form.summaryNote"/>
@@ -958,8 +958,8 @@
 								</rng:optional>
 								<rng:ref name="macro.form.authors"/>
 								<rng:ref name="macro.form.titles.short"/>
-								<rng:ref name="edition"/>
 								<rng:ref name="macro.form.isbnIdno"/>
+								<rng:ref name="edition"/>
 								<rng:ref name="imprint"/>
 							</rng:element>
 						</rng:group>
@@ -967,9 +967,9 @@
 							<rng:element name="monogr">
 								<rng:ref name="macro.form.authors"/>
 								<rng:ref name="macro.form.titles.full"/>
+								<rng:ref name="macro.form.isbnIdno"/>
 								<rng:ref name="textLang"/>
 								<rng:ref name="edition"/>
-								<rng:ref name="macro.form.isbnIdno"/>
 								<rng:ref name="imprint"/>
 							</rng:element>
 						</rng:group>

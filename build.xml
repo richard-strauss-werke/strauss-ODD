@@ -5,7 +5,6 @@
 	
 	<property name="src.path.odd" location="src/odd"/>
 	<property name="src.path.xslt" location="src/xslt"/>
-	<property name="build.path" location="build"/>
 
 	<property name="name" value="correspondence"/>
 

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?> <?oxygen RNGSchema="p5odds.rnc"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
+	xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+	xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron"
+	xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title/>
+			</titleStmt>
+			<publicationStmt>
+				<p/>
+			</publicationStmt>
+			<sourceDesc>
+				<p/>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+	<text>
+		<body>
+			<schemaSpec ident="schema.all" xml:lang="en" start="TEI org performance person place ab" prefix="rsw_">
+				<desc>Encompassing RSW schema for published files.</desc>
+				<moduleRef key="tei"/>
+				<moduleRef key="core"/>
+				<moduleRef key="header"/>
+				<moduleRef key="namesdates"/>
+				<moduleRef key="linking"/>
+				<moduleRef key="certainty"/>
+				<moduleRef key="figures"/>
+				<moduleRef key="textstructure"/>
+				<moduleRef key="transcr"/>
+				<moduleRef key="msdescription"/>
+				<moduleRef key="analysis"/>
+				<moduleRef key="drama"/>
+				<moduleRef key="tagdocs" include="code gi"/>
+				
+				<specGrpRef target="#extension.mei"/>
+			</schemaSpec>
+			
+			<div>
+				<head>TEI Extensions</head>
+				<xi:include href="extension/mei.xml"/>
+			</div>
+				
+		</body>
+	</text>
+</TEI>

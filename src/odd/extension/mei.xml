@@ -14,6 +14,8 @@
 		<!-- change this path according to your folder structure -->
 		<moduleRef url="/current/strauss-ODD/strauss-ODD/dependencies/mei2vexflow-modified.rng" prefix="mei_"/>
 		
+		
+		<!-- TODO move to edits -->
 		<elementSpec ident="term" module="MEI.header" mode="change" ns="http://www.music-encoding.org/ns/mei">
 			<content>
 				<rng:optional>

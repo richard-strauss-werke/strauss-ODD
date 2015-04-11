@@ -7522,7 +7522,7 @@ means of a <gi>glyph</gi> or <gi>char</gi> element referenced here as <code>#sym
 					</egXML>
 				</exemplum><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERSbp">13.3.1. </ref>
-  </listRef></elementSpec><elementSpec rend="change" module="namesdates" ident="listEvent"><equiv rend="replace" filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithAnyAttOrAnyText"/><gloss rend="replace" versionDate="2014-01-26" xml:lang="en">list of events</gloss><gloss rend="replace" versionDate="2014-01-26" xml:lang="de">Ereignisliste</gloss><desc rend="replace" versionDate="2014-01-26" xml:lang="en">contains a list of descriptions, each of which provides information
+  </listRef></elementSpec><elementSpec rend="change" module="namesdates" ident="listEvent"><equiv rend="replace" filter="rsw.xsl" mimeType="text/xsl" name="processListEvent"/><gloss rend="replace" versionDate="2014-01-26" xml:lang="en">list of events</gloss><gloss rend="replace" versionDate="2014-01-26" xml:lang="de">Ereignisliste</gloss><desc rend="replace" versionDate="2014-01-26" xml:lang="en">contains a list of descriptions, each of which provides information
                 			about an identifiable event. </desc><desc rend="replace" versionDate="2014-01-26" xml:lang="de">Enthält eine Liste von Beschreibungen, von denen jede Informationen über ein identifizierbares Ereignis enthält.</desc><classes/><content><zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><ref name="event"/></zeroOrMore></content><attList/><exemplum versionDate="2014-01-26" xml:lang="de" type="form">
 					<egXML xmlns="http://www.tei-c.org/ns/Examples">
 						<listEvent>
@@ -8527,7 +8527,7 @@ purposes.</p>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.org" ident="data.changeEventType">
 			<content>
-				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>unknown</value><a:documentation>unbekannte Kategorie</a:documentation><value>T</value><a:documentation>Treffen</a:documentation><value>S</value><a:documentation>schöpf. Tätigkeit</a:documentation><value>M</value><a:documentation>häusl. Musizieren</a:documentation><value>P</value><a:documentation>Probe</a:documentation><value>D</value><a:documentation>öff. Dirigat</a:documentation><value>A</value><a:documentation>Aufführungsbesuch</a:documentation><value>B</value><a:documentation>Geschäftstätigkeit</a:documentation><value>R</value><a:documentation>Reise</a:documentation><value>other</value><a:documentation>andere Kategorie</a:documentation></choice>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>unknown</value><a:documentation>unbekannte Kategorie</a:documentation><value>T</value><a:documentation>Treffen</a:documentation><value>S</value><a:documentation>schöpf. Tätigkeit</a:documentation><value>M</value><a:documentation>häusl. Musizieren</a:documentation><value>P</value><a:documentation>Probe</a:documentation><value>B</value><a:documentation>Geschäftstätigkeit</a:documentation><value>R</value><a:documentation>Reise</a:documentation><value>other</value><a:documentation>andere Kategorie</a:documentation></choice>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.org" ident="data.orgNameOrchestraExtent">
 			<content>

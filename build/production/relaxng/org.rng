@@ -3,11 +3,11 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2015-04-06T20:52:50Z. 
+Schema generated from ODD source 2015-04-11T00:30:02Z. 
 Edition: Version 2.7.0. Last updated on
 	16th September 2014, revision 13036
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
- Person 
+ Organizations: orchestras, publishing houses, families, etc. 
 --><!---->
    <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron"
            prefix="tei"
@@ -137,7 +137,7 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">bei</a:documentation>
       </choice>
    </define>
-   <define name="rsw_data.supplPersNameType">
+   <define name="rsw_data.supplOrgNameType">
       <choice>
          <value>unknown</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">unbekannte Art</a:documentation>
@@ -147,14 +147,8 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">früherer Name</a:documentation>
          <value>later</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">späterer Name</a:documentation>
-         <value>birth</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Geburtsname</a:documentation>
          <value>real</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">wirklicher Name</a:documentation>
-         <value>pseud</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Pseudonym</a:documentation>
-         <value>nickname</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Kosename</a:documentation>
          <value>variant</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Variante</a:documentation>
          <value>other</value>
@@ -198,14 +192,6 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
          </element>
       </oneOrMore>
    </define>
-   <define name="rsw_macro.form.regularPersName">
-      <element name="persName">
-         <attribute name="type">
-            <value>reg</value>
-         </attribute>
-         <text/>
-      </element>
-   </define>
    <define name="rsw_macro.form.optionalDating">
       <optional>
          <attribute name="when">
@@ -243,10 +229,10 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
          </attribute>
       </optional>
    </define>
-   <define name="rsw_macro.form.supplementaryPersName">
-      <element name="persName">
+   <define name="rsw_macro.form.supplementaryOrgName">
+      <element name="orgName">
          <attribute name="type">
-            <ref name="rsw_data.supplPersNameType"/>
+            <ref name="rsw_data.supplOrgNameType"/>
          </attribute>
          <ref name="rsw_macro.form.optionalDating"/>
          <text/>
@@ -308,24 +294,6 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
             <value>details</value>
          </attribute>
          <ref name="rsw_macro.form.noteParagraph"/>
-      </element>
-   </define>
-   <define name="rsw_macro.form.figuresNote">
-      <element name="note">
-         <attribute name="type">
-            <value>figures</value>
-         </attribute>
-         <zeroOrMore>
-            <element name="figure">
-               <optional>
-                  <attribute name="place">
-                     <value>top</value>
-                  </attribute>
-               </optional>
-               <ref name="rsw_graphic"/>
-               <ref name="rsw_desc"/>
-            </element>
-         </zeroOrMore>
       </element>
    </define>
    <define name="rsw_macro.form.bibl">
@@ -706,7 +674,7 @@ Empfohlene Werte sind: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6] o
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="schema.person-att.typed-subtypeTyped-constraint-1">
+            id="schema.org-att.typed-subtypeTyped-constraint-1">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -862,40 +830,28 @@ Empfohlene Werte sind: 1] label; 2] data</a:documentation>
    </define>
    <define name="rsw_model.emphLike">
       <choice>
-         <ref name="rsw_gloss"/>
          <ref name="rsw_title"/>
       </choice>
    </define>
    <define name="rsw_model.emphLike_alternation">
       <choice>
-         <ref name="rsw_gloss"/>
          <ref name="rsw_title"/>
       </choice>
    </define>
    <define name="rsw_model.emphLike_sequence">
-      <ref name="rsw_gloss"/>
       <ref name="rsw_title"/>
    </define>
    <define name="rsw_model.emphLike_sequenceOptional">
-      <optional>
-         <ref name="rsw_gloss"/>
-      </optional>
       <optional>
          <ref name="rsw_title"/>
       </optional>
    </define>
    <define name="rsw_model.emphLike_sequenceOptionalRepeatable">
       <zeroOrMore>
-         <ref name="rsw_gloss"/>
-      </zeroOrMore>
-      <zeroOrMore>
          <ref name="rsw_title"/>
       </zeroOrMore>
    </define>
    <define name="rsw_model.emphLike_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="rsw_gloss"/>
-      </oneOrMore>
       <oneOrMore>
          <ref name="rsw_title"/>
       </oneOrMore>
@@ -1932,16 +1888,6 @@ Empfohlene Werte sind: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] foreig
          <empty/>
       </element>
    </define>
-   <define name="rsw_gloss">
-      <element name="gloss">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">identifies a phrase or word used to provide a gloss or definition for some other word or phrase. [3.3.4.  22.4.1. ]</a:documentation>
-         <ref name="rsw_macro.phraseSeq"/>
-         <ref name="rsw_att.global.attributes"/>
-         <ref name="rsw_att.typed.attributes"/>
-         <ref name="rsw_att.pointing.attributes"/>
-         <empty/>
-      </element>
-   </define>
    <define name="rsw_sic">
       <element name="sic">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Latin for thus or so
@@ -2214,7 +2160,7 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference) defines a reference to another location, possibly modified by additional text or comment. [3.6.  16.1. ]</a:documentation>
          <ref name="rsw_macro.paraContent"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="schema.person-ref-refAtts-constraint-1">
+                  id="schema.org-ref-refAtts-constraint-1">
             <rule context="tei:ref">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
@@ -2504,7 +2450,7 @@ Beispielwerte sind etwa: 1] main; 2] sub(subordinate) ; 3] alt(alternate) ; 4] s
             </zeroOrMore>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="schema.person-lg-atleast1oflggapl-constraint-2">
+                  id="schema.org-lg-atleast1oflggapl-constraint-2">
             <rule context="tei:lg">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -2708,28 +2654,6 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
          <empty/>
       </element>
    </define>
-   <define name="rsw_affiliation">
-      <element name="affiliation">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Zugehörigkeit) contains an informal description of a person's present or past affiliation with some organization, for example an employer or sponsor. [15.2.2. ]</a:documentation>
-         <ref name="rsw_macro.form.date"/>
-         <ref name="rsw_orgName"/>
-         <ref name="rsw_gloss"/>
-      </element>
-   </define>
-   <define name="rsw_birth">
-      <element name="birth">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Geburt) Enthält Angaben zu Geburtsdatum und -ort einer Person. [15.2.2. ]</a:documentation>
-         <ref name="rsw_macro.form.date"/>
-         <ref name="rsw_placeName"/>
-      </element>
-   </define>
-   <define name="rsw_death">
-      <element name="death">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Tod) Enthält Angaben zu Todesdatum und -ort einer Person. [15.2.2. ]</a:documentation>
-         <ref name="rsw_macro.form.date"/>
-         <ref name="rsw_placeName"/>
-      </element>
-   </define>
    <define name="rsw_event">
       <element name="event">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ereignis) Enthält Daten, die sich auf ein signifikantes Ereignis im Zusammenhang mit einer Person, eines Orts oder einer Organisation beziehen. [13.3.1. ]</a:documentation>
@@ -2737,17 +2661,6 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
          <oneOrMore>
             <ref name="rsw_p"/>
          </oneOrMore>
-      </element>
-   </define>
-   <define name="rsw_faith">
-      <element name="faith">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the faith, religion, or belief set of a person. [13.3.2.1. ]</a:documentation>
-         <ref name="rsw_macro.phraseSeq"/>
-         <ref name="rsw_att.global.attributes"/>
-         <ref name="rsw_att.editLike.attributes"/>
-         <ref name="rsw_att.datable.attributes"/>
-         <ref name="rsw_att.canonical.attributes"/>
-         <empty/>
       </element>
    </define>
    <define name="rsw_listEvent">
@@ -2758,32 +2671,9 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
          </zeroOrMore>
       </element>
    </define>
-   <define name="rsw_occupation">
-      <element name="occupation">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains an informal description of a person's trade, profession or occupation. [15.2.2. ]</a:documentation>
-         <ref name="rsw_macro.phraseSeq"/>
-         <ref name="rsw_att.global.attributes"/>
-         <ref name="rsw_att.datable.attributes"/>
-         <ref name="rsw_att.editLike.attributes"/>
-         <ref name="rsw_att.naming.attributes"/>
-         <optional>
-            <attribute name="scheme">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the classification system or taxonomy in use, for example by supplying the identifier of a taxonomy element, or pointing to some other resource.</a:documentation>
-               <ref name="rsw_data.pointer"/>
-            </attribute>
-         </optional>
-         <optional>
-            <attribute name="code">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">identifies an occupation code defined within the classification system or taxonomy defined by the scheme attribute.</a:documentation>
-               <ref name="rsw_data.pointer"/>
-            </attribute>
-         </optional>
-         <empty/>
-      </element>
-   </define>
-   <define name="rsw_person">
-      <element name="person">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Person) gibt Informationen über ein identifizierbares Individuum, z.B. einen Teilnehmer an einer sprachlichen Interaktion oder eine Person, auf die in einer historischen Quelle verwiesen wird. [13.3.2. ]</a:documentation>
+   <define name="rsw_org">
+      <element name="org">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(organization) provides information about an identifiable organization such as a business, a tribe, or any other grouping of people. [13.2.2. ]</a:documentation>
          <ref name="rsw_macro.form.summaryNote"/>
          <ref name="rsw_macro.form.commentaryNote"/>
          <ref name="rsw_macro.form.discussionNote"/>
@@ -2794,67 +2684,38 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
                <ref name="rsw_macro.form.rsqvIdno"/>
             </choice>
          </oneOrMore>
-         <ref name="rsw_macro.form.regularPersName"/>
-         <oneOrMore>
-            <ref name="rsw_macro.form.supplementaryPersName"/>
-         </oneOrMore>
-         <ref name="rsw_sex"/>
-         <ref name="rsw_birth"/>
-         <ref name="rsw_death"/>
-         <oneOrMore>
-            <ref name="rsw_occupation"/>
-         </oneOrMore>
-         <oneOrMore>
-            <ref name="rsw_residence"/>
-         </oneOrMore>
-         <oneOrMore>
-            <ref name="rsw_affiliation"/>
-         </oneOrMore>
-         <oneOrMore>
-            <ref name="rsw_state"/>
-         </oneOrMore>
-         <oneOrMore>
-            <ref name="rsw_faith"/>
-         </oneOrMore>
-         <ref name="rsw_macro.form.detailsNote"/>
-         <ref name="rsw_listEvent"/>
-         <ref name="rsw_listBibl"/>
-         <ref name="rsw_macro.form.figuresNote"/>
+         <group>
+            <element name="orgName">
+               <attribute name="type">
+                  <value>reg</value>
+               </attribute>
+               <text/>
+            </element>
+            <oneOrMore>
+               <ref name="rsw_macro.form.supplementaryOrgName"/>
+            </oneOrMore>
+            <ref name="rsw_desc"/>
+            <oneOrMore>
+               <ref name="rsw_placeName"/>
+            </oneOrMore>
+            <oneOrMore>
+               <ref name="rsw_state"/>
+            </oneOrMore>
+            <ref name="rsw_macro.form.detailsNote"/>
+            <ref name="rsw_listEvent"/>
+            <ref name="rsw_listBibl"/>
+         </group>
          <ref name="rsw_att.global.attributes"/>
+         <ref name="rsw_att.typed.attributes"/>
          <ref name="rsw_att.editLike.attributes"/>
-         <empty/>
-      </element>
-   </define>
-   <define name="rsw_residence">
-      <element name="residence">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes a person's present or past places of residence. [15.2.2. ]</a:documentation>
-         <ref name="rsw_macro.phraseSeq"/>
-         <ref name="rsw_att.global.attributes"/>
-         <ref name="rsw_att.datable.attributes"/>
-         <ref name="rsw_att.editLike.attributes"/>
-         <ref name="rsw_att.naming.attributes"/>
-         <empty/>
-      </element>
-   </define>
-   <define name="rsw_sex">
-      <element name="sex">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Geschlecht) bestimmt das Geschlecht einer Person. [13.3.2.1. ]</a:documentation>
-         <empty/>
          <optional>
-            <attribute name="value">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">bestimmt das Geschlecht in codierter Form</a:documentation>
-               <choice>
-                  <value>M</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(männlich) </a:documentation>
-                  <value>F</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(weiblich) </a:documentation>
-                  <value>O</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(sonstiges) </a:documentation>
-                  <value>N</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(keines) </a:documentation>
-                  <value>U</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(unbekannt) </a:documentation>
-               </choice>
+            <attribute name="role">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies a primary role or classification for the organization.</a:documentation>
+               <list>
+                  <oneOrMore>
+                     <ref name="rsw_data.word"/>
+                  </oneOrMore>
+               </list>
             </attribute>
          </optional>
          <empty/>
@@ -3082,7 +2943,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <start>
       <choice>
-         <ref name="rsw_person"/>
+         <ref name="rsw_org"/>
       </choice>
    </start>
 </grammar>

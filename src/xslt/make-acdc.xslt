@@ -9,13 +9,6 @@
 
 	<xsl:variable name="common" select="document('../odd/common.xml')"/>
 
-	<xsl:variable name="xmlDocsUrl">
-		<!-- use prefix instead of full url -->
-		<xsl:value-of select="'d:'"/>
-		<!--		<xsl:value-of select="$common/id('xmlDocsUrl')/@target"/>-->
-	</xsl:variable>
-	
-
 	<xsl:output method="xml" indent="yes" encoding="utf-8"/>
 
 	<xsl:namespace-alias stylesheet-prefix="XSL" result-prefix="xsl"/>
@@ -65,15 +58,23 @@
 				else $docIDParam
 			"/>
 
+			<XSL:variable name="rswDocumentPrefix">
+				<xsl:value-of select="$common/id('rswDocumentPrefix')"/>
+			</XSL:variable>
+			
+			<XSL:variable name="rswStaffPrefix">
+				<xsl:value-of select="$common/id('rswStaffPrefix')"/>
+			</XSL:variable>
+			
 			<!-- content from the ODD to be added to the processed TEI files: -->
 			<XSL:variable name="guidelinesTitleRef">
-				<xsl:copy-of select="$common/id('guidelinesTitleRef')/node()" copy-namespaces="no"/>
+				<xsl:copy-of copy-namespaces="no" select="$common/id('guidelinesTitleRef')/node()"/>
 			</XSL:variable>
 			<XSL:variable name="specificFeaturesTitle">
-				<xsl:copy-of select="$common/id('specificFeaturesTitle')/node()" copy-namespaces="no"/>
+				<xsl:copy-of copy-namespaces="no" select="$common/id('specificFeaturesTitle')/node()"/>
 			</XSL:variable>
 			<XSL:variable name="funder">
-				<xsl:copy-of select="$common//funder" copy-namespaces="no"
+				<xsl:copy-of copy-namespaces="no" select="$common//funder"
 					extension-element-prefixes="#default"/>
 			</XSL:variable>
 			<XSL:variable name="contributorsResp">
@@ -133,7 +134,7 @@
 
 
 			<XSL:template match="@*|node()|comment()|processing-instruction()|text()" priority="-2">
-				<XSL:copy>
+				<XSL:copy copy-namespaces="no">
 					<XSL:apply-templates select="@*|node()|comment()|processing-instruction()|text()"/>
 				</XSL:copy>
 			</XSL:template>
@@ -142,7 +143,7 @@
 
 			<!-- write document id to root xml:id -->
 			<XSL:template match="/*" priority="-1">
-				<XSL:copy>
+				<XSL:copy copy-namespaces="no">
 					<XSL:attribute name="xml:id">
 						<XSL:value-of select="$docID"/>
 					</XSL:attribute>
@@ -198,9 +199,15 @@
 			<!-- convert all keys to refs -->
 			<XSL:template match="@key">
 				<XSL:attribute name="ref">
-					<xsl:value-of select="$xmlDocsUrl"/>
-					<XSL:value-of select="."/>
+					<XSL:value-of select="concat($rswDocumentPrefix, ':', .)"/>
 				</XSL:attribute>
+			</XSL:template>
+			
+			<!-- add prefix to scribe -->
+			<XSL:template match="@scribe">
+				<XSL:copy copy-namespaces="no">
+					<XSL:value-of select="concat($rswDocumentPrefix, ':', .)"/>
+				</XSL:copy>
 			</XSL:template>
 
 			<!-- clean up -->

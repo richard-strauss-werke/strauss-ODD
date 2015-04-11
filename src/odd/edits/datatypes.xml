@@ -152,10 +152,10 @@
 					<a:documentation>häusl. Musizieren</a:documentation>
 					<rng:value>P</rng:value>
 					<a:documentation>Probe</a:documentation>
-					<rng:value>D</rng:value>
-					<a:documentation>öff. Dirigat</a:documentation>
-					<rng:value>A</rng:value>
-					<a:documentation>Aufführungsbesuch</a:documentation>
+					<!--<rng:value>D</rng:value>
+					<a:documentation>öff. Dirigat</a:documentation>-->
+					<!--<rng:value>A</rng:value>
+					<a:documentation>Aufführungsbesuch</a:documentation>-->
 					<rng:value>B</rng:value>
 					<a:documentation>Geschäftstätigkeit</a:documentation>
 					<rng:value>R</rng:value>

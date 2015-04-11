@@ -11,6 +11,8 @@
    <xsl:key name="who" match="//@who" use="."/>
    <xsl:variable name="docID"
                  select="     if (base-uri()) then     replace(base-uri(), '^(.*/)?(.*)\..*$','$2')     else $docIDParam    "/>
+   <xsl:variable name="rswDocumentPrefix">d</xsl:variable>
+   <xsl:variable name="rswStaffPrefix">s</xsl:variable>
    <xsl:variable name="guidelinesTitleRef">Die vorliegende Ausgabe folgt den <ref target="http://richard-strauss-ausgabe.de/guidelines/xml">Editionsrichtlinien der Kritischen Ausgabe der Werke von Richard Strauss</ref>.</xsl:variable>
    <xsl:variable name="specificFeaturesTitle">Besonderheiten der Edition des vorliegenden Dokuments:</xsl:variable>
    <xsl:variable name="funder">
@@ -36,7 +38,9 @@
 			</xsl:variable>
    <xsl:variable name="seriesStmt">
       <seriesStmt>
-				     <title>Richard Strauss: Werke. Kritische Ausgabe. Digitale Dokumentensammlung</title>
+				     <title type="main">Richard Strauss: Werke</title>
+				     <title type="sub">Kritische Ausgabe</title>
+				     <title type="sub">Digitale Dokumentensammlung</title>
 			   </seriesStmt>
    </xsl:variable>
    <xsl:variable name="edition"/>
@@ -107,13 +111,13 @@
    </xsl:variable>
    <xsl:template match="@*|node()|comment()|processing-instruction()|text()"
                  priority="-2">
-      <xsl:copy>
+      <xsl:copy copy-namespaces="no">
          <xsl:apply-templates select="@*|node()|comment()|processing-instruction()|text()"/>
       </xsl:copy>
    </xsl:template>
    <xsl:template match="/processing-instruction()" priority="100"/>
    <xsl:template match="/*" priority="-1">
-      <xsl:copy>
+      <xsl:copy copy-namespaces="no">
          <xsl:attribute name="xml:id">
             <xsl:value-of select="$docID"/>
          </xsl:attribute>
@@ -169,7 +173,7 @@
       <xsl:call-template name="keepOnlyWithAttOrContent"/>
    </xsl:template>
    <xsl:template match="listEvent">
-      <xsl:call-template name="keepOnlyWithAnyAttOrAnyText"/>
+      <xsl:call-template name="processListEvent"/>
    </xsl:template>
    <xsl:template match="occupation">
       <xsl:call-template name="keepOnlyWithAttOrContent"/>
@@ -229,8 +233,14 @@
       <xsl:call-template name="transformOrRemoveBibl"/>
    </xsl:template>
    <xsl:template match="@key">
-      <xsl:attribute name="ref">d:<xsl:value-of select="."/>
+      <xsl:attribute name="ref">
+         <xsl:value-of select="concat($rswDocumentPrefix, ':', .)"/>
       </xsl:attribute>
+   </xsl:template>
+   <xsl:template match="@scribe">
+      <xsl:copy copy-namespaces="no">
+         <xsl:value-of select="concat($rswDocumentPrefix, ':', .)"/>
+      </xsl:copy>
    </xsl:template>
    <xsl:template match="change/text()|div/text()"/>
 </xsl:stylesheet>

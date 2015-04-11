@@ -789,12 +789,14 @@
 					</rng:attribute>
 					<rng:ref name="macro.paraContent"/>
 				</rng:element>
-				<rng:element name="title">
-					<rng:attribute name="type">
-						<rng:value>sub</rng:value>
-					</rng:attribute>
-					<rng:ref name="macro.paraContent"/>
-				</rng:element>
+				<rng:oneOrMore>
+					<rng:element name="title">
+						<rng:attribute name="type">
+							<rng:value>sub</rng:value>
+						</rng:attribute>
+						<rng:ref name="macro.paraContent"/>
+					</rng:element>
+				</rng:oneOrMore>
 			</content>
 		</macroSpec>
 
@@ -808,12 +810,14 @@
 					</rng:attribute>
 					<rng:ref name="macro.paraContent"/>
 				</rng:element>
-				<rng:element name="title">
-					<rng:attribute name="type">
-						<rng:value>sub</rng:value>
-					</rng:attribute>
-					<rng:ref name="macro.paraContent"/>
-				</rng:element>
+				<rng:oneOrMore>
+					<rng:element name="title">
+						<rng:attribute name="type">
+							<rng:value>sub</rng:value>
+						</rng:attribute>
+						<rng:ref name="macro.paraContent"/>
+					</rng:element>
+				</rng:oneOrMore>
 			</content>
 		</macroSpec>
 

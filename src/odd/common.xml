@@ -33,7 +33,9 @@
 			</publicationStmt>
 			<!-- template for the the final version of the TEI files:-->
 			<seriesStmt>
-				<title>Richard Strauss: Werke. Kritische Ausgabe. Digitale Dokumentensammlung</title>
+				<title type="main">Richard Strauss: Werke</title>
+				<title type="sub">Kritische Ausgabe</title>
+				<title type="sub">Digitale Dokumentensammlung</title>
 			</seriesStmt>
 			<sourceDesc>
 				<p>based on the TEI P5 specifications at <ref target="http://www.tei-c.org/release/xml/tei/odd/p5subset.xml">http://www.tei-c.org/release/xml/tei/odd/p5subset.xml</ref>, this ODD integrates the TEI-C's <ref target="http://www.tei-c.org/release/xml/tei/custom/odd/tei_xinclude.odd">XInclude ODD</ref> and draws on specifications in <ref target="https://github.com/Edirom/WeGA-ODD">Carl-Maria-von-Weber-Gesamtausgabe ODDs</ref> by Peter Stadler and Anna Maria Komprecht and (<ref target="https://github.com/TEI-Music-SIG/tei-mei/">tei-mei</ref>) by Raffaele Viglianti.</p>
@@ -60,8 +62,8 @@
 			<div xml:id="introduction">
 				<head>Introduction</head>
 				<p>...</p>
-				<p>The documents can be accessed at <ref target="http://richard-strauss-ausgabe.de/documents/view/" xml:id="xmlDocsUrl">http://richard-strauss-ausgabe.de/xml/</ref>, followed by the identification number.</p>
-				<p>The contributors involved in the preparation of a document are listed with their corresponding <att>xml:id</att> in the section <title xml:id="contributorsResp">Vorbereitung der digitalen Edition</title>.</p>
+				<p>The documents can be accessed at <ref target="http://richard-strauss-ausgabe.de/documents/view/" xml:id="xmlDocsUrl">http://richard-strauss-ausgabe.de/xml/</ref>, followed by the document identifier; when documents are referenced from within a document, the document identifier is prefixed with <code xml:id="rswDocumentPrefix">d</code>.</p>
+				<p>The contributors involved in the preparation of a document are listed in the section <title xml:id="contributorsResp">Vorbereitung der digitalen Edition</title>; references to staff members in the XML documents have the prefix <code xml:id="rswStaffPrefix">s</code>.</p>
 				<p>All documents contain the following statements:</p>
 				<list>
 					<item xml:id="guidelinesTitleRef">Die vorliegende Ausgabe folgt den <ref target="http://richard-strauss-ausgabe.de/guidelines/xml">Editionsrichtlinien der Kritischen Ausgabe der Werke von Richard Strauss</ref>.</item>

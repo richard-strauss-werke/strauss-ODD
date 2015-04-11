@@ -1,8 +1,5 @@
 <xsl:stylesheet xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:rsw="http://richard-strauss-ausgabe.de/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:functx="http://www.functx.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="rsw xs tei functx">
 
-	<!-- xslt version of the original xquery script, adjusted to tei-c usage; alpha -->
-
-
 	<!-- overridden in import -->
 	<xsl:variable name="docID" select="/null"/>
 	<xsl:variable name="staff" select="/null"/>
@@ -16,12 +13,43 @@
 	<xsl:variable name="changeTypes" select="/null"/>
 	<xsl:variable name="sexes" select="/null"/>
 	<xsl:variable name="keywords" select="/null"/>
-
+	<xsl:variable name="rswDocumentPrefix"/>
+	<xsl:variable name="rswStaffPrefix"/>
+	
 
 	<!-- named templates -->
 
+	<xsl:template name="processNotesStmt">
+		<xsl:variable name="content">
+			<xsl:apply-templates select="node()"/>
+		</xsl:variable>
+		<xsl:if test="normalize-space($content)">
+			<xsl:copy copy-namespaces="no">
+				<xsl:apply-templates select="@*"/>
+				<xsl:copy-of select="$content"/>
+			</xsl:copy>
+		</xsl:if>
+	</xsl:template>
+
+	<!-- In the RSW 'production' TEI files for organizations, listEvent is allowed as a child of org, which is not valid according to TEI 2.8. ListEvent might be added in a future release of the TEI guidelines, see http://sourceforge.net/p/tei/feature-requests/366/ - in this stylesheet, listEvent gets wrapped in a note element if there's an ancestor org, so the resulting documents are valid against 2.8.  -->
+	<xsl:template name="processListEvent">
+		<xsl:variable name="content">
+			<xsl:call-template name="keepOnlyWithAnyAttOrAnyText"/>
+		</xsl:variable>
+		<xsl:choose>
+			<xsl:when test="$content and ancestor::org">
+				<note>
+					<xsl:copy-of copy-namespaces="no" select="$content"/>
+				</note>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:copy-of copy-namespaces="no" select="$content"/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+
 	<xsl:template name="perOrgRoot">
-		<xsl:copy>
+		<xsl:copy copy-namespaces="no">
 			<xsl:attribute name="xml:id">
 				<xsl:value-of select="$docID"/>
 			</xsl:attribute>
@@ -32,7 +60,7 @@
 
 	<xsl:template name="keepOnlyWithAnyText">
 		<xsl:if test="normalize-space()">
-			<xsl:copy>
+			<xsl:copy copy-namespaces="no">
 				<xsl:apply-templates select="@*|node()"/>
 			</xsl:copy>
 		</xsl:if>
@@ -40,7 +68,7 @@
 
 	<xsl:template name="keepOnlyWithAnyAttOrAnyText">
 		<xsl:if test=".//@* or normalize-space()">
-			<xsl:copy>
+			<xsl:copy copy-namespaces="no">
 				<xsl:apply-templates select="@*|node()"/>
 			</xsl:copy>
 		</xsl:if>
@@ -48,7 +76,7 @@
 
 	<xsl:template name="keepOnlyWithContent">
 		<xsl:if test="node()">
-			<xsl:copy>
+			<xsl:copy copy-namespaces="no">
 				<xsl:apply-templates select="@*|node()"/>
 			</xsl:copy>
 		</xsl:if>
@@ -56,7 +84,7 @@
 
 	<xsl:template name="keepOnlyWithAtt">
 		<xsl:if test="@*">
-			<xsl:copy>
+			<xsl:copy copy-namespaces="no">
 				<xsl:apply-templates select="@*|node()"/>
 			</xsl:copy>
 		</xsl:if>
@@ -64,7 +92,7 @@
 
 	<xsl:template name="keepOnlyWithAttOrContent">
 		<xsl:if test="@*|node()">
-			<xsl:copy>
+			<xsl:copy copy-namespaces="no">
 				<xsl:apply-templates select="@*|node()"/>
 			</xsl:copy>
 		</xsl:if>
@@ -72,7 +100,7 @@
 
 	<xsl:template name="keepOnlyWithAttOrChildContent">
 		<xsl:if test="@*|*/node()">
-			<xsl:copy>
+			<xsl:copy copy-namespaces="no">
 				<xsl:apply-templates select="@*|node()"/>
 			</xsl:copy>
 		</xsl:if>
@@ -80,7 +108,7 @@
 
 	<xsl:template name="keepOnlyWithChildAttOrChildContent">
 		<xsl:if test="*/@*|*/node()">
-			<xsl:copy>
+			<xsl:copy copy-namespaces="no">
 				<xsl:apply-templates select="@*|node()"/>
 			</xsl:copy>
 		</xsl:if>
@@ -88,7 +116,7 @@
 
 	<xsl:template name="keepOnlyWithChildAttOrAnyText">
 		<xsl:if test="./*/@* or normalize-space()">
-			<xsl:copy>
+			<xsl:copy copy-namespaces="no">
 				<xsl:apply-templates select="@*|node()"/>
 			</xsl:copy>
 		</xsl:if>
@@ -96,7 +124,7 @@
 
 	<xsl:template name="keepOnlyWithGrandChildContent">
 		<xsl:if test="*/*/node()">
-			<xsl:copy>
+			<xsl:copy copy-namespaces="no">
 				<xsl:apply-templates select="@*|node()"/>
 			</xsl:copy>
 		</xsl:if>
@@ -111,7 +139,7 @@
 
 	<xsl:template name="expandOrRemoveDate">
 		<xsl:if test="@*|node()">
-			<xsl:copy>
+			<xsl:copy copy-namespaces="no">
 				<xsl:apply-templates select="@*"/>
 				<xsl:value-of select="rsw:formatDateNode(.)"/>
 			</xsl:copy>
@@ -120,7 +148,7 @@
 
 	<xsl:template name="expandOrRemoveOrigPlace">
 		<xsl:if test="node()">
-			<xsl:copy>
+			<xsl:copy copy-namespaces="no">
 				<xsl:apply-templates select="@*|node()"/>
 				<xsl:value-of select="rsw:certString(.)"/>
 			</xsl:copy>
@@ -129,7 +157,7 @@
 
 	<xsl:template name="onlyWithContentAddCert">
 		<xsl:if test="node()">
-			<xsl:copy>
+			<xsl:copy copy-namespaces="no">
 				<xsl:apply-templates select="@*|node()"/>
 				<xsl:if test="parent::change">
 					<xsl:value-of select="rsw:certString(.)"/>
@@ -140,23 +168,23 @@
 
 	<xsl:template name="expandOrRemoveSexElement">
 		<xsl:if test="@*">
-			<xsl:copy-of select="$sexes/*[@value=current()/@value]"/>
+			<xsl:copy-of copy-namespaces="no" select="$sexes/*[@value=current()/@value]"/>
 		</xsl:if>
 	</xsl:template>
 
 	<xsl:template name="processImprint">
-		<xsl:copy>
+		<xsl:copy copy-namespaces="no">
 			<xsl:apply-templates select="@*"/>
 			<xsl:for-each select="*">
 					<xsl:choose>
 						<xsl:when test="local-name()='date'">
-							<xsl:copy>
+							<xsl:copy copy-namespaces="no">
 								<xsl:apply-templates select="@*"/>
 								<xsl:value-of select="rsw:formatDateNode(.)"/>
 							</xsl:copy>
 						</xsl:when>
 						<xsl:when test="node()">
-							<xsl:copy>
+							<xsl:copy copy-namespaces="no">
 								<xsl:apply-templates select="@*|node()"/>
 							</xsl:copy>
 						</xsl:when>
@@ -168,8 +196,8 @@
 
 
 	<xsl:template name="addTermRef">
-		<xsl:copy>
-			<xsl:copy-of select="$keywords//text()[.=current()]/../@ref"/>
+		<xsl:copy copy-namespaces="no">
+			<xsl:copy-of copy-namespaces="no" select="$keywords//text()[.=current()]/../@ref"/>
 			<xsl:value-of select="."/>
 		</xsl:copy>
 	</xsl:template>
@@ -186,7 +214,7 @@
 					</xsl:for-each>
 					<xsl:for-each select="p">
 						<xsl:if test="normalize-space()">
-							<xsl:copy>
+							<xsl:copy copy-namespaces="no">
 								<!-- rs or p -->
 								<xsl:apply-templates select="@*|node()"/>
 							</xsl:copy>
@@ -199,7 +227,7 @@
 
 	<xsl:template name="transformOrRemoveBibl">
 		<xsl:if test=".//@* or normalize-space()">
-			<xsl:copy>
+			<xsl:copy copy-namespaces="no">
 				<xsl:apply-templates select="@*|node()[normalize-space()]"/>
 			</xsl:copy>
 		</xsl:if>
@@ -209,7 +237,7 @@
 
 	<!-- TODO dies noch ins ODD einbetten, eleganter machen + noch verbinden mit erstem Paragraphen! -->
 	<xsl:template name="processRevisionDescChange">
-		<xsl:copy>
+		<xsl:copy copy-namespaces="no">
 			<xsl:apply-templates select="@*"/>
 
 			<xsl:choose>
@@ -233,7 +261,7 @@
 		</xsl:copy>
 	</xsl:template>
 
-	<!-- temporary; TODO change encoding practice -->
+	<!-- temporary; TODO change encoding practice + add settlement keys, country etc -->
 	<xsl:template name="transformOrRemoveRepository">
 		<xsl:if test="normalize-space()">
 			<xsl:variable name="el" select="."/>
@@ -248,14 +276,16 @@
 					</xsl:element>
 				</xsl:matching-substring>
 				<xsl:non-matching-substring>
-					<xsl:copy-of select="$el"/>
+					<xsl:element name="repository">
+						<xsl:apply-templates select="$el/@*|$el/node()"/>
+					</xsl:element>
 				</xsl:non-matching-substring>
 			</xsl:analyze-string>
 		</xsl:if>
 	</xsl:template>
 
 	<xsl:template name="expandTitleStmtMs">
-		<xsl:copy>
+		<xsl:copy copy-namespaces="no">
 			<title>
 				<xsl:for-each select="//change[parent::listChange]">
 					<xsl:if test="position() ne 1">
@@ -272,7 +302,7 @@
 				</author>
 			</xsl:for-each>
 			<xsl:apply-templates select="respStmt"/>
-			<xsl:copy-of select="$funder"/>
+			<xsl:copy-of copy-namespaces="no" select="$funder"/>
 		</xsl:copy>
 	</xsl:template>
 
@@ -291,7 +321,7 @@
 				<xsl:call-template name="processCreationChange"/>
 			</xsl:for-each>
 		</xsl:variable>
-		<xsl:copy>
+		<xsl:copy copy-namespaces="no">
 			<xsl:element name="title">
 				<xsl:if test="$summary">
 					<xsl:value-of select="normalize-space(string($summary))"/>
@@ -299,7 +329,7 @@
 				<xsl:if test="$summary and $changes/text()[normalize-space()][following::lb]">
 					<xsl:text>, </xsl:text>
 				</xsl:if>
-				<xsl:copy-of select="$changes"/>
+				<xsl:copy-of copy-namespaces="no" select="$changes"/>
 			</xsl:element>
 			<xsl:for-each select="//@role[.='creator'][ancestor::listChange][../node()]/..">
 				<author>
@@ -308,25 +338,25 @@
 				</author>
 			</xsl:for-each>
 			<xsl:apply-templates select="respStmt"/>
-			<xsl:copy-of select="$funder"/>
+			<xsl:copy-of copy-namespaces="no" select="$funder"/>
 		</xsl:copy>
 	</xsl:template>
 
 	<xsl:template name="expandTitleStmtPrint">
-		<xsl:copy>
+		<xsl:copy copy-namespaces="no">
 			<title>
-				<xsl:copy-of select="(//biblStruct//title[@type='main'])[1]/node()|@*[not(name()='type')]"/>
+				<xsl:copy-of copy-namespaces="no" select="(//biblStruct//title[@type='main'])[1]/node()|@*[not(name()='type')]"/>
 			</title>
 
-			<xsl:copy-of select="//biblStruct/element()[1]//author|editor"/>
+			<xsl:copy-of copy-namespaces="no" select="//biblStruct/element()[1]//author|editor"/>
 
 			<xsl:apply-templates select="respStmt"/>
-			<xsl:copy-of select="$funder"/>
+			<xsl:copy-of copy-namespaces="no" select="$funder"/>
 		</xsl:copy>
 	</xsl:template>
 
 	<xsl:template name="expandTitleStmtEvent">
-		<xsl:copy>
+		<xsl:copy copy-namespaces="no">
 			<xsl:element name="title">
 				<xsl:comment>TODO Title statement event</xsl:comment>
 			</xsl:element>
@@ -345,8 +375,8 @@
 	</xsl:template>
 
 	<xsl:template name="expandPublicationStmt">
-		<xsl:copy>
-			<xsl:copy-of select="$publicationStmt"/>
+		<xsl:copy copy-namespaces="no">
+			<xsl:copy-of copy-namespaces="no" select="$publicationStmt"/>
 			<xsl:if test="$docID">
 				<idno type="RSW">
 					<xsl:value-of select="$docID"/>
@@ -354,31 +384,28 @@
 			</xsl:if>
 			<xsl:apply-templates select="idno"/>
 		</xsl:copy>
-		<xsl:copy-of select="$seriesStmt"/>
+		<xsl:copy-of copy-namespaces="no" select="$seriesStmt"/>
 	</xsl:template>
 
 
 	<xsl:template name="addPrefixDef">
 		<listPrefixDef>
-			<prefixDef ident="doc" matchPattern="([a-z][0-9]+)" replacementPattern="http://richard-strauss-ausgabe.de/documents/view/$1">
-				<p>Private URIs using the <code>d</code>
-			     prefix are pointers to XML documents
-			     of the RSW project.
-			     For example, <code>d:p10000</code>
-			     dereferences to <code>http://richard-strauss-ausgabe.de/documents/view/p10000</code>.</p>
+			<prefixDef ident="{$rswDocumentPrefix}" matchPattern="([a-z][0-9]+)" replacementPattern="http://richard-strauss-ausgabe.de/documents/view/$1">
+				<p>Private URIs, die das Präfix <code><xsl:value-of select="$rswDocumentPrefix"/></code>
+			     verwenden, verweisen auf XML-Dokumente des RSW-Projekts.
+			     <code><xsl:value-of select="$rswDocumentPrefix"/>:p10000</code> verweist beispielsweise auf <code>http://richard-strauss-ausgabe.de/documents/view/p10000</code>.</p>
 			</prefixDef>
-			<prefixDef ident="s" matchPattern="([a-z]+)" replacementPattern="http://richard-strauss-ausgabe.de/staff.xml#$1">
-				<p>Private URIs using the <code>s</code>
-			     prefix are pointers to <gi>person</gi>
-			     elements in the staff.xml file.
-			     For example, <code>s:mmm</code>
-			     dereferences to <code>http://richard-strauss-ausgabe.de/staff.xml#mmm</code>.</p>
+			<prefixDef ident="{$rswStaffPrefix}" matchPattern="([a-z]+)" replacementPattern="http://richard-strauss-ausgabe.de/staff.xml#$1">
+				<p>Private URIs, die das Präfix <code><xsl:value-of select="$rswStaffPrefix"/></code>
+			     verwenden, verweisen auf <gi>person</gi>-Elemente
+			     in der Datei "staff.xml".
+			     <code><xsl:value-of select="$rswStaffPrefix"/>:mmm</code> verweist beispielsweise auf <code>http://richard-strauss-ausgabe.de/staff.xml#mmm</code>.</p>
 			</prefixDef>
 		</listPrefixDef>
 	</xsl:template>
 	
 	<xsl:template name="expandEncodingDesc">
-		<xsl:copy>
+		<xsl:copy copy-namespaces="no">
 			<xsl:apply-templates select="@*"/>
 			<xsl:call-template name="addPrefixDef"/>
 			<xsl:apply-templates select="@*|node()"/>
@@ -386,8 +413,8 @@
 	</xsl:template>
 
 	<xsl:template name="expandEditorialDecl">
-		<xsl:copy>
-			<p><xsl:value-of select="$guidelinesTitleRef"/></p>
+		<xsl:copy copy-namespaces="no">
+			<p><xsl:copy-of select="$guidelinesTitleRef" copy-namespaces="no"/></p>
 			<xsl:if test="normalize-space()">
 				<p><xsl:value-of select="$specificFeaturesTitle"/></p>
 				<xsl:apply-templates select="@*|node()"/>
@@ -400,10 +427,10 @@
 		<xsl:choose>
 			<xsl:when test="name/@ref">
 				<respStmt>
-					<xsl:copy-of select="resp"/>
+					<xsl:copy-of copy-namespaces="no" select="resp"/>
 					<xsl:for-each select="name[@ref]">
-						<xsl:copy>
-							<xsl:copy-of select="@*"/>
+						<xsl:copy copy-namespaces="no">
+							<xsl:copy-of copy-namespaces="no" select="@*"/>
 							<xsl:value-of select="$staff/*[@ref=current()/@ref]/text()"/>
 						</xsl:copy>
 					</xsl:for-each>
@@ -419,14 +446,14 @@
 					<xsl:value-of select="$contributorsResp"/>
 				</resp>
 				<xsl:for-each select="distinct-values($whoResp)">
-					<xsl:copy-of select="$staff/*[@ref=current()]"/>
+					<xsl:copy-of copy-namespaces="no" select="$staff/*[@ref=current()]"/>
 				</xsl:for-each>
 			</respStmt>
 		</xsl:if>
 	</xsl:template>
 
 	<xsl:template name="transformRespons">
-		<xsl:copy>
+		<xsl:copy copy-namespaces="no">
 			<xsl:apply-templates select="@*[not(name()='rsw:when')]"/>
 			<desc>
 				<date when="{@rsw:when}"/>
@@ -436,7 +463,7 @@
 
 	<xsl:template name="processPhysDesc">
 		<xsl:if test="normalize-space()">
-			<xsl:copy>
+			<xsl:copy copy-namespaces="no">
 				<xsl:apply-templates select="node()[node()]"/>
 			</xsl:copy>
 		</xsl:if>
@@ -444,7 +471,7 @@
 
 	<xsl:template name="processOpenerWP">
 		<xsl:param name="typedSegsI" tunnel="yes"/>
-		<xsl:copy>
+		<xsl:copy copy-namespaces="no">
 			<xsl:apply-templates select="@*|node()"/>
 			<xsl:if test="$typedSegsI">
 				<xsl:for-each select="$typedSegsI">
@@ -458,7 +485,7 @@
 
 	<xsl:template name="processCloserWP">
 		<xsl:param name="typedSegsC" tunnel="yes"/>
-		<xsl:copy>
+		<xsl:copy copy-namespaces="no">
 			<xsl:apply-templates select="@*"/>
 			<xsl:if test="$typedSegsC">
 				<xsl:for-each select="$typedSegsC">
@@ -476,7 +503,7 @@
 		<xsl:variable name="this" select="."/>
 		<xsl:choose>
 			<xsl:when test=".//seg[@type]">
-				<xsl:copy>
+				<xsl:copy copy-namespaces="no">
 					<xsl:apply-templates select="@*"/>
 
 					<xsl:for-each select="node()">
@@ -553,7 +580,7 @@
 				</xsl:copy>
 			</xsl:when>
 			<xsl:otherwise>
-				<xsl:copy>
+				<xsl:copy copy-namespaces="no">
 					<xsl:apply-templates select="@*|node()"/>
 				</xsl:copy>
 			</xsl:otherwise>
@@ -562,7 +589,7 @@
 
 	<xsl:template name="removeIfTyped">
 		<xsl:if test="not(@type)">
-			<xsl:copy>
+			<xsl:copy copy-namespaces="no">
 				<xsl:apply-templates select="@*|node()"/>
 			</xsl:copy>
 		</xsl:if>
@@ -571,7 +598,7 @@
 	<!-- @rsw:pdf and @rsw:seitepdf only refer to internal files and get removed from the public version -->
 	<xsl:template name="processRs">
 		<xsl:if test="normalize-space()">
-			<xsl:copy>
+			<xsl:copy copy-namespaces="no">
 				<xsl:apply-templates select="@*[not(starts-with(name(), 'rsw:'))]"/>
 				<xsl:if test="@rsw:seite">
 					<xsl:attribute name="n">
@@ -588,7 +615,7 @@
 			<xsl:variable name="creator">
 				<xsl:for-each select="*[@role='creator'][element()|text()]">
 					<xsl:if test="position() ne 1"> / </xsl:if>
-					<xsl:copy>
+					<xsl:copy copy-namespaces="no">
 						<xsl:apply-templates select="@*[not(name()='role')]"/>
 						<xsl:value-of select="rsw:reverseName(string())"/>
 					</xsl:copy>
@@ -604,7 +631,7 @@
 					<xsl:when test="position()=1"> an </xsl:when>
 					<xsl:otherwise> / </xsl:otherwise>
 				</xsl:choose>
-				<xsl:copy>
+				<xsl:copy copy-namespaces="no">
 					<xsl:apply-templates select="@*[not(name()='role')]"/>
 					<xsl:value-of select="rsw:reverseName(string())"/>
 				</xsl:copy>
