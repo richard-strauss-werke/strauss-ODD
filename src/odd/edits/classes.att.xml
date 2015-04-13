@@ -39,10 +39,14 @@
 		<classSpec type="atts" module="tei" ident="att.global" mode="change">
 			<attList>
 				<attDef ident="xml:lang" mode="delete"/>
-				<attDef ident="style" mode="delete"/>
-				<attDef ident="rendition" mode="delete"/>
 				<attDef ident="xml:base" mode="delete"/>
 				<attDef ident="xml:space" mode="delete"/>
+			</attList>
+		</classSpec>
+		<classSpec type="atts" module="tei" ident="att.global.rendition" mode="change">
+			<attList>
+				<attDef ident="style" mode="delete"/>
+				<attDef ident="rendition" mode="delete"/>
 			</attList>
 		</classSpec>
 		<classSpec type="atts" module="tei" ident="att.global.analytic" mode="delete"/>

@@ -6,6 +6,11 @@ ODDs and ODD-related files for TEI / MEI encoding at the Kritische Ausgabe der W
 The schemata generated from these ODDs target a partially form-based editing of TEI code in oXygen's Author Mode. 
 In order to make documents created on this basis fully TEI conformant, they have be transformed 
 by the accompagnying XSLT scripts (which are generated from the ODDs as well). 
+
+Versions
+--------
+
+The ODD files describe deviations from TEI P5 v2.8.0 and MEI v2.1.0.
  
 Folders
 -----

@@ -3,10 +3,10 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2015-04-11T00:30:37Z. 
-Edition: Version 2.7.0. Last updated on
-	16th September 2014, revision 13036
-Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
+Schema generated from ODD source 2015-04-13T09:16:09Z. .
+TEI Edition: Version 2.8.0. Last updated on
+	6th April 2015, revision 13197
+TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.8.0/
  Repositories 
 --><!---->
    <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -95,11 +95,8 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
    <define name="rsw_data.text">
       <data type="string"/>
    </define>
-   <define name="rsw_data.name">
-      <data type="Name"/>
-   </define>
    <define name="rsw_data.enumerated">
-      <ref name="rsw_data.name"/>
+      <ref name="rsw_data.word"/>
    </define>
    <define name="rsw_data.temporal.iso">
       <choice>
@@ -372,12 +369,11 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
          </attribute>
       </optional>
    </define>
-   <define name="rsw_att.responsibility.attributes">
-      <ref name="rsw_att.source.attributes"/>
-      <ref name="rsw_att.responsibility.attribute.cert"/>
-      <ref name="rsw_att.responsibility.attribute.resp"/>
+   <define name="rsw_att.global.responsibility.attributes">
+      <ref name="rsw_att.global.responsibility.attribute.cert"/>
+      <ref name="rsw_att.global.responsibility.attribute.resp"/>
    </define>
-   <define name="rsw_att.responsibility.attribute.cert">
+   <define name="rsw_att.global.responsibility.attribute.cert">
       <optional>
          <attribute name="cert">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(certainty) signifies the degree of certainty associated with the intervention or interpretation.</a:documentation>
@@ -385,7 +381,7 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
          </attribute>
       </optional>
    </define>
-   <define name="rsw_att.responsibility.attribute.resp">
+   <define name="rsw_att.global.responsibility.attribute.resp">
       <optional>
          <attribute name="resp">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(responsible party) indicates the agency responsible for the intervention or interpretation, for example an editor or transcriber.</a:documentation>
@@ -399,7 +395,7 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
    </define>
    <define name="rsw_att.editLike.attributes">
       <ref name="rsw_att.dimensions.attributes"/>
-      <ref name="rsw_att.responsibility.attributes"/>
+      <ref name="rsw_att.source.attributes"/>
       <ref name="rsw_att.editLike.attribute.evidence"/>
       <ref name="rsw_att.editLike.attribute.instant"/>
    </define>
@@ -434,14 +430,50 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
          </attribute>
       </optional>
    </define>
+   <define name="rsw_att.global.rendition.attributes">
+      <ref name="rsw_att.global.rendition.attribute.rend"/>
+      <ref name="rsw_att.global.rendition.attribute.style"/>
+      <ref name="rsw_att.global.rendition.attribute.rendition"/>
+   </define>
+   <define name="rsw_att.global.rendition.attribute.rend">
+      <optional>
+         <attribute name="rend">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(rendition) indicates how the element in question was rendered or presented in the source text.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <ref name="rsw_data.word"/>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="rsw_att.global.rendition.attribute.style">
+      <optional>
+         <attribute name="style">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains an expression in some formal style definition language which defines the rendering or presentation used for this element in the source text</a:documentation>
+            <ref name="rsw_data.text"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="rsw_att.global.rendition.attribute.rendition">
+      <optional>
+         <attribute name="rendition">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to a description of the rendering or presentation used for this element in the source text.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <ref name="rsw_data.pointer"/>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
    <define name="rsw_att.global.attributes">
+      <ref name="rsw_att.global.rendition.attributes"/>
       <ref name="rsw_att.global.linking.attributes"/>
+      <ref name="rsw_att.global.responsibility.attributes"/>
       <ref name="rsw_att.global.attribute.xmlid"/>
       <ref name="rsw_att.global.attribute.n"/>
       <ref name="rsw_att.global.attribute.xmllang"/>
-      <ref name="rsw_att.global.attribute.rend"/>
-      <ref name="rsw_att.global.attribute.style"/>
-      <ref name="rsw_att.global.attribute.rendition"/>
       <ref name="rsw_att.global.attribute.xmlbase"/>
       <ref name="rsw_att.global.attribute.xmlspace"/>
    </define>
@@ -466,38 +498,6 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
          <attribute name="xml:lang">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(language) indicates the language of the element content using a tag generated according to BCP 47.</a:documentation>
             <ref name="rsw_data.language"/>
-         </attribute>
-      </optional>
-   </define>
-   <define name="rsw_att.global.attribute.rend">
-      <optional>
-         <attribute name="rend">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(rendition) indicates how the element in question was rendered or presented in the source text.</a:documentation>
-            <list>
-               <oneOrMore>
-                  <ref name="rsw_data.word"/>
-               </oneOrMore>
-            </list>
-         </attribute>
-      </optional>
-   </define>
-   <define name="rsw_att.global.attribute.style">
-      <optional>
-         <attribute name="style">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains an expression in some formal style definition language which defines the rendering or presentation used for this element in the source text</a:documentation>
-            <ref name="rsw_data.text"/>
-         </attribute>
-      </optional>
-   </define>
-   <define name="rsw_att.global.attribute.rendition">
-      <optional>
-         <attribute name="rendition">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to a description of the rendering or presentation used for this element in the source text.</a:documentation>
-            <list>
-               <oneOrMore>
-                  <ref name="rsw_data.pointer"/>
-               </oneOrMore>
-            </list>
          </attribute>
       </optional>
    </define>
@@ -1088,7 +1088,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    </define>
    <define name="rsw_name">
       <element name="name">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(name, proper noun) contains a proper noun or noun phrase. [3.5.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(name, proper noun) contains a proper noun or noun phrase. [3.5.1. Referring Strings]</a:documentation>
          <ref name="rsw_macro.phraseSeq"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.personal.attributes"/>
@@ -1100,7 +1100,8 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    </define>
    <define name="rsw_idno">
       <element name="idno">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Identifikationsnummer) gibt eine standardisierte oder nicht standardisierte Nummer an, die genutzt wird um einen Text bibliografisch eindeutig zu identifizieren [2.2.4.  2.2.5.  3.11.2.4. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Identifikationsnummer) gibt eine standardisierte oder nicht standardisierte Nummer an, die genutzt wird um einen Text bibliografisch eindeutig zu identifizieren [2.2.4. Publication, Distribution,
+Licensing, etc. 2.2.5. The Series Statement 3.11.2.4. Imprint, Size of a Document, and Reprint Information]</a:documentation>
          <zeroOrMore>
             <choice>
                <text/>
@@ -1131,7 +1132,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rsw_att.datable.custom.attribute.when-custom">
       <optional>
          <attribute name="when-custom">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies the value of a date or time in some standard form.</a:documentation>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies the value of a date or time in some custom standard form.</a:documentation>
             <list>
                <oneOrMore>
                   <ref name="rsw_data.word"/>
@@ -1167,7 +1168,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rsw_att.datable.custom.attribute.from-custom">
       <optional>
          <attribute name="from-custom">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the starting point of the period in some standard form.</a:documentation>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the starting point of the period in some custom standard form.</a:documentation>
             <list>
                <oneOrMore>
                   <ref name="rsw_data.word"/>
@@ -1179,7 +1180,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    <define name="rsw_att.datable.custom.attribute.to-custom">
       <optional>
          <attribute name="to-custom">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the ending point of the period in some standard form.</a:documentation>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the ending point of the period in some custom standard form.</a:documentation>
             <list>
                <oneOrMore>
                   <ref name="rsw_data.word"/>
@@ -1271,7 +1272,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    </define>
    <define name="rsw_country">
       <element name="country">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the name of a geo-political unit, such as a nation, country, colony, or commonwealth, larger than or administratively superior to a region and smaller than a bloc. [13.2.3. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the name of a geo-political unit, such as a nation, country, colony, or commonwealth, larger than or administratively superior to a region and smaller than a bloc. [13.2.3. Place Names]</a:documentation>
          <ref name="rsw_macro.phraseSeq"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.naming.attributes"/>
@@ -1282,7 +1283,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    </define>
    <define name="rsw_settlement">
       <element name="settlement">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the name of a settlement such as a city, town, or village identified as a single geo-political or administrative unit. [13.2.3. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the name of a settlement such as a city, town, or village identified as a single geo-political or administrative unit. [13.2.3. Place Names]</a:documentation>
          <ref name="rsw_macro.phraseSeq"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.naming.attributes"/>
@@ -1383,7 +1384,7 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
    </define>
    <define name="rsw_ab">
       <element name="ab">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(anonymous block) contains any arbitrary component-level unit of text, acting as an anonymous container for phrase or inter level elements analogous to, but without the semantic baggage of, a paragraph. [16.3. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(anonymous block) contains any arbitrary component-level unit of text, acting as an anonymous container for phrase or inter level elements analogous to, but without the semantic baggage of, a paragraph. [16.3. Blocks, Segments, and Anchors]</a:documentation>
          <ref name="rsw_macro.paraContent"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.typed.attributes"/>

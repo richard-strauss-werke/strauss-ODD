@@ -198,16 +198,20 @@
 
 			<!-- convert all keys to refs -->
 			<XSL:template match="@key">
-				<XSL:attribute name="ref">
-					<XSL:value-of select="concat($rswDocumentPrefix, ':', .)"/>
-				</XSL:attribute>
+				<XSL:if test="normalize-space()">
+					<XSL:attribute name="ref">
+						<XSL:value-of select="concat($rswDocumentPrefix, ':', .)"/>
+					</XSL:attribute>
+				</XSL:if>
 			</XSL:template>
 			
-			<!-- add prefix to scribe -->
-			<XSL:template match="@scribe">
-				<XSL:copy copy-namespaces="no">
-					<XSL:value-of select="concat($rswDocumentPrefix, ':', .)"/>
-				</XSL:copy>
+			<!-- add prefix to scribeRef -->
+			<XSL:template match="@scribeRef">
+				<XSL:if test="normalize-space()">
+					<XSL:copy copy-namespaces="no">
+						<XSL:value-of select="concat($rswDocumentPrefix, ':', .)"/>
+					</XSL:copy>
+				</XSL:if>
 			</XSL:template>
 
 			<!-- clean up -->

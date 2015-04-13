@@ -3,10 +3,10 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2015-04-11T00:29:52Z. 
-Edition: Version 2.7.0. Last updated on
-	16th September 2014, revision 13036
-Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
+Schema generated from ODD source 2015-04-13T09:15:37Z. .
+TEI Edition: Version 2.8.0. Last updated on
+	6th April 2015, revision 13197
+TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.8.0/
  Transcriptions of printed sources: Articles, reviews, books, etc. 
 --><!---->
    <div datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
@@ -10728,6 +10728,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
             <ref name="rsw_model.inter"/>
             <ref name="rsw_model.global"/>
             <ref name="rsw_lg"/>
+            <ref name="rsw_l"/>
          </choice>
       </zeroOrMore>
    </define>
@@ -10843,11 +10844,8 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
    <define name="rsw_data.text">
       <data type="string"/>
    </define>
-   <define name="rsw_data.name">
-      <data type="Name"/>
-   </define>
    <define name="rsw_data.enumerated">
-      <ref name="rsw_data.name"/>
+      <ref name="rsw_data.word"/>
    </define>
    <define name="rsw_data.precision">
       <choice>
@@ -11509,11 +11507,11 @@ Beispielwerte sind etwa: 1] approved; 2] candidate; 3] cleared; 4] deprecated; 5
          </attribute>
       </optional>
    </define>
-   <define name="rsw_att.responsibility.attributes">
-      <ref name="rsw_att.responsibility.attribute.cert"/>
-      <ref name="rsw_att.responsibility.attribute.resp"/>
+   <define name="rsw_att.global.responsibility.attributes">
+      <ref name="rsw_att.global.responsibility.attribute.cert"/>
+      <ref name="rsw_att.global.responsibility.attribute.resp"/>
    </define>
-   <define name="rsw_att.responsibility.attribute.cert">
+   <define name="rsw_att.global.responsibility.attribute.cert">
       <optional>
          <attribute name="cert">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(certainty) signifies the degree of certainty associated with the intervention or interpretation.</a:documentation>
@@ -11521,7 +11519,7 @@ Beispielwerte sind etwa: 1] approved; 2] candidate; 3] cleared; 4] deprecated; 5
          </attribute>
       </optional>
    </define>
-   <define name="rsw_att.responsibility.attribute.resp">
+   <define name="rsw_att.global.responsibility.attribute.resp">
       <optional>
          <attribute name="resp">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(responsible party) indicates the agency responsible for the intervention or interpretation, for example an editor or transcriber.</a:documentation>
@@ -11535,7 +11533,6 @@ Beispielwerte sind etwa: 1] approved; 2] candidate; 3] cleared; 4] deprecated; 5
    </define>
    <define name="rsw_att.editLike.attributes">
       <ref name="rsw_att.dimensions.attributes"/>
-      <ref name="rsw_att.responsibility.attributes"/>
       <ref name="rsw_att.editLike.attribute.evidence"/>
    </define>
    <define name="rsw_att.editLike.attribute.evidence">
@@ -11559,12 +11556,28 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
          </attribute>
       </optional>
    </define>
+   <define name="rsw_att.global.rendition.attributes">
+      <ref name="rsw_att.global.rendition.attribute.rend"/>
+   </define>
+   <define name="rsw_att.global.rendition.attribute.rend">
+      <optional>
+         <attribute name="rend">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(rendition) indicates how the element in question was rendered or presented in the source text.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <ref name="rsw_data.word"/>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
    <define name="rsw_att.global.attributes">
+      <ref name="rsw_att.global.rendition.attributes"/>
       <ref name="rsw_att.global.linking.attributes"/>
       <ref name="rsw_att.global.change.attributes"/>
+      <ref name="rsw_att.global.responsibility.attributes"/>
       <ref name="rsw_att.global.attribute.xmlid"/>
       <ref name="rsw_att.global.attribute.n"/>
-      <ref name="rsw_att.global.attribute.rend"/>
    </define>
    <define name="rsw_att.global.attribute.xmlid">
       <optional>
@@ -11579,18 +11592,6 @@ Empfohlene Werte sind: 1] internal; 2] external; 3] conjecture</a:documentation>
          <attribute name="n">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(number) gives a number (or other label) for an element, which is not necessarily unique within the document.</a:documentation>
             <ref name="rsw_data.text"/>
-         </attribute>
-      </optional>
-   </define>
-   <define name="rsw_att.global.attribute.rend">
-      <optional>
-         <attribute name="rend">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(rendition) indicates how the element in question was rendered or presented in the source text.</a:documentation>
-            <list>
-               <oneOrMore>
-                  <ref name="rsw_data.word"/>
-               </oneOrMore>
-            </list>
          </attribute>
       </optional>
    </define>
@@ -12960,7 +12961,7 @@ Empfohlene Werte sind: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] canto; 
    </define>
    <define name="rsw_p">
       <element name="p">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(paragraph) marks paragraphs in prose. [3.1.  7.2.5. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(paragraph) marks paragraphs in prose. [3.1. Paragraphs 7.2.5. Speech Contents]</a:documentation>
          <ref name="rsw_macro.paraContent"/>
          <ref name="rsw_att.global.attributes"/>
          <empty/>
@@ -12968,7 +12969,7 @@ Empfohlene Werte sind: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] canto; 
    </define>
    <define name="rsw_hi">
       <element name="hi">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(highlighted) marks a word or phrase as graphically distinct from the surrounding text, for reasons concerning which no claim is made. [3.3.2.2.  3.3.2. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(highlighted) marks a word or phrase as graphically distinct from the surrounding text, for reasons concerning which no claim is made. [3.3.2.2. Emphatic Words and Phrases 3.3.2. Emphasis, Foreign Words, and Unusual Language]</a:documentation>
          <ref name="rsw_macro.paraContent"/>
          <ref name="rsw_att.global.attributes"/>
          <empty/>
@@ -12976,7 +12977,7 @@ Empfohlene Werte sind: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] canto; 
    </define>
    <define name="rsw_quote">
       <element name="quote">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(quotation) contains a phrase or passage attributed by the narrator or author to some agency external to the text. [3.3.3.  4.3.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(quotation) contains a phrase or passage attributed by the narrator or author to some agency external to the text. [3.3.3. Quotation 4.3.1. Grouped Texts]</a:documentation>
          <ref name="rsw_macro.specialPara"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.typed.attributes"/>
@@ -12985,7 +12986,7 @@ Empfohlene Werte sind: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] canto; 
    </define>
    <define name="rsw_q">
       <element name="q">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(quoted) contains material which is distinguished from the surrounding text using quotation marks or a similar method, for any one of a variety of reasons including, but not limited to: direct speech or thought, technical terms or jargon, authorial distance, quotations from elsewhere, and passages that are mentioned but not used. [3.3.3. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(quoted) contains material which is distinguished from the surrounding text using quotation marks or a similar method, for any one of a variety of reasons including, but not limited to: direct speech or thought, technical terms or jargon, authorial distance, quotations from elsewhere, and passages that are mentioned but not used. [3.3.3. Quotation]</a:documentation>
          <ref name="rsw_macro.specialPara"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.ascribed.attributes"/>
@@ -13021,7 +13022,7 @@ Empfohlene Werte sind: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] foreig
    </define>
    <define name="rsw_cit">
       <element name="cit">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(cited quotation) contains a quotation from some other document, together with a bibliographic reference to its source. In a dictionary it may contain an example text with at least one occurrence of the word form, used in the sense being described, or a translation of the headword, or an example. [3.3.3.  4.3.1.  9.3.5.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(cited quotation) contains a quotation from some other document, together with a bibliographic reference to its source. In a dictionary it may contain an example text with at least one occurrence of the word form, used in the sense being described, or a translation of the headword, or an example. [3.3.3. Quotation 4.3.1. Grouped Texts 9.3.5.1. Examples]</a:documentation>
          <oneOrMore>
             <choice>
                <ref name="rsw_model.qLike"/>
@@ -13039,7 +13040,7 @@ Empfohlene Werte sind: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] foreig
    </define>
    <define name="rsw_desc">
       <element name="desc">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(description) contains a brief description of the object documented by its parent element, including its intended usage, purpose, or application where this is appropriate. [22.4.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(description) contains a brief description of the object documented by its parent element, including its intended usage, purpose, or application where this is appropriate. [22.4.1. Description of Components]</a:documentation>
          <ref name="rsw_macro.limitedContent"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.typed.attributes"/>
@@ -13048,7 +13049,7 @@ Empfohlene Werte sind: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] foreig
    </define>
    <define name="rsw_term">
       <element name="term">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a single-word, multi-word, or symbolic designation which is regarded as a technical term. [3.3.4. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a single-word, multi-word, or symbolic designation which is regarded as a technical term. [3.3.4. Terms, Glosses, Equivalents, and Descriptions]</a:documentation>
          <optional>
             <ref name="rsw_data.keyword_print"/>
          </optional>
@@ -13062,16 +13063,15 @@ Empfohlene Werte sind: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] foreig
    <define name="rsw_sic">
       <element name="sic">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Latin for thus or so
-   ) contains text reproduced although apparently incorrect or inaccurate. [3.4.1. ]</a:documentation>
+   ) contains text reproduced although apparently incorrect or inaccurate. [3.4.1. Apparent Errors]</a:documentation>
          <ref name="rsw_macro.paraContent"/>
          <ref name="rsw_att.global.attributes"/>
-         <ref name="rsw_att.responsibility.attributes"/>
          <empty/>
       </element>
    </define>
    <define name="rsw_corr">
       <element name="corr">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(correction) contains the correct form of a passage apparently erroneous in the copy text. [3.4.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(correction) contains the correct form of a passage apparently erroneous in the copy text. [3.4.1. Apparent Errors]</a:documentation>
          <ref name="rsw_macro.paraContent"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.editLike.attributes"/>
@@ -13081,7 +13081,7 @@ Empfohlene Werte sind: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] foreig
    </define>
    <define name="rsw_choice">
       <element name="choice">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">groups a number of alternative encodings for the same point in a text. [3.4. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">groups a number of alternative encodings for the same point in a text. [3.4. Simple Editorial Changes]</a:documentation>
          <zeroOrMore>
             <choice>
                <ref name="rsw_model.choicePart"/>
@@ -13094,7 +13094,7 @@ Empfohlene Werte sind: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] foreig
    </define>
    <define name="rsw_gap">
       <element name="gap">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates a point where material has been omitted in a transcription, whether for editorial reasons described in the TEI header, as part of sampling practice, or because the material is illegible, invisible, or inaudible. [3.4.3. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates a point where material has been omitted in a transcription, whether for editorial reasons described in the TEI header, as part of sampling practice, or because the material is illegible, invisible, or inaudible. [3.4.3. Additions, Deletions, and Omissions]</a:documentation>
          <zeroOrMore>
             <choice>
                <ref name="rsw_model.descLike"/>
@@ -13131,7 +13131,7 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
    </define>
    <define name="rsw_add">
       <element name="add">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ergänzung) enthält Buchstaben, Wörter oder Sätze im Quelltext, die von einem Autor, Schreiber, Kommentator oder Korrektor eingesetzt wurden. [3.4.3. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ergänzung) enthält Buchstaben, Wörter oder Sätze im Quelltext, die von einem Autor, Schreiber, Kommentator oder Korrektor eingesetzt wurden. [3.4.3. Additions, Deletions, and Omissions]</a:documentation>
          <ref name="rsw_macro.paraContent"/>
          <ref name="rsw_att.global.attributes"/>
          <optional>
@@ -13162,7 +13162,7 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
    </define>
    <define name="rsw_del">
       <element name="del">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Löschung) enthält einen Buchstaben, ein Wort, oder eine Passage die gestrichen wurde, die als gelöscht markiert, oder auf andere Weise als überflüssig oder falsch in der Textkopie von einem Autor, Schreiber, Kommentator oder Korrektor angegeben wird [3.4.3. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Löschung) enthält einen Buchstaben, ein Wort, oder eine Passage die gestrichen wurde, die als gelöscht markiert, oder auf andere Weise als überflüssig oder falsch in der Textkopie von einem Autor, Schreiber, Kommentator oder Korrektor angegeben wird [3.4.3. Additions, Deletions, and Omissions]</a:documentation>
          <ref name="rsw_macro.paraContent"/>
          <ref name="rsw_att.global.attribute.xmlid"/>
          <ref name="rsw_att.global.attribute.n"/>
@@ -13171,6 +13171,8 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
          <ref name="rsw_att.global.linking.attribute.copyOf"/>
          <ref name="rsw_att.global.linking.attribute.exclude"/>
          <ref name="rsw_att.global.change.attribute.change"/>
+         <ref name="rsw_att.global.responsibility.attribute.cert"/>
+         <ref name="rsw_att.global.responsibility.attribute.resp"/>
          <attribute name="rend">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ausgabe) gibt an, wie das fragliche Element ausgegeben wurde oder im Quelltext präsentiert ist.</a:documentation>
             <choice>
@@ -13195,7 +13197,7 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
    </define>
    <define name="rsw_unclear">
       <element name="unclear">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a word, phrase, or passage which cannot be transcribed with certainty because it is illegible or inaudible in the source. [11.3.3.1.  3.4.3. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a word, phrase, or passage which cannot be transcribed with certainty because it is illegible or inaudible in the source. [11.3.3.1. Damage, Illegibility, and Supplied Text 3.4.3. Additions, Deletions, and Omissions]</a:documentation>
          <ref name="rsw_macro.paraContent"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.editLike.attributes"/>
@@ -13227,7 +13229,7 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
    </define>
    <define name="rsw_name">
       <element name="name">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(name, proper noun) contains a proper noun or noun phrase. [3.5.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(name, proper noun) contains a proper noun or noun phrase. [3.5.1. Referring Strings]</a:documentation>
          <ref name="rsw_macro.phraseSeq"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.personal.attributes"/>
@@ -13239,12 +13241,11 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
    </define>
    <define name="rsw_rs">
       <element name="rs">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(verweisende Zeichenfolge) Mehrzweckelement; enthält eine Zeichenfolge, die etwas benennt oder auf etwas verweist. [13.2.1.  3.5.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(verweisende Zeichenfolge) Mehrzweckelement; enthält eine Zeichenfolge, die etwas benennt oder auf etwas verweist. [13.2.1. Personal Names 3.5.1. Referring Strings]</a:documentation>
          <ref name="rsw_macro.phraseSeq"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.naming.attributes"/>
          <ref name="rsw_att.typed.attributes"/>
-         <ref name="rsw_att.responsibility.attributes"/>
          <optional>
             <attribute name="pdf" ns="http://richard-strauss-ausgabe.de/ns/1.0">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
@@ -13268,7 +13269,8 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
    </define>
    <define name="rsw_address">
       <element name="address">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a postal address, for example of a publisher, an organization, or an individual. [3.5.2.  2.2.4.  3.11.2.4. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a postal address, for example of a publisher, an organization, or an individual. [3.5.2. Addresses 2.2.4. Publication, Distribution,
+Licensing, etc. 3.11.2.4. Imprint, Size of a Document, and Reprint Information]</a:documentation>
          <group>
             <zeroOrMore>
                <ref name="rsw_model.global"/>
@@ -13288,7 +13290,8 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
    </define>
    <define name="rsw_addrLine">
       <element name="addrLine">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(address line) contains one line of a postal address. [3.5.2.  2.2.4.  3.11.2.4. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(address line) contains one line of a postal address. [3.5.2. Addresses 2.2.4. Publication, Distribution,
+Licensing, etc. 3.11.2.4. Imprint, Size of a Document, and Reprint Information]</a:documentation>
          <ref name="rsw_macro.phraseSeq"/>
          <ref name="rsw_att.global.attributes"/>
          <empty/>
@@ -13296,7 +13299,8 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
    </define>
    <define name="rsw_date">
       <element name="date">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a date in any format. [3.5.4.  2.2.4.  2.5.  3.11.2.4.  15.2.3.  13.3.6. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a date in any format. [3.5.4. Dates and Times 2.2.4. Publication, Distribution,
+Licensing, etc. 2.5. The Revision Description 3.11.2.4. Imprint, Size of a Document, and Reprint Information 15.2.3. The Setting Description 13.3.6. Dates and Times]</a:documentation>
          <zeroOrMore>
             <choice>
                <text/>
@@ -13314,7 +13318,7 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
    </define>
    <define name="rsw_time">
       <element name="time">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a phrase defining a time of day in any format. [3.5.4. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a phrase defining a time of day in any format. [3.5.4. Dates and Times]</a:documentation>
          <zeroOrMore>
             <choice>
                <text/>
@@ -13332,14 +13336,14 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
    </define>
    <define name="rsw_abbr">
       <element name="abbr">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(abbreviation) contains an abbreviation of any sort. [3.5.5. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(abbreviation) contains an abbreviation of any sort. [3.5.5. Abbreviations and Their Expansions]</a:documentation>
          <ref name="rsw_macro.phraseSeq"/>
          <ref name="rsw_att.global.attributes"/>
-         <ref name="rsw_att.responsibility.attributes"/>
          <ref name="rsw_att.typed.attribute.subtype"/>
          <optional>
             <attribute name="type">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">allows the encoder to classify the abbreviation according to some convenient typology.</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">allows the encoder to classify the abbreviation according to some convenient typology.
+Beispielwerte sind etwa: 1] suspension; 2] contraction; 3] brevigraph; 4] superscription; 5] acronym; 6] title; 7] organization; 8] geographic</a:documentation>
                <ref name="rsw_data.enumerated"/>
             </attribute>
          </optional>
@@ -13348,7 +13352,7 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
    </define>
    <define name="rsw_expan">
       <element name="expan">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(expansion) contains the expansion of an abbreviation. [3.5.5. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(expansion) contains the expansion of an abbreviation. [3.5.5. Abbreviations and Their Expansions]</a:documentation>
          <ref name="rsw_macro.phraseSeq"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.editLike.attributes"/>
@@ -13357,7 +13361,7 @@ Beispielwerte sind etwa: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
    </define>
    <define name="rsw_ptr">
       <element name="ptr">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Hinweis) definiert einen Hinweis auf einen anderen Ort. [3.6.  16.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Hinweis) definiert einen Hinweis auf einen anderen Ort. [3.6. Simple Links and Cross-References 16.1. Links]</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="schema.literature-ptr-ptrAtts-constraint-1">
@@ -13387,7 +13391,7 @@ attributes @target and @cRef may be supplied on <name/>.</report>
    </define>
    <define name="rsw_ref">
       <element name="ref">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference) defines a reference to another location, possibly modified by additional text or comment. [3.6.  16.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference) defines a reference to another location, possibly modified by additional text or comment. [3.6. Simple Links and Cross-References 16.1. Links]</a:documentation>
          <ref name="rsw_macro.paraContent"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="schema.literature-ref-refAtts-constraint-2">
@@ -13410,7 +13414,7 @@ attributes @target and @cRef may be supplied on <name/>.</report>
    </define>
    <define name="rsw_list">
       <element name="list">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains any sequence of items organized as a list. [3.7. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains any sequence of items organized as a list. [3.7. Lists]</a:documentation>
          <group>
             <zeroOrMore>
                <choice>
@@ -13452,6 +13456,18 @@ attributes @target and @cRef may be supplied on <name/>.</report>
                </group>
             </zeroOrMore>
          </group>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="schema.literature-list-gloss-list-must-have-labels-constraint-2">
+            <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                      xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      xmlns:s="http://www.ascc.net/xml/schematron"
+                      xmlns:xi="http://www.w3.org/2001/XInclude"
+                      context="tei:list[@type='gloss']">
+	              <sch:assert test="tei:label">The content of a "gloss" list should include a sequence of one or more pairs of a label element followed by an item element</sch:assert>
+            </sch:rule>
+         </pattern>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.typed.attribute.subtype"/>
          <optional>
@@ -13478,7 +13494,7 @@ Empfohlene Werte sind: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syllog
    </define>
    <define name="rsw_item">
       <element name="item">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains one component of a list. [3.7.  2.5. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains one component of a list. [3.7. Lists 2.5. The Revision Description]</a:documentation>
          <ref name="rsw_macro.specialPara"/>
          <ref name="rsw_att.global.attributes"/>
          <empty/>
@@ -13486,7 +13502,7 @@ Empfohlene Werte sind: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syllog
    </define>
    <define name="rsw_head">
       <element name="head">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(heading) contains any type of heading, for example the title of a section, or the heading of a list, glossary, manuscript description, etc. [4.2.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(heading) contains any type of heading, for example the title of a section, or the heading of a list, glossary, manuscript description, etc. [4.2.1. Headings and Trailers]</a:documentation>
          <zeroOrMore>
             <choice>
                <text/>
@@ -13505,12 +13521,11 @@ Empfohlene Werte sind: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syllog
    </define>
    <define name="rsw_note">
       <element name="note">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a note or annotation. [3.8.1.  2.2.6.  3.11.2.8.  9.3.5.4. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a note or annotation. [3.8.1. Notes and Simple Annotation 2.2.6. The Notes Statement 3.11.2.8. Notes and Statement of Language 9.3.5.4. Notes within Entries]</a:documentation>
          <ref name="rsw_macro.specialPara"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.placement.attributes"/>
          <ref name="rsw_att.pointing.attributes"/>
-         <ref name="rsw_att.responsibility.attributes"/>
          <ref name="rsw_att.typed.attributes"/>
          <optional>
             <attribute name="targetEnd">
@@ -13527,10 +13542,8 @@ Empfohlene Werte sind: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syllog
    </define>
    <define name="rsw_graphic">
       <element name="graphic">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the location of an inline graphic, illustration, or figure. [3.9. ]</a:documentation>
-         <zeroOrMore>
-            <ref name="rsw_model.descLike"/>
-         </zeroOrMore>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the location of an inline graphic, illustration, or figure. [3.9. Graphics and Other Non-textual Components]</a:documentation>
+         <empty/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.media.attributes"/>
          <ref name="rsw_att.resourced.attributes"/>
@@ -13539,7 +13552,8 @@ Empfohlene Werte sind: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syllog
    </define>
    <define name="rsw_milestone">
       <element name="milestone">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">marks a boundary point separating any kind of section of a text, typically but not necessarily indicating a point at which some part of a standard reference system changes, where the change is not represented by a structural element. [3.10.3. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">marks a boundary point separating any kind of section of a text, typically but not necessarily indicating a point at which some part of a standard reference system changes, where the change is not represented by a structural element. [3.10.3. Milestone
+Elements]</a:documentation>
          <empty/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.milestoneUnit.attributes"/>
@@ -13549,7 +13563,8 @@ Empfohlene Werte sind: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syllog
    </define>
    <define name="rsw_pb">
       <element name="pb">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(page break) marks the start of a new page in a paginated document. [3.10.3. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(page break) marks the start of a new page in a paginated document. [3.10.3. Milestone
+Elements]</a:documentation>
          <empty/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.typed.attributes"/>
@@ -13558,7 +13573,8 @@ Empfohlene Werte sind: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syllog
    </define>
    <define name="rsw_lb">
       <element name="lb">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(line break) marks the start of a new (typographic) line in some edition or version of a text. [3.10.3.  7.2.5. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(line break) marks the start of a new (typographic) line in some edition or version of a text. [3.10.3. Milestone
+Elements 7.2.5. Speech Contents]</a:documentation>
          <empty/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.typed.attributes"/>
@@ -13570,6 +13586,12 @@ Empfohlene Werte sind: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syllog
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
          <ref name="rsw_macro.form.authors"/>
          <ref name="rsw_macro.form.titles.full"/>
+         <element name="idno">
+            <attribute name="type">
+               <value>url</value>
+            </attribute>
+            <text/>
+         </element>
          <ref name="rsw_textLang"/>
       </element>
    </define>
@@ -13587,7 +13609,7 @@ Empfohlene Werte sind: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syllog
    </define>
    <define name="rsw_author">
       <element name="author">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">in a bibliographic reference, contains the name(s) of an author, personal or corporate, of a work; for example in the same form as that provided by a recognized bibliographic name authority. [3.11.2.2.  2.2.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">in a bibliographic reference, contains the name(s) of an author, personal or corporate, of a work; for example in the same form as that provided by a recognized bibliographic name authority. [3.11.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement]</a:documentation>
          <ref name="rsw_macro.phraseSeq"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.naming.attributes"/>
@@ -13596,7 +13618,7 @@ Empfohlene Werte sind: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syllog
    </define>
    <define name="rsw_editor">
       <element name="editor">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a secondary statement of responsibility for a bibliographic item, for example the name of an individual, institution or organization, (or of several such) acting as editor, compiler, translator, etc. [3.11.2.2. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a secondary statement of responsibility for a bibliographic item, for example the name of an individual, institution or organization, (or of several such) acting as editor, compiler, translator, etc. [3.11.2.2. Titles, Authors, and Editors]</a:documentation>
          <ref name="rsw_macro.phraseSeq"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.naming.attributes"/>
@@ -13605,7 +13627,7 @@ Empfohlene Werte sind: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syllog
    </define>
    <define name="rsw_respStmt">
       <element name="respStmt">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(statement of responsibility) supplies a statement of responsibility for the intellectual content of a text, edition, recording, or series, where the specialized elements for authors, editors, etc. do not suffice or do not apply. May also be used to encode information about individuals or organizations which have played a role in the production or distribution of a bibliographic work. [3.11.2.2.  2.2.1.  2.2.2.  2.2.5. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(statement of responsibility) supplies a statement of responsibility for the intellectual content of a text, edition, recording, or series, where the specialized elements for authors, editors, etc. do not suffice or do not apply. May also be used to encode information about individuals or organizations which have played a role in the production or distribution of a bibliographic work. [3.11.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement 2.2.2. The Edition Statement 2.2.5. The Series Statement]</a:documentation>
          <group>
             <ref name="rsw_resp"/>
             <zeroOrMore>
@@ -13625,7 +13647,7 @@ Empfohlene Werte sind: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syllog
    </define>
    <define name="rsw_resp">
       <element name="resp">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(responsibility) contains a phrase describing the nature of a person's intellectual responsibility, or an organization's role in the production or distribution of a work. [3.11.2.2.  2.2.1.  2.2.2.  2.2.5. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(responsibility) contains a phrase describing the nature of a person's intellectual responsibility, or an organization's role in the production or distribution of a work. [3.11.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement 2.2.2. The Edition Statement 2.2.5. The Series Statement]</a:documentation>
          <ref name="rsw_macro.phraseSeq.limited"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.canonical.attributes"/>
@@ -13635,7 +13657,7 @@ Empfohlene Werte sind: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syllog
    </define>
    <define name="rsw_title">
       <element name="title">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a title for any kind of work. [3.11.2.2.  2.2.1.  2.2.5. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a title for any kind of work. [3.11.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement 2.2.5. The Series Statement]</a:documentation>
          <ref name="rsw_macro.paraContent"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.canonical.attributes"/>
@@ -13721,7 +13743,8 @@ Beispielwerte sind etwa: 1] main; 2] sub(subordinate) ; 3] alt(alternate) ; 4] s
    </define>
    <define name="rsw_publisher">
       <element name="publisher">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides the name of the organization responsible for the publication or distribution of a bibliographic item. [3.11.2.4.  2.2.4. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides the name of the organization responsible for the publication or distribution of a bibliographic item. [3.11.2.4. Imprint, Size of a Document, and Reprint Information 2.2.4. Publication, Distribution,
+Licensing, etc.]</a:documentation>
          <ref name="rsw_macro.phraseSeq"/>
          <ref name="rsw_att.global.attributes"/>
          <empty/>
@@ -13729,37 +13752,16 @@ Beispielwerte sind etwa: 1] main; 2] sub(subordinate) ; 3] alt(alternate) ; 4] s
    </define>
    <define name="rsw_biblScope">
       <element name="biblScope">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(scope of bibliographic reference) defines the scope of a bibliographic reference, for example as a list of page numbers, or a named subdivision of a larger work. [3.11.2.5. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(scope of bibliographic reference) defines the scope of a bibliographic reference, for example as a list of page numbers, or a named subdivision of a larger work. [3.11.2.5. Scopes and Ranges in Bibliographic Citations]</a:documentation>
          <ref name="rsw_macro.phraseSeq"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.citing.attributes"/>
-         <optional>
-            <attribute name="type">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">identifies the type of information conveyed by the element, e.g. columns, pages, volume.
-Empfohlene Werte sind: 1] vol(volume) ; 2] issue; 3] pp(pages) ; 4] ll(lines) ; 5] chap(chapter) ; 6] part</a:documentation>
-               <choice>
-                  <value>vol</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(volume) the element contains a volume number.</a:documentation>
-                  <value>issue</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the element contains an issue number, or volume and issue numbers.</a:documentation>
-                  <value>pp</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(pages) the element contains a page number or page range.</a:documentation>
-                  <value>ll</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(lines) the element contains a line number or line range.</a:documentation>
-                  <value>chap</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(chapter) the element contains a chapter indication (number and/or title)</a:documentation>
-                  <value>part</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the element identifies a part of a book or collection.</a:documentation>
-                  <data type="Name"/>
-               </choice>
-            </attribute>
-         </optional>
          <empty/>
       </element>
    </define>
    <define name="rsw_pubPlace">
       <element name="pubPlace">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(publication place) contains the name of the place where a bibliographic item was published. [3.11.2.4. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(publication place) contains the name of the place where a bibliographic item was published. [3.11.2.4. Imprint, Size of a Document, and Reprint Information]</a:documentation>
          <ref name="rsw_macro.phraseSeq"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.naming.attributes"/>
@@ -13768,7 +13770,7 @@ Empfohlene Werte sind: 1] vol(volume) ; 2] issue; 3] pp(pages) ; 4] ll(lines) ; 
    </define>
    <define name="rsw_bibl">
       <element name="bibl">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(bibliographische Angabe) Enthält eine frei strukturierte bibliographische Angabe, deren Bestandteile bei Bedarf explizit ausgezeichnet werden können. [3.11.1.  2.2.7.  15.3.2. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(bibliographische Angabe) Enthält eine frei strukturierte bibliographische Angabe, deren Bestandteile bei Bedarf explizit ausgezeichnet werden können. [3.11.1. Methods of Encoding Bibliographic References and Lists of References 2.2.7. The Source Description 15.3.2. Declarable Elements]</a:documentation>
          <zeroOrMore>
             <choice>
                <text/>
@@ -13808,6 +13810,12 @@ Empfohlene Werte sind: 1] vol(volume) ; 2] issue; 3] pp(pages) ; 4] ll(lines) ; 
                <element name="monogr">
                   <ref name="rsw_macro.form.authors"/>
                   <ref name="rsw_macro.form.titles.full"/>
+                  <element name="idno">
+                     <attribute name="type">
+                        <value>url</value>
+                     </attribute>
+                     <text/>
+                  </element>
                   <ref name="rsw_macro.form.isbnIdno"/>
                   <ref name="rsw_textLang"/>
                   <ref name="rsw_edition"/>
@@ -13818,17 +13826,11 @@ Empfohlene Werte sind: 1] vol(volume) ; 2] issue; 3] pp(pages) ; 4] ll(lines) ; 
          <oneOrMore>
             <ref name="rsw_series"/>
          </oneOrMore>
-         <element name="idno">
-            <attribute name="type">
-               <value>url</value>
-            </attribute>
-            <text/>
-         </element>
       </element>
    </define>
    <define name="rsw_listBibl">
       <element name="listBibl">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(citation list) Enthält eine Liste bibliographischer Angaben beliebiger Art. [3.11.1.  2.2.7.  15.3.2. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(citation list) Enthält eine Liste bibliographischer Angaben beliebiger Art. [3.11.1. Methods of Encoding Bibliographic References and Lists of References 2.2.7. The Source Description 15.3.2. Declarable Elements]</a:documentation>
          <zeroOrMore>
             <ref name="rsw_macro.form.bibl"/>
          </zeroOrMore>
@@ -13836,7 +13838,7 @@ Empfohlene Werte sind: 1] vol(volume) ; 2] issue; 3] pp(pages) ; 4] ll(lines) ; 
    </define>
    <define name="rsw_relatedItem">
       <element name="relatedItem">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains or references some other bibliographic item which is related to the present one in some specified manner, for example as a constituent or alternative version of it. [3.11.2.7. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains or references some other bibliographic item which is related to the present one in some specified manner, for example as a constituent or alternative version of it. [3.11.2.7. Related Items]</a:documentation>
          <optional>
             <choice>
                <ref name="rsw_model.biblLike"/>
@@ -13858,7 +13860,7 @@ relatedItem element must be empty</sch:report>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="schema.literature-relatedItem-targetorcontent1-constraint-2">
+                  id="schema.literature-relatedItem-targetorcontent1-constraint-3">
             <rule context="tei:relatedItem">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -13883,7 +13885,7 @@ relatedItem element must be empty</sch:report>
    </define>
    <define name="rsw_l">
       <element name="l">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(verse line) contains a single, possibly incomplete, line of verse. [3.12.1.  3.12.  7.2.5. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(verse line) contains a single, possibly incomplete, line of verse. [3.12.1. Core Tags for Verse 3.12. Passages of Verse or Drama 7.2.5. Speech Contents]</a:documentation>
          <ref name="rsw_macro.paraContent"/>
          <ref name="rsw_att.global.attributes"/>
          <empty/>
@@ -13891,7 +13893,7 @@ relatedItem element must be empty</sch:report>
    </define>
    <define name="rsw_lg">
       <element name="lg">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(line group) contains one or more verse lines functioning as a formal unit, e.g. a stanza, refrain, verse paragraph, etc. [3.12.1.  3.12.  7.2.5. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(line group) contains one or more verse lines functioning as a formal unit, e.g. a stanza, refrain, verse paragraph, etc. [3.12.1. Core Tags for Verse 3.12. Passages of Verse or Drama 7.2.5. Speech Contents]</a:documentation>
          <group>
             <zeroOrMore>
                <choice>
@@ -13924,7 +13926,7 @@ relatedItem element must be empty</sch:report>
             </zeroOrMore>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="schema.literature-lg-atleast1oflggapl-constraint-3">
+                  id="schema.literature-lg-atleast1oflggapl-constraint-4">
             <rule context="tei:lg">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -13943,7 +13945,7 @@ relatedItem element must be empty</sch:report>
    </define>
    <define name="rsw_sp">
       <element name="sp">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(speech) contains an individual speech in a performance text, or a passage presented as such in a prose or verse text. [3.12.2.  3.12.  7.2.2. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(speech) contains an individual speech in a performance text, or a passage presented as such in a prose or verse text. [3.12.2. Core Tags for Drama 3.12. Passages of Verse or Drama 7.2.2. Speeches and Speakers]</a:documentation>
          <group>
             <zeroOrMore>
                <ref name="rsw_model.global"/>
@@ -13975,7 +13977,7 @@ relatedItem element must be empty</sch:report>
    </define>
    <define name="rsw_speaker">
       <element name="speaker">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a specialized form of heading or label, giving the name of one or more speakers in a dramatic text or fragment. [3.12.2. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a specialized form of heading or label, giving the name of one or more speakers in a dramatic text or fragment. [3.12.2. Core Tags for Drama]</a:documentation>
          <ref name="rsw_macro.phraseSeq"/>
          <ref name="rsw_att.global.attributes"/>
          <empty/>
@@ -13983,7 +13985,7 @@ relatedItem element must be empty</sch:report>
    </define>
    <define name="rsw_stage">
       <element name="stage">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(stage direction) contains any kind of stage direction within a dramatic text or fragment. [3.12.2.  3.12.  7.2.4. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(stage direction) contains any kind of stage direction within a dramatic text or fragment. [3.12.2. Core Tags for Drama 3.12. Passages of Verse or Drama 7.2.4. Stage Directions]</a:documentation>
          <ref name="rsw_macro.specialPara"/>
          <ref name="rsw_att.ascribed.attributes"/>
          <ref name="rsw_att.global.attributes"/>
@@ -14020,7 +14022,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_textLang">
       <element name="textLang">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(text language) describes the languages and writing systems identified within the bibliographic work being described, rather than its description. [3.11.2.4.  10.6.6. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(text language) describes the languages and writing systems identified within the bibliographic work being described, rather than its description. [3.11.2.4. Imprint, Size of a Document, and Reprint Information 10.6.6. Languages and Writing Systems]</a:documentation>
          <ref name="rsw_macro.phraseSeq"/>
          <ref name="rsw_att.global.attributes"/>
          <optional>
@@ -14056,7 +14058,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_fileDesc">
       <element name="fileDesc">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Dateibeschreibung) enthält die detaillierte bibliografische Beschreibung einer elektronischen Datei. [2.2.  2.1.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Dateibeschreibung) enthält die detaillierte bibliografische Beschreibung einer elektronischen Datei. [2.2. The File Description 2.1.1. The TEI Header and Its Components]</a:documentation>
          <ref name="rsw_titleStmt"/>
          <ref name="rsw_publicationStmt"/>
          <ref name="rsw_notesStmt"/>
@@ -14065,7 +14067,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_titleStmt">
       <element name="titleStmt">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">( Titelinformation) umfasst Angaben zum Titel eines Werks und zu den für seinen Inhalt Verantwortlichen [2.2.1.  2.2. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">( Titelinformation) umfasst Angaben zum Titel eines Werks und zu den für seinen Inhalt Verantwortlichen [2.2.1. The Title Statement 2.2. The File Description]</a:documentation>
          <group>
             <oneOrMore>
                <ref name="rsw_title"/>
@@ -14080,7 +14082,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_edition">
       <element name="edition">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Edition) beschreibt die Besonderheiten einer Edition eines Textes. [2.2.2. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Edition) beschreibt die Besonderheiten einer Edition eines Textes. [2.2.2. The Edition Statement]</a:documentation>
          <ref name="rsw_macro.phraseSeq"/>
          <ref name="rsw_att.global.attributes"/>
          <empty/>
@@ -14094,7 +14096,8 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_idno">
       <element name="idno">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Identifikationsnummer) gibt eine standardisierte oder nicht standardisierte Nummer an, die genutzt wird um einen Text bibliografisch eindeutig zu identifizieren [2.2.4.  2.2.5.  3.11.2.4. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Identifikationsnummer) gibt eine standardisierte oder nicht standardisierte Nummer an, die genutzt wird um einen Text bibliografisch eindeutig zu identifizieren [2.2.4. Publication, Distribution,
+Licensing, etc. 2.2.5. The Series Statement 3.11.2.4. Imprint, Size of a Document, and Reprint Information]</a:documentation>
          <zeroOrMore>
             <choice>
                <text/>
@@ -14162,7 +14165,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_textClass">
       <element name="textClass">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Textklassifikation) umfasst Informationen über Art oder Thematik eines Texts unter Bezug auf ein Standard-Klassifikationsschema, einen Thesaurus, usw. [2.4.3. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Textklassifikation) umfasst Informationen über Art oder Thematik eines Texts unter Bezug auf ein Standard-Klassifikationsschema, einen Thesaurus, usw. [2.4.3. The Text Classification]</a:documentation>
          <element name="keywords">
             <oneOrMore>
                <ref name="rsw_term"/>
@@ -14212,7 +14215,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_orgName">
       <element name="orgName">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(organization name) contains an organizational name. [13.2.2. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(organization name) contains an organizational name. [13.2.2. Organizational Names]</a:documentation>
          <ref name="rsw_macro.phraseSeq"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.datable.attributes"/>
@@ -14224,7 +14227,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_persName">
       <element name="persName">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(personal name) contains a proper noun or proper-noun phrase referring to a person, possibly including one or more of the person's forenames, surnames, honorifics, added names, etc. [13.2.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(personal name) contains a proper noun or proper-noun phrase referring to a person, possibly including one or more of the person's forenames, surnames, honorifics, added names, etc. [13.2.1. Personal Names]</a:documentation>
          <ref name="rsw_macro.phraseSeq"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.datable.attributes"/>
@@ -14236,7 +14239,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_placeName">
       <element name="placeName">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains an absolute or relative place name. [13.2.3. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains an absolute or relative place name. [13.2.3. Place Names]</a:documentation>
          <ref name="rsw_macro.phraseSeq"/>
          <ref name="rsw_att.datable.attributes"/>
          <ref name="rsw_att.editLike.attribute.evidence"/>
@@ -14244,8 +14247,6 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
          <ref name="rsw_att.dimensions.attribute.quantity"/>
          <ref name="rsw_att.dimensions.attribute.extent"/>
          <ref name="rsw_att.dimensions.attribute.scope"/>
-         <ref name="rsw_att.responsibility.attribute.cert"/>
-         <ref name="rsw_att.responsibility.attribute.resp"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.personal.attributes"/>
          <ref name="rsw_att.typed.attributes"/>
@@ -14306,7 +14307,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_ab">
       <element name="ab">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(anonymous block) contains any arbitrary component-level unit of text, acting as an anonymous container for phrase or inter level elements analogous to, but without the semantic baggage of, a paragraph. [16.3. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(anonymous block) contains any arbitrary component-level unit of text, acting as an anonymous container for phrase or inter level elements analogous to, but without the semantic baggage of, a paragraph. [16.3. Blocks, Segments, and Anchors]</a:documentation>
          <ref name="rsw_macro.paraContent"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.typed.attributes"/>
@@ -14315,7 +14316,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_anchor">
       <element name="anchor">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(anchor point) attaches an identifier to a point within a text, whether or not it corresponds with a textual element. [8.4.2.  16.4. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(anchor point) attaches an identifier to a point within a text, whether or not it corresponds with a textual element. [8.4.2. Synchronization and Overlap 16.4. Correspondence and Alignment]</a:documentation>
          <empty/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.typed.attributes"/>
@@ -14324,17 +14325,16 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_seg">
       <element name="seg">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(arbitrary segment) represents any segmentation of text below the chunk level. [16.3.  6.2.  7.2.5. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(arbitrary segment) represents any segmentation of text below the chunk level. [16.3. Blocks, Segments, and Anchors 6.2. Components of the Verse Line 7.2.5. Speech Contents]</a:documentation>
          <ref name="rsw_macro.paraContent"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.typed.attributes"/>
-         <ref name="rsw_att.responsibility.attributes"/>
          <empty/>
       </element>
    </define>
    <define name="rsw_respons">
       <element name="respons">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(responsibility) identifies the individual(s) responsible for some aspect of the content or markup of particular element(s). [21.3. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(responsibility) identifies the individual(s) responsible for some aspect of the content or markup of particular element(s). [21.3. Attribution of Responsibility]</a:documentation>
          <zeroOrMore>
             <choice>
                <ref name="rsw_model.descLike"/>
@@ -14342,7 +14342,6 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
             </choice>
          </zeroOrMore>
          <ref name="rsw_att.global.attributes"/>
-         <ref name="rsw_att.responsibility.attributes"/>
          <optional>
             <attribute name="when" ns="http://richard-strauss-ausgabe.de/ns/1.0">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
@@ -14373,7 +14372,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_table">
       <element name="table">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains text displayed in tabular form, in rows and columns. [14.1.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains text displayed in tabular form, in rows and columns. [14.1.1. TEI Tables]</a:documentation>
          <group>
             <zeroOrMore>
                <choice>
@@ -14424,7 +14423,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_row">
       <element name="row">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains one row of a table. [14.1.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains one row of a table. [14.1.1. TEI Tables]</a:documentation>
          <oneOrMore>
             <ref name="rsw_cell"/>
          </oneOrMore>
@@ -14435,7 +14434,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_cell">
       <element name="cell">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains one cell of a table. [14.1.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains one cell of a table. [14.1.1. TEI Tables]</a:documentation>
          <ref name="rsw_macro.specialPara"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.tableDecoration.attributes"/>
@@ -14444,7 +14443,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_figure">
       <element name="figure">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">groups elements representing or containing graphic information such as an illustration, formula, or figure. [14.4. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">groups elements representing or containing graphic information such as an illustration, formula, or figure. [14.4. Specific Elements for Graphic Images]</a:documentation>
          <zeroOrMore>
             <choice>
                <ref name="rsw_model.headLike"/>
@@ -14463,7 +14462,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_figDesc">
       <element name="figDesc">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(description of figure) contains a brief prose description of the appearance or content of a graphic figure, for use when documenting an image without displaying it. [14.4. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(description of figure) contains a brief prose description of the appearance or content of a graphic figure, for use when documenting an image without displaying it. [14.4. Specific Elements for Graphic Images]</a:documentation>
          <ref name="rsw_macro.limitedContent"/>
          <ref name="rsw_att.global.attributes"/>
          <empty/>
@@ -14471,7 +14470,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_TEI">
       <element name="TEI">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(TEI-Dokument) enthält ein einzelnes TEI-konformes Dokument, das aus TEI-Header (Dateikopf) und Text besteht, entweder als eigenständige Datei oder als Teil eines Elements teiCorpus. [4.  15.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(TEI-Dokument) enthält ein einzelnes TEI-konformes Dokument, das aus TEI-Header (Dateikopf) und Text besteht, entweder als eigenständige Datei oder als Teil eines Elements teiCorpus. [4. Default Text Structure 15.1. Varieties of Composite Text]</a:documentation>
          <group>
             <ref name="rsw_teiHeader"/>
             <choice>
@@ -14507,7 +14506,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_text">
       <element name="text">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">enthält eigenständigen oder aus mehreren Teilen bestehenden Text, zum Beispiel ein Gedicht oder Drama, eine Sammlung von Aufsätzen, einen Roman, ein Wörterbuch oder eine Auswahl aus einem Korpus [4.  15.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">enthält eigenständigen oder aus mehreren Teilen bestehenden Text, zum Beispiel ein Gedicht oder Drama, eine Sammlung von Aufsätzen, einen Roman, ein Wörterbuch oder eine Auswahl aus einem Korpus [4. Default Text Structure 15.1. Varieties of Composite Text]</a:documentation>
          <ref name="rsw_body"/>
          <ref name="rsw_att.global.attributes"/>
          <empty/>
@@ -14515,7 +14514,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_body">
       <element name="body">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">( Kerntext (text body) ) enthält den gesamten, eigenständigen Text, außer Vorspann (front) und Nachspann (back). [4. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">( Kerntext (text body) ) enthält den gesamten, eigenständigen Text, außer Vorspann (front) und Nachspann (back). [4. Default Text Structure]</a:documentation>
          <group>
             <zeroOrMore>
                <ref name="rsw_model.global"/>
@@ -14633,7 +14632,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_div">
       <element name="div">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">( Textgliederung ) enthält eine Untergliederung von Vorspann (front), Kerntext oder Nachspann (back) eines Textes. [4.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">( Textgliederung ) enthält eine Untergliederung von Vorspann (front), Kerntext oder Nachspann (back) eines Textes. [4.1. Divisions of the Body]</a:documentation>
          <group>
             <zeroOrMore>
                <choice>
@@ -14696,7 +14695,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_byline">
       <element name="byline">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">enthält Angaben zur Autorisation eines Werks, entweder auf der Titelseite oder am Anfang oder Ende des Werks.  [4.2.2.  4.5. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">enthält Angaben zur Autorisation eines Werks, entweder auf der Titelseite oder am Anfang oder Ende des Werks.  [4.2.2. Openers and Closers 4.5. Front Matter]</a:documentation>
          <zeroOrMore>
             <choice>
                <text/>
@@ -14711,7 +14710,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_dateline">
       <element name="dateline">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">enthält Angaben zu Entstehungsort, -datum, -zeit, usw. eines Briefs, Zeitungsartikels, oder anderen Werks, die als Überschrift oder Teil des Nachspanns dem Text voran- bzw. nachgestellt sind. [4.2.2. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">enthält Angaben zu Entstehungsort, -datum, -zeit, usw. eines Briefs, Zeitungsartikels, oder anderen Werks, die als Überschrift oder Teil des Nachspanns dem Text voran- bzw. nachgestellt sind. [4.2.2. Openers and Closers]</a:documentation>
          <zeroOrMore>
             <choice>
                <text/>
@@ -14726,7 +14725,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_epigraph">
       <element name="epigraph">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">enthält ein anonymes oder jemandem zugeschriebenes Zitat, das am Beginn eines Abschnitts, Kapitels oder auf einer Titelseite steht. [4.2.3.  4.2.  4.6. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">enthält ein anonymes oder jemandem zugeschriebenes Zitat, das am Beginn eines Abschnitts, Kapitels oder auf einer Titelseite steht. [4.2.3. Arguments, Epigraphs, and Postscripts 4.2. Elements Common to All Divisions 4.6. Title Pages]</a:documentation>
          <zeroOrMore>
             <choice>
                <ref name="rsw_model.common"/>
@@ -14739,7 +14738,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_opener">
       <element name="opener">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">fasst Datumszeile, Verfasserangabe, Anredeformeln und ähnliche Angaben zusammen, die einleitend zu Beginn eines Abschnitts stehen, vor allem bei Briefen. [4.2. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">fasst Datumszeile, Verfasserangabe, Anredeformeln und ähnliche Angaben zusammen, die einleitend zu Beginn eines Abschnitts stehen, vor allem bei Briefen. [4.2. Elements Common to All Divisions]</a:documentation>
          <zeroOrMore>
             <choice>
                <text/>
@@ -14759,7 +14758,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_closer">
       <element name="closer">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">fasst Datumszeile, Verfasserangabe, Grußformeln und ähnliche Angaben zusammen, die abschließend am Ende eines Abschnitts stehen, vor allem bei Briefen. [4.2.2.  4.2. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">fasst Datumszeile, Verfasserangabe, Grußformeln und ähnliche Angaben zusammen, die abschließend am Ende eines Abschnitts stehen, vor allem bei Briefen. [4.2.2. Openers and Closers 4.2. Elements Common to All Divisions]</a:documentation>
          <zeroOrMore>
             <choice>
                <text/>
@@ -14777,7 +14776,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_salute">
       <element name="salute">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Anrede- / Grußformel) enthält eine Anrede oder Grußformel, die einem Vorwort, einer Widmung oder einem anderen Abschnitt des Textes vorangestellt ist oder die Grußformel am Ende eines Briefes, eines Vorworts, usw. [4.2.2. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Anrede- / Grußformel) enthält eine Anrede oder Grußformel, die einem Vorwort, einer Widmung oder einem anderen Abschnitt des Textes vorangestellt ist oder die Grußformel am Ende eines Briefes, eines Vorworts, usw. [4.2.2. Openers and Closers]</a:documentation>
          <ref name="rsw_macro.paraContent"/>
          <ref name="rsw_att.global.attributes"/>
          <empty/>
@@ -14785,7 +14784,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_signed">
       <element name="signed">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Signatur) enthält die abschließende Grußformel o.Ä. die ein Vorwort, eine Widmung oder einen anderen Abschnitt des Textes beendet. [4.2.2. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Signatur) enthält die abschließende Grußformel o.Ä. die ein Vorwort, eine Widmung oder einen anderen Abschnitt des Textes beendet. [4.2.2. Openers and Closers]</a:documentation>
          <ref name="rsw_macro.paraContent"/>
          <ref name="rsw_att.global.attributes"/>
          <empty/>
@@ -14793,7 +14792,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_postscript">
       <element name="postscript">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a postscript, e.g. to a letter. [4.2. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a postscript, e.g. to a letter. [4.2. Elements Common to All Divisions]</a:documentation>
          <group>
             <zeroOrMore>
                <choice>
@@ -14840,16 +14839,24 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_space">
       <element name="space">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the location of a significant space in the copy text. [11.5.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the location of a significant space in the text. [11.5.1. Space]</a:documentation>
          <zeroOrMore>
             <choice>
                <ref name="rsw_model.descLike"/>
                <ref name="rsw_model.certLike"/>
             </choice>
          </zeroOrMore>
-         <ref name="rsw_att.global.attributes"/>
+         <ref name="rsw_att.global.attribute.xmlid"/>
+         <ref name="rsw_att.global.attribute.n"/>
+         <ref name="rsw_att.global.rendition.attribute.rend"/>
+         <ref name="rsw_att.global.linking.attribute.corresp"/>
+         <ref name="rsw_att.global.linking.attribute.sameAs"/>
+         <ref name="rsw_att.global.linking.attribute.copyOf"/>
+         <ref name="rsw_att.global.linking.attribute.exclude"/>
+         <ref name="rsw_att.global.change.attribute.change"/>
+         <ref name="rsw_att.global.responsibility.attribute.cert"/>
+         <ref name="rsw_att.typed.attributes"/>
          <ref name="rsw_att.dimensions.attributes"/>
-         <ref name="rsw_att.responsibility.attribute.cert"/>
          <optional>
             <attribute name="resp">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(responsible party) (responsible party) indicates the individual responsible for identifying and measuring the space</a:documentation>
@@ -14876,7 +14883,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_supplied">
       <element name="supplied">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">signifies text supplied by the transcriber or editor for any reason, typically because the original cannot be read because of physical damage or loss to the original. [11.3.3.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">signifies text supplied by the transcriber or editor for any reason; for example because the original cannot be read due to physical damage, or because of an obvious omission by the author or scribe. [11.3.3.1. Damage, Illegibility, and Supplied Text]</a:documentation>
          <ref name="rsw_macro.paraContent"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.editLike.attributes"/>
@@ -14895,7 +14902,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_surplus">
       <element name="surplus">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">marks text present in the source which the editor believes to be superfluous or redundant. [11.3.3.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">marks text present in the source which the editor believes to be superfluous or redundant. [11.3.3.1. Damage, Illegibility, and Supplied Text]</a:documentation>
          <ref name="rsw_macro.paraContent"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.editLike.attributes"/>
@@ -14936,7 +14943,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_repository">
       <element name="repository">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the name of a repository within which manuscripts are stored, possibly forming part of an institution. [10.4. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the name of a repository within which manuscripts are stored, possibly forming part of an institution. [10.4. The Manuscript Identifier]</a:documentation>
          <ref name="rsw_macro.xtext"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.naming.attributes"/>
@@ -14945,7 +14952,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_collection">
       <element name="collection">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the name of a collection of manuscripts, not necessarily located within a single repository. [10.4. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the name of a collection of manuscripts, not necessarily located within a single repository. [10.4. The Manuscript Identifier]</a:documentation>
          <ref name="rsw_macro.xtext"/>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.naming.attributes"/>
@@ -14972,7 +14979,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_pc">
       <element name="pc">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(punctuation character) contains a character or string of characters regarded as constituting a single punctuation mark. [17.1. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(punctuation character) contains a character or string of characters regarded as constituting a single punctuation mark. [17.1. Linguistic Segment Categories]</a:documentation>
          <zeroOrMore>
             <choice>
                <text/>
@@ -15012,7 +15019,7 @@ Empfohlene Werte sind: 1] setting; 2] entrance; 3] exit; 4] business; 5] novelis
    </define>
    <define name="rsw_notatedMusic">
       <element name="notatedMusic">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">encodes the presence of music notation in a text. Some MEI elements are allowed within. [14.3. ]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">encodes the presence of music notation in a text. Some MEI elements are allowed within. [14.3. Notated Music in Written Text]</a:documentation>
          <zeroOrMore>
             <choice>
                <ref name="rsw_model.labelLike"/>

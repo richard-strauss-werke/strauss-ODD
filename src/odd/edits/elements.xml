@@ -796,18 +796,73 @@
 			</elementSpec>
 
 			<elementSpec ident="handNote" module="header" mode="change">
+				<equiv filter="rsw.xsl" mimeType="text/xsl" name="processHandNote"/>
 				<content>
-					<rng:element name="choice">
-						<rng:ref name="abbr"/>
-						<rng:ref name="expan"/>
-					</rng:element>
+					<rng:ref name="label"/>
+					<rng:ref name="note"/>
 				</content>
-				<constraintSpec ident="require-content-in-handNote" scheme="isoschematron">
+				<constraintSpec ident="require-content-in-handNote-label" scheme="isoschematron">
 					<constraint>
-						<sch:assert test=".//tei:abbr/node()"
-							>Schreiberhand-Einträge müssen eine Beschreibung enthalten.</sch:assert>
+						<sch:assert test="./tei:label/node()"
+							>Schreiberhand-Einträge müssen eine Ankürzung enthalten.</sch:assert>
 					</constraint>
 				</constraintSpec>
+				<attList>
+					<attDef ident="medium" mode="replace" usage="rec">
+						<valList type="closed">
+							<valItem ident="typescript">
+								<desc versionDate="2015-04-12" xml:lang="en">typescript</desc>
+								<desc versionDate="2015-04-12" xml:lang="de">Maschinenschrift</desc>
+							</valItem>
+							<valItem ident="pencil">
+								<desc versionDate="2015-04-12" xml:lang="en">pencil</desc>
+								<desc versionDate="2015-04-12" xml:lang="de">Bleistift</desc>
+							</valItem>
+							<valItem ident="ink">
+								<desc versionDate="2015-04-12" xml:lang="en">ink</desc>
+								<desc versionDate="2015-04-12" xml:lang="de">Tinte</desc>
+							</valItem>
+							<valItem ident="black-ink">
+								<desc versionDate="2015-04-12" xml:lang="en">black ink</desc>
+								<desc versionDate="2015-04-12" xml:lang="de">schwarze Tinte</desc>
+							</valItem>
+							<valItem ident="blue-ink">
+								<desc versionDate="2015-04-12" xml:lang="en">blue ink</desc>
+								<desc versionDate="2015-04-12" xml:lang="de">blaue Tinte</desc>
+							</valItem>
+							<valItem ident="red-ink">
+								<desc versionDate="2015-04-12" xml:lang="en">red ink</desc>
+								<desc versionDate="2015-04-12" xml:lang="de">rote Tinte</desc>
+							</valItem>
+							<valItem ident="brown-ink">
+								<desc versionDate="2015-04-12" xml:lang="en">brown ink</desc>
+								<desc versionDate="2015-04-12" xml:lang="de">braune Tinte</desc>
+							</valItem>
+							
+							<valItem ident="crayon">
+								<desc versionDate="2015-04-12" xml:lang="en">crayon</desc>
+								<desc versionDate="2015-04-12" xml:lang="de">Farbstift</desc>
+							</valItem>
+							<valItem ident="black-crayon">
+								<desc versionDate="2015-04-12" xml:lang="en">black crayon</desc>
+								<desc versionDate="2015-04-12" xml:lang="de">schwarzer Farbstift</desc>
+							</valItem>
+							<valItem ident="blue-crayon">
+								<desc versionDate="2015-04-12" xml:lang="en">blue crayon</desc>
+								<desc versionDate="2015-04-12" xml:lang="de">blauer Farbstift</desc>
+							</valItem>
+							<valItem ident="red-crayon">
+								<desc versionDate="2015-04-12" xml:lang="en">red crayon</desc>
+								<desc versionDate="2015-04-12" xml:lang="de">roter Farbstift</desc>
+							</valItem>
+							<valItem ident="brown-crayon">
+								<desc versionDate="2015-04-12" xml:lang="en">brown crayon</desc>
+								<desc versionDate="2015-04-12" xml:lang="de">brauner Farbstift</desc>
+							</valItem>
+						</valList>
+					</attDef>
+				</attList>
+				
 			</elementSpec>
 
 			<elementSpec ident="handShift" module="transcr" mode="change">
@@ -967,6 +1022,12 @@
 							<rng:element name="monogr">
 								<rng:ref name="macro.form.authors"/>
 								<rng:ref name="macro.form.titles.full"/>
+								<rng:element name="idno">
+									<rng:attribute name="type">
+										<rng:value>url</rng:value>
+									</rng:attribute>
+									<rng:text/>
+								</rng:element>
 								<rng:ref name="macro.form.isbnIdno"/>
 								<rng:ref name="textLang"/>
 								<rng:ref name="edition"/>
@@ -977,12 +1038,6 @@
 					<rng:oneOrMore>
 						<rng:ref name="series"/>
 					</rng:oneOrMore>
-					<rng:element name="idno">
-						<rng:attribute name="type">
-							<rng:value>url</rng:value>
-						</rng:attribute>
-						<rng:text/>
-					</rng:element>
 					<!--<rng:oneOrMore>
                                 <rng:ref name="relatedItem"/>
                             </rng:oneOrMore>-->
@@ -993,6 +1048,12 @@
 				<content>
 					<rng:ref name="macro.form.authors"/>
 					<rng:ref name="macro.form.titles.full"/>
+					<rng:element name="idno">
+						<rng:attribute name="type">
+							<rng:value>url</rng:value>
+						</rng:attribute>
+						<rng:text/>
+					</rng:element>
 					<rng:ref name="textLang"/>
 				</content>
 			</elementSpec>

@@ -178,6 +178,9 @@
    <xsl:template match="editorialDecl">
       <xsl:call-template name="expandEditorialDecl"/>
    </xsl:template>
+   <xsl:template match="handNote">
+      <xsl:call-template name="processHandNote"/>
+   </xsl:template>
    <xsl:template match="textClass">
       <xsl:call-template name="keepOnlyWithAnyText"/>
    </xsl:template>
@@ -350,14 +353,18 @@
       <xsl:call-template name="transformOrRemoveBibl"/>
    </xsl:template>
    <xsl:template match="@key">
-      <xsl:attribute name="ref">
-         <xsl:value-of select="concat($rswDocumentPrefix, ':', .)"/>
-      </xsl:attribute>
+      <xsl:if test="normalize-space()">
+         <xsl:attribute name="ref">
+            <xsl:value-of select="concat($rswDocumentPrefix, ':', .)"/>
+         </xsl:attribute>
+      </xsl:if>
    </xsl:template>
-   <xsl:template match="@scribe">
-      <xsl:copy copy-namespaces="no">
-         <xsl:value-of select="concat($rswDocumentPrefix, ':', .)"/>
-      </xsl:copy>
+   <xsl:template match="@scribeRef">
+      <xsl:if test="normalize-space()">
+         <xsl:copy copy-namespaces="no">
+            <xsl:value-of select="concat($rswDocumentPrefix, ':', .)"/>
+         </xsl:copy>
+      </xsl:if>
    </xsl:template>
    <xsl:template match="change/text()|div/text()"/>
 </xsl:stylesheet>

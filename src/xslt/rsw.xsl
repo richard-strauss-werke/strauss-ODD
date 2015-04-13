@@ -19,6 +19,12 @@
 
 	<!-- named templates -->
 
+	<xsl:template name="processHandNote">
+		<xsl:copy copy-namespaces="no">
+			<xsl:apply-templates select="@*|*[node()]"/>
+		</xsl:copy>
+	</xsl:template>
+
 	<xsl:template name="processNotesStmt">
 		<xsl:variable name="content">
 			<xsl:apply-templates select="node()"/>
@@ -344,11 +350,25 @@
 
 	<xsl:template name="expandTitleStmtPrint">
 		<xsl:copy copy-namespaces="no">
-			<title>
-				<xsl:copy-of copy-namespaces="no" select="(//biblStruct//title[@type='main'])[1]/node()|@*[not(name()='type')]"/>
-			</title>
-
-			<xsl:copy-of copy-namespaces="no" select="//biblStruct/element()[1]//author|editor"/>
+			
+			<xsl:variable name="firstBiblStructChild" select="//biblStruct/*[1]"/>
+			<xsl:variable name="titles">
+				<xsl:apply-templates select="$firstBiblStructChild/title[not(@type='short')]"/>	
+			</xsl:variable>
+			<xsl:choose>
+				<xsl:when test="normalize-space($titles)">
+					<xsl:copy-of select="$titles"/>
+				</xsl:when>
+				<xsl:otherwise>
+					<title>
+						<xsl:comment> Titel muss noch ergänzt werden. </xsl:comment>
+					</title>
+				</xsl:otherwise>
+			</xsl:choose>
+			
+			<xsl:apply-templates select="$firstBiblStructChild/author"/>
+			<xsl:apply-templates select="$firstBiblStructChild/editor"/>
+			
 
 			<xsl:apply-templates select="respStmt"/>
 			<xsl:copy-of copy-namespaces="no" select="$funder"/>
@@ -718,7 +738,7 @@
 					<xsl:when test="matches($date, '[\d]{4}-[\d]{2}-[\d]{2}')">
 						<!-- replaced, since German dates don't work in eXist out of the box -->
 						<!--<xsl:value-of select="format-date(xs:date($date), '[FNn], [D]. [MNn] [Y]', 'de', (), ())"/>-->
-						<xsl:value-of select="concat(        functx:day-of-week-name-de($date), ', ', substring($date,9,2), '. ',        ('Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember')[xs:integer(substring($date,6,2))], ' ', substring($date,1,4))"/>
+						<xsl:value-of select="concat(        functx:day-of-week-name-de($date), ', ', string(number(substring($date,9,2))), '. ',        ('Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember')[xs:integer(substring($date,6,2))], ' ', substring($date,1,4))"/>
 					</xsl:when>
 					<xsl:when test="matches($date, '[\d]{4}-[\d]{2}')">
 						<xsl:value-of select="concat(('Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli',         'August', 'September', 'Oktober', 'November', 'Dezember')[xs:integer(substring($date,6,2))], ' ', substring($date,1,4))"/>

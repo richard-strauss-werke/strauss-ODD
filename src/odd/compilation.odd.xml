@@ -22,7 +22,7 @@
 				<desc>Compilations: Editorial compilations of text snippets from other documents</desc>
 				<moduleRef key="tei"/>
 				<moduleRef key="core"
-					include="abbr add address addrLine analytic author availability bibl biblScope biblStruct change choice cit corr creation date del desc editor expan fileDesc gap gloss graphic head hi imprint item l lb lg list listBibl milestone monogr name note p pb profileDesc ptr publicationStmt pubPlace publisher q quote ref relatedItem resp respStmt rs series sic sourceDesc sp speaker stage teiHeader term textLang time title titleStmt unclear"/>
+					include="abbr add address addrLine analytic author availability bibl biblScope biblStruct change choice cit corr creation date del desc editor expan fileDesc gap gloss graphic head hi imprint item l label lb lg list listBibl milestone monogr name note p pb profileDesc ptr publicationStmt pubPlace publisher q quote ref relatedItem resp respStmt rs series sic sourceDesc sp speaker stage teiHeader term textLang time title titleStmt unclear"/>
 				<moduleRef key="header" include="edition editorialDecl encodingDesc extent handNote idno notesStmt revisionDesc textClass"/>
 				<moduleRef key="namesdates" include="affiliation birth country death event faith listEvent state occupation org orgName persName person placeName residence settlement sex"/>
 				<moduleRef key="linking" include="ab anchor seg"/>

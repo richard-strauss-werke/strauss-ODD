@@ -22,7 +22,7 @@
 				<desc>Transcriptions of manuscript sources: Correspondence, notes, etc.</desc>
 				<moduleRef key="tei"/>
 				<moduleRef key="core"
-					include="abbr add addrLine address author bibl choice cit corr date del desc expan gap graphic head hi item l lb lg list listBibl milestone name note p pb ptr q quote ref resp respStmt rs sic sp speaker stage term textLang time title unclear"/>
+					include="abbr add addrLine address author bibl choice cit corr date del desc expan gap graphic head hi item l label lb lg list listBibl milestone name note p pb ptr q quote ref resp respStmt rs sic sp speaker stage term textLang time title unclear"/>
 				<moduleRef key="header" include="availability change creation edition editorialDecl encodingDesc extent fileDesc handNote idno notesStmt profileDesc publicationStmt revisionDesc sourceDesc teiHeader titleStmt textClass"/>
 				<moduleRef key="namesdates" include="orgName persName placeName"/>
 				<moduleRef key="linking" include="ab anchor seg"/>
