@@ -45,6 +45,10 @@
 				<desc>Contains specifications specific of the place ODD</desc>
 				<specGrp xml:id="edits.elements.place">
 					
+					<elementSpec ident="place" module="namesdates" mode="change">
+						<equiv filter="rsw.xsl" mimeType="text/xsl" name="processPlace"/>
+					</elementSpec>
+					
 					<!-- based on WeGA_places.odd.xml; modified -->
 					<elementSpec ident="placeName" mode="change" module="namesdates">
 						<desc versionDate="2013-11-11" xml:lang="en">contains an absolute or relative place name.</desc>
@@ -86,6 +90,8 @@
 							</attDef>
 						</attList>
 					</elementSpec>
+					
+					
 					
 					<!-- taken from on WeGA_places.odd.xml -->
 					<elementSpec ident="location" mode="change" module="namesdates">

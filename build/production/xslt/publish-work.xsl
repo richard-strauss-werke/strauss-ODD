@@ -43,11 +43,15 @@
 			   </seriesStmt>
    </xsl:variable>
    <xsl:variable name="edition"/>
-   <xsl:variable name="staff"/>
+   <xsl:variable name="staff">
+      <empty/>
+   </xsl:variable>
    <xsl:variable name="sexes">
       <empty/>
    </xsl:variable>
-   <xsl:variable name="changeTypes"/>
+   <xsl:variable name="changeTypes">
+      <empty/>
+   </xsl:variable>
    <xsl:variable name="keywords">
       <empty/>
    </xsl:variable>
@@ -66,7 +70,7 @@
          <xsl:apply-templates select="@*[not(name()='xml:id')]|node()|comment()|processing-instruction()|text()"/>
       </xsl:copy>
    </xsl:template>
-   <xsl:template match="@key">
+   <xsl:template match="@key[not(parent::country)]">
       <xsl:if test="normalize-space()">
          <xsl:attribute name="ref">
             <xsl:value-of select="concat($rswDocumentPrefix, ':', .)"/>

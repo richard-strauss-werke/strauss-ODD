@@ -25,6 +25,15 @@
 		</xsl:copy>
 	</xsl:template>
 
+	<xsl:template name="processPlace">
+		<xsl:copy copy-namespaces="no">
+			<xsl:attribute name="xml:id">
+				<xsl:value-of select="$docID"/>
+			</xsl:attribute>
+			<xsl:apply-templates select="@*[not(name()='xml:id')]|*[normalize-space()]|comment()|processing-instruction()|text()"/>
+		</xsl:copy>
+	</xsl:template>
+
 	<xsl:template name="processNotesStmt">
 		<xsl:variable name="content">
 			<xsl:apply-templates select="node()"/>
@@ -43,7 +52,7 @@
 			<xsl:call-template name="keepOnlyWithAnyAttOrAnyText"/>
 		</xsl:variable>
 		<xsl:choose>
-			<xsl:when test="$content and ancestor::org">
+			<xsl:when test="normalize-space($content) and ancestor::org">
 				<note>
 					<xsl:copy-of copy-namespaces="no" select="$content"/>
 				</note>

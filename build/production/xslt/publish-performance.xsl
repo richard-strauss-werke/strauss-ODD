@@ -59,6 +59,7 @@
       <name ref="s:ofr">Oliver Fraenske</name>
       <name ref="s:pfr">Peter Fröhlich</name>
       <name ref="s:dpl">Dominik Leipold</name>
+      <empty/>
    </xsl:variable>
    <xsl:variable name="sexes">
       <empty/>
@@ -100,6 +101,7 @@
       <change type="P">Vorgeschlagen zur Publikation</change>
       <change type="C">Als möglicherweise publikationsfertig gekennzeichnet</change>
       <change type="A">Zur Publikation freigegeben</change>
+      <empty/>
    </xsl:variable>
    <xsl:variable name="keywords">
       <empty/>
@@ -176,7 +178,7 @@
    <xsl:template match="note/bibl">
       <xsl:call-template name="transformOrRemoveBibl"/>
    </xsl:template>
-   <xsl:template match="@key">
+   <xsl:template match="@key[not(parent::country)]">
       <xsl:if test="normalize-space()">
          <xsl:attribute name="ref">
             <xsl:value-of select="concat($rswDocumentPrefix, ':', .)"/>

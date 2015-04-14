@@ -97,6 +97,8 @@
 						<xsl:value-of select="following-sibling::*[1]"/>
 					</name>
 				</xsl:for-each>
+				<!-- maintain a node datatype even if there are no matches: -->
+				<empty/>
 			</XSL:variable>
 			<XSL:variable name="sexes">
 				<xsl:for-each select="//valItem[ancestor::elementSpec/equiv//@name='expandOrRemoveSexElement']">
@@ -114,6 +116,8 @@
 						<xsl:value-of select="following-sibling::*[1]/text()"/>
 					</change>
 				</xsl:for-each>
+				<!-- maintain a node datatype even if there are no matches: -->
+				<empty/>
 			</XSL:variable>
 			
 			<XSL:variable name="keywords">
@@ -196,8 +200,8 @@
 				</xsl:choose>
 			</xsl:for-each>
 
-			<!-- convert all keys to refs -->
-			<XSL:template match="@key">
+			<!-- convert all keys (except on <country>) to refs -->
+			<XSL:template match="@key[not(parent::country)]">
 				<XSL:if test="normalize-space()">
 					<XSL:attribute name="ref">
 						<XSL:value-of select="concat($rswDocumentPrefix, ':', .)"/>
@@ -213,7 +217,7 @@
 					</XSL:copy>
 				</XSL:if>
 			</XSL:template>
-
+			
 			<!-- clean up -->
 			<!-- remove tabs -->
 			<XSL:template match="change/text()|div/text()"/>
