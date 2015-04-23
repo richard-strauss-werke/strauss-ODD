@@ -208,10 +208,7 @@
 					<rng:ref name="macro.form.discussionNote"/>
 					<rng:ref name="macro.form.uncategorizedNote"/>
 					<rng:oneOrMore>
-						<rng:choice>
-							<rng:ref name="macro.form.gndIdno"/>
-							<rng:ref name="macro.form.rsqvIdno"/>
-						</rng:choice>
+						<rng:ref name="macro.form.perOrgIdno"/>
 					</rng:oneOrMore>
 					<rng:ref name="macro.form.regularPersName"/>
 					<rng:oneOrMore>
@@ -326,7 +323,7 @@
 				<content>
 					<rng:ref name="macro.form.date"/>
 					<rng:ref name="orgName"/>
-					<rng:ref name="gloss"/>
+					<rng:ref name="roleName"/>
 					<!-- @remove 
 							<ref xmlns="http://relaxng.org/ns/structure/1.0" name="macro.phraseSeq"/>
 							-->
@@ -336,7 +333,7 @@
 						<affiliation>
 							<date from="1900" to="1903"/>
 							<orgName>Verlag Adolph Fürstner</orgName>
-							<gloss>Inhaber</gloss>
+							<roleName>Inhaber</roleName>
 						</affiliation>
 					</egXML>
 				</exemplum>
@@ -605,10 +602,7 @@
 					<rng:ref name="macro.form.discussionNote"/>
 					<rng:ref name="macro.form.uncategorizedNote"/>
 					<rng:oneOrMore>
-						<rng:choice>
-							<rng:ref name="macro.form.gndIdno"/>
-							<rng:ref name="macro.form.rsqvIdno"/>
-						</rng:choice>
+						<rng:ref name="macro.form.perOrgIdno"/>
 					</rng:oneOrMore>
 					<rng:group>
 						<rng:element name="orgName">
@@ -633,81 +627,6 @@
 					</rng:group>
 				</content>
 			</elementSpec>
-
-			<elementSpec ident="performance" module="drama" mode="change">
-				<gloss versionDate="2015-04-02" xml:lang="fr">performance</gloss>
-				<desc versionDate="2015-04-02" xml:lang="en">contains descriptions how a dramatic piece was performed on some specific occasion.</desc>
-				<gloss versionDate="2015-04-02" xml:lang="de">Aufführung</gloss>
-				<desc versionDate="2015-04-02" xml:lang="de">enthält Beschreibungen wie ein dramatisches Werk bei einer bestimmten Gelegenheit aufgeführt worden ist.</desc>
-				<!-- @keep 
-				<classes>
-					<memberOf key="att.global"/>
-					<memberOf key="model.frontPart.drama"/>
-				</classes>
-				 -->
-				<content>
-					<rng:ref name="macro.form.summaryNote"/>
-					<rng:ref name="macro.form.commentaryNote"/>
-					<rng:ref name="macro.form.discussionNote"/>
-					<rng:ref name="macro.form.uncategorizedNote"/>
-					<rng:ref name="macro.form.listBiblNote"/>
-					<rng:group>
-						<rng:element name="desc">
-							<rng:oneOrMore>
-								<rng:ref name="date"/>
-							</rng:oneOrMore>
-							<rng:ref name="time"/>
-							<rng:ref name="country"/>
-							<rng:ref name="settlement"/>
-							<rng:ref name="placeName"/>
-							<rng:oneOrMore>
-								<rng:ref name="macro.form.persNamePerformance"/>
-							</rng:oneOrMore>
-							<rng:ref name="castList"/>
-							<rng:ref name="macro.form.orgNamePerformance"/>
-						</rng:element>
-					</rng:group>
-				
-				</content>
-				
-				<!--
-					<equiv filter="rsw.xsl" mimeType="text/xsl" name="perOrgRoot"/>
-				<content>
-					<rng:ref name="macro.form.summaryNote"/>
-					<rng:ref name="macro.form.commentaryNote"/>
-					<rng:ref name="macro.form.discussionNote"/>
-					<rng:ref name="macro.form.uncategorizedNote"/>
-					<rng:oneOrMore>
-						<rng:choice>
-							<rng:ref name="macro.form.gndIdno"/>
-							<rng:ref name="macro.form.rsqvIdno"/>
-						</rng:choice>
-					</rng:oneOrMore>
-					<rng:group>
-						<rng:element name="orgName">
-							<rng:attribute name="type">
-								<rng:value>reg</rng:value>
-							</rng:attribute>
-							<rng:text/>
-						</rng:element>
-						<rng:oneOrMore>
-							<rng:ref name="orgName"/>
-						</rng:oneOrMore>
-						<rng:ref name="desc"/>
-						<rng:oneOrMore>
-							<rng:ref name="placeName"/>
-						</rng:oneOrMore>
-						<rng:oneOrMore>
-							<rng:ref name="state"/>
-						</rng:oneOrMore>
-						<rng:ref name="macro.form.detailsNote"/>
-						<rng:ref name="listEvent"/>
-						<rng:ref name="listBibl"/>
-					</rng:group>
-				</content>
-				-->
-			</elementSpec>	
-			
 
 			<elementSpec ident="encodingDesc" mode="replace" module="core">
 				<equiv filter="rsw.xsl" mimeType="text/xsl" name="expandEncodingDesc"/>

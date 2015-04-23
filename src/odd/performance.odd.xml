@@ -34,6 +34,8 @@
 				<specGrpRef target="#edits.datatypes"/>
 				<specGrpRef target="#edits.elements"/>
 				<specGrpRef target="#edits.macros"/>
+				
+				<specGrpRef target="#edits.elements.performance"/>
 			</schemaSpec>
 			
 			<div>
@@ -42,6 +44,52 @@
 				<xi:include href="edits/datatypes.xml"/>
 				<xi:include href="edits/elements.xml"/>
 				<xi:include href="edits/macros.xml"/>
+			</div>
+			
+			<div>
+				<head>Performance</head>
+				<desc>Contains specifications for performances (of operas, plays, etc.)</desc>
+				<specGrp xml:id="edits.elements.performance">
+					
+					<elementSpec ident="performance" module="drama" mode="change">
+						<gloss versionDate="2015-04-02" xml:lang="fr">performance</gloss>
+						<desc versionDate="2015-04-02" xml:lang="en">contains descriptions how a dramatic piece was performed on some specific occasion.</desc>
+						<gloss versionDate="2015-04-02" xml:lang="de">Aufführung</gloss>
+						<desc versionDate="2015-04-02" xml:lang="de">enthält Beschreibungen wie ein dramatisches Werk bei einer bestimmten Gelegenheit aufgeführt worden ist.</desc>
+						<!-- @keep 
+				<classes>
+					<memberOf key="att.global"/>
+					<memberOf key="model.frontPart.drama"/>
+				</classes>
+				 -->
+						<content>
+							<rng:ref name="macro.form.summaryNote"/>
+							<rng:ref name="macro.form.commentaryNote"/>
+							<rng:ref name="macro.form.discussionNote"/>
+							<rng:ref name="macro.form.uncategorizedNote"/>
+							<rng:ref name="macro.form.listBiblNote"/>
+							<rng:group>
+								<rng:element name="desc">
+									<rng:oneOrMore>
+										<rng:ref name="macro.form.date"/>
+									</rng:oneOrMore>
+									<rng:ref name="time"/>
+									<rng:ref name="placeName"/>
+									<rng:oneOrMore>
+										<rng:ref name="macro.form.persNamePerformance"/>
+									</rng:oneOrMore>
+									<rng:ref name="castList"/>
+									<rng:ref name="macro.form.orgNamePerformance"/>
+								</rng:element>
+							</rng:group>
+							
+						</content>
+						
+					</elementSpec>	
+					
+					
+				</specGrp>
+				
 			</div>
 
 		</body>

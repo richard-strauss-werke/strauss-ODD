@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2015-04-13T09:15:49Z. .
+Schema generated from ODD source 2015-04-19T09:01:42Z. .
 TEI Edition: Version 2.8.0. Last updated on
 	6th April 2015, revision 13197
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.8.0/
@@ -158,6 +158,9 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.8.0/
          <value>visitor</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Besucher</a:documentation>
       </choice>
+   </define>
+   <define name="rsw_macro.form.date">
+      <ref name="rsw_date"/>
    </define>
    <define name="rsw_macro.form.commentaryNote">
       <element name="note">
@@ -2889,11 +2892,9 @@ Licensing, etc. 2.2.5. The Series Statement 3.11.2.4. Imprint, Size of a Documen
          <group>
             <element name="desc">
                <oneOrMore>
-                  <ref name="rsw_date"/>
+                  <ref name="rsw_macro.form.date"/>
                </oneOrMore>
                <ref name="rsw_time"/>
-               <ref name="rsw_country"/>
-               <ref name="rsw_settlement"/>
                <ref name="rsw_placeName"/>
                <oneOrMore>
                   <ref name="rsw_macro.form.persNamePerformance"/>

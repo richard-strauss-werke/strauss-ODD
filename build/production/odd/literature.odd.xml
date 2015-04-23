@@ -11778,6 +11778,18 @@ manuscripts, not necessarily located within a single repository.</desc><desc ver
 			<content>
 				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>unknown</value><a:documentation>unbekannte Kategorie</a:documentation><value>T</value><a:documentation>Treffen</a:documentation><value>S</value><a:documentation>schöpf. Tätigkeit</a:documentation><value>M</value><a:documentation>häusl. Musizieren</a:documentation><value>P</value><a:documentation>Probe</a:documentation><value>B</value><a:documentation>Geschäftstätigkeit</a:documentation><value>R</value><a:documentation>Reise</a:documentation><value>other</value><a:documentation>andere Kategorie</a:documentation></choice>
 			</content>
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.literature" ident="data.idnoMsType">
+			<content>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>rsqv</value><a:documentation>RSQV-ID</a:documentation><value>uag</value><a:documentation>UAG-ID</a:documentation><value>url</value><a:documentation>URL identifier</a:documentation></choice>
+			</content>
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.literature" ident="data.idnoPrintType">
+			<content>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>oclc</value><a:documentation>OCLC-ID (WorldCat)</a:documentation><value>rsqv</value><a:documentation>RSQV-ID</a:documentation><value>url</value><a:documentation>URL identifier</a:documentation></choice>
+			</content>
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.literature" ident="data.idnoPerOrgType">
+			<content>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>gnd</value><a:documentation>GND-ID</a:documentation><value>viaf</value><a:documentation>VIAF-ID</a:documentation><value>url</value><a:documentation>URL identifier</a:documentation></choice>
+			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.literature" ident="data.orgNameOrchestraExtent">
 			<content>
 				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>full-size</value><a:documentation>volle Besetzung</a:documentation><value>reduced-size</value><a:documentation>reduzierte Besetzung</a:documentation></choice>
@@ -11812,16 +11824,10 @@ manuscripts, not necessarily located within a single repository.</desc><desc ver
 					<param name="pattern">\d</param>
 				</data>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.literature" ident="data.gndIdno">
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.literature" ident="data.idno">
 			<content>
 				<data xmlns="http://relaxng.org/ns/structure/1.0" type="string">
-					<param name="pattern">\d{1,9}\-?[\dX]</param>
-				</data>
-			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.literature" ident="data.rsqvIdno">
-			<content>
-				<data xmlns="http://relaxng.org/ns/structure/1.0" type="string">
-					<param name="pattern">[a-z]\d{4,5}</param>
+					<param name="pattern">[^\s]*</param>
 				</data>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.literature" ident="data.keyword_print">
@@ -11841,25 +11847,32 @@ manuscripts, not necessarily located within a single repository.</desc><desc ver
 			<content>
 				<ref xmlns="http://relaxng.org/ns/structure/1.0" name="date"/>
 			</content>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.literature" ident="macro.form.rsqvIdno">
-			<gloss versionDate="2014-01-26" xml:lang="en">RSQV idno</gloss>
-			<gloss versionDate="2014-01-26" xml:lang="de">RSQV-idno</gloss>
-			<desc versionDate="2014-01-26" xml:lang="en">Macro for a <gi>idno</gi> element in which a <att>type</att> attribute with the value <val>RSQV</val> must be present.</desc>
-			<desc versionDate="2014-01-26" xml:lang="de">Makro für ein <gi>idno</gi>-Element, in dem ein <att>type</att>-Attribut mit dem Wert <val>RSQV</val> vorhanden sein muss.</desc>
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.literature" ident="macro.form.msIdno">
+			<gloss versionDate="2015-04-18" xml:lang="en">Manuscript idno</gloss>
+			<gloss versionDate="2015-04-18" xml:lang="de">Identifikator einer Handschrift</gloss>
+			<desc versionDate="2015-04-18" xml:lang="en">Macro for an <gi>idno</gi> identifying a manuscript.</desc>
+			<desc versionDate="2015-04-18" xml:lang="de">Makro für eine <gi>idno</gi>, die eine Handschrift identifiziert.</desc>
 			<content>
 				<oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><element name="idno">
 						<attribute name="type">
-							<value>RSQV</value>
+							<ref name="data.idnoMsType"/>
 						</attribute>
-						<optional><ref name="data.rsqvIdno"/></optional>
+						<optional><ref name="data.idno"/></optional>
 					</element></oneOrMore>
 			</content>
-			<remarks versionDate="2014-02-04" xml:lang="en">
-				<p>The text content of this element refers to an id number of the Richard Strauss Quellenverzeichnis (RSQV) <ptr target="http://rsqv.de"/>.</p>
-			</remarks>
-			<remarks versionDate="2014-02-04" xml:lang="de">
-				<p>Der Textinhalt dieses Elements bezieht sich auf eine ID-Nummer des Richard Strauss Quellenverzeichnis (RSQV) <ptr target="http://rsqv.de"/>.</p>
-			</remarks>
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.literature" ident="macro.form.printIdno">
+			<gloss versionDate="2015-04-18" xml:lang="en">Print idno</gloss>
+			<gloss versionDate="2015-04-18" xml:lang="de">Identifikator eines Druckwerks</gloss>
+			<desc versionDate="2015-04-18" xml:lang="en">Macro for an <gi>idno</gi> identifying a print.</desc>
+			<desc versionDate="2015-04-18" xml:lang="de">Makro für eine <gi>idno</gi>, die einen Druck identifiziert.</desc>
+			<content>
+				<oneOrMore xmlns="http://relaxng.org/ns/structure/1.0"><element name="idno">
+						<attribute name="type">
+							<ref name="data.idnoPrintType"/>
+						</attribute>
+						<optional><ref name="data.idno"/></optional>
+					</element></oneOrMore>
+			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.literature" ident="macro.form.isbnIdno">
 			<gloss versionDate="2014-01-26" xml:lang="en">ISBN idno</gloss>
 			<gloss versionDate="2014-01-26" xml:lang="de">ISBN-idno</gloss>
@@ -11879,20 +11892,6 @@ manuscripts, not necessarily located within a single repository.</desc><desc ver
 			<remarks versionDate="2014-02-04" xml:lang="de">
 				<p>Der Textinhalt dieses Elements bezieht sich auf eine Internationale Standardbuchnummer (ISBN).</p>
 			</remarks>
-		</macroSpec><macroSpec rend="add" module="derived-module-schema.literature" ident="macro.form.uagIdno">
-			<gloss versionDate="2014-01-26" xml:lang="en">UAG idno</gloss>
-			<gloss versionDate="2014-01-26" xml:lang="de">UAG-idno</gloss>
-			<desc versionDate="2014-01-26" xml:lang="en">Macro for a <gi>idno</gi> element in which a <att>type</att> attribute with the value <val>UAG</val> must be present.</desc>
-			<desc versionDate="2014-01-26" xml:lang="de">Makro für ein <gi>idno</gi>-Element, in dem ein <att>type</att>-Attribut mit dem Wert <val>UAG</val> vorhanden sein muss.</desc>
-			<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
-			<content>
-				<zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><element name="idno">
-						<attribute name="type">
-							<value>UAG</value>
-						</attribute>
-						<optional><ref name="data.word"/></optional>
-					</element></zeroOrMore>
-			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.literature" ident="macro.form.optionalDating">
 			<content>
 				<optional xmlns="http://relaxng.org/ns/structure/1.0"><attribute name="when">
@@ -11979,7 +11978,7 @@ manuscripts, not necessarily located within a single repository.</desc><desc ver
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.literature" ident="macro.form.publicationStmt_print">
 			<content>
-				<group xmlns="http://relaxng.org/ns/structure/1.0"><ref name="availability"/><ref name="macro.form.rsqvIdno"/></group>
+				<group xmlns="http://relaxng.org/ns/structure/1.0"><ref name="availability"/><ref name="macro.form.printIdno"/></group>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.literature" ident="macro.form.sourceDesc_print">
 			<content>
@@ -12240,6 +12239,10 @@ manuscripts, not necessarily located within a single repository.</desc><desc ver
 		Macro <ident type="macro">data.revisionDescChangeType</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.changeEventType</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.idnoPlaceType</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.idnoMsType</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.idnoPrintType</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.idnoRepositoryType</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.idnoPerOrgType</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.orgNameOrchestraExtent</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.persNamePerformanceRole</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.supplPersNameType</ident></cell><cell/></row><row><cell>
@@ -12248,7 +12251,7 @@ manuscripts, not necessarily located within a single repository.</desc><desc ver
 		Macro <ident type="macro">data.encoding-staff</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.editorial-staff</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.digit</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">data.gndIdno</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.idno</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.rsqvIdno</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.keyword_corresp</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.keyword_graphic</ident></cell><cell/></row><row><cell>
@@ -12287,7 +12290,6 @@ manuscripts, not necessarily located within a single repository.</desc><desc ver
 		Element <gi>availability</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>bibl</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>org</gi></cell><cell>change</cell></row><row><cell>
-		Element <gi>performance</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>encodingDesc</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>editorialDecl</gi></cell><cell>replace</cell></row><row><cell>
 		Element <gi>msDesc</gi></cell><cell>replace</cell></row><row><cell>
@@ -12331,10 +12333,10 @@ manuscripts, not necessarily located within a single repository.</desc><desc ver
 	<head>Macros</head>
 	<table><row><cell>
 		Macro <ident type="macro">macro.form.date</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.gndIdno</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.rsqvIdno</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">macro.form.perOrgIdno</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">macro.form.msIdno</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">macro.form.printIdno</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">macro.form.isbnIdno</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.uagIdno</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">macro.form.regularPersName</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">macro.form.optionalDating</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">macro.form.supplementaryPersName</ident></cell><cell/></row><row><cell>
@@ -12351,7 +12353,6 @@ manuscripts, not necessarily located within a single repository.</desc><desc ver
 		Macro <ident type="macro">macro.form.orgNamePerformance</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">macro.form.publicationStmt_ms</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">macro.form.publicationStmt_print</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">macro.form.publicationStmt_event</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">macro.form.sourceDesc_ms</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">macro.form.sourceDesc_print</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">macro.form.sourceDesc_event</ident></cell><cell/></row><row><cell>

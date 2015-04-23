@@ -22,9 +22,9 @@
 				<desc>Person</desc>
 				<moduleRef key="tei"/>
 				<moduleRef key="core"
-					include="abbr add author bibl choice cit corr date del desc expan gap gloss graphic head hi item l lb lg list listBibl milestone name note p pb q quote ref rs sic sp speaker stage textLang time title unclear"/>
+					include="abbr add author bibl choice cit corr date del desc expan gap graphic head hi item l lb lg list listBibl milestone name note p pb q quote ref rs sic sp speaker stage textLang time title unclear"/>
 				<moduleRef key="header" include="idno"/>
-				<moduleRef key="namesdates" include="affiliation birth death event faith listEvent occupation orgName persName person placeName residence sex state"/>
+				<moduleRef key="namesdates" include="affiliation birth death event faith listEvent occupation orgName persName person placeName residence roleName sex state"/>
 				<moduleRef key="linking" include="ab anchor seg"/>
 				<moduleRef key="certainty" include="respons"/>
 				<moduleRef key="figures" include="cell figDesc figure row table"/>

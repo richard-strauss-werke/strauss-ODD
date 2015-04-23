@@ -6985,7 +6985,7 @@ Licensing, etc.</ref>
   </listRef>
 </classSpec><desc>Places. Based on Anna Maria Komprecht's WeGA ODD.</desc><macroSpec rend="add" module="derived-module-schema.place" ident="data.idnoPlaceType">
 			<content>
-				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>geonames</value><a:documentation>ID von http://www.geonames.org/</a:documentation><value>getty</value><a:documentation>ID von http://www.getty.edu/research/tools/vocabularies/tgn/</a:documentation></choice>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>geonames</value><a:documentation>ID von http://www.geonames.org/</a:documentation><value>getty</value><a:documentation>ID von http://www.getty.edu/research/tools/vocabularies/tgn/</a:documentation><value>viaf</value><a:documentation>VIAF-ID</a:documentation><value>gnd</value><a:documentation>GND-ID</a:documentation><value>url</value><a:documentation>URL identifier</a:documentation></choice>
 			</content>
 		</macroSpec><moduleSpec n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec n="CO" xml:id="DCO" ident="core"/><moduleSpec n="HD" xml:id="DHD" ident="header"/><moduleSpec n="ND" xml:id="DND" ident="namesdates"/><moduleSpec n="SA" xml:id="DSA" ident="linking"/></schemaSpec>
 			
@@ -7002,6 +7002,10 @@ Licensing, etc.</ref>
 		Macro <ident type="macro">data.revisionDescChangeType</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.changeEventType</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.idnoPlaceType</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.idnoMsType</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.idnoPrintType</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.idnoRepositoryType</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.idnoPerOrgType</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.orgNameOrchestraExtent</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.persNamePerformanceRole</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.supplPersNameType</ident></cell><cell/></row><row><cell>
@@ -7010,7 +7014,7 @@ Licensing, etc.</ref>
 		Macro <ident type="macro">data.encoding-staff</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.editorial-staff</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.digit</ident></cell><cell/></row><row><cell>
-		Macro <ident type="macro">data.gndIdno</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.idno</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.rsqvIdno</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.keyword_corresp</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.keyword_graphic</ident></cell><cell/></row><row><cell>

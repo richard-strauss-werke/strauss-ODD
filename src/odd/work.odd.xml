@@ -266,6 +266,13 @@
 						<attDef ident="xml:base" mode="delete"/>
 						<attDef ident="type" mode="change" usage="req">
 							<valList mode="replace" type="semi">
+								<valItem ident="viaf">
+									<gloss versionDate="2015-04-18" xml:lang="de">VIAF</gloss>
+									<gloss versionDate="2015-04-18" xml:lang="en">VIAF</gloss>
+									<desc versionDate="2015-04-18" xml:lang="de">Markiert einen VIAF-Identifikator.</desc>
+									<desc versionDate="2015-04-18" xml:lang="en">marks a VIAF identifier.</desc>
+								</valItem>
+								
 								<valItem ident="gnd">
 									<gloss versionDate="2014-04-30" xml:lang="de">Gemeinsame Normdatei</gloss>
 									<gloss versionDate="2014-04-30" xml:lang="en">Gemeinsame Normdatei</gloss>
@@ -273,26 +280,33 @@
 									<desc versionDate="2014-04-30" xml:lang="en"
 										>marks information (ID and title) from the German authority file "Gemeinsamen Normdatei".</desc>
 								</valItem>
-								<valItem ident="RSQV">
+								<valItem ident="rsqv">
 									<desc versionDate="2015-04-02" xml:lang="de">Markiert einen Identifikator des Richard-Strauss-Quellenverzeichnisses.</desc>
 									<desc versionDate="2015-04-02" xml:lang="en">marks an identifier from the Richard-Strauss-Quellenverzeichnis.</desc>
 								</valItem>
 
-								<valItem ident="ASOW">
+								<valItem ident="asow">
 									<desc versionDate="2015-04-02" xml:lang="de">Markiert eine Nummer des Asow-Verzeichnisses.</desc>
 									<desc versionDate="2015-04-02" xml:lang="en">marks a number from the "Asow-Verzeichnis".</desc>
 								</valItem>
 								
-								<valItem ident="TRENNER">
+								<valItem ident="trenner">
 									<desc versionDate="2015-04-02" xml:lang="de">Markiert eine Nummer des Trenner-Verzeichnisses.</desc>
 									<desc versionDate="2015-04-02" xml:lang="en">marks a number from the "Trenner-Verzeichnis".</desc>
 								</valItem>
 
-								<valItem ident="OP">
+								<valItem ident="opus">
 									<gloss versionDate="2015-04-02" xml:lang="de">Opus</gloss>
 									<gloss versionDate="2015-04-02" xml:lang="en">Opus</gloss>
 									<desc versionDate="2014-04-30" xml:lang="de">Markiert eine Opuszahl.</desc>
 									<desc versionDate="2014-04-30" xml:lang="en">marks an opus number.</desc>
+								</valItem>
+								
+								<valItem ident="url">
+									<gloss versionDate="2015-04-18" xml:lang="de">URL</gloss>
+									<gloss versionDate="2015-04-18" xml:lang="en">URL</gloss>
+									<desc versionDate="2015-04-18" xml:lang="de">Markiert einen URL-Identifikator.</desc>
+									<desc versionDate="2015-04-18" xml:lang="en">marks an URL identifier.</desc>
 								</valItem>
 								
 							</valList>

@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2015-04-13T09:16:09Z. .
+Schema generated from ODD source 2015-04-19T09:02:06Z. .
 TEI Edition: Version 2.8.0. Last updated on
 	6th April 2015, revision 13197
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.8.0/
@@ -36,9 +36,11 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.8.0/
    <define name="rsw_data.certainty">
       <choice>
          <value>high</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(ws.) wahrscheinlich / mit hoher Wahrscheinlichkeit</a:documentation>
          <value>medium</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(?) möglicherweise / mit mittlerer Wahrscheinlichkeit</a:documentation>
          <value>low</value>
-         <value>unknown</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(nicht) nicht / mit sehr geringer Wahrscheinlichkeit</a:documentation>
       </choice>
    </define>
    <define name="rsw_data.probability">
@@ -111,6 +113,18 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.8.0/
          <data type="token">
             <param name="pattern">[0-9.,DHMPRSTWYZ/:+\-]+</param>
          </data>
+      </choice>
+   </define>
+   <define name="rsw_data.idnoRepositoryType">
+      <choice>
+         <value>rism</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">RISM-ID</a:documentation>
+         <value>gnd</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">GND-ID</a:documentation>
+         <value>viaf</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">VIAF-ID</a:documentation>
+         <value>url</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">URL identifier</a:documentation>
       </choice>
    </define>
    <define name="rsw_att.canonical.attributes">
@@ -1111,12 +1125,10 @@ Licensing, etc. 2.2.5. The Series Statement 3.11.2.4. Imprint, Size of a Documen
          </zeroOrMore>
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.sortable.attributes"/>
-         <optional>
-            <attribute name="type">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">bestimmt die Nummer, zum Beispiel als ISBN-Nummer oder als eine andere Standardseriennummer.</a:documentation>
-               <ref name="rsw_data.enumerated"/>
-            </attribute>
-         </optional>
+         <attribute name="type">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">bestimmt die Nummer, zum Beispiel als ISBN-Nummer oder als eine andere Standardseriennummer.</a:documentation>
+            <ref name="rsw_data.idnoRepositoryType"/>
+         </attribute>
          <empty/>
       </element>
    </define>

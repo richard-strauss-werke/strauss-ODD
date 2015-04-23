@@ -67,7 +67,7 @@
 					<elementSpec ident="publicationStmt" mode="replace" module="header">
 						<equiv filter="rsw.xsl" mimeType="text/xsl" name="expandPublicationStmt"/>
 						<content>
-							<rng:ref name="macro.form.publicationStmt_event"/>
+<!--							<rng:ref name="macro.form.publicationStmt_event"/>-->
 						</content>
 					</elementSpec>
 					<elementSpec ident="sourceDesc" module="header" mode="replace">

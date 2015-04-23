@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2015-04-13T09:15:56Z. .
+Schema generated from ODD source 2015-04-19T09:01:50Z. .
 TEI Edition: Version 2.8.0. Last updated on
 	6th April 2015, revision 13197
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.8.0/
@@ -135,6 +135,16 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.8.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">bei</a:documentation>
       </choice>
    </define>
+   <define name="rsw_data.idnoPerOrgType">
+      <choice>
+         <value>gnd</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">GND-ID</a:documentation>
+         <value>viaf</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">VIAF-ID</a:documentation>
+         <value>url</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">URL identifier</a:documentation>
+      </choice>
+   </define>
    <define name="rsw_data.supplPersNameType">
       <choice>
          <value>unknown</value>
@@ -159,39 +169,22 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.8.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">sonstige Art</a:documentation>
       </choice>
    </define>
-   <define name="rsw_data.gndIdno">
+   <define name="rsw_data.idno">
       <data type="string">
-         <param name="pattern">\d{1,9}\-?[\dX]</param>
-      </data>
-   </define>
-   <define name="rsw_data.rsqvIdno">
-      <data type="string">
-         <param name="pattern">[a-z]\d{4,5}</param>
+         <param name="pattern">[^\s]*</param>
       </data>
    </define>
    <define name="rsw_macro.form.date">
       <ref name="rsw_date"/>
    </define>
-   <define name="rsw_macro.form.gndIdno">
+   <define name="rsw_macro.form.perOrgIdno">
       <oneOrMore>
          <element name="idno">
             <attribute name="type">
-               <value>GND</value>
+               <ref name="rsw_data.idnoPerOrgType"/>
             </attribute>
             <optional>
-               <ref name="rsw_data.gndIdno"/>
-            </optional>
-         </element>
-      </oneOrMore>
-   </define>
-   <define name="rsw_macro.form.rsqvIdno">
-      <oneOrMore>
-         <element name="idno">
-            <attribute name="type">
-               <value>RSQV</value>
-            </attribute>
-            <optional>
-               <ref name="rsw_data.rsqvIdno"/>
+               <ref name="rsw_data.idno"/>
             </optional>
          </element>
       </oneOrMore>
@@ -863,40 +856,28 @@ Empfohlene Werte sind: 1] label; 2] data</a:documentation>
    </define>
    <define name="rsw_model.emphLike">
       <choice>
-         <ref name="rsw_gloss"/>
          <ref name="rsw_title"/>
       </choice>
    </define>
    <define name="rsw_model.emphLike_alternation">
       <choice>
-         <ref name="rsw_gloss"/>
          <ref name="rsw_title"/>
       </choice>
    </define>
    <define name="rsw_model.emphLike_sequence">
-      <ref name="rsw_gloss"/>
       <ref name="rsw_title"/>
    </define>
    <define name="rsw_model.emphLike_sequenceOptional">
-      <optional>
-         <ref name="rsw_gloss"/>
-      </optional>
       <optional>
          <ref name="rsw_title"/>
       </optional>
    </define>
    <define name="rsw_model.emphLike_sequenceOptionalRepeatable">
       <zeroOrMore>
-         <ref name="rsw_gloss"/>
-      </zeroOrMore>
-      <zeroOrMore>
          <ref name="rsw_title"/>
       </zeroOrMore>
    </define>
    <define name="rsw_model.emphLike_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="rsw_gloss"/>
-      </oneOrMore>
       <oneOrMore>
          <ref name="rsw_title"/>
       </oneOrMore>
@@ -1933,16 +1914,6 @@ Empfohlene Werte sind: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] foreig
          <empty/>
       </element>
    </define>
-   <define name="rsw_gloss">
-      <element name="gloss">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">identifies a phrase or word used to provide a gloss or definition for some other word or phrase. [3.3.4. Terms, Glosses, Equivalents, and Descriptions 22.4.1. Description of Components]</a:documentation>
-         <ref name="rsw_macro.phraseSeq"/>
-         <ref name="rsw_att.global.attributes"/>
-         <ref name="rsw_att.typed.attributes"/>
-         <ref name="rsw_att.pointing.attributes"/>
-         <empty/>
-      </element>
-   </define>
    <define name="rsw_sic">
       <element name="sic">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Latin for thus or so
@@ -2658,22 +2629,32 @@ Licensing, etc. 2.2.5. The Series Statement 3.11.2.4. Imprint, Size of a Documen
       </element>
    </define>
    <define name="rsw_model.persNamePart">
-      <notAllowed/>
+      <choice>
+         <ref name="rsw_roleName"/>
+      </choice>
    </define>
    <define name="rsw_model.persNamePart_alternation">
-      <notAllowed/>
+      <choice>
+         <ref name="rsw_roleName"/>
+      </choice>
    </define>
    <define name="rsw_model.persNamePart_sequence">
-      <empty/>
+      <ref name="rsw_roleName"/>
    </define>
    <define name="rsw_model.persNamePart_sequenceOptional">
-      <empty/>
+      <optional>
+         <ref name="rsw_roleName"/>
+      </optional>
    </define>
    <define name="rsw_model.persNamePart_sequenceOptionalRepeatable">
-      <empty/>
+      <zeroOrMore>
+         <ref name="rsw_roleName"/>
+      </zeroOrMore>
    </define>
    <define name="rsw_model.persNamePart_sequenceRepeatable">
-      <notAllowed/>
+      <oneOrMore>
+         <ref name="rsw_roleName"/>
+      </oneOrMore>
    </define>
    <define name="rsw_orgName">
       <element name="orgName">
@@ -2694,6 +2675,16 @@ Licensing, etc. 2.2.5. The Series Statement 3.11.2.4. Imprint, Size of a Documen
          <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.datable.attributes"/>
          <ref name="rsw_att.editLike.attributes"/>
+         <ref name="rsw_att.personal.attributes"/>
+         <ref name="rsw_att.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="rsw_roleName">
+      <element name="roleName">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a name component which indicates that the referent has a particular role or position in society, such as an official title or rank. [13.2.1. Personal Names]</a:documentation>
+         <ref name="rsw_macro.phraseSeq"/>
+         <ref name="rsw_att.global.attributes"/>
          <ref name="rsw_att.personal.attributes"/>
          <ref name="rsw_att.typed.attributes"/>
          <empty/>
@@ -2726,7 +2717,7 @@ Licensing, etc. 2.2.5. The Series Statement 3.11.2.4. Imprint, Size of a Documen
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Zugehörigkeit) contains an informal description of a person's present or past affiliation with some organization, for example an employer or sponsor. [15.2.2. The Participant Description]</a:documentation>
          <ref name="rsw_macro.form.date"/>
          <ref name="rsw_orgName"/>
-         <ref name="rsw_gloss"/>
+         <ref name="rsw_roleName"/>
       </element>
    </define>
    <define name="rsw_birth">
@@ -2802,10 +2793,7 @@ Licensing, etc. 2.2.5. The Series Statement 3.11.2.4. Imprint, Size of a Documen
          <ref name="rsw_macro.form.discussionNote"/>
          <ref name="rsw_macro.form.uncategorizedNote"/>
          <oneOrMore>
-            <choice>
-               <ref name="rsw_macro.form.gndIdno"/>
-               <ref name="rsw_macro.form.rsqvIdno"/>
-            </choice>
+            <ref name="rsw_macro.form.perOrgIdno"/>
          </oneOrMore>
          <ref name="rsw_macro.form.regularPersName"/>
          <oneOrMore>

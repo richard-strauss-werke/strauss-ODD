@@ -25,7 +25,26 @@
 				<moduleRef key="core" include="name"/>
 				<moduleRef key="namesdates" include="country settlement"/>
 				<moduleRef key="linking" include="ab"/>
+				
+				<elementSpec ident="idno" module="header" mode="change">
+					<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/>
+					<attList>
+						<attDef ident="type" mode="change" usage="req">
+							<datatype>
+								<macroRef key="data.idnoRepositoryType"/>								
+							</datatype>
+						</attDef>
+					</attList>
+				</elementSpec>
+				
+				<specGrpRef target="#edits.datatypes"/>
+				
 			</schemaSpec>
+			
+			<div>
+				<head>Edits</head>
+				<xi:include href="edits/datatypes.xml"/>
+			</div>
 
 		</body>
 	</text>

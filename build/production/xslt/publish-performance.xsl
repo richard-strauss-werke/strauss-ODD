@@ -157,6 +157,12 @@
    <xsl:template match="respons">
       <xsl:call-template name="transformRespons"/>
    </xsl:template>
+   <xsl:template match="performance/date">
+      <xsl:call-template name="expandOrRemoveDate"/>
+   </xsl:template>
+   <xsl:template match="desc/date">
+      <xsl:call-template name="expandOrRemoveDate"/>
+   </xsl:template>
    <xsl:template match="performance/note[@type='commentary']">
       <xsl:call-template name="tightenCommentary"/>
    </xsl:template>

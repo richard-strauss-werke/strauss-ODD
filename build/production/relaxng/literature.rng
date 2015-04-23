@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2015-04-13T09:15:37Z. .
+Schema generated from ODD source 2015-04-19T09:01:22Z. .
 TEI Edition: Version 2.8.0. Last updated on
 	6th April 2015, revision 13197
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.8.0/
@@ -10943,6 +10943,16 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Zur Publikation freigegeben</a:documentation>
       </choice>
    </define>
+   <define name="rsw_data.idnoPrintType">
+      <choice>
+         <value>oclc</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">OCLC-ID (WorldCat)</a:documentation>
+         <value>rsqv</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">RSQV-ID</a:documentation>
+         <value>url</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">URL identifier</a:documentation>
+      </choice>
+   </define>
    <define name="rsw_data.msDescRend">
       <choice>
          <value>unknown</value>
@@ -11016,9 +11026,9 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
          <param name="pattern">\d</param>
       </data>
    </define>
-   <define name="rsw_data.rsqvIdno">
+   <define name="rsw_data.idno">
       <data type="string">
-         <param name="pattern">[a-z]\d{4,5}</param>
+         <param name="pattern">[^\s]*</param>
       </data>
    </define>
    <define name="rsw_data.keyword_print">
@@ -11073,14 +11083,14 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Sonstiger Bezug</a:documentation>
       </choice>
    </define>
-   <define name="rsw_macro.form.rsqvIdno">
+   <define name="rsw_macro.form.printIdno">
       <oneOrMore>
          <element name="idno">
             <attribute name="type">
-               <value>RSQV</value>
+               <ref name="rsw_data.idnoPrintType"/>
             </attribute>
             <optional>
-               <ref name="rsw_data.rsqvIdno"/>
+               <ref name="rsw_data.idno"/>
             </optional>
          </element>
       </oneOrMore>
@@ -11177,7 +11187,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
    <define name="rsw_macro.form.publicationStmt_print">
       <group>
          <ref name="rsw_availability"/>
-         <ref name="rsw_macro.form.rsqvIdno"/>
+         <ref name="rsw_macro.form.printIdno"/>
       </group>
    </define>
    <define name="rsw_macro.form.sourceDesc_print">

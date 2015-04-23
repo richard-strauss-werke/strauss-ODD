@@ -2521,39 +2521,11 @@ expliquer d'autres parties d'un document.</desc>
   <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STECST">1.4.1. Standard Content Models</ref>
   </listRef>
-</macroSpec><macroSpec module="tei" type="dt" ident="data.certainty">
-  <desc versionDate="2007-10-18" xml:lang="en">defines the range of attribute values expressing a degree of certainty.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">확실성 정도를 표현하는 속성 값의 범위를 정의한다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">定義表示正確度的屬性值範圍</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">確信度を示す属性値の程度を示す．</desc>
-  <desc versionDate="2007-06-12" xml:lang="fr">Définit la gamme des valeurs d'attribut exprimant un
-    degré de certitude</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">define la gama de valores de atributos que exprimen un
-    grado de certeza.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">definisce la gamma di valori di attributi che esprimono
-    un grado di certezza</desc>
-  <content>
-    <choice xmlns="http://relaxng.org/ns/structure/1.0">
-      <value>high</value>
-      <value>medium</value>
-      <value>low</value>
-      <value>unknown</value>
-    </choice>
-  </content>
-  <remarks versionDate="2011-02-26" xml:lang="en">
-    <p>Certainty may be expressed by one of the predefined symbolic values <val>high</val>,
-        <val>medium</val>, or <val>low</val>. The value
-	<val>unknown</val> should be used in cases where the encoder
-	does not wish to assert an opinion about the matter. For more precise indication, <ident type="datatype">data.probability</ident> may be used instead or in addition.</p>
-  </remarks>
-  <remarks xml:lang="ja" versionDate="2008-04-05">
-    <p> 確信度は，<val>high</val>, <val>medium</val>, <val>low</val>のうち の1つが選択される．より詳細に示したい場合には， <ident type="datatype">data.probability</ident>を単独または追加と して使用することができる． </p>
-  </remarks>
-  <remarks versionDate="2009-05-25" xml:lang="fr">
-    <p>Le degré de certitude peut être exprimé par l'une des valeurs symboliques prédéfinies
-        <val>high</val>, <val>medium</val>, ou <val>low</val>. Pour une indication précise, <ident type="datatype">data.probability</ident> peut être utilisé en remplacement ou en complément.</p>
-  </remarks>
-</macroSpec><macroSpec module="tei" type="dt" ident="data.probability">
+</macroSpec><macroSpec ident="data.certainty" module="tei" type="dt" mode="replace">
+			<content>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>high</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">(ws.) wahrscheinlich / mit hoher Wahrscheinlichkeit</a:documentation><value>medium</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">(?) möglicherweise / mit mittlerer Wahrscheinlichkeit</a:documentation><value>low</value><a:documentation xmlns="http://www.tei-c.org/ns/1.0">(nicht) nicht / mit sehr geringer Wahrscheinlichkeit</a:documentation></choice>
+			</content>
+		</macroSpec><macroSpec module="tei" type="dt" ident="data.probability">
   <desc versionDate="2007-10-18" xml:lang="en">defines the range of attribute values expressing a probability.</desc>
   <desc versionDate="2007-12-20" xml:lang="ko">확률을 표현하는 속성 값의 범위를 정의한다.</desc>
   <desc versionDate="2007-05-02" xml:lang="zh-TW">定義表示可能性的屬性值範圍</desc>
@@ -3639,66 +3611,20 @@ one initial.</desc>
   <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONARS">3.5.1. Referring Strings</ref>
   </listRef>
-</elementSpec><elementSpec module="header" ident="idno">
-  <gloss versionDate="2010-04-30" xml:lang="en">identifier</gloss>
-  <gloss versionDate="2009-01-05" xml:lang="fr">identifiant</gloss>
-  <gloss versionDate="2007-12-20" xml:lang="ko">식별 숫자</gloss>
-  <gloss versionDate="2007-05-02" xml:lang="zh-TW">識別代碼</gloss>
-  <gloss versionDate="2006-10-18" xml:lang="de">Identifikationsnummer</gloss>
-  <gloss versionDate="2007-05-04" xml:lang="es">número identificativo</gloss>
-  <gloss versionDate="2007-01-21" xml:lang="it">numero identificatore</gloss>
-  <desc versionDate="2010-04-30" xml:lang="en">supplies any form of identifier used to identify some object,
+</elementSpec><elementSpec rend="change" module="header" ident="idno"><equiv rend="replace" filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithContent"/><gloss versionDate="2010-04-30" xml:lang="en">identifier</gloss><gloss versionDate="2009-01-05" xml:lang="fr">identifiant</gloss><gloss versionDate="2007-12-20" xml:lang="ko">식별 숫자</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">識別代碼</gloss><gloss versionDate="2006-10-18" xml:lang="de">Identifikationsnummer</gloss><gloss versionDate="2007-05-04" xml:lang="es">número identificativo</gloss><gloss versionDate="2007-01-21" xml:lang="it">numero identificatore</gloss><desc versionDate="2010-04-30" xml:lang="en">supplies any form of identifier used to identify some object,
   such as a bibliographic item, a person, a title, an organization,
-  etc. in a standardized way.</desc>
-  <desc versionDate="2009-01-05" xml:lang="fr">donne un numéro normalisé ou non qui peut être utilisé
-    pour identifier une référence bibliographique.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">서지 정보 항목을 식별하기 위해 사용되는 표준 또는 비표준 숫자를 제시한다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">提供任何用來識別書目項目的標準或非標準編碼。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">書誌項目を特定する標準的・非標準的数値を示す．</desc>
-  <desc versionDate="2006-10-18" xml:lang="de">gibt eine standardisierte oder nicht standardisierte
-    Nummer an, die genutzt wird um einen Text bibliografisch eindeutig zu identifizieren</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">proporciona un número, estándard o no, usado para la
-    identificación de un elemento bibliográfico.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">fornisce un identificatore, standard o meno, usato per
-    identificare un'unità bibliografica</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="att.sortable"/>
-    
-    <memberOf key="model.nameLike"/>
-    
-    
-  </classes>
-  <content>
-    <zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0">
-      <choice>
-        <text/>
-        <ref name="model.gLike"/>
-        <ref name="idno"/>
-      </choice>
-    </zeroOrMore>
-  </content>
-  <attList>
-    <attDef ident="type" usage="opt">
-      <desc versionDate="2010-04-30" xml:lang="en">categorizes the identifier, for example as an ISBN, Social
-      Security number, etc.</desc>
-      <desc versionDate="2009-01-05" xml:lang="fr">classe un numéro dans une catégorie, par exemple
-        comme étant un numéro ISBN ou comme appartenant une autre série normalisée.</desc>
-      <desc versionDate="2007-12-20" xml:lang="ko">예를 들어 ISBN 또는 기타 표준 일련번호로, 숫자를 범주화한다.</desc>
-      <desc versionDate="2007-05-02" xml:lang="zh-TW">表明編碼的種類，例如國際標準書號 (ISBN) 或其他標準系列編碼。</desc>
-      <desc versionDate="2008-04-05" xml:lang="ja">当該数値の分類を示す．例えば，ISBNなど．</desc>
-      <desc versionDate="2006-10-18" xml:lang="de">bestimmt die Nummer, zum Beispiel als ISBN-Nummer
-        oder als eine andere Standardseriennummer.</desc>
-      <desc versionDate="2007-05-04" xml:lang="es">clasifica el número, por ejemplo como un ISBN o
-        cualquier otro número estándard.</desc>
-      <desc versionDate="2007-01-21" xml:lang="it">classifica l'identificatore, ad esempio come codice
-        ISBN o altri generi di identificatori standard.</desc>
-      <datatype>
-        <ref xmlns="http://relaxng.org/ns/structure/1.0" name="data.enumerated"/>
-      </datatype>
-    </attDef>
-  </attList>
-  <exemplum xml:lang="und">
+  etc. in a standardized way.</desc><desc versionDate="2009-01-05" xml:lang="fr">donne un numéro normalisé ou non qui peut être utilisé
+    pour identifier une référence bibliographique.</desc><desc versionDate="2007-12-20" xml:lang="ko">서지 정보 항목을 식별하기 위해 사용되는 표준 또는 비표준 숫자를 제시한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">提供任何用來識別書目項目的標準或非標準編碼。</desc><desc versionDate="2008-04-05" xml:lang="ja">書誌項目を特定する標準的・非標準的数値を示す．</desc><desc versionDate="2006-10-18" xml:lang="de">gibt eine standardisierte oder nicht standardisierte
+    Nummer an, die genutzt wird um einen Text bibliografisch eindeutig zu identifizieren</desc><desc versionDate="2007-05-04" xml:lang="es">proporciona un número, estándard o no, usado para la
+    identificación de un elemento bibliográfico.</desc><desc versionDate="2007-01-21" xml:lang="it">fornisce un identificatore, standard o meno, usato per
+    identificare un'unità bibliografica</desc><classes><memberOf key="att.global"/><memberOf key="att.sortable"/><memberOf key="model.nameLike"/></classes><content><zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><choice><text/><ref name="model.gLike"/><ref name="idno"/></choice></zeroOrMore></content><attList><attDef ident="type" usage="req"><desc versionDate="2010-04-30" xml:lang="en">categorizes the identifier, for example as an ISBN, Social
+      Security number, etc.</desc><desc versionDate="2009-01-05" xml:lang="fr">classe un numéro dans une catégorie, par exemple
+        comme étant un numéro ISBN ou comme appartenant une autre série normalisée.</desc><desc versionDate="2007-12-20" xml:lang="ko">예를 들어 ISBN 또는 기타 표준 일련번호로, 숫자를 범주화한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">表明編碼的種類，例如國際標準書號 (ISBN) 或其他標準系列編碼。</desc><desc versionDate="2008-04-05" xml:lang="ja">当該数値の分類を示す．例えば，ISBNなど．</desc><desc versionDate="2006-10-18" xml:lang="de">bestimmt die Nummer, zum Beispiel als ISBN-Nummer
+        oder als eine andere Standardseriennummer.</desc><desc versionDate="2007-05-04" xml:lang="es">clasifica el número, por ejemplo como un ISBN o
+        cualquier otro número estándard.</desc><desc versionDate="2007-01-21" xml:lang="it">classifica l'identificatore, ad esempio come codice
+        ISBN o altri generi di identificatori standard.</desc><datatype>
+								<macroRef key="data.idnoRepositoryType"/>								
+							</datatype></attDef></attList><exemplum xml:lang="und">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <idno type="ISBN">978-1-906964-22-1</idno>
       <idno type="ISSN">0143-3385</idno>
@@ -3712,29 +3638,25 @@ one initial.</desc>
     <p>In the last case, the identifier includes a non-Unicode character
 which is defined elsewhere by
 means of a <gi>glyph</gi> or <gi>char</gi> element referenced here as <code>#sym</code>. </p>
-  </exemplum>
-  <exemplum versionDate="2010-02-26" xml:lang="fr">
+  </exemplum><exemplum versionDate="2010-02-26" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <idno type="ISSN">0143-3385</idno>
       <idno type="OTA">116</idno>
       <idno type="ISBN">1-896016-00-6</idno>
     </egXML>
-  </exemplum>
-  <remarks versionDate="2012-03-09" xml:lang="en">
+  </exemplum><remarks versionDate="2012-03-09" xml:lang="en">
     <p><gi>idno</gi> should be used for labels which identify an
     object or concept in a formal cataloguing system such as a
     database or an RDF store, or in a distributed system such as the
     World Wide Web. Some suggested values for <att>type</att> on <gi>idno</gi>
     are <code>ISBN</code>, <code>ISSN</code>, <code>DOI</code>, and
     <code>URI</code>.</p>
-  </remarks>
-  <listRef>
+  </remarks><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD24">2.2.4. Publication, Distribution,
 Licensing, etc.</ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD26">2.2.5. The Series Statement</ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBICOI">3.11.2.4. Imprint, Size of a Document, and Reprint Information</ref>
-  </listRef>
-</elementSpec><classSpec module="namesdates" xml:id="DATABLECUSTOM" type="atts" predeclare="true" ident="att.datable.custom">
+  </listRef></elementSpec><classSpec module="namesdates" xml:id="DATABLECUSTOM" type="atts" predeclare="true" ident="att.datable.custom">
   <desc versionDate="2011-11-11" xml:lang="en">provides attributes for normalization of elements that contain datable events to a custom dating system
     (i.e. other than the Gregorian used by W3 and ISO).</desc>
   <attList>
@@ -4400,7 +4322,47 @@ Licensing, etc.</ref>
   <listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SASE">16.3. Blocks, Segments, and Anchors</ref>
   </listRef>
-</elementSpec><desc>Repositories</desc><moduleSpec n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec n="CO" xml:id="DCO" ident="core"/><moduleSpec n="HD" xml:id="DHD" ident="header"/><moduleSpec n="ND" xml:id="DND" ident="namesdates"/><moduleSpec n="SA" xml:id="DSA" ident="linking"/></schemaSpec>
+</elementSpec><desc>Repositories</desc><macroSpec rend="add" module="derived-module-schema.repository" ident="data.idnoRepositoryType">
+			<content>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>rism</value><a:documentation>RISM-ID</a:documentation><value>gnd</value><a:documentation>GND-ID</a:documentation><value>viaf</value><a:documentation>VIAF-ID</a:documentation><value>url</value><a:documentation>URL identifier</a:documentation></choice>
+			</content>
+		</macroSpec><moduleSpec n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec n="CO" xml:id="DCO" ident="core"/><moduleSpec n="HD" xml:id="DHD" ident="header"/><moduleSpec n="ND" xml:id="DND" ident="namesdates"/><moduleSpec n="SA" xml:id="DSA" ident="linking"/></schemaSpec>
+			
+			<div>
+				<head>Edits</head>
+				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="edits/datatypes.xml" xml:lang="">
+	<head>Datatypes</head>
+	<table><row><cell>
+		Macro <ident type="macro">data.handFeaturesScope</ident></cell><cell>add</cell></row><row><cell>
+		Macro <ident type="macro">data.certainty</ident></cell><cell>replace</cell></row><row><cell>
+		Macro <ident type="macro">data.precision</ident></cell><cell>add</cell></row><row><cell>
+		Macro <ident type="macro">data.placeNamePrecision</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.revisionDescChangeType</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.changeEventType</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.idnoPlaceType</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.idnoMsType</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.idnoPrintType</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.idnoRepositoryType</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.idnoPerOrgType</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.orgNameOrchestraExtent</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.persNamePerformanceRole</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.supplPersNameType</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.supplOrgNameType</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.msDescRend</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.encoding-staff</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.editorial-staff</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.digit</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.idno</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.rsqvIdno</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.keyword_corresp</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.keyword_graphic</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.keyword_print</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.keyword_work</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.biblTypeCorrespondence</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.biblTypeLiterature</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">marcRelator.list</ident></cell><cell>add</cell></row></table>
+</div>
+			</div>
 
 		</body>
 	</text>

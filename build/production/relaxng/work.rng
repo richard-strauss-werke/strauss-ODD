@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.music-encoding.org/ns/mei"><!--
-Schema generated from ODD source 2015-04-13T09:16:18Z. .
+Schema generated from ODD source 2015-04-19T09:02:14Z. .
 TEI Edition: Version 2.8.0. Last updated on
 	6th April 2015, revision 13197
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.8.0/
@@ -3635,18 +3635,22 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.8.0/
          <ref name="mei_att.typed.attribute.subtype"/>
          <attribute name="type">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.
-Empfohlene Werte sind: 1] gnd(Gemeinsame Normdatei) ; 2] RSQV; 3] ASOW; 4] TRENNER; 5] OP(Opus) </a:documentation>
+Empfohlene Werte sind: 1] viaf(VIAF) ; 2] gnd(Gemeinsame Normdatei) ; 3] rsqv; 4] asow; 5] trenner; 6] opus(Opus) ; 7] url(URL) </a:documentation>
             <choice>
+               <value>viaf</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(VIAF) Markiert einen VIAF-Identifikator.</a:documentation>
                <value>gnd</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Gemeinsame Normdatei) Markiert Angaben (ID sowie Einheitssachtitel) nach der Gemeinsamen Normdatei.</a:documentation>
-               <value>RSQV</value>
+               <value>rsqv</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Markiert einen Identifikator des Richard-Strauss-Quellenverzeichnisses.</a:documentation>
-               <value>ASOW</value>
+               <value>asow</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Markiert eine Nummer des Asow-Verzeichnisses.</a:documentation>
-               <value>TRENNER</value>
+               <value>trenner</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Markiert eine Nummer des Trenner-Verzeichnisses.</a:documentation>
-               <value>OP</value>
+               <value>opus</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Opus) Markiert eine Opuszahl.</a:documentation>
+               <value>url</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(URL) Markiert einen URL-Identifikator.</a:documentation>
                <data type="NMTOKEN"/>
             </choice>
          </attribute>

@@ -4,7 +4,6 @@
                 xmlns:rsw="http://richard-strauss-ausgabe.de/ns/1.0"
                 version="2.0"
                 xpath-default-namespace="http://www.tei-c.org/ns/1.0">
-   <xsl:import href="rsw.xsl"/>
    <xsl:param name="docIDParam" required="no"/>
    <xsl:output method="xml" indent="no" encoding="utf-8"/>
    <xsl:strip-space elements="additional additions address analytic app availability biblStruct body castList choice cit creation div editorialDecl encodingDesc epigraph event facsimile figure fileDesc floatingText front graphic handDesc handNote imprint index lg listBibl listChange listEvent monogr msDesc msIdentifier notatedMusic notesStmt objectDesc org performance person physDesc postscript profileDesc projectDesc publicationStmt relatedItem respons respStmt revisionDesc row seriesStmt sourceDesc sp space state subst supportDesc table teiHeader text textClass titleStmt"/>
@@ -70,9 +69,6 @@
          </xsl:attribute>
          <xsl:apply-templates select="@*[not(name()='xml:id')]|node()|comment()|processing-instruction()|text()"/>
       </xsl:copy>
-   </xsl:template>
-   <xsl:template match="idno">
-      <xsl:call-template name="keepOnlyWithContent"/>
    </xsl:template>
    <xsl:template match="@key[not(parent::country)]">
       <xsl:if test="normalize-space()">

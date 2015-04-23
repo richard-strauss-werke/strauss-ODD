@@ -173,6 +173,66 @@
 					<a:documentation>ID von http://www.geonames.org/</a:documentation>
 					<rng:value>getty</rng:value>
 					<a:documentation>ID von http://www.getty.edu/research/tools/vocabularies/tgn/</a:documentation>
+					<rng:value>viaf</rng:value>
+					<a:documentation>VIAF-ID</a:documentation>
+					<rng:value>gnd</rng:value>
+					<a:documentation>GND-ID</a:documentation>
+					<rng:value>url</rng:value>
+					<a:documentation>URL identifier</a:documentation>
+				</rng:choice>
+			</content>
+		</macroSpec>
+
+		<macroSpec ident="data.idnoMsType">
+			<content>
+				<rng:choice>
+					<rng:value>rsqv</rng:value>
+					<a:documentation>RSQV-ID</a:documentation>
+					<rng:value>uag</rng:value>
+					<a:documentation>UAG-ID</a:documentation>
+					<rng:value>url</rng:value>
+					<a:documentation>URL identifier</a:documentation>
+				</rng:choice>
+			</content>
+		</macroSpec>
+
+		<macroSpec ident="data.idnoPrintType">
+			<content>
+				<rng:choice>
+					<rng:value>oclc</rng:value>
+					<a:documentation>OCLC-ID (WorldCat)</a:documentation>
+					<rng:value>rsqv</rng:value>
+					<a:documentation>RSQV-ID</a:documentation>
+					<rng:value>url</rng:value>
+					<a:documentation>URL identifier</a:documentation>
+				</rng:choice>
+			</content>
+		</macroSpec>
+
+		<macroSpec ident="data.idnoRepositoryType">
+			<content>
+				<rng:choice>
+					<rng:value>rism</rng:value>
+					<a:documentation>RISM-ID</a:documentation>
+					<rng:value>gnd</rng:value>
+					<a:documentation>GND-ID</a:documentation>
+					<rng:value>viaf</rng:value>
+					<a:documentation>VIAF-ID</a:documentation>
+					<rng:value>url</rng:value>
+					<a:documentation>URL identifier</a:documentation>
+				</rng:choice>
+			</content>
+		</macroSpec>
+
+		<macroSpec ident="data.idnoPerOrgType">
+			<content>
+				<rng:choice>
+					<rng:value>gnd</rng:value>
+					<a:documentation>GND-ID</a:documentation>
+					<rng:value>viaf</rng:value>
+					<a:documentation>VIAF-ID</a:documentation>
+					<rng:value>url</rng:value>
+					<a:documentation>URL identifier</a:documentation>
 				</rng:choice>
 			</content>
 		</macroSpec>
@@ -343,13 +403,21 @@
 			</content>
 		</macroSpec>
 
-		<macroSpec ident="data.gndIdno">
+		<macroSpec ident="data.idno">
+			<content>
+				<rng:data type="string">
+					<rng:param name="pattern">[^\s]*</rng:param>
+				</rng:data>
+			</content>
+		</macroSpec>
+
+<!--		<macroSpec ident="data.gndIdno">
 			<content>
 				<rng:data type="string">
 					<rng:param name="pattern">\d{1,9}\-?[\dX]</rng:param>
 				</rng:data>
 			</content>
-		</macroSpec>
+		</macroSpec>-->
 
 		<macroSpec ident="data.rsqvIdno">
 			<content>

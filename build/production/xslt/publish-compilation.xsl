@@ -294,9 +294,6 @@
    <xsl:template match="person/note[@type='commentary']">
       <xsl:call-template name="tightenCommentary"/>
    </xsl:template>
-   <xsl:template match="performance/note[@type='commentary']">
-      <xsl:call-template name="tightenCommentary"/>
-   </xsl:template>
    <xsl:template match="notesStmt/note[@type='summary']">
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
    </xsl:template>
@@ -304,9 +301,6 @@
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
    </xsl:template>
    <xsl:template match="person/note[@type='summary']">
-      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
-   </xsl:template>
-   <xsl:template match="performance/note[@type='summary']">
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
    </xsl:template>
    <xsl:template match="notesStmt/note[@type='discussion']">
@@ -318,9 +312,6 @@
    <xsl:template match="person/note[@type='discussion']">
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
    </xsl:template>
-   <xsl:template match="performance/note[@type='discussion']">
-      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
-   </xsl:template>
    <xsl:template match="notesStmt/note[@type='uncategorized']">
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
    </xsl:template>
@@ -328,9 +319,6 @@
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
    </xsl:template>
    <xsl:template match="person/note[@type='uncategorized']">
-      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
-   </xsl:template>
-   <xsl:template match="performance/note[@type='uncategorized']">
       <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
    </xsl:template>
    <xsl:template match="org/note[@type='details']">
@@ -342,16 +330,10 @@
    <xsl:template match="person/note[@type='figures']">
       <xsl:call-template name="keepOnlyWithChildAttOrAnyText"/>
    </xsl:template>
-   <xsl:template match="performance/note[@type='listBibl']">
-      <xsl:call-template name="keepOnlyWithAnyAttOrAnyText"/>
-   </xsl:template>
    <xsl:template match="revisionDesc/change">
       <xsl:call-template name="processRevisionDescChange"/>
    </xsl:template>
    <xsl:template match="listBibl/bibl">
-      <xsl:call-template name="transformOrRemoveBibl"/>
-   </xsl:template>
-   <xsl:template match="note/bibl">
       <xsl:call-template name="transformOrRemoveBibl"/>
    </xsl:template>
    <xsl:template match="@key[not(parent::country)]">

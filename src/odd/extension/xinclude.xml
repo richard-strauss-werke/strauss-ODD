@@ -14,7 +14,6 @@
 			ns="http://richard-strauss-ausgabe.de/ns/1.0">
 			<classes>
 				<memberOf key="model.common"/>
-				<memberOf key="model.headerPart"/>
 			</classes>
 			<content>
 				<rng:zeroOrMore>
@@ -39,7 +38,8 @@
 			<desc versionDate="2014-02-04" xml:lang="en">The W3C XInclude element</desc>
 			<classes>
 				<memberOf key="model.common"/>
-				<memberOf key="model.headerPart"/>
+				<memberOf key="model.teiHeaderPart"/>
+				<memberOf key="model.encodingDescPart"/>
 			</classes>
 			<content>
 				<rng:optional>

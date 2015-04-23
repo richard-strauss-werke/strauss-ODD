@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2015-04-13T09:15:43Z. .
+Schema generated from ODD source 2015-04-19T09:01:33Z. .
 TEI Edition: Version 2.8.0. Last updated on
 	6th April 2015, revision 13197
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.8.0/
@@ -135,6 +135,16 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.8.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">bei</a:documentation>
       </choice>
    </define>
+   <define name="rsw_data.idnoPerOrgType">
+      <choice>
+         <value>gnd</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">GND-ID</a:documentation>
+         <value>viaf</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">VIAF-ID</a:documentation>
+         <value>url</value>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">URL identifier</a:documentation>
+      </choice>
+   </define>
    <define name="rsw_data.supplOrgNameType">
       <choice>
          <value>unknown</value>
@@ -153,39 +163,22 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.8.0/
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">sonstige Art</a:documentation>
       </choice>
    </define>
-   <define name="rsw_data.gndIdno">
+   <define name="rsw_data.idno">
       <data type="string">
-         <param name="pattern">\d{1,9}\-?[\dX]</param>
-      </data>
-   </define>
-   <define name="rsw_data.rsqvIdno">
-      <data type="string">
-         <param name="pattern">[a-z]\d{4,5}</param>
+         <param name="pattern">[^\s]*</param>
       </data>
    </define>
    <define name="rsw_macro.form.date">
       <ref name="rsw_date"/>
    </define>
-   <define name="rsw_macro.form.gndIdno">
+   <define name="rsw_macro.form.perOrgIdno">
       <oneOrMore>
          <element name="idno">
             <attribute name="type">
-               <value>GND</value>
+               <ref name="rsw_data.idnoPerOrgType"/>
             </attribute>
             <optional>
-               <ref name="rsw_data.gndIdno"/>
-            </optional>
-         </element>
-      </oneOrMore>
-   </define>
-   <define name="rsw_macro.form.rsqvIdno">
-      <oneOrMore>
-         <element name="idno">
-            <attribute name="type">
-               <value>RSQV</value>
-            </attribute>
-            <optional>
-               <ref name="rsw_data.rsqvIdno"/>
+               <ref name="rsw_data.idno"/>
             </optional>
          </element>
       </oneOrMore>
@@ -2692,10 +2685,7 @@ Licensing, etc. 2.2.5. The Series Statement 3.11.2.4. Imprint, Size of a Documen
          <ref name="rsw_macro.form.discussionNote"/>
          <ref name="rsw_macro.form.uncategorizedNote"/>
          <oneOrMore>
-            <choice>
-               <ref name="rsw_macro.form.gndIdno"/>
-               <ref name="rsw_macro.form.rsqvIdno"/>
-            </choice>
+            <ref name="rsw_macro.form.perOrgIdno"/>
          </oneOrMore>
          <group>
             <element name="orgName">
