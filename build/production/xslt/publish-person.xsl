@@ -129,9 +129,6 @@
    <xsl:template match="desc">
       <xsl:call-template name="keepOnlyWithAnyText"/>
    </xsl:template>
-   <xsl:template match="gloss">
-      <xsl:call-template name="keepOnlyWithChildAttOrChildContent"/>
-   </xsl:template>
    <xsl:template match="rs">
       <xsl:call-template name="processRs"/>
    </xsl:template>
