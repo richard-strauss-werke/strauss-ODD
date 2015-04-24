@@ -9592,6 +9592,10 @@ TEI namespace <code>http://www.tei-c.org/ns/1.0</code> on it, using
 			<content>
 				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>unknown</value><a:documentation>unbekannte Art</a:documentation><value>full</value><a:documentation>voller Name</a:documentation><value>former</value><a:documentation>früherer Name</a:documentation><value>later</value><a:documentation>späterer Name</a:documentation><value>real</value><a:documentation>wirklicher Name</a:documentation><value>variant</value><a:documentation>Variante</a:documentation><value>other</value><a:documentation>sonstige Art</a:documentation></choice>
 			</content>
+		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="data.supplPlaceNameType">
+			<content>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>unknown</value><a:documentation>unbekannte Art</a:documentation><value>local</value><a:documentation>lokaler Name</a:documentation><value>geonames</value><a:documentation>GeoNames-Name</a:documentation><value>full</value><a:documentation>voller Name</a:documentation><value>former</value><a:documentation>früherer Name</a:documentation><value>later</value><a:documentation>späterer Name</a:documentation><value>real</value><a:documentation>wirklicher Name</a:documentation><value>variant</value><a:documentation>Variante</a:documentation><value>other</value><a:documentation>sonstige Art</a:documentation></choice>
+			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.events" ident="data.encoding-staff">
 			<content>
 				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>s:alx</value><a:documentation>Alexander Erhard</a:documentation><value>s:sts</value><a:documentation>Stefan Schenk</a:documentation><value>s:aap</value><a:documentation>Andreas Pernpeintner</a:documentation><value>s:clh</value><a:documentation>Claudia Heine</a:documentation><value>s:mmm</value><a:documentation>Martina Mengele</a:documentation><value>s:flr</value><a:documentation>Florence Eller</a:documentation><value>s:sbb</value><a:documentation>Sebastian Bolz</a:documentation><value>s:wwb</value><a:documentation>Walter Werbeck</a:documentation><value>s:afl</value><a:documentation>Florian Amort</a:documentation><value>s:stk</value><a:documentation>Steffi Kracht</a:documentation><value>s:oen</value><a:documentation>Ursula Welsch</a:documentation><value>s:ofr</value><a:documentation>Oliver Fraenske</a:documentation><value>s:pfr</value><a:documentation>Peter Fröhlich</a:documentation><value>s:dpl</value><a:documentation>Dominik Leipold</a:documentation></choice>
@@ -9894,6 +9898,7 @@ TEI namespace <code>http://www.tei-c.org/ns/1.0</code> on it, using
 		Macro <ident type="macro">data.persNamePerformanceRole</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.supplPersNameType</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.supplOrgNameType</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.supplPlaceNameType</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.msDescRend</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.encoding-staff</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.editorial-staff</ident></cell><cell/></row><row><cell>
@@ -9988,6 +9993,7 @@ TEI namespace <code>http://www.tei-c.org/ns/1.0</code> on it, using
 		Macro <ident type="macro">macro.form.optionalDating</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">macro.form.supplementaryPersName</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">macro.form.supplementaryOrgName</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">macro.form.supplementaryPlaceName</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">macro.form.datePlaceNameHead</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">macro.form.commentaryNote</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">macro.form.summaryNote</ident></cell><cell/></row><row><cell>

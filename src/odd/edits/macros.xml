@@ -234,6 +234,24 @@
 			</content>
 		</macroSpec>
 
+		<macroSpec ident="macro.form.supplementaryPlaceName">
+			<gloss versionDate="2015-04-24" xml:lang="en">supplementary place name</gloss>
+			<gloss versionDate="2015-04-24" xml:lang="de">zusätzlicher Ortsname</gloss>
+			<desc versionDate="2015-04-24" xml:lang="en"
+				>Macro for a <gi>placeName</gi> element with a type attribute of type data.supplPlaceNameType.</desc>
+			<desc versionDate="2015-04-24" xml:lang="de"
+				>Makro für ein <gi>placeName</gi>-Element mit <att>type</att>-Attribut vom Type data.supplPlaceNameType.</desc>
+			<content>
+				<rng:element name="placeName">
+					<rng:attribute name="type">
+						<rng:ref name="data.supplPlaceNameType"/>
+					</rng:attribute>
+					<rng:ref name="macro.form.optionalDating"/>
+					<rng:text/>
+				</rng:element>
+			</content>
+		</macroSpec>
+
 		<macroSpec ident="macro.form.datePlaceNameHead">
 			<equiv filter="rsw.xsl" mimeType="text/xsl" name="keepOnlyWithChildAttOrChildContent"/>
 			<gloss versionDate="2014-01-26" xml:lang="en">head with date and placeName</gloss>

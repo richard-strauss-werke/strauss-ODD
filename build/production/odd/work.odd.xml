@@ -5746,6 +5746,7 @@
 		Macro <ident type="macro">data.persNamePerformanceRole</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.supplPersNameType</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.supplOrgNameType</ident></cell><cell/></row><row><cell>
+		Macro <ident type="macro">data.supplPlaceNameType</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.msDescRend</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.encoding-staff</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">data.editorial-staff</ident></cell><cell/></row><row><cell>

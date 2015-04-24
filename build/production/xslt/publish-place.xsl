@@ -45,12 +45,62 @@
    </xsl:variable>
    <xsl:variable name="edition"/>
    <xsl:variable name="staff">
+      <name ref="s:alx">Alexander Erhard</name>
+      <name ref="s:sts">Stefan Schenk</name>
+      <name ref="s:aap">Andreas Pernpeintner</name>
+      <name ref="s:clh">Claudia Heine</name>
+      <name ref="s:mmm">Martina Mengele</name>
+      <name ref="s:flr">Florence Eller</name>
+      <name ref="s:sbb">Sebastian Bolz</name>
+      <name ref="s:wwb">Walter Werbeck</name>
+      <name ref="s:afl">Florian Amort</name>
+      <name ref="s:stk">Steffi Kracht</name>
+      <name ref="s:oen">Ursula Welsch</name>
+      <name ref="s:ofr">Oliver Fraenske</name>
+      <name ref="s:pfr">Peter Fröhlich</name>
+      <name ref="s:dpl">Dominik Leipold</name>
       <empty/>
    </xsl:variable>
    <xsl:variable name="sexes">
       <empty/>
    </xsl:variable>
    <xsl:variable name="changeTypes">
+      <change type="UO">Übertragen nach Original</change>
+      <change type="UC">Übertragen nach Entwurf</change>
+      <change type="UA">Übertragen nach Abschrift v.f.H.</change>
+      <change type="UP">Übertragen nach Papierkopie</change>
+      <change type="UI">Übertragen nach Mikroform</change>
+      <change type="UM">Übertragen nach autogr. Abschrift</change>
+      <change type="UD">Übertragen nach Original [Digitalisat]</change>
+      <change type="UG">Übertragen nach Entwurf [Digitalisat]</change>
+      <change type="UH">Übertragen nach Abschrift v.f.H. [Digitalisat]</change>
+      <change type="UF">Übertragen nach Papierkopie [Digitalisat]</change>
+      <change type="UJ">Übertragen nach Mikroform [Digitalisat]</change>
+      <change type="UB">Übertragen nach autogr. Abschrift [Digitalisat]</change>
+      <change type="UE">Übertragen nach Edition</change>
+      <change type="UZ">Übertragen nach Auszug</change>
+      <change type="UW">Übertragung</change>
+      <change type="KO">Korrigiert nach Original</change>
+      <change type="KC">Korrigiert nach Entwurf</change>
+      <change type="KA">Korrigiert nach Abschrift v.f.H.</change>
+      <change type="KP">Korrigiert nach Papierkopie</change>
+      <change type="KI">Korrigiert nach Mikroform</change>
+      <change type="KM">Korrigiert nach autogr. Abschrift</change>
+      <change type="KD">Korrigiert nach Original [Digitalisat]</change>
+      <change type="KG">Korrigiert nach Entwurf [Digitalisat]</change>
+      <change type="KH">Korrigiert nach Abschrift v.f.H. [Digitalisat]</change>
+      <change type="KF">Korrigiert nach Papierkopie [Digitalisat]</change>
+      <change type="KJ">Korrigiert nach Mikroform [Digitalisat]</change>
+      <change type="KB">Korrigiert nach autogr. Abschrift [Digitalisat]</change>
+      <change type="KE">Korrigiert nach Edition</change>
+      <change type="KZ">Korrigiert nach Auszug</change>
+      <change type="KW">Korrigiert</change>
+      <change type="VQ">Vollständigkeit der Quellenübertragung bestätigt</change>
+      <change type="VT">Vollständigkeit der Textauszeichnung bestätigt</change>
+      <change type="VL">Vollständigkeit der Verlinkung bestätigt</change>
+      <change type="P">Vorgeschlagen zur Publikation</change>
+      <change type="C">Als möglicherweise publikationsfertig gekennzeichnet</change>
+      <change type="A">Zur Publikation freigegeben</change>
       <empty/>
    </xsl:variable>
    <xsl:variable name="keywords">

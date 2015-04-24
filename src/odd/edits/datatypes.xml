@@ -314,6 +314,31 @@
 				</rng:choice>
 			</content>
 		</macroSpec>
+		
+		<macroSpec ident="data.supplPlaceNameType">
+			<content>
+				<rng:choice>
+					<rng:value>unknown</rng:value>
+					<a:documentation>unbekannte Art</a:documentation>
+					<rng:value>local</rng:value>
+					<a:documentation>lokaler Name</a:documentation>
+					<rng:value>geonames</rng:value>
+					<a:documentation>GeoNames-Name</a:documentation>
+					<rng:value>full</rng:value>
+					<a:documentation>voller Name</a:documentation>
+					<rng:value>former</rng:value>
+					<a:documentation>früherer Name</a:documentation>
+					<rng:value>later</rng:value>
+					<a:documentation>späterer Name</a:documentation>
+					<rng:value>real</rng:value>
+					<a:documentation>wirklicher Name</a:documentation>
+					<rng:value>variant</rng:value>
+					<a:documentation>Variante</a:documentation>
+					<rng:value>other</rng:value>
+					<a:documentation>sonstige Art</a:documentation>
+				</rng:choice>
+			</content>
+		</macroSpec>
 
 		<!-- based on WeGA_common.odd.xml -->
 		<macroSpec ident="data.msDescRend">

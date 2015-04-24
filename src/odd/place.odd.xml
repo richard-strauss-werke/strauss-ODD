@@ -22,22 +22,24 @@
 				<desc>Places. Based on Anna Maria Komprecht's WeGA ODD.</desc>
 				<moduleRef key="tei"/>
 				<moduleRef key="core"
-					include="cit date hi item l lb lg list listBibl note p q quote rs"/>
+					include="cit date desc hi item l lb lg list listBibl note p q quote rs"/>
 				<moduleRef key="header" include="idno"/>
 				<moduleRef key="namesdates"
 					include="country district geo location place placeName region settlement trait"/>
 				<moduleRef key="linking" include=""/>
 				
+				<specGrpRef target="#edits.classes.att"/>
 				<specGrpRef target="#edits.datatypes"/>
 				<specGrpRef target="#edits.elements.place"/>
+				<specGrpRef target="#edits.macros"/>
 			</schemaSpec>
 			
 			<div>
 				<head>Edits</head>
-<!--				<xi:include href="edits/classes.att.xml"/>-->
+				<xi:include href="edits/classes.att.xml"/>
 				<xi:include href="edits/datatypes.xml"/>
 <!--				<xi:include href="edits/elements.xml"/>-->
-<!--				<xi:include href="edits/macros.xml"/>-->
+				<xi:include href="edits/macros.xml"/>
 			</div>
 			
 			<div>
@@ -47,52 +49,30 @@
 					
 					<elementSpec ident="place" module="namesdates" mode="change">
 						<equiv filter="rsw.xsl" mimeType="text/xsl" name="processPlace"/>
-					</elementSpec>
-					
-					<!-- based on WeGA_places.odd.xml; modified -->
-					<elementSpec ident="placeName" mode="change" module="namesdates">
-						<desc versionDate="2013-11-11" xml:lang="en">contains an absolute or relative place name.</desc>
-						<desc versionDate="2013-11-11" xml:lang="de">enthält einen absoluten oder relativen Ortsnamen.</desc>
-						<classes mode="change">
-							<!--						<memberOf key="att.global" mode="delete"/>-->
-							<memberOf key="att.naming" mode="delete"/>
-							<memberOf key="att.canonical" mode="delete"/>
-							<memberOf key="att.typed" mode="delete"/>
-							<memberOf key="att.datable" mode="delete"/>
-							<memberOf key="att.editLike" mode="delete"/>
-							<memberOf key="att.dimensions" mode="delete"/>
-							<memberOf key="att.ranging" mode="delete"/>
-							<memberOf key="att.responsibility" mode="delete"/>
-							<memberOf key="att.source" mode="delete"/>
-							<memberOf key="att.personal" mode="delete"/>
-						</classes>
 						<content>
-							<rng:text/>
+							<rng:oneOrMore>
+								<rng:ref name="idno"/>
+							</rng:oneOrMore>
+							<rng:ref name="desc"/>
+							<rng:group>
+								<rng:element name="placeName">
+									<rng:attribute name="type">
+										<rng:value>reg</rng:value>
+									</rng:attribute>
+									<rng:text/>
+								</rng:element>
+								<rng:oneOrMore>
+									<rng:ref name="macro.form.supplementaryPlaceName"/>
+								</rng:oneOrMore>
+								<rng:ref name="district"/>
+								<rng:ref name="settlement"/>
+								<rng:ref name="region"/>
+								<rng:ref name="country"/>
+								<rng:ref name="location"/>
+							</rng:group>
 						</content>
-						<attList>
-							<attDef ident="type" mode="add" usage="req">
-								<desc versionDate="2014-01-08" xml:lang="en">characterizes the element in some sense, using any convenient classification scheme or typology.</desc>
-								<desc versionDate="2014-01-08" xml:lang="de">charakterisiert das Element in einem gewissen Sinne, wobei irgendeine zweckmäßige Systematik oder Typologie angwendet wird.</desc>
-								<valList type="closed">
-									<valItem ident="reg">
-										<gloss versionDate="2013-11-11" xml:lang="en">regular</gloss>
-										<gloss versionDate="2013-11-11" xml:lang="de">regulär</gloss>
-									</valItem>
-									<valItem ident="alt">
-										<gloss versionDate="2014-01-08" xml:lang="en">alternative</gloss>
-										<gloss versionDate="2014-01-08" xml:lang="de">Alternative</gloss>
-									</valItem>
-									<valItem ident="toponym">
-									</valItem>
-									<valItem ident="local">
-									</valItem>
-								</valList>
-							</attDef>
-						</attList>
 					</elementSpec>
-					
-					
-					
+
 					<!-- taken from on WeGA_places.odd.xml -->
 					<elementSpec ident="location" mode="change" module="namesdates">
 						<desc versionDate="2013-11-11" xml:lang="en">defines the location of a place as a set of geographical coordinates, in terms of other named geo-political entities, or as an address.</desc>
