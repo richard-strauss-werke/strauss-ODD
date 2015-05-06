@@ -15,6 +15,9 @@
 	<xsl:variable name="keywords" select="/null"/>
 	<xsl:variable name="rswDocumentPrefix"/>
 	<xsl:variable name="rswStaffPrefix"/>
+	<xsl:variable name="rswPdfPrefix"/>
+	<xsl:variable name="rswImgPrefix"/>
+	<xsl:variable name="idnoUrlMap" select="/null"/>
 	
 
 	<!-- named templates -->
@@ -25,12 +28,35 @@
 		</xsl:copy>
 	</xsl:template>
 
+	<xsl:template name="resolveIdno">
+		<xsl:if test="text()">
+			<xsl:copy copy-namespaces="no">
+				<xsl:variable name="url" select="$idnoUrlMap/*[@type=current()/@type]/text()"/>
+				<xsl:choose>
+					<xsl:when test="$url">
+						<xsl:attribute name="type">url</xsl:attribute>
+						<xsl:attribute name="n">
+							<xsl:value-of select="@type"/>
+						</xsl:attribute>
+						<xsl:value-of select="$url"/>
+						<xsl:value-of select="text()"/>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:apply-templates select="@*|text()"/>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:copy>
+		</xsl:if>
+	</xsl:template>
+	
+
 	<xsl:template name="processPlace">
 		<xsl:copy copy-namespaces="no">
 			<xsl:attribute name="xml:id">
 				<xsl:value-of select="$docID"/>
 			</xsl:attribute>
-			<xsl:apply-templates select="@*[not(name()='xml:id')]|*[normalize-space()]|comment()|processing-instruction()|text()"/>
+			<xsl:apply-templates select="@*[not(name()='xml:id')]|*[not(name()='idno')][normalize-space()]|comment()|processing-instruction()|text()"/>
+			<xsl:apply-templates select="idno[normalize-space()]|comment()|processing-instruction()|text()"/>
 		</xsl:copy>
 	</xsl:template>
 
@@ -75,6 +101,14 @@
 
 	<xsl:template name="keepOnlyWithAnyText">
 		<xsl:if test="normalize-space()">
+			<xsl:copy copy-namespaces="no">
+				<xsl:apply-templates select="@*|node()"/>
+			</xsl:copy>
+		</xsl:if>
+	</xsl:template>
+	
+	<xsl:template name="keepOnlyWithAnyTextOrDescendantDateAtt">
+		<xsl:if test="normalize-space() or .//date/@*">
 			<xsl:copy copy-namespaces="no">
 				<xsl:apply-templates select="@*|node()"/>
 			</xsl:copy>
@@ -161,6 +195,15 @@
 		</xsl:if>
 	</xsl:template>
 
+	<xsl:template name="expandOrRemoveDateMEI">
+		<xsl:if test="@*|node()">
+			<xsl:copy copy-namespaces="no">
+				<xsl:apply-templates select="@*"/>
+				<xsl:value-of select="rsw:formatDateNodeMEI(.)"/>
+			</xsl:copy>
+		</xsl:if>
+	</xsl:template>
+
 	<xsl:template name="expandOrRemoveOrigPlace">
 		<xsl:if test="node()">
 			<xsl:copy copy-namespaces="no">
@@ -243,13 +286,109 @@
 	<xsl:template name="transformOrRemoveBibl">
 		<xsl:if test=".//@* or normalize-space()">
 			<xsl:copy copy-namespaces="no">
-				<xsl:apply-templates select="@*|node()[normalize-space()]"/>
+				<xsl:apply-templates select="@*"/>
+				<xsl:if test="rs/@key or rs/text()">
+					<title type="short">
+						<xsl:if test="rs/@key">
+							<xsl:attribute name="ref">
+								<xsl:value-of select="concat($rswDocumentPrefix,':',rs/@key)"/>
+							</xsl:attribute>
+						</xsl:if>
+						<xsl:value-of select="rs/text()"/>
+					</title>
+				</xsl:if>
+				<xsl:if test="rs/@rsw:seite">
+					<citedRange>
+						<xsl:value-of select="rs/@rsw:seite"/>
+					</citedRange>
+				</xsl:if>
+				<xsl:copy-of select="rsw:pdfAttsToPtr(rs)"/>
+				<xsl:apply-templates select="note[normalize-space()]"/>
 			</xsl:copy>
 		</xsl:if>
 	</xsl:template>
+	
+	<xsl:template name="processRs">
+		<xsl:if test="normalize-space()">
+			<xsl:copy copy-namespaces="no">
+				<xsl:apply-templates select="@*[not(starts-with(name(), 'rsw:'))]"/>
+				<xsl:if test="@rsw:seite">
+					<xsl:attribute name="n">
+						<xsl:value-of select="@rsw:seite"/>
+					</xsl:attribute>
+				</xsl:if>
+				<xsl:apply-templates select="node()"/>
+				<xsl:copy-of select="rsw:pdfAttsToPtr(.)"/>
+			</xsl:copy>
+		</xsl:if>
+	</xsl:template>
+	
+	<xsl:function name="rsw:pdfAttsToPtr">
+		<xsl:param name="node"/>
+		<xsl:if test="$node/@rsw:pdf">
+			<ptr type="digital-copy" mimeType="application/pdf">
+				<xsl:attribute name="target">
+					<xsl:value-of select="$rswPdfPrefix"/>
+					<xsl:text>:</xsl:text>
+					<xsl:value-of select="$node/@rsw:pdf"/>
+					<xsl:if test="$node/@rsw:seitepdf">
+						<xsl:text>#</xsl:text>
+						<xsl:value-of select="$node/@rsw:seitepdf"/>
+					</xsl:if>
+				</xsl:attribute>
+			</ptr>
+		</xsl:if>
+	</xsl:function>
+	
+	<xsl:template name="processPtr">
+		<xsl:if test="@target">
+		<xsl:copy copy-namespaces="no">
+			<xsl:attribute name="type">
+				<xsl:text>digital-copy</xsl:text>
+			</xsl:attribute>
+				<xsl:choose>
+					<xsl:when test="@type='pdf'">
+						<xsl:attribute name="mimeType">
+							<xsl:text>application/pdf</xsl:text>
+						</xsl:attribute>
+						<xsl:attribute name="target">
+							<xsl:value-of select="concat($rswPdfPrefix, ':', @target)"/>
+							<xsl:if test="@n">
+								<xsl:value-of select="concat('#',@n)"/>
+							</xsl:if>
+						</xsl:attribute>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:copy-of select="rsw:imageMimeType(@target)"/>
+						<xsl:attribute name="target">
+							<xsl:value-of select="concat($rswImgPrefix, ':', @target)"/>
+						</xsl:attribute>
+						<xsl:apply-templates select="@n"/>
+					</xsl:otherwise>
+				</xsl:choose>
+			
+			<xsl:apply-templates select="@*[not(name()=('target','type','n'))]"/>
+		</xsl:copy>
+		</xsl:if>
+	</xsl:template>
 
-
-
+	<xsl:function name="rsw:imageMimeType">
+		<xsl:param name="url"/>
+		<xsl:variable name="suffix" select="lower-case(tokenize($url, '.')[last()])"/>
+		<xsl:choose>
+			<xsl:when test="$suffix = 'png'">
+				<xsl:attribute name="mimeType">
+					<xsl:text>image/png</xsl:text>
+				</xsl:attribute>
+			</xsl:when>
+			<xsl:when test="$suffix = ('jpg', 'jpeg')">
+				<xsl:attribute name="mimeType">
+					<xsl:text>image/jpeg</xsl:text>
+				</xsl:attribute>
+			</xsl:when>
+		</xsl:choose>
+	</xsl:function>
+	
 	<!-- TODO dies noch ins ODD einbetten, eleganter machen + noch verbinden mit erstem Paragraphen! -->
 	<xsl:template name="processRevisionDescChange">
 		<xsl:copy copy-namespaces="no">
@@ -307,7 +446,7 @@
 						<xsl:text> </xsl:text>
 						<lb/>
 					</xsl:if>
-					<xsl:call-template name="processCreationChange"/>
+					<xsl:call-template name="summarizeCreationChange"/>
 				</xsl:for-each>
 			</title>
 			<xsl:for-each select="//@role[.='creator'][ancestor::listChange][../node()]/..">
@@ -333,7 +472,7 @@
 					<xsl:text> </xsl:text>
 					<lb/>
 				</xsl:if>
-				<xsl:call-template name="processCreationChange"/>
+				<xsl:call-template name="summarizeCreationChange"/>
 			</xsl:for-each>
 		</xsl:variable>
 		<xsl:copy copy-namespaces="no">
@@ -394,20 +533,42 @@
 	</xsl:template>
 
 	<xsl:template name="replaceTextByGraphic">
+		<xsl:variable name="firstImgSet" select="(//surrogates[ptr[@target and @type='image']])[1]/ptr[@target and @type='image']"/>
 		<xsl:element name="facsimile">
-			<xsl:element name="graphic">
-				<xsl:attribute name="url">
-					<xsl:value-of select="(//ptr[@type='image'])[1]/@target"/>
-				</xsl:attribute>
-			</xsl:element>
+			<xsl:choose>
+				<xsl:when test="$firstImgSet">
+					<xsl:for-each select="$firstImgSet">
+						<xsl:element name="graphic">
+							<xsl:copy-of select="rsw:imageMimeType(@target)"/>
+							<xsl:attribute name="url">
+								<xsl:if test="not(starts-with(@target, 'http'))">
+									<xsl:value-of select="concat($rswImgPrefix, ':')"/>	
+								</xsl:if>
+								<xsl:value-of select="@target"/>
+							</xsl:attribute>
+						</xsl:element>	
+					</xsl:for-each>
+				</xsl:when>
+				<xsl:otherwise>
+					<binaryObject/>
+				</xsl:otherwise>
+			</xsl:choose>
 		</xsl:element>
 	</xsl:template>
 
 	<xsl:template name="expandPublicationStmt">
 		<xsl:copy copy-namespaces="no">
 			<xsl:copy-of copy-namespaces="no" select="$publicationStmt"/>
+			<xsl:variable name="now" select="xs:string(current-dateTime())"/>
+			<date when="{$now}">
+				<xsl:value-of select="rsw:dateLong(substring($now, 1, 10), ())"/>
+				<xsl:text>, </xsl:text>
+				<xsl:value-of select="substring($now, 12, 5)"/>
+				<xsl:text> Uhr</xsl:text>
+			</date>
 			<xsl:if test="$docID">
-				<idno type="RSW">
+				<idno type="url" n="rsw">
+					<xsl:text>http://richard-strauss-ausgabe.de/documents/view/</xsl:text>
 					<xsl:value-of select="$docID"/>
 				</idno>
 			</xsl:if>
@@ -423,6 +584,14 @@
 				<p>Private URIs, die das Präfix <code><xsl:value-of select="$rswDocumentPrefix"/></code>
 			     verwenden, verweisen auf XML-Dokumente des RSW-Projekts.
 			     <code><xsl:value-of select="$rswDocumentPrefix"/>:p10000</code> verweist beispielsweise auf <code>http://richard-strauss-ausgabe.de/documents/view/p10000</code>.</p>
+			</prefixDef>
+			<prefixDef ident="{$rswPdfPrefix}" matchPattern="(\S+)" replacementPattern="http://richard-strauss-ausgabe.de/media/pdf/$1">
+				<p>Private URIs, die das Präfix <code><xsl:value-of select="$rswPdfPrefix"/></code>
+			     verwenden, verweisen auf PDF-Dokumente des RSW-Projekts.</p>
+			</prefixDef>
+			<prefixDef ident="{$rswImgPrefix}" matchPattern="(\S+)" replacementPattern="http://richard-strauss-ausgabe.de/media/img/$1">
+				<p>Private URIs, die das Präfix <code><xsl:value-of select="$rswImgPrefix"/></code>
+			     verwenden, verweisen auf Bilddokumente des RSW-Projekts.</p>
 			</prefixDef>
 			<prefixDef ident="{$rswStaffPrefix}" matchPattern="([a-z]+)" replacementPattern="http://richard-strauss-ausgabe.de/staff.xml#$1">
 				<p>Private URIs, die das Präfix <code><xsl:value-of select="$rswStaffPrefix"/></code>
@@ -624,22 +793,66 @@
 		</xsl:if>
 	</xsl:template>
 
-	<!-- @rsw:pdf and @rsw:seitepdf only refer to internal files and get removed from the public version -->
-	<xsl:template name="processRs">
-		<xsl:if test="normalize-space()">
-			<xsl:copy copy-namespaces="no">
-				<xsl:apply-templates select="@*[not(starts-with(name(), 'rsw:'))]"/>
-				<xsl:if test="@rsw:seite">
-					<xsl:attribute name="n">
-						<xsl:value-of select="@rsw:seite"/>
-					</xsl:attribute>
-				</xsl:if>
-				<xsl:apply-templates select="node()"/>
-			</xsl:copy>
-		</xsl:if>
+	<xsl:template name="processCreationMs">
+		<xsl:copy copy-namespaces="no">
+			<xsl:apply-templates select="@*|node()"/>
+		</xsl:copy>
+		<xsl:for-each select="listChange/change">
+			<correspDesc corresp="#{@xml:id}">
+				<correspAction type="sending">
+					<xsl:for-each select="*[@role='creator'][element()|text()]">
+						<xsl:copy copy-namespaces="no">
+							<xsl:apply-templates select="@*[not(name()='role')]"/>
+							<xsl:value-of select="rsw:reverseName(string())"/>
+						</xsl:copy>
+					</xsl:for-each>
+
+					<xsl:variable name="places">
+						<xsl:for-each select="origPlace[@*|text()]">
+							<xsl:call-template name="onlyWithContentAddCert"/>
+						</xsl:for-each>
+					</xsl:variable>
+					
+					<xsl:for-each select="$places/*">
+						<placeName>
+							<xsl:copy-of select="@*|node()"/>
+						</placeName>
+					</xsl:for-each>
+
+					<xsl:for-each select="origDate[@*|text()]">
+						<date>
+							<xsl:apply-templates select="@*"/>
+							<xsl:value-of select="rsw:formatDateNode(.)"/>
+						</date>
+					</xsl:for-each>
+					
+				</correspAction>
+				<correspAction type="receiving">
+					<xsl:for-each select="*[@role='addressee'][element()|text()]">
+						<xsl:copy copy-namespaces="no">
+							<xsl:apply-templates select="@*[not(name()='role')]"/>
+							<xsl:value-of select="rsw:reverseName(string())"/>
+						</xsl:copy>
+					</xsl:for-each>
+					
+					<xsl:variable name="places">
+						<xsl:for-each select="placeName[element()|text()]">
+							<xsl:call-template name="onlyWithContentAddCert"/>
+						</xsl:for-each>
+					</xsl:variable>
+
+					<xsl:for-each select="$places/*">
+						<placeName>
+							<xsl:copy-of select="@*[not(name()='type')]|node()"/>
+						</placeName>
+					</xsl:for-each>
+					
+				</correspAction>
+			</correspDesc>			
+		</xsl:for-each>
 	</xsl:template>
 
-	<xsl:template name="processCreationChange">
+	<xsl:template name="summarizeCreationChange">
 		<xsl:variable name="firstPart">
 			<xsl:variable name="creator">
 				<xsl:for-each select="*[@role='creator'][element()|text()]">
@@ -724,6 +937,26 @@
 		</xsl:if>
 		<xsl:value-of select="concat(rsw:precisionString($date), $dates, rsw:certString($date))"/>
 	</xsl:function>
+
+	<xsl:function name="rsw:formatDateNodeMEI" as="xs:string*">
+		<xsl:param name="date" as="node()?"/>
+		<xsl:variable name="when" select="rsw:dateLong($date/@isodate, ())"/>
+		<xsl:variable name="notBefore" select="rsw:dateLong($date/@notbefore, 'fr. ')"/>
+		<xsl:variable name="notAfter" select="rsw:dateLong($date/@notafter, 'sp. ')"/>
+		<xsl:variable name="from" select="rsw:dateLong($date/@startdate, ())"/>
+		<xsl:variable name="to" select="rsw:dateLong($date/@enddate, ())"/>
+		<xsl:variable name="fromTo" select="if ($from or $to) then concat($from, '&#160;–', (if ($to) then ' ' else ()), $to) else ()"/>
+		<xsl:variable name="dates">
+			<xsl:value-of select="string-join(($when, $notBefore, $notAfter, $fromTo), ', ')"/>
+		</xsl:variable>
+		<xsl:if test="$date/text()">
+			<xsl:value-of select="$date/text()"/>
+			<xsl:value-of select="if ($dates) then ' ' else ()"/>
+		</xsl:if>
+		<xsl:value-of select="concat(rsw:precisionString($date), $dates, rsw:certString($date))"/>
+	</xsl:function>
+	
+	
 
 
 	<!-- modified functx function to work with earlier dates, too -->

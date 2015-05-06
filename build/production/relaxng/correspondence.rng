@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2015-04-24T08:22:27Z. .
+Schema generated from ODD source 2015-05-03T14:04:37Z. .
 TEI Edition: Version 2.8.0. Last updated on
 	6th April 2015, revision 13197
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.8.0/
@@ -10911,7 +10911,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
          <value>UZ</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Übertragen nach Auszug</a:documentation>
          <value>UW</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Übertragung</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Übertragen</a:documentation>
          <value>KO</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Korrigiert nach Original</a:documentation>
          <value>KC</value>
@@ -10959,7 +10959,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
    <define name="rsw_data.idnoMsType">
       <choice>
          <value>rsqv</value>
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">RSQV-ID</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">RSQV-ID [http://rsqv.de/]</a:documentation>
          <value>uag</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">UAG-ID</a:documentation>
          <value>url</value>
@@ -11074,17 +11074,17 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
    </define>
    <define name="rsw_data.biblTypeCorrespondence">
       <choice>
-         <value>u</value>
+         <value>unknown</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Unbekannter Bezug</a:documentation>
-         <value>e</value>
+         <value>contains-edition</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Edition in</a:documentation>
-         <value>a</value>
+         <value>contains-excerpt</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Auszug in</a:documentation>
-         <value>f</value>
+         <value>contains-facsimile</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Faksimile in</a:documentation>
-         <value>n</value>
+         <value>contains-reference</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Nennung in</a:documentation>
-         <value>s</value>
+         <value>other</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Sonstiger Bezug</a:documentation>
       </choice>
    </define>

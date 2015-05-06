@@ -17,7 +17,8 @@
 	<xsl:template match="/">
 		<XSL:stylesheet version="2.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0"
 			xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-			xmlns:rsw="http://richard-strauss-ausgabe.de/ns/1.0">
+			xmlns:rsw="http://richard-strauss-ausgabe.de/ns/1.0"
+			xmlns:mei="http://www.music-encoding.org/ns/mei">
 
 			<xsl:for-each select="distinct-values(//equiv/@filter)">
 				<XSL:import href="{.}"/>
@@ -64,6 +65,14 @@
 			
 			<XSL:variable name="rswStaffPrefix">
 				<xsl:value-of select="$common/id('rswStaffPrefix')"/>
+			</XSL:variable>
+			
+			<XSL:variable name="rswPdfPrefix">
+				<xsl:value-of select="$common/id('rswPdfPrefix')"/>
+			</XSL:variable>
+			
+			<XSL:variable name="rswImgPrefix">
+				<xsl:value-of select="$common/id('rswImgPrefix')"/>
 			</XSL:variable>
 			
 			<!-- content from the ODD to be added to the processed TEI files: -->
@@ -115,6 +124,22 @@
 					<change type="{.}">
 						<xsl:value-of select="following-sibling::*[1]/text()"/>
 					</change>
+				</xsl:for-each>
+				<!-- maintain a node datatype even if there are no matches: -->
+				<empty/>
+			</XSL:variable>
+			
+			<XSL:variable name="idnoUrlMap">
+				<xsl:variable name="idnoValues" select="//@ident[starts-with(.,'data.idno')]/..//rng:value"/>
+				<xsl:for-each select="distinct-values($idnoValues)">
+					<xsl:variable name="this" select="$idnoValues[.=current()][1]"/>
+					<xsl:analyze-string select="$this/following-sibling::*[1]/text()" regex="\[(.*)\]">
+						<xsl:matching-substring>
+							<idno type="{$this}">
+								<xsl:value-of select="regex-group(1)"/>
+							</idno>		
+						</xsl:matching-substring>
+					</xsl:analyze-string>
 				</xsl:for-each>
 				<!-- maintain a node datatype even if there are no matches: -->
 				<empty/>
@@ -191,7 +216,8 @@
 							<xsl:attribute name="match">
 								<xsl:variable name="ns" select="ancestor::elementSpec/@ns"/>
 								<xsl:value-of
-									select="if ($ns='http://richard-strauss-ausgabe.de/ns/1.0') then 'rsw:' else ()"/>
+									select="if ($ns='http://richard-strauss-ausgabe.de/ns/1.0') then 'rsw:' else 
+									if ($ns='http://www.music-encoding.org/ns/mei') then 'mei:' else ()"/>
 								<xsl:value-of select="ancestor::elementSpec/@ident"/>
 							</xsl:attribute>
 							<XSL:call-template name="{@name}"/>
@@ -200,8 +226,17 @@
 				</xsl:choose>
 			</xsl:for-each>
 
-			<!-- convert all keys (except on <country>) to refs -->
-			<XSL:template match="@key[not(parent::country)]">
+			<XSL:template match="@url">
+				<XSL:copy-of select="rsw:imageMimeType(.)"/>
+				<XSL:copy copy-namespaces="no">
+					<XSL:if test="not(starts-with(., 'http'))">
+						<XSL:value-of select="$rswImgPrefix"/>
+					</XSL:if>
+					<XSL:value-of select="."/>
+				</XSL:copy>
+			</XSL:template>
+
+			<XSL:template match="@key">
 				<XSL:if test="normalize-space()">
 					<XSL:attribute name="ref">
 						<XSL:value-of select="concat($rswDocumentPrefix, ':', .)"/>

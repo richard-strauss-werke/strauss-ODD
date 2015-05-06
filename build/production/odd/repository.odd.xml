@@ -4324,7 +4324,7 @@ Licensing, etc.</ref>
   </listRef>
 </elementSpec><desc>Repositories</desc><macroSpec rend="add" module="derived-module-schema.repository" ident="data.idnoRepositoryType">
 			<content>
-				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>rism</value><a:documentation>RISM-ID</a:documentation><value>gnd</value><a:documentation>GND-ID</a:documentation><value>viaf</value><a:documentation>VIAF-ID</a:documentation><value>url</value><a:documentation>URL identifier</a:documentation></choice>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>rism</value><a:documentation>RISM-ID</a:documentation><value>viaf</value><a:documentation>VIAF-ID [http://viaf.org/viaf/]</a:documentation><value>gnd</value><a:documentation>GND-ID [http://d-nb.info/gnd/]</a:documentation><value>url</value><a:documentation>URL identifier</a:documentation></choice>
 			</content>
 		</macroSpec><moduleSpec n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec n="CO" xml:id="DCO" ident="core"/><moduleSpec n="HD" xml:id="DHD" ident="header"/><moduleSpec n="ND" xml:id="DND" ident="namesdates"/><moduleSpec n="SA" xml:id="DSA" ident="linking"/></schemaSpec>
 			

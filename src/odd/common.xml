@@ -11,25 +11,28 @@
 				<title xml:lang="de">Codierungsrichtlinien</title>
 				<author xml:id="aerhard">Alexander Erhard</author>
 				<!-- template for the final version of the TEI files:-->
-				<funder>
+				<funder xml:id="funder">
 					<name ref="http://www.badw.de">Bayerische Akademie der Wissenschaften</name>
 					<address>
 						<street>Alfons-Goppel-Straße 11</street>
 						<postCode>80539</postCode>
 						<placeName>
-							<country>D</country>
+							<country>Deutschland</country>
 							<settlement>München</settlement>
 						</placeName>
 					</address>
+					<idno type="url" n="gnd">http://d-nb.info/gnd/2005521-3</idno>
+					<idno type="url" n="viaf">http://viaf.org/viaf/123154646</idno>
 				</funder>
 			</titleStmt>
 			<!-- template for the final version of the TEI files:-->
 			<publicationStmt>
-				<distributor>Forschungsstelle Richard-Strauss-Ausgabe</distributor>
-				<availability status="restricted">
-					<p>This work is licensed under a <ref target="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</ref>.</p>
-				</availability>
+				<distributor sameAs="#funder"/>
+				<publisher sameAs="#funder"/>
 				<pubPlace>München</pubPlace>
+				<availability status="free">
+					<licence target="https://creativecommons.org/licenses/by/3.0/">CC-BY 3.0</licence>
+				</availability>
 			</publicationStmt>
 			<!-- template for the the final version of the TEI files:-->
 			<seriesStmt>
@@ -63,7 +66,7 @@
 				<head>Introduction</head>
 				<p>...</p>
 				<p>The documents can be accessed at <ref target="http://richard-strauss-ausgabe.de/documents/view/" xml:id="xmlDocsUrl">http://richard-strauss-ausgabe.de/xml/</ref>, followed by the document identifier; when documents are referenced from within a document, the document identifier is prefixed with <code xml:id="rswDocumentPrefix">d</code>.</p>
-				<p>The contributors involved in the preparation of a document are listed in the section <title xml:id="contributorsResp">Vorbereitung der digitalen Edition</title>; references to staff members in the XML documents have the prefix <code xml:id="rswStaffPrefix">s</code>.</p>
+				<p>The contributors involved in the preparation of a document are listed in the section <title xml:id="contributorsResp">Vorbereitung der digitalen Edition</title>; references to staff members in the XML documents have the prefix <code xml:id="rswStaffPrefix">s</code>. Paths to RSW PDF resources have the prefix <code xml:id="rswPdfPrefix">pdf</code>, RSW image paths have <code xml:id="rswImgPrefix">img</code>.</p>
 				<p>All documents contain the following statements:</p>
 				<list>
 					<item xml:id="guidelinesTitleRef">Die vorliegende Ausgabe folgt den <ref target="http://richard-strauss-ausgabe.de/guidelines/xml">Editionsrichtlinien der Kritischen Ausgabe der Werke von Richard Strauss</ref>.</item>

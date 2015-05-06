@@ -106,6 +106,7 @@
 					
 					<!-- taken from WeGA_places.odd.xml -->
 					<elementSpec ident="idno" mode="change" module="namesdates">
+						<equiv filter="rsw.xsl" mimeType="text/xsl" name="resolveIdno"/>
 						<gloss versionDate="2013-11-11" xml:lang="en">identifier</gloss>
 						<desc versionDate="2013-11-11" xml:lang="en">supplies any form of identifier used to identify some object, such as a bibliographic item, a person, a title, an organization, etc. in a standardized way.</desc>
 						<gloss versionDate="2013-11-11" xml:lang="de">Bezeichner</gloss>

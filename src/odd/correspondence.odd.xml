@@ -107,6 +107,7 @@
 						</content>
 					</elementSpec>
 					<elementSpec ident="creation" module="header" mode="replace">
+						<equiv filter="rsw.xsl" mimeType="text/xsl" name="processCreationMs"/>
 						<content>
 							<rng:ref name="macro.form.creation_ms"/>
 						</content>

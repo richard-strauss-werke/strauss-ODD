@@ -2,6 +2,7 @@
 <xsl:stylesheet xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:rsw="http://richard-strauss-ausgabe.de/ns/1.0"
+                xmlns:mei="http://www.music-encoding.org/ns/mei"
                 version="2.0"
                 xpath-default-namespace="http://www.tei-c.org/ns/1.0">
    <xsl:import href="rsw.xsl"/>
@@ -13,28 +14,33 @@
                  select="     if (base-uri()) then     replace(base-uri(), '^(.*/)?(.*)\..*$','$2')     else $docIDParam    "/>
    <xsl:variable name="rswDocumentPrefix">d</xsl:variable>
    <xsl:variable name="rswStaffPrefix">s</xsl:variable>
+   <xsl:variable name="rswPdfPrefix">pdf</xsl:variable>
+   <xsl:variable name="rswImgPrefix">img</xsl:variable>
    <xsl:variable name="guidelinesTitleRef">Die vorliegende Ausgabe folgt den <ref target="http://richard-strauss-ausgabe.de/guidelines/xml">Editionsrichtlinien der Kritischen Ausgabe der Werke von Richard Strauss</ref>.</xsl:variable>
    <xsl:variable name="specificFeaturesTitle">Besonderheiten der Edition des vorliegenden Dokuments:</xsl:variable>
    <xsl:variable name="funder">
-      <funder>
+      <funder xml:id="funder">
 					    <name ref="http://www.badw.de">Bayerische Akademie der Wissenschaften</name>
 					    <address>
 						      <street>Alfons-Goppel-Straße 11</street>
 						      <postCode>80539</postCode>
 						      <placeName>
-							        <country>D</country>
+							        <country>Deutschland</country>
 							        <settlement>München</settlement>
 						      </placeName>
 					    </address>
+					    <idno type="url" n="gnd">http://d-nb.info/gnd/2005521-3</idno>
+					    <idno type="url" n="viaf">http://viaf.org/viaf/123154646</idno>
 				  </funder>
    </xsl:variable>
    <xsl:variable name="contributorsResp">Vorbereitung der digitalen Edition</xsl:variable>
    <xsl:variable name="publicationStmt">
-				  <distributor>Forschungsstelle Richard-Strauss-Ausgabe</distributor>
-				  <availability status="restricted">
-					    <p>This work is licensed under a <ref target="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</ref>.</p>
-				  </availability>
+				  <distributor sameAs="#funder"/>
+				  <publisher sameAs="#funder"/>
 				  <pubPlace>München</pubPlace>
+				  <availability status="free">
+					    <licence target="https://creativecommons.org/licenses/by/3.0/">CC-BY 3.0</licence>
+				  </availability>
 			</xsl:variable>
    <xsl:variable name="seriesStmt">
       <seriesStmt>
@@ -79,7 +85,7 @@
       <change type="UB">Übertragen nach autogr. Abschrift [Digitalisat]</change>
       <change type="UE">Übertragen nach Edition</change>
       <change type="UZ">Übertragen nach Auszug</change>
-      <change type="UW">Übertragung</change>
+      <change type="UW">Übertragen</change>
       <change type="KO">Korrigiert nach Original</change>
       <change type="KC">Korrigiert nach Entwurf</change>
       <change type="KA">Korrigiert nach Abschrift v.f.H.</change>
@@ -101,6 +107,13 @@
       <change type="P">Vorgeschlagen zur Publikation</change>
       <change type="C">Als möglicherweise publikationsfertig gekennzeichnet</change>
       <change type="A">Zur Publikation freigegeben</change>
+      <empty/>
+   </xsl:variable>
+   <xsl:variable name="idnoUrlMap">
+      <idno type="rsqv">http://rsqv.de/</idno>
+      <idno type="oclc">http://www.worldcat.org/oclc/</idno>
+      <idno type="viaf">http://viaf.org/viaf/</idno>
+      <idno type="gnd">http://d-nb.info/gnd/</idno>
       <empty/>
    </xsl:variable>
    <xsl:variable name="keywords">
@@ -134,13 +147,16 @@
       </xsl:copy>
    </xsl:template>
    <xsl:template match="desc">
-      <xsl:call-template name="keepOnlyWithAnyText"/>
+      <xsl:call-template name="keepOnlyWithAnyTextOrDescendantDateAtt"/>
    </xsl:template>
    <xsl:template match="term">
       <xsl:call-template name="addTermRef"/>
    </xsl:template>
    <xsl:template match="rs">
       <xsl:call-template name="processRs"/>
+   </xsl:template>
+   <xsl:template match="ptr">
+      <xsl:call-template name="processPtr"/>
    </xsl:template>
    <xsl:template match="graphic">
       <xsl:call-template name="keepOnlyWithAtt"/>
@@ -167,7 +183,7 @@
       <xsl:call-template name="expandPublicationStmt"/>
    </xsl:template>
    <xsl:template match="idno">
-      <xsl:call-template name="keepOnlyWithContent"/>
+      <xsl:call-template name="resolveIdno"/>
    </xsl:template>
    <xsl:template match="notesStmt">
       <xsl:call-template name="processNotesStmt"/>
@@ -183,6 +199,9 @@
    </xsl:template>
    <xsl:template match="handNote">
       <xsl:call-template name="processHandNote"/>
+   </xsl:template>
+   <xsl:template match="creation">
+      <xsl:call-template name="processCreationMs"/>
    </xsl:template>
    <xsl:template match="textClass">
       <xsl:call-template name="keepOnlyWithAnyText"/>
@@ -253,7 +272,16 @@
    <xsl:template match="listBibl/bibl">
       <xsl:call-template name="transformOrRemoveBibl"/>
    </xsl:template>
-   <xsl:template match="@key[not(parent::country)]">
+   <xsl:template match="@url">
+      <xsl:copy-of select="rsw:imageMimeType(.)"/>
+      <xsl:copy copy-namespaces="no">
+         <xsl:if test="not(starts-with(., 'http'))">
+            <xsl:value-of select="$rswImgPrefix"/>
+         </xsl:if>
+         <xsl:value-of select="."/>
+      </xsl:copy>
+   </xsl:template>
+   <xsl:template match="@key">
       <xsl:if test="normalize-space()">
          <xsl:attribute name="ref">
             <xsl:value-of select="concat($rswDocumentPrefix, ':', .)"/>

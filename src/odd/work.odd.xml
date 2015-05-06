@@ -218,6 +218,7 @@
 				
 				<elementSpec ident="date" module="MEI.shared" mode="change"
 					ns="http://www.music-encoding.org/ns/mei">
+					<equiv filter="rsw.xsl" mimeType="text/xsl" name="expandOrRemoveDateMEI"/>
 					<classes mode="change">
 						<memberOf key="att.bibl" mode="delete"/>
 						<memberOf key="att.common" mode="delete"/>
@@ -259,6 +260,7 @@
 				</elementSpec>
 				
 				<elementSpec ident="identifier" module="MEI.shared" mode="change" ns="http://www.music-encoding.org/ns/mei">
+<!--					<equiv filter="rsw.xsl" mimeType="text/xsl" name="resolveIdno"/>-->
 					<content>
 						<rng:text/>
 					</content>

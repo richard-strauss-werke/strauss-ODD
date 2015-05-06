@@ -91,7 +91,7 @@
 					<rng:value>UZ</rng:value>
 					<a:documentation>Übertragen nach Auszug</a:documentation>
 					<rng:value>UW</rng:value>
-					<a:documentation>Übertragung</a:documentation>
+					<a:documentation>Übertragen</a:documentation>
 					<rng:value>KO</rng:value>
 					<a:documentation>Korrigiert nach Original</a:documentation>
 					<rng:value>KC</rng:value>
@@ -170,13 +170,13 @@
 			<content>
 				<rng:choice>
 					<rng:value>geonames</rng:value>
-					<a:documentation>ID von http://www.geonames.org/</a:documentation>
+					<a:documentation>GeoNames-ID [http://www.geonames.org/]</a:documentation>
 					<rng:value>getty</rng:value>
-					<a:documentation>ID von http://www.getty.edu/research/tools/vocabularies/tgn/</a:documentation>
+					<a:documentation>Getty-ID [http://www.getty.edu/research/tools/vocabularies/tgn/]</a:documentation>
 					<rng:value>viaf</rng:value>
-					<a:documentation>VIAF-ID</a:documentation>
+					<a:documentation>VIAF-ID [http://viaf.org/viaf/]</a:documentation>
 					<rng:value>gnd</rng:value>
-					<a:documentation>GND-ID</a:documentation>
+					<a:documentation>GND-ID [http://d-nb.info/gnd/]</a:documentation>
 					<rng:value>url</rng:value>
 					<a:documentation>URL identifier</a:documentation>
 				</rng:choice>
@@ -187,7 +187,7 @@
 			<content>
 				<rng:choice>
 					<rng:value>rsqv</rng:value>
-					<a:documentation>RSQV-ID</a:documentation>
+					<a:documentation>RSQV-ID [http://rsqv.de/]</a:documentation>
 					<rng:value>uag</rng:value>
 					<a:documentation>UAG-ID</a:documentation>
 					<rng:value>url</rng:value>
@@ -200,9 +200,9 @@
 			<content>
 				<rng:choice>
 					<rng:value>oclc</rng:value>
-					<a:documentation>OCLC-ID (WorldCat)</a:documentation>
+					<a:documentation>OCLC-ID [http://www.worldcat.org/oclc/]</a:documentation>
 					<rng:value>rsqv</rng:value>
-					<a:documentation>RSQV-ID</a:documentation>
+					<a:documentation>RSQV-ID [http://rsqv.de/]</a:documentation>
 					<rng:value>url</rng:value>
 					<a:documentation>URL identifier</a:documentation>
 				</rng:choice>
@@ -214,10 +214,10 @@
 				<rng:choice>
 					<rng:value>rism</rng:value>
 					<a:documentation>RISM-ID</a:documentation>
-					<rng:value>gnd</rng:value>
-					<a:documentation>GND-ID</a:documentation>
 					<rng:value>viaf</rng:value>
-					<a:documentation>VIAF-ID</a:documentation>
+					<a:documentation>VIAF-ID [http://viaf.org/viaf/]</a:documentation>
+					<rng:value>gnd</rng:value>
+					<a:documentation>GND-ID [http://d-nb.info/gnd/]</a:documentation>
 					<rng:value>url</rng:value>
 					<a:documentation>URL identifier</a:documentation>
 				</rng:choice>
@@ -227,10 +227,10 @@
 		<macroSpec ident="data.idnoPerOrgType">
 			<content>
 				<rng:choice>
-					<rng:value>gnd</rng:value>
-					<a:documentation>GND-ID</a:documentation>
 					<rng:value>viaf</rng:value>
-					<a:documentation>VIAF-ID</a:documentation>
+					<a:documentation>VIAF-ID [http://viaf.org/viaf/]</a:documentation>
+					<rng:value>gnd</rng:value>
+					<a:documentation>GND-ID [http://d-nb.info/gnd/]</a:documentation>
 					<rng:value>url</rng:value>
 					<a:documentation>URL identifier</a:documentation>
 				</rng:choice>
@@ -566,7 +566,20 @@
 		<macroSpec ident="data.biblTypeCorrespondence">
 			<content>
 				<rng:choice>
-					<rng:value>u</rng:value>
+					<rng:value>unknown</rng:value>
+					<a:documentation>Unbekannter Bezug</a:documentation>
+					<rng:value>contains-edition</rng:value>
+					<a:documentation>Edition in</a:documentation>
+					<rng:value>contains-excerpt</rng:value>
+					<a:documentation>Auszug in</a:documentation>
+					<rng:value>contains-facsimile</rng:value>
+					<a:documentation>Faksimile in</a:documentation>
+					<rng:value>contains-reference</rng:value>
+					<a:documentation>Nennung in</a:documentation>
+					<rng:value>other</rng:value>
+					<a:documentation>Sonstiger Bezug</a:documentation>
+					
+					<!--<rng:value>u</rng:value>
 					<a:documentation>Unbekannter Bezug</a:documentation>
 					<rng:value>e</rng:value>
 					<a:documentation>Edition in</a:documentation>
@@ -577,7 +590,7 @@
 					<rng:value>n</rng:value>
 					<a:documentation>Nennung in</a:documentation>
 					<rng:value>s</rng:value>
-					<a:documentation>Sonstiger Bezug</a:documentation>
+					<a:documentation>Sonstiger Bezug</a:documentation>-->
 				</rng:choice>
 			</content>
 		</macroSpec>
@@ -585,7 +598,24 @@
 		<macroSpec ident="data.biblTypeLiterature">
 			<content>
 				<rng:choice>
-					<rng:value>u</rng:value>
+					<rng:value>unknown</rng:value>
+					<a:documentation>Unbekannter Bezug</a:documentation>
+					<rng:value>is-follow-up-edition</rng:value>
+					<a:documentation>Folgeauflage</a:documentation>
+					<rng:value>is-reprint</rng:value>
+					<a:documentation>Wiederabdruck</a:documentation>
+					<rng:value>is-translation</rng:value>
+					<a:documentation>Übersetzung</a:documentation>
+					<rng:value>contains-edition</rng:value>
+					<a:documentation>Edition in</a:documentation>
+					<rng:value>contains-excerpt</rng:value>
+					<a:documentation>Auszug in</a:documentation>
+					<rng:value>contains-reference</rng:value>
+					<a:documentation>Nennung in</a:documentation>
+					<rng:value>other</rng:value>
+					<a:documentation>Sonstiger Bezug</a:documentation>
+					
+					<!--<rng:value>u</rng:value>
 					<a:documentation>Unbekannter Bezug</a:documentation>
 					<rng:value>o</rng:value>
 					<a:documentation>Folgeauflage</a:documentation>
@@ -600,7 +630,7 @@
 					<rng:value>n</rng:value>
 					<a:documentation>Nennung in</a:documentation>
 					<rng:value>s</rng:value>
-					<a:documentation>Sonstiger Bezug</a:documentation>
+					<a:documentation>Sonstiger Bezug</a:documentation>-->
 				</rng:choice>
 			</content>
 		</macroSpec>
