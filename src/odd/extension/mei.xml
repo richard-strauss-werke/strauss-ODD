@@ -12,7 +12,7 @@
 		<elementRef key="notatedMusic"/>
 		
 		<!-- change this path according to your folder structure -->
-		<moduleRef url="/current/strauss-ODD/strauss-ODD/dependencies/mei2vexflow-modified.rng" prefix="mei_"/>
+		<moduleRef url="file:/Y:/fakultaet09/Musikwissenschaft/Strauss-Edition/1_Arbeitsplaetze/Dominik%20Leipold/CODE-Git/strauss-ODD/dependencies/mei2vexflow-modified.rng" prefix="mei_"/>
 		
 		
 		<!-- TODO move to edits -->

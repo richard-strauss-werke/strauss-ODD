@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" xml:base="file:/d:/current/strauss-ODD/strauss-ODD/src/odd/editorial.odd.xml" xml:lang="en"><?TEIVERSION Version 2.8.0. Last updated on
+<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" xml:base="file:/Y:/fakultaet09/Musikwissenschaft/Strauss-Edition/1_Arbeitsplaetze/Dominik%20Leipold/CODE-Git/strauss-ODD/src/odd/editorial.odd.xml" xml:lang="en"><?TEIVERSION Version 2.8.0. Last updated on
 	6th April 2015, revision 13197?>
 	<teiHeader>
 		<fileDesc>
@@ -15,7 +15,7 @@
 	</teiHeader>
 	<text>
 		<body>
-			<schemaSpec ident="schema.editorial" xml:lang="en" start="TEI teiCorpus listPrefixDef" prefix="rsw_" source="/current/strauss-ODD/tei-2.8.0/xml/tei/odd/p5subset.xml"><classSpec module="tei" type="atts" ident="att.ascribed">
+			<schemaSpec ident="schema.editorial" xml:lang="en" start="TEI teiCorpus listPrefixDef" prefix="rsw_" source="file:///Y:/fakultaet09/Musikwissenschaft/Strauss-Edition/1_Arbeitsplaetze/Dominik Leipold/CODE-Git/strauss-ODD/download_dependencies/tei/xml/tei/odd/p5subset.xml"><classSpec module="tei" type="atts" ident="att.ascribed">
   <desc versionDate="2006-01-05" xml:lang="en">provides attributes for elements representing speech or action that can be ascribed to a
     specific individual.</desc>
   <desc versionDate="2007-12-20" xml:lang="ko">특정 개인의 대화 또는 행위를 표시하는 요소에 대한 속성을 제공한다.</desc>
@@ -45024,7 +45024,7 @@ and <code>simplified</code>  for simplified characters. The
                                 encode the music notation.</p>
 			</remarks><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/FT.html#FTNM">14.3. Notated Music in Written Text</ref>
-  </listRef></elementSpec><moduleRef url="/current/strauss-ODD/strauss-ODD/dependencies/mei2vexflow-modified.rng" prefix="mei_"/><elementSpec rend="add" module="derived-module-schema.editorial" ident="conRef" mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0"><classes>
+  </listRef></elementSpec><moduleRef url="file:/Y:/fakultaet09/Musikwissenschaft/Strauss-Edition/1_Arbeitsplaetze/Dominik%20Leipold/CODE-Git/strauss-ODD/dependencies/mei2vexflow-modified.rng" prefix="mei_"/><elementSpec rend="add" module="derived-module-schema.editorial" ident="conRef" mode="add" ns="http://richard-strauss-ausgabe.de/ns/1.0"><classes>
 				<memberOf key="model.common"/>
 			</classes><content>
 				<zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0"><choice><ref name="body"/><ref name="model.segLike"/><ref name="include"/></choice></zeroOrMore>
@@ -45082,7 +45082,7 @@ and <code>simplified</code>  for simplified characters. The
 				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="extension/mei.xml" xml:lang="">
 	<head>MEI music extension</head>
 	<desc>Includes the MEI RNG and modifies the content model of notatedMusic to include MEI elements.</desc>
-	<table><row/><row><cell>
+	<table rend="specGrpSummary"><row><cell>
 		Module </cell><cell/></row><row><cell>
 		Element <gi>term</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>notatedMusic</gi></cell><cell>change</cell></row></table>
@@ -45091,7 +45091,7 @@ and <code>simplified</code>  for simplified characters. The
 	<head>XInclude extension</head>
 	<byline>XInclude support adopted from the TEI-C's 
 		<ref target="http://www.tei-c.org/release/xml/tei/custom/odd/tei_xinclude.odd">XInclude ODD</ref></byline>
-	<table><row><cell>
+	<table rend="specGrpSummary"><row><cell>
 		Element <gi>conRef</gi></cell><cell>add</cell></row><row><cell>
 		Element <gi>include</gi></cell><cell>add</cell></row><row><cell>
 		Element <gi>fallback</gi></cell><cell>add</cell></row><row><cell>

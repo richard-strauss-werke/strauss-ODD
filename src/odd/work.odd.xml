@@ -23,23 +23,23 @@
 				<desc>Works of art. Based on Peter Stadler's WeGA ODD.</desc>
 				<specGrpRef target="#extension.MEI-head"/>
 				<moduleRef key="MEI"
-					source="/current/strauss-ODD/strauss-ODD/dependencies/mei-source.2.1.0.xml"/>
+					source="file:/Y:/fakultaet09/Musikwissenschaft/Strauss-Edition/1_Arbeitsplaetze/Dominik%20Leipold/CODE-Git/strauss-ODD/dependencies/mei-source.2.1.0.xml"/>
 				<moduleRef key="MEI.frbr" include="componentGrp item itemList"
-					source="/current/strauss-ODD/strauss-ODD/dependencies/mei-source.2.1.0.xml"/>
+					source="file:/Y:/fakultaet09/Musikwissenschaft/Strauss-Edition/1_Arbeitsplaetze/Dominik%20Leipold/CODE-Git/strauss-ODD/dependencies/mei-source.2.1.0.xml"/>
 				<!-- ADDITION biblList to shared -->
 				<moduleRef key="MEI.shared"
 					include="addrLine address annot biblList bibl body creation date extent group identifier incip lb mdiv mei music p physLoc pubPlace publisher rend repository respStmt score scoreDef section staffDef staffGrp title titlePage"
-					source="/current/strauss-ODD/strauss-ODD/dependencies/mei-source.2.1.0.xml"/>
+					source="file:/Y:/fakultaet09/Musikwissenschaft/Strauss-Edition/1_Arbeitsplaetze/Dominik%20Leipold/CODE-Git/strauss-ODD/dependencies/mei-source.2.1.0.xml"/>
 				<moduleRef key="MEI.header"
 					include="altId availability change changeDesc classCode classification dimensions event eventList fileDesc hand handList history instrVoice instrVoiceGrp instrumentation meiHead notesStmt perfMedium physDesc physMedium plateNum provenance pubStmt revisionDesc seriesStmt source term termList titleStmt useRestrict watermark work workDesc"
-					source="/current/strauss-ODD/strauss-ODD/dependencies/mei-source.2.1.0.xml"/>
+					source="file:/Y:/fakultaet09/Musikwissenschaft/Strauss-Edition/1_Arbeitsplaetze/Dominik%20Leipold/CODE-Git/strauss-ODD/dependencies/mei-source.2.1.0.xml"/>
 				<moduleRef key="MEI.namesdates" include="corpName geogName periodName persName"
-					source="/current/strauss-ODD/strauss-ODD/dependencies/mei-source.2.1.0.xml"/>
+					source="file:/Y:/fakultaet09/Musikwissenschaft/Strauss-Edition/1_Arbeitsplaetze/Dominik%20Leipold/CODE-Git/strauss-ODD/dependencies/mei-source.2.1.0.xml"/>
 				<moduleRef key="MEI.cmn"
-					source="/current/strauss-ODD/strauss-ODD/dependencies/mei-source.2.1.0.xml"/>
+					source="file:/Y:/fakultaet09/Musikwissenschaft/Strauss-Edition/1_Arbeitsplaetze/Dominik%20Leipold/CODE-Git/strauss-ODD/dependencies/mei-source.2.1.0.xml"/>
 				<!-- for future use -->
 				<moduleRef key="MEI.edittrans" include="add damage del gap restore sic subst supplied"
-					source="/current/strauss-ODD/strauss-ODD/dependencies/mei-source.2.1.0.xml"/>
+					source="file:/Y:/fakultaet09/Musikwissenschaft/Strauss-Edition/1_Arbeitsplaetze/Dominik%20Leipold/CODE-Git/strauss-ODD/dependencies/mei-source.2.1.0.xml"/>
 				
 				<macroSpec ident="macro.availabilityPart" mode="change">
 					<content>

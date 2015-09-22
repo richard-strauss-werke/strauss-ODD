@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" xml:base="file:/d:/current/strauss-ODD/strauss-ODD/src/odd/work.odd.xml" xml:lang="en"><?TEIVERSION Version 2.8.0. Last updated on
+<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" xml:base="file:/Y:/fakultaet09/Musikwissenschaft/Strauss-Edition/1_Arbeitsplaetze/Dominik%20Leipold/CODE-Git/strauss-ODD/src/odd/work.odd.xml" xml:lang="en"><?TEIVERSION Version 2.8.0. Last updated on
 	6th April 2015, revision 13197?>
 	<teiHeader>
 		<fileDesc>
@@ -15,7 +15,7 @@
 	</teiHeader>
 	<text>
 		<body>
-			<schemaSpec ident="schema.work" ns="http://www.music-encoding.org/ns/mei" xml:lang="en" start="mei source" prefix="mei_" source="/current/strauss-ODD/tei-2.8.0/xml/tei/odd/p5subset.xml"><macroSpec rend="add" ident="data.ACCIDENTAL.EXPLICIT" module="MEI" type="dt">
+			<schemaSpec ident="schema.work" ns="http://www.music-encoding.org/ns/mei" xml:lang="en" start="mei source" prefix="mei_" source="file:///Y:/fakultaet09/Musikwissenschaft/Strauss-Edition/1_Arbeitsplaetze/Dominik Leipold/CODE-Git/strauss-ODD/download_dependencies/tei/xml/tei/odd/p5subset.xml"><macroSpec rend="add" ident="data.ACCIDENTAL.EXPLICIT" module="MEI" type="dt">
       <desc>Accidental attribute values. nf (natural-flat) and ns (natural-sharp) are used to cancel
         double flats and double sharps, respectively.</desc>
       <content>
@@ -5730,7 +5730,7 @@
 			
 			<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="edits/datatypes.xml" xml:lang="">
 	<head>Datatypes</head>
-	<table><row><cell>
+	<table rend="specGrpSummary"><row><cell>
 		Macro <ident type="macro">data.handFeaturesScope</ident></cell><cell>add</cell></row><row><cell>
 		Macro <ident type="macro">data.certainty</ident></cell><cell>replace</cell></row><row><cell>
 		Macro <ident type="macro">data.precision</ident></cell><cell>add</cell></row><row><cell>

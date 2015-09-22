@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" xml:base="file:/d:/current/strauss-ODD/strauss-ODD/src/odd/performance.odd.xml" xml:lang="en"><?TEIVERSION Version 2.8.0. Last updated on
+<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:s="http://www.ascc.net/xml/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" xml:base="file:/Y:/fakultaet09/Musikwissenschaft/Strauss-Edition/1_Arbeitsplaetze/Dominik%20Leipold/CODE-Git/strauss-ODD/src/odd/performance.odd.xml" xml:lang="en"><?TEIVERSION Version 2.8.0. Last updated on
 	6th April 2015, revision 13197?>
 	<teiHeader>
 		<fileDesc>
@@ -15,7 +15,7 @@
 	</teiHeader>
 	<text>
 		<body>
-			<schemaSpec ident="schema.performance" xml:lang="en" start="performance" prefix="rsw_" source="/current/strauss-ODD/tei-2.8.0/xml/tei/odd/p5subset.xml"><classSpec module="tei" type="atts" ident="att.ascribed">
+			<schemaSpec ident="schema.performance" xml:lang="en" start="performance" prefix="rsw_" source="file:///Y:/fakultaet09/Musikwissenschaft/Strauss-Edition/1_Arbeitsplaetze/Dominik Leipold/CODE-Git/strauss-ODD/download_dependencies/tei/xml/tei/odd/p5subset.xml"><classSpec module="tei" type="atts" ident="att.ascribed">
   <desc versionDate="2006-01-05" xml:lang="en">provides attributes for elements representing speech or action that can be ascribed to a
     specific individual.</desc>
   <desc versionDate="2007-12-20" xml:lang="ko">특정 개인의 대화 또는 행위를 표시하는 요소에 대한 속성을 제공한다.</desc>
@@ -9301,7 +9301,7 @@ either a single role or a list of non-speaking roles.</desc>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.performance" ident="data.revisionDescChangeType">
 			<content>
-				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>UO</value><a:documentation>Übertragen nach Original</a:documentation><value>UC</value><a:documentation>Übertragen nach Entwurf</a:documentation><value>UA</value><a:documentation>Übertragen nach Abschrift v.f.H.</a:documentation><value>UP</value><a:documentation>Übertragen nach Papierkopie</a:documentation><value>UI</value><a:documentation>Übertragen nach Mikroform</a:documentation><value>UM</value><a:documentation>Übertragen nach autogr. Abschrift</a:documentation><value>UD</value><a:documentation>Übertragen nach Original [Digitalisat]</a:documentation><value>UG</value><a:documentation>Übertragen nach Entwurf [Digitalisat]</a:documentation><value>UH</value><a:documentation>Übertragen nach Abschrift v.f.H. [Digitalisat]</a:documentation><value>UF</value><a:documentation>Übertragen nach Papierkopie [Digitalisat]</a:documentation><value>UJ</value><a:documentation>Übertragen nach Mikroform [Digitalisat]</a:documentation><value>UB</value><a:documentation>Übertragen nach autogr. Abschrift [Digitalisat]</a:documentation><value>UE</value><a:documentation>Übertragen nach Edition</a:documentation><value>UZ</value><a:documentation>Übertragen nach Auszug</a:documentation><value>UW</value><a:documentation>Übertragen</a:documentation><value>KO</value><a:documentation>Korrigiert nach Original</a:documentation><value>KC</value><a:documentation>Korrigiert nach Entwurf</a:documentation><value>KA</value><a:documentation>Korrigiert nach Abschrift v.f.H.</a:documentation><value>KP</value><a:documentation>Korrigiert nach Papierkopie</a:documentation><value>KI</value><a:documentation>Korrigiert nach Mikroform</a:documentation><value>KM</value><a:documentation>Korrigiert nach autogr. Abschrift</a:documentation><value>KD</value><a:documentation>Korrigiert nach Original [Digitalisat]</a:documentation><value>KG</value><a:documentation>Korrigiert nach Entwurf [Digitalisat]</a:documentation><value>KH</value><a:documentation>Korrigiert nach Abschrift v.f.H. [Digitalisat]</a:documentation><value>KF</value><a:documentation>Korrigiert nach Papierkopie [Digitalisat]</a:documentation><value>KJ</value><a:documentation>Korrigiert nach Mikroform [Digitalisat]</a:documentation><value>KB</value><a:documentation>Korrigiert nach autogr. Abschrift [Digitalisat]</a:documentation><value>KE</value><a:documentation>Korrigiert nach Edition</a:documentation><value>KZ</value><a:documentation>Korrigiert nach Auszug</a:documentation><value>KW</value><a:documentation>Korrigiert</a:documentation><value>VQ</value><a:documentation>Vollständigkeit der Quellenübertragung bestätigt</a:documentation><value>VT</value><a:documentation>Vollständigkeit der Textauszeichnung bestätigt</a:documentation><value>VL</value><a:documentation>Vollständigkeit der Verlinkung bestätigt</a:documentation><value>P</value><a:documentation>Vorgeschlagen zur Publikation</a:documentation><value>C</value><a:documentation>Als möglicherweise publikationsfertig gekennzeichnet</a:documentation><value>A</value><a:documentation>Zur Publikation freigegeben</a:documentation></choice>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>UO</value><a:documentation>Übertragen nach Original</a:documentation><value>UC</value><a:documentation>Übertragen nach Entwurf</a:documentation><value>UA</value><a:documentation>Übertragen nach Abschrift v.f.H.</a:documentation><value>UP</value><a:documentation>Übertragen nach Papierkopie</a:documentation><value>UI</value><a:documentation>Übertragen nach Mikroform</a:documentation><value>UM</value><a:documentation>Übertragen nach autogr. Abschrift</a:documentation><value>UD</value><a:documentation>Übertragen nach Original [Digitalisat]</a:documentation><value>UG</value><a:documentation>Übertragen nach Entwurf [Digitalisat]</a:documentation><value>UH</value><a:documentation>Übertragen nach Abschrift v.f.H. [Digitalisat]</a:documentation><value>UF</value><a:documentation>Übertragen nach Papierkopie [Digitalisat]</a:documentation><value>UJ</value><a:documentation>Übertragen nach Mikroform [Digitalisat]</a:documentation><value>UB</value><a:documentation>Übertragen nach autogr. Abschrift [Digitalisat]</a:documentation><value>UE</value><a:documentation>Übertragen nach Edition</a:documentation><value>UZ</value><a:documentation>Übertragen nach Auszug</a:documentation><value>UW</value><a:documentation>Übertragen</a:documentation><value>KO</value><a:documentation>Korrigiert nach Original</a:documentation><value>KC</value><a:documentation>Korrigiert nach Entwurf</a:documentation><value>KA</value><a:documentation>Korrigiert nach Abschrift v.f.H.</a:documentation><value>KP</value><a:documentation>Korrigiert nach Papierkopie</a:documentation><value>KI</value><a:documentation>Korrigiert nach Mikroform</a:documentation><value>KM</value><a:documentation>Korrigiert nach autogr. Abschrift</a:documentation><value>KD</value><a:documentation>Korrigiert nach Original [Digitalisat]</a:documentation><value>KG</value><a:documentation>Korrigiert nach Entwurf [Digitalisat]</a:documentation><value>KH</value><a:documentation>Korrigiert nach Abschrift v.f.H. [Digitalisat]</a:documentation><value>KF</value><a:documentation>Korrigiert nach Papierkopie [Digitalisat]</a:documentation><value>KJ</value><a:documentation>Korrigiert nach Mikroform [Digitalisat]</a:documentation><value>KB</value><a:documentation>Korrigiert nach autogr. Abschrift [Digitalisat]</a:documentation><value>KE</value><a:documentation>Korrigiert nach Edition</a:documentation><value>KZ</value><a:documentation>Korrigiert nach Auszug</a:documentation><value>KW</value><a:documentation>Korrigiert</a:documentation><value>VQ</value><a:documentation>Vollständigkeit der Quellenübertragung bestätigt</a:documentation><value>VT</value><a:documentation>Vollständigkeit der Textauszeichnung bestätigt</a:documentation><value>VL</value><a:documentation>Vollständigkeit der Verlinkung bestätigt</a:documentation><value>KUM</value><a:documentation>Kumuliert mit anderem Datensatz</a:documentation><value>P</value><a:documentation>Vorgeschlagen zur Publikation</a:documentation><value>C</value><a:documentation>Als möglicherweise publikationsfertig gekennzeichnet</a:documentation><value>A</value><a:documentation>Zur Publikation freigegeben</a:documentation></choice>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.performance" ident="data.changeEventType">
 			<content>
@@ -9606,7 +9606,7 @@ either a single role or a list of non-speaking roles.</desc>
 				<head>Edits</head>
 				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="edits/classes.att.xml" xml:lang="">
 	<head>Attribute classes</head>
-	<table><row><cell>
+	<table rend="specGrpSummary"><row><cell>
 		Class <ident type="class">att.msExcerpt</ident></cell><cell>delete</cell></row><row><cell>
 		Class <ident type="class">att.patternReplacement</ident></cell><cell>delete</cell></row><row><cell>
 		Class <ident type="class">att.breaking</ident></cell><cell>delete</cell></row><row><cell>
@@ -9650,7 +9650,7 @@ either a single role or a list of non-speaking roles.</desc>
 </div>
 				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="edits/datatypes.xml" xml:lang="">
 	<head>Datatypes</head>
-	<table><row><cell>
+	<table rend="specGrpSummary"><row><cell>
 		Macro <ident type="macro">data.handFeaturesScope</ident></cell><cell>add</cell></row><row><cell>
 		Macro <ident type="macro">data.certainty</ident></cell><cell>replace</cell></row><row><cell>
 		Macro <ident type="macro">data.precision</ident></cell><cell>add</cell></row><row><cell>
@@ -9684,7 +9684,7 @@ either a single role or a list of non-speaking roles.</desc>
 				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="edits/elements.xml" xml:lang="">
 	<head>Modifications of elements</head>
 		<desc>These modifications change the way an element is specified for all schemata linking to this specGrp. Currently, this applies to every schema in use. If a specific element is not included in a schema, the corresponding specifications below will have no effect on that schema.</desc>
-		<table><row><cell>
+		<table rend="specGrpSummary"><row><cell>
 		Element <gi>listBibl</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>fileDesc</gi></cell><cell>change</cell></row><row><cell>
 		Element <gi>textClass</gi></cell><cell>change</cell></row><row><cell>
@@ -9751,7 +9751,7 @@ either a single role or a list of non-speaking roles.</desc>
 </div>
 				<?xml-model href="http://tei.oucs.ox.ac.uk/jenkins/job/TEIP5/lastSuccessfulBuild/artifact/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><div xml:base="edits/macros.xml" xml:lang="">
 	<head>Macros</head>
-	<table><row><cell>
+	<table rend="specGrpSummary"><row><cell>
 		Macro <ident type="macro">macro.form.date</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">macro.form.perOrgIdno</ident></cell><cell/></row><row><cell>
 		Macro <ident type="macro">macro.form.msIdno</ident></cell><cell/></row><row><cell>
@@ -9792,7 +9792,7 @@ either a single role or a list of non-speaking roles.</desc>
 			<div>
 				<head>Performance</head>
 				<desc>Contains specifications for performances (of operas, plays, etc.)</desc>
-				<table><row><cell>
+				<table rend="specGrpSummary"><row><cell>
 		Element <gi>performance</gi></cell><cell>change</cell></row></table>
 				
 			</div>

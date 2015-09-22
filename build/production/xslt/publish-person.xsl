@@ -109,6 +109,7 @@
       <change type="VQ">Vollständigkeit der Quellenübertragung bestätigt</change>
       <change type="VT">Vollständigkeit der Textauszeichnung bestätigt</change>
       <change type="VL">Vollständigkeit der Verlinkung bestätigt</change>
+      <change type="KUM">Kumuliert mit anderem Datensatz</change>
       <change type="P">Vorgeschlagen zur Publikation</change>
       <change type="C">Als möglicherweise publikationsfertig gekennzeichnet</change>
       <change type="A">Zur Publikation freigegeben</change>

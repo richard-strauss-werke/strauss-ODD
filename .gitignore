@@ -1,3 +1,8 @@
 /testdata
 /build/html
 /build.properties
+/*.bat
+/download_dependencies
+/tmp
+/.idea
+/src/odd/extension/mei.xml

@@ -2,6 +2,7 @@
 	<description> Strauss ODD build file </description>
 	<property name="project.version" value="0.7"/>
 	<property file="build.properties"/>
+	<property file="build.default.properties"/>
 	
 	<property name="src.path.odd" location="src/odd"/>
 	<property name="src.path.xslt" location="src/xslt"/>
@@ -22,6 +23,21 @@
 	<typedef resource="org/exist/ant/antlib.xml" uri="http://exist-db.org/ant">
 		<classpath refid="classpath.core"/>
 	</typedef>
+	
+	
+	<target name="get-stylesheets">
+		<description>Download and unzip TEI-C stylesheets</description>
+		<mkdir dir="${tmp.dir}"/>
+		<get src="${teiCStylesheets.baseURL}${teiCStylesheets.version}" dest="${tmp.dir}/stylesheets_${teiCStylesheets.version}.zip" skipexisting="yes"/>
+		<unzip src="${tmp.dir}/stylesheets_${teiCStylesheets.version}.zip" dest="${downloadDependencies.dir}"/>
+	</target>
+	
+	<target name="get-tei-source">
+		<description>Download and unzip TEI source code</description>
+		<mkdir dir="${tmp.dir}"/>
+		<get src="${teiSource.baseURL}${teiSource.fileName}" dest="${tmp.dir}/${teiSource.fileName}" skipexisting="yes"/>
+		<unzip src="${tmp.dir}/${teiSource.fileName}" dest="${downloadDependencies.dir}/tei"/>
+	</target>
 	
 	<target name="rng">
 		<ant antfile="${teiCStylesheetPath}/relaxng/build-to.xml" dir="${src.path.odd}"
@@ -97,8 +113,13 @@
 			password="${config.password}" srcfile="${outputPath}\xslt\rsw.xsl"
 		/>
 	</target>
+	
+	<target name="copy-rng-xml-dokumente">
+		<copy file="${outputPath}\relaxng\editorial.rng"
+			tofile="${xml-dokumente.schema}\editorial.rng"/>
+	</target>
 
-	<target name="dist-rng" depends="rng, copy-rng-oxygen, copy-rng-exist"> </target>
+	<target name="dist-rng" depends="rng, copy-rng-oxygen, copy-rng-exist, copy-rng-xml-dokumente"> </target>
 	<target name="dist-xslt" depends="odd, xslt, copy-xslt-exist"> </target>
 	
 </project>

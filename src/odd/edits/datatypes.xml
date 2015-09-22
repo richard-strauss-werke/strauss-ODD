@@ -128,6 +128,8 @@
 					<a:documentation>Vollständigkeit der Textauszeichnung bestätigt</a:documentation>
 					<rng:value>VL</rng:value>
 					<a:documentation>Vollständigkeit der Verlinkung bestätigt</a:documentation>
+					<rng:value>KUM</rng:value>
+					<a:documentation>Kumuliert mit anderem Datensatz</a:documentation>
 					<rng:value>P</rng:value>
 					<a:documentation>Vorgeschlagen zur Publikation</a:documentation>
 					<rng:value>C</rng:value>
