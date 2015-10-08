@@ -5716,6 +5716,7 @@ attributes @target and @cRef may be supplied on <name/>.</report>
 						<valList type="closed">
 							<valItem ident="pdf"/>
 							<valItem ident="image"/>
+							<valItem ident="url"/>
 						</valList>
 					</attDef></attList><exemplum xml:lang="und">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -11780,11 +11781,11 @@ manuscripts, not necessarily located within a single repository.</desc><desc ver
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.literature" ident="data.idnoMsType">
 			<content>
-				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>rsqv</value><a:documentation>RSQV-ID [http://rsqv.de/]</a:documentation><value>uag</value><a:documentation>UAG-ID</a:documentation><value>url</value><a:documentation>URL identifier</a:documentation></choice>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>rsqv</value><a:documentation>RSQV-ID [http://rsqv.de/]</a:documentation><value>uag</value><a:documentation>UAG-ID</a:documentation><value>slub</value><a:documentation>SLUB-ID [http://digital.slub-dresden.de/]</a:documentation><value>url</value><a:documentation>URL identifier</a:documentation></choice>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.literature" ident="data.idnoPrintType">
 			<content>
-				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>oclc</value><a:documentation>OCLC-ID [http://www.worldcat.org/oclc/]</a:documentation><value>rsqv</value><a:documentation>RSQV-ID [http://rsqv.de/]</a:documentation><value>url</value><a:documentation>URL identifier</a:documentation></choice>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>oclc</value><a:documentation>OCLC-ID [http://www.worldcat.org/oclc/]</a:documentation><value>rsqv</value><a:documentation>RSQV-ID [http://rsqv.de/]</a:documentation><value>slub</value><a:documentation>SLUB-ID [http://digital.slub-dresden.de/]</a:documentation><value>url</value><a:documentation>URL identifier</a:documentation></choice>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.literature" ident="data.idnoPerOrgType">
 			<content>

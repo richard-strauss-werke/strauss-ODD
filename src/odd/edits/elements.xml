@@ -1105,6 +1105,7 @@
 						<valList type="closed">
 							<valItem ident="pdf"/>
 							<valItem ident="image"/>
+							<valItem ident="url"/>
 						</valList>
 					</attDef>
 				</attList>
