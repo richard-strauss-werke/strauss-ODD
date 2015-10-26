@@ -119,6 +119,7 @@
       <idno type="rsqv">http://rsqv.de/</idno>
       <idno type="slub">http://digital.slub-dresden.de/</idno>
       <idno type="oclc">http://www.worldcat.org/oclc/</idno>
+      <idno type="jstor">http://www.jstor.org/stable/</idno>
       <idno type="viaf">http://viaf.org/viaf/</idno>
       <idno type="gnd">http://d-nb.info/gnd/</idno>
       <empty/>

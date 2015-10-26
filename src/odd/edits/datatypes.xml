@@ -207,6 +207,8 @@
 					<a:documentation>OCLC-ID [http://www.worldcat.org/oclc/]</a:documentation>
 					<rng:value>rsqv</rng:value>
 					<a:documentation>RSQV-ID [http://rsqv.de/]</a:documentation>
+					<rng:value>jstor</rng:value>
+					<a:documentation>JSTOR-Permalink [http://www.jstor.org/stable/]</a:documentation>
 					<rng:value>slub</rng:value>
 					<a:documentation>SLUB-ID [http://digital.slub-dresden.de/]</a:documentation>
 					<rng:value>url</rng:value>

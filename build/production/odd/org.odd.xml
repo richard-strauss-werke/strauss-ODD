@@ -8594,7 +8594,7 @@ purposes.</p>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.org" ident="data.idnoPrintType">
 			<content>
-				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>oclc</value><a:documentation>OCLC-ID [http://www.worldcat.org/oclc/]</a:documentation><value>rsqv</value><a:documentation>RSQV-ID [http://rsqv.de/]</a:documentation><value>slub</value><a:documentation>SLUB-ID [http://digital.slub-dresden.de/]</a:documentation><value>url</value><a:documentation>URL identifier</a:documentation></choice>
+				<choice xmlns="http://relaxng.org/ns/structure/1.0"><value>oclc</value><a:documentation>OCLC-ID [http://www.worldcat.org/oclc/]</a:documentation><value>rsqv</value><a:documentation>RSQV-ID [http://rsqv.de/]</a:documentation><value>jstor</value><a:documentation>JSTOR-Permalink [http://www.jstor.org/stable/]</a:documentation><value>slub</value><a:documentation>SLUB-ID [http://digital.slub-dresden.de/]</a:documentation><value>url</value><a:documentation>URL identifier</a:documentation></choice>
 			</content>
 		</macroSpec><macroSpec rend="add" module="derived-module-schema.org" ident="data.idnoPerOrgType">
 			<content>
